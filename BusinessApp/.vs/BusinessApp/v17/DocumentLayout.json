@@ -1,0 +1,245 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|a:\\university related\\uet lahore\\2nd semester\\object oriented programming\\business app\\businessapp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|a:\\university related\\uet lahore\\2nd semester\\object oriented programming\\business app\\businessapp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|a:\\university related\\uet lahore\\2nd semester\\object oriented programming\\business app\\businessapp\\ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|a:\\university related\\uet lahore\\2nd semester\\object oriented programming\\business app\\businessapp\\ui\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\ui\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|BusinessApp||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\dl\\userdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|solutionrelative:dl\\userdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\bl\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|solutionrelative:bl\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Homepage.cs [Design]",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeDocumentMoniker": "UI\\Homepage.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\Homepage.cs [Design]",
+              "RelativeToolTip": "UI\\Homepage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T04:11:50.416Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Homepage.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeDocumentMoniker": "UI\\Homepage.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeToolTip": "UI\\Homepage.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAewDoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:48:04.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignIn.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignIn.cs",
+              "RelativeDocumentMoniker": "UI\\SignIn.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignIn.cs",
+              "RelativeToolTip": "UI\\SignIn.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAUwE0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T09:10:10.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SignUp.cs [Design]",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignUp.cs",
+              "RelativeDocumentMoniker": "UI\\SignUp.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignUp.cs [Design]",
+              "RelativeToolTip": "UI\\SignUp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:48:04.971Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SignUp.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignUp.cs",
+              "RelativeDocumentMoniker": "UI\\SignUp.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignUp.cs",
+              "RelativeToolTip": "UI\\SignUp.cs",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAAwI4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T07:09:55.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SignIn.cs [Design]",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignIn.cs",
+              "RelativeDocumentMoniker": "UI\\SignIn.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\SignIn.cs [Design]",
+              "RelativeToolTip": "UI\\SignIn.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:48:04.56Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:52:00.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UtilityFunctions.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\UtilityFunctions.cs",
+              "RelativeDocumentMoniker": "UI\\UtilityFunctions.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\UtilityFunctions.cs",
+              "RelativeToolTip": "UI\\UtilityFunctions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T09:52:35.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Homepage.Designer.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\Homepage.Designer.cs",
+              "RelativeDocumentMoniker": "UI\\Homepage.Designer.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\UI\\Homepage.Designer.cs",
+              "RelativeToolTip": "UI\\Homepage.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T04:13:51.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BusinessApp",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\BusinessApp.csproj",
+              "RelativeDocumentMoniker": "BusinessApp.csproj",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\BusinessApp.csproj",
+              "RelativeToolTip": "BusinessApp.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-29T04:20:39.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\Form2.cs",
+              "RelativeDocumentMoniker": "..\\SignInSignUp\\Form2.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\Form2.cs",
+              "RelativeToolTip": "..\\SignInSignUp\\Form2.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAhwE4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T04:18:58.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserDL.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\DL\\UserDL.cs",
+              "RelativeDocumentMoniker": "DL\\UserDL.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\DL\\UserDL.cs",
+              "RelativeToolTip": "DL\\UserDL.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAwCYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T04:53:14.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form2.Designer.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\Form2.Designer.cs",
+              "RelativeDocumentMoniker": "..\\SignInSignUp\\Form2.Designer.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\Form2.Designer.cs",
+              "RelativeToolTip": "..\\SignInSignUp\\Form2.Designer.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAApwDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T04:20:20.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\BL\\User.cs",
+              "RelativeDocumentMoniker": "BL\\User.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\BusinessApp\\BL\\User.cs",
+              "RelativeToolTip": "BL\\User.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAwDAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T04:30:13.438Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
