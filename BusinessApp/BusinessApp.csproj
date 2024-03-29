@@ -60,6 +60,18 @@
     <Compile Include="UI\CustomerNavBar.Designer.cs">
       <DependentUpon>CustomerNavBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CustomerOrderFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerOrderFood.Designer.cs">
+      <DependentUpon>CustomerOrderFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerBookTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerBookTable.Designer.cs">
+      <DependentUpon>CustomerBookTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -90,11 +102,17 @@
       <DependentUpon>CustomerHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UtilityFunctions.cs" />
+    <EmbeddedResource Include="UI\CustomerBookTable.resx">
+      <DependentUpon>CustomerBookTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerNavBar.resx">
       <DependentUpon>CustomerNavBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerOrderFood.resx">
+      <DependentUpon>CustomerOrderFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>

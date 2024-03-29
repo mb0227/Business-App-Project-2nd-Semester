@@ -1,96 +1,86 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\",
+  "WorkspaceRootPath": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\business app\\business-app-project-2nd-semester\\businessapp\\ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\app\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\businessapp\\ui\\customerbooktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerbooktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\business app\\business-app-project-2nd-semester\\businessapp\\ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\app\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\businessapp\\ui\\customerorderfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerorderfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\business app\\business-app-project-2nd-semester\\businessapp\\ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\business app\\business-app-project-2nd-semester\\businessapp\\ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\business app\\business-app-project-2nd-semester\\businessapp\\ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\business app\\business-app-project-2nd-semester\\businessapp\\ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\business app\\business-app-project-2nd-semester\\businessapp\\bl\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:bl\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\bl\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|solutionrelative:bl\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\app\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\businessapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|BusinessApp||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\app\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\business-app-project-2nd-semester\\businessapp\\ui\\customerbooktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerbooktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\dl\\userdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|SignInSignUp.csproj|solutionrelative:dl\\userdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customerorderfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerorderfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customerorderfood.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerorderfood.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\ui\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -100,67 +90,91 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\BL\\User.cs",
-              "RelativeDocumentMoniker": "BL\\User.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\BL\\User.cs",
-              "RelativeToolTip": "BL\\User.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAAwDAAAAAJAAAA",
+              "DocumentIndex": 3,
+              "Title": "CustomerBookTable.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerBookTable.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerBookTable.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerBookTable.cs",
+              "RelativeToolTip": "UI\\CustomerBookTable.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAkwBQAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T20:31:11.619Z",
+              "WhenOpened": "2024-03-29T23:44:46.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CustomerHeader.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs",
-              "RelativeDocumentMoniker": "UI\\CustomerHeader.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs",
-              "RelativeToolTip": "UI\\CustomerHeader.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAADgvxUAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T19:12:51.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CustomerNavBar.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs",
-              "RelativeDocumentMoniker": "UI\\CustomerNavBar.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs",
-              "RelativeToolTip": "UI\\CustomerNavBar.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAcwAQAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T19:12:31.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CustomerDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs",
-              "RelativeDocumentMoniker": "UI\\CustomerDashboard.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs",
-              "RelativeToolTip": "UI\\CustomerDashboard.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAADgvxkAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T19:12:01.599Z",
+              "WhenOpened": "2024-03-29T23:44:10.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CustomerBookTable.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerBookTable.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerBookTable.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerBookTable.cs [Design]",
+              "RelativeToolTip": "UI\\CustomerBookTable.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T23:38:38.46Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CustomerOrderFood.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerOrderFood.Designer.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerOrderFood.Designer.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerOrderFood.Designer.cs",
+              "RelativeToolTip": "UI\\CustomerOrderFood.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T22:00:11.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerOrderFood.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerOrderFood.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerOrderFood.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerOrderFood.cs",
+              "RelativeToolTip": "UI\\CustomerOrderFood.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T22:00:00.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerOrderFood.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerOrderFood.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerOrderFood.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerOrderFood.cs [Design]",
+              "RelativeToolTip": "UI\\CustomerOrderFood.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T21:59:38.062Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "CustomerDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs",
               "RelativeDocumentMoniker": "UI\\CustomerDashboard.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs [Design]",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs [Design]",
               "RelativeToolTip": "UI\\CustomerDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-29T19:11:48.781Z",
@@ -168,23 +182,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CustomerNavBar.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs",
-              "RelativeDocumentMoniker": "UI\\CustomerNavBar.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs [Design]",
-              "RelativeToolTip": "UI\\CustomerNavBar.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "CustomerDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerDashboard.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerDashboard.cs",
+              "RelativeToolTip": "UI\\CustomerDashboard.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAiwBIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T19:09:34.13Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-03-29T19:12:01.599Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CustomerHeader.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs",
+              "Title": "CustomerHeader.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs",
               "RelativeDocumentMoniker": "UI\\CustomerHeader.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs [Design]",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs",
+              "RelativeToolTip": "UI\\CustomerHeader.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAADgvxMAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T19:12:51.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerHeader.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerHeader.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerHeader.cs [Design]",
               "RelativeToolTip": "UI\\CustomerHeader.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-29T18:58:55.616Z",
@@ -192,24 +220,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
+              "Title": "CustomerNavBar.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerNavBar.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs",
+              "RelativeToolTip": "UI\\CustomerNavBar.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAIAxwC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T19:12:31.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CustomerNavBar.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs",
+              "RelativeDocumentMoniker": "UI\\CustomerNavBar.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\CustomerNavBar.cs [Design]",
+              "RelativeToolTip": "UI\\CustomerNavBar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T19:09:34.13Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "SignIn.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.Designer.cs",
               "RelativeDocumentMoniker": "UI\\SignIn.Designer.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.Designer.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.Designer.cs",
               "RelativeToolTip": "UI\\SignIn.Designer.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAawO0AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-29T16:38:51.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "SignIn.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs",
               "RelativeDocumentMoniker": "UI\\SignIn.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs [Design]",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs [Design]",
               "RelativeToolTip": "UI\\SignIn.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-29T16:37:42.476Z",
@@ -217,61 +270,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GradientPanel.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\GradientPanel.cs",
-              "RelativeDocumentMoniker": "UI\\GradientPanel.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\GradientPanel.cs [Design]",
-              "RelativeToolTip": "UI\\GradientPanel.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T15:53:27.247Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GradientPanel.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\GradientPanel.cs",
-              "RelativeDocumentMoniker": "UI\\GradientPanel.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\GradientPanel.cs",
-              "RelativeToolTip": "UI\\GradientPanel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T15:52:25.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Homepage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs",
-              "RelativeDocumentMoniker": "UI\\Homepage.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs [Design]",
-              "RelativeToolTip": "UI\\Homepage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T04:11:50.416Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Homepage.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs",
-              "RelativeDocumentMoniker": "UI\\Homepage.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs",
-              "RelativeToolTip": "UI\\Homepage.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAkwDAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T03:48:04.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "SignIn.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs",
               "RelativeDocumentMoniker": "UI\\SignIn.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignIn.cs",
               "RelativeToolTip": "UI\\SignIn.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAwFsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -280,111 +283,61 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "SignUp.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs",
               "RelativeDocumentMoniker": "UI\\SignUp.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs [Design]",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs [Design]",
               "RelativeToolTip": "UI\\SignUp.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T03:48:04.971Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SignUp.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs",
-              "RelativeDocumentMoniker": "UI\\SignUp.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs",
-              "RelativeToolTip": "UI\\SignUp.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAArwIkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T07:09:55.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T03:52:00.465Z"
+              "WhenOpened": "2024-03-29T03:48:04.971Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "UtilityFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\UtilityFunctions.cs",
-              "RelativeDocumentMoniker": "UI\\UtilityFunctions.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\UtilityFunctions.cs",
-              "RelativeToolTip": "UI\\UtilityFunctions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Title": "SignUp.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs",
+              "RelativeDocumentMoniker": "UI\\SignUp.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\SignUp.cs",
+              "RelativeToolTip": "UI\\SignUp.cs",
+              "ViewState": "AQIAAHsAAAAAAAAAAAArwIkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T09:52:35.324Z"
+              "WhenOpened": "2024-03-29T07:09:55.99Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 15,
+              "Title": "Homepage.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeDocumentMoniker": "UI\\Homepage.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeToolTip": "UI\\Homepage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:48:04.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Homepage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeDocumentMoniker": "UI\\Homepage.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.cs [Design]",
+              "RelativeToolTip": "UI\\Homepage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T04:11:50.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Homepage.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.Designer.cs",
               "RelativeDocumentMoniker": "UI\\Homepage.Designer.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.Designer.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\App\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\Business-App-Project-2nd-Semester\\BusinessApp\\UI\\Homepage.Designer.cs",
               "RelativeToolTip": "UI\\Homepage.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T04:13:51.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BusinessApp",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\BusinessApp.csproj",
-              "RelativeDocumentMoniker": "BusinessApp.csproj",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\BusinessApp.csproj",
-              "RelativeToolTip": "BusinessApp.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-29T04:20:39.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\Form2.cs",
-              "ToolTip": "A:\\University Related\\UET Lahore\\2nd Semester\\Object Oriented Programming\\Business App\\SignInSignUp\\Form2.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAhwE4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T04:18:58.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UserDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\DL\\UserDL.cs",
-              "RelativeDocumentMoniker": "DL\\UserDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\DL\\UserDL.cs",
-              "RelativeToolTip": "DL\\UserDL.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAwCYAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T04:53:14.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\BL\\User.cs",
-              "RelativeDocumentMoniker": "BL\\User.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Business App\\Business-App-Project-2nd-Semester\\BusinessApp\\BL\\User.cs",
-              "RelativeToolTip": "BL\\User.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAAwDAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T04:30:13.438Z"
+              "WhenOpened": "2024-03-27T04:13:51.635Z"
             }
           ]
         }

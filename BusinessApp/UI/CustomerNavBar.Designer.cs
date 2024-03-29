@@ -80,6 +80,7 @@
             this.BookTableButton.TabIndex = 1;
             this.BookTableButton.Text = "   Book Table";
             this.BookTableButton.UseVisualStyleBackColor = false;
+            this.BookTableButton.Click += new System.EventHandler(this.BookTableButton_Click);
             // 
             // feedbackButton
             // 
@@ -126,6 +127,7 @@
             this.OrderFoodButton.TabIndex = 1;
             this.OrderFoodButton.Text = "Order Food";
             this.OrderFoodButton.UseVisualStyleBackColor = false;
+            this.OrderFoodButton.Click += new System.EventHandler(this.OrderFoodButton_Click);
             // 
             // button1
             // 

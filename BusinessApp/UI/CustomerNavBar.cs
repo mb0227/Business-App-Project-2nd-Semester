@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SignInSignUp.UI;
 
 namespace SignInSignUp
 {
@@ -24,10 +25,23 @@ namespace SignInSignUp
 
         private void button4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dashboardButton_Click(object sender, EventArgs e)
+        {
+            CustomerDashboard customerDashboard = new CustomerDashboard();
+            customerDashboard.Show();
+            this.Hide();
+        }
+
+        private void OrderFoodButton_Click(object sender, EventArgs e)
+        {
+            CustomerOrderFood customerOrderFood = new CustomerOrderFood();
+            customerOrderFood.Show();
+            this.Hide();
+        }
+
+        private void BookTableButton_Click(object sender, EventArgs e)
         {
 
         }

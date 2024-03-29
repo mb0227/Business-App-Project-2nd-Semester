@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SignInSignUp.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SignInSignUp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Homepage());
+            Application.Run(new CustomerBookTable());
         }
     }
 }
