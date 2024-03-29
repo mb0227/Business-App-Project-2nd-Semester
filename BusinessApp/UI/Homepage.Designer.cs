@@ -30,12 +30,12 @@
         {
             this.signIn = new System.Windows.Forms.Button();
             this.signUp = new System.Windows.Forms.Button();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // signIn
@@ -68,16 +68,6 @@
             this.signUp.Text = "Sign Up";
             this.signUp.UseVisualStyleBackColor = false;
             this.signUp.Click += new System.EventHandler(this.signUp_Click);
-            // 
-            // logo
-            // 
-            this.logo.Image = global::SignInSignUp.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(17, 12);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(46, 50);
-            this.logo.TabIndex = 1;
-            this.logo.TabStop = false;
-            this.logo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -116,6 +106,16 @@
             this.label1.Text = "Student Service Center";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // logo
+            // 
+            this.logo.Image = global::SignInSignUp.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(17, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(46, 50);
+            this.logo.TabIndex = 1;
+            this.logo.TabStop = false;
+            this.logo.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -129,11 +129,10 @@
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homepage";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }

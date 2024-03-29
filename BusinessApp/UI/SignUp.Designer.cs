@@ -60,8 +60,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.gradientPanel1 = new SignInSignUp.GradientPanel();
+            this.gradientPanel2 = new SignInSignUp.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -76,8 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -98,7 +96,7 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButton2.Location = new System.Drawing.Point(718, 389);
+            this.radioButton2.Location = new System.Drawing.Point(411, 305);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(102, 29);
             this.radioButton2.TabIndex = 2;
@@ -112,7 +110,7 @@
             this.signupbutton.FlatAppearance.BorderSize = 0;
             this.signupbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupbutton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupbutton.Location = new System.Drawing.Point(335, 555);
+            this.signupbutton.Location = new System.Drawing.Point(408, 552);
             this.signupbutton.Name = "signupbutton";
             this.signupbutton.Size = new System.Drawing.Size(138, 54);
             this.signupbutton.TabIndex = 8;
@@ -127,7 +125,7 @@
             this.username.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.username.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.username.Location = new System.Drawing.Point(402, 366);
+            this.username.Location = new System.Drawing.Point(97, 282);
             this.username.Multiline = true;
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(205, 36);
@@ -139,7 +137,7 @@
             this.Gender.AutoSize = true;
             this.Gender.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gender.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Gender.Location = new System.Drawing.Point(677, 324);
+            this.Gender.Location = new System.Drawing.Point(375, 240);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(82, 27);
             this.Gender.TabIndex = 25;
@@ -151,7 +149,7 @@
             this.Contact.AutoSize = true;
             this.Contact.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contact.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Contact.Location = new System.Drawing.Point(397, 525);
+            this.Contact.Location = new System.Drawing.Point(92, 441);
             this.Contact.Name = "Contact";
             this.Contact.Size = new System.Drawing.Size(107, 27);
             this.Contact.TabIndex = 26;
@@ -163,7 +161,7 @@
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Email.Location = new System.Drawing.Point(397, 432);
+            this.Email.Location = new System.Drawing.Point(92, 350);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(63, 27);
             this.Email.TabIndex = 27;
@@ -175,7 +173,7 @@
             this.labell.AutoSize = true;
             this.labell.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labell.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labell.Location = new System.Drawing.Point(677, 434);
+            this.labell.Location = new System.Drawing.Point(375, 350);
             this.labell.Name = "labell";
             this.labell.Size = new System.Drawing.Size(103, 27);
             this.labell.TabIndex = 18;
@@ -188,7 +186,7 @@
             this.Home.FlatAppearance.BorderSize = 0;
             this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Home.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home.Location = new System.Drawing.Point(120, 552);
+            this.Home.Location = new System.Drawing.Point(169, 552);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(140, 54);
             this.Home.TabIndex = 7;
@@ -202,7 +200,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(677, 526);
+            this.label2.Location = new System.Drawing.Point(370, 443);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(219, 27);
             this.label2.TabIndex = 38;
@@ -215,7 +213,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(396, 326);
+            this.label1.Location = new System.Drawing.Point(92, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 27);
             this.label1.TabIndex = 39;
@@ -229,7 +227,7 @@
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(402, 462);
+            this.textBox1.Location = new System.Drawing.Point(97, 378);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(205, 36);
@@ -243,7 +241,7 @@
             this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(402, 556);
+            this.textBox2.Location = new System.Drawing.Point(97, 471);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(205, 36);
@@ -257,7 +255,7 @@
             this.password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.password.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.password.Location = new System.Drawing.Point(682, 463);
+            this.password.Location = new System.Drawing.Point(375, 379);
             this.password.Multiline = true;
             this.password.Name = "password";
             this.password.PasswordChar = '*';
@@ -272,7 +270,7 @@
             this.password2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.password2.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.password2.Location = new System.Drawing.Point(682, 557);
+            this.password2.Location = new System.Drawing.Point(375, 473);
             this.password2.Multiline = true;
             this.password2.Name = "password2";
             this.password2.Size = new System.Drawing.Size(214, 36);
@@ -282,7 +280,7 @@
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(357, 555);
+            this.pictureBox3.Location = new System.Drawing.Point(41, 471);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,7 +293,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButton1.Location = new System.Drawing.Point(718, 356);
+            this.radioButton1.Location = new System.Drawing.Point(410, 270);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(80, 29);
             this.radioButton1.TabIndex = 1;
@@ -307,7 +305,7 @@
             // 
             this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(359, 462);
+            this.pictureBox7.Location = new System.Drawing.Point(41, 378);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(36, 36);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -319,7 +317,7 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(586, 175);
+            this.pictureBox2.Location = new System.Drawing.Point(292, 88);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(106, 106);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -330,7 +328,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::SignInSignUp.Properties.Resources.user_solid;
-            this.pictureBox1.Location = new System.Drawing.Point(357, 367);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 282);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -341,7 +339,7 @@
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(682, 354);
+            this.pictureBox4.Location = new System.Drawing.Point(374, 270);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 28);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -352,7 +350,7 @@
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(682, 388);
+            this.pictureBox5.Location = new System.Drawing.Point(374, 304);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(24, 28);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -363,7 +361,7 @@
             // 
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(639, 463);
+            this.pictureBox6.Location = new System.Drawing.Point(333, 379);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(36, 36);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -374,7 +372,7 @@
             // 
             this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(898, 464);
+            this.pictureBox9.Location = new System.Drawing.Point(595, 378);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(36, 35);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -386,7 +384,7 @@
             // 
             this.pictureBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(900, 557);
+            this.pictureBox10.Location = new System.Drawing.Point(595, 473);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(36, 34);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -398,7 +396,8 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel2.Controls.Add(this.gradientPanel1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -421,37 +420,58 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pictureBox10);
             this.panel3.Controls.Add(this.Home);
+            this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.signupbutton);
-            this.panel3.Location = new System.Drawing.Point(347, 90);
+            this.panel3.Controls.Add(this.radioButton2);
+            this.panel3.Controls.Add(this.pictureBox5);
+            this.panel3.Controls.Add(this.radioButton1);
+            this.panel3.Controls.Add(this.pictureBox6);
+            this.panel3.Controls.Add(this.pictureBox4);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.password2);
+            this.panel3.Controls.Add(this.labell);
+            this.panel3.Controls.Add(this.username);
+            this.panel3.Controls.Add(this.password);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.pictureBox7);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.Email);
+            this.panel3.Controls.Add(this.Gender);
+            this.panel3.Controls.Add(this.Contact);
+            this.panel3.Location = new System.Drawing.Point(229, 84);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(746, 746);
+            this.panel3.Size = new System.Drawing.Size(680, 752);
             this.panel3.TabIndex = 54;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // pictureBox8
+            // gradientPanel1
             // 
-            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(351, 1046);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 13;
-            this.pictureBox8.TabStop = false;
+            this.gradientPanel1.Angle = 0F;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.Empty;
+            this.gradientPanel1.Location = new System.Drawing.Point(3, 84);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1090, 752);
+            this.gradientPanel1.TabIndex = 55;
+            this.gradientPanel1.TopColor = System.Drawing.Color.Empty;
             // 
-            // panel1
+            // gradientPanel2
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 836);
-            this.panel1.TabIndex = 14;
+            this.gradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gradientPanel2.Angle = 90F;
+            this.gradientPanel2.BottomColor = System.Drawing.Color.DarkBlue;
+            this.gradientPanel2.Location = new System.Drawing.Point(0, 84);
+            this.gradientPanel2.Name = "gradientPanel2";
+            this.gradientPanel2.Size = new System.Drawing.Size(1093, 781);
+            this.gradientPanel2.TabIndex = 55;
+            this.gradientPanel2.TopColor = System.Drawing.Color.MediumOrchid;
             // 
             // SignUp
             // 
@@ -459,31 +479,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1094, 833);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.password2);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.username);
-            this.Controls.Add(this.Gender);
-            this.Controls.Add(this.Contact);
-            this.Controls.Add(this.Email);
-            this.Controls.Add(this.labell);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.gradientPanel2);
             this.MinimumSize = new System.Drawing.Size(1070, 835);
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -504,10 +502,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -542,7 +538,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private GradientPanel gradientPanel1;
+        private GradientPanel gradientPanel2;
     }
 }

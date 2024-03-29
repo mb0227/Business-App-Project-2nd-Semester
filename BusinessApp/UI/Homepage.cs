@@ -36,15 +36,15 @@ namespace SignInSignUp
 
         private void signIn_Click(object sender, EventArgs e)
         {
-            SignIn f = new SignIn(GetCurrentScreenSize());
-            f.Show();
+            SignIn signIn = new SignIn(GetCurrentScreenSize());
+            signIn.Show();
             this.Hide();
         }
 
         private void signUp_Click(object sender, EventArgs e)
         {
-            SignUp f = new SignUp(GetCurrentScreenSize());
-            f.Show();
+            SignUp signUp = new SignUp(GetCurrentScreenSize());
+            signUp.Show();
             this.Hide();
         }
 

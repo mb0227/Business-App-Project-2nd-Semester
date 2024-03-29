@@ -22,32 +22,7 @@ namespace SignInSignUp
         {
             InitializeComponent();
             this.Size = size; 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(CheckValidations())
-            {
-                if(UserDL.IsUser(username.Text,password.Text))
-                {
-                    MessageBox.Show("User is valid.");
-                }
-                else
-                {
-                    MessageBox.Show("User is invalid.");
-                }
-            }
-        }
+        }        
 
         private bool CheckValidations()
         {
@@ -85,10 +60,6 @@ namespace SignInSignUp
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -102,14 +73,21 @@ namespace SignInSignUp
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private Size GetCurrentScreenSize()
         {
             return Screen.FromControl(this).WorkingArea.Size;
+        }
+
+        private void signInButton_Click(object sender, EventArgs e)
+        {
+            Customer customerPage = new Customer(GetCurrentScreenSize());
+            customerPage.Show();
+            this.Hide();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
