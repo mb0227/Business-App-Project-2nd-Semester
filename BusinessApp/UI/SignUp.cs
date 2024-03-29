@@ -13,6 +13,7 @@ namespace SignInSignUp
 {
     public partial class SignUp : Form
     {
+        private Size savedSize;
         public SignUp()
         {
             InitializeComponent();
@@ -136,10 +137,26 @@ namespace SignInSignUp
 
         }
 
-        private void Home_Click(object sender, EventArgs e)
+        private void gradientPanel2_Leave(object sender, EventArgs e)
         {
-            Homepage f = new Homepage(GetCurrentScreenSize());
-            f.Show();
+
+        }
+
+        private void SignUp_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignUp_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            savedSize = ((Form)sender).Size;
+        }
+
+        private void Home_Click_1(object sender, EventArgs e)
+        {
+            Homepage home = new Homepage(savedSize);
+            home.FormClosing += SignUp_FormClosing;
+            home.Show();
             this.Hide();
         }
     }

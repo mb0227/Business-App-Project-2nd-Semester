@@ -45,7 +45,7 @@
             this.signIn.FlatAppearance.BorderSize = 0;
             this.signIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signIn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signIn.Location = new System.Drawing.Point(485, 441);
+            this.signIn.Location = new System.Drawing.Point(487, 462);
             this.signIn.Name = "signIn";
             this.signIn.Size = new System.Drawing.Size(132, 60);
             this.signIn.TabIndex = 1;
@@ -61,7 +61,7 @@
             this.signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUp.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUp.ForeColor = System.Drawing.Color.Black;
-            this.signUp.Location = new System.Drawing.Point(485, 309);
+            this.signUp.Location = new System.Drawing.Point(487, 330);
             this.signUp.Name = "signUp";
             this.signUp.Size = new System.Drawing.Size(127, 60);
             this.signUp.TabIndex = 0;
@@ -90,7 +90,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1105, 100);
+            this.panel1.Size = new System.Drawing.Size(1109, 100);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -99,7 +99,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(348, 33);
+            this.label1.Location = new System.Drawing.Point(350, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(434, 47);
             this.label1.TabIndex = 3;
@@ -121,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1094, 833);
+            this.ClientSize = new System.Drawing.Size(1098, 874);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.signUp);
             this.Controls.Add(this.signIn);
@@ -129,6 +129,7 @@
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homepage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Homepage_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

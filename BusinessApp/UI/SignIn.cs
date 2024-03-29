@@ -13,6 +13,7 @@ namespace SignInSignUp
 {
     public partial class SignIn : Form
     {
+        private Size savedSize;
         public SignIn()
         {
             InitializeComponent();
@@ -50,14 +51,14 @@ namespace SignInSignUp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Homepage f = new Homepage(GetCurrentScreenSize());
-            f.Show();
+            Homepage home = new Homepage(savedSize);
+            home.FormClosing += SignIn_FormClosing;
+            home.Show();
             this.Hide();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
         }
 
 
@@ -80,7 +81,8 @@ namespace SignInSignUp
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            Customer customerPage = new Customer(GetCurrentScreenSize());
+            CustomerDashboard customerPage = new CustomerDashboard(savedSize);
+            customerPage.FormClosing += SignIn_FormClosing;
             customerPage.Show();
             this.Hide();
         }
@@ -88,6 +90,16 @@ namespace SignInSignUp
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void forgotPasswordButton_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            savedSize = ((Form)sender).Size;
         }
     }
 }

@@ -48,6 +48,18 @@
   <ItemGroup>
     <Compile Include="BL\User.cs" />
     <Compile Include="DL\UserDL.cs" />
+    <Compile Include="UI\CustomerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerDashboard.Designer.cs">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerNavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerNavBar.Designer.cs">
+      <DependentUpon>CustomerNavBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -69,17 +81,20 @@
     <Compile Include="UI\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CustomerPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\CustomerPage.Designer.cs">
-      <DependentUpon>CustomerPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\CustomerHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerHeader.Designer.cs">
+      <DependentUpon>CustomerHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UtilityFunctions.cs" />
-    <EmbeddedResource Include="UI\CustomerPage.resx">
-      <DependentUpon>CustomerPage.cs</DependentUpon>
+    <EmbeddedResource Include="UI\CustomerDashboard.resx">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerNavBar.resx">
+      <DependentUpon>CustomerNavBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
@@ -100,6 +115,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\CustomerHeader.resx">
+      <DependentUpon>CustomerHeader.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,9 +132,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\Polish_20240329_091653724.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="images\logo.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +139,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\folder-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-help-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-feedback-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reservation-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\notifications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\messages.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
