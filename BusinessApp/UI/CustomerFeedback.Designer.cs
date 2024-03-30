@@ -168,6 +168,7 @@
             this.Controls.Add(this.panel2);
             this.MinimumSize = new System.Drawing.Size(1070, 889);
             this.Name = "CustomerFeedback";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CustomerFeedback";
             this.Load += new System.EventHandler(this.CustomerFeedback_Load);
             this.panel1.ResumeLayout(false);

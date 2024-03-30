@@ -70,7 +70,6 @@ namespace SignInSignUp.UI
 
         private void username_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -73,3 +73,5 @@ C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.exe
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.pdb
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.CustomerFeedback.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Settings.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.AdminDashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Navbar.resources

@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="BL\User.cs" />
     <Compile Include="DL\UserDL.cs" />
+    <Compile Include="UI\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     <Compile Include="UI\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Navbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Navbar.Designer.cs">
+      <DependentUpon>Navbar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,9 @@
       <DependentUpon>CustomerHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UtilityFunctions.cs" />
+    <EmbeddedResource Include="UI\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerBookTable.resx">
       <DependentUpon>CustomerBookTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Navbar.resx">
+      <DependentUpon>Navbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -223,6 +241,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\sad1-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\gear-solid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
