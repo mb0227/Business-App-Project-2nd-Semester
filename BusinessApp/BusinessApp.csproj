@@ -54,6 +54,12 @@
     <Compile Include="UI\CustomerDashboard.Designer.cs">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CustomerFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerFeedback.Designer.cs">
+      <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CustomerNavBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     </Compile>
     <Compile Include="UI\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\SignIn.cs">
       <SubType>Form</SubType>
@@ -108,6 +120,9 @@
     <EmbeddedResource Include="UI\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerFeedback.resx">
+      <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerNavBar.resx">
       <DependentUpon>CustomerNavBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -175,6 +193,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\messages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\angry1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\angry1-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\best1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\best1-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\expressionless.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\expressionless-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\happy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\happy1-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\sad1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\sad1-modified.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -71,3 +71,5 @@ C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\BusinessApp.csproj.Gen
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\BusinessApp.csproj.CoreCompileInputs.cache
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.exe
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.pdb
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.CustomerFeedback.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Settings.resources

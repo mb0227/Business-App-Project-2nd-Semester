@@ -34,7 +34,7 @@
             this.feedbackButton = new System.Windows.Forms.Button();
             this.HelpButton = new System.Windows.Forms.Button();
             this.OrderFoodButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.settingsButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -113,6 +113,7 @@
             this.HelpButton.Text = "    Help";
             this.HelpButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.HelpButton.UseVisualStyleBackColor = false;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // OrderFoodButton
             // 
@@ -130,20 +131,21 @@
             this.OrderFoodButton.UseVisualStyleBackColor = false;
             this.OrderFoodButton.Click += new System.EventHandler(this.OrderFoodButton_Click);
             // 
-            // button1
+            // settingsButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.Location = new System.Drawing.Point(52, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 60);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Settings";
-            this.button1.UseVisualStyleBackColor = false;
+            this.settingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.settingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
+            this.settingsButton.FlatAppearance.BorderSize = 0;
+            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsButton.ForeColor = System.Drawing.Color.MintCream;
+            this.settingsButton.Location = new System.Drawing.Point(52, 348);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(185, 60);
+            this.settingsButton.TabIndex = 4;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = false;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // pictureBox1
             // 
@@ -247,7 +249,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.OrderFoodButton);
             this.Controls.Add(this.feedbackButton);
@@ -275,7 +277,7 @@
         private System.Windows.Forms.Button feedbackButton;
         private System.Windows.Forms.Button HelpButton;
         private System.Windows.Forms.Button OrderFoodButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

@@ -45,7 +45,17 @@ namespace SignInSignUp
 
         private void feedbackButton_Click(object sender, EventArgs e)
         {
+            OnNavigationRequested("feedback");
+        }
 
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("settings");
+        }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("help");
         }
     }
 }

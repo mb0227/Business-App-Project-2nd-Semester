@@ -17,7 +17,7 @@ namespace SignInSignUp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerDashboard());
+            Application.Run(new Settings());
         }
     }
 }
