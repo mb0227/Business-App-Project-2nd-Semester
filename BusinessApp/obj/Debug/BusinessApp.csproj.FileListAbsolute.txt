@@ -75,3 +75,6 @@ C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Custom
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Settings.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.AdminDashboard.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Navbar.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageEmployees.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageProducts.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageCustomers.resources

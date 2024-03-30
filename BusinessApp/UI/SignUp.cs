@@ -25,25 +25,9 @@ namespace SignInSignUp
             this.Location = location;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //if(CheckValidations())
-            //{
-            //    User newUser = new User(username.Text, textBox3.Text, textBox2.Text);
-            //    if (UserDL.AddUser(newUser))
-            //    {
-            //        MessageBox.Show("User added successfully.");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("User not added.");
-            //    }
-            //}
-        }
-
         private bool CheckValidations()
         {
-            if (string.IsNullOrWhiteSpace(username.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(username.Text.Trim() /*&&*/))
             {
                 errorProvider1.SetError(username, "Username cannot be empty.");
                 return false;
@@ -53,31 +37,64 @@ namespace SignInSignUp
                 errorProvider1.SetError(username, "");
             }
 
-            //if (string.IsNullOrWhiteSpace(textBox3.Text.Trim()))
-            //{
-            //    errorProvider2.SetError(textBox3, "Password cannot be empty.");
-            //    return false;
-            //}
-            //else
-            //{
-            //    errorProvider2.SetError(textBox3, "");
-            //}
-
-            string user1 = "admin";
-            string user2 = "customer";
-            if ((!Regex.IsMatch(textBox2.Text, user1)) && (!Regex.IsMatch(textBox2.Text, user2)))
+            string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            if(!Regex.IsMatch(email.Text, pattern))
             {
-                errorProvider3.SetError(textBox2, "Role not correct.");
+                errorProvider2.SetError(email, "Please enter a valid email address.");
                 return false;
             }
             else
             {
-                errorProvider3.SetError(textBox2, "");
+                errorProvider2.SetError(email, ""); ;
+            }
+
+            string contactPattern = @"^0\d{10}$";
+            if (!Regex.IsMatch(phoneNo.Text, contactPattern))
+            {
+                errorProvider3.SetError(phoneNo, "Please enter a valid phone number.");
+                return false;
+            }
+            else
+            {
+                errorProvider3.SetError(phoneNo, ""); ;
+            }
+
+            if (!IsRadioButtonSelected(groupBox1))
+            {
+                MessageBox.Show("Please select a radio button.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
+            if (string.IsNullOrWhiteSpace(password.Text.Trim()))
+            {
+                errorProvider4.SetError(password, "Password cannot be empty.");
+                return false;
+            }
+            else
+            {
+                errorProvider4.SetError(password, "");
+            }
+
+            if (!password.Text.Trim().Equals(password2.Text.Trim()))
+            {
+                errorProvider4.SetError(password, "Password do not match.");
+                return false;
             }
 
             return true;
         }
 
+        private bool IsRadioButtonSelected(GroupBox groupBox)
+        {
+            foreach (RadioButton radioButton in groupBox.Controls)
+            {
+                if (radioButton.Checked)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
@@ -103,16 +120,34 @@ namespace SignInSignUp
             }
         }
 
-        private void SignUp_Leave(object sender, EventArgs e)
-        {
-
-        }
-
         private void Home_Click_1(object sender, EventArgs e)
         {
             Homepage home = new Homepage(this.Size, this.Location);
             home.Show();
             this.Hide();
+        }
+
+        private void signupbutton_Click(object sender, EventArgs e)
+        {
+            if(CheckValidations())
+            {
+                Customer customer = new Customer(username.Text, password.Text, "Customer", GetSelectedRadioButton().Text.ToString(), email.Text, phoneNo.Text);
+                CustomerDL.AddCustomer(customer);   
+                CustomerDL.AddCustomerToDatabase(customer);
+                MessageBox.Show("User added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private RadioButton GetSelectedRadioButton()
+        {
+            foreach (Control control in groupBox1.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    return radioButton;
+                }
+            }
+            return null;
         }
     }
 }

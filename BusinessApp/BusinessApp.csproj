@@ -46,7 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\Customer.cs" />
+    <Compile Include="BL\Order.cs" />
+    <Compile Include="BL\Product.cs" />
     <Compile Include="BL\User.cs" />
+    <Compile Include="DL\CustomerDL.cs" />
+    <Compile Include="DL\OrderDL.cs" />
+    <Compile Include="DL\ProductDL.cs" />
     <Compile Include="DL\UserDL.cs" />
     <Compile Include="UI\AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -92,6 +98,24 @@
     </Compile>
     <Compile Include="UI\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageCustomers.Designer.cs">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageEmployees.Designer.cs">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageProducts.Designer.cs">
+      <DependentUpon>ManageProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Navbar.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +170,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageCustomers.resx">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageEmployees.resx">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageProducts.resx">
+      <DependentUpon>ManageProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Navbar.resx">
       <DependentUpon>Navbar.cs</DependentUpon>

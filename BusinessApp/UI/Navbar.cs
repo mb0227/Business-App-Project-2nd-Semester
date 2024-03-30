@@ -15,13 +15,13 @@ namespace SignInSignUp.UI
         public Navbar()
         {
             InitializeComponent();
-            button1.Text = "Dashboard              ";
-            button2.Text = " Manage Employees";
-            button3.Text = "  Manage Customers";
-            button4.Text = "Send Notification   ";
-            button5.Text = "Add Admin             ";
-            button6.Enabled = false;
-            button7.Text = "Settings                ";
+            button1.Text = "Dashboard                ";
+            button2.Text = "Manage Employees  ";
+            button3.Text = "Manage Customers  ";
+            button4.Text = "Send Notification     ";
+            button5.Text = "Add Admin               ";
+            button6.Text = "Manage Products   ";
+            button7.Text = "Settings                    ";
             pictureBox1.Image = Properties.Resources.icons8_home_50;
             pictureBox2.Image = Properties.Resources.employee;
             pictureBox3.Image = Properties.Resources.customer;

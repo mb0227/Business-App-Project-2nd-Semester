@@ -8,19 +8,22 @@ namespace SignInSignUp
 {
     internal class User
     {
-        public User(string n, string p,string r )
+        public User(string username, string password,string role, string gender)
         {
-            Name = n;
-            Password = p;
-            Role = r;
+            Username = username;
+            Password = password;
+            Role = role;
+            Gender = gender;
         }
-        private string Name;
-        private string Password;
-        private string Role;
+
+        protected string Username;
+        protected string Password;
+        protected string Role;
+        protected string Gender;
 
         public string GetName()
         {
-            return Name;
+            return Username;
         }
 
         public string GetPassword()
@@ -33,9 +36,14 @@ namespace SignInSignUp
             return Role;
         }
 
+        public string GetGender()
+        {
+            return Gender;
+        }
+
         public void SetName(string n)
         {
-            Name = n;
+            Username = n;
         }
 
         public void SetPassword(string p)
@@ -46,6 +54,11 @@ namespace SignInSignUp
         public void SetRole(string r)
         {
             Role = r;
+        }
+
+        public void SetGender(string g)
+        {
+            Gender = g;
         }
     }
 }
