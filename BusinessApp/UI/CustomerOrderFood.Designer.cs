@@ -221,7 +221,7 @@
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(1070, 889);
             this.Name = "CustomerOrderFood";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CustomerOrderFood";
             this.Load += new System.EventHandler(this.CustomerOrderFood_Load);
             this.panel2.ResumeLayout(false);

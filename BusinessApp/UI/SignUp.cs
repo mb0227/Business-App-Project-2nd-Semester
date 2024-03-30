@@ -13,16 +13,16 @@ namespace SignInSignUp
 {
     public partial class SignUp : Form
     {
-        private Size savedSize;
         public SignUp()
         {
             InitializeComponent();
         }
 
-        public SignUp(Size size)
+        public SignUp(Size size,Point location)
         {
             InitializeComponent();
             this.Size = size;
+            this.Location = location;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,35 +78,6 @@ namespace SignInSignUp
             return true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private Size GetCurrentScreenSize()
-        {
-            return Screen.FromControl(this).WorkingArea.Size;
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Email_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
@@ -132,30 +103,14 @@ namespace SignInSignUp
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gradientPanel2_Leave(object sender, EventArgs e)
-        {
-
-        }
-
         private void SignUp_Leave(object sender, EventArgs e)
         {
 
         }
 
-        private void SignUp_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            savedSize = ((Form)sender).Size;
-        }
-
         private void Home_Click_1(object sender, EventArgs e)
         {
-            Homepage home = new Homepage(savedSize);
-            home.FormClosing += SignUp_FormClosing;
+            Homepage home = new Homepage(this.Size, this.Location);
             home.Show();
             this.Hide();
         }

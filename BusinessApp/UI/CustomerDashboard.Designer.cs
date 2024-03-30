@@ -93,9 +93,8 @@
             this.Controls.Add(this.panel2);
             this.MinimumSize = new System.Drawing.Size(1070, 889);
             this.Name = "CustomerDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CustomerDashboard";
-            this.Load += new System.EventHandler(this.CustomerDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -114,7 +114,6 @@
             this.logo.Size = new System.Drawing.Size(46, 50);
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
-            this.logo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Homepage
             // 
@@ -127,10 +126,8 @@
             this.Controls.Add(this.signIn);
             this.MinimumSize = new System.Drawing.Size(1070, 889);
             this.Name = "Homepage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Homepage";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Homepage_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();

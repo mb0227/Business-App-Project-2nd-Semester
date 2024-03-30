@@ -37,7 +37,7 @@
             this.gradientPanel1 = new SignInSignUp.GradientPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.gradientPanel2 = new SignInSignUp.GradientPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.Home = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -61,13 +61,13 @@
             this.Email = new System.Windows.Forms.Label();
             this.Gender = new System.Windows.Forms.Label();
             this.Contact = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.gradientPanel2 = new SignInSignUp.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.gradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -76,7 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -157,22 +157,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(644, 594);
             this.panel3.TabIndex = 54;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // gradientPanel2
+            // pictureBox2
             // 
-            this.gradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanel2.Angle = 90F;
-            this.gradientPanel2.BottomColor = System.Drawing.Color.DarkBlue;
-            this.gradientPanel2.Controls.Add(this.panel3);
-            this.gradientPanel2.Location = new System.Drawing.Point(0, 84);
-            this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.Size = new System.Drawing.Size(1093, 781);
-            this.gradientPanel2.TabIndex = 55;
-            this.gradientPanel2.TopColor = System.Drawing.Color.MediumOrchid;
-            this.gradientPanel2.Leave += new System.EventHandler(this.gradientPanel2_Leave);
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(280, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(106, 106);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 77;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox10
             // 
@@ -462,17 +458,19 @@
             this.Contact.TabIndex = 64;
             this.Contact.Text = "Phone No";
             // 
-            // pictureBox2
+            // gradientPanel2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(280, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 106);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 77;
-            this.pictureBox2.TabStop = false;
+            this.gradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gradientPanel2.Angle = 90F;
+            this.gradientPanel2.BottomColor = System.Drawing.Color.DarkBlue;
+            this.gradientPanel2.Controls.Add(this.panel3);
+            this.gradientPanel2.Location = new System.Drawing.Point(0, 84);
+            this.gradientPanel2.Name = "gradientPanel2";
+            this.gradientPanel2.Size = new System.Drawing.Size(1093, 781);
+            this.gradientPanel2.TabIndex = 55;
+            this.gradientPanel2.TopColor = System.Drawing.Color.MediumOrchid;
             // 
             // SignUp
             // 
@@ -484,10 +482,8 @@
             this.Controls.Add(this.gradientPanel2);
             this.MinimumSize = new System.Drawing.Size(1070, 835);
             this.Name = "SignUp";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sign Up Page";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignUp_FormClosing);
-            this.Load += new System.EventHandler(this.Form3_Load);
             this.Leave += new System.EventHandler(this.SignUp_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
@@ -496,7 +492,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.gradientPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -505,7 +501,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.gradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

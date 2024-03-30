@@ -96,6 +96,7 @@
             this.feedbackButton.TabIndex = 2;
             this.feedbackButton.Text = "Feedback";
             this.feedbackButton.UseVisualStyleBackColor = false;
+            this.feedbackButton.Click += new System.EventHandler(this.feedbackButton_Click);
             // 
             // HelpButton
             // 

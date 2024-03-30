@@ -18,15 +18,21 @@ namespace SignInSignUp.UI
         public CustomerOrderFood()
         {
             InitializeComponent();
-            InitializeHeader();
-            InitializeNavBar();
+            InitializeUserControls();
+        }
+
+        public CustomerOrderFood(CustomerHeader header, CustomerNavBar navBar)
+        {
+            InitializeComponent();
+            this.cHeader = header;
+            this.cNavBar = navBar;
         }
 
         private void CustomerOrderFood_Load(object sender, EventArgs e)
         {
         }
 
-        private void InitializeHeader()
+        private void InitializeUserControls()
         {
             cHeader = new CustomerHeader();
             Controls.Add(cHeader);
@@ -34,23 +40,42 @@ namespace SignInSignUp.UI
             cHeader.Top = 0;
             cHeader.Left = 0;
             cHeader.Width = this.Width;
-        }
 
-        private void InitializeNavBar()
-        {
             cNavBar = new CustomerNavBar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 
-            // Set location and size of the navigation bar
             cNavBar.Left = 0;
-            cNavBar.Top = cHeader.Bottom; // Assuming headerPanel is the name of your header panel
-            cNavBar.Width = 200; // Assuming a fixed width for the navigation bar
+            cNavBar.Top = cHeader.Bottom; 
+            cNavBar.Width = 200;
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
+
+            cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+
+        private void CustomerNavBar_NavigationRequested(object sender, string formName)
         {
+            switch (formName)
+            {
+                case "dashboard":
+                    OpenForm(new CustomerDashboard());
+                    break;
+                case "orderFood":
+                    OpenForm(new CustomerOrderFood());
+                    break;
+                case "bookTable":
+                    OpenForm(new CustomerBookTable());
+                    break;
+            }
+        }
+
+        private void OpenForm(Form form)
+        {
+            form.Size = this.Size;
+            form.Location = this.Location;
+            form.Show();
+            this.Hide();
         }
     }
 }

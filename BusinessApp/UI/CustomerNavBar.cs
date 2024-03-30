@@ -13,6 +13,7 @@ namespace SignInSignUp
 {
     public partial class CustomerNavBar : UserControl
     {
+        public event EventHandler<string> NavigationRequested;
         public CustomerNavBar()
         {
             InitializeComponent();
@@ -20,28 +21,29 @@ namespace SignInSignUp
 
         private void CustomerNavBar_Load(object sender, EventArgs e)
         {
-
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void OnNavigationRequested(string formName)
         {
+            NavigationRequested?.Invoke(this, formName);
         }
 
         private void dashboardButton_Click(object sender, EventArgs e)
         {
-            CustomerDashboard customerDashboard = new CustomerDashboard();
-            customerDashboard.Show();
-            this.Hide();
+            OnNavigationRequested("dashboard"); 
         }
 
         private void OrderFoodButton_Click(object sender, EventArgs e)
         {
-            CustomerOrderFood customerOrderFood = new CustomerOrderFood();
-            customerOrderFood.Show();
-            this.Hide();
+            OnNavigationRequested("orderFood"); 
         }
 
         private void BookTableButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("bookTable"); 
+        }
+
+        private void feedbackButton_Click(object sender, EventArgs e)
         {
 
         }

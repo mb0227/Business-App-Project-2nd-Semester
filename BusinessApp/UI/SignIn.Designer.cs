@@ -180,7 +180,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1097, 83);
             this.panel2.TabIndex = 12;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox3
             // 
@@ -279,10 +278,8 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.MinimumSize = new System.Drawing.Size(1070, 889);
             this.Name = "SignIn";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sign In Page";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignIn_FormClosing);
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
