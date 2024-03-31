@@ -27,7 +27,7 @@ namespace SignInSignUp
 
         private bool CheckValidations()
         {
-            if (string.IsNullOrWhiteSpace(username.Text.Trim() /*&&*/))
+            if (string.IsNullOrWhiteSpace(username.Text.Trim()) && !CustomerDL.UserAlreadyExists(username.Text))
             {
                 errorProvider1.SetError(username, "Username cannot be empty.");
                 return false;
@@ -96,29 +96,6 @@ namespace SignInSignUp
             return false;
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            if (!password.UseSystemPasswordChar)
-            {
-                password.UseSystemPasswordChar = true;
-            }
-            else if (password.UseSystemPasswordChar)
-            {
-                password.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-            if (!password2.UseSystemPasswordChar)
-            {
-                password2.UseSystemPasswordChar = true;
-            }
-            else if (password2.UseSystemPasswordChar)
-            {
-                password2.UseSystemPasswordChar = false;
-            }
-        }
 
         private void Home_Click_1(object sender, EventArgs e)
         {
@@ -136,6 +113,10 @@ namespace SignInSignUp
                 CustomerDL.AddCustomerToDatabase(customer);
                 MessageBox.Show("User added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+            }
         }
 
         private RadioButton GetSelectedRadioButton()
@@ -148,6 +129,35 @@ namespace SignInSignUp
                 }
             }
             return null;
+        }
+
+        private void pictureBox9_Click_1(object sender, EventArgs e)
+        {
+            if (!password.UseSystemPasswordChar)
+            {
+                password.UseSystemPasswordChar = true;
+            }
+            else if (password.UseSystemPasswordChar)
+            {
+                password.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void pictureBox10_Click_1(object sender, EventArgs e)
+        {
+            if (!password2.UseSystemPasswordChar)
+            {
+                password2.UseSystemPasswordChar = true;
+            }
+            else if (password2.UseSystemPasswordChar)
+            {
+                password2.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

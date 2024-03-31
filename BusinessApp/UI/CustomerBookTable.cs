@@ -14,18 +14,28 @@ namespace SignInSignUp.UI
     {
         private CustomerHeader cHeader;
         private CustomerNavBar cNavBar;
+        private Customer customer;
         public CustomerBookTable()
         {
             InitializeComponent();
-            InitializeHeader();
-            InitializeNavBar();
+            InitializeUserControls();
+        }
+
+        public CustomerBookTable(Size size, Point location, Customer c)
+        {
+            InitializeComponent();
+            InitializeUserControls();
+            this.Size = size;
+            this.Location = location;
+            customer = c;
+            MessageBox.Show(customer.GetName());
         }
 
         private void CustomerBookTable_Load(object sender, EventArgs e)
         {
         }
 
-        private void InitializeHeader()
+        private void InitializeUserControls()
         {
             cHeader = new CustomerHeader();
             Controls.Add(cHeader);
@@ -33,10 +43,7 @@ namespace SignInSignUp.UI
             cHeader.Top = 0;
             cHeader.Left = 0;
             cHeader.Width = this.Width;
-        }
 
-        private void InitializeNavBar()
-        {
             cNavBar = new CustomerNavBar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
@@ -45,6 +52,43 @@ namespace SignInSignUp.UI
             cNavBar.Top = cHeader.Bottom; 
             cNavBar.Width = 200; 
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
+
+            cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
+        }
+
+        private void CustomerNavBar_NavigationRequested(object sender, string formName)
+        {
+            switch (formName)
+            {
+                case "dashboard":
+                    OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
+                    break;
+                case "orderFood":
+                    OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
+                    break;
+                case "bookTable":
+                    OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
+                    break;
+                case "feedback":
+                    OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
+                    break;
+                case "settings":
+                    OpenForm(new Settings(this.Size, this.Location, customer));
+                    break;
+                //case "help":
+                //    OpenForm(new Help(this.Size, this.Location, customer));
+                //    break;
+                default:
+                    break;
+            }
+        }
+
+        private void OpenForm(Form form)
+        {
+            form.Size = this.Size;
+            form.Location = this.Location;
+            form.Show();
+            this.Hide();
         }
     }
 }

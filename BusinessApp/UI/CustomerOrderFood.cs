@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,11 +15,24 @@ namespace SignInSignUp.UI
     {
         private CustomerHeader cHeader;
         private CustomerNavBar cNavBar;
-
+        private Customer customer;
         public CustomerOrderFood()
         {
             InitializeComponent();
             InitializeUserControls();
+            ProductDL.ReadProductsFromDatabase();
+            FillComboBox();
+        }
+
+        public CustomerOrderFood(Size size, Point location, Customer c)
+        {
+            customer = c;
+            InitializeComponent();
+            InitializeUserControls();
+            FillComboBox();
+            this.Size = size;
+            this.Location = location;
+            MessageBox.Show(customer.GetName());
         }
 
         public CustomerOrderFood(CustomerHeader header, CustomerNavBar navBar)
@@ -59,13 +73,24 @@ namespace SignInSignUp.UI
             switch (formName)
             {
                 case "dashboard":
-                    OpenForm(new CustomerDashboard());
+                    OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
                     break;
                 case "orderFood":
-                    OpenForm(new CustomerOrderFood());
+                    OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
                     break;
                 case "bookTable":
-                    OpenForm(new CustomerBookTable());
+                    OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
+                    break;
+                case "feedback":
+                    OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
+                    break;
+                case "settings":
+                    OpenForm(new Settings(this.Size, this.Location, customer));
+                    break;
+                //case "help":
+                //    OpenForm(new Help(this.Size, this.Location, customer));
+                //    break;
+                default:
                     break;
             }
         }
@@ -76,6 +101,45 @@ namespace SignInSignUp.UI
             form.Location = this.Location;
             form.Show();
             this.Hide();
+        }
+
+        private void FillComboBox()
+        {
+            menuComboBox.Items.Clear(); 
+            foreach (Product product in ProductDL.GetProducts())
+            {
+                menuComboBox.Items.Add(product.GetProductName()); 
+            }
+        }
+
+        private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addToCart_Click(object sender, EventArgs e)
+        {
+            if(CheckValidations())
+            {
+
+            }
+        }
+
+        private bool CheckValidations()
+        {
+            int value;
+            int totalItemStock = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
+            if (!int.TryParse(textBox1.Text, out value) || value <= 0 || value >= totalItemStock)
+            {
+                errorProvider1.SetError(textBox1, $"Please enter a positive integer greater than 0 and less than {totalItemStock}");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "");
+            }
+
+            return true;
         }
     }
 }

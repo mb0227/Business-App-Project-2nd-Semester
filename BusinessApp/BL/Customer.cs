@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SignInSignUp
 {
-    internal class Customer : User
+    public class Customer : User
     {
         private string Email;
         private string PhoneNumber;

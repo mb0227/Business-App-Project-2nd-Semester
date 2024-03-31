@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SignInSignUp
 {
-    internal class Product
+    public class Product
     {
         public Product(string productName, string productDescription, string productCategory, int price, int stock)
         {

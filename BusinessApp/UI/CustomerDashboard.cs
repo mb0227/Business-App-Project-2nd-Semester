@@ -15,6 +15,7 @@ namespace SignInSignUp
     {
         private CustomerHeader cHeader;
         private CustomerNavBar cNavBar;
+        private Customer customer;
 
         public CustomerDashboard()
         {
@@ -22,16 +23,14 @@ namespace SignInSignUp
             InitializeUserControls();
         }
 
-        public CustomerDashboard(Size size, Point location)
+        public CustomerDashboard(Size size, Point location, Customer c)
         {
+            customer = c;
             InitializeComponent();
             this.Size = size;
             this.Location = location;
             InitializeUserControls();
-        }
-
-        private void CustomerDashboard_Load(object sender, EventArgs e)
-        {
+            MessageBox.Show(customer.GetName());
         }
 
         private void InitializeUserControls()
@@ -61,14 +60,25 @@ namespace SignInSignUp
             switch (formName)
             {
                 case "dashboard":
-                    OpenForm(new CustomerDashboard());
+                    OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
                     break;
                 case "orderFood":
-                    OpenForm(new CustomerOrderFood());
+                    OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
                     break;
                 case "bookTable":
-                    OpenForm(new CustomerBookTable());
+                    OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
                     break; 
+                case "feedback":
+                    OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
+                    break;
+                case "settings":
+                    OpenForm(new Settings(this.Size, this.Location, customer));
+                    break;
+                //case "help":
+                //    OpenForm(new Help(this.Size, this.Location, customer));
+                //    break;
+                default:
+                     break;
             }
         }
 
@@ -78,6 +88,10 @@ namespace SignInSignUp
             form.Location = this.Location;
             form.Show();
             this.Hide();
+        }
+
+        private void CustomerDashboard_Load_1(object sender, EventArgs e)
+        {
         }
     }
 }

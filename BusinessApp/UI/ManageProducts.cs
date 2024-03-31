@@ -23,7 +23,6 @@ namespace SignInSignUp.UI
             InitializeUserControls();
             if(comboBox1.Items.Count>0)
                 comboBox1.SelectedIndex = 0;
-            ProductDL.ReadProductsFromDatabase();
             MakeColumns();
             name.TextChanged += Name_TextChanged;
             LoadData();

@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace SignInSignUp
 {
-    internal class OrderDL
+    public class OrderDL
     {
         private static List<Order> Orders = new List<Order>();
 

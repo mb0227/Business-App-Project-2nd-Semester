@@ -22,21 +22,21 @@ namespace SignInSignUp.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        public Resources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SignInSignUp.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace SignInSignUp.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap admin {
+        public static System.Drawing.Bitmap admin {
             get {
                 object obj = ResourceManager.GetObject("admin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap angry1 {
+        public static System.Drawing.Bitmap angry1 {
             get {
                 object obj = ResourceManager.GetObject("angry1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap angry1_modified {
+        public static System.Drawing.Bitmap angry1_modified {
             get {
                 object obj = ResourceManager.GetObject("angry1_modified", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap best1 {
+        public static System.Drawing.Bitmap best1 {
             get {
                 object obj = ResourceManager.GetObject("best1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap best1_modified {
+        public static System.Drawing.Bitmap best1_modified {
             get {
                 object obj = ResourceManager.GetObject("best1_modified", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap customer {
+        public static System.Drawing.Bitmap customer {
             get {
                 object obj = ResourceManager.GetObject("customer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap employee {
+        public static System.Drawing.Bitmap employee {
             get {
                 object obj = ResourceManager.GetObject("employee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap expressionless {
+        public static System.Drawing.Bitmap expressionless {
             get {
                 object obj = ResourceManager.GetObject("expressionless", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap expressionless_modified {
+        public static System.Drawing.Bitmap expressionless_modified {
             get {
                 object obj = ResourceManager.GetObject("expressionless_modified", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder_solid {
+        public static System.Drawing.Bitmap folder_solid {
             get {
                 object obj = ResourceManager.GetObject("folder-solid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gear_solid {
+        public static System.Drawing.Bitmap gear_solid {
             get {
                 object obj = ResourceManager.GetObject("gear_solid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap happy1 {
+        public static System.Drawing.Bitmap happy1 {
             get {
                 object obj = ResourceManager.GetObject("happy1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap happy1_modified {
+        public static System.Drawing.Bitmap happy1_modified {
             get {
                 object obj = ResourceManager.GetObject("happy1_modified", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_feedback_50 {
+        public static System.Drawing.Bitmap icons8_feedback_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-feedback-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +203,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_help_50 {
+        public static System.Drawing.Bitmap icons8_help_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-help-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +213,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_home_50 {
+        public static System.Drawing.Bitmap icons8_home_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-home-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +223,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_reservation_50 {
+        public static System.Drawing.Bitmap icons8_reservation_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reservation-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -233,7 +233,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo {
+        public static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,7 +243,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap messages {
+        public static System.Drawing.Bitmap messages {
             get {
                 object obj = ResourceManager.GetObject("messages", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -253,7 +253,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap notifications {
+        public static System.Drawing.Bitmap notifications {
             get {
                 object obj = ResourceManager.GetObject("notifications", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -263,7 +263,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap notifications1 {
+        public static System.Drawing.Bitmap notifications1 {
             get {
                 object obj = ResourceManager.GetObject("notifications1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -273,7 +273,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sad1 {
+        public static System.Drawing.Bitmap sad1 {
             get {
                 object obj = ResourceManager.GetObject("sad1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -283,7 +283,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sad1_modified {
+        public static System.Drawing.Bitmap sad1_modified {
             get {
                 object obj = ResourceManager.GetObject("sad1_modified", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -293,7 +293,7 @@ namespace SignInSignUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_solid {
+        public static System.Drawing.Bitmap user_solid {
             get {
                 object obj = ResourceManager.GetObject("user-solid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

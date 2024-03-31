@@ -207,6 +207,7 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 76;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click_1);
             // 
             // Home
             // 
@@ -233,6 +234,7 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 75;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click_1);
             // 
             // signupbutton
             // 
@@ -512,6 +514,7 @@
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sign Up Page";
+            this.Load += new System.EventHandler(this.SignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();

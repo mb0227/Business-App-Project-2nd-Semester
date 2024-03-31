@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SignInSignUp
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -17,6 +17,8 @@ namespace SignInSignUp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            CustomerDL.GetCustomersFromDatabase();
+            ProductDL.ReadProductsFromDatabase();
             Application.Run(new Homepage());
         }
     }

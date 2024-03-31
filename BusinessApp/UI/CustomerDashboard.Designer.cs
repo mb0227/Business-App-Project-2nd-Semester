@@ -95,6 +95,7 @@
             this.Name = "CustomerDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CustomerDashboard";
+            this.Load += new System.EventHandler(this.CustomerDashboard_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

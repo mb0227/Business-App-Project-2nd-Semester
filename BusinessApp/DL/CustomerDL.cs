@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SignInSignUp
 {
-    internal class CustomerDL
+    public class CustomerDL
     {
         private static List<Customer> Customers = new List<Customer>();
 
@@ -25,10 +25,17 @@ namespace SignInSignUp
                     string role = reader["Role"].ToString();
                     string gender = reader["Gender"].ToString();
                     string email = reader["Email"].ToString();
-                    string phoneNumber = reader["PhoneNumber"].ToString();
+                    string phoneNumber = reader["Contact"].ToString();
                     string orderSpecifications = reader["OrderSpecifications"].ToString();
                     string productsOrdered = reader["Cart"].ToString();
-                    int orderID = Convert.ToInt32(reader["OrderID"]);
+
+                    object orderIdObj = reader["OrderID"];
+                    int orderID = -1;
+                    if (orderIdObj != DBNull.Value)
+                    {
+                        orderID = Convert.ToInt32(orderIdObj);
+                    }
+
                     Order order = OrderDL.SearchOrderById(orderID);
 
                     string[] products = productsOrdered.Split(',');
@@ -56,7 +63,7 @@ namespace SignInSignUp
                 command.Parameters.AddWithValue("@Role", customer.GetRole());
                 command.Parameters.AddWithValue("@Gender", customer.GetGender());
                 command.Parameters.AddWithValue("@Email", customer.GetEmail());
-                command.Parameters.AddWithValue("@PhoneNumber", customer.GetPhoneNumber());
+                command.Parameters.AddWithValue("@Contact", customer.GetPhoneNumber());
                 command.Parameters.AddWithValue("@OrderSpecifications", customer.GetSpecifications());
                 command.Parameters.AddWithValue("@Cart", customer.GetCart());
 
@@ -69,16 +76,13 @@ namespace SignInSignUp
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Customers(Username, Password, Role, Gender, Email, PhoneNumber) VALUES (@Username, @Password, @Role, @Gender, @Email, @PhoneNumber)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Customers(Username, Password, Role, Gender, Email, Contact) VALUES (@Username, @Password, @Role, @Gender, @Email, @Contact)", connection);
                 command.Parameters.AddWithValue("@Username", customer.GetName());
                 command.Parameters.AddWithValue("@Password", customer.GetPassword());
                 command.Parameters.AddWithValue("@Role", customer.GetRole());
                 command.Parameters.AddWithValue("@Gender", customer.GetGender());
                 command.Parameters.AddWithValue("@Email", customer.GetEmail());
-                command.Parameters.AddWithValue("@PhoneNumber", customer.GetPhoneNumber());
-                command.Parameters.AddWithValue("@OrderSpecifications", customer.GetSpecifications());
-                command.Parameters.AddWithValue("@Cart", customer.GetCart());
-
+                command.Parameters.AddWithValue("@Contact", customer.GetPhoneNumber());
                 command.ExecuteNonQuery();
             }
         }
@@ -133,11 +137,23 @@ namespace SignInSignUp
             return Customers;
         }
 
-        public static Customer SearchCustomerByName(string username)
+        public static Customer SearchCustomer(string searchBy, string searchFor) //search by is either username, email or password and search for is attribute to search for
         {
             foreach (Customer customer in Customers)
             {
-                if (customer.GetName() == username)
+                if (customer.GetName() == searchBy && searchFor == "username")
+                {
+                    return customer;
+                }
+                else if(customer.GetEmail() == searchBy && searchFor == "email")
+                {
+                    return customer;
+                }
+                else if (customer.GetPassword() == searchBy && searchFor == "password")
+                {
+                    return customer;
+                }
+                else if (customer.GetPassword() == searchBy && searchFor == "password")
                 {
                     return customer;
                 }
@@ -145,11 +161,11 @@ namespace SignInSignUp
             return null;
         }
 
-        public static Customer SearchCustomerByEmail(string email)
+        public static Customer SearchCustomerForSignUp(string username, string password)
         {
-            foreach (Customer customer in Customers)
+             foreach (Customer customer in Customers)
             {
-                if (customer.GetEmail() == email)
+                if (customer.GetName()==username && customer.GetPassword()==password)
                 {
                     return customer;
                 }

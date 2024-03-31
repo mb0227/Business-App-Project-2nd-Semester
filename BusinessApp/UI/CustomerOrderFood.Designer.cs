@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,9 +41,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -104,6 +107,7 @@
             this.menuComboBox.Name = "menuComboBox";
             this.menuComboBox.Size = new System.Drawing.Size(182, 28);
             this.menuComboBox.TabIndex = 0;
+            this.menuComboBox.SelectedIndexChanged += new System.EventHandler(this.menuComboBox_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -129,7 +133,7 @@
             this.menuGridView.RowHeadersWidth = 62;
             this.menuGridView.RowTemplate.Height = 28;
             this.menuGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.menuGridView.Size = new System.Drawing.Size(323, 197);
+            this.menuGridView.Size = new System.Drawing.Size(323, 277);
             this.menuGridView.TabIndex = 12;
             // 
             // addToCart
@@ -146,6 +150,7 @@
             this.addToCart.TabIndex = 2;
             this.addToCart.Text = "Add to Cart";
             this.addToCart.UseVisualStyleBackColor = false;
+            this.addToCart.Click += new System.EventHandler(this.addToCart_Click);
             // 
             // button1
             // 
@@ -211,6 +216,10 @@
             this.panel1.Size = new System.Drawing.Size(797, 673);
             this.panel1.TabIndex = 18;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // CustomerOrderFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -229,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +256,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -280,6 +280,7 @@
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sign In Page";
+            this.Load += new System.EventHandler(this.SignIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

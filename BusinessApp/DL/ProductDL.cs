@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SignInSignUp
 {
-    internal class ProductDL
+    public class ProductDL
     {
         private static List<Product> Products = new List<Product>();
 

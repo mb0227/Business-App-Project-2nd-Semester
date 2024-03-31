@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SignInSignUp
 {
-    internal class UtilityFunctions
+    public class UtilityFunctions
     {
         public static SqlConnection GetSqlConnection()
         {

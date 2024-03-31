@@ -14,10 +14,21 @@ namespace SignInSignUp.UI
     {
         private CustomerHeader cHeader;
         private CustomerNavBar cNavBar;
+        private Customer customer;
+
         public Settings()
         {
             InitializeComponent();
             InitializeUserControls();
+        }
+
+        public Settings(Size size, Point location, Customer c)
+        {
+            InitializeComponent();
+            InitializeUserControls();
+            this.Size = size;
+            this.Location = location;
+            customer = c;
         }
 
         private void Settings_Load(object sender, EventArgs e)

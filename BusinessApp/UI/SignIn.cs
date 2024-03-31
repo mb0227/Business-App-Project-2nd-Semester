@@ -70,14 +70,26 @@ namespace SignInSignUp
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            CustomerDashboard customerPage = new CustomerDashboard(this.Size,this.Location);
-            customerPage.Show();
-            this.Hide();
+            if(CustomerDL.SearchCustomerForSignUp(username.Text, password.Text) != null)
+            {
+                CustomerDashboard customerPage = new CustomerDashboard(this.Size, this.Location, CustomerDL.SearchCustomerForSignUp(username.Text, password.Text));
+                customerPage.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+            }
         }
+
 
         private void forgotPasswordButton_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
         }
     }
 }

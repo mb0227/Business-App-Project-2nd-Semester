@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SignInSignUp
 {
-    internal class UserDL
+    public class UserDL
     {
         public static List<User> Users = new List<User>();
 

@@ -14,11 +14,22 @@ namespace SignInSignUp.UI
     {
         private CustomerHeader cHeader;
         private CustomerNavBar cNavBar;
+        private Customer customer;
 
         public CustomerFeedback()
         {
             InitializeComponent();
             InitializeUserControls();
+        }
+
+        public CustomerFeedback(Size size, Point location, Customer c)
+        {
+            InitializeComponent();
+            InitializeUserControls();
+            this.Size = size;
+            this.Location = location;
+            customer = c;
+            MessageBox.Show(customer.GetName());
         }
 
         private void CustomerFeedback_Load(object sender, EventArgs e)
@@ -103,20 +114,31 @@ namespace SignInSignUp.UI
             cNavBar.Width = 200;
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
 
-            //cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
+            cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
         }
         private void CustomerNavBar_NavigationRequested(object sender, string formName)
         {
             switch (formName)
             {
                 case "dashboard":
-                    OpenForm(new CustomerDashboard());
+                    OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
                     break;
                 case "orderFood":
-                    OpenForm(new CustomerOrderFood());
+                    OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
                     break;
                 case "bookTable":
-                    OpenForm(new CustomerBookTable());
+                    OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
+                    break;
+                case "feedback":
+                    OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
+                    break;
+                case "settings":
+                    OpenForm(new Settings(this.Size, this.Location, customer));
+                    break;
+                //case "help":
+                //    OpenForm(new Help(this.Size, this.Location, customer));
+                //    break;
+                default:
                     break;
             }
         }

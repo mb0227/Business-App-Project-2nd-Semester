@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SignInSignUp
 {
-    internal class Order
+    public class Order
     {
         public enum OrderStatus
         {
