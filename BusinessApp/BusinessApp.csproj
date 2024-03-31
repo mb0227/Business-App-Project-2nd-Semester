@@ -124,6 +124,7 @@
     <Compile Include="UI\Navbar.Designer.cs">
       <DependentUpon>Navbar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Prompt.cs" />
     <Compile Include="UI\Settings.cs">
       <SubType>Form</SubType>
     </Compile>

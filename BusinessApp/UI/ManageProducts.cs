@@ -226,10 +226,9 @@ namespace SignInSignUp.UI
             {
                 var filteredRows = dataTable.AsEnumerable()
                                             .Where(row => row.Field<string>("ProductName")
-                                                            ?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
-                                            .CopyToDataTable();
+                                                            ?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0);
 
-                if (filteredRows.Rows.Count > 0)
+                if (filteredRows.Any())
                 {
                     dataGridView1.DataSource = filteredRows;
                 }

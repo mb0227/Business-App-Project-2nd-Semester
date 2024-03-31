@@ -134,7 +134,18 @@ namespace SignInSignUp
                 command.ExecuteNonQuery();
             }
         }
-
+        public static void UpdateCustomer(Customer customer)
+        {
+            foreach (Customer c in Customers)
+            {
+                if(c.GetName()== customer.GetName())
+                {
+                    c.SetName(customer.GetName());
+                    c.SetPassword(customer.GetPassword());
+                    c.SetGender(customer.GetGender());
+                }
+            }
+        }
 
         public static bool UserAlreadyExists(string username)
         {

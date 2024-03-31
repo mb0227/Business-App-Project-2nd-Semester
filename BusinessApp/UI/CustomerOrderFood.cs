@@ -36,7 +36,7 @@ namespace SignInSignUp.UI
                 menuComboBox.SelectedIndex = 0;
             MakeColumns();
             LoadData();
-            //MessageBox.Show(customer.GetCart()[0].GetProduct().GetProductCategory());
+            sortGridView.SelectedIndex = 0;
         }
 
         public CustomerOrderFood(CustomerHeader header, CustomerNavBar navBar)
@@ -123,8 +123,6 @@ namespace SignInSignUp.UI
 
             if (selectedProductObject != null)
             {
-                //string[] quantitiesAvailable = selectedProductObject.QuantitiesAvailable.Split(',');
-
                 quantitiesComboBox.Items.Clear();
                 foreach (string quantity in selectedProductObject.GetAvailableQuantities())
                 {
@@ -284,6 +282,30 @@ namespace SignInSignUp.UI
             if (string.IsNullOrWhiteSpace(name.Text.Trim()))
             {
                 menuGridView.DataSource = dataTable;
+            }
+        }
+
+        private void sortGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortBy = sortGridView.SelectedItem.ToString();
+            SortDataGridView(sortBy);
+        }
+
+        private void SortDataGridView(string sortBy)
+        {
+            switch (sortBy)
+            {
+                case "ProductName":
+                    menuGridView.Sort(menuGridView.Columns["ProductName"], ListSortDirection.Ascending);
+                    break;
+                case "Price":
+                    menuGridView.Sort(menuGridView.Columns["Price"], ListSortDirection.Ascending);
+                    break;
+                case "Stock":
+                    menuGridView.Sort(menuGridView.Columns["Stock"], ListSortDirection.Ascending);
+                    break;
+                default:
+                    break;
             }
         }
     }

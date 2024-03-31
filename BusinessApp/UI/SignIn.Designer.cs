@@ -45,8 +45,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.forgotPasswordButton = new System.Windows.Forms.TextBox();
             this.gradientPanel1 = new SignInSignUp.GradientPanel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(174, 246);
+            this.label1.Location = new System.Drawing.Point(170, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 27);
             this.label1.TabIndex = 0;
@@ -116,7 +116,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(179, 342);
+            this.label2.Location = new System.Drawing.Point(169, 341);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 27);
             this.label2.TabIndex = 5;
@@ -219,7 +219,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.Honeydew;
-            this.panel3.Controls.Add(this.forgotPasswordButton);
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pictureBox5);
             this.panel3.Controls.Add(this.label1);
@@ -235,23 +235,6 @@
             this.panel3.Size = new System.Drawing.Size(555, 558);
             this.panel3.TabIndex = 16;
             // 
-            // forgotPasswordButton
-            // 
-            this.forgotPasswordButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.forgotPasswordButton.BackColor = System.Drawing.Color.MintCream;
-            this.forgotPasswordButton.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.forgotPasswordButton.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPasswordButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.forgotPasswordButton.Location = new System.Drawing.Point(253, 417);
-            this.forgotPasswordButton.Multiline = true;
-            this.forgotPasswordButton.Name = "forgotPasswordButton";
-            this.forgotPasswordButton.PasswordChar = '*';
-            this.forgotPasswordButton.Size = new System.Drawing.Size(147, 28);
-            this.forgotPasswordButton.TabIndex = 17;
-            this.forgotPasswordButton.Text = "Forgot Password?";
-            this.forgotPasswordButton.UseSystemPasswordChar = true;
-            this.forgotPasswordButton.TextChanged += new System.EventHandler(this.forgotPasswordButton_TextChanged);
-            // 
             // gradientPanel1
             // 
             this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -265,6 +248,22 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1097, 645);
             this.gradientPanel1.TabIndex = 17;
             this.gradientPanel1.TopColor = System.Drawing.Color.MediumOrchid;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.MintCream;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Location = new System.Drawing.Point(217, 421);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 33);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Forgot Password?";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SignIn
             // 
@@ -313,6 +312,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel3;
         private GradientPanel gradientPanel1;
-        private System.Windows.Forms.TextBox forgotPasswordButton;
+        private System.Windows.Forms.Button button1;
     }
 }

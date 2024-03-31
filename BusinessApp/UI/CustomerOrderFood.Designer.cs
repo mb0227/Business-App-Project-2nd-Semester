@@ -40,13 +40,14 @@
             this.placeOrderButton = new System.Windows.Forms.Button();
             this.viewCart = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.quantitiesComboBox = new System.Windows.Forms.ComboBox();
             this.comments = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sortGridView = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,7 +84,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(42, 67);
+            this.label1.Location = new System.Drawing.Point(40, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 36);
             this.label1.TabIndex = 8;
@@ -96,7 +97,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(452, 64);
+            this.label3.Location = new System.Drawing.Point(452, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 36);
             this.label3.TabIndex = 9;
@@ -109,7 +110,7 @@
             this.menuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuComboBox.FormattingEnabled = true;
-            this.menuComboBox.Location = new System.Drawing.Point(220, 71);
+            this.menuComboBox.Location = new System.Drawing.Point(220, 47);
             this.menuComboBox.Name = "menuComboBox";
             this.menuComboBox.Size = new System.Drawing.Size(182, 37);
             this.menuComboBox.TabIndex = 0;
@@ -203,6 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(90)))));
+            this.panel1.Controls.Add(this.sortGridView);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.name);
             this.panel1.Controls.Add(this.button1);
@@ -221,45 +223,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(797, 673);
             this.panel1.TabIndex = 18;
-            // 
-            // quantitiesComboBox
-            // 
-            this.quantitiesComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.quantitiesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quantitiesComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantitiesComboBox.FormattingEnabled = true;
-            this.quantitiesComboBox.Location = new System.Drawing.Point(587, 69);
-            this.quantitiesComboBox.Name = "quantitiesComboBox";
-            this.quantitiesComboBox.Size = new System.Drawing.Size(182, 37);
-            this.quantitiesComboBox.TabIndex = 15;
-            // 
-            // comments
-            // 
-            this.comments.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comments.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comments.Location = new System.Drawing.Point(220, 203);
-            this.comments.Multiline = true;
-            this.comments.Name = "comments";
-            this.comments.Size = new System.Drawing.Size(182, 102);
-            this.comments.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MintCream;
-            this.label4.Location = new System.Drawing.Point(42, 198);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 36);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Comments";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // label6
             // 
@@ -302,6 +265,62 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // quantitiesComboBox
+            // 
+            this.quantitiesComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.quantitiesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.quantitiesComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantitiesComboBox.FormattingEnabled = true;
+            this.quantitiesComboBox.Location = new System.Drawing.Point(587, 46);
+            this.quantitiesComboBox.Name = "quantitiesComboBox";
+            this.quantitiesComboBox.Size = new System.Drawing.Size(182, 37);
+            this.quantitiesComboBox.TabIndex = 15;
+            // 
+            // comments
+            // 
+            this.comments.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comments.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.comments.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comments.Location = new System.Drawing.Point(220, 203);
+            this.comments.Multiline = true;
+            this.comments.Name = "comments";
+            this.comments.Size = new System.Drawing.Size(182, 102);
+            this.comments.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.MintCream;
+            this.label4.Location = new System.Drawing.Point(42, 198);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 36);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Comments";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // sortGridView
+            // 
+            this.sortGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sortGridView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sortGridView.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sortGridView.FormattingEnabled = true;
+            this.sortGridView.Items.AddRange(new object[] {
+            "Sort By",
+            "ProductName",
+            "Price",
+            "Stock"});
+            this.sortGridView.Location = new System.Drawing.Point(608, 117);
+            this.sortGridView.Name = "sortGridView";
+            this.sortGridView.Size = new System.Drawing.Size(131, 27);
+            this.sortGridView.TabIndex = 43;
+            this.sortGridView.SelectedIndexChanged += new System.EventHandler(this.sortGridView_SelectedIndexChanged);
+            // 
             // CustomerOrderFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -343,5 +362,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox sortGridView;
     }
 }

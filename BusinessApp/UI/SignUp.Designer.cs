@@ -34,10 +34,10 @@
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gradientPanel1 = new SignInSignUp.GradientPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.gradientPanel1 = new SignInSignUp.GradientPanel();
             this.gradientPanel2 = new SignInSignUp.GradientPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -109,16 +109,6 @@
             this.panel2.Size = new System.Drawing.Size(1093, 84);
             this.panel2.TabIndex = 53;
             // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.Angle = 0F;
-            this.gradientPanel1.BottomColor = System.Drawing.Color.Empty;
-            this.gradientPanel1.Location = new System.Drawing.Point(3, 84);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1090, 752);
-            this.gradientPanel1.TabIndex = 55;
-            this.gradientPanel1.TopColor = System.Drawing.Color.Empty;
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -139,6 +129,16 @@
             // errorProvider5
             // 
             this.errorProvider5.ContainerControl = this;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 0F;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.Empty;
+            this.gradientPanel1.Location = new System.Drawing.Point(3, 84);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1090, 752);
+            this.gradientPanel1.TabIndex = 55;
+            this.gradientPanel1.TopColor = System.Drawing.Color.Empty;
             // 
             // gradientPanel2
             // 
@@ -328,7 +328,7 @@
             this.labell.AutoSize = true;
             this.labell.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labell.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labell.Location = new System.Drawing.Point(374, 263);
+            this.labell.Location = new System.Drawing.Point(374, 261);
             this.labell.Name = "labell";
             this.labell.Size = new System.Drawing.Size(103, 27);
             this.labell.TabIndex = 62;
