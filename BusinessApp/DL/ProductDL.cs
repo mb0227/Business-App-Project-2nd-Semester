@@ -84,7 +84,7 @@ namespace SignInSignUp
                 command.Parameters.AddWithValue("@ProductCategory", product.GetProductCategory());
                 command.Parameters.AddWithValue("@Price", product.GetPrice());
                 command.Parameters.AddWithValue("@Stock", product.GetStock());
-                command.Parameters.AddWithValue("@QuantitiesAvailable", product.GetAvailableQuantities());
+                command.Parameters.AddWithValue("@QuantitiesAvailable", product.ReturnQuantityString());
                 command.ExecuteNonQuery();
             }
         }

@@ -95,16 +95,27 @@ namespace SignInSignUp
             Cart.Add(new OrderedProduct(product, quantity));
         }
 
-        public void RemoveFromCart(Product product)
+        public void RemoveFromCart(Product product) //remove from index
         {
             Cart.Remove(Cart.Where(p => p.GetProduct().GetProductName().Equals(product.GetProductName())).FirstOrDefault());
         }
-
 
         public void PlaceOrder()
         {
             Order = new Order(OrderDL.GetTotalOrders(), Cart, Order.OrderStatus.Pending, DateTime.Now, OrderSpecifications, Username);
             Cart.Clear();
+        }
+
+        public int GetSelectedItemIndex(string itemName)
+        {
+            foreach(OrderedProduct p in Cart)
+            {
+                if(p.GetProduct().GetProductName().Equals(itemName))
+                {
+                    return Cart.IndexOf(p);
+                }
+            }
+            return -1;
         }
     }
 }

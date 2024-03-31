@@ -52,7 +52,6 @@ namespace SignInSignUp
                             }
                         }
                     }
-
                     Customer customer = new Customer(username, password, role, gender, email, phoneNumber, order, cart);
                     Customers.Add(customer);
                 }
@@ -60,12 +59,20 @@ namespace SignInSignUp
         }
 
 
-        public void UpdateCustomerInDatabase(Customer customer)
+        public static void UpdateCustomerInDatabase(Customer customer)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE Customers SET Username = @Username, Password = @Password, Role = @Role, Gender = @Gender, Email = @Email, PhoneNumber = @PhoneNumber, Cart=@Cart WHERE ID = @ID", connection);
+
+                StringBuilder cartString = new StringBuilder();
+                foreach (var orderedProduct in customer.GetCart())
+                {
+                    cartString.Append($"{orderedProduct.GetQuantity()}:{orderedProduct.GetProduct().GetProductName()},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("UPDATE Customers SET Username = @Username, Password = @Password, Role = @Role, Gender = @Gender, Email = @Email, Contact = @Contact, Cart=@Cart WHERE Username = @Username", connection);
 
                 command.Parameters.AddWithValue("@Username", customer.GetName());
                 command.Parameters.AddWithValue("@Password", customer.GetPassword());
@@ -73,7 +80,7 @@ namespace SignInSignUp
                 command.Parameters.AddWithValue("@Gender", customer.GetGender());
                 command.Parameters.AddWithValue("@Email", customer.GetEmail());
                 command.Parameters.AddWithValue("@Contact", customer.GetPhoneNumber());
-                command.Parameters.AddWithValue("@Cart", customer.GetCart());
+                command.Parameters.AddWithValue("@Cart", cartAsString);
 
                 command.ExecuteNonQuery();
             }

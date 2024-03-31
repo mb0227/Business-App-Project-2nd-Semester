@@ -151,6 +151,12 @@
       <DependentUpon>CustomerHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UtilityFunctions.cs" />
+    <Compile Include="UI\ViewCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ViewCart.Designer.cs">
+      <DependentUpon>ViewCart.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +211,9 @@
     </Compile>
     <EmbeddedResource Include="UI\CustomerHeader.resx">
       <DependentUpon>CustomerHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ViewCart.resx">
+      <DependentUpon>ViewCart.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -44,6 +44,9 @@
             this.comments = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -123,6 +126,7 @@
             this.menuGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menuGridView.Location = new System.Drawing.Point(443, 150);
             this.menuGridView.Name = "menuGridView";
+            this.menuGridView.ReadOnly = true;
             this.menuGridView.RowHeadersWidth = 62;
             this.menuGridView.RowTemplate.Height = 28;
             this.menuGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -137,7 +141,7 @@
             this.addToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addToCart.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addToCart.ForeColor = System.Drawing.Color.Black;
-            this.addToCart.Location = new System.Drawing.Point(119, 433);
+            this.addToCart.Location = new System.Drawing.Point(22, 433);
             this.addToCart.Name = "addToCart";
             this.addToCart.Size = new System.Drawing.Size(180, 58);
             this.addToCart.TabIndex = 2;
@@ -153,7 +157,7 @@
             this.clearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearCart.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearCart.ForeColor = System.Drawing.Color.MintCream;
-            this.clearCart.Location = new System.Drawing.Point(557, 433);
+            this.clearCart.Location = new System.Drawing.Point(420, 433);
             this.clearCart.Name = "clearCart";
             this.clearCart.Size = new System.Drawing.Size(180, 58);
             this.clearCart.TabIndex = 4;
@@ -169,7 +173,7 @@
             this.placeOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.placeOrderButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.placeOrderButton.ForeColor = System.Drawing.Color.Black;
-            this.placeOrderButton.Location = new System.Drawing.Point(342, 518);
+            this.placeOrderButton.Location = new System.Drawing.Point(617, 433);
             this.placeOrderButton.Name = "placeOrderButton";
             this.placeOrderButton.Size = new System.Drawing.Size(180, 58);
             this.placeOrderButton.TabIndex = 5;
@@ -185,12 +189,13 @@
             this.viewCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewCart.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewCart.ForeColor = System.Drawing.Color.MintCream;
-            this.viewCart.Location = new System.Drawing.Point(340, 433);
+            this.viewCart.Location = new System.Drawing.Point(222, 433);
             this.viewCart.Name = "viewCart";
             this.viewCart.Size = new System.Drawing.Size(180, 58);
             this.viewCart.TabIndex = 3;
             this.viewCart.Text = "View Cart\r\n";
             this.viewCart.UseVisualStyleBackColor = false;
+            this.viewCart.Click += new System.EventHandler(this.viewCart_Click);
             // 
             // panel1
             // 
@@ -198,6 +203,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(90)))));
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.name);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.quantitiesComboBox);
             this.panel1.Controls.Add(this.comments);
             this.panel1.Controls.Add(this.label4);
@@ -253,6 +261,47 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.MintCream;
+            this.label6.Location = new System.Drawing.Point(44, 319);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(172, 36);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Search Item";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // name
+            // 
+            this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(222, 324);
+            this.name.Multiline = true;
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(182, 41);
+            this.name.TabIndex = 41;
+            this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(22, 369);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 58);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CustomerOrderFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -289,7 +338,10 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button placeOrderButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox comments;
         private System.Windows.Forms.ComboBox quantitiesComboBox;
+        private System.Windows.Forms.TextBox comments;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.Button button1;
     }
 }

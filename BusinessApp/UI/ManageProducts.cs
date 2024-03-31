@@ -17,6 +17,7 @@ namespace SignInSignUp.UI
         int selectedRow;
         private CustomerHeader aHeader;
         private Navbar aNavbar;
+
         public ManageProducts()
         {
             InitializeComponent();

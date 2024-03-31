@@ -78,3 +78,4 @@ C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Navbar
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageEmployees.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageProducts.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageCustomers.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ViewCart.resources

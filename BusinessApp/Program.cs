@@ -18,9 +18,9 @@ namespace SignInSignUp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            CustomerDL.GetCustomersFromDatabase();
             ProductDL.ReadProductsFromDatabase();
             OrderDL.ReadOrdersFromDatabase();
+            CustomerDL.GetCustomersFromDatabase();
 
             Application.Run(new SignIn());
         }

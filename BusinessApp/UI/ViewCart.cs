@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,23 +9,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace SignInSignUp.UI
 {
-    public partial class CustomerOrderFood : Form
+    public partial class ViewCart : Form
     {
         DataTable dataTable = new DataTable();
+        Customer customer;
         private CustomerHeader cHeader;
         private CustomerNavBar cNavBar;
-        private Customer customer;
+        int selectedRow;
 
-        public CustomerOrderFood()
+        public ViewCart()
         {
             InitializeComponent();
         }
 
-        public CustomerOrderFood(Size size, Point location, Customer c)
+        public ViewCart(Size size, Point location, Customer c)
         {
             customer = c;
             InitializeComponent();
@@ -32,22 +36,10 @@ namespace SignInSignUp.UI
             FillComboBox();
             this.Size = size;
             this.Location = location;
-            if(menuComboBox.Items.Count>0)
+            if (menuComboBox.Items.Count > 0)
                 menuComboBox.SelectedIndex = 0;
             MakeColumns();
             LoadData();
-            //MessageBox.Show(customer.GetCart()[0].GetProduct().GetProductCategory());
-        }
-
-        public CustomerOrderFood(CustomerHeader header, CustomerNavBar navBar)
-        {
-            InitializeComponent();
-            this.cHeader = header;
-            this.cNavBar = navBar;
-        }
-
-        private void CustomerOrderFood_Load(object sender, EventArgs e)
-        {
         }
 
         private void InitializeUserControls()
@@ -64,13 +56,12 @@ namespace SignInSignUp.UI
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 
             cNavBar.Left = 0;
-            cNavBar.Top = cHeader.Bottom; 
+            cNavBar.Top = cHeader.Bottom;
             cNavBar.Width = 200;
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
 
             cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
         }
-
 
         private void CustomerNavBar_NavigationRequested(object sender, string formName)
         {
@@ -107,12 +98,28 @@ namespace SignInSignUp.UI
             this.Hide();
         }
 
+
+        private void ViewCart_Load(object sender, EventArgs e)
+        {
+        }
+
         private void FillComboBox()
         {
-            menuComboBox.Items.Clear(); 
+            menuComboBox.Items.Clear();
             foreach (Product product in ProductDL.GetProducts())
             {
-                menuComboBox.Items.Add(product.GetProductName()); 
+                menuComboBox.Items.Add(product.GetProductName());
+            }
+        }
+
+
+        private void LoadData()
+        {
+            dataTable.Rows.Clear();
+            foreach (OrderedProduct product in customer.GetCart())
+            {
+                dataTable.Rows.Add(product.GetProduct().GetProductName(), product.GetQuantity().ToString());
+                cartGridView.DataSource = dataTable;
             }
         }
 
@@ -123,8 +130,6 @@ namespace SignInSignUp.UI
 
             if (selectedProductObject != null)
             {
-                //string[] quantitiesAvailable = selectedProductObject.QuantitiesAvailable.Split(',');
-
                 quantitiesComboBox.Items.Clear();
                 foreach (string quantity in selectedProductObject.GetAvailableQuantities())
                 {
@@ -133,9 +138,63 @@ namespace SignInSignUp.UI
 
                 if (quantitiesComboBox.Items.Count > 0)
                 {
-                    quantitiesComboBox.SelectedIndex = 0; // Select the first item by default
+                    quantitiesComboBox.SelectedIndex = 0; 
                 }
             }
+        }
+
+        private void MakeColumns()
+        {
+            dataTable.Columns.Add("ProductName", typeof(string));
+            dataTable.Columns.Add("Quantity", typeof(int));
+
+            cartGridView.DataSource = dataTable;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (cartGridView.SelectedRows.Count > 0)
+            {
+                if (CheckValidations())
+                {
+                    OrderedProduct p = new OrderedProduct(ProductDL.SearchProductByName(menuComboBox.Text), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+                    selectedRow = cartGridView.SelectedRows[0].Index;
+
+                    DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
+                    string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
+                    string quantity = selectedDataGridViewRow.Cells["Quantity"].Value.ToString();
+
+                    Product product = new Product();
+                    product.SetProductName(productName);
+                    customer.RemoveFromCart(product);
+
+                    dataTable.Rows[selectedRow].SetField("ProductName", p.GetProduct().GetProductName());
+                    dataTable.Rows[selectedRow].SetField("Quantity", p.GetQuantity());
+
+                    customer.AddToCart(p.GetProduct(), p.GetQuantity());
+
+                    cartGridView.DataSource = dataTable;
+                    CustomerDL.UpdateCustomerInDatabase(customer);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to update");
+            }
+        }
+
+        private bool CheckValidations()
+        {
+            int value;
+            int totalItemStock = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
+            int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
+            if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
+            {
+                errorProvider1.SetError(quantitiesComboBox, $"Please enter a positive quantity greater than 0 and less than {totalItemStock}");
+                return false;
+            }
+
+            return true;
         }
 
         private int ExtractFirstIntegerFromString(string input)
@@ -159,97 +218,34 @@ namespace SignInSignUp.UI
                 return int.Parse(numberString);
             }
 
-            return 0; 
+            return 0;
         }
 
-        private void ClearTextBoxes()
+        private void button3_Click(object sender, EventArgs e)
         {
-            comments.Text = "";
-        }
-
-        private void addToCart_Click(object sender, EventArgs e)
-        {
-            if(CheckValidations())
+            if (cartGridView.SelectedRows.Count > 0)
             {
-                customer.AddToCart(ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
-                CustomerDL.InsertOrderIntoCustomerDatabase(customer);
-                ClearTextBoxes();
-            }
-        }
+                selectedRow = cartGridView.SelectedRows[0].Index;
+                DataGridViewRow rowSelected = cartGridView.SelectedRows[0];
+                DataGridViewCell firstCell = rowSelected.Cells[0];
+                string cellValue = firstCell.Value.ToString();
 
-        private bool CheckValidations()
-        {
-            int value;
-            int totalItemStock = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
-            int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
-            if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
-            {
-                errorProvider1.SetError(quantitiesComboBox, $"Please enter a positive quantity greater than 0 and less than {totalItemStock}");
-                return false;
-            }
+                DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
+                string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
+                string quantity = selectedDataGridViewRow.Cells["Quantity"].Value.ToString();
 
-            return true;
-        }
+                Product product = new Product();
+                product.SetProductName(productName);
+                customer.RemoveFromCart(product);
 
-        private void DeductOrderedProductFromStock(string productName, int quantity)
-        {
-            Product product = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(productName)).FirstOrDefault();
-            product.UpdateStock("remove", quantity);
-            ProductDL.UpdateProductInDatabase(product);
-        }
-
-        private void placeOrderButton_Click(object sender, EventArgs e)
-        {
-            if(customer.GetCart().Count>0)
-            {
-                foreach (OrderedProduct item in customer.GetCart())
-                {
-                    DeductOrderedProductFromStock(item.GetProduct().GetProductName(), item.GetQuantity());
-                }
-
-                Order order = new Order(OrderDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now,comments.Text , customer.GetName());
-                OrderDL.AddOrder(order);
-                OrderDL.InsertOrderInDatabase(order);
-                LoadData();
+                CustomerDL.UpdateCustomerInDatabase(customer);
+                cartGridView.Rows.RemoveAt(selectedRow);
+                selectedRow = -1;
             }
             else
             {
-                MessageBox.Show("Please select an item to place order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a row to delete");
             }
-        }
-
-        private void clearCart_Click(object sender, EventArgs e)
-        {
-            customer.GetCart().Clear();
-            CustomerDL.InsertOrderIntoCustomerDatabase(customer);
-        }
-
-        private void MakeColumns()
-        {
-            dataTable.Columns.Add("ProductName", typeof(string));
-            dataTable.Columns.Add("Price", typeof(int));
-            dataTable.Columns.Add("Stock", typeof(int));
-
-            menuGridView.DataSource = dataTable;
-        }
-
-        private void LoadData()
-        {
-            dataTable.Rows.Clear();
-            foreach (Product product in ProductDL.GetProducts())
-            {
-                dataTable.Rows.Add(product.GetProductName(), product.GetPrice(),product.GetStock());
-                menuGridView.DataSource = dataTable;
-            }
-        }
-
-       
-
-        private void viewCart_Click(object sender, EventArgs e)
-        {
-            ViewCart v = new ViewCart(this.Size, this.Location, customer);
-            v.Show();
-            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -264,26 +260,25 @@ namespace SignInSignUp.UI
 
                 if (filteredRows.Any())
                 {
-                    menuGridView.DataSource = filteredRows.CopyToDataTable();
+                    cartGridView.DataSource = filteredRows.CopyToDataTable();
                 }
                 else
                 {
                     MessageBox.Show("No matching products found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    menuGridView.DataSource = dataTable;
+                    cartGridView.DataSource = dataTable;
                 }
             }
             else
             {
-                menuGridView.DataSource = dataTable;
+                cartGridView.DataSource = dataTable;
             }
-
         }
 
         private void name_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(name.Text.Trim()))
             {
-                menuGridView.DataSource = dataTable;
+                cartGridView.DataSource = dataTable;
             }
         }
     }
