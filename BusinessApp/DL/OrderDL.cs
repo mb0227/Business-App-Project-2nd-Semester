@@ -43,7 +43,33 @@ namespace SignInSignUp
             return -1;
         }
 
-        public static void ReadOrdersFromDataBase()
+        public static void InsertOrderInDatabase(Order order)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                StringBuilder cartString = new StringBuilder();
+
+                foreach (var orderedProduct in order.GetProducts())
+                {
+                    cartString.Append($"{orderedProduct.GetQuantity()}:{orderedProduct.GetProduct().GetProductName()},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("INSERT INTO Orders (OrderID, CustomerName, CustomerComments, OrderStatus, OrderDate, ProductsOrdered,TotalPrice) VALUES (@OrderID, @CustomerName, @CustomerComments, @OrderStatus, @OrderDate, @ProductsOrdered,@TotalPrice)", connection);
+                command.Parameters.AddWithValue("@OrderID", order.GetOrderID());
+                command.Parameters.AddWithValue("@CustomerName", order.GetCustomerName());
+                command.Parameters.AddWithValue("@CustomerComments", order.GetCustomerComments());
+                command.Parameters.AddWithValue("@TotalPrice", order.GetTotalPrice());
+                command.Parameters.AddWithValue("@OrderStatus", order.GetStatus());
+                command.Parameters.AddWithValue("@OrderDate", order.GetOrderDate());
+                command.Parameters.AddWithValue("@ProductsOrdered", cartAsString);
+                command.ExecuteNonQuery();
+                
+            }
+        }
+
+        public static void ReadOrdersFromDatabase()
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -59,21 +85,29 @@ namespace SignInSignUp
                     DateTime orderDate = Convert.ToDateTime(reader["OrderDate"]);
                     string productsOrdered = reader["ProductsOrdered"].ToString();
 
-                    string[] products = productsOrdered.Split(',');
-                    List<Product> orderedProducts = new List<Product>();
-                    foreach (string product in products)
+                    List<OrderedProduct> cart = new List<OrderedProduct>();
+                    string[] productItems = productsOrdered.Split(',');
+                    foreach (string productItem in productItems)
                     {
-                        Product p = ProductDL.SearchProductByName(product);
-                        orderedProducts.Add(p);
+                        string[] parts = productItem.Split(':');
+                        if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
+                        {
+                            string productName = parts[1];
+                            Product product = ProductDL.SearchProductByName(productName);
+                            if (product != null)
+                            {
+                                cart.Add(new OrderedProduct(product, quantity));
+                            }
+                        }
                     }
 
-                    Order order = new Order(orderID, orderedProducts, orderStatus, orderDate, customerComments, customerName);
+                    Order order = new Order(orderID, cart, orderStatus, orderDate, customerComments, customerName);
                     Orders.Add(order);
                 }
             }
         }
 
-        public static void UpdateOrderInDataBase(Order order)
+        public static void UpdateOrderInDatabase(Order order)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -86,7 +120,7 @@ namespace SignInSignUp
             }        
         }
 
-        public static void DeleteOrderFromDataBase(Order order)
+        public static void DeleteOrderFromDatabase(Order order)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

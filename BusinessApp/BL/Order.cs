@@ -22,10 +22,10 @@ namespace SignInSignUp
         public Order()
         {            
         }
-        public Order(int orderID,List<Product> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string customerName)
+        public Order(int orderID,List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string customerName)
         {
             OrderID = orderID;
-            Products = products;
+            ProductsOrdered = products;
             Status = orderStatus;
             OrderDate = orderDate;
             CustomerComments = customerComments;
@@ -34,7 +34,7 @@ namespace SignInSignUp
         }
 
         private int OrderID;
-        private List<Product> Products =  new List<Product>();
+        private List <OrderedProduct> ProductsOrdered =  new List<OrderedProduct>();
         private int TotalPrice;
         private OrderStatus Status;
         private DateTime OrderDate;
@@ -44,21 +44,21 @@ namespace SignInSignUp
         private void CalculateTotalPrice()
         {
             TotalPrice = 0;
-            foreach (Product product in Products)
+            for(int i=0;i< ProductsOrdered.Count;i++)
             {
-                TotalPrice += product.GetPrice();
+                TotalPrice += ProductsOrdered[i].GetQuantity() * ProductsOrdered[i].GetProduct().GetPrice();
             }
         }
 
-        public void AddProduct(Product product)
+        public void AddProduct(Product product, int quantity)
         {
-            Products.Add(product);
+            ProductsOrdered.Add(new OrderedProduct(product, quantity));
             CalculateTotalPrice();
         }
 
-        public void RemoveProduct(Product product)
+        public void RemoveProduct(Product product, int quantity)
         {
-            Products.Remove(product);
+            ProductsOrdered.Remove(new OrderedProduct(product, quantity));
             CalculateTotalPrice();
         }
 
@@ -67,9 +67,9 @@ namespace SignInSignUp
             return OrderID;
         }
 
-        public List<Product> GetProducts()
+        public List<OrderedProduct> GetProducts()
         {
-            return Products;
+            return ProductsOrdered;
         }
 
         public int GetTotalPrice()
@@ -122,9 +122,9 @@ namespace SignInSignUp
             CustomerComments = customerComments;
         }
 
-        public void SetProducts(List<Product> products)
+        public void SetProducts(List<OrderedProduct> products)
         {
-            Products = products;
+            ProductsOrdered = products;
             CalculateTotalPrice();
         }
     }

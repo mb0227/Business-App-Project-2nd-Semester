@@ -28,7 +28,6 @@ namespace SignInSignUp.UI
             this.Size = size;
             this.Location = location;
             customer = c;
-            MessageBox.Show(customer.GetName());
         }
 
         private void CustomerBookTable_Load(object sender, EventArgs e)

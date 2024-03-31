@@ -8,6 +8,9 @@ namespace SignInSignUp
 {
     public class Product
     {
+        public Product()
+        {            
+        }
         public Product(string productName, string productDescription, string productCategory, int price, int stock)
         {
             ProductName = productName;
@@ -15,6 +18,7 @@ namespace SignInSignUp
             ProductCategory = productCategory;
             Price = price;
             Stock = stock;
+            AvailableQuantities = new List<string>();
         }
 
         private string ProductName;
@@ -22,6 +26,7 @@ namespace SignInSignUp
         private string ProductCategory;
         private int Price;
         private int Stock;
+        private List<string> AvailableQuantities;
 
         public void UpdateStock(string operation, int quantity)
         {
@@ -68,6 +73,16 @@ namespace SignInSignUp
             return Stock;
         }
 
+        public List<string> GetAvailableQuantities()
+        {
+            return AvailableQuantities;
+        }
+
+        public void SetAvailableQuantities(List<string> aq)
+        {
+            AvailableQuantities = aq;
+        }
+
         public void SetPrice(int price)
         {
             Price = price;
@@ -91,6 +106,21 @@ namespace SignInSignUp
         public void SetProductName(string productName)
         {
             ProductName = productName;
+        }
+
+        public void AddQuantity(string quantity)
+        {
+            AvailableQuantities.Add(quantity);
+        }
+
+        public string ReturnQuantityString()
+        {
+            string str = "";
+            foreach (string record in AvailableQuantities)
+            {
+                str += record + ",";
+            }
+            return str.TrimEnd(',');
         }
     }
 }

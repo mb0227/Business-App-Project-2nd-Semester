@@ -51,6 +51,9 @@
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.quantities = new System.Windows.Forms.TextBox();
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -133,7 +137,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(320, 529);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 357);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
@@ -162,7 +166,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(90)))));
             this.label4.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MintCream;
-            this.label4.Location = new System.Drawing.Point(306, 377);
+            this.label4.Location = new System.Drawing.Point(3, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 34);
             this.label4.TabIndex = 7;
@@ -244,7 +248,7 @@
             this.description.Location = new System.Drawing.Point(464, 377);
             this.description.Multiline = true;
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(300, 108);
+            this.description.Size = new System.Drawing.Size(300, 56);
             this.description.TabIndex = 4;
             // 
             // update
@@ -301,8 +305,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(90)))));
+            this.panel2.Controls.Add(this.quantities);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.insert);
             this.panel2.Controls.Add(this.update);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.ForeColor = System.Drawing.Color.MintCream;
             this.panel2.Location = new System.Drawing.Point(300, 200);
             this.panel2.Name = "panel2";
@@ -325,6 +333,35 @@
             // 
             this.errorProvider4.ContainerControl = this;
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(90)))));
+            this.label7.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.MintCream;
+            this.label7.Location = new System.Drawing.Point(6, 245);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(258, 34);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Available Quantities";
+            // 
+            // quantities
+            // 
+            this.quantities.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.quantities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.quantities.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantities.Location = new System.Drawing.Point(164, 282);
+            this.quantities.Multiline = true;
+            this.quantities.Name = "quantities";
+            this.quantities.Size = new System.Drawing.Size(300, 56);
+            this.quantities.TabIndex = 11;
+            this.quantities.TextChanged += new System.EventHandler(this.quantities_TextChanged);
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
             // ManageProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -338,9 +375,7 @@
             this.Controls.Add(this.price);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.name);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -354,10 +389,12 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,5 +424,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.TextBox quantities;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace SignInSignUp.UI
 {
@@ -32,7 +33,8 @@ namespace SignInSignUp.UI
             FillComboBox();
             this.Size = size;
             this.Location = location;
-            MessageBox.Show(customer.GetName());
+            if(menuComboBox.Items.Count>0)
+                menuComboBox.SelectedIndex = 0;
         }
 
         public CustomerOrderFood(CustomerHeader header, CustomerNavBar navBar)
@@ -114,14 +116,62 @@ namespace SignInSignUp.UI
 
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string selectedProduct = menuComboBox.SelectedItem.ToString();
+            Product selectedProductObject = ProductDL.GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
 
+            if (selectedProductObject != null)
+            {
+                //string[] quantitiesAvailable = selectedProductObject.QuantitiesAvailable.Split(',');
+
+                quantitiesComboBox.Items.Clear();
+                foreach (string quantity in selectedProductObject.GetAvailableQuantities())
+                {
+                    quantitiesComboBox.Items.Add(quantity.Trim());
+                }
+
+                if (quantitiesComboBox.Items.Count > 0)
+                {
+                    quantitiesComboBox.SelectedIndex = 0; // Select the first item by default
+                }
+            }
+        }
+
+        private int ExtractFirstIntegerFromString(string input)
+        {
+            string numberString = string.Empty;
+
+            foreach (char c in input)
+            {
+                if (char.IsDigit(c))
+                {
+                    numberString += c;
+                }
+                else if (!string.IsNullOrEmpty(numberString))
+                {
+                    break;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(numberString))
+            {
+                return int.Parse(numberString);
+            }
+
+            return 0; 
+        }
+
+        private void ClearTextBoxes()
+        {
+            comments.Text = "";
         }
 
         private void addToCart_Click(object sender, EventArgs e)
         {
             if(CheckValidations())
             {
-
+                customer.AddToCart(ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+                CustomerDL.InsertOrderIntoCustomerDatabase(customer);
+                ClearTextBoxes();
             }
         }
 
@@ -129,17 +179,46 @@ namespace SignInSignUp.UI
         {
             int value;
             int totalItemStock = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
-            if (!int.TryParse(textBox1.Text, out value) || value <= 0 || value >= totalItemStock)
+            int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
+            if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
             {
-                errorProvider1.SetError(textBox1, $"Please enter a positive integer greater than 0 and less than {totalItemStock}");
+                errorProvider1.SetError(quantitiesComboBox, $"Please enter a positive quantity greater than 0 and less than {totalItemStock}");
                 return false;
-            }
-            else
-            {
-                errorProvider1.SetError(textBox1, "");
             }
 
             return true;
+        }
+
+        private void DeductOrderedProductFromStock(string productName, int quantity)
+        {
+            Product product = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(productName)).FirstOrDefault();
+            product.UpdateStock("remove", quantity);
+            ProductDL.UpdateProductInDatabase(product);
+        }
+
+        private void placeOrderButton_Click(object sender, EventArgs e)
+        {
+            if(customer.GetCart().Count>0)
+            {
+                foreach (OrderedProduct item in customer.GetCart())
+                {
+                    DeductOrderedProductFromStock(item.GetProduct().GetProductName(), item.GetQuantity());
+                }
+
+                Order order = new Order(OrderDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now,comments.Text , customer.GetName());
+                OrderDL.AddOrder(order);
+                OrderDL.InsertOrderInDatabase(order);
+            }
+            else
+            {
+                MessageBox.Show("Please select an item to place order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void clearCart_Click(object sender, EventArgs e)
+        {
+            customer.GetCart().Clear();
+            CustomerDL.InsertOrderIntoCustomerDatabase(customer);
         }
     }
 }

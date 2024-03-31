@@ -30,7 +30,6 @@ namespace SignInSignUp
             this.Size = size;
             this.Location = location;
             InitializeUserControls();
-            MessageBox.Show(customer.GetName());
         }
 
         private void InitializeUserControls()

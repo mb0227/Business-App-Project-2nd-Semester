@@ -32,12 +32,13 @@ namespace SignInSignUp
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Products (ProductName, ProductDescription, ProductCategory, Price, Stock) VALUES (@ProductName, @ProductDescription, @ProductCategory, @Price, @Stock)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Products (ProductName, ProductDescription, ProductCategory, Price, Stock,QuantitiesAvailable) VALUES (@ProductName, @ProductDescription, @ProductCategory, @Price, @Stock,@QuantitiesAvailable)", connection);
                 command.Parameters.AddWithValue("@ProductName", product.GetProductName());
                 command.Parameters.AddWithValue("@ProductDescription", product.GetProductDescription());
                 command.Parameters.AddWithValue("@ProductCategory", product.GetProductCategory());
                 command.Parameters.AddWithValue("@Price", product.GetPrice());
                 command.Parameters.AddWithValue("@Stock", product.GetStock());
+                command.Parameters.AddWithValue("@QuantitiesAvailable", product.ReturnQuantityString());
                 command.ExecuteNonQuery();                
             }
         }
@@ -56,8 +57,17 @@ namespace SignInSignUp
                     string productCategory = reader["ProductCategory"].ToString();
                     int price = Convert.ToInt32(reader["Price"]);
                     int stock = Convert.ToInt32(reader["Stock"]);
+                    string quantities = reader["QuantitiesAvailable"].ToString();
+
+                    string[] splittedRecord = quantities.Split(',');
+                    List<string> quantitiesList = new List<string>();
+                    foreach (string record in splittedRecord)
+                    {
+                        quantitiesList.Add(record);
+                    }
 
                     Product product = new Product(productName, productDescription, productCategory, price, stock);
+                    product.SetAvailableQuantities(quantitiesList);
                     Products.Add(product);
                 }
             }
@@ -68,13 +78,13 @@ namespace SignInSignUp
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE Products SET ProductName=@ProductName, ProductDescription=@ProductDescription, ProductCategory=@ProductCategory, Price=@Price, Stock=@Stock WHERE ProductName=@ProductName", connection);
+                SqlCommand command = new SqlCommand("UPDATE Products SET ProductName=@ProductName, ProductDescription=@ProductDescription, ProductCategory=@ProductCategory, Price=@Price, Stock=@Stock,QuantitiesAvailable=@QuantitiesAvailable WHERE ProductName=@ProductName", connection);
                 command.Parameters.AddWithValue("@ProductName", product.GetProductName());
                 command.Parameters.AddWithValue("@ProductDescription", product.GetProductDescription());
                 command.Parameters.AddWithValue("@ProductCategory", product.GetProductCategory());
                 command.Parameters.AddWithValue("@Price", product.GetPrice());
                 command.Parameters.AddWithValue("@Stock", product.GetStock());
-
+                command.Parameters.AddWithValue("@QuantitiesAvailable", product.GetAvailableQuantities());
                 command.ExecuteNonQuery();
             }
         }

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BL\Customer.cs" />
     <Compile Include="BL\Order.cs" />
+    <Compile Include="BL\OrderedProduct.cs" />
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\User.cs" />
     <Compile Include="DL\CustomerDL.cs" />

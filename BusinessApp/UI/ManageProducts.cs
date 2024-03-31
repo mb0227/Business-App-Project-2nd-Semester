@@ -39,6 +39,7 @@ namespace SignInSignUp.UI
             dataTable.Columns.Add("ProductDescription", typeof(string));
             dataTable.Columns.Add("Price", typeof(int));
             dataTable.Columns.Add("Stock", typeof(int));
+            dataTable.Columns.Add("QuantitiesAvailable", typeof(string));
 
             dataGridView1.DataSource = dataTable;
         }
@@ -69,18 +70,30 @@ namespace SignInSignUp.UI
             dataTable.Rows.Clear();
             foreach (Product product in ProductDL.GetProducts())
             {
-                dataTable.Rows.Add(product.GetProductName(), product.GetProductCategory(), product.GetProductDescription(), product.GetPrice(), product.GetStock());
+                dataTable.Rows.Add(product.GetProductName(), product.GetProductCategory(), product.GetProductDescription(), product.GetPrice(), product.GetStock(),product.ReturnQuantityString());
                 dataGridView1.DataSource = dataTable;
             }
+        }
+
+        private void SetQuantities(Product product)
+        {
+            string[] splittedRecord = quantities.Text.Split(',');
+            List<string> quantitiesList = new List<string>();
+            foreach (string record in splittedRecord)
+            {
+                quantitiesList.Add(record);
+            }
+            product.SetAvailableQuantities(quantitiesList);
         }
 
         private void insert_Click(object sender, EventArgs e)
         {
             if (CheckValidations())
             {
-                try
+                try 
                 {
                     Product newProduct = new Product(name.Text, description.Text, comboBox1.Text, int.Parse(price.Text), int.Parse(stock.Text));
+                    SetQuantities(newProduct);
                     ProductDL.AddProduct(newProduct);
                     ProductDL.InsertProductsIntoDatabase(newProduct);
                     ClearTextBoxes();
@@ -141,6 +154,15 @@ namespace SignInSignUp.UI
                 return false;
             }
 
+            if (string.IsNullOrWhiteSpace(quantities.Text.Trim()))
+            {
+                errorProvider5.SetError(quantities, "Quantities must be set and separated by comma.");
+                return false;
+            }
+            else
+            {
+                errorProvider5.SetError(description, "");
+            }
             return true;
         }
 
@@ -165,6 +187,7 @@ namespace SignInSignUp.UI
                     dataTable.Rows[selectedRow].SetField("ProductDescription", p.GetProductDescription());
                     dataTable.Rows[selectedRow].SetField("Price", p.GetPrice());
                     dataTable.Rows[selectedRow].SetField("Stock", p.GetStock());
+                    dataTable.Rows[selectedRow].SetField("QuantitiesAvailable", p.GetAvailableQuantities());
                     dataGridView1.DataSource = dataTable;
                     ProductDL.UpdateProductInDatabase(p);
                     ClearTextBoxes();
@@ -227,6 +250,11 @@ namespace SignInSignUp.UI
             {
                 dataGridView1.DataSource = dataTable;
             }
+        }
+
+        private void quantities_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

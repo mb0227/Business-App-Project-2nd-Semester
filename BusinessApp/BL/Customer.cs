@@ -11,7 +11,7 @@ namespace SignInSignUp
         private string Email;
         private string PhoneNumber;
         private Order Order;
-        private List<Product> Cart;
+        private List <OrderedProduct> Cart;
         private string OrderSpecifications;
 
 
@@ -20,10 +20,18 @@ namespace SignInSignUp
             Email = email;
             PhoneNumber = phoneNumber;
             Order = new Order();
-            Cart = new List<Product>();
+            Cart = new List <OrderedProduct>();
         }
 
-        public Customer(string username, string password, string role, string gender, string email, string phoneNumber, string orderSpecifications,Order order, List<Product> cart) : base(username, password, role, gender) 
+        public Customer(string username, string password, string role, string gender, string email, string phoneNumber, Order order, List<OrderedProduct> cart) : base(username, password, role, gender)
+        {
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Order = order;
+            Cart = cart;
+        }
+
+        public Customer(string username, string password, string role, string gender, string email, string phoneNumber, string orderSpecifications,Order order, List<OrderedProduct> cart) : base(username, password, role, gender) 
         {
             Email = email;
             PhoneNumber = phoneNumber;
@@ -52,7 +60,7 @@ namespace SignInSignUp
             return OrderSpecifications;
         }
 
-        public List<Product> GetCart()
+        public List<OrderedProduct> GetCart()
         {
             return Cart;
         }
@@ -72,7 +80,7 @@ namespace SignInSignUp
             Order = o;
         }
 
-        public void SetCart(List<Product> c)
+        public void SetCart(List<OrderedProduct> c)
         {
             Cart = c;
         }
@@ -82,20 +90,16 @@ namespace SignInSignUp
             OrderSpecifications = s;
         }
 
-        public void AddToCart(Product product)
+        public void AddToCart(Product product, int quantity)
         {
-            Cart.Add(product);
+            Cart.Add(new OrderedProduct(product, quantity));
         }
 
         public void RemoveFromCart(Product product)
         {
-            Cart.Remove(product);
+            Cart.Remove(Cart.Where(p => p.GetProduct().GetProductName().Equals(product.GetProductName())).FirstOrDefault());
         }
 
-        public void ClearCart()
-        {
-            Cart.Clear();
-        }
 
         public void PlaceOrder()
         {

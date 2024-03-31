@@ -29,7 +29,6 @@ namespace SignInSignUp.UI
             this.Size = size;
             this.Location = location;
             customer = c;
-            MessageBox.Show(customer.GetName());
         }
 
         private void CustomerFeedback_Load(object sender, EventArgs e)

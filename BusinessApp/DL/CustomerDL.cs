@@ -14,7 +14,7 @@ namespace SignInSignUp
         public static void GetCustomersFromDatabase()
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            { 
+            {
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT * FROM Customers", connection);
                 SqlDataReader reader = command.ExecuteReader();
@@ -26,7 +26,6 @@ namespace SignInSignUp
                     string gender = reader["Gender"].ToString();
                     string email = reader["Email"].ToString();
                     string phoneNumber = reader["Contact"].ToString();
-                    string orderSpecifications = reader["OrderSpecifications"].ToString();
                     string productsOrdered = reader["Cart"].ToString();
 
                     object orderIdObj = reader["OrderID"];
@@ -38,25 +37,35 @@ namespace SignInSignUp
 
                     Order order = OrderDL.SearchOrderById(orderID);
 
-                    string[] products = productsOrdered.Split(',');
-                    List<Product> cart = new List<Product>();
-                    foreach (string product in products)
+                    List<OrderedProduct> cart = new List<OrderedProduct>();
+                    string[] productItems = productsOrdered.Split(',');
+                    foreach (string productItem in productItems)
                     {
-                        Product p = ProductDL.SearchProductByName(product);
-                        cart.Add(p);
+                        string[] parts = productItem.Split(':');
+                        if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
+                        {
+                            string productName = parts[1];
+                            Product product = ProductDL.SearchProductByName(productName);
+                            if (product != null)
+                            {
+                                cart.Add(new OrderedProduct(product,quantity));
+                            }
+                        }
                     }
-                    Customer customer = new Customer(username, password, role, gender, email, phoneNumber, orderSpecifications, order, cart);
+
+                    Customer customer = new Customer(username, password, role, gender, email, phoneNumber, order, cart);
                     Customers.Add(customer);
                 }
             }
         }
+
 
         public void UpdateCustomerInDatabase(Customer customer)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE Customers SET Username = @Username, Password = @Password, Role = @Role, Gender = @Gender, Email = @Email, PhoneNumber = @PhoneNumber, OrderSpecifications = @OrderSpecifications, Cart=@Cart WHERE ID = @ID", connection);
+                SqlCommand command = new SqlCommand("UPDATE Customers SET Username = @Username, Password = @Password, Role = @Role, Gender = @Gender, Email = @Email, PhoneNumber = @PhoneNumber, Cart=@Cart WHERE ID = @ID", connection);
 
                 command.Parameters.AddWithValue("@Username", customer.GetName());
                 command.Parameters.AddWithValue("@Password", customer.GetPassword());
@@ -64,7 +73,6 @@ namespace SignInSignUp
                 command.Parameters.AddWithValue("@Gender", customer.GetGender());
                 command.Parameters.AddWithValue("@Email", customer.GetEmail());
                 command.Parameters.AddWithValue("@Contact", customer.GetPhoneNumber());
-                command.Parameters.AddWithValue("@OrderSpecifications", customer.GetSpecifications());
                 command.Parameters.AddWithValue("@Cart", customer.GetCart());
 
                 command.ExecuteNonQuery();
@@ -98,19 +106,28 @@ namespace SignInSignUp
             }
         }
 
-        public static void InsertOrderIntoCustomerDatabase(Customer customer, Order order)
+        public static void InsertOrderIntoCustomerDatabase(Customer customer) //OrderSpecifications, OrderID, Cart, Username
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE Customers SET OrderSpecifications=@OrderSpecifications,OrderID = @OrderID, Cart = @Cart WHERE Username = @Username", connection);
-                command.Parameters.AddWithValue("@OrderID", order.GetOrderID());
-                command.Parameters.AddWithValue("@OrderSpecifications", customer.GetSpecifications());
-                command.Parameters.AddWithValue("@Cart", order.GetProducts());
+
+                StringBuilder cartString = new StringBuilder();
+                foreach (var orderedProduct in customer.GetCart())
+                {
+                    cartString.Append($"{orderedProduct.GetQuantity()}:{orderedProduct.GetProduct().GetProductName()},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("UPDATE Customers SET OrderID=@OrderID, Cart=@Cart WHERE Username=@Username", connection);
+                command.Parameters.AddWithValue("@OrderID", OrderDL.GetTotalOrders());
+                command.Parameters.AddWithValue("@Cart", cartAsString);
                 command.Parameters.AddWithValue("@Username", customer.GetName());
+
                 command.ExecuteNonQuery();
             }
         }
+
 
         public static bool UserAlreadyExists(string username)
         {
