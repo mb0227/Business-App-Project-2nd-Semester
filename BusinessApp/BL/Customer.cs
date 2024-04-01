@@ -14,7 +14,6 @@ namespace SignInSignUp
         private List <OrderedProduct> Cart;
         private string OrderSpecifications;
 
-
         public Customer(string username, string password, string role, string gender, string email, string phoneNumber) : base(username, password, role, gender)
         {
             Email = email;

@@ -45,11 +45,11 @@ namespace SignInSignUp
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 
-            // Set location and size of the navigation bar
             cNavBar.Left = 0;
-            cNavBar.Top = cHeader.Bottom; // Assuming headerPanel is the name of your header panel
-            cNavBar.Width = 200; // Assuming a fixed width for the navigation bar
+            cNavBar.Top = cHeader.Bottom; 
+            cNavBar.Width = 147; 
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
+            cNavBar.BringToFront(); 
 
             cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
         }

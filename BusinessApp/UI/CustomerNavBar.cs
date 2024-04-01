@@ -13,11 +13,13 @@ namespace SignInSignUp
 {
     public partial class CustomerNavBar : UserControl
     {
+        bool sidebarExpand;
         public event EventHandler<string> NavigationRequested;
         public CustomerNavBar()
         {
             InitializeComponent();
         }
+
 
         private void CustomerNavBar_Load(object sender, EventArgs e)
         {
@@ -56,6 +58,38 @@ namespace SignInSignUp
         private void HelpButton_Click(object sender, EventArgs e)
         {
             OnNavigationRequested("help");
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void sidebarTimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width <= sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                sidebar.Height = this.Height;
+                if (sidebar.Width >= sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
+
+        private void bars_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
         }
     }
 }

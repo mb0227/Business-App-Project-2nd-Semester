@@ -27,7 +27,6 @@ namespace SignInSignUp.UI
             pictureBox3.Image = Properties.Resources.customer;
             pictureBox4.Image = Properties.Resources.notifications;
             pictureBox5.Image = Properties.Resources.admin;
-            pictureBox7.Image = Properties.Resources.gear_solid;
         }
 
         private void button1_Click(object sender, EventArgs e)

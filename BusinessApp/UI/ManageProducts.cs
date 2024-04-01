@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SignInSignUp.UI
 {
@@ -173,6 +172,7 @@ namespace SignInSignUp.UI
             description.Text = "";
             price.Text = "";
             stock.Text = "";
+            quantities.Text = "";
         }
 
         private void update_Click(object sender, EventArgs e)

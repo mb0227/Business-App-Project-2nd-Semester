@@ -28,230 +28,203 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerNavBar));
-            this.dashboardButton = new System.Windows.Forms.Button();
-            this.BookTableButton = new System.Windows.Forms.Button();
-            this.feedbackButton = new System.Windows.Forms.Button();
-            this.HelpButton = new System.Windows.Forms.Button();
-            this.OrderFoodButton = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.settingButton = new Guna.UI2.WinForms.Guna2Button();
+            this.helpButton = new Guna.UI2.WinForms.Guna2Button();
+            this.feedbackButton = new Guna.UI2.WinForms.Guna2Button();
+            this.reservationButton = new Guna.UI2.WinForms.Guna2Button();
+            this.orderFoodButton = new Guna.UI2.WinForms.Guna2Button();
+            this.dashboard = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bars = new System.Windows.Forms.PictureBox();
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bars)).BeginInit();
+            this.sidebar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dashboardButton
+            // sidebarTimer
             // 
-            this.dashboardButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.dashboardButton.FlatAppearance.BorderSize = 0;
-            this.dashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dashboardButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardButton.ForeColor = System.Drawing.Color.MintCream;
-            this.dashboardButton.Location = new System.Drawing.Point(52, 3);
-            this.dashboardButton.Name = "dashboardButton";
-            this.dashboardButton.Size = new System.Drawing.Size(210, 64);
-            this.dashboardButton.TabIndex = 0;
-            this.dashboardButton.Text = "Dashboard";
-            this.dashboardButton.UseVisualStyleBackColor = false;
-            this.dashboardButton.Click += new System.EventHandler(this.dashboardButton_Click);
+            this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
-            // BookTableButton
+            // settingButton
             // 
-            this.BookTableButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.BookTableButton.FlatAppearance.BorderSize = 0;
-            this.BookTableButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BookTableButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookTableButton.ForeColor = System.Drawing.Color.MintCream;
-            this.BookTableButton.Location = new System.Drawing.Point(53, 152);
-            this.BookTableButton.Name = "BookTableButton";
-            this.BookTableButton.Size = new System.Drawing.Size(210, 64);
-            this.BookTableButton.TabIndex = 1;
-            this.BookTableButton.Text = "Book Table";
-            this.BookTableButton.UseVisualStyleBackColor = false;
-            this.BookTableButton.Click += new System.EventHandler(this.BookTableButton_Click);
+            this.settingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.settingButton.BackColor = System.Drawing.Color.Transparent;
+            this.settingButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.settingButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.settingButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.settingButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.settingButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.settingButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingButton.ForeColor = System.Drawing.Color.White;
+            this.settingButton.Image = ((System.Drawing.Image)(resources.GetObject("settingButton.Image")));
+            this.settingButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.settingButton.Location = new System.Drawing.Point(3, 355);
+            this.settingButton.Name = "settingButton";
+            this.settingButton.Size = new System.Drawing.Size(216, 53);
+            this.settingButton.TabIndex = 5;
+            this.settingButton.Text = "Settings";
+            // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.Color.Transparent;
+            this.helpButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.helpButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.helpButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.helpButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.helpButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.helpButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpButton.ForeColor = System.Drawing.Color.White;
+            this.helpButton.Image = global::SignInSignUp.Properties.Resources.icons8_help_50__1_;
+            this.helpButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.helpButton.Location = new System.Drawing.Point(3, 296);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(216, 53);
+            this.helpButton.TabIndex = 4;
+            this.helpButton.Text = "Help              ";
+            this.helpButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // feedbackButton
             // 
-            this.feedbackButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.feedbackButton.FlatAppearance.BorderSize = 0;
-            this.feedbackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.feedbackButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackButton.ForeColor = System.Drawing.Color.MintCream;
-            this.feedbackButton.Location = new System.Drawing.Point(40, 227);
+            this.feedbackButton.BackColor = System.Drawing.Color.Transparent;
+            this.feedbackButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.feedbackButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.feedbackButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.feedbackButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.feedbackButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.feedbackButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackButton.ForeColor = System.Drawing.Color.White;
+            this.feedbackButton.Image = global::SignInSignUp.Properties.Resources.icons8_feedback_50__1_;
+            this.feedbackButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.feedbackButton.Location = new System.Drawing.Point(3, 237);
             this.feedbackButton.Name = "feedbackButton";
-            this.feedbackButton.Size = new System.Drawing.Size(219, 64);
-            this.feedbackButton.TabIndex = 2;
-            this.feedbackButton.Text = "Feedback";
-            this.feedbackButton.UseVisualStyleBackColor = false;
-            this.feedbackButton.Click += new System.EventHandler(this.feedbackButton_Click);
+            this.feedbackButton.Size = new System.Drawing.Size(216, 53);
+            this.feedbackButton.TabIndex = 3;
+            this.feedbackButton.Text = "   Feedback";
             // 
-            // HelpButton
+            // reservationButton
             // 
-            this.HelpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.HelpButton.FlatAppearance.BorderSize = 0;
-            this.HelpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HelpButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HelpButton.ForeColor = System.Drawing.Color.MintCream;
-            this.HelpButton.Location = new System.Drawing.Point(58, 302);
-            this.HelpButton.Name = "HelpButton";
-            this.HelpButton.Size = new System.Drawing.Size(204, 60);
-            this.HelpButton.TabIndex = 3;
-            this.HelpButton.Text = "    Help";
-            this.HelpButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HelpButton.UseVisualStyleBackColor = false;
-            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
+            this.reservationButton.BackColor = System.Drawing.Color.Transparent;
+            this.reservationButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.reservationButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.reservationButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.reservationButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.reservationButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.reservationButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservationButton.ForeColor = System.Drawing.Color.White;
+            this.reservationButton.Image = global::SignInSignUp.Properties.Resources.icons8_reservation_50__1_;
+            this.reservationButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.reservationButton.Location = new System.Drawing.Point(3, 178);
+            this.reservationButton.Name = "reservationButton";
+            this.reservationButton.Size = new System.Drawing.Size(216, 53);
+            this.reservationButton.TabIndex = 2;
+            this.reservationButton.Text = "      Reservation";
             // 
-            // OrderFoodButton
+            // orderFoodButton
             // 
-            this.OrderFoodButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.OrderFoodButton.FlatAppearance.BorderSize = 0;
-            this.OrderFoodButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OrderFoodButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderFoodButton.ForeColor = System.Drawing.Color.MintCream;
-            this.OrderFoodButton.Location = new System.Drawing.Point(54, 80);
-            this.OrderFoodButton.Name = "OrderFoodButton";
-            this.OrderFoodButton.Size = new System.Drawing.Size(210, 64);
-            this.OrderFoodButton.TabIndex = 1;
-            this.OrderFoodButton.Text = "Order Food";
-            this.OrderFoodButton.UseVisualStyleBackColor = false;
-            this.OrderFoodButton.Click += new System.EventHandler(this.OrderFoodButton_Click);
+            this.orderFoodButton.BackColor = System.Drawing.Color.Transparent;
+            this.orderFoodButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.orderFoodButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.orderFoodButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.orderFoodButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.orderFoodButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.orderFoodButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderFoodButton.ForeColor = System.Drawing.Color.White;
+            this.orderFoodButton.Image = global::SignInSignUp.Properties.Resources.icons8_order_food_60;
+            this.orderFoodButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.orderFoodButton.Location = new System.Drawing.Point(3, 119);
+            this.orderFoodButton.Name = "orderFoodButton";
+            this.orderFoodButton.Size = new System.Drawing.Size(216, 53);
+            this.orderFoodButton.TabIndex = 1;
+            this.orderFoodButton.Text = "     Order Food";
             // 
-            // pictureBox6
+            // dashboard
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(4, 304);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(54, 56);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
+            this.dashboard.BackColor = System.Drawing.Color.Transparent;
+            this.dashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dashboard.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.dashboard.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboard.ForeColor = System.Drawing.Color.White;
+            this.dashboard.Image = ((System.Drawing.Image)(resources.GetObject("dashboard.Image")));
+            this.dashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dashboard.Location = new System.Drawing.Point(3, 59);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(216, 54);
+            this.dashboard.TabIndex = 0;
+            this.dashboard.Text = "    Dashboard";
             // 
-            // pictureBox5
+            // panel1
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(4, 230);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(54, 61);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
+            this.panel1.Controls.Add(this.bars);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(216, 50);
+            this.panel1.TabIndex = 6;
             // 
-            // pictureBox4
+            // bars
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(4, 85);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(54, 61);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
+            this.bars.Image = global::SignInSignUp.Properties.Resources.bars_solid;
+            this.bars.Location = new System.Drawing.Point(6, 3);
+            this.bars.Name = "bars";
+            this.bars.Size = new System.Drawing.Size(48, 44);
+            this.bars.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bars.TabIndex = 0;
+            this.bars.TabStop = false;
+            this.bars.Click += new System.EventHandler(this.bars_Click);
             // 
-            // pictureBox3
+            // sidebar
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(2, 441);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 57);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 155);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 66);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 54);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.Location = new System.Drawing.Point(55, 440);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 60);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "    Settings";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.sidebar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.sidebar.Controls.Add(this.panel1);
+            this.sidebar.Controls.Add(this.dashboard);
+            this.sidebar.Controls.Add(this.orderFoodButton);
+            this.sidebar.Controls.Add(this.reservationButton);
+            this.sidebar.Controls.Add(this.feedbackButton);
+            this.sidebar.Controls.Add(this.helpButton);
+            this.sidebar.Controls.Add(this.settingButton);
+            this.sidebar.Location = new System.Drawing.Point(0, -1);
+            this.sidebar.MaximumSize = new System.Drawing.Size(219, 1080);
+            this.sidebar.MinimumSize = new System.Drawing.Size(59, 1080);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(219, 1080);
+            this.sidebar.TabIndex = 0;
+            this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // CustomerNavBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.HelpButton);
-            this.Controls.Add(this.OrderFoodButton);
-            this.Controls.Add(this.feedbackButton);
-            this.Controls.Add(this.BookTableButton);
-            this.Controls.Add(this.dashboardButton);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.sidebar);
             this.ForeColor = System.Drawing.Color.MintCream;
             this.Name = "CustomerNavBar";
-            this.Size = new System.Drawing.Size(240, 500);
+            this.Size = new System.Drawing.Size(219, 451);
             this.Load += new System.EventHandler(this.CustomerNavBar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bars)).EndInit();
+            this.sidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button dashboardButton;
-        private System.Windows.Forms.Button BookTableButton;
-        private System.Windows.Forms.Button feedbackButton;
-        private System.Windows.Forms.Button HelpButton;
-        private System.Windows.Forms.Button OrderFoodButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer sidebarTimer;
+        private Guna.UI2.WinForms.Guna2Button settingButton;
+        private Guna.UI2.WinForms.Guna2Button helpButton;
+        private Guna.UI2.WinForms.Guna2Button feedbackButton;
+        private Guna.UI2.WinForms.Guna2Button reservationButton;
+        private Guna.UI2.WinForms.Guna2Button orderFoodButton;
+        private Guna.UI2.WinForms.Guna2Button dashboard;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox bars;
+        private System.Windows.Forms.FlowLayoutPanel sidebar;
     }
 }

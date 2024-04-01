@@ -79,3 +79,7 @@ C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Manage
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageProducts.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ManageCustomers.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.ViewCart.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Dashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.NavigationBar.resources
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\bin\Debug\Guna.UI2.dll
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\Business.E3960287.Up2Date

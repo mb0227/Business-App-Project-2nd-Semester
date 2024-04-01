@@ -22,7 +22,7 @@ namespace SignInSignUp
             OrderDL.ReadOrdersFromDatabase();
             CustomerDL.GetCustomersFromDatabase();
 
-            Application.Run(new SignIn());
+            Application.Run(new CustomerDashboard());
         }
     }
 }
