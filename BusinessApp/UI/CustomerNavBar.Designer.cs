@@ -47,7 +47,7 @@
             // 
             // sidebarTimer
             // 
-            this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Interval = 5;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
             // settingButton
@@ -58,7 +58,7 @@
             this.settingButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.settingButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.settingButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.settingButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.settingButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.settingButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingButton.ForeColor = System.Drawing.Color.White;
             this.settingButton.Image = ((System.Drawing.Image)(resources.GetObject("settingButton.Image")));
@@ -68,6 +68,7 @@
             this.settingButton.Size = new System.Drawing.Size(216, 53);
             this.settingButton.TabIndex = 5;
             this.settingButton.Text = "Settings";
+            this.settingButton.Click += new System.EventHandler(this.settingButton_Click);
             // 
             // helpButton
             // 
@@ -76,7 +77,7 @@
             this.helpButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.helpButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.helpButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.helpButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.helpButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.helpButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpButton.ForeColor = System.Drawing.Color.White;
             this.helpButton.Image = global::SignInSignUp.Properties.Resources.icons8_help_50__1_;
@@ -87,6 +88,7 @@
             this.helpButton.TabIndex = 4;
             this.helpButton.Text = "Help              ";
             this.helpButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click_1);
             // 
             // feedbackButton
             // 
@@ -95,7 +97,7 @@
             this.feedbackButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.feedbackButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.feedbackButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.feedbackButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.feedbackButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.feedbackButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedbackButton.ForeColor = System.Drawing.Color.White;
             this.feedbackButton.Image = global::SignInSignUp.Properties.Resources.icons8_feedback_50__1_;
@@ -105,6 +107,7 @@
             this.feedbackButton.Size = new System.Drawing.Size(216, 53);
             this.feedbackButton.TabIndex = 3;
             this.feedbackButton.Text = "   Feedback";
+            this.feedbackButton.Click += new System.EventHandler(this.feedbackButton_Click_1);
             // 
             // reservationButton
             // 
@@ -113,7 +116,7 @@
             this.reservationButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.reservationButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.reservationButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.reservationButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.reservationButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.reservationButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationButton.ForeColor = System.Drawing.Color.White;
             this.reservationButton.Image = global::SignInSignUp.Properties.Resources.icons8_reservation_50__1_;
@@ -123,6 +126,7 @@
             this.reservationButton.Size = new System.Drawing.Size(216, 53);
             this.reservationButton.TabIndex = 2;
             this.reservationButton.Text = "      Reservation";
+            this.reservationButton.Click += new System.EventHandler(this.reservationButton_Click);
             // 
             // orderFoodButton
             // 
@@ -131,7 +135,7 @@
             this.orderFoodButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.orderFoodButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.orderFoodButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.orderFoodButton.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.orderFoodButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.orderFoodButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderFoodButton.ForeColor = System.Drawing.Color.White;
             this.orderFoodButton.Image = global::SignInSignUp.Properties.Resources.icons8_order_food_60;
@@ -141,6 +145,7 @@
             this.orderFoodButton.Size = new System.Drawing.Size(216, 53);
             this.orderFoodButton.TabIndex = 1;
             this.orderFoodButton.Text = "     Order Food";
+            this.orderFoodButton.Click += new System.EventHandler(this.orderFoodButton_Click_1);
             // 
             // dashboard
             // 
@@ -149,7 +154,7 @@
             this.dashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.dashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.dashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.dashboard.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.dashboard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.dashboard.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboard.ForeColor = System.Drawing.Color.White;
             this.dashboard.Image = ((System.Drawing.Image)(resources.GetObject("dashboard.Image")));
@@ -159,6 +164,7 @@
             this.dashboard.Size = new System.Drawing.Size(216, 54);
             this.dashboard.TabIndex = 0;
             this.dashboard.Text = "    Dashboard";
+            this.dashboard.Click += new System.EventHandler(this.dashboard_Click);
             // 
             // panel1
             // 
@@ -181,7 +187,7 @@
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.dashboard);
             this.sidebar.Controls.Add(this.orderFoodButton);
@@ -195,7 +201,6 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(219, 1080);
             this.sidebar.TabIndex = 0;
-            this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // CustomerNavBar
             // 
@@ -206,7 +211,6 @@
             this.ForeColor = System.Drawing.Color.MintCream;
             this.Name = "CustomerNavBar";
             this.Size = new System.Drawing.Size(219, 451);
-            this.Load += new System.EventHandler(this.CustomerNavBar_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bars)).EndInit();
             this.sidebar.ResumeLayout(false);

@@ -83,3 +83,4 @@ C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Dashbo
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.NavigationBar.resources
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\bin\Debug\Guna.UI2.dll
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\Business.E3960287.Up2Date
+C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Help.resources

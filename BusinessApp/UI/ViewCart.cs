@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using Guna.UI2.WinForms;
 
 namespace SignInSignUp.UI
 {
@@ -26,6 +27,7 @@ namespace SignInSignUp.UI
         public ViewCart()
         {
             InitializeComponent();
+            InitializeUserControls();
         }
 
         public ViewCart(Size size, Point location, Customer c)
@@ -50,6 +52,7 @@ namespace SignInSignUp.UI
             cHeader.Top = 0;
             cHeader.Left = 0;
             cHeader.Width = this.Width;
+            cHeader.BringToFront();
 
             cNavBar = new CustomerNavBar();
             Controls.Add(cNavBar);
@@ -57,10 +60,12 @@ namespace SignInSignUp.UI
 
             cNavBar.Left = 0;
             cNavBar.Top = cHeader.Bottom;
-            cNavBar.Width = 200;
+            cNavBar.Width = 147;
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
+            cNavBar.BringToFront();
 
             cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
+            cNavBar.NavBarCollapsed += CNavBar_NavBarCollapsed;
         }
 
         private void CustomerNavBar_NavigationRequested(object sender, string formName)
@@ -82,9 +87,9 @@ namespace SignInSignUp.UI
                 case "settings":
                     OpenForm(new Settings(this.Size, this.Location, customer));
                     break;
-                //case "help":
-                //    OpenForm(new Help(this.Size, this.Location, customer));
-                //    break;
+                case "help":
+                    OpenForm(new Help(this.Size, this.Location, customer));
+                    break;
                 default:
                     break;
             }
@@ -98,9 +103,17 @@ namespace SignInSignUp.UI
             this.Hide();
         }
 
-
-        private void ViewCart_Load(object sender, EventArgs e)
+        private void CNavBar_NavBarCollapsed(object sender, bool collapsed)
         {
+            if (collapsed)
+            {
+                panel1.BringToFront();
+            }
+            else
+            {
+                panel1.SendToBack();
+                cNavBar.BringToFront();
+            }
         }
 
         private void FillComboBox()
@@ -111,7 +124,6 @@ namespace SignInSignUp.UI
                 menuComboBox.Items.Add(product.GetProductName());
             }
         }
-
 
         private void LoadData()
         {
@@ -149,38 +161,6 @@ namespace SignInSignUp.UI
             dataTable.Columns.Add("Quantity", typeof(int));
 
             cartGridView.DataSource = dataTable;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (cartGridView.SelectedRows.Count > 0)
-            {
-                if (CheckValidations())
-                {
-                    OrderedProduct p = new OrderedProduct(ProductDL.SearchProductByName(menuComboBox.Text), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
-                    selectedRow = cartGridView.SelectedRows[0].Index;
-
-                    DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
-                    string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
-                    string quantity = selectedDataGridViewRow.Cells["Quantity"].Value.ToString();
-
-                    Product product = new Product();
-                    product.SetProductName(productName);
-                    customer.RemoveFromCart(product);
-
-                    dataTable.Rows[selectedRow].SetField("ProductName", p.GetProduct().GetProductName());
-                    dataTable.Rows[selectedRow].SetField("Quantity", p.GetQuantity());
-
-                    customer.AddToCart(p.GetProduct(), p.GetQuantity());
-
-                    cartGridView.DataSource = dataTable;
-                    CustomerDL.UpdateCustomerInDatabase(customer);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select a row to update");
-            }
         }
 
         private bool CheckValidations()
@@ -221,7 +201,73 @@ namespace SignInSignUp.UI
             return 0;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void name_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(name.Text.Trim()))
+            {
+                cartGridView.DataSource = dataTable;
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchText = name.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(searchText))
+            {
+                var filteredRows = dataTable.AsEnumerable()
+                                            .Where(row => row.Field<string>("ProductName")
+                                                            ?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0);
+
+                if (filteredRows.Any())
+                {
+                    cartGridView.DataSource = filteredRows.CopyToDataTable();
+                }
+                else
+                {
+                    MessageBox.Show("No matching products found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cartGridView.DataSource = dataTable;
+                }
+            }
+            else
+            {
+                cartGridView.DataSource = dataTable;
+            }
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            if (cartGridView.SelectedRows.Count > 0)
+            {
+                if (CheckValidations())
+                {
+                    OrderedProduct p = new OrderedProduct(ProductDL.SearchProductByName(menuComboBox.Text), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+                    selectedRow = cartGridView.SelectedRows[0].Index;
+
+                    DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
+                    string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
+                    string quantity = selectedDataGridViewRow.Cells["Quantity"].Value.ToString();
+
+                    Product product = new Product();
+                    product.SetProductName(productName);
+                    customer.RemoveFromCart(product);
+
+                    dataTable.Rows[selectedRow].SetField("ProductName", p.GetProduct().GetProductName());
+                    dataTable.Rows[selectedRow].SetField("Quantity", p.GetQuantity());
+
+                    customer.AddToCart(p.GetProduct(), p.GetQuantity());
+
+                    cartGridView.DataSource = dataTable;
+                    CustomerDL.UpdateCustomerInDatabase(customer);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to update");
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
         {
             if (cartGridView.SelectedRows.Count > 0)
             {
@@ -248,38 +294,11 @@ namespace SignInSignUp.UI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
-            string searchText = name.Text.Trim();
-
-            if (!string.IsNullOrWhiteSpace(searchText))
-            {
-                var filteredRows = dataTable.AsEnumerable()
-                                            .Where(row => row.Field<string>("ProductName")
-                                                            ?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0);
-
-                if (filteredRows.Any())
-                {
-                    cartGridView.DataSource = filteredRows.CopyToDataTable();
-                }
-                else
-                {
-                    MessageBox.Show("No matching products found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cartGridView.DataSource = dataTable;
-                }
-            }
-            else
-            {
-                cartGridView.DataSource = dataTable;
-            }
-        }
-
-        private void name_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(name.Text.Trim()))
-            {
-                cartGridView.DataSource = dataTable;
-            }
+            CustomerOrderFood c = new CustomerOrderFood(this.Size, this.Location, customer);
+            c.Show();
+            this.Hide();
         }
     }
 }

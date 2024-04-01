@@ -25,8 +25,8 @@ namespace SignInSignUp
 
         public CustomerDashboard(Size size, Point location, Customer c)
         {
-            customer = c;
             InitializeComponent();
+            customer = c;
             this.Size = size;
             this.Location = location;
             InitializeUserControls();
@@ -40,6 +40,7 @@ namespace SignInSignUp
             cHeader.Top = 0;
             cHeader.Left = 0;
             cHeader.Width = this.Width;
+            cHeader.BringToFront(); 
 
             cNavBar = new CustomerNavBar();
             Controls.Add(cNavBar);
@@ -52,6 +53,7 @@ namespace SignInSignUp
             cNavBar.BringToFront(); 
 
             cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
+            cNavBar.NavBarCollapsed += CNavBar_NavBarCollapsed;
         }
 
         private void CustomerNavBar_NavigationRequested(object sender, string formName)
@@ -73,9 +75,9 @@ namespace SignInSignUp
                 case "settings":
                     OpenForm(new Settings(this.Size, this.Location, customer));
                     break;
-                //case "help":
-                //    OpenForm(new Help(this.Size, this.Location, customer));
-                //    break;
+                case "help":
+                    OpenForm(new UI.Help(this.Size, this.Location, customer));
+                    break;
                 default:
                      break;
             }
@@ -89,8 +91,19 @@ namespace SignInSignUp
             this.Hide();
         }
 
-        private void CustomerDashboard_Load_1(object sender, EventArgs e)
+
+        private void CNavBar_NavBarCollapsed(object sender, bool collapsed)
         {
+            if (collapsed)
+            {
+                panel1.BringToFront();
+                guna2PictureBox1.BringToFront();
+            }
+            else
+            {
+                panel1.SendToBack();
+                cNavBar.BringToFront();
+            }
         }
     }
 }

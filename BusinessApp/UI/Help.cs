@@ -2,32 +2,35 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SignInSignUp;
 
 namespace SignInSignUp.UI
 {
-    public partial class CustomerBookTable : Form
+    public partial class Help : Form
     {
+        private Customer customer;
         private CustomerHeader cHeader;
         private CustomerNavBar cNavBar;
-        private Customer customer;
-        public CustomerBookTable()
+
+        public Help()
         {
             InitializeComponent();
             InitializeUserControls();
         }
 
-        public CustomerBookTable(Size size, Point location, Customer c)
+        public Help(Size size, Point location, Customer c)
         {
+            customer = c;
             InitializeComponent();
-            InitializeUserControls();
             this.Size = size;
             this.Location = location;
-            customer = c;
+            InitializeUserControls();
         }
 
         private void InitializeUserControls()
@@ -101,6 +104,13 @@ namespace SignInSignUp.UI
                 panel4.SendToBack();
                 cNavBar.BringToFront();
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string phoneNumber = "+923344207165";
+
+            Process.Start("tel:" + phoneNumber);
         }
     }
 }

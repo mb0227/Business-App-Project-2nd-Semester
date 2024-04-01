@@ -14,54 +14,19 @@ namespace SignInSignUp
     public partial class CustomerNavBar : UserControl
     {
         bool sidebarExpand;
+        public bool IsNavBarCollapsed { get; private set; }
         public event EventHandler<string> NavigationRequested;
+        public event EventHandler<bool> NavBarCollapsed;
+
         public CustomerNavBar()
         {
             InitializeComponent();
-        }
-
-
-        private void CustomerNavBar_Load(object sender, EventArgs e)
-        {
+            IsNavBarCollapsed = true; 
         }
 
         private void OnNavigationRequested(string formName)
         {
             NavigationRequested?.Invoke(this, formName);
-        }
-
-        private void dashboardButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("dashboard"); 
-        }
-
-        private void OrderFoodButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("orderFood"); 
-        }
-
-        private void BookTableButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("bookTable"); 
-        }
-
-        private void feedbackButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("feedback");
-        }
-
-        private void settingsButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("settings");
-        }
-
-        private void HelpButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("help");
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
         }
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
@@ -90,6 +55,43 @@ namespace SignInSignUp
         private void bars_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
+            ToggleNavBar();
+        }
+
+        private void ToggleNavBar()
+        {
+            IsNavBarCollapsed = !IsNavBarCollapsed; 
+            NavBarCollapsed?.Invoke(this, IsNavBarCollapsed); 
+        }
+
+        private void dashboard_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("dashboard");
+        }
+
+        private void orderFoodButton_Click_1(object sender, EventArgs e)
+        {
+            OnNavigationRequested("orderFood");
+        }
+
+        private void reservationButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("bookTable");
+        }
+
+        private void feedbackButton_Click_1(object sender, EventArgs e)
+        {
+            OnNavigationRequested("feedback");
+        }
+
+        private void helpButton_Click_1(object sender, EventArgs e)
+        {
+            OnNavigationRequested("help");
+        }
+
+        private void settingButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("settings");
         }
     }
 }

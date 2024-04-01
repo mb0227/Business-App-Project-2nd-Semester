@@ -106,6 +106,12 @@
     <Compile Include="UI\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
@@ -337,6 +346,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\icons8-help-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\platter.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

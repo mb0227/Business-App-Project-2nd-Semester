@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace SignInSignUp.UI
         public CustomerOrderFood()
         {
             InitializeComponent();
+            InitializeUserControls();
         }
 
         public CustomerOrderFood(Size size, Point location, Customer c)
@@ -46,10 +48,6 @@ namespace SignInSignUp.UI
             this.cNavBar = navBar;
         }
 
-        private void CustomerOrderFood_Load(object sender, EventArgs e)
-        {
-        }
-
         private void InitializeUserControls()
         {
             cHeader = new CustomerHeader();
@@ -58,19 +56,21 @@ namespace SignInSignUp.UI
             cHeader.Top = 0;
             cHeader.Left = 0;
             cHeader.Width = this.Width;
+            cHeader.BringToFront();
 
             cNavBar = new CustomerNavBar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 
             cNavBar.Left = 0;
-            cNavBar.Top = cHeader.Bottom; 
-            cNavBar.Width = 200;
+            cNavBar.Top = cHeader.Bottom;
+            cNavBar.Width = 147;
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
+            cNavBar.BringToFront();
 
             cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
+            cNavBar.NavBarCollapsed += CNavBar_NavBarCollapsed;
         }
-
 
         private void CustomerNavBar_NavigationRequested(object sender, string formName)
         {
@@ -91,9 +91,9 @@ namespace SignInSignUp.UI
                 case "settings":
                     OpenForm(new Settings(this.Size, this.Location, customer));
                     break;
-                //case "help":
-                //    OpenForm(new Help(this.Size, this.Location, customer));
-                //    break;
+                case "help":
+                    OpenForm(new UI.Help(this.Size, this.Location, customer));
+                    break;
                 default:
                     break;
             }
@@ -105,6 +105,20 @@ namespace SignInSignUp.UI
             form.Location = this.Location;
             form.Show();
             this.Hide();
+        }
+
+
+        private void CNavBar_NavBarCollapsed(object sender, bool collapsed)
+        {
+            if (collapsed)
+            {
+                panel3.BringToFront();
+            }
+            else
+            {
+                panel3.SendToBack();
+                cNavBar.BringToFront();
+            }
         }
 
         private void FillComboBox()
@@ -131,7 +145,7 @@ namespace SignInSignUp.UI
 
                 if (quantitiesComboBox.Items.Count > 0)
                 {
-                    quantitiesComboBox.SelectedIndex = 0; // Select the first item by default
+                    quantitiesComboBox.SelectedIndex = 0; 
                 }
             }
         }
@@ -165,16 +179,6 @@ namespace SignInSignUp.UI
             comments.Text = "";
         }
 
-        private void addToCart_Click(object sender, EventArgs e)
-        {
-            if(CheckValidations())
-            {
-                customer.AddToCart(ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
-                CustomerDL.InsertOrderIntoCustomerDatabase(customer);
-                ClearTextBoxes();
-            }
-        }
-
         private bool CheckValidations()
         {
             int value;
@@ -196,32 +200,6 @@ namespace SignInSignUp.UI
             ProductDL.UpdateProductInDatabase(product);
         }
 
-        private void placeOrderButton_Click(object sender, EventArgs e)
-        {
-            if(customer.GetCart().Count>0)
-            {
-                foreach (OrderedProduct item in customer.GetCart())
-                {
-                    DeductOrderedProductFromStock(item.GetProduct().GetProductName(), item.GetQuantity());
-                }
-
-                Order order = new Order(OrderDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now,comments.Text , customer.GetName());
-                OrderDL.AddOrder(order);
-                OrderDL.InsertOrderInDatabase(order);
-                LoadData();
-            }
-            else
-            {
-                MessageBox.Show("Please select an item to place order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void clearCart_Click(object sender, EventArgs e)
-        {
-            customer.GetCart().Clear();
-            CustomerDL.InsertOrderIntoCustomerDatabase(customer);
-        }
-
         private void MakeColumns()
         {
             dataTable.Columns.Add("ProductName", typeof(string));
@@ -241,41 +219,7 @@ namespace SignInSignUp.UI
             }
         }
 
-       
 
-        private void viewCart_Click(object sender, EventArgs e)
-        {
-            ViewCart v = new ViewCart(this.Size, this.Location, customer);
-            v.Show();
-            this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string searchText = name.Text.Trim();
-
-            if (!string.IsNullOrWhiteSpace(searchText))
-            {
-                var filteredRows = dataTable.AsEnumerable()
-                                            .Where(row => row.Field<string>("ProductName")
-                                                            ?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0);
-
-                if (filteredRows.Any())
-                {
-                    menuGridView.DataSource = filteredRows.CopyToDataTable();
-                }
-                else
-                {
-                    MessageBox.Show("No matching products found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    menuGridView.DataSource = dataTable;
-                }
-            }
-            else
-            {
-                menuGridView.DataSource = dataTable;
-            }
-
-        }
 
         private void name_TextChanged(object sender, EventArgs e)
         {
@@ -306,6 +250,75 @@ namespace SignInSignUp.UI
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            string searchText = name.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(searchText))
+            {
+                var filteredRows = dataTable.AsEnumerable()
+                                            .Where(row => row.Field<string>("ProductName")
+                                                            ?.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0);
+
+                if (filteredRows.Any())
+                {
+                    menuGridView.DataSource = filteredRows.CopyToDataTable();
+                }
+                else
+                {
+                    MessageBox.Show("No matching products found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    menuGridView.DataSource = dataTable;
+                }
+            }
+            else
+            {
+                menuGridView.DataSource = dataTable;
+            }
+        }
+
+        private void orderButton_Click(object sender, EventArgs e)
+        {
+            if (customer.GetCart().Count > 0)
+            {
+                foreach (OrderedProduct item in customer.GetCart())
+                {
+                    DeductOrderedProductFromStock(item.GetProduct().GetProductName(), item.GetQuantity());
+                }
+
+                Order order = new Order(OrderDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, customer.GetName());
+                OrderDL.AddOrder(order);
+                OrderDL.InsertOrderInDatabase(order);
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Please select an item to place order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void clearCartButton_Click(object sender, EventArgs e)
+        {
+            customer.GetCart().Clear();
+            CustomerDL.InsertOrderIntoCustomerDatabase(customer);
+        }
+
+        private void viewButton_Click(object sender, EventArgs e)
+        {
+            ViewCart v = new ViewCart(this.Size, this.Location, customer);
+            v.Show();
+            this.Hide();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            if (CheckValidations())
+            {
+                customer.AddToCart(ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+                CustomerDL.InsertOrderIntoCustomerDatabase(customer);
+                ClearTextBoxes();
             }
         }
     }

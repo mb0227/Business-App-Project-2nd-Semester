@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -103,6 +104,7 @@ namespace SignInSignUp.UI
             cHeader.Top = 0;
             cHeader.Left = 0;
             cHeader.Width = this.Width;
+            cHeader.BringToFront();
 
             cNavBar = new CustomerNavBar();
             Controls.Add(cNavBar);
@@ -110,11 +112,14 @@ namespace SignInSignUp.UI
 
             cNavBar.Left = 0;
             cNavBar.Top = cHeader.Bottom;
-            cNavBar.Width = 200;
+            cNavBar.Width = 147;
             cNavBar.Height = this.ClientSize.Height - cHeader.Bottom;
+            cNavBar.BringToFront();
 
             cNavBar.NavigationRequested += CustomerNavBar_NavigationRequested;
+            cNavBar.NavBarCollapsed += CNavBar_NavBarCollapsed;
         }
+
         private void CustomerNavBar_NavigationRequested(object sender, string formName)
         {
             switch (formName)
@@ -134,9 +139,9 @@ namespace SignInSignUp.UI
                 case "settings":
                     OpenForm(new Settings(this.Size, this.Location, customer));
                     break;
-                //case "help":
-                //    OpenForm(new Help(this.Size, this.Location, customer));
-                //    break;
+                case "help":
+                    OpenForm(new UI.Help(this.Size, this.Location, customer));
+                    break;
                 default:
                     break;
             }
@@ -149,6 +154,19 @@ namespace SignInSignUp.UI
             form.Show();
             this.Hide();
         }
-       
+
+
+        private void CNavBar_NavBarCollapsed(object sender, bool collapsed)
+        {
+            if (collapsed)
+            {
+                panel4.BringToFront();
+            }
+            else
+            {
+                panel4.SendToBack();
+                cNavBar.BringToFront();
+            }
+        }
     }
 }
