@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp
+﻿namespace SSC
 {
     partial class SignUp
     {
@@ -37,8 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.gradientPanel1 = new SignInSignUp.GradientPanel();
-            this.gradientPanel2 = new SignInSignUp.GradientPanel();
+            this.gradientPanel1 = new SSC.GradientPanel();
+            this.gradientPanel2 = new SSC.GradientPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -286,7 +286,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::SignInSignUp.Properties.Resources.user_solid;
+            //this.pictureBox1.Image = global::SSC.Properties.Resources.user_solid;
             this.pictureBox1.Location = new System.Drawing.Point(34, 196);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 35);

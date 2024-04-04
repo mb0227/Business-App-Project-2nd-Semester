@@ -1,4 +1,4 @@
-﻿using SignInSignUp.UI;
+﻿using SSC.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SignInSignUp
+namespace SSC
 {
     public partial class CustomerDashboard : Form
     {

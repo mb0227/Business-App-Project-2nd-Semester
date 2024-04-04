@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SignInSignUp.UI
+namespace SSC.UI
 {
     public partial class NavigationBar : UserControl
     {

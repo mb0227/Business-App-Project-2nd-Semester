@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp
+﻿namespace SSC
 {
     partial class CustomerHeader
     {
@@ -64,7 +64,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.pictureBox1.Image = global::SignInSignUp.Properties.Resources.logo;
+            //this.pictureBox1.Image = global::SSC.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(808, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(68, 65);

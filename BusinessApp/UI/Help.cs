@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SignInSignUp;
+using SSC;
 
-namespace SignInSignUp.UI
+namespace SSC.UI
 {
     public partial class Help : Form
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SignInSignUp.Properties
+namespace SSC.Properties
 {
 
 

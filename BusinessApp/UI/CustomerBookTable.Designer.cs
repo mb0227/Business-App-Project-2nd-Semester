@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.UI
+﻿namespace SSC.UI
 {
     partial class CustomerBookTable
     {

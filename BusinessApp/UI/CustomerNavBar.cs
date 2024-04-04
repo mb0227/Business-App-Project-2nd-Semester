@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SignInSignUp.UI;
+using SSC.UI;
 
-namespace SignInSignUp
+namespace SSC
 {
     public partial class CustomerNavBar : UserControl
     {

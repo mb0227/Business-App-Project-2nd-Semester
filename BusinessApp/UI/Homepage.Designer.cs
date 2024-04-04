@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp
+﻿namespace SSC
 {
     partial class Homepage
     {
@@ -108,7 +108,7 @@
             // 
             // logo
             // 
-            this.logo.Image = global::SignInSignUp.Properties.Resources.logo;
+            //this.logo.Image = global::SSC.Properties.Resources.logo;
             this.logo.Location = new System.Drawing.Point(17, 12);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(46, 50);

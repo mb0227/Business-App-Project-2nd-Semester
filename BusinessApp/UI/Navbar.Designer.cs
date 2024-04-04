@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.UI
+﻿namespace SSC.UI
 {
     partial class Navbar
     {
@@ -28,246 +28,219 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Navbar));
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dashboardButton = new Guna.UI2.WinForms.Guna2Button();
+            this.employeesButton = new Guna.UI2.WinForms.Guna2Button();
+            this.customerCRUD = new Guna.UI2.WinForms.Guna2Button();
+            this.notificationBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.addAdminButton = new Guna.UI2.WinForms.Guna2Button();
+            this.productsCRUDBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.settingsBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.sidebar.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // sidebar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.MintCream;
-            this.button1.Location = new System.Drawing.Point(0, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(314, 64);
-            this.button1.TabIndex = 0;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.sidebar.Controls.Add(this.panel1);
+            this.sidebar.Controls.Add(this.panel2);
+            this.sidebar.Controls.Add(this.employeesButton);
+            this.sidebar.Controls.Add(this.customerCRUD);
+            this.sidebar.Controls.Add(this.notificationBtn);
+            this.sidebar.Controls.Add(this.addAdminButton);
+            this.sidebar.Controls.Add(this.productsCRUDBtn);
+            this.sidebar.Controls.Add(this.settingsBtn);
+            this.sidebar.Location = new System.Drawing.Point(0, 0);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(266, 505);
+            this.sidebar.TabIndex = 0;
             // 
-            // button2
+            // panel1
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.MintCream;
-            this.button2.Location = new System.Drawing.Point(0, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(314, 64);
-            this.button2.TabIndex = 1;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.MintCream;
-            this.button3.Location = new System.Drawing.Point(-1, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(314, 64);
-            this.button3.TabIndex = 2;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.MintCream;
-            this.button4.Location = new System.Drawing.Point(-1, 219);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(314, 64);
-            this.button4.TabIndex = 3;
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.MintCream;
-            this.button5.Location = new System.Drawing.Point(-2, 281);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(314, 64);
-            this.button5.TabIndex = 4;
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.MintCream;
-            this.button6.Location = new System.Drawing.Point(-2, 349);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(314, 64);
-            this.button6.TabIndex = 5;
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.MintCream;
-            this.button7.Location = new System.Drawing.Point(0, 418);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(314, 64);
-            this.button7.TabIndex = 6;
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(263, 54);
+            this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(5, 17);
+            //this.pictureBox1.Image = global::SSC.Properties.Resources.bars_solid;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox7
+            // panel2
             // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox7.Location = new System.Drawing.Point(5, 434);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 13;
-            this.pictureBox7.TabStop = false;
+            this.panel2.Controls.Add(this.dashboardButton);
+            this.panel2.Location = new System.Drawing.Point(3, 63);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(261, 54);
+            this.panel2.TabIndex = 1;
             // 
-            // pictureBox6
+            // dashboardButton
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(5, 366);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 12;
-            this.pictureBox6.TabStop = false;
+            this.dashboardButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dashboardButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dashboardButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dashboardButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dashboardButton.FillColor = System.Drawing.Color.Transparent;
+            this.dashboardButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardButton.ForeColor = System.Drawing.Color.White;
+            //this.dashboardButton.Image = global::SSC.Properties.Resources.icons8_home_50__1_;
+            this.dashboardButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dashboardButton.Location = new System.Drawing.Point(0, -3);
+            this.dashboardButton.Name = "dashboardButton";
+            this.dashboardButton.Size = new System.Drawing.Size(264, 54);
+            this.dashboardButton.TabIndex = 0;
+            this.dashboardButton.Text = "   Dashboard";
             // 
-            // pictureBox5
+            // employeesButton
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(5, 296);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
+            this.employeesButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.employeesButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.employeesButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.employeesButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.employeesButton.FillColor = System.Drawing.Color.Transparent;
+            this.employeesButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeesButton.ForeColor = System.Drawing.Color.White;
+            //this.employeesButton.Image = global::SSC.Properties.Resources.icons8_employees_50__1_;
+            this.employeesButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.employeesButton.Location = new System.Drawing.Point(3, 123);
+            this.employeesButton.Name = "employeesButton";
+            this.employeesButton.Size = new System.Drawing.Size(263, 54);
+            this.employeesButton.TabIndex = 1;
+            this.employeesButton.Text = "Employees CRUD";
+            this.employeesButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // pictureBox4
+            // customerCRUD
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(5, 233);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
+            this.customerCRUD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.customerCRUD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.customerCRUD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.customerCRUD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.customerCRUD.FillColor = System.Drawing.Color.Transparent;
+            this.customerCRUD.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.customerCRUD.ForeColor = System.Drawing.Color.White;
+            //this.customerCRUD.Image = global::SSC.Properties.Resources.customers1;
+            this.customerCRUD.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.customerCRUD.Location = new System.Drawing.Point(3, 183);
+            this.customerCRUD.Name = "customerCRUD";
+            this.customerCRUD.Size = new System.Drawing.Size(263, 54);
+            this.customerCRUD.TabIndex = 2;
+            this.customerCRUD.Text = "Customers CRUD";
+            this.customerCRUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // pictureBox3
+            // notificationBtn
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(5, 160);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.notificationBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.notificationBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.notificationBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.notificationBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.notificationBtn.FillColor = System.Drawing.Color.Transparent;
+            this.notificationBtn.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notificationBtn.ForeColor = System.Drawing.Color.White;
+            this.notificationBtn.Image = ((System.Drawing.Image)(resources.GetObject("notificationBtn.Image")));
+            this.notificationBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.notificationBtn.Location = new System.Drawing.Point(3, 243);
+            this.notificationBtn.Name = "notificationBtn";
+            this.notificationBtn.Size = new System.Drawing.Size(263, 54);
+            this.notificationBtn.TabIndex = 3;
+            this.notificationBtn.Text = "Send Notification";
+            this.notificationBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // pictureBox2
+            // addAdminButton
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(5, 87);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.addAdminButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addAdminButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addAdminButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addAdminButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addAdminButton.FillColor = System.Drawing.Color.Transparent;
+            this.addAdminButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAdminButton.ForeColor = System.Drawing.Color.White;
+            this.addAdminButton.Image = ((System.Drawing.Image)(resources.GetObject("addAdminButton.Image")));
+            this.addAdminButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addAdminButton.Location = new System.Drawing.Point(3, 303);
+            this.addAdminButton.Name = "addAdminButton";
+            this.addAdminButton.Size = new System.Drawing.Size(263, 54);
+            this.addAdminButton.TabIndex = 4;
+            this.addAdminButton.Text = "Add admin         ";
+            this.addAdminButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // productsCRUDBtn
+            // 
+            this.productsCRUDBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.productsCRUDBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.productsCRUDBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.productsCRUDBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.productsCRUDBtn.FillColor = System.Drawing.Color.Transparent;
+            this.productsCRUDBtn.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsCRUDBtn.ForeColor = System.Drawing.Color.White;
+            this.productsCRUDBtn.Image = ((System.Drawing.Image)(resources.GetObject("productsCRUDBtn.Image")));
+            this.productsCRUDBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.productsCRUDBtn.Location = new System.Drawing.Point(3, 363);
+            this.productsCRUDBtn.Name = "productsCRUDBtn";
+            this.productsCRUDBtn.Size = new System.Drawing.Size(263, 54);
+            this.productsCRUDBtn.TabIndex = 5;
+            this.productsCRUDBtn.Text = "Products CRUD";
+            this.productsCRUDBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.settingsBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.settingsBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.settingsBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.settingsBtn.FillColor = System.Drawing.Color.Transparent;
+            this.settingsBtn.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsBtn.ForeColor = System.Drawing.Color.White;
+            this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
+            this.settingsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.settingsBtn.Location = new System.Drawing.Point(3, 423);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Size = new System.Drawing.Size(263, 54);
+            this.settingsBtn.TabIndex = 6;
+            this.settingsBtn.Text = "Settings           ";
+            this.settingsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Navbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.sidebar);
             this.Name = "Navbar";
-            this.Size = new System.Drawing.Size(231, 484);
+            this.Size = new System.Drawing.Size(267, 504);
+            this.sidebar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.FlowLayoutPanel sidebar;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button dashboardButton;
+        private Guna.UI2.WinForms.Guna2Button employeesButton;
+        private Guna.UI2.WinForms.Guna2Button customerCRUD;
+        private Guna.UI2.WinForms.Guna2Button notificationBtn;
+        private Guna.UI2.WinForms.Guna2Button addAdminButton;
+        private Guna.UI2.WinForms.Guna2Button productsCRUDBtn;
+        private Guna.UI2.WinForms.Guna2Button settingsBtn;
     }
 }

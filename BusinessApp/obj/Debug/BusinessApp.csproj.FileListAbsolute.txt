@@ -84,3 +84,63 @@ C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Naviga
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\bin\Debug\Guna.UI2.dll
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\Business.E3960287.Up2Date
 C:\Users\Bilal\OneDrive\Desktop\App\BusinessApp\obj\Debug\SignInSignUp.UI.Help.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\BusinessApp.csproj.AssemblyReference.cache
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.AdminDashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.CustomerBookTable.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.CustomerDashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.CustomerFeedback.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.CustomerNavBar.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.CustomerOrderFood.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.Dashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.Help.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.Homepage.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.ManageCustomers.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.ManageEmployees.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.ManageProducts.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.Navbar.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.NavigationBar.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.Settings.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.SignIn.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.SignUp.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SignInSignUp.Properties.Resources.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.CustomerHeader.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SSC.UI.ViewCart.resources
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\BusinessApp.csproj.GenerateResource.cache
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\BusinessApp.csproj.CoreCompileInputs.cache
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SignInSignUp.exe
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\SignInSignUp.pdb
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\bin\Debug\SignInSignUp.exe.config
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\bin\Debug\SignInSignUp.exe
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\bin\Debug\SignInSignUp.pdb
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\bin\Debug\Guna.UI2.dll
+C:\Users\Bilal\OneDrive\Desktop\Study Related\BusinessApp\obj\Debug\Business.E3960287.Up2Date
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\SignInSignUp.exe.config
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\SignInSignUp.exe
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\SignInSignUp.pdb
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\Guna.UI2.dll
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\BusinessApp.csproj.AssemblyReference.cache
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.AdminDashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.CustomerBookTable.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.CustomerDashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.CustomerFeedback.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.CustomerNavBar.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.CustomerOrderFood.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Dashboard.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Help.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.Homepage.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.ManageCustomers.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.ManageEmployees.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.ManageProducts.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Navbar.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.NavigationBar.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Settings.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.SignIn.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.SignUp.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.Properties.Resources.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.CustomerHeader.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.ViewCart.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\BusinessApp.csproj.GenerateResource.cache
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\BusinessApp.csproj.CoreCompileInputs.cache
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\Business.E3960287.Up2Date
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.exe
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.pdb

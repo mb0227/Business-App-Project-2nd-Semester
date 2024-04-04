@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp
+﻿namespace SSC
 {
     partial class CustomerDashboard
     {
@@ -76,7 +76,7 @@
             this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2PictureBox1.Image = global::SignInSignUp.Properties.Resources.platter;
+            //this.guna2PictureBox1.Image = global::SSC.Properties.Resources.platter;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(55, 166);
             this.guna2PictureBox1.Name = "guna2PictureBox1";

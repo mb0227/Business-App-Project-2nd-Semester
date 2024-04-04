@@ -14,7 +14,7 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using Guna.UI2.WinForms;
 
-namespace SignInSignUp.UI
+namespace SSC.UI
 {
     public partial class ViewCart : Form
     {

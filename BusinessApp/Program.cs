@@ -1,11 +1,11 @@
-﻿using SignInSignUp.UI;
+﻿using SSC.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SignInSignUp
+namespace SSC
 {
     public static class Program
     {
@@ -22,7 +22,7 @@ namespace SignInSignUp
             OrderDL.ReadOrdersFromDatabase();
             CustomerDL.GetCustomersFromDatabase();
 
-            Application.Run(new UI.Help());
+            Application.Run(new Homepage());
         }
     }
 }

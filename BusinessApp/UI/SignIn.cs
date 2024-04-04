@@ -12,9 +12,9 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net.Http;
 using Microsoft.VisualBasic;
-using SignInSignUp.UI;
+using SSC.UI;
 
-namespace SignInSignUp
+namespace SSC
 {
     public partial class SignIn : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.UI
+﻿namespace SSC.UI
 {
     partial class NavigationBar
     {
@@ -186,7 +186,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SignInSignUp.Properties.Resources.customer;
+            //this.pictureBox1.Image = global::SSC.Properties.Resources.customer;
             this.pictureBox1.Location = new System.Drawing.Point(15, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 35);

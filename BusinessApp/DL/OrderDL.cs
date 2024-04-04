@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace SignInSignUp
+namespace SSC
 {
     public class OrderDL
     {

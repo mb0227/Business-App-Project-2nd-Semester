@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp
+﻿namespace SSC
 {
     partial class SignIn
     {
@@ -45,7 +45,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.gradientPanel1 = new SignInSignUp.GradientPanel();
+            this.gradientPanel1 = new SSC.GradientPanel();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();

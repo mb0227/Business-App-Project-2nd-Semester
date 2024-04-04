@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SignInSignUp.UI
+namespace SSC.UI
 {
     public static class Prompt
     {
