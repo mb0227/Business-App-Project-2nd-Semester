@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
+using SSC.UI;
 
 namespace SSC
 {
@@ -136,7 +137,7 @@ namespace SSC
                 User user = new User(email.Text, password.Text, "Customer");
                 userDL.StoreUserInDB(user);
                 Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
-                customer.SetUserID(UserDL.GetUserID(email.Text, password.Text));
+                customer.SetUserID(ObjectHandler.GetUserDBDL().GetUserID(email.Text));
                 customerDL.AddCustomerToDB(customer);
                 Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, CustomerDL.GetCustomerID(customer));
                 RegularDL.StoreRegularInDB(regular);

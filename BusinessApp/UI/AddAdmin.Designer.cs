@@ -28,16 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAdmin));
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tb2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tb1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.salary = new Guna.UI2.WinForms.Guna2TextBox();
             this.contact = new Guna.UI2.WinForms.Guna2TextBox();
             this.username = new Guna.UI2.WinForms.Guna2TextBox();
             this.password = new Guna.UI2.WinForms.Guna2TextBox();
             this.email = new Guna.UI2.WinForms.Guna2TextBox();
+            this.groupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.Gender = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,21 +57,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.viewAdminsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addAdminBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.Gender = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tb1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tb2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -118,6 +131,98 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(960, 791);
             this.panel3.TabIndex = 25;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(503, 383);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(504, 349);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tb2
+            // 
+            this.tb2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb2.DefaultText = "";
+            this.tb2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb2.ForeColor = System.Drawing.Color.Black;
+            this.tb2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb2.Location = new System.Drawing.Point(660, 462);
+            this.tb2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.tb2.Name = "tb2";
+            this.tb2.PasswordChar = '\0';
+            this.tb2.PlaceholderText = "";
+            this.tb2.SelectedText = "";
+            this.tb2.Size = new System.Drawing.Size(247, 53);
+            this.tb2.TabIndex = 84;
+            this.tb2.WordWrap = false;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(497, 472);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(161, 34);
+            this.label10.TabIndex = 83;
+            this.label10.Text = "Permissions";
+            // 
+            // tb1
+            // 
+            this.tb1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb1.DefaultText = "";
+            this.tb1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb1.ForeColor = System.Drawing.Color.Black;
+            this.tb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb1.Location = new System.Drawing.Point(225, 463);
+            this.tb1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.tb1.Name = "tb1";
+            this.tb1.PasswordChar = '\0';
+            this.tb1.PlaceholderText = "";
+            this.tb1.SelectedText = "";
+            this.tb1.Size = new System.Drawing.Size(247, 53);
+            this.tb1.TabIndex = 82;
+            this.tb1.WordWrap = false;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(67, 472);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(150, 34);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Tools Used";
             // 
             // dateTime
             // 
@@ -254,6 +359,63 @@
             this.email.TabIndex = 0;
             this.email.WordWrap = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
+            this.groupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
+            this.groupBox1.Location = new System.Drawing.Point(534, 344);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(153, 73);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radioButton4.Location = new System.Drawing.Point(23, 38);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(102, 29);
+            this.radioButton4.TabIndex = 2;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Female";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radioButton3.Location = new System.Drawing.Point(23, 5);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(80, 29);
+            this.radioButton3.TabIndex = 1;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Male";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // Gender
+            // 
+            this.Gender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Gender.AutoSize = true;
+            this.Gender.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Gender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Gender.Location = new System.Drawing.Point(365, 339);
+            this.Gender.Name = "Gender";
+            this.Gender.Size = new System.Drawing.Size(105, 34);
+            this.Gender.TabIndex = 75;
+            this.Gender.Text = "Gender";
+            // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -365,158 +527,29 @@
             this.addAdminBtn.Text = "Add Admin";
             this.addAdminBtn.Click += new System.EventHandler(this.addAdminBtn_Click);
             // 
-            // Gender
+            // errorProvider1
             // 
-            this.Gender.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Gender.AutoSize = true;
-            this.Gender.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.Gender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Gender.Location = new System.Drawing.Point(365, 339);
-            this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(105, 34);
-            this.Gender.TabIndex = 75;
-            this.Gender.Text = "Gender";
+            this.errorProvider1.ContainerControl = this;
             // 
-            // radioButton3
+            // errorProvider2
             // 
-            this.radioButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radioButton3.Location = new System.Drawing.Point(23, 5);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(80, 29);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Male";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.errorProvider2.ContainerControl = this;
             // 
-            // radioButton4
+            // errorProvider3
             // 
-            this.radioButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radioButton4.Location = new System.Drawing.Point(23, 38);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(102, 29);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Female";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.errorProvider3.ContainerControl = this;
             // 
-            // groupBox1
+            // errorProvider4
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.groupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.groupBox1.Location = new System.Drawing.Point(534, 344);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(153, 73);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.Text = "groupBox1";
-            this.groupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.errorProvider4.ContainerControl = this;
             // 
-            // label9
+            // errorProvider5
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(67, 472);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 34);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "Tools Used";
-            this.label9.Visible = false;
+            this.errorProvider5.ContainerControl = this;
             // 
-            // tb1
+            // errorProvider6
             // 
-            this.tb1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb1.DefaultText = "";
-            this.tb1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb1.ForeColor = System.Drawing.Color.Black;
-            this.tb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb1.Location = new System.Drawing.Point(225, 463);
-            this.tb1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.tb1.Name = "tb1";
-            this.tb1.PasswordChar = '\0';
-            this.tb1.PlaceholderText = "";
-            this.tb1.SelectedText = "";
-            this.tb1.Size = new System.Drawing.Size(247, 53);
-            this.tb1.TabIndex = 82;
-            this.tb1.Visible = false;
-            this.tb1.WordWrap = false;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(497, 472);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 34);
-            this.label10.TabIndex = 83;
-            this.label10.Text = "Permissions";
-            this.label10.Visible = false;
-            // 
-            // tb2
-            // 
-            this.tb2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb2.DefaultText = "";
-            this.tb2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb2.ForeColor = System.Drawing.Color.Black;
-            this.tb2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb2.Location = new System.Drawing.Point(660, 462);
-            this.tb2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.tb2.Name = "tb2";
-            this.tb2.PasswordChar = '\0';
-            this.tb2.PlaceholderText = "";
-            this.tb2.SelectedText = "";
-            this.tb2.Size = new System.Drawing.Size(247, 53);
-            this.tb2.TabIndex = 84;
-            this.tb2.Visible = false;
-            this.tb2.WordWrap = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(504, 349);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(503, 383);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
+            this.errorProvider6.ContainerControl = this;
             // 
             // AddAdmin
             // 
@@ -534,10 +567,16 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -571,5 +610,11 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label Gender;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
     }
 }

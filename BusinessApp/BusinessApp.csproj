@@ -68,9 +68,9 @@
     <Compile Include="DL\ChefDL.cs" />
     <Compile Include="DL\CustomerDL.cs" />
     <Compile Include="DL\EmployeeDL.cs" />
-    <Compile Include="DL\ICustomerDBDL.cs" />
-    <Compile Include="DL\IEmployeeDBDL.cs" />
-    <Compile Include="DL\IUserDL.cs" />
+    <Compile Include="DLInterfaces\ICustomerDBDL.cs" />
+    <Compile Include="DLInterfaces\IEmployeeDBDL.cs" />
+    <Compile Include="DLInterfaces\IUserDL.cs" />
     <Compile Include="DL\OrderDL.cs" />
     <Compile Include="DL\ProductDL.cs" />
     <Compile Include="DL\RegularDL.cs" />
@@ -93,6 +93,12 @@
     </Compile>
     <Compile Include="UI\AdminSettings.Designer.cs">
       <DependentUpon>AdminSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChefDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChefDashboard.Designer.cs">
+      <DependentUpon>ChefDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CustomerDashboard.cs">
       <SubType>Form</SubType>
@@ -181,6 +187,7 @@
     <Compile Include="UI\NavigationBar.Designer.cs">
       <DependentUpon>NavigationBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ObjectHandler.cs" />
     <Compile Include="UI\Prompt.cs" />
     <Compile Include="UI\SendNotifications.cs">
       <SubType>Form</SubType>
@@ -221,6 +228,12 @@
     <Compile Include="UI\ViewCart.Designer.cs">
       <DependentUpon>ViewCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\WaiterDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaiterDashboard.Designer.cs">
+      <DependentUpon>WaiterDashboard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AdminSettings.resx">
       <DependentUpon>AdminSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChefDashboard.resx">
+      <DependentUpon>ChefDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerBookTable.resx">
       <DependentUpon>CustomerBookTable.cs</DependentUpon>

@@ -17,6 +17,44 @@ namespace RMS.DL
     {
         private static List<Customer> Customers = new List<Customer>();
 
+        public Customer SearchCustomerById(int userID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand($"SELECT C.Username, C.Contact, C.Status, C.Gender, C.Cart FROM Customers AS C JOIN Users AS U ON C.UserID = {userID}", connection);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    string username = reader["Username"].ToString();
+                    string contact = reader["Contact"].ToString();
+                    string status = reader["Status"].ToString();
+                    string gender = reader["Gender"].ToString();
+                    string productsOrdered = reader["Cart"].ToString();
+
+                    List<OrderedProduct> cart = new List<OrderedProduct>();
+                    string[] productItems = productsOrdered.Split(',');
+                    foreach (string productItem in productItems)
+                    {
+                        string[] parts = productItem.Split(':');
+                        if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
+                        {
+                            string productName = parts[1];
+                            Product product = ProductDL.SearchProductByName(productName);
+                            if (product != null)
+                            {
+                                cart.Add(new OrderedProduct(product, quantity));
+                            }
+                        }
+                    }
+
+                    Customer customer = new Customer(username, contact, status, gender, cart, userID);
+                    return customer;
+                }
+                return null;
+            }    
+        }
+
         public static void GetCustomersFromDatabase()
         {
             //using (SqlConnection connection = UtilityFunctions.GetSqlConnection())

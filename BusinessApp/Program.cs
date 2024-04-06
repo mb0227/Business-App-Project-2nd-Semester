@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
+using SignInSignUp.UI;
 
 namespace SSC
 {
@@ -24,7 +25,7 @@ namespace SSC
             OrderDL.ReadOrdersFromDatabase();
             CustomerDL.GetCustomersFromDatabase();
 
-            Application.Run(new ManageEmployees());
+            Application.Run(new Homepage());
         }
     }
 }

@@ -15,6 +15,7 @@ using Microsoft.VisualBasic;
 using SSC.UI;
 using RMS.BL;
 using RMS.DL;
+using SignInSignUp.UI;
 
 namespace SSC
 {
@@ -77,16 +78,43 @@ namespace SSC
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            //if(CustomerDL.SearchCustomerForSignUp(username.Text, password.Text) != null)
-            //{
-            //    CustomerDashboard customerPage = new CustomerDashboard(this.Size, this.Location, CustomerDL.SearchCustomerForSignUp(username.Text, password.Text));
-            //    customerPage.Show();
-            //    this.Hide();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
-            //}
+            string role = ObjectHandler.GetUserDBDL().SearchCustomerForRole(username.Text, password.Text);
+            if (role!="")
+            {
+                int userID = ObjectHandler.GetUserDBDL().GetUserID(username.Text);
+                if(role=="Customer") //Search customer by id
+                {
+                    Customer customer = ObjectHandler.GetCustomerDBDL().SearchCustomerById(userID);
+                    CustomerDashboard c= new CustomerDashboard(this.Size, this.Location, customer);
+                    c.Show();
+                    this.Hide();
+                }
+                else if(role=="Chef")
+                {
+                    Chef chef = ObjectHandler.GetEmployeeDBDL().SearchChefById(userID);
+                    ChefDashboard c = new ChefDashboard(this.Size, this.Location, chef);
+                    c.Show();
+                    this.Hide();
+                }
+                else if(role=="Waiter")
+                {
+                    Waiter waiter = ObjectHandler.GetEmployeeDBDL().SearchWaiterById(userID);
+                    WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
+                    w.Show();
+                    this.Hide();
+                }
+                else if(role=="Admin")
+                {
+                    Admin admin = ObjectHandler.GetEmployeeDBDL().SearchAdminById(userID);
+                    AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
+                    a.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

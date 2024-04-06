@@ -45,8 +45,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.gradientPanel1 = new SSC.GradientPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.gradientPanel1 = new SSC.GradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,9 +65,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(170, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 27);
+            this.label1.Size = new System.Drawing.Size(63, 27);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.label1.Text = "Email";
             // 
             // signInButton
             // 
@@ -96,6 +96,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(214, 39);
             this.username.TabIndex = 0;
+            this.username.WordWrap = false;
             // 
             // password
             // 
@@ -235,20 +236,6 @@
             this.panel3.Size = new System.Drawing.Size(555, 558);
             this.panel3.TabIndex = 16;
             // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanel1.Angle = 90F;
-            this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gradientPanel1.BottomColor = System.Drawing.Color.DarkBlue;
-            this.gradientPanel1.Location = new System.Drawing.Point(0, 76);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1097, 645);
-            this.gradientPanel1.TabIndex = 17;
-            this.gradientPanel1.TopColor = System.Drawing.Color.MediumOrchid;
-            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -264,6 +251,20 @@
             this.button1.Text = "Forgot Password?";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gradientPanel1.Angle = 90F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.DarkBlue;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 76);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1097, 645);
+            this.gradientPanel1.TabIndex = 17;
+            this.gradientPanel1.TopColor = System.Drawing.Color.MediumOrchid;
             // 
             // SignIn
             // 

@@ -158,16 +158,16 @@ namespace SSC.UI
             {
                 User user = new User(email.Text, password.Text, employeeType.Text);
                 userDL.StoreUserInDB(user);
-                Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), UserDL.GetUserID(email.Text, password.Text));
+                Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text));
                 employeeDL.StoreEmployeeInDB(employee);
                 if (employeeType.Text == "Waiter")
                 {
-                    Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), UserDL.GetUserID(email.Text, password.Text), tb1.Text, tb2.Text, tb3.Text, EmployeeDL.GetEmployeeID(username.Text));
+                    Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, EmployeeDL.GetEmployeeID(username.Text));
                     WaiterDL.StoreWaiterInDB(waiter);
                 }
                 else if (employeeType.Text == "Chef")
                 {
-                    Chef chef = new Chef(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), UserDL.GetUserID(email.Text, password.Text), tb1.Text, tb2.Text, tb3.Text, EmployeeDL.GetEmployeeID(username.Text));
+                    Chef chef = new Chef(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, EmployeeDL.GetEmployeeID(username.Text));
                     ChefDL.StoreChefInDB(chef);
                 }
             }
@@ -281,7 +281,6 @@ namespace SSC.UI
             }
 
             return true;
-
         }
 
         private bool IsRadioButtonSelected(Guna2GroupBox groupBox)

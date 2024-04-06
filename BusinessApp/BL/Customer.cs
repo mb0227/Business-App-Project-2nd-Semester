@@ -24,6 +24,17 @@ namespace RMS.BL
             Cart = new List <OrderedProduct>();
         }
 
+        public Customer(string username, string contact, string status, string gender,List<OrderedProduct> cart, int userId)
+        {
+            Username = username;
+            Contact = contact;
+            Status = status;
+            Gender = gender;
+            Cart = new List<OrderedProduct>();
+            Cart = cart;
+            UserID = userId;
+        }
+
         public string GetUsername()
         {
             return Username;

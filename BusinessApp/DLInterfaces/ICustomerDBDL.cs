@@ -7,8 +7,9 @@ using RMS.BL;
 
 namespace RMS.DL
 {
-    interface ICustomerDBDL
+    public interface ICustomerDBDL
     {
         void AddCustomerToDB(Customer customer);
+        Customer SearchCustomerById(int id);
     }
 }

@@ -62,17 +62,16 @@ namespace RMS.DL
             }
         }
 
-        public static int GetUserID(string email, string password)
+        public int GetUserID(string email)
         {
             int userID = -1; // Default value if user is not found
 
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                string query = "SELECT ID FROM Users WHERE Email = @Email AND Password = @Password";
+                string query = "SELECT ID FROM Users WHERE Email = @Email";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Password", password);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -85,7 +84,7 @@ namespace RMS.DL
             return userID; // Return -1 if user is not found 
         }
 
-        public static string GetUserRole(string email, string password)
+        public string SearchCustomerForRole(string email, string password)
         {
             string role = ""; // Default value if user is not found
 

@@ -7,8 +7,10 @@ using RMS.BL;
 
 namespace RMS.DL
 {
-    interface IUserDBDL
+    public interface IUserDBDL
     {
         void StoreUserInDB(User user);
+        string SearchCustomerForRole(string email, string password);
+        int GetUserID(string email);
     }
 }

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.DL;
 using Guna.UI2.WinForms;
+using System.Text.RegularExpressions;
 
 namespace SignInSignUp.UI
 {
@@ -38,12 +39,100 @@ namespace SignInSignUp.UI
 
         private void addAdminBtn_Click(object sender, EventArgs e)
         {
-            User user = new User(email.Text, password.Text, "Admin");
-            userDL.StoreUserInDB(user);
-            Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), UserDL.GetUserID(email.Text, password.Text));
-            employeeDL.StoreEmployeeInDB(employee);
-            Admin admin = new Admin(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), UserDL.GetUserID(email.Text, password.Text), splitText(tb1.Text), splitText(tb2.Text), EmployeeDL.GetEmployeeID(username.Text));
-            ChefDL.StoreChefInDB(chef);
+            if (CheckValidations())
+            {
+                User user = new User(email.Text, password.Text, "Admin");
+                userDL.StoreUserInDB(user);
+                Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text));
+                employeeDL.StoreEmployeeInDB(employee);
+                Admin admin = new Admin(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text), splitText(tb1.Text), splitText(tb2.Text), EmployeeDL.GetEmployeeID(username.Text));
+                AdminDL.StoreAdminInDB(admin);
+            }
+        }
+
+        private bool CheckValidations()
+        {
+            string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            if (!Regex.IsMatch(email.Text, pattern))
+            {
+                errorProvider1.SetError(email, "Email pattern is Invalid.");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(email, "");
+            }
+
+            if (UserDL.EmailAlreadyExists(email.Text))
+            {
+                errorProvider2.SetError(email, "Email already exists.");
+                return false;
+            }
+            else
+            {
+                errorProvider2.SetError(email, "");
+            }
+
+            if (string.IsNullOrWhiteSpace(password.Text.Trim()))
+            {
+                errorProvider2.SetError(password, "Password cannot be empty.");
+                return false;
+            }
+            else
+            {
+                errorProvider2.SetError(password, "");
+            }
+
+            if (string.IsNullOrWhiteSpace(username.Text.Trim()))
+            {
+                errorProvider3.SetError(username, "Username cannot be empty.");
+                return false;
+            }
+            else
+            {
+                errorProvider3.SetError(username, "");
+            }
+
+            if (EmployeeDL.UsernameAlreadyExists(username.Text))
+            {
+                errorProvider3.SetError(username, "Username already exists.");
+                return false;
+            }
+            else
+            {
+                errorProvider3.SetError(username, "");
+            }
+
+
+            string contactPattern = @"^0\d{10}$";
+            if (!Regex.IsMatch(contact.Text, contactPattern))
+            {
+                errorProvider4.SetError(contact, "Please enter a valid phone number.");
+                return false;
+            }
+            else
+            {
+                errorProvider4.SetError(contact, "");
+            }
+
+            int number;
+            bool isValid = int.TryParse(salary.Text, out number);
+
+            if (!isValid)
+            {
+                errorProvider5.SetError(salary, "Please enter a valid salary.");
+            }
+            else
+            {
+                errorProvider5.SetError(salary, "");
+            }
+
+            if (!IsRadioButtonSelected(groupBox1))
+            {
+                MessageBox.Show("Please select a radio button.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
         private List<string> splitText(string input)

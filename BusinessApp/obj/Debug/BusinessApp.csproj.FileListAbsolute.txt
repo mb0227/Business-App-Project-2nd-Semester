@@ -148,3 +148,4 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.AddA
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.AdminSettings.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ManageTables.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.SendNotifications.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ChefDashboard.resources
