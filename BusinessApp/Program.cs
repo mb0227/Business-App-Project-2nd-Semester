@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RMS.BL;
+using RMS.DL;
 
 namespace SSC
 {
@@ -22,7 +24,7 @@ namespace SSC
             OrderDL.ReadOrdersFromDatabase();
             CustomerDL.GetCustomersFromDatabase();
 
-            Application.Run(new Homepage());
+            Application.Run(new AdminDashboard());
         }
     }
 }

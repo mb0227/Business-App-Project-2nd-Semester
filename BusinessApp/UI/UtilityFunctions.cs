@@ -13,7 +13,7 @@ namespace SSC
     {
         public static SqlConnection GetSqlConnection()
         {
-            string connectionString = "Data Source=BILAL\\MSSQLSERVER01;Initial Catalog=SSC;Integrated Security=True";
+            string connectionString = "Data Source=BILAL\\MSSQLSERVER01;Initial Catalog=RMS;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }

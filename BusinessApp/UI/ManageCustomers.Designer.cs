@@ -56,7 +56,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(90)))));
             this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(98, 76);
+            this.label2.Location = new System.Drawing.Point(93, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 34);
             this.label2.TabIndex = 10;

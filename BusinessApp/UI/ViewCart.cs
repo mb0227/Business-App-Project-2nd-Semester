@@ -13,6 +13,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using Guna.UI2.WinForms;
+using RMS.BL;
+using RMS.DL;
 
 namespace SSC.UI
 {

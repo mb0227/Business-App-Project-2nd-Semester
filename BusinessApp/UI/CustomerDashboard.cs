@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RMS.BL;
+using RMS.DL;
 using System.Windows.Forms;
 
 namespace SSC

@@ -4,26 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSC
+namespace RMS.BL
 {
     public class User
     {
-        public User(string username, string password,string role, string gender)
+        public User(string email, string password,string role)
         {
-            Username = username;
+            Email = email;
             Password = password;
             Role = role;
-            Gender = gender;
         }
 
-        protected string Username;
-        protected string Password;
-        protected string Role;
-        protected string Gender;
+        private string Email;
+        private string Password;
+        private string Role;
 
-        public string GetName()
+        public string GetEmail()
         {
-            return Username;
+            return Email;
         }
 
         public string GetPassword()
@@ -36,14 +34,9 @@ namespace SSC
             return Role;
         }
 
-        public string GetGender()
+        public void SetEmail(string e)
         {
-            return Gender;
-        }
-
-        public void SetName(string n)
-        {
-            Username = n;
+            Email = e;
         }
 
         public void SetPassword(string p)
@@ -54,11 +47,6 @@ namespace SSC
         public void SetRole(string r)
         {
             Role = r;
-        }
-
-        public void SetGender(string g)
-        {
-            Gender = g;
         }
     }
 }

@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
+using RMS.BL;
+using RMS.DL;
 
 namespace SSC.UI
 {
@@ -106,7 +108,6 @@ namespace SSC.UI
             form.Show();
             this.Hide();
         }
-
 
         private void CNavBar_NavBarCollapsed(object sender, bool collapsed)
         {
@@ -288,7 +289,7 @@ namespace SSC.UI
                     DeductOrderedProductFromStock(item.GetProduct().GetProductName(), item.GetQuantity());
                 }
 
-                Order order = new Order(OrderDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, customer.GetName());
+                Order order = new Order(OrderDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, customer.GetUsername());
                 OrderDL.AddOrder(order);
                 OrderDL.InsertOrderInDatabase(order);
                 LoadData();

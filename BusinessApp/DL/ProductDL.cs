@@ -5,8 +5,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RMS.BL;
+using SSC;
 
-namespace SSC
+
+
+namespace RMS.DL
 {
     public class ProductDL
     {

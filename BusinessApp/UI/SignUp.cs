@@ -8,11 +8,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RMS.BL;
+using RMS.DL;
 
 namespace SSC
 {
     public partial class SignUp : Form
     {
+        IUserDBDL userDL = new UserDL();
+        ICustomerDBDL customerDL = new CustomerDL();
         public SignUp()
         {
             InitializeComponent();
@@ -27,7 +31,7 @@ namespace SSC
 
         private bool CheckValidations()
         {
-            if (string.IsNullOrWhiteSpace(username.Text.Trim()) && !CustomerDL.UserAlreadyExists(username.Text))
+            if (string.IsNullOrWhiteSpace(username.Text.Trim()))
             {
                 errorProvider1.SetError(username, "Username cannot be empty.");
                 return false;
@@ -38,14 +42,14 @@ namespace SSC
             }
 
             string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
-            if(!Regex.IsMatch(email.Text, pattern))
+            if (!Regex.IsMatch(email.Text, pattern))
             {
                 errorProvider2.SetError(email, "Please enter a valid email address.");
                 return false;
             }
             else
             {
-                errorProvider2.SetError(email, ""); ;
+                errorProvider2.SetError(email, "");
             }
 
             string contactPattern = @"^0\d{10}$";
@@ -56,7 +60,7 @@ namespace SSC
             }
             else
             {
-                errorProvider3.SetError(phoneNo, ""); ;
+                errorProvider3.SetError(phoneNo, "");
             }
 
             if (!IsRadioButtonSelected(groupBox1))
@@ -64,7 +68,7 @@ namespace SSC
                 MessageBox.Show("Please select a radio button.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(password.Text.Trim()))
             {
                 errorProvider4.SetError(password, "Password cannot be empty.");
@@ -79,6 +83,27 @@ namespace SSC
             {
                 errorProvider4.SetError(password, "Password do not match.");
                 return false;
+            }
+
+            // Check if email already exists
+            if (UserDL.EmailAlreadyExists(email.Text))
+            {
+                errorProvider2.SetError(email, "Email already exists.");
+                return false;
+            }
+            else
+            {
+                errorProvider2.SetError(email, "");
+            }
+
+            if (CustomerDL.UsernameAlreadyExists(username.Text))
+            {
+                errorProvider1.SetError(username, "Username already exists.");
+                return false;
+            }
+            else
+            {
+                errorProvider2.SetError(username, "");
             }
 
             return true;
@@ -108,15 +133,19 @@ namespace SSC
         {
             if(CheckValidations())
             {
-                Customer customer = new Customer(username.Text, password.Text, "Customer", GetSelectedRadioButton().Text.ToString(), email.Text, phoneNo.Text);
-                CustomerDL.AddCustomer(customer);   
-                CustomerDL.AddCustomerToDatabase(customer);
-                MessageBox.Show("User added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                User user = new User(email.Text, password.Text, "Customer");
+                userDL.StoreUserInDB(user);
+                Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
+                customer.SetUserID(UserDL.GetUserID(email.Text, password.Text));
+                customerDL.AddCustomerToDB(customer);
+                Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, CustomerDL.GetCustomerID(customer));
+                RegularDL.StoreRegularInDB(regular);
+                MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
-            }
+            //else
+            //{
+            //    MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+            //}
         }
 
         private RadioButton GetSelectedRadioButton()

@@ -56,10 +56,16 @@
     <Compile Include="BL\Order.cs" />
     <Compile Include="BL\OrderedProduct.cs" />
     <Compile Include="BL\Product.cs" />
+    <Compile Include="BL\Regular.cs" />
     <Compile Include="BL\User.cs" />
+    <Compile Include="BL\VIP.cs" />
+    <Compile Include="BL\Voucher.cs" />
     <Compile Include="DL\CustomerDL.cs" />
+    <Compile Include="DL\ICustomerDBDL.cs" />
+    <Compile Include="DL\IUserDL.cs" />
     <Compile Include="DL\OrderDL.cs" />
     <Compile Include="DL\ProductDL.cs" />
+    <Compile Include="DL\RegularDL.cs" />
     <Compile Include="DL\UserDL.cs" />
     <Compile Include="UI\AdminDashboard.cs">
       <SubType>Form</SubType>

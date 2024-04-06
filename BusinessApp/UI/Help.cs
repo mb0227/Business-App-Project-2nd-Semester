@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SSC;
+using RMS.BL;
+using RMS.DL;
 
 namespace SSC.UI
 {
@@ -108,9 +109,9 @@ namespace SSC.UI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string phoneNumber = "+923344207165";
+            string Contact = "+923344207165";
 
-            Process.Start("tel:" + phoneNumber);
+            Process.Start("tel:" + Contact);
         }
     }
 }

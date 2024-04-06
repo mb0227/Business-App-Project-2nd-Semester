@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Navbar));
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,6 +41,7 @@
             this.addAdminButton = new Guna.UI2.WinForms.Guna2Button();
             this.productsCRUDBtn = new Guna.UI2.WinForms.Guna2Button();
             this.settingsBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,8 +60,10 @@
             this.sidebar.Controls.Add(this.productsCRUDBtn);
             this.sidebar.Controls.Add(this.settingsBtn);
             this.sidebar.Location = new System.Drawing.Point(0, 0);
+            this.sidebar.MaximumSize = new System.Drawing.Size(270, 1080);
+            this.sidebar.MinimumSize = new System.Drawing.Size(59, 1080);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(266, 505);
+            this.sidebar.Size = new System.Drawing.Size(267, 1080);
             this.sidebar.TabIndex = 0;
             // 
             // panel1
@@ -72,13 +76,14 @@
             // 
             // pictureBox1
             // 
-            //this.pictureBox1.Image = global::SSC.Properties.Resources.bars_solid;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -97,13 +102,14 @@
             this.dashboardButton.FillColor = System.Drawing.Color.Transparent;
             this.dashboardButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboardButton.ForeColor = System.Drawing.Color.White;
-            //this.dashboardButton.Image = global::SSC.Properties.Resources.icons8_home_50__1_;
+            this.dashboardButton.Image = ((System.Drawing.Image)(resources.GetObject("dashboardButton.Image")));
             this.dashboardButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.dashboardButton.Location = new System.Drawing.Point(0, -3);
             this.dashboardButton.Name = "dashboardButton";
             this.dashboardButton.Size = new System.Drawing.Size(264, 54);
             this.dashboardButton.TabIndex = 0;
-            this.dashboardButton.Text = "   Dashboard";
+            this.dashboardButton.Text = "Dashboard          ";
+            this.dashboardButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // employeesButton
             // 
@@ -114,7 +120,7 @@
             this.employeesButton.FillColor = System.Drawing.Color.Transparent;
             this.employeesButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeesButton.ForeColor = System.Drawing.Color.White;
-            //this.employeesButton.Image = global::SSC.Properties.Resources.icons8_employees_50__1_;
+            this.employeesButton.Image = ((System.Drawing.Image)(resources.GetObject("employeesButton.Image")));
             this.employeesButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.employeesButton.Location = new System.Drawing.Point(3, 123);
             this.employeesButton.Name = "employeesButton";
@@ -132,7 +138,7 @@
             this.customerCRUD.FillColor = System.Drawing.Color.Transparent;
             this.customerCRUD.Font = new System.Drawing.Font("Tahoma", 10F);
             this.customerCRUD.ForeColor = System.Drawing.Color.White;
-            //this.customerCRUD.Image = global::SSC.Properties.Resources.customers1;
+            this.customerCRUD.Image = ((System.Drawing.Image)(resources.GetObject("customerCRUD.Image")));
             this.customerCRUD.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.customerCRUD.Location = new System.Drawing.Point(3, 183);
             this.customerCRUD.Name = "customerCRUD";
@@ -192,7 +198,7 @@
             this.productsCRUDBtn.Name = "productsCRUDBtn";
             this.productsCRUDBtn.Size = new System.Drawing.Size(263, 54);
             this.productsCRUDBtn.TabIndex = 5;
-            this.productsCRUDBtn.Text = "Products CRUD";
+            this.productsCRUDBtn.Text = "Products CRUD   ";
             this.productsCRUDBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // settingsBtn
@@ -210,8 +216,13 @@
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.Size = new System.Drawing.Size(263, 54);
             this.settingsBtn.TabIndex = 6;
-            this.settingsBtn.Text = "Settings           ";
+            this.settingsBtn.Text = "Settings             ";
             this.settingsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // sidebarTimer
+            // 
+            this.sidebarTimer.Interval = 5;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
             // Navbar
             // 
@@ -242,5 +253,6 @@
         private Guna.UI2.WinForms.Guna2Button addAdminButton;
         private Guna.UI2.WinForms.Guna2Button productsCRUDBtn;
         private Guna.UI2.WinForms.Guna2Button settingsBtn;
+        private System.Windows.Forms.Timer sidebarTimer;
     }
 }

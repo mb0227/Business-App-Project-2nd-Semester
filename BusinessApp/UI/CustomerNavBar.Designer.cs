@@ -80,7 +80,7 @@
             this.helpButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.helpButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpButton.ForeColor = System.Drawing.Color.White;
-            //this.helpButton.Image = global::SSC.Properties.Resources.icons8_help_50__1_;
+            this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
             this.helpButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.helpButton.Location = new System.Drawing.Point(3, 296);
             this.helpButton.Name = "helpButton";
@@ -100,7 +100,7 @@
             this.feedbackButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.feedbackButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedbackButton.ForeColor = System.Drawing.Color.White;
-            //this.feedbackButton.Image = global::SSC.Properties.Resources.icons8_feedback_50__1_;
+            this.feedbackButton.Image = ((System.Drawing.Image)(resources.GetObject("feedbackButton.Image")));
             this.feedbackButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.feedbackButton.Location = new System.Drawing.Point(3, 237);
             this.feedbackButton.Name = "feedbackButton";
@@ -119,7 +119,7 @@
             this.reservationButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.reservationButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationButton.ForeColor = System.Drawing.Color.White;
-            //this.reservationButton.Image = global::SSC.Properties.Resources.icons8_reservation_50__1_;
+            this.reservationButton.Image = ((System.Drawing.Image)(resources.GetObject("reservationButton.Image")));
             this.reservationButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.reservationButton.Location = new System.Drawing.Point(3, 178);
             this.reservationButton.Name = "reservationButton";
@@ -138,7 +138,7 @@
             this.orderFoodButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.orderFoodButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderFoodButton.ForeColor = System.Drawing.Color.White;
-            //this.orderFoodButton.Image = global::SSC.Properties.Resources.icons8_order_food_60;
+            this.orderFoodButton.Image = ((System.Drawing.Image)(resources.GetObject("orderFoodButton.Image")));
             this.orderFoodButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.orderFoodButton.Location = new System.Drawing.Point(3, 119);
             this.orderFoodButton.Name = "orderFoodButton";
@@ -176,7 +176,7 @@
             // 
             // bars
             // 
-            //this.bars.Image = global::SSC.Properties.Resources.bars_solid;
+            this.bars.Image = ((System.Drawing.Image)(resources.GetObject("bars.Image")));
             this.bars.Location = new System.Drawing.Point(6, 3);
             this.bars.Name = "bars";
             this.bars.Size = new System.Drawing.Size(48, 44);

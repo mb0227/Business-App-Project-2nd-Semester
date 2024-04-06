@@ -4,59 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSC
+namespace RMS.BL
 {
-    public class Customer : User
+    public class Customer
     {
-        private string Email;
-        private string PhoneNumber;
-        private Order Order;
-        private List <OrderedProduct> Cart;
-        private string OrderSpecifications;
+        protected string Username;
+        protected string Contact;
+        protected string Status;
+        protected string Gender;
+        protected List <OrderedProduct> Cart;
+        protected int UserID;   
 
-        public Customer(string username, string password, string role, string gender, string email, string phoneNumber) : base(username, password, role, gender)
+        public Customer(string username,string contact,string status, string gender)
         {
-            Email = email;
-            PhoneNumber = phoneNumber;
-            Order = new Order();
+            Username = username;
+            Contact = contact;
+            Status = status;
+            Gender = gender;
             Cart = new List <OrderedProduct>();
         }
 
-        public Customer(string username, string password, string role, string gender, string email, string phoneNumber, Order order, List<OrderedProduct> cart) : base(username, password, role, gender)
+        public string GetUsername()
         {
-            Email = email;
-            PhoneNumber = phoneNumber;
-            Order = order;
-            Cart = cart;
+            return Username;
         }
 
-        public Customer(string username, string password, string role, string gender, string email, string phoneNumber, string orderSpecifications,Order order, List<OrderedProduct> cart) : base(username, password, role, gender) 
+        public string GetContact()
         {
-            Email = email;
-            PhoneNumber = phoneNumber;
-            OrderSpecifications = orderSpecifications;
-            Order = order;
-            Cart = cart;
+            return Contact;
         }
 
-        public string GetEmail()
+        public string GetStatus()
         {
-            return Email;
+            return Status;
         }
 
-        public string GetPhoneNumber()
+        public string GetGender()
         {
-            return PhoneNumber;
+            return Gender;
         }
 
-        public Order GetOrder()
+        public int GetUserID()
         {
-            return Order;
-        }
-
-        public string GetSpecifications()
-        {
-            return OrderSpecifications;
+            return UserID;
         }
 
         public List<OrderedProduct> GetCart()
@@ -64,29 +54,29 @@ namespace SSC
             return Cart;
         }
 
-        public void SetEmail(string e)
+        public void SetContact(string p)
         {
-            Email = e;
+            Contact = p;
         }
 
-        public void SetPhoneNumber(string p)
+        public void SetStatus(string s)
         {
-            PhoneNumber = p;
+            Status = s;
         }
 
-        public void SetOrder(Order o)
+        public void SetGender(string g)
         {
-            Order = o;
+            Gender = g;
         }
 
-        public void SetCart(List<OrderedProduct> c)
+        public void SetUserID(int id)
         {
-            Cart = c;
+            UserID = id;
         }
 
-        public void SetSpecifications(string s)
+        public void SetCart(List<OrderedProduct> cart)
         {
-            OrderSpecifications = s;
+            Cart = cart;
         }
 
         public void AddToCart(Product product, int quantity)
@@ -94,15 +84,14 @@ namespace SSC
             Cart.Add(new OrderedProduct(product, quantity));
         }
 
-        public void RemoveFromCart(Product product) //remove from index
+        public void RemoveFromCart(Product product) //remove product
         {
             Cart.Remove(Cart.Where(p => p.GetProduct().GetProductName().Equals(product.GetProductName())).FirstOrDefault());
         }
 
-        public void PlaceOrder()
+        public void RemoveFromCart(int index) //remove from index
         {
-            Order = new Order(OrderDL.GetTotalOrders(), Cart, Order.OrderStatus.Pending, DateTime.Now, OrderSpecifications, Username);
-            Cart.Clear();
+            Cart.RemoveAt(index);
         }
 
         public int GetSelectedItemIndex(string itemName)
@@ -116,5 +105,10 @@ namespace SSC
             }
             return -1;
         }
+
+        //public void placeOrder()
+        //{
+            
+        //}
     }
 }

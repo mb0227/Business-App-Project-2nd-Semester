@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RMS.BL;
+using RMS.DL;
 
 namespace SSC.UI
 {
@@ -32,6 +34,7 @@ namespace SSC.UI
             aHeader.Top = 0;
             aHeader.Left = 0;
             aHeader.Width = this.Width;
+            aHeader.BringToFront();
 
             aNavbar = new Navbar();
             Controls.Add(aNavbar);
@@ -39,10 +42,61 @@ namespace SSC.UI
 
             aNavbar.Left = 0;
             aNavbar.Top = aHeader.Bottom;
-            aNavbar.Width = 200;
+            aNavbar.Width = 187;
             aNavbar.Height = this.ClientSize.Height - aHeader.Bottom;
+            aNavbar.BringToFront();
 
-            //aNavbar.NavigationRequested += CustomerNavBar_NavigationRequested;
+            aNavbar.NavigationRequested += CustomerNavBar_NavigationRequested;
+            aNavbar.NavBarCollapsed += aNavbar_NavBarCollapsed;
         }
+
+        private void CustomerNavBar_NavigationRequested(object sender, string formName)
+        {
+            //switch (formName)
+            //{
+            //    case "dashboard":
+            //        OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
+            //        break;
+            //    case "orderFood":
+            //        OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
+            //        break;
+            //    case "bookTable":
+            //        OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
+            //        break;
+            //    case "feedback":
+            //        OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
+            //        break;
+            //    case "settings":
+            //        OpenForm(new Settings(this.Size, this.Location, customer));
+            //        break;
+            //    case "help":
+            //        OpenForm(new UI.Help(this.Size, this.Location, customer));
+            //        break;
+            //    default:
+            //        break;
+            //}
+        }
+
+        private void OpenForm(Form form)
+        {
+            form.Size = this.Size;
+            form.Location = this.Location;
+            form.Show();
+            this.Hide();
+        }
+
+        private void aNavbar_NavBarCollapsed(object sender, bool collapsed)
+        {
+            if (collapsed)
+            {
+                panel1.BringToFront();
+            }
+            else
+            {
+                panel1.SendToBack();
+                aNavbar.BringToFront();
+            }
+        }
+
     }
 }

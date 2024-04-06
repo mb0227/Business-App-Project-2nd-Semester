@@ -157,6 +157,7 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.BackColor = System.Drawing.Color.AliceBlue;
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pictureBox10);
             this.panel3.Controls.Add(this.Home);
@@ -219,7 +220,7 @@
             this.Home.Location = new System.Drawing.Point(161, 492);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(140, 54);
-            this.Home.TabIndex = 60;
+            this.Home.TabIndex = 7;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = false;
             this.Home.Click += new System.EventHandler(this.Home_Click_1);
@@ -245,7 +246,7 @@
             this.signupbutton.Location = new System.Drawing.Point(373, 491);
             this.signupbutton.Name = "signupbutton";
             this.signupbutton.Size = new System.Drawing.Size(138, 54);
-            this.signupbutton.TabIndex = 61;
+            this.signupbutton.TabIndex = 8;
             this.signupbutton.Text = "Sign Up";
             this.signupbutton.UseVisualStyleBackColor = false;
             this.signupbutton.Click += new System.EventHandler(this.signupbutton_Click);
@@ -286,7 +287,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            //this.pictureBox1.Image = global::SSC.Properties.Resources.user_solid;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(34, 196);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 35);
@@ -320,7 +321,8 @@
             this.password2.Name = "password2";
             this.password2.PasswordChar = '*';
             this.password2.Size = new System.Drawing.Size(214, 36);
-            this.password2.TabIndex = 59;
+            this.password2.TabIndex = 6;
+            this.password2.WordWrap = false;
             // 
             // labell
             // 
@@ -346,7 +348,8 @@
             this.username.Multiline = true;
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(205, 36);
-            this.username.TabIndex = 53;
+            this.username.TabIndex = 0;
+            this.username.WordWrap = false;
             // 
             // password
             // 
@@ -361,7 +364,8 @@
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(214, 36);
-            this.password.TabIndex = 57;
+            this.password.TabIndex = 4;
+            this.password.WordWrap = false;
             // 
             // label1
             // 
@@ -398,7 +402,8 @@
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(205, 36);
-            this.email.TabIndex = 56;
+            this.email.TabIndex = 3;
+            this.email.WordWrap = false;
             // 
             // phoneNo
             // 
@@ -412,7 +417,8 @@
             this.phoneNo.Multiline = true;
             this.phoneNo.Name = "phoneNo";
             this.phoneNo.Size = new System.Drawing.Size(205, 36);
-            this.phoneNo.TabIndex = 58;
+            this.phoneNo.TabIndex = 5;
+            this.phoneNo.WordWrap = false;
             // 
             // pictureBox3
             // 
@@ -483,7 +489,7 @@
             this.radioButton1.Location = new System.Drawing.Point(46, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(80, 29);
-            this.radioButton1.TabIndex = 54;
+            this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Male";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -497,7 +503,7 @@
             this.radioButton2.Location = new System.Drawing.Point(46, 36);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(102, 29);
-            this.radioButton2.TabIndex = 55;
+            this.radioButton2.TabIndex = 2;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Female";
             this.radioButton2.UseVisualStyleBackColor = true;

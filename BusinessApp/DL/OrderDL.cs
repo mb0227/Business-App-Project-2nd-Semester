@@ -5,8 +5,11 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Drawing;
+using RMS.BL;
+using SSC;
 
-namespace SSC
+
+namespace RMS.DL
 {
     public class OrderDL
     {

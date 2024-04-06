@@ -13,6 +13,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net.Http;
 using Microsoft.VisualBasic;
 using SSC.UI;
+using RMS.BL;
+using RMS.DL;
 
 namespace SSC
 {
@@ -75,16 +77,16 @@ namespace SSC
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            if(CustomerDL.SearchCustomerForSignUp(username.Text, password.Text) != null)
-            {
-                CustomerDashboard customerPage = new CustomerDashboard(this.Size, this.Location, CustomerDL.SearchCustomerForSignUp(username.Text, password.Text));
-                customerPage.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
-            }
+            //if(CustomerDL.SearchCustomerForSignUp(username.Text, password.Text) != null)
+            //{
+            //    CustomerDashboard customerPage = new CustomerDashboard(this.Size, this.Location, CustomerDL.SearchCustomerForSignUp(username.Text, password.Text));
+            //    customerPage.Show();
+            //    this.Hide();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+            //}
         }
 
 
@@ -104,15 +106,15 @@ namespace SSC
 
             if (result == DialogResult.Yes)
             {
-                Customer customer = CustomerDL.SearchCustomer(username.Text, "username");
-                if (customer != null)
-                {
-                    SendEmail(customer,customer.GetEmail());
-                }
-                else
-                {
-                    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //Customer customer = CustomerDL.SearchCustomer(username.Text, "username");
+                //if (customer != null)
+                //{
+                //    SendEmail(customer,customer.GetEmail());
+                //}
+                //else
+                //{
+                //    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
             else
             {
@@ -148,7 +150,7 @@ namespace SSC
                     MessageBox.Show("Done!");
                     string newPassword = Prompt.ShowDialog("Enter new Password: ", "Change Password");
 
-                    customer.SetPassword(newPassword);
+                    //customer.SetPassword(newPassword);
                     CustomerDL.UpdateCustomer(customer);
 
                     CustomerDL.UpdateCustomerInDatabase(customer);
