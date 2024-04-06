@@ -16,8 +16,6 @@ namespace SSC
 {
     public partial class SignUp : Form
     {
-        IUserDBDL userDL = new UserDL();
-        ICustomerDBDL customerDL = new CustomerDL();
         public SignUp()
         {
             InitializeComponent();
@@ -135,11 +133,11 @@ namespace SSC
             if(CheckValidations())
             {
                 User user = new User(email.Text, password.Text, "Customer");
-                userDL.StoreUserInDB(user);
+                ObjectHandler.GetUserDBDL().StoreUserInDB(user);
                 Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
                 customer.SetUserID(ObjectHandler.GetUserDBDL().GetUserID(email.Text));
-                customerDL.AddCustomerToDB(customer);
-                Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, CustomerDL.GetCustomerID(customer));
+                ObjectHandler.GetCustomerDBDL().AddCustomerToDB(customer);
+                Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
                 RegularDL.StoreRegularInDB(regular);
                 MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

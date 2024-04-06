@@ -145,7 +145,7 @@ namespace RMS.DL
             }
         }
 
-        public static int GetCustomerID(Customer customer)
+        public int GetCustomerID(string username)
         {
             int customerID = -1; // Default value if customer is not found
 
@@ -154,7 +154,7 @@ namespace RMS.DL
                 connection.Open();
                 string query = "SELECT ID FROM Customers WHERE Username = @Username";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Username", customer.GetUsername());
+                command.Parameters.AddWithValue("@Username", username);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

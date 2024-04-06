@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
+using SSC.Properties;
+using SignInSignUp.Properties;
+using SignInSignUp;
 
 namespace SSC.UI
 {
@@ -50,52 +53,53 @@ namespace SSC.UI
 
         private void expressionless_MouseEnter(object sender, EventArgs e)
         {
-            expressionless.Image = Properties.Resources.expressionless;
+            expressionless.Image = Resource1.expressionless;
         }
 
         private void expressionless_MouseLeave(object sender, EventArgs e)
         {
-            expressionless.Image = Properties.Resources.expressionless_modified;
+            expressionless.Image = Resource1.expressionless_modified;
         }
 
         private void sad_MouseEnter(object sender, EventArgs e)
         {
-            sad.Image = Properties.Resources.sad1;
+            sad.Image =     Resource1.sad1;
+
         }
 
         private void sad_MouseLeave(object sender, EventArgs e)
         {
-            sad.Image = Properties.Resources.sad1_modified;
+            sad.Image =   Resource1.sad1_modified;
         }
 
         private void angry_MouseEnter(object sender, EventArgs e)
         {
-            angry.Image = Properties.Resources.angry1;
+            angry.Image = Resource1.angry1;
         }
 
         private void angry_MouseLeave(object sender, EventArgs e)
         {
-            angry.Image = Properties.Resources.angry1_modified;
+            angry.Image = Resource1.angry1_modified;
         }
 
         private void love_MouseEnter(object sender, EventArgs e)
         {
-            lovedit.Image = Properties.Resources.best1;
+            lovedit.Image =     Resource1.best1;
         }
 
         private void love_MouseLeave(object sender, EventArgs e)
         {
-            lovedit.Image = Properties.Resources.best1_modified;
+            lovedit.Image = Resource1.best1_modified;
         }
 
         private void happy_MouseEnter(object sender, EventArgs e)
         {
-            happy.Image = Properties.Resources.happy1;
+            happy.Image = Resource1.happy1;
         }
 
         private void happy_MouseLeave(object sender, EventArgs e)
         {
-            happy.Image = Properties.Resources.happy1_modified;
+            happy.Image = Resource1.happy1_modified;
         }
 
         private void InitializeUserControls()
@@ -169,6 +173,41 @@ namespace SSC.UI
                 panel4.SendToBack();
                 cNavBar.BringToFront();
             }
+        }
+
+        private void angry_Click(object sender, EventArgs e)
+        {
+            Feedback f = new Feedback("1 Star", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
+            FeedbackDL.InsertReviewInDatabase(f);
+            MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void sad_Click(object sender, EventArgs e)
+        {
+            Feedback f = new Feedback("2 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
+            FeedbackDL.InsertReviewInDatabase(f);
+            MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void expressionless_Click(object sender, EventArgs e)
+        {
+            Feedback f = new Feedback("3 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
+            FeedbackDL.InsertReviewInDatabase(f);
+            MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void happy_Click(object sender, EventArgs e)
+        {
+            Feedback f = new Feedback("4 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
+            FeedbackDL.InsertReviewInDatabase(f);
+            MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void lovedit_Click(object sender, EventArgs e)
+        {
+            Feedback f = new Feedback("5 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
+            FeedbackDL.InsertReviewInDatabase(f);
+            MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

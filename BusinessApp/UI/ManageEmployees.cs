@@ -20,11 +20,11 @@ namespace SSC.UI
         private CustomerHeader aHeader;
         private Navbar aNavbar;
         private Admin Admin;
-        IUserDBDL userDL = new UserDL();
-        IEmployeeDBDL employeeDL = new EmployeeDL();
+
         public ManageEmployees()
         {
             InitializeComponent();
+            InitializeUserControls();
         }
 
         public ManageEmployees(Size size, Point location, Admin admin)
@@ -157,9 +157,9 @@ namespace SSC.UI
             if (CheckValidations())
             {
                 User user = new User(email.Text, password.Text, employeeType.Text);
-                userDL.StoreUserInDB(user);
+                ObjectHandler.GetUserDBDL().StoreUserInDB(user);
                 Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text));
-                employeeDL.StoreEmployeeInDB(employee);
+                ObjectHandler.GetEmployeeDBDL().StoreEmployeeInDB(employee);
                 if (employeeType.Text == "Waiter")
                 {
                     Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, EmployeeDL.GetEmployeeID(username.Text));

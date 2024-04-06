@@ -25,7 +25,7 @@ namespace SSC
             OrderDL.ReadOrdersFromDatabase();
             CustomerDL.GetCustomersFromDatabase();
 
-            Application.Run(new Homepage());
+            Application.Run(new SignIn());
         }
     }
 }

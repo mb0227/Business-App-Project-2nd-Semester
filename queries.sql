@@ -47,7 +47,8 @@ CREATE TABLE Voucher(
 
 CREATE TABLE "Table"(
 	ID int PRIMARY KEY IDENTITY,
-	Capacity int NOT NULL
+	Capacity int NOT NULL,
+	"Status" nvarchar(50) NOT NULL
 );
 
 CREATE TABLE Reservation(

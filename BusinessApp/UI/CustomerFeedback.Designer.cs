@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerFeedback));
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.happy = new System.Windows.Forms.PictureBox();
             this.lovedit = new System.Windows.Forms.PictureBox();
+            this.happy = new System.Windows.Forms.PictureBox();
             this.angry = new System.Windows.Forms.PictureBox();
             this.sad = new System.Windows.Forms.PictureBox();
             this.expressionless = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.happy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lovedit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.angry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expressionless)).BeginInit();
@@ -76,18 +76,6 @@
             this.panel2.Size = new System.Drawing.Size(881, 689);
             this.panel2.TabIndex = 9;
             // 
-            // happy
-            // 
-            this.happy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.happy.BackColor = System.Drawing.Color.Transparent;
-            this.happy.Image = ((System.Drawing.Image)(resources.GetObject("happy.Image")));
-            this.happy.Location = new System.Drawing.Point(477, 308);
-            this.happy.Name = "happy";
-            this.happy.Size = new System.Drawing.Size(80, 75);
-            this.happy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.happy.TabIndex = 8;
-            this.happy.TabStop = false;
-            // 
             // lovedit
             // 
             this.lovedit.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -99,6 +87,20 @@
             this.lovedit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lovedit.TabIndex = 7;
             this.lovedit.TabStop = false;
+            this.lovedit.Click += new System.EventHandler(this.lovedit_Click);
+            // 
+            // happy
+            // 
+            this.happy.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.happy.BackColor = System.Drawing.Color.Transparent;
+            this.happy.Image = ((System.Drawing.Image)(resources.GetObject("happy.Image")));
+            this.happy.Location = new System.Drawing.Point(477, 308);
+            this.happy.Name = "happy";
+            this.happy.Size = new System.Drawing.Size(80, 75);
+            this.happy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.happy.TabIndex = 8;
+            this.happy.TabStop = false;
+            this.happy.Click += new System.EventHandler(this.happy_Click);
             // 
             // angry
             // 
@@ -111,6 +113,7 @@
             this.angry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.angry.TabIndex = 6;
             this.angry.TabStop = false;
+            this.angry.Click += new System.EventHandler(this.angry_Click);
             // 
             // sad
             // 
@@ -123,6 +126,7 @@
             this.sad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sad.TabIndex = 5;
             this.sad.TabStop = false;
+            this.sad.Click += new System.EventHandler(this.sad_Click);
             // 
             // expressionless
             // 
@@ -135,6 +139,7 @@
             this.expressionless.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.expressionless.TabIndex = 4;
             this.expressionless.TabStop = false;
+            this.expressionless.Click += new System.EventHandler(this.expressionless_Click);
             // 
             // panel4
             // 
@@ -174,8 +179,8 @@
             this.Load += new System.EventHandler(this.CustomerFeedback_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.happy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lovedit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.angry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expressionless)).EndInit();

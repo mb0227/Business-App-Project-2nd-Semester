@@ -11,5 +11,6 @@ namespace RMS.DL
     {
         void AddCustomerToDB(Customer customer);
         Customer SearchCustomerById(int id);
+        int GetCustomerID(string username);
     }
 }

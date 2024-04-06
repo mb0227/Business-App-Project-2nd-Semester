@@ -110,7 +110,6 @@ namespace SSC.UI
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string Contact = "+923344207165";
-
             Process.Start("tel:" + Contact);
         }
     }

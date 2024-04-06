@@ -56,10 +56,13 @@
     <Compile Include="BL\Chef.cs" />
     <Compile Include="BL\Customer.cs" />
     <Compile Include="BL\Employee.cs" />
+    <Compile Include="BL\Feedback.cs" />
     <Compile Include="BL\Order.cs" />
     <Compile Include="BL\OrderedProduct.cs" />
     <Compile Include="BL\Product.cs" />
     <Compile Include="BL\Regular.cs" />
+    <Compile Include="BL\Reservation.cs" />
+    <Compile Include="BL\Table.cs" />
     <Compile Include="BL\User.cs" />
     <Compile Include="BL\VIP.cs" />
     <Compile Include="BL\Voucher.cs" />
@@ -71,11 +74,19 @@
     <Compile Include="DLInterfaces\ICustomerDBDL.cs" />
     <Compile Include="DLInterfaces\IEmployeeDBDL.cs" />
     <Compile Include="DLInterfaces\IUserDL.cs" />
+    <Compile Include="DL\FeedbackDL.cs" />
     <Compile Include="DL\OrderDL.cs" />
     <Compile Include="DL\ProductDL.cs" />
     <Compile Include="DL\RegularDL.cs" />
+    <Compile Include="DL\ReservationDL.cs" />
+    <Compile Include="DL\TableDL.cs" />
     <Compile Include="DL\UserDL.cs" />
     <Compile Include="DL\WaiterDL.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\AddAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +110,12 @@
     </Compile>
     <Compile Include="UI\ChefDashboard.Designer.cs">
       <DependentUpon>ChefDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChefNavbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ChefNavbar.Designer.cs">
+      <DependentUpon>ChefNavbar.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CustomerDashboard.cs">
       <SubType>Form</SubType>
@@ -234,6 +251,16 @@
     <Compile Include="UI\WaiterDashboard.Designer.cs">
       <DependentUpon>WaiterDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\WaiterNavbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\WaiterNavbar.Designer.cs">
+      <DependentUpon>WaiterNavbar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,18 +365,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\folder-solid.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-help-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-feedback-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-reservation-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-home-50.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\notifications.png" />

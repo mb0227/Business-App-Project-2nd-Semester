@@ -28,25 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.deleteReservation = new Guna.UI2.WinForms.Guna2Button();
+            this.viewReservationButton = new Guna.UI2.WinForms.Guna2Button();
+            this.makeReservation = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.orderButton = new Guna.UI2.WinForms.Guna2Button();
-            this.viewReservationButton = new Guna.UI2.WinForms.Guna2Button();
-            this.deleteReservation = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(329, 178);
+            this.comboBox1.Location = new System.Drawing.Point(322, 122);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 37);
             this.comboBox1.TabIndex = 0;
@@ -55,9 +67,10 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(87, 178);
+            this.label3.Location = new System.Drawing.Point(82, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(228, 36);
             this.label3.TabIndex = 12;
@@ -69,76 +82,117 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.guna2TextBox2);
+            this.panel3.Controls.Add(this.guna2TextBox1);
+            this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.deleteReservation);
             this.panel3.Controls.Add(this.viewReservationButton);
-            this.panel3.Controls.Add(this.orderButton);
+            this.panel3.Controls.Add(this.makeReservation);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Location = new System.Drawing.Point(169, 167);
+            this.panel3.Location = new System.Drawing.Point(169, 165);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1012, 707);
             this.panel3.TabIndex = 16;
             // 
-            // panel4
+            // label5
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(55, 70);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1126, 91);
-            this.panel4.TabIndex = 20;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
+            this.label5.ForeColor = System.Drawing.Color.MintCream;
+            this.label5.Location = new System.Drawing.Point(538, 215);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(244, 36);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Reservation Time";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // label4
+            // label2
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.MintCream;
-            this.label4.Location = new System.Drawing.Point(447, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 52);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Book Table";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
+            this.label2.ForeColor = System.Drawing.Color.MintCream;
+            this.label2.Location = new System.Drawing.Point(539, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(241, 36);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Reservation Date";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // orderButton
+            // label1
             // 
-            this.orderButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.orderButton.BorderColor = System.Drawing.Color.Transparent;
-            this.orderButton.BorderRadius = 18;
-            this.orderButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.orderButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.orderButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.orderButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.orderButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.orderButton.FillColor = System.Drawing.Color.SpringGreen;
-            this.orderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderButton.ForeColor = System.Drawing.Color.Black;
-            this.orderButton.Location = new System.Drawing.Point(111, 348);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(256, 65);
-            this.orderButton.TabIndex = 1;
-            this.orderButton.Text = "Make Reservation";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
+            this.label1.ForeColor = System.Drawing.Color.MintCream;
+            this.label1.Location = new System.Drawing.Point(86, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 36);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Total Persons";
             // 
-            // viewReservationButton
+            // guna2TextBox2
             // 
-            this.viewReservationButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewReservationButton.BorderColor = System.Drawing.Color.Transparent;
-            this.viewReservationButton.BorderRadius = 18;
-            this.viewReservationButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.viewReservationButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.viewReservationButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.viewReservationButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.viewReservationButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.viewReservationButton.FillColor = System.Drawing.Color.Orange;
-            this.viewReservationButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewReservationButton.ForeColor = System.Drawing.Color.Black;
-            this.viewReservationButton.Location = new System.Drawing.Point(392, 348);
-            this.viewReservationButton.Name = "viewReservationButton";
-            this.viewReservationButton.Size = new System.Drawing.Size(262, 65);
-            this.viewReservationButton.TabIndex = 2;
-            this.viewReservationButton.Text = "View Reservations";
+            this.guna2TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Location = new System.Drawing.Point(795, 211);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(204, 46);
+            this.guna2TextBox2.TabIndex = 15;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(325, 211);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(204, 46);
+            this.guna2TextBox1.TabIndex = 14;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(795, 122);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(202, 44);
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // deleteReservation
             // 
@@ -159,6 +213,76 @@
             this.deleteReservation.TabIndex = 3;
             this.deleteReservation.Text = "Delete Reservation";
             // 
+            // viewReservationButton
+            // 
+            this.viewReservationButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewReservationButton.BorderColor = System.Drawing.Color.Transparent;
+            this.viewReservationButton.BorderRadius = 18;
+            this.viewReservationButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.viewReservationButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.viewReservationButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.viewReservationButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.viewReservationButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.viewReservationButton.FillColor = System.Drawing.Color.Orange;
+            this.viewReservationButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewReservationButton.ForeColor = System.Drawing.Color.Black;
+            this.viewReservationButton.Location = new System.Drawing.Point(392, 348);
+            this.viewReservationButton.Name = "viewReservationButton";
+            this.viewReservationButton.Size = new System.Drawing.Size(262, 65);
+            this.viewReservationButton.TabIndex = 2;
+            this.viewReservationButton.Text = "View Reservations";
+            // 
+            // makeReservation
+            // 
+            this.makeReservation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.makeReservation.BorderColor = System.Drawing.Color.Transparent;
+            this.makeReservation.BorderRadius = 18;
+            this.makeReservation.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.makeReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.makeReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.makeReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.makeReservation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.makeReservation.FillColor = System.Drawing.Color.SpringGreen;
+            this.makeReservation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.makeReservation.ForeColor = System.Drawing.Color.Black;
+            this.makeReservation.Location = new System.Drawing.Point(111, 348);
+            this.makeReservation.Name = "makeReservation";
+            this.makeReservation.Size = new System.Drawing.Size(256, 65);
+            this.makeReservation.TabIndex = 1;
+            this.makeReservation.Text = "Make Reservation";
+            this.makeReservation.Click += new System.EventHandler(this.makeReservation_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Location = new System.Drawing.Point(55, 72);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1126, 91);
+            this.panel4.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.MintCream;
+            this.label4.Location = new System.Drawing.Point(447, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(233, 52);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Book Table";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // CustomerBookTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -175,6 +299,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,8 +311,16 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button orderButton;
+        private Guna.UI2.WinForms.Guna2Button makeReservation;
         private Guna.UI2.WinForms.Guna2Button deleteReservation;
         private Guna.UI2.WinForms.Guna2Button viewReservationButton;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

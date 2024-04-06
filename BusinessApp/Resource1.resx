@@ -117,61 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="angry1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="angry1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\angry1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="angry1_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\angry1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>images\angry1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="best1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\best1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="best1_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\best1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expressionless" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\expressionless.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expressionless_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\expressionless-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="happy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\happy1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="happy1_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\happy1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sad1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sad1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sad1_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\sad1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

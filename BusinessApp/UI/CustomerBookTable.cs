@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
@@ -30,6 +31,7 @@ namespace SSC.UI
             this.Size = size;
             this.Location = location;
             customer = c;
+            FillComboBox();
         }
 
         private void InitializeUserControls()
@@ -91,7 +93,6 @@ namespace SSC.UI
             this.Hide();
         }
 
-
         private void CNavBar_NavBarCollapsed(object sender, bool collapsed)
         {
             if (collapsed)
@@ -103,6 +104,66 @@ namespace SSC.UI
                 panel4.SendToBack();
                 cNavBar.BringToFront();
             }
+        }
+
+        private void FillComboBox()
+        {
+            comboBox1.Items.Clear();
+            foreach (Table table in TableDL.ReadTablesData())
+            {
+                if (table.GetStatus() == "Unbooked")
+                {
+                    comboBox1.Items.Add(table.GetID());
+                }
+            }
+        }
+
+        private bool CheckValidations()
+        {
+            int max = TableDL.GetTableCapacity(Convert.ToInt32(comboBox1.Text));
+            if (!int.TryParse(guna2TextBox1.Text, out int number) || number < 1 || number > max)
+            {
+                errorProvider1.SetError(guna2TextBox1, $"Please enter a valid number between 1 and {max}.");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(guna2TextBox1, "");
+            }
+
+            string pattern = @"^(0[1-9]|1[0-2]):[0-5][0-9] (am|pm)$";
+            if(!Regex.IsMatch(guna2TextBox2.Text,pattern))  //validation for time
+            {
+                errorProvider2.SetError(guna2TextBox2, $"Please enter a time with pattern 04:20 am");
+                MessageBox.Show("here");
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("not");
+                errorProvider2.SetError(guna2TextBox2, "");
+            }
+
+            return true;
+        }
+
+        private void makeReservation_Click(object sender, EventArgs e)
+        {
+            if(CheckValidations())
+            {
+                ReservationDL.InsertReservationInDB(new Reservation(dateTimePicker1.Value,guna2TextBox2.Text,Convert.ToInt32(guna2TextBox1.Text), ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()), int.Parse(comboBox1.Text)));
+                TableDL.UpdateTable(new Table(TableDL.GetTableCapacity(int.Parse(comboBox1.Text)), int.Parse(comboBox1.Text), "Booked"));
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

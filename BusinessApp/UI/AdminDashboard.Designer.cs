@@ -66,7 +66,6 @@
             this.MinimumSize = new System.Drawing.Size(1070, 889);
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "7";
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

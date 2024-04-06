@@ -297,7 +297,7 @@
             this.comments.Location = new System.Drawing.Point(329, 176);
             this.comments.Multiline = true;
             this.comments.Name = "comments";
-            this.comments.Size = new System.Drawing.Size(182, 102);
+            this.comments.Size = new System.Drawing.Size(182, 89);
             this.comments.TabIndex = 2;
             // 
             // label4
