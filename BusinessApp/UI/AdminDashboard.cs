@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
+using SignInSignUp.UI;
 
 namespace SSC.UI
 {
@@ -16,10 +17,21 @@ namespace SSC.UI
     {
         private CustomerHeader aHeader;
         private Navbar aNavbar;
+        private Admin Admin;
+        
         public AdminDashboard()
         {
             InitializeComponent();
             InitializeUserControls();
+        }
+
+        public AdminDashboard(Size size, Point location, Admin admin)
+        {
+            InitializeComponent();
+            InitializeUserControls();
+            this.Size = size;
+            this.Location = location;
+            Admin = admin;
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
@@ -42,39 +54,42 @@ namespace SSC.UI
 
             aNavbar.Left = 0;
             aNavbar.Top = aHeader.Bottom;
-            aNavbar.Width = 187;
+            aNavbar.Width = 178;
             aNavbar.Height = this.ClientSize.Height - aHeader.Bottom;
             aNavbar.BringToFront();
 
-            aNavbar.NavigationRequested += CustomerNavBar_NavigationRequested;
-            aNavbar.NavBarCollapsed += aNavbar_NavBarCollapsed;
+            aNavbar.NavigationRequested += navbar_NavigationRequested;
+            aNavbar.NavBarCollapsed += aNavbar_NavbarCollapsed;
         }
 
-        private void CustomerNavBar_NavigationRequested(object sender, string formName)
+        private void navbar_NavigationRequested(object sender, string formName)
         {
-            //switch (formName)
-            //{
-            //    case "dashboard":
-            //        OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
-            //        break;
-            //    case "orderFood":
-            //        OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
-            //        break;
-            //    case "bookTable":
-            //        OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
-            //        break;
-            //    case "feedback":
-            //        OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
-            //        break;
-            //    case "settings":
-            //        OpenForm(new Settings(this.Size, this.Location, customer));
-            //        break;
-            //    case "help":
-            //        OpenForm(new UI.Help(this.Size, this.Location, customer));
-            //        break;
-            //    default:
-            //        break;
-            //}
+            switch (formName)
+            {
+                case "dashboard":
+                    OpenForm(new AdminDashboard(this.Size, this.Location, Admin));
+                    break;
+                case "manageEmployees":
+                    OpenForm(new ManageEmployees(this.Size, this.Location, Admin));
+                    break;
+                case "manageCustomers":
+                    OpenForm(new ManageEmployees(this.Size, this.Location, Admin));
+                    break;
+                case "sendNotifications":
+                    OpenForm(new SendNotifications(this.Size, this.Location, Admin));
+                    break;
+                case "settings":
+                    OpenForm(new AdminSettings(this.Size, this.Location, Admin));
+                    break;
+                case "addAdmin":
+                    OpenForm(new AddAdmin(this.Size, this.Location, Admin));
+                    break;
+                case "manageTables":
+                    OpenForm(new ManageTables(this.Size, this.Location, Admin));
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void OpenForm(Form form)
@@ -85,15 +100,15 @@ namespace SSC.UI
             this.Hide();
         }
 
-        private void aNavbar_NavBarCollapsed(object sender, bool collapsed)
+        private void aNavbar_NavbarCollapsed(object sender, bool collapsed)
         {
             if (collapsed)
             {
-                panel1.BringToFront();
+                panel3.BringToFront();
             }
             else
             {
-                panel1.SendToBack();
+                panel3.SendToBack();
                 aNavbar.BringToFront();
             }
         }

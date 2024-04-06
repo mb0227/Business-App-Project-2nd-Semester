@@ -24,7 +24,7 @@ namespace SSC
             OrderDL.ReadOrdersFromDatabase();
             CustomerDL.GetCustomersFromDatabase();
 
-            Application.Run(new AdminDashboard());
+            Application.Run(new ManageEmployees());
         }
     }
 }

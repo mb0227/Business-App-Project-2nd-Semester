@@ -23,6 +23,15 @@ CREATE TABLE Regular(
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID)
 );
 
+CREATE TABLE Admins(
+	ID int PRIMARY KEY IDENTITY,
+	Username nvarchar(50) UNIQUE NOT NULL,
+	ToolsUsed nvarchar(255),
+	Permisssions nvarchar(255),
+	EmployeeID int,
+	FOREIGN KEY (EmployeeID) References Employees(ID) 
+)
+
 CREATE TABLE VIP(
 	ID int PRIMARY KEY IDENTITY,
 	MembershipLevel nvarchar(50) NOT NULL,
@@ -107,4 +116,32 @@ CREATE TABLE ProductVariants(
 	Foreign Key (ProductID) References Products(ID)
 );
 
+CREATE TABLE Employees(
+	ID INT Primary KEY IDENTITY,
+	Username nvarchar(50) UNIQUE NOT NULL, 
+	Contact nvarchar(50),
+	Salary decimal(10, 2) NOT NULL,
+	JoinDate datetime,
+	Gender nvarchar(50) NOT NULL,
+	UserID int NOT NULL,
+	FOREIGN KEY (UserID) REFERENCES Users(ID)
+);
+
+CREATE TABLE Chefs(
+	ID INT Primary KEY IDENTITY,
+	"Shift" nvarchar(50),
+	Specialization nvarchar(50),
+	Experience nvarchar(50),
+	EmployeeID int NOT NULL,
+	FOREIGN KEY (EmployeeID) REFERENCES Employees(ID)
+);
+
+CREATE TABLE Waiters(
+	ID INT Primary KEY IDENTITY,
+	"Shift" nvarchar(50),
+	Area nvarchar(50) NOT NULL,
+	"Language" nvarchar(50),
+	EmployeeID int NOT NULL,
+	FOREIGN KEY (EmployeeID) REFERENCES Employees(ID)
+);
 

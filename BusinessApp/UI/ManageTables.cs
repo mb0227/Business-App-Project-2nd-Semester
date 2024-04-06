@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RMS.BL;
+using SSC.UI;
+using SSC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,22 +10,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RMS.BL;
-using RMS.DL;
 
-namespace SSC.UI
+namespace SignInSignUp.UI
 {
-    public partial class ManageCustomers : Form
+    public partial class ManageTables : Form
     {
         private CustomerHeader aHeader;
         private Navbar aNavbar;
         private Admin Admin;
-        public ManageCustomers()
+        public ManageTables()
         {
             InitializeComponent();
         }
 
-        public ManageCustomers(Size size, Point location, Admin admin)
+        public ManageTables(Size size, Point location, Admin admin)
         {
             InitializeComponent();
             //InitializeUserControls();

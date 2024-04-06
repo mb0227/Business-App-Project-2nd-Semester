@@ -144,3 +144,7 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\BusinessApp.csproj.C
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\Business.E3960287.Up2Date
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.exe
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.pdb
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.AddAdmin.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.AdminSettings.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ManageTables.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.SendNotifications.resources

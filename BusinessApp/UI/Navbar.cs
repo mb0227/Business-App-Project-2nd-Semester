@@ -33,36 +33,6 @@ namespace SSC.UI
             NavBarCollapsed?.Invoke(this, IsNavBarCollapsed);
         }
 
-        private void dashboard_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("dashboard");
-        }
-
-        private void orderFoodButton_Click_1(object sender, EventArgs e)
-        {
-            OnNavigationRequested("orderFood");
-        }
-
-        private void reservationButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("bookTable");
-        }
-
-        private void feedbackButton_Click_1(object sender, EventArgs e)
-        {
-            OnNavigationRequested("feedback");
-        }
-
-        private void helpButton_Click_1(object sender, EventArgs e)
-        {
-            OnNavigationRequested("help");
-        }
-
-        private void settingButton_Click(object sender, EventArgs e)
-        {
-            OnNavigationRequested("settings");
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
@@ -90,6 +60,41 @@ namespace SSC.UI
                     sidebarTimer.Stop();
                 }
             }
+        }
+
+        private void dashboardButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("dashboard");
+        }
+
+        private void employeesButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("manageEmployees");
+        }
+
+        private void customerCRUD_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("manageCustomers");
+        }
+
+        private void notificationBtn_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("sendNotifications");
+        }
+
+        private void addAdminButton_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("addAdmin");
+        }
+
+        private void productsCRUDBtn_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("manageTables");
+        }
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            OnNavigationRequested("settings");
         }
     }
 }

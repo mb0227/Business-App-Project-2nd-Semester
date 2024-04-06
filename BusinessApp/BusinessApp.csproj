@@ -52,7 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\Admin.cs" />
+    <Compile Include="BL\Chef.cs" />
     <Compile Include="BL\Customer.cs" />
+    <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Order.cs" />
     <Compile Include="BL\OrderedProduct.cs" />
     <Compile Include="BL\Product.cs" />
@@ -60,18 +63,36 @@
     <Compile Include="BL\User.cs" />
     <Compile Include="BL\VIP.cs" />
     <Compile Include="BL\Voucher.cs" />
+    <Compile Include="BL\Waiter.cs" />
+    <Compile Include="DL\AdminDL.cs" />
+    <Compile Include="DL\ChefDL.cs" />
     <Compile Include="DL\CustomerDL.cs" />
+    <Compile Include="DL\EmployeeDL.cs" />
     <Compile Include="DL\ICustomerDBDL.cs" />
+    <Compile Include="DL\IEmployeeDBDL.cs" />
     <Compile Include="DL\IUserDL.cs" />
     <Compile Include="DL\OrderDL.cs" />
     <Compile Include="DL\ProductDL.cs" />
     <Compile Include="DL\RegularDL.cs" />
     <Compile Include="DL\UserDL.cs" />
+    <Compile Include="DL\WaiterDL.cs" />
+    <Compile Include="UI\AddAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddAdmin.Designer.cs">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AdminSettings.Designer.cs">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CustomerDashboard.cs">
       <SubType>Form</SubType>
@@ -142,6 +163,12 @@
     <Compile Include="UI\ManageProducts.Designer.cs">
       <DependentUpon>ManageProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ManageTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageTables.Designer.cs">
+      <DependentUpon>ManageTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Navbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +182,12 @@
       <DependentUpon>NavigationBar.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Prompt.cs" />
+    <Compile Include="UI\SendNotifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SendNotifications.Designer.cs">
+      <DependentUpon>SendNotifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,8 +221,14 @@
     <Compile Include="UI\ViewCart.Designer.cs">
       <DependentUpon>ViewCart.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\AddAdmin.resx">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminSettings.resx">
+      <DependentUpon>AdminSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerBookTable.resx">
       <DependentUpon>CustomerBookTable.cs</DependentUpon>
@@ -224,11 +263,17 @@
     <EmbeddedResource Include="UI\ManageProducts.resx">
       <DependentUpon>ManageProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageTables.resx">
+      <DependentUpon>ManageTables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Navbar.resx">
       <DependentUpon>Navbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NavigationBar.resx">
       <DependentUpon>NavigationBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SendNotifications.resx">
+      <DependentUpon>SendNotifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

@@ -39,7 +39,7 @@
             this.customerCRUD = new Guna.UI2.WinForms.Guna2Button();
             this.notificationBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addAdminButton = new Guna.UI2.WinForms.Guna2Button();
-            this.productsCRUDBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.tablesCRUDBtn = new Guna.UI2.WinForms.Guna2Button();
             this.settingsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
@@ -57,7 +57,7 @@
             this.sidebar.Controls.Add(this.customerCRUD);
             this.sidebar.Controls.Add(this.notificationBtn);
             this.sidebar.Controls.Add(this.addAdminButton);
-            this.sidebar.Controls.Add(this.productsCRUDBtn);
+            this.sidebar.Controls.Add(this.tablesCRUDBtn);
             this.sidebar.Controls.Add(this.settingsBtn);
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(270, 1080);
@@ -108,8 +108,9 @@
             this.dashboardButton.Name = "dashboardButton";
             this.dashboardButton.Size = new System.Drawing.Size(264, 54);
             this.dashboardButton.TabIndex = 0;
-            this.dashboardButton.Text = "Dashboard          ";
+            this.dashboardButton.Text = "Dashboard         ";
             this.dashboardButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dashboardButton.Click += new System.EventHandler(this.dashboardButton_Click);
             // 
             // employeesButton
             // 
@@ -128,6 +129,7 @@
             this.employeesButton.TabIndex = 1;
             this.employeesButton.Text = "Employees CRUD";
             this.employeesButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.employeesButton.Click += new System.EventHandler(this.employeesButton_Click);
             // 
             // customerCRUD
             // 
@@ -146,6 +148,7 @@
             this.customerCRUD.TabIndex = 2;
             this.customerCRUD.Text = "Customers CRUD";
             this.customerCRUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.customerCRUD.Click += new System.EventHandler(this.customerCRUD_Click);
             // 
             // notificationBtn
             // 
@@ -164,6 +167,7 @@
             this.notificationBtn.TabIndex = 3;
             this.notificationBtn.Text = "Send Notification";
             this.notificationBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.notificationBtn.Click += new System.EventHandler(this.notificationBtn_Click);
             // 
             // addAdminButton
             // 
@@ -182,24 +186,26 @@
             this.addAdminButton.TabIndex = 4;
             this.addAdminButton.Text = "Add admin         ";
             this.addAdminButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.addAdminButton.Click += new System.EventHandler(this.addAdminButton_Click);
             // 
-            // productsCRUDBtn
+            // tablesCRUDBtn
             // 
-            this.productsCRUDBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.productsCRUDBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.productsCRUDBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.productsCRUDBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.productsCRUDBtn.FillColor = System.Drawing.Color.Transparent;
-            this.productsCRUDBtn.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsCRUDBtn.ForeColor = System.Drawing.Color.White;
-            this.productsCRUDBtn.Image = ((System.Drawing.Image)(resources.GetObject("productsCRUDBtn.Image")));
-            this.productsCRUDBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.productsCRUDBtn.Location = new System.Drawing.Point(3, 363);
-            this.productsCRUDBtn.Name = "productsCRUDBtn";
-            this.productsCRUDBtn.Size = new System.Drawing.Size(263, 54);
-            this.productsCRUDBtn.TabIndex = 5;
-            this.productsCRUDBtn.Text = "Products CRUD   ";
-            this.productsCRUDBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tablesCRUDBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.tablesCRUDBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.tablesCRUDBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.tablesCRUDBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.tablesCRUDBtn.FillColor = System.Drawing.Color.Transparent;
+            this.tablesCRUDBtn.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablesCRUDBtn.ForeColor = System.Drawing.Color.White;
+            this.tablesCRUDBtn.Image = ((System.Drawing.Image)(resources.GetObject("tablesCRUDBtn.Image")));
+            this.tablesCRUDBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tablesCRUDBtn.Location = new System.Drawing.Point(3, 363);
+            this.tablesCRUDBtn.Name = "tablesCRUDBtn";
+            this.tablesCRUDBtn.Size = new System.Drawing.Size(263, 54);
+            this.tablesCRUDBtn.TabIndex = 5;
+            this.tablesCRUDBtn.Text = "Tables CRUD      ";
+            this.tablesCRUDBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tablesCRUDBtn.Click += new System.EventHandler(this.productsCRUDBtn_Click);
             // 
             // settingsBtn
             // 
@@ -218,6 +224,7 @@
             this.settingsBtn.TabIndex = 6;
             this.settingsBtn.Text = "Settings             ";
             this.settingsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
             // 
             // sidebarTimer
             // 
@@ -251,7 +258,7 @@
         private Guna.UI2.WinForms.Guna2Button customerCRUD;
         private Guna.UI2.WinForms.Guna2Button notificationBtn;
         private Guna.UI2.WinForms.Guna2Button addAdminButton;
-        private Guna.UI2.WinForms.Guna2Button productsCRUDBtn;
+        private Guna.UI2.WinForms.Guna2Button tablesCRUDBtn;
         private Guna.UI2.WinForms.Guna2Button settingsBtn;
         private System.Windows.Forms.Timer sidebarTimer;
     }
