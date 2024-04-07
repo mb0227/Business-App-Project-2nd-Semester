@@ -13,5 +13,6 @@ namespace RMS.DL
         Customer SearchCustomerById(int id);
         int GetCustomerID(string username);
         bool UsernameAlreadyExists(string username);
+        List<Customer> GetCustomers();
     }
 }

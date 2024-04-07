@@ -105,11 +105,13 @@ namespace SSC.UI
             if (collapsed)
             {
                 panel3.BringToFront();
+                panel1.BringToFront();
             }
             else
             {
                 panel3.SendToBack();
-                aNavbar.BringToFront();
+                panel1.SendToBack();
+                aNavbar.BringToFront();                
             }
         }
 

@@ -73,6 +73,7 @@
     <Compile Include="DLInterfaces\IRegularDL.cs" />
     <Compile Include="DLInterfaces\IReservationDL.cs" />
     <Compile Include="DLInterfaces\ITableDL.cs" />
+    <Compile Include="DLInterfaces\IVipDL.cs" />
     <Compile Include="DLInterfaces\IWaiterDL.cs" />
     <Compile Include="DL\DB\AdminDBDL.cs" />
     <Compile Include="DL\DB\ChefDBDL.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="DL\DB\ReservationDBDL.cs" />
     <Compile Include="DL\DB\TableDBDL.cs" />
     <Compile Include="DL\DB\UserDBDL.cs" />
+    <Compile Include="DL\DB\VipDBDL.cs" />
     <Compile Include="DL\DB\WaiterDBDL.cs" />
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>

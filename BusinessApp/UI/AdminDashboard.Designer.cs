@@ -30,6 +30,7 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,12 +57,23 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Admin Dashboard";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(57, 163);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1123, 787);
+            this.panel1.TabIndex = 21;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
             this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.MinimumSize = new System.Drawing.Size(1070, 889);
             this.Name = "AdminDashboard";
@@ -77,5 +89,6 @@
 
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

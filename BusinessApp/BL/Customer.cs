@@ -13,7 +13,14 @@ namespace RMS.BL
         protected string Status;
         protected string Gender;
         protected List <OrderedProduct> Cart;
-        protected int UserID;   
+        protected int UserID;
+
+        protected int CustomerID;//for reading data
+
+        public Customer(string username)
+        {
+            Username = username;
+        }
 
         public Customer(string username,string contact,string status, string gender)
         {
@@ -35,9 +42,26 @@ namespace RMS.BL
             UserID = userId;
         }
 
+        public Customer(int customerid,string username, string contact, string status, string gender, List<OrderedProduct> cart, int userId)
+        {
+            CustomerID = customerid;
+            Username = username;
+            Contact = contact;
+            Status = status;
+            Gender = gender;
+            Cart = new List<OrderedProduct>();
+            Cart = cart;
+            UserID = userId;
+        }
+
         public string GetUsername()
         {
             return Username;
+        }
+
+        public int GetID()
+        {
+            return CustomerID;
         }
 
         public string GetContact()

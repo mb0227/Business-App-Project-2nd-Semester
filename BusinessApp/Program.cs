@@ -23,10 +23,10 @@ namespace SSC
 
             ProductDBDL.ReadProductsFromDatabase();
             OrderDBDL.ReadOrdersFromDatabase();
-            CustomerDBDL.GetCustomersFromDatabase();
+            //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
 
-            Application.Run(new SignIn());
+            Application.Run(new ManageCustomers());
         }
     }
 }

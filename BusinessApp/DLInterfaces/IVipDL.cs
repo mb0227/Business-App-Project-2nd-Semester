@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public interface IRegularDL
+    public interface IVipDL
     {
-        void StoreRegularInDB(Regular regular);
-        List<Regular> GetRegulars();
-
-
+        List<VIP> GetVIPs();
     }
 }

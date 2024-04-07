@@ -40,6 +40,11 @@ namespace SSC.UI
         {
             return new RegularDBDL();
         }
+        
+        public static IVipDL GetVipDL()
+        {
+            return new VipDBDL();
+        }
 
         public static IFeedbackDL GetFeedbackDL()
         {

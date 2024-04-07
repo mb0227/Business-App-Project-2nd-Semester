@@ -55,53 +55,56 @@ namespace RMS.DL
             }    
         }
 
-        public static void GetCustomersFromDatabase()
+        public List<Customer> GetCustomers()
         {
-            //using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            //{
-            //    connection.Open();
-            //    SqlCommand command = new SqlCommand("SELECT * FROM Customers", connection);
-            //    SqlDataReader reader = command.ExecuteReader();
-            //    while (reader.Read())
-            //    {
-            //        string username = reader["Username"].ToString();
-            //        string password = reader["Password"].ToString();
-            //        string role = reader["Role"].ToString();
-            //        string gender = reader["Gender"].ToString();
-            //        string email = reader["Email"].ToString();
-            //        string Contact = reader["Contact"].ToString();
-            //        string productsOrdered = reader["Cart"].ToString();
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                List<Customer> customers = new List<Customer>();
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Customers", connection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["ID"]);
+                    string username = reader["Username"].ToString();
+                    string contact = reader["Contact"].ToString();
+                    string status = reader["Status"].ToString();
+                    string gender = reader["Gender"].ToString();
+                    string productsOrdered = reader["Cart"].ToString();
+                    int userID = Convert.ToInt32(reader["UserID"]);
 
-            //        object orderIdObj = reader["OrderID"];
-            //        int orderID = -1;
-            //        if (orderIdObj != DBNull.Value)
-            //        {
-            //            orderID = Convert.ToInt32(orderIdObj);
-            //        }
-
-            //        Order order = OrderDL.SearchOrderById(orderID);
-
-            //        List<OrderedProduct> cart = new List<OrderedProduct>();
-            //        string[] productItems = productsOrdered.Split(',');
-            //        foreach (string productItem in productItems)
-            //        {
-            //            string[] parts = productItem.Split(':');
-            //            if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
-            //            {
-            //                string productName = parts[1];
-            //                Product product = ProductDL.SearchProductByName(productName);
-            //                if (product != null)
-            //                {
-            //                    cart.Add(new OrderedProduct(product,quantity));
-            //                }
-            //            }
-            //        }
-            //        Customer customer = new Customer(username, password, role, gender, email, Contact, order, cart);
-            //        Customers.Add(customer);
-            //    }
-            //}
+                    List<OrderedProduct> cart = new List<OrderedProduct>();
+                    string[] productItems = productsOrdered.Split(',');
+                    foreach (string productItem in productItems)
+                    {
+                        string[] parts = productItem.Split(':');
+                        if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
+                        {
+                            string productName = parts[1];
+                            Product product = ProductDBDL.SearchProductByName(productName);
+                            if (product != null)
+                            {
+                                cart.Add(new OrderedProduct(product, quantity));
+                            }
+                        }
+                    }
+                    Customer customer = new Customer(id,username, contact, status, gender, cart, userID);
+                    customers.Add(customer);
+                }
+                return customers;
+            }
         }
 
+        public static string ReturnCartString(Customer c)
+        {
+            StringBuilder cartString = new StringBuilder();
+            foreach (var orderedProduct in c.GetCart())
+            {
+                cartString.Append($"{orderedProduct.GetQuantity()}:{orderedProduct.GetProduct().GetProductName()},");
+            }
+            string cartAsString = cartString.ToString().TrimEnd(',');
+            return cartAsString;
+        }
 
         public static void UpdateCustomerInDatabase(Customer customer)
         {
@@ -251,10 +254,6 @@ namespace RMS.DL
             Customers.Remove(customer);
         }
 
-        public static List<Customer> GetCustomers()
-        {
-            return Customers;
-        }
 
         //public static Customer SearchCustomer(string searchBy, string searchFor) //search by is either username, email or password and search for is attribute to search for
         //{

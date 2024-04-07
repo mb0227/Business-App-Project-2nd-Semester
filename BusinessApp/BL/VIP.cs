@@ -12,6 +12,7 @@ namespace RMS.BL
         private List<Voucher> Vouchers = new List<Voucher>();
         private int CustomerID;
 
+        private int ID;
         public VIP(string username, string contact, string status, string gender, string membershipLevel, int customerID, List<Voucher> vouchers) : base(username, contact, status, gender)
         {
             Username = username;
@@ -24,6 +25,13 @@ namespace RMS.BL
             Vouchers = vouchers;
         }
 
+        public VIP(string username, int id, string membershipLevel, int customerID) : base(username)
+        {
+            Username = username;
+            ID = id;
+            MembershipLevel = membershipLevel;
+            CustomerID = customerID;
+        }
 
         public void AddVoucher(Voucher voucher)
         {
@@ -33,6 +41,11 @@ namespace RMS.BL
         public List<Voucher> GetVouchers()
         {
             return Vouchers;
+        }
+
+        public int GetVipID()
+        {
+            return ID;
         }
 
         public void SetVouchers(List<Voucher> vouchers)
