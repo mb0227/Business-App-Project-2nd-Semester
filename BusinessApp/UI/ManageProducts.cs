@@ -70,7 +70,7 @@ namespace SSC.UI
         private void LoadData()
         {
             dataTable.Rows.Clear();
-            foreach (Product product in ProductDL.GetProducts())
+            foreach (Product product in ProductDBDL.GetProducts())
             {
                 dataTable.Rows.Add(product.GetProductName(), product.GetProductCategory(), product.GetProductDescription(), product.GetPrice(), product.GetStock(),product.ReturnQuantityString());
                 dataGridView1.DataSource = dataTable;
@@ -96,8 +96,8 @@ namespace SSC.UI
                 {
                     Product newProduct = new Product(name.Text, description.Text, comboBox1.Text, int.Parse(price.Text), int.Parse(stock.Text));
                     SetQuantities(newProduct);
-                    ProductDL.AddProduct(newProduct);
-                    ProductDL.InsertProductsIntoDatabase(newProduct);
+                    ProductDBDL.AddProduct(newProduct);
+                    ProductDBDL.InsertProductsIntoDatabase(newProduct);
                     ClearTextBoxes();
                     LoadData();
                 }
@@ -192,7 +192,7 @@ namespace SSC.UI
                     dataTable.Rows[selectedRow].SetField("Stock", p.GetStock());
                     dataTable.Rows[selectedRow].SetField("QuantitiesAvailable", p.GetAvailableQuantities());
                     dataGridView1.DataSource = dataTable;
-                    ProductDL.UpdateProductInDatabase(p);
+                    ProductDBDL.UpdateProductInDatabase(p);
                     ClearTextBoxes();
                 }
             }
@@ -210,7 +210,7 @@ namespace SSC.UI
                 DataGridViewRow rowSelected = dataGridView1.SelectedRows[0];
                 DataGridViewCell firstCell = rowSelected.Cells[0]; 
                 string cellValue = firstCell.Value.ToString();
-                ProductDL.DeleteProductFromDatabase(ProductDL.SearchProductByName(cellValue));
+                ProductDBDL.DeleteProductFromDatabase(ProductDBDL.SearchProductByName(cellValue));
                 dataGridView1.Rows.RemoveAt(selectedRow);
                 selectedRow = -1;
             }

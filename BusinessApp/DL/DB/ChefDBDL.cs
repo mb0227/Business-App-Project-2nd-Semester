@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class ChefDL
+    public class ChefDBDL : IChefDL
     {
-        public static void StoreChefInDB(Chef chef)
+        public void SaveChef(Chef chef)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

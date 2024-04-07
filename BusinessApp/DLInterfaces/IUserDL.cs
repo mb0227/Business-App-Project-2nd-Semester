@@ -7,10 +7,12 @@ using RMS.BL;
 
 namespace RMS.DL
 {
-    public interface IUserDBDL
+    public interface IUserDL
     {
-        void StoreUserInDB(User user);
+        void SaveUser(User user);
         string SearchCustomerForRole(string email, string password);
         int GetUserID(string email);
+        bool EmailAlreadyExists(string email);
+
     }
 }

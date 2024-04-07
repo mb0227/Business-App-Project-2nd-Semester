@@ -21,10 +21,10 @@ namespace SSC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            ProductDL.ReadProductsFromDatabase();
-            OrderDL.ReadOrdersFromDatabase();
-            CustomerDL.GetCustomersFromDatabase();
-            TableDL.UpdateTablesStatus();
+            ProductDBDL.ReadProductsFromDatabase();
+            OrderDBDL.ReadOrdersFromDatabase();
+            CustomerDBDL.GetCustomersFromDatabase();
+            ObjectHandler.GetTableDL().UpdateTablesStatus();
 
             Application.Run(new SignIn());
         }

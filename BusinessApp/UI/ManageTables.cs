@@ -126,7 +126,7 @@ namespace SignInSignUp.UI
             if(CheckValidations())
             {
                 ClearTable();
-                TableDL.InsertTableInDB(new Table(int.Parse(capacity.Text)));
+                ObjectHandler.GetTableDL().SaveTable(new Table(int.Parse(capacity.Text)));
                 capacity.Clear();
                 LoadData();
             }
@@ -154,7 +154,7 @@ namespace SignInSignUp.UI
                 {
                     int id = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value);
                     ClearTable();
-                    TableDL.UpdateTable(new Table(int.Parse(capacity.Text), id,comboBox1.Text));
+                    ObjectHandler.GetTableDL().UpdateTable(new Table(int.Parse(capacity.Text), id,comboBox1.Text));
                     LoadData();
                 }
                 else
@@ -171,7 +171,7 @@ namespace SignInSignUp.UI
             dt.Columns.Add("Status", typeof(string));
             guna2DataGridView1.DataSource = dt;
 
-            foreach (Table t in TableDL.ReadTablesData())
+            foreach (Table t in ObjectHandler.GetTableDL().ReadTablesData())
             {
                 dt.Rows.Add(t.GetID(),t.GetCapacity(),t.GetStatus());
             }
@@ -184,7 +184,7 @@ namespace SignInSignUp.UI
 
         private void LoadData()
         {
-            foreach (Table t in TableDL.ReadTablesData())
+            foreach (Table t in ObjectHandler.GetTableDL().ReadTablesData())
             {
                 dt.Rows.Add(t.GetID(), t.GetCapacity(),t.GetStatus());
             }
@@ -198,7 +198,7 @@ namespace SignInSignUp.UI
                 {
                     int id = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value);
                     ClearTable();
-                    TableDL.DeleteTable(Convert.ToInt32(id));
+                    ObjectHandler.GetTableDL().DeleteTable(Convert.ToInt32(id));
                     LoadData();
                 }
                 catch(Exception ex)

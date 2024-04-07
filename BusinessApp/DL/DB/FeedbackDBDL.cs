@@ -9,9 +9,9 @@ using SSC;
 
 namespace RMS.DL
 {
-    public class FeedbackDL
+    public class FeedbackDBDL : IFeedbackDL
     {
-        public static void InsertReviewInDatabase(Feedback feedback)
+        public void SaveReview(Feedback feedback)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

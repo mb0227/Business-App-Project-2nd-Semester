@@ -7,12 +7,15 @@ using RMS.BL;
 
 namespace RMS.DL
 {
-    public interface IEmployeeDBDL
+    public interface IEmployeeDL
     {
-        void StoreEmployeeInDB(Employee employee);
+        void SaveEmployee(Employee employee);
         Chef SearchChefById(int id);
         Admin SearchAdminById(int id);
         Waiter SearchWaiterById(int id);
+         bool UsernameAlreadyExists(string username);
+         int GetEmployeeID(string username);
+
 
     }
 }

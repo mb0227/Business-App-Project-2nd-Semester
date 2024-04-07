@@ -85,7 +85,7 @@ namespace SSC
             }
 
             // Check if email already exists
-            if (UserDL.EmailAlreadyExists(email.Text))
+            if (ObjectHandler.GetUserDL().EmailAlreadyExists(email.Text))
             {
                 errorProvider2.SetError(email, "Email already exists.");
                 return false;
@@ -95,7 +95,7 @@ namespace SSC
                 errorProvider2.SetError(email, "");
             }
 
-            if (CustomerDL.UsernameAlreadyExists(username.Text))
+            if (ObjectHandler.GetCustomerDL().UsernameAlreadyExists(username.Text))
             {
                 errorProvider1.SetError(username, "Username already exists.");
                 return false;
@@ -133,12 +133,12 @@ namespace SSC
             if(CheckValidations())
             {
                 User user = new User(email.Text, password.Text, "Customer");
-                ObjectHandler.GetUserDBDL().StoreUserInDB(user);
+                ObjectHandler.GetUserDL().SaveUser(user);
                 Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
-                customer.SetUserID(ObjectHandler.GetUserDBDL().GetUserID(email.Text));
-                ObjectHandler.GetCustomerDBDL().AddCustomerToDB(customer);
-                Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
-                RegularDL.StoreRegularInDB(regular);
+                customer.SetUserID(ObjectHandler.GetUserDL().GetUserID(email.Text));
+                ObjectHandler.GetCustomerDL().SaveCustomer(customer);
+                Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
+                ObjectHandler.GetRegularDL().StoreRegularInDB(regular);
                 MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //else

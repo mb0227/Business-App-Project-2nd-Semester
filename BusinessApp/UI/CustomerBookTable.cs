@@ -109,7 +109,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             comboBox1.Items.Clear();
-            foreach (Table table in TableDL.ReadTablesData())
+            foreach (Table table in ObjectHandler.GetTableDL().ReadTablesData())
             {
                 if (table.GetStatus() == "Unbooked")
                 {
@@ -122,7 +122,7 @@ namespace SSC.UI
         {
             if (!string.IsNullOrEmpty(comboBox1.Text.ToString()))
             {
-                int max = TableDL.GetTableCapacity(Convert.ToInt32(comboBox1.Text));
+                int max = ObjectHandler.GetTableDL().GetTableCapacity(Convert.ToInt32(comboBox1.Text));
                 if (!int.TryParse(guna2TextBox1.Text, out int number) || number < 1 || number > max)
                 {
                     errorProvider1.SetError(guna2TextBox1, $"Please enter a valid number between 1 and {max}.");
@@ -150,9 +150,9 @@ namespace SSC.UI
                 errorProvider1.SetError(guna2TextBox1, "");
             }
 
-            int customerID = ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername());
+            int customerID = ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername());
 
-            if (ReservationDL.GetCustomerReservationCount(customerID) == 1)
+            if (ObjectHandler.GetReservationDL().GetCustomerReservationCount(customerID) == 1)
             {
                 errorProvider1.SetError(guna2TextBox1, "You already have a reservation booked.");
                 return false;
@@ -165,8 +165,8 @@ namespace SSC.UI
         {
             if(CheckValidations())
             {
-                ReservationDL.InsertReservationInDB(new Reservation(dateTimePicker1.Value,Convert.ToInt32(guna2TextBox1.Text), ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()), int.Parse(comboBox1.Text)));
-                TableDL.UpdateTable(new Table(TableDL.GetTableCapacity(int.Parse(comboBox1.Text)), int.Parse(comboBox1.Text), "Booked"));
+                ObjectHandler.GetReservationDL().SaveReservation(new Reservation(dateTimePicker1.Value,Convert.ToInt32(guna2TextBox1.Text), ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()), int.Parse(comboBox1.Text)));
+                ObjectHandler.GetTableDL().UpdateTable(new Table(ObjectHandler.GetTableDL().GetTableCapacity(int.Parse(comboBox1.Text)), int.Parse(comboBox1.Text), "Booked"));
             }
         }
 
@@ -185,10 +185,10 @@ namespace SSC.UI
             try
             {
                 string name = customer.GetUsername();
-                int customerID = ObjectHandler.GetCustomerDBDL().GetCustomerID(name);
-                if (ReservationDL.GetCustomerReservationCount(customerID) == 1)
+                int customerID = ObjectHandler.GetCustomerDL().GetCustomerID(name);
+                if (ObjectHandler.GetReservationDL().GetCustomerReservationCount(customerID) == 1)
                 {
-                    reservationText.Text += ReservationDL.GetReservationDate(customerID);
+                    reservationText.Text += ObjectHandler.GetReservationDL().GetReservationDate(customerID);
                     reservationText.Visible = true;
                 }
             }
@@ -202,11 +202,11 @@ namespace SSC.UI
         {
             try
             {
-                int customerID = ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername());
-                if (ReservationDL.GetCustomerReservationCount(customerID) == 1)
+                int customerID = ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername());
+                if (ObjectHandler.GetReservationDL().GetCustomerReservationCount(customerID) == 1)
                 {
-                    TableDL.UpdateTablesStatus(TableDL.GetReservedTableID(customerID));
-                    ReservationDL.DeleteReservation(customerID);
+                    ObjectHandler.GetTableDL().UpdateTablesStatus(ObjectHandler.GetTableDL().GetReservedTableID(customerID));
+                    ObjectHandler.GetReservationDL().DeleteReservation(customerID);
                     MessageBox.Show("Successfully Deleted reservation");
                     reservationText.Visible = false;
                 }

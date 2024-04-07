@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class EmployeeDL : IEmployeeDBDL
+    public class EmployeeDBDL : IEmployeeDL
     {
-        public void StoreEmployeeInDB(Employee employee)
+        public void SaveEmployee(Employee employee)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -109,7 +109,7 @@ namespace RMS.DL
             return null;
         }
 
-        public static int GetEmployeeID(string username)
+        public int GetEmployeeID(string username)
         {
             int empID = -1; // Default value if emp is not found
 
@@ -131,7 +131,7 @@ namespace RMS.DL
             return empID; // Return -1 if user is not found 
         }
 
-        public static bool UsernameAlreadyExists(string username)
+        public bool UsernameAlreadyExists(string username)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

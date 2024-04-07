@@ -1,4 +1,5 @@
-﻿using RMS.DL;
+﻿using RMS.BL;
+using RMS.DL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +11,66 @@ namespace SSC.UI
 {
     public class ObjectHandler
     {
-        public static IUserDBDL GetUserDBDL()
+        public static IUserDL GetUserDL()
         {
-            return new UserDL();
+            return new UserDBDL();
         }
 
-        public static ICustomerDBDL GetCustomerDBDL()
+        public static ICustomerDL GetCustomerDL()
         {
-            return new CustomerDL();
+            return new CustomerDBDL();
         }
 
-        public static IEmployeeDBDL GetEmployeeDBDL()
+        public static IEmployeeDL GetEmployeeDL()
         {
-            return new EmployeeDL();
+            return new EmployeeDBDL();
         }
+
+        public static IAdminDL GetAdminDL()
+        {
+            return new AdminDBDL();
+        }
+
+        public static IChefDL GetChefDL()
+        {
+            return new ChefDBDL();
+        }
+
+        public static IRegularDL GetRegularDL()
+        {
+            return new RegularDBDL();
+        }
+
+        public static IFeedbackDL GetFeedbackDL()
+        {
+            return new FeedbackDBDL();
+        }
+
+        public static IReservationDL GetReservationDL()
+        {
+            return new ReservationDBDL();
+        }
+
+        public static ITableDL GetTableDL()
+        {
+            return new TableDBDL();
+        }
+
+        public static IWaiterDL GetWaiterDL()
+        {
+            return new WaiterDBDL();
+        }
+
+        //public static IOrderDL GetOrderDL()
+        //{
+        //    return new OrderDBDL();
+        //}
+
+        //public static IProductDL GetProductDL()
+        //{
+        //    return new ProductDBDL();
+        //}
+
+       
     }
 }

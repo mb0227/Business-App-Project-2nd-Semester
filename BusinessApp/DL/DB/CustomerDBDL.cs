@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace RMS.DL
 {
-    public class CustomerDL : ICustomerDBDL
+    public class CustomerDBDL : ICustomerDL
     {
         private static List<Customer> Customers = new List<Customer>();
 
@@ -40,7 +40,7 @@ namespace RMS.DL
                         if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
                         {
                             string productName = parts[1];
-                            Product product = ProductDL.SearchProductByName(productName);
+                            Product product = ProductDBDL.SearchProductByName(productName);
                             if (product != null)
                             {
                                 cart.Add(new OrderedProduct(product, quantity));
@@ -130,7 +130,7 @@ namespace RMS.DL
             //}
         }
 
-        public void AddCustomerToDB(Customer customer)
+        public void SaveCustomer(Customer customer)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -212,7 +212,7 @@ namespace RMS.DL
             //}
         }
 
-        public static bool UsernameAlreadyExists(string username)
+        public bool UsernameAlreadyExists(string username)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

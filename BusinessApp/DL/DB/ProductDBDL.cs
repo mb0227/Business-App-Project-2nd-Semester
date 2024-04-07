@@ -12,7 +12,7 @@ using SSC;
 
 namespace RMS.DL
 {
-    public class ProductDL
+    public class ProductDBDL
     {
         private static List<Product> Products = new List<Product>();
 

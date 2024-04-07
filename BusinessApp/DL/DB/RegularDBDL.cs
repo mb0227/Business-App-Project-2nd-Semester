@@ -9,9 +9,9 @@ using SSC;
 
 namespace RMS.DL
 {
-    public class RegularDL
+    public class RegularDBDL : IRegularDL
     {
-        public static void StoreRegularInDB(Regular regular)
+        public void StoreRegularInDB(Regular regular)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

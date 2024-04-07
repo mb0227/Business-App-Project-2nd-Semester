@@ -11,7 +11,7 @@ using SSC;
 
 namespace RMS.DL
 {
-    public class OrderDL
+    public class OrderDBDL
     {
         private static List<Order> Orders = new List<Order>();
 
@@ -96,7 +96,7 @@ namespace RMS.DL
                         if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
                         {
                             string productName = parts[1];
-                            Product product = ProductDL.SearchProductByName(productName);
+                            Product product = ProductDBDL.SearchProductByName(productName);
                             if (product != null)
                             {
                                 cart.Add(new OrderedProduct(product, quantity));

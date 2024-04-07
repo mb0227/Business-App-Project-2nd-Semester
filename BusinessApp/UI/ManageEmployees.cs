@@ -157,18 +157,18 @@ namespace SSC.UI
             if (CheckValidations())
             {
                 User user = new User(email.Text, password.Text, employeeType.Text);
-                ObjectHandler.GetUserDBDL().StoreUserInDB(user);
-                Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text));
-                ObjectHandler.GetEmployeeDBDL().StoreEmployeeInDB(employee);
+                ObjectHandler.GetUserDL().SaveUser(user);
+                Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text));
+                ObjectHandler.GetEmployeeDL().SaveEmployee(employee);
                 if (employeeType.Text == "Waiter")
                 {
-                    Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, EmployeeDL.GetEmployeeID(username.Text));
-                    WaiterDL.StoreWaiterInDB(waiter);
+                    Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));
+                    ObjectHandler.GetWaiterDL().SaveWaiter(waiter);
                 }
                 else if (employeeType.Text == "Chef")
                 {
-                    Chef chef = new Chef(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, EmployeeDL.GetEmployeeID(username.Text));
-                    ChefDL.StoreChefInDB(chef);
+                    Chef chef = new Chef(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));
+                    ObjectHandler.GetChefDL().SaveChef(chef);
                 }
             }
         }
@@ -186,7 +186,7 @@ namespace SSC.UI
                 errorProvider1.SetError(email, "");
             }
 
-            if (UserDL.EmailAlreadyExists(email.Text))
+            if (ObjectHandler.GetUserDL().EmailAlreadyExists(email.Text))
             {
                 errorProvider2.SetError(email, "Email already exists.");
                 return false;
@@ -216,7 +216,7 @@ namespace SSC.UI
                 errorProvider3.SetError(username, "");
             }
 
-            if(EmployeeDL.UsernameAlreadyExists(username.Text))
+            if(ObjectHandler.GetEmployeeDL().UsernameAlreadyExists(username.Text))
             {
                 errorProvider3.SetError(username, "Username already exists.");
                 return false;

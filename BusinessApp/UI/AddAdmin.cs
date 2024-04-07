@@ -21,8 +21,6 @@ namespace SignInSignUp.UI
         private CustomerHeader aHeader;
         private Navbar aNavbar;
         private Admin Admin;
-        IUserDBDL userDL = new UserDL();
-        IEmployeeDBDL employeeDL = new EmployeeDL();
         public AddAdmin()
         {
             InitializeComponent();
@@ -42,11 +40,11 @@ namespace SignInSignUp.UI
             if (CheckValidations())
             {
                 User user = new User(email.Text, password.Text, "Admin");
-                userDL.StoreUserInDB(user);
-                Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text));
-                employeeDL.StoreEmployeeInDB(employee);
-                Admin admin = new Admin(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDBDL().GetUserID(email.Text), splitText(tb1.Text), splitText(tb2.Text), EmployeeDL.GetEmployeeID(username.Text));
-                AdminDL.StoreAdminInDB(admin);
+                ObjectHandler.GetUserDL().SaveUser(user);
+                Employee employee = new Employee(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text));
+                ObjectHandler.GetEmployeeDL().SaveEmployee(employee);
+                Admin admin = new Admin(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), splitText(tb1.Text), splitText(tb2.Text), ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));
+                ObjectHandler.GetAdminDL().SaveAdmin(admin);
             }
         }
 
@@ -63,7 +61,7 @@ namespace SignInSignUp.UI
                 errorProvider1.SetError(email, "");
             }
 
-            if (UserDL.EmailAlreadyExists(email.Text))
+            if (ObjectHandler.GetUserDL().EmailAlreadyExists(email.Text))
             {
                 errorProvider2.SetError(email, "Email already exists.");
                 return false;
@@ -93,7 +91,7 @@ namespace SignInSignUp.UI
                 errorProvider3.SetError(username, "");
             }
 
-            if (EmployeeDL.UsernameAlreadyExists(username.Text))
+            if (ObjectHandler.GetEmployeeDL().UsernameAlreadyExists(username.Text))
             {
                 errorProvider3.SetError(username, "Username already exists.");
                 return false;

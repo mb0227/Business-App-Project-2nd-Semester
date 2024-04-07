@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class AdminDL
+    public class AdminDBDL : IAdminDL
     {
-        public static void StoreAdminInDB(Admin admin)
+        public void SaveAdmin(Admin admin)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

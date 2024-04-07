@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class WaiterDL
+    public class WaiterDBDL : IWaiterDL
     {
-        public static void StoreWaiterInDB(Waiter waiter)
+        public void SaveWaiter(Waiter waiter)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

@@ -121,7 +121,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             menuComboBox.Items.Clear();
-            foreach (Product product in ProductDL.GetProducts())
+            foreach (Product product in ProductDBDL.GetProducts())
             {
                 menuComboBox.Items.Add(product.GetProductName());
             }
@@ -140,7 +140,7 @@ namespace SSC.UI
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedProduct = menuComboBox.SelectedItem.ToString();
-            Product selectedProductObject = ProductDL.GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
+            Product selectedProductObject = ProductDBDL.GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
 
             if (selectedProductObject != null)
             {
@@ -168,7 +168,7 @@ namespace SSC.UI
         private bool CheckValidations()
         {
             int value;
-            int totalItemStock = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
+            int totalItemStock = ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
             int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
             if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
             {
@@ -243,7 +243,7 @@ namespace SSC.UI
             {
                 if (CheckValidations())
                 {
-                    OrderedProduct p = new OrderedProduct(ProductDL.SearchProductByName(menuComboBox.Text), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+                    OrderedProduct p = new OrderedProduct(ProductDBDL.SearchProductByName(menuComboBox.Text), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
                     selectedRow = cartGridView.SelectedRows[0].Index;
 
                     DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
@@ -260,7 +260,7 @@ namespace SSC.UI
                     customer.AddToCart(p.GetProduct(), p.GetQuantity());
 
                     cartGridView.DataSource = dataTable;
-                    CustomerDL.UpdateCustomerInDatabase(customer);
+                    CustomerDBDL.UpdateCustomerInDatabase(customer);
                 }
             }
             else
@@ -286,7 +286,7 @@ namespace SSC.UI
                 product.SetProductName(productName);
                 customer.RemoveFromCart(product);
 
-                CustomerDL.UpdateCustomerInDatabase(customer);
+                CustomerDBDL.UpdateCustomerInDatabase(customer);
                 cartGridView.Rows.RemoveAt(selectedRow);
                 selectedRow = -1;
             }

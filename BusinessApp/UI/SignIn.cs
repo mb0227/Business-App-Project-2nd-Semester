@@ -78,34 +78,34 @@ namespace SSC
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            string role = ObjectHandler.GetUserDBDL().SearchCustomerForRole(username.Text, password.Text);
+            string role = ObjectHandler.GetUserDL().SearchCustomerForRole(username.Text, password.Text);
             if (role!="")
             {
-                int userID = ObjectHandler.GetUserDBDL().GetUserID(username.Text);
+                int userID = ObjectHandler.GetUserDL().GetUserID(username.Text);
                 if(role=="Customer") //Search customer by id
                 {
-                    Customer customer = ObjectHandler.GetCustomerDBDL().SearchCustomerById(userID);
+                    Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);
                     CustomerDashboard c= new CustomerDashboard(this.Size, this.Location, customer);
                     c.Show();
                     this.Hide();
                 }
                 else if(role=="Chef")
                 {
-                    Chef chef = ObjectHandler.GetEmployeeDBDL().SearchChefById(userID);
+                    Chef chef = ObjectHandler.GetEmployeeDL().SearchChefById(userID);
                     ChefDashboard c = new ChefDashboard(this.Size, this.Location, chef);
                     c.Show();
                     this.Hide();
                 }
                 else if(role=="Waiter")
                 {
-                    Waiter waiter = ObjectHandler.GetEmployeeDBDL().SearchWaiterById(userID);
+                    Waiter waiter = ObjectHandler.GetEmployeeDL().SearchWaiterById(userID);
                     WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
                     w.Show();
                     this.Hide();
                 }
                 else if(role=="Admin")
                 {
-                    Admin admin = ObjectHandler.GetEmployeeDBDL().SearchAdminById(userID);
+                    Admin admin = ObjectHandler.GetEmployeeDL().SearchAdminById(userID);
                     AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
                     a.Show();
                     this.Hide();
@@ -179,9 +179,9 @@ namespace SSC
                     string newPassword = Prompt.ShowDialog("Enter new Password: ", "Change Password");
 
                     //customer.SetPassword(newPassword);
-                    CustomerDL.UpdateCustomer(customer);
+                    CustomerDBDL.UpdateCustomer(customer);
 
-                    CustomerDL.UpdateCustomerInDatabase(customer);
+                    CustomerDBDL.UpdateCustomerInDatabase(customer);
                 }
                 else
                 {

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class ReservationDL
+    public class ReservationDBDL : IReservationDL 
     {
-        public static void InsertReservationInDB(Reservation r)
+        public void SaveReservation(Reservation r)
         {
             using (SqlConnection connection= UtilityFunctions.GetSqlConnection())
             {
@@ -26,7 +26,7 @@ namespace RMS.DL
             }
         }
 
-        public static int GetCustomerReservationCount(int customerId)
+        public int GetCustomerReservationCount(int customerId)
         {
             int reservations = -1;
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -48,7 +48,7 @@ namespace RMS.DL
             return reservations;
         }
 
-        public static DateTime GetReservationDate(int customerid)
+        public DateTime GetReservationDate(int customerid)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -65,7 +65,7 @@ namespace RMS.DL
         }
 
         //delete reservation
-        public static void DeleteReservation(int customerid)
+        public void DeleteReservation(int customerid)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

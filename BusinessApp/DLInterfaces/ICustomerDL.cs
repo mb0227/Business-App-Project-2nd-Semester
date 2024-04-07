@@ -7,10 +7,11 @@ using RMS.BL;
 
 namespace RMS.DL
 {
-    public interface ICustomerDBDL
+    public interface ICustomerDL
     {
-        void AddCustomerToDB(Customer customer);
+        void SaveCustomer(Customer customer);
         Customer SearchCustomerById(int id);
         int GetCustomerID(string username);
+        bool UsernameAlreadyExists(string username);
     }
 }

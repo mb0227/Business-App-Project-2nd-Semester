@@ -177,36 +177,36 @@ namespace SSC.UI
 
         private void angry_Click(object sender, EventArgs e)
         {
-            Feedback f = new Feedback("1 Star", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
-            FeedbackDL.InsertReviewInDatabase(f);
+            Feedback f = new Feedback("1 Star", ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
+            ObjectHandler.GetFeedbackDL().SaveReview(f);
             MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void sad_Click(object sender, EventArgs e)
         {
-            Feedback f = new Feedback("2 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
-            FeedbackDL.InsertReviewInDatabase(f);
+            Feedback f = new Feedback("2 Stars", ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
+            ObjectHandler.GetFeedbackDL().SaveReview(f);
             MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void expressionless_Click(object sender, EventArgs e)
         {
-            Feedback f = new Feedback("3 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
-            FeedbackDL.InsertReviewInDatabase(f);
+            Feedback f = new Feedback("3 Stars", ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
+            ObjectHandler.GetFeedbackDL().SaveReview(f);
             MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void happy_Click(object sender, EventArgs e)
         {
-            Feedback f = new Feedback("4 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
-            FeedbackDL.InsertReviewInDatabase(f);
+            Feedback f = new Feedback("4 Stars", ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
+            ObjectHandler.GetFeedbackDL().SaveReview(f);
             MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void lovedit_Click(object sender, EventArgs e)
         {
-            Feedback f = new Feedback("5 Stars", ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()));
-            FeedbackDL.InsertReviewInDatabase(f);
+            Feedback f = new Feedback("5 Stars", ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
+            ObjectHandler.GetFeedbackDL().SaveReview(f);
             MessageBox.Show("Thanks for review", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

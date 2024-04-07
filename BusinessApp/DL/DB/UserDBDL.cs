@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace RMS.DL
 {
-    public class UserDL : IUserDBDL
+    public class UserDBDL : IUserDL
     {
         private static List<User> Users = new List<User>();
         public static List<User> GetUsers()
@@ -25,7 +25,7 @@ namespace RMS.DL
             Users.Add(user);
         }
 
-        public static bool EmailAlreadyExists(string email)
+        public bool EmailAlreadyExists(string email)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -48,7 +48,7 @@ namespace RMS.DL
         {            
         }
 
-        public void StoreUserInDB(User user)
+        public void SaveUser(User user)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

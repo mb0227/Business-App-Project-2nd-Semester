@@ -9,13 +9,13 @@ using SSC;
 
 namespace RMS.DL
 {
-    public class TableDL
+    public class TableDBDL : ITableDL
     {
         private List<Table> Tables = new List<Table>(); 
 
         public List<Table> GetTables() { return Tables; }
 
-        public static void InsertTableInDB(Table table)
+        public void SaveTable(Table table)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -27,7 +27,7 @@ namespace RMS.DL
             }
         }
 
-        public static Table GetTableById(int id)
+        public Table GetTableById(int id)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -46,7 +46,7 @@ namespace RMS.DL
             return null;
         }
 
-        public static List<Table> ReadTablesData()
+        public List<Table> ReadTablesData()
         {
             SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection();
             sqlConnection.Open();
@@ -65,7 +65,7 @@ namespace RMS.DL
             return list;
         }
 
-        public static void UpdateTable(Table t)
+        public void UpdateTable(Table t)
         {
             SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection();
             sqlConnection.Open();
@@ -77,7 +77,7 @@ namespace RMS.DL
             sqlConnection.Close();
         }
 
-        public static void DeleteTable(int id)
+        public void DeleteTable(int id)
         {
             SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection();
             sqlConnection.Open();
@@ -86,7 +86,7 @@ namespace RMS.DL
             sqlConnection.Close();
         }
 
-        public static int GetTableCapacity(int id)
+        public int GetTableCapacity(int id)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -107,7 +107,7 @@ namespace RMS.DL
         }
         
 
-        public static void UpdateTablesStatus()
+        public void UpdateTablesStatus()
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -119,7 +119,7 @@ namespace RMS.DL
             }
         }
 
-        public static void UpdateTablesStatus(int tableID)
+        public void UpdateTablesStatus(int tableID)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -132,7 +132,7 @@ namespace RMS.DL
             }
         }
 
-        public static int GetReservedTableID(int customerid)
+        public int GetReservedTableID(int customerid)
         {
             int id = -1;
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())

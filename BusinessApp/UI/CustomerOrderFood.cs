@@ -125,7 +125,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             menuComboBox.Items.Clear(); 
-            foreach (Product product in ProductDL.GetProducts())
+            foreach (Product product in ProductDBDL.GetProducts())
             {
                 menuComboBox.Items.Add(product.GetProductName()); 
             }
@@ -134,7 +134,7 @@ namespace SSC.UI
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedProduct = menuComboBox.SelectedItem.ToString();
-            Product selectedProductObject = ProductDL.GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
+            Product selectedProductObject = ProductDBDL.GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
 
             if (selectedProductObject != null)
             {
@@ -183,7 +183,7 @@ namespace SSC.UI
         private bool CheckValidations()
         {
             int value;
-            int totalItemStock = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
+            int totalItemStock = ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
             int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
             if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
             {
@@ -196,9 +196,9 @@ namespace SSC.UI
 
         private void DeductOrderedProductFromStock(string productName, int quantity)
         {
-            Product product = ProductDL.GetProducts().Where(p => p.GetProductName().Equals(productName)).FirstOrDefault();
+            Product product = ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(productName)).FirstOrDefault();
             product.UpdateStock("remove", quantity);
-            ProductDL.UpdateProductInDatabase(product);
+            ProductDBDL.UpdateProductInDatabase(product);
         }
 
         private void MakeColumns()
@@ -213,7 +213,7 @@ namespace SSC.UI
         private void LoadData()
         {
             dataTable.Rows.Clear();
-            foreach (Product product in ProductDL.GetProducts())
+            foreach (Product product in ProductDBDL.GetProducts())
             {
                 dataTable.Rows.Add(product.GetProductName(), product.GetPrice(),product.GetStock());
                 menuGridView.DataSource = dataTable;
@@ -289,9 +289,9 @@ namespace SSC.UI
                     DeductOrderedProductFromStock(item.GetProduct().GetProductName(), item.GetQuantity());
                 }
 
-                Order order = new Order(OrderDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, customer.GetUsername());
-                OrderDL.AddOrder(order);
-                OrderDL.InsertOrderInDatabase(order);
+                Order order = new Order(OrderDBDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, customer.GetUsername());
+                OrderDBDL.AddOrder(order);
+                OrderDBDL.InsertOrderInDatabase(order);
                 LoadData();
             }
             else
@@ -303,7 +303,7 @@ namespace SSC.UI
         private void clearCartButton_Click(object sender, EventArgs e)
         {
             customer.GetCart().Clear();
-            CustomerDL.InsertOrderIntoCustomerDatabase(customer);
+            CustomerDBDL.InsertOrderIntoCustomerDatabase(customer);
         }
 
         private void viewButton_Click(object sender, EventArgs e)
@@ -317,8 +317,8 @@ namespace SSC.UI
         {
             if (CheckValidations())
             {
-                customer.AddToCart(ProductDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
-                CustomerDL.InsertOrderIntoCustomerDatabase(customer);
+                customer.AddToCart(ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+                CustomerDBDL.InsertOrderIntoCustomerDatabase(customer);
                 ClearTextBoxes();
             }
         }
