@@ -53,8 +53,8 @@ CREATE TABLE "Table"(
 
 CREATE TABLE Reservation(
 	ID int PRIMARY KEY IDENTITY,
-	ReservationDate DateTime NOT NULL,
-	ReservationTime nvarchar(50),
+	ReservationDate Date NOT NULL,
+	ReservationTime Time(7),
 	TotalPersons int NOT NULL,
 	CustomerID int NOT NULL,
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),

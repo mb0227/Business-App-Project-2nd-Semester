@@ -27,6 +27,25 @@ namespace RMS.DL
             }
         }
 
+        public static Table GetTableById(int id)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM [TABLE] WHERE ID=@ID)", connection);
+                command.Parameters.AddWithValue("@ID", id);
+                SqlDataReader reader = command.ExecuteReader();
+                if(reader.Read())
+                {
+                    int ID = Convert.ToInt32(reader["ID"]);
+                    int c = Convert.ToInt32(reader["Capacity"]);
+                    string s = Convert.ToString(reader["Status"]);
+                    return new Table(c, ID, s);
+                }
+            }
+            return null;
+        }
+
         public static List<Table> ReadTablesData()
         {
             SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection();
@@ -85,6 +104,50 @@ namespace RMS.DL
                 }
             }
             return id; 
+        }
+        
+
+        public static void UpdateTablesStatus()
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID IN (SELECT T.ID FROM [Table] T JOIN Reservation R ON T.ID = R.TableID WHERE GETDATE() > R.ReservationDate);";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();                
+            }
+        }
+
+        public static void UpdateTablesStatus(int tableID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID =@ID;";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", tableID);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static int GetReservedTableID(int customerid)
+        {
+            int id = -1;
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand($"SELECT R.TableID FROM Customers C JOIN Reservation R ON {customerid}= R.CustomerID", connection);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        id = reader.GetInt32(0);
+                    }
+                }
+            }
+            return id;
         }
     }
 }

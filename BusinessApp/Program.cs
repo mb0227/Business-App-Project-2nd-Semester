@@ -24,6 +24,7 @@ namespace SSC
             ProductDL.ReadProductsFromDatabase();
             OrderDL.ReadOrdersFromDatabase();
             CustomerDL.GetCustomersFromDatabase();
+            TableDL.UpdateTablesStatus();
 
             Application.Run(new SignIn());
         }

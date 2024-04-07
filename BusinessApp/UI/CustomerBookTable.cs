@@ -120,10 +120,29 @@ namespace SSC.UI
 
         private bool CheckValidations()
         {
-            int max = TableDL.GetTableCapacity(Convert.ToInt32(comboBox1.Text));
-            if (!int.TryParse(guna2TextBox1.Text, out int number) || number < 1 || number > max)
+            if (!string.IsNullOrEmpty(comboBox1.Text.ToString()))
             {
-                errorProvider1.SetError(guna2TextBox1, $"Please enter a valid number between 1 and {max}.");
+                int max = TableDL.GetTableCapacity(Convert.ToInt32(comboBox1.Text));
+                if (!int.TryParse(guna2TextBox1.Text, out int number) || number < 1 || number > max)
+                {
+                    errorProvider1.SetError(guna2TextBox1, $"Please enter a valid number between 1 and {max}.");
+                    return false;
+                }
+                else
+                {
+                    errorProvider1.SetError(guna2TextBox1, "");
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+            DateTime currentDate = DateTime.Today;
+
+            if (dateTimePicker1.Value < currentDate)
+            {
+                errorProvider1.SetError(guna2TextBox1, $"Please enter a valid date for reservation.");
                 return false;
             }
             else
@@ -131,17 +150,12 @@ namespace SSC.UI
                 errorProvider1.SetError(guna2TextBox1, "");
             }
 
-            string pattern = @"^(0[1-9]|1[0-2]):[0-5][0-9] (am|pm)$";
-            if(!Regex.IsMatch(guna2TextBox2.Text,pattern))  //validation for time
+            int customerID = ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername());
+
+            if (ReservationDL.GetCustomerReservationCount(customerID) == 1)
             {
-                errorProvider2.SetError(guna2TextBox2, $"Please enter a time with pattern 04:20 am");
-                MessageBox.Show("here");
+                errorProvider1.SetError(guna2TextBox1, "You already have a reservation booked.");
                 return false;
-            }
-            else
-            {
-                MessageBox.Show("not");
-                errorProvider2.SetError(guna2TextBox2, "");
             }
 
             return true;
@@ -151,7 +165,7 @@ namespace SSC.UI
         {
             if(CheckValidations())
             {
-                ReservationDL.InsertReservationInDB(new Reservation(dateTimePicker1.Value,guna2TextBox2.Text,Convert.ToInt32(guna2TextBox1.Text), ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()), int.Parse(comboBox1.Text)));
+                ReservationDL.InsertReservationInDB(new Reservation(dateTimePicker1.Value,Convert.ToInt32(guna2TextBox1.Text), ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername()), int.Parse(comboBox1.Text)));
                 TableDL.UpdateTable(new Table(TableDL.GetTableCapacity(int.Parse(comboBox1.Text)), int.Parse(comboBox1.Text), "Booked"));
             }
         }
@@ -164,6 +178,47 @@ namespace SSC.UI
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewReservationButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = customer.GetUsername();
+                int customerID = ObjectHandler.GetCustomerDBDL().GetCustomerID(name);
+                if (ReservationDL.GetCustomerReservationCount(customerID) == 1)
+                {
+                    reservationText.Text += ReservationDL.GetReservationDate(customerID);
+                    reservationText.Visible = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void deleteReservation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int customerID = ObjectHandler.GetCustomerDBDL().GetCustomerID(customer.GetUsername());
+                if (ReservationDL.GetCustomerReservationCount(customerID) == 1)
+                {
+                    TableDL.UpdateTablesStatus(TableDL.GetReservedTableID(customerID));
+                    ReservationDL.DeleteReservation(customerID);
+                    MessageBox.Show("Successfully Deleted reservation");
+                    reservationText.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("You have no Reservation to delete");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
