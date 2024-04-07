@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RMS.BL;
+using SSC.UI;
+using SSC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,26 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
-using RMS.BL;
 using RMS.DL;
-using SignInSignUp.UI;
 
-namespace SSC.UI
+namespace SignInSignUp.UI
 {
-    public partial class ManageCustomers : Form
+    public partial class ViewEmployees : Form
     {
         private CustomerHeader aHeader;
         private Navbar aNavbar;
         private Admin Admin;
         DataTable dt = new DataTable();
-        public ManageCustomers()
+        public ViewEmployees()
         {
             InitializeComponent();
             InitializeUserControls();
         }
 
-        public ManageCustomers(Size size, Point location, Admin admin)
+        public ViewEmployees(Size size, Point location, Admin admin)
         {
             InitializeComponent();
             InitializeUserControls();
@@ -112,9 +112,78 @@ namespace SSC.UI
             }
         }
 
-        private void menuGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ViewEmployees_Load(object sender, EventArgs e)
         {
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Username", typeof(string));
+            dt.Columns.Add("Contact", typeof(string));
+            dt.Columns.Add("Salary", typeof(double));
+            dt.Columns.Add("Gender", typeof(string));
+            dt.Columns.Add("JoinDate", typeof(DateTime));
+            dt.Columns.Add("UserID", typeof(int));
 
+            dataGridView1.DataSource = dt;
+            foreach (Employee emp in ObjectHandler.GetEmployeeDL().GetEmployees())
+            {
+                dt.Rows.Add(emp.GetID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
+            }
+        }
+
+        private void LoadData()
+        {
+            foreach (Employee emp in ObjectHandler.GetEmployeeDL().GetEmployees())
+            {
+                dt.Rows.Add(emp.GetID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
+            }
+        }
+
+        private void ClearGridView()
+        {
+            dt.Columns.Clear();
+            dt.Rows.Clear();
+        }
+
+        private void viewChefBtn_Click(object sender, EventArgs e)
+        {
+            ClearGridView();
+
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Username", typeof(string));
+            dt.Columns.Add("Salary", typeof(double));
+            dt.Columns.Add("Shift", typeof(string));
+            dt.Columns.Add("Specialization", typeof(string));
+            dt.Columns.Add("Experience", typeof(string));
+            dt.Columns.Add("EmployeeID", typeof(int));
+
+            dataGridView1.DataSource = dt;
+            foreach (Chef c in ObjectHandler.GetChefDL().GetChefs())
+            {
+                dt.Rows.Add(c.GetChefID(), c.GetUsername(), c.GetSalary(), c.GetShift(), c.GetSpecialization(),c.GetExperience(),c.GetEmployeeID());
+            }
+            backbtn.Visible = true;
+            deleteBtn.Visible = false;
+        }
+
+        private void viewWaiterBtn_Click(object sender, EventArgs e)
+        {
+         ClearGridView();
+
+         dt.Columns.Add("ID", typeof(int));
+         dt.Columns.Add("Username", typeof(string));
+         dt.Columns.Add("Salary", typeof(double));
+         dt.Columns.Add("Shift", typeof(string));
+         dt.Columns.Add("Area", typeof(string));
+         dt.Columns.Add("Language", typeof(string));
+         dt.Columns.Add("EmployeeID", typeof(int));
+
+         dataGridView1.DataSource = dt;
+         foreach (Waiter w in ObjectHandler.GetWaiterDL().GetWaiters())
+         {
+             dt.Rows.Add(w.GetWaiterID(), w.GetUsername(), w.GetSalary(), w.GetShift(), w.GetTables(), w.GetLanguage(), w.GetEmployeeID());
+         }
+         backbtn.Visible = true;
+         deleteBtn.Visible = false;
+            
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -133,7 +202,7 @@ namespace SSC.UI
                 }
                 else
                 {
-                    MessageBox.Show("No matching customers found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No matching employees found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dataGridView1.DataSource = dt;
                 }
             }
@@ -141,90 +210,6 @@ namespace SSC.UI
             {
                 dataGridView1.DataSource = dt;
             }
-        }
-
-        private void ManageCustomers_Load(object sender, EventArgs e)
-        {
-            dt.Columns.Add("ID", typeof(int));
-            dt.Columns.Add("Username", typeof(string));
-            dt.Columns.Add("Contact", typeof(string));
-            dt.Columns.Add("Status", typeof(string));
-            dt.Columns.Add("Gender", typeof(string));
-            dt.Columns.Add("Cart", typeof(string));
-            dt.Columns.Add("UserID", typeof(int));
-
-            dataGridView1.DataSource = dt;
-            foreach (Customer c in ObjectHandler.GetCustomerDL().GetCustomers())
-            {
-                string cartString = CustomerDBDL.ReturnCartString(c);
-                dt.Rows.Add(c.GetID(), c.GetUsername(), c.GetContact(), c.GetStatus(), c.GetGender(), CustomerDBDL.ReturnCartString(c), c.GetUserID());
-            }
-        }
-
-        private void LoadData()
-        {
-            foreach (Customer c in ObjectHandler.GetCustomerDL().GetCustomers())
-            {
-                string cartString = CustomerDBDL.ReturnCartString(c);
-                dt.Rows.Add(c.GetID(), c.GetUsername(), c.GetContact(), c.GetStatus(), c.GetGender(), CustomerDBDL.ReturnCartString(c), c.GetUserID());
-            }
-        }
-
-        private void viewRegBtn_Click(object sender, EventArgs e)
-        {
-            ClearGridView();
-
-            dt.Columns.Add("RegularID", typeof(int));
-            dt.Columns.Add("Username", typeof(string));
-            dt.Columns.Add("LoyaltyPoints", typeof(int));
-            dt.Columns.Add("CustomerID", typeof(int));
-
-            dataGridView1.DataSource = dt;
-            foreach (Regular r in ObjectHandler.GetRegularDL().GetRegulars())
-            {
-                dt.Rows.Add(r.GetRegularID(), r.GetUsername(), r.GetLoyaltyPoints(), r.GetCustomerID());
-            }
-            backbtn.Visible = true;
-            deleteBtn.Visible = false;
-        }
-
-        private void viewVIPBtn_Click(object sender, EventArgs e)
-        {
-            ClearGridView();
-
-            dt.Columns.Add("RegularID", typeof(int));
-            dt.Columns.Add("Username", typeof(string));
-            dt.Columns.Add("MembershipLevel", typeof(string));
-            dt.Columns.Add("CustomerID", typeof(int));
-            dataGridView1.DataSource = dt;
-            foreach (VIP v in ObjectHandler.GetVipDL().GetVIPs())
-            {
-                dt.Rows.Add(v.GetVipID(), v.GetUsername(), v.GetMembershipLevel(), v.GetCustomerID());
-            }
-            backbtn.Visible = true;
-            deleteBtn.Visible = false;
-        }
-
-        private void ClearGridView()
-        {
-            dt.Columns.Clear();
-            dt.Rows.Clear();
-        }
-
-        private void backbtn_Click(object sender, EventArgs e)
-        {
-            ClearGridView();
-
-            dt.Columns.Add("ID", typeof(int));
-            dt.Columns.Add("Username", typeof(string));
-            dt.Columns.Add("Contact", typeof(string));
-            dt.Columns.Add("Status", typeof(string));
-            dt.Columns.Add("Gender", typeof(string));
-            dt.Columns.Add("Cart", typeof(string));
-            dt.Columns.Add("UserID", typeof(int));
-            LoadData();
-            backbtn.Visible = false;
-            deleteBtn.Visible = true;
         }
 
         private void name_TextChanged(object sender, EventArgs e)
@@ -235,6 +220,40 @@ namespace SSC.UI
             }
         }
 
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            ClearGridView();
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Username", typeof(string));
+            dt.Columns.Add("Contact", typeof(string));
+            dt.Columns.Add("Salary", typeof(double));
+            dt.Columns.Add("Gender", typeof(string));
+            dt.Columns.Add("JoinDate", typeof(DateTime));
+            dt.Columns.Add("UserID", typeof(int));
+            LoadData();
+            backbtn.Visible = false;
+            deleteBtn.Visible = true;
+        }
+
+        private void viewAdmins_Click(object sender, EventArgs e)
+        {
+            ClearGridView();
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Username", typeof(string));
+            dt.Columns.Add("Salary", typeof(double));
+            dt.Columns.Add("ToolsUsed", typeof(string));
+            dt.Columns.Add("Permissions", typeof(string));
+            dt.Columns.Add("EmployeeID", typeof(int));
+
+            dataGridView1.DataSource = dt;
+            foreach (Admin a in ObjectHandler.GetAdminDL().GetAdmins()) 
+            {
+                dt.Rows.Add(a.GetAdminID(), a.GetUsername(), a.GetSalary(), string.Join(",",a.GetToolsUsed()), string.Join(",", a.GetPermissions()), a.GetEmployeeID());
+            }
+            backbtn.Visible = true;
+            deleteBtn.Visible = false;
+        }
+
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -242,9 +261,9 @@ namespace SSC.UI
                 try
                 {
                     int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-                    string status = dataGridView1.SelectedRows[0].Cells["Status"].Value.ToString().ToLower();
+                    string role = ObjectHandler.GetEmployeeDL().GetEmployeeRole(id).ToLower();
                     dt.Rows.Clear();
-                    ObjectHandler.GetCustomerDL().DeleteCustomer(Convert.ToInt32(id), status, ObjectHandler.GetUserDL().GetUserID(id));
+                    ObjectHandler.GetEmployeeDL().DeleteEmployee(id, role, ObjectHandler.GetUserDL().GetUserID(id));
                     LoadData();
                 }
                 catch (Exception ex)

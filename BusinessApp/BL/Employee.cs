@@ -15,6 +15,13 @@ namespace RMS.BL
         protected string Gender;
         protected int UserID;
 
+        private int ID;
+
+        public Employee(string username, double salary)
+        {
+            Username = username;
+            Salary = salary;
+        }
         public Employee(string username, string contact, double salary, DateTime joinDate, string gender, int userID)
         {
             Username = username;
@@ -23,6 +30,22 @@ namespace RMS.BL
             JoinDate = joinDate;
             Gender = gender;
             UserID = userID;
+        }
+
+        public Employee(int id, string username, string contact, double salary, DateTime joinDate, string gender, int userID)
+        {
+            ID= id;
+            Username = username;
+            Contact = contact;
+            Salary = salary;
+            JoinDate = joinDate;
+            Gender = gender;
+            UserID = userID;
+        }
+
+        public int GetID()
+        {
+            return ID;
         }
 
         public string GetUsername()

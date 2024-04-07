@@ -6,11 +6,38 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace RMS.DL
 {
     public class EmployeeDBDL : IEmployeeDL
     {
+        public List<Employee> GetEmployees()
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                List<Employee> employees = new List<Employee>();
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Employees", connection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["ID"]);
+                    string username = reader["Username"].ToString();
+                    string contact = reader["Contact"].ToString();
+                    double salary = Convert.ToDouble(reader["Salary"]);
+                    string gender = reader["Gender"].ToString();
+                    DateTime joindate = DateTime.Parse(reader["JoinDate"].ToString());
+                    int userID = Convert.ToInt32(reader["UserID"]);
+
+                    Employee employee = new Employee(id, username, contact, salary,joindate, gender, userID);
+                    employees.Add(employee);
+                }
+                return employees;
+            }
+        }
+
         public void SaveEmployee(Employee employee)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -72,8 +99,8 @@ namespace RMS.DL
                     string lang = reader["Language"].ToString();
                     int empID = Convert.ToInt32(reader["EmployeeID"]);
 
-                    Waiter watier = new Waiter(username, contact, salary, joindate, gender, userID, shift, area, lang, empID);
-                    return watier;
+                    Waiter waiter = new Waiter(username, contact, salary, joindate, gender, userID, shift, area, lang, empID);
+                    return waiter;
                 }
             }
             return null;
@@ -148,6 +175,63 @@ namespace RMS.DL
                 }
             }
             return false;
+        }
+
+        public string GetEmployeeRole(int id)
+        {
+            string role = "";
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "SELECT U.Role FROM Users U JOIN Employees E on E.UserID = U.ID WHERE E.ID =@ID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", id);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        role = reader.GetString(0);
+                    }
+                }
+            }
+            return role; // Return -1 if user is not found 
+        }
+
+        public void DeleteEmployee(int id, string role, int userid)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command2;
+                if (role == "admin")
+                {
+                    command2 = new SqlCommand("DELETE FROM Admins WHERE EmployeeID = @EmployeeID", connection);
+                    command2.Parameters.AddWithValue("@EmployeeID", id);
+                    command2.ExecuteNonQuery();
+                    
+                }
+                else if (role == "chef")
+                {
+                    command2 = new SqlCommand("DELETE FROM Chefs WHERE EmployeeID = @EmployeeID", connection);
+                    command2.Parameters.AddWithValue("@EmployeeID", id);
+                    command2.ExecuteNonQuery();
+                }
+                else if (role == "waiter")
+                {
+                    command2 = new SqlCommand("DELETE FROM Waiters WHERE EmployeeID = @EmployeeID", connection);
+                    command2.Parameters.AddWithValue("@EmployeeID", id);
+                    command2.ExecuteNonQuery();
+                }
+
+                SqlCommand command3 = new SqlCommand("DELETE FROM Employees WHERE ID = @ID", connection);
+                command3.Parameters.AddWithValue("@ID", id);
+                command3.ExecuteNonQuery();
+
+                SqlCommand command = new SqlCommand("DELETE FROM Users WHERE ID = @ID", connection);
+                command.Parameters.AddWithValue("@ID", userid);
+                command.ExecuteNonQuery();
+            }
         }
 
     }

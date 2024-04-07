@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace RMS.BL
 {
@@ -11,6 +12,8 @@ namespace RMS.BL
         private List <string> Permissions = new List<string>();
         private List<string> ToolsUsed = new List<string>();
         private int EmployeeID;
+
+        private int ID;
 
         public Admin(string username, string contact, double salary, DateTime joinDate, string gender, int userID,List<string> t, List<string> p, int employeeID) : base(username, contact, salary, joinDate, gender, userID)
         {
@@ -23,6 +26,21 @@ namespace RMS.BL
             Permissions=p ;
             ToolsUsed = t;
             EmployeeID = employeeID;
+        }
+
+        public Admin(int id, string username, double salary, List <string> tools, List <string> permissions, int employeeID) : base(username, salary)
+        {
+            ID = id;
+            Username = username;
+            Salary = salary;
+            Permissions = permissions;
+            ToolsUsed = tools;
+            EmployeeID = employeeID;
+        }
+
+        public int GetAdminID()
+        {
+            return ID;
         }
 
         public void AddPermission(string permission)

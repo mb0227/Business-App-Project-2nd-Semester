@@ -254,6 +254,12 @@
     <Compile Include="UI\ViewCart.Designer.cs">
       <DependentUpon>ViewCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ViewEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ViewEmployees.Designer.cs">
+      <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\WaiterDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ViewCart.resx">
       <DependentUpon>ViewCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ViewEmployees.resx">
+      <DependentUpon>ViewEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

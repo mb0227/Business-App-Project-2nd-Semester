@@ -10,5 +10,6 @@ namespace RMS.DL
     public interface IAdminDL
     {
         void SaveAdmin(Admin admin);
+        List<Admin> GetAdmins();
     }
 }

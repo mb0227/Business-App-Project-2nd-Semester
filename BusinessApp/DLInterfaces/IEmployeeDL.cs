@@ -13,9 +13,10 @@ namespace RMS.DL
         Chef SearchChefById(int id);
         Admin SearchAdminById(int id);
         Waiter SearchWaiterById(int id);
-         bool UsernameAlreadyExists(string username);
-         int GetEmployeeID(string username);
-
-
+        bool UsernameAlreadyExists(string username);
+        int GetEmployeeID(string username);
+        List<Employee> GetEmployees();
+        string GetEmployeeRole(int id);
+        void DeleteEmployee(int id, string role, int userid);
     }
 }

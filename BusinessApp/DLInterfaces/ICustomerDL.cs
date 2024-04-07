@@ -14,5 +14,6 @@ namespace RMS.DL
         int GetCustomerID(string username);
         bool UsernameAlreadyExists(string username);
         List<Customer> GetCustomers();
+        void DeleteCustomer(int id, string status,int userid);
     }
 }

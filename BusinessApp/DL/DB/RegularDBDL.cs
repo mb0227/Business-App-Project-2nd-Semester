@@ -49,5 +49,17 @@ namespace RMS.DL
             }
             return regulars;
         }
+
+        public void DeleteRegular(int id)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("DELETE FROM Regular WHERE ID = @ID", connection);
+                command.Parameters.AddWithValue("@ID", id);
+                command.ExecuteNonQuery();
+            }
+        }
+
     }
 }

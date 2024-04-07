@@ -107,10 +107,12 @@ namespace SSC.UI
             if (collapsed)
             {
                 panel4.BringToFront();
+                panel3.BringToFront();
             }
             else
             {
                 panel4.SendToBack();
+                panel3.SendToBack();
                 aNavbar.BringToFront();
             }
         }
@@ -310,6 +312,13 @@ namespace SSC.UI
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewEmpBtn_Click(object sender, EventArgs e)
+        {
+            ViewEmployees v = new ViewEmployees(this.Size, this.Location, Admin);
+            v.Show();
+            this.Hide();
         }
     }
 }

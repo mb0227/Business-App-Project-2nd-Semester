@@ -24,5 +24,36 @@ namespace RMS.DL
                 command.ExecuteNonQuery();
             }
         }
+
+        public List <Chef> GetChefs()
+        {
+            List<Chef> chefs = new List<Chef>();
+
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("SELECT C.ID,E.Username,E.Salary, C.Shift, C.Specialization, C.Experience, C.EmployeeID  FROM Chefs C JOIN Employees E ON E.ID = C.EmployeeID", connection);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string username = reader.GetString(1);
+                        decimal salaryDecimal = reader.GetDecimal(2);
+                        double salary = Convert.ToDouble(salaryDecimal);
+                        string shift = reader.GetString(3);
+                        string specialization = reader.GetString(4);
+                        string experience = reader.GetString(5);
+                        int employeeID = reader.GetInt32(6);
+
+                        Chef chef = new Chef(id, username,salary, shift, specialization, experience, employeeID);
+                        chefs.Add(chef);
+                    }
+                }
+            }
+            return chefs;
+        }
     }
 }

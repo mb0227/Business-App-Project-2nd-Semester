@@ -10,6 +10,7 @@ namespace RMS.DL
     public interface IChefDL
     {
         void SaveChef(Chef chef);
+        List<Chef> GetChefs();
 
     }
 }

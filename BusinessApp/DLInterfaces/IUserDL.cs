@@ -13,6 +13,8 @@ namespace RMS.DL
         string SearchCustomerForRole(string email, string password);
         int GetUserID(string email);
         bool EmailAlreadyExists(string email);
+        int GetUserID(int id);
+
 
     }
 }

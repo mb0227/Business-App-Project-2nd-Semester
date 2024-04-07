@@ -10,6 +10,7 @@ namespace RMS.DL
     public interface IWaiterDL
     {
         void SaveWaiter(Waiter waiter);
+        List<Waiter> GetWaiters();
 
     }
 }

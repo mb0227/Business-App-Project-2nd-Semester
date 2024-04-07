@@ -12,6 +12,6 @@ namespace RMS.DL
         void StoreRegularInDB(Regular regular);
         List<Regular> GetRegulars();
 
-
+        void DeleteRegular(int id); 
     }
 }

@@ -14,6 +14,8 @@ namespace RMS.BL
         private string Language;
         private int EmployeeID;
 
+        private int ID;
+
         public Waiter(string username, string contact, double salary, DateTime joinDate, string gender, int userID, string shift, string tables, string language, int employeeID) : base(username, contact, salary, joinDate, gender, userID)
         {
             Username = username;
@@ -26,6 +28,22 @@ namespace RMS.BL
             Language = language;
             Tables = tables;
             EmployeeID = employeeID;
+        }
+
+        public Waiter(int id, string username,double salary, string shift, string tables, string language, int employeeID) : base(username, salary)
+        {
+            ID = id;
+            Username = username;
+            Salary = salary;
+            Shift = shift;
+            Language = language;
+            Tables = tables;
+            EmployeeID = employeeID;
+        }
+
+        public int GetWaiterID()
+        {
+            return ID;
         }
 
         public string GetShift()

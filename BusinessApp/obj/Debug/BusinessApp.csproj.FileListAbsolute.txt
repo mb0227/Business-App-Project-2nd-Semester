@@ -150,3 +150,4 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.Mana
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.SendNotifications.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ChefDashboard.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.Resource1.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ViewEmployees.resources
