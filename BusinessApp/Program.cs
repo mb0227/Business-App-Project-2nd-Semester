@@ -22,11 +22,11 @@ namespace SSC
             Application.SetCompatibleTextRenderingDefault(false);
 
             ProductDBDL.ReadProductsFromDatabase();
-            OrderDBDL.ReadOrdersFromDatabase();
+            //OrderDBDL.ReadOrdersFromDatabase();
             //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
 
-            Application.Run(new ManageProducts());
+            Application.Run(new SignIn());
         }
     }
 }

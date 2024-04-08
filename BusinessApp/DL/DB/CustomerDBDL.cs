@@ -17,6 +17,26 @@ namespace RMS.DL
     {
         private static List<Customer> Customers = new List<Customer>();
 
+        public void SaveCart(Customer customer)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                StringBuilder cartString = new StringBuilder();
+                foreach (var orderedProduct in customer.GetCart())
+                {
+                    cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("UPDATE Customers SET Cart=@Cart WHERE Username=@Username", connection);
+                command.Parameters.AddWithValue("@Cart", cartAsString);
+                command.Parameters.AddWithValue("@Username", customer.GetUsername());
+                command.ExecuteNonQuery();
+            }
+        }
+
         public Customer SearchCustomerById(int userID)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -35,19 +55,19 @@ namespace RMS.DL
 
                     List<OrderedProduct> cart = new List<OrderedProduct>();
                     string[] productItems = productsOrdered.Split(',');
-                    foreach (string productItem in productItems)
-                    {
-                        string[] parts = productItem.Split(':');
-                        if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
-                        {
-                            string productName = parts[1];
-                            Product product = ProductDBDL.SearchProductByName(productName);
-                            if (product != null)
-                            {
-                                cart.Add(new OrderedProduct(product, quantity));
-                            }
-                        }
-                    }
+                    //foreach (string productItem in productItems)
+                    //{
+                    //    string[] parts = productItem.Split(':');
+                    //    if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
+                    //    {
+                    //        string productName = parts[1];
+                    //        //Product product = ProductDBDL.SearchProductByName(productName);
+                    //        if (product != null)
+                    //        {
+                    //            cart.Add(new OrderedProduct(product, quantity));
+                    //        }
+                    //    }
+                    //}
 
                     Customer customer = new Customer(id,username, contact, status, gender, cart, userID);
                     return customer;
@@ -111,11 +131,11 @@ namespace RMS.DL
                         if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
                         {
                             string productName = parts[1];
-                            Product product = ProductDBDL.SearchProductByName(productName);
-                            if (product != null)
-                            {
-                                cart.Add(new OrderedProduct(product, quantity));
-                            }
+                            //Product product = ProductDBDL.SearchProductByName(productName);
+                            //if (product != null)
+                            //{
+                            //    cart.Add(new OrderedProduct(product, quantity));
+                            //}
                         }
                     }
                     Customer customer = new Customer(id,username, contact, status, gender, cart, userID);
@@ -134,6 +154,26 @@ namespace RMS.DL
             }
             string cartAsString = cartString.ToString().TrimEnd(',');
             return cartAsString;
+        }
+
+        public void UpdateCart(Customer customer)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                StringBuilder cartString = new StringBuilder();
+                foreach (var orderedProduct in customer.GetCart())
+                {
+                    cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("UPDATE Customers SET Cart=@Cart WHERE Username=@Username", connection);
+                command.Parameters.AddWithValue("@Cart", cartAsString);
+                command.Parameters.AddWithValue("@Username", customer.GetUsername());
+                command.ExecuteNonQuery();
+            }
         }
 
         public static void UpdateCustomerInDatabase(Customer customer)

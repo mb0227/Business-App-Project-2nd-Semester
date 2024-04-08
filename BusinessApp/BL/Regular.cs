@@ -9,7 +9,9 @@ namespace RMS.BL
     public class Regular : Customer
     {
         private int LoyaltyPoints;
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         private int CustomerID;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
         private int ID;
 

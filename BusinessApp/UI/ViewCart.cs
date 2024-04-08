@@ -37,13 +37,8 @@ namespace SSC.UI
             customer = c;
             InitializeComponent();
             InitializeUserControls();
-            FillComboBox();
             this.Size = size;
-            this.Location = location;
-            if (menuComboBox.Items.Count > 0)
-                menuComboBox.SelectedIndex = 0;
-            MakeColumns();
-            LoadData();
+            this.Location = location;            
         }
 
         private void InitializeUserControls()
@@ -123,7 +118,10 @@ namespace SSC.UI
             menuComboBox.Items.Clear();
             foreach (Product product in ObjectHandler.GetProductDL().GetProducts())
             {
-                menuComboBox.Items.Add(product.GetProductName());
+                if (ObjectHandler.GetProductDL().HasVariants(product.GetProductID()))
+                {
+                    menuComboBox.Items.Add(product.GetProductName());
+                }
             }
         }
 
@@ -132,7 +130,7 @@ namespace SSC.UI
             dataTable.Rows.Clear();
             foreach (OrderedProduct product in customer.GetCart())
             {
-                dataTable.Rows.Add(product.GetProduct().GetProductName(), product.GetQuantity().ToString());
+                dataTable.Rows.Add(product.GetProduct().GetProductName(), product.GetQuantity());
                 cartGridView.DataSource = dataTable;
             }
         }
@@ -140,19 +138,19 @@ namespace SSC.UI
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedProduct = menuComboBox.SelectedItem.ToString();
-            Product selectedProductObject = ObjectHandler.GetProductDL().GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
+            Product selectedProductObject = ObjectHandler.GetProductDL().SearchProductByName(selectedProduct);
 
             if (selectedProductObject != null)
             {
                 quantitiesComboBox.Items.Clear();
-                //foreach (string quantity in selectedProductObject.GetAvailableQuantities())
-                //{
-                //    quantitiesComboBox.Items.Add(quantity.Trim());
-                //}
+                foreach (string quantity in ObjectHandler.GetProductDL().GetQuantities(selectedProductObject.GetProductID()))
+                {
+                    quantitiesComboBox.Items.Add(quantity);
+                }
 
                 if (quantitiesComboBox.Items.Count > 0)
                 {
-                    quantitiesComboBox.SelectedIndex = 0; 
+                    quantitiesComboBox.SelectedIndex = 0;
                 }
             }
         }
@@ -160,33 +158,9 @@ namespace SSC.UI
         private void MakeColumns()
         {
             dataTable.Columns.Add("ProductName", typeof(string));
-            dataTable.Columns.Add("Quantity", typeof(int));
+            dataTable.Columns.Add("Quantity", typeof(string));
 
             cartGridView.DataSource = dataTable;
-        }
-
-        private int ExtractFirstIntegerFromString(string input)
-        {
-            string numberString = string.Empty;
-
-            foreach (char c in input)
-            {
-                if (char.IsDigit(c))
-                {
-                    numberString += c;
-                }
-                else if (!string.IsNullOrEmpty(numberString))
-                {
-                    break;
-                }
-            }
-
-            if (!string.IsNullOrEmpty(numberString))
-            {
-                return int.Parse(numberString);
-            }
-
-            return 0;
         }
 
         private void name_TextChanged(object sender, EventArgs e)
@@ -227,9 +201,9 @@ namespace SSC.UI
         {
             if (cartGridView.SelectedRows.Count > 0)
             {
-                //if (CheckValidations())
-                //{
-                    OrderedProduct p = new OrderedProduct(ProductDBDL.SearchProductByName(menuComboBox.Text), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+                if (menuComboBox.Text != "" && quantitiesComboBox.Text != "")
+                {
+                    OrderedProduct p = new OrderedProduct(ObjectHandler.GetProductDL().SearchProductByName(menuComboBox.Text), quantitiesComboBox.Text);
                     selectedRow = cartGridView.SelectedRows[0].Index;
 
                     DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
@@ -244,10 +218,9 @@ namespace SSC.UI
                     dataTable.Rows[selectedRow].SetField("Quantity", p.GetQuantity());
 
                     customer.AddToCart(p.GetProduct(), p.GetQuantity());
-
                     cartGridView.DataSource = dataTable;
-                    CustomerDBDL.UpdateCustomerInDatabase(customer);
-              
+                    ObjectHandler.GetCustomerDL().UpdateCart(customer);
+                }
             }
             else
             {
@@ -260,19 +233,15 @@ namespace SSC.UI
             if (cartGridView.SelectedRows.Count > 0)
             {
                 selectedRow = cartGridView.SelectedRows[0].Index;
-                DataGridViewRow rowSelected = cartGridView.SelectedRows[0];
-                DataGridViewCell firstCell = rowSelected.Cells[0];
-                string cellValue = firstCell.Value.ToString();
 
-                DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
+                DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; 
                 string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
-                string quantity = selectedDataGridViewRow.Cells["Quantity"].Value.ToString();
 
                 Product product = new Product();
                 product.SetProductName(productName);
                 customer.RemoveFromCart(product);
 
-                CustomerDBDL.UpdateCustomerInDatabase(customer);
+                ObjectHandler.GetCustomerDL().UpdateCart(customer);
                 cartGridView.Rows.RemoveAt(selectedRow);
                 selectedRow = -1;
             }
@@ -287,6 +256,15 @@ namespace SSC.UI
             CustomerOrderFood c = new CustomerOrderFood(this.Size, this.Location, customer);
             c.Show();
             this.Hide();
+        }
+
+        private void ViewCart_Load(object sender, EventArgs e)
+        {
+            FillComboBox();
+            if (menuComboBox.Items.Count > 0)
+                menuComboBox.SelectedIndex = 0;
+            MakeColumns();
+            LoadData();
         }
     }
 }

@@ -71,10 +71,10 @@ namespace SSC.UI
             return new NotificationDBDL();
         }
 
-        //public static IOrderDL GetOrderDL()
-        //{
-        //    return new OrderDBDL();
-        //}
+        public static IOrderDL GetOrderDL()
+        {
+            return new OrderDBDL();
+        }
 
         public static IProductDL GetProductDL()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SSC.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,25 @@ namespace RMS.BL
             Shipped,
             Delivered,
             Cancelled,
-            OnHold,       
             Refunded      
         }
 
         public Order()
         {            
         }
-        public Order(int orderID,List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string customerName)
+
+        public Order(List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod, int id)
+        {
+            ProductsOrdered = products;
+            Status = orderStatus;
+            OrderDate = orderDate;
+            CustomerComments = customerComments;
+            CalculateTotalPrice();
+            CustomerID = id;
+            PaymentMethod = paymentMethod;
+        }
+
+        public Order(int orderID,List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, int id, string paymentMethod)
         {
             OrderID = orderID;
             ProductsOrdered = products;
@@ -30,33 +42,36 @@ namespace RMS.BL
             OrderDate = orderDate;
             CustomerComments = customerComments;
             CalculateTotalPrice();
-            CustomerName = customerName;
+            CustomerID = id;
+            PaymentMethod = paymentMethod;
         }
 
         private int OrderID;
         private List <OrderedProduct> ProductsOrdered =  new List<OrderedProduct>();
-        private int TotalPrice;
+        private double TotalPrice;
         private OrderStatus Status;
         private DateTime OrderDate;
         private string CustomerComments;
-        private string CustomerName;    
+        private int CustomerID;
+        private string PaymentMethod;
 
         private void CalculateTotalPrice()
         {
             TotalPrice = 0;
-            for(int i=0;i< ProductsOrdered.Count;i++)
+            for(int i=0;i< ProductsOrdered.Count;i++) 
             {
-                //TotalPrice += ProductsOrdered[i].GetQuantity() * ProductsOrdered[i].GetProduct().GetPrice();
+                string productName = ProductsOrdered[i].GetProduct().GetProductName();
+                TotalPrice += ObjectHandler.GetProductDL().GetPrice(ObjectHandler.GetProductDL().GetProductID(productName), ProductsOrdered[i].GetQuantity());
             }
         }
 
-        public void AddProduct(Product product, int quantity)
+        public void AddProduct(Product product, string quantity)
         {
             ProductsOrdered.Add(new OrderedProduct(product, quantity));
             CalculateTotalPrice();
         }
 
-        public void RemoveProduct(Product product, int quantity)
+        public void RemoveProduct(Product product, string quantity)
         {
             ProductsOrdered.Remove(new OrderedProduct(product, quantity));
             CalculateTotalPrice();
@@ -72,9 +87,14 @@ namespace RMS.BL
             return ProductsOrdered;
         }
 
-        public int GetTotalPrice()
+        public double GetTotalPrice()
         {
             return TotalPrice;
+        }
+
+        public string GetPaymentMethod()
+        {
+            return PaymentMethod;
         }
 
         public OrderStatus GetStatus()
@@ -92,14 +112,14 @@ namespace RMS.BL
             return CustomerComments;
         }
 
-        public string GetCustomerName()
+        public int GetCustomerID()
         {
-            return CustomerName;
+            return CustomerID;
         }
 
-        public void SetCustomerName(string customerName)
+        public void SetCustomerName(int customerID)
         {
-            CustomerName = customerName;
+            CustomerID = customerID;
         }
 
         public void SetStatus(OrderStatus status)

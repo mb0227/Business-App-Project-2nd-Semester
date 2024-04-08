@@ -67,14 +67,9 @@ namespace RMS.BL
             return ToolsUsed;
         }
 
-        public int GetEmployeeID()
+        public override int GetEmployeeID()
         {
             return EmployeeID;
-        }
-
-        public void SetEmployeeID(int employeeID)
-        {
-            EmployeeID = employeeID;
         }
 
         public void SetPermissions(List<string> permissions)

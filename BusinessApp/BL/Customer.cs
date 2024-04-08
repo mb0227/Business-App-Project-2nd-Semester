@@ -114,7 +114,7 @@ namespace RMS.BL
             Cart = cart;
         }
 
-        public void AddToCart(Product product, int quantity)
+        public void AddToCart(Product product, string quantity)
         {
             Cart.Add(new OrderedProduct(product, quantity));
         }

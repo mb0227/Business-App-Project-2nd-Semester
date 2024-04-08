@@ -8,27 +8,27 @@ namespace RMS.BL
 {
     public class OrderedProduct
     {
-        public OrderedProduct(Product product, int quantity)
+        public OrderedProduct(Product product, string quantity)
         {
             Product = product;
             Quantity = quantity;
         }
 
         private Product Product = new Product();
-        private int Quantity;
+        private string Quantity;
 
-        public void AddToCart(Product product, int quantity)
+        public void AddToCart(Product product, string quantity)
         {
             Product = product;
             Quantity = quantity;
         }
 
-        public int GetQuantity()
+        public string GetQuantity()
         {
             return Quantity;
         }
 
-        public void SetQuantity(int quantity)
+        public void SetQuantity(string quantity)
         {
             Quantity = quantity;
         }

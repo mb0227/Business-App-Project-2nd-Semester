@@ -16,5 +16,7 @@ namespace RMS.DL
         List<Customer> GetCustomers();
         void DeleteCustomer(int id, string status,int userid);
         void UpdateCredentials(string newCred, string credType, int userID);
+        void SaveCart(Customer customer);
+        void UpdateCart(Customer customer);
     }
 }

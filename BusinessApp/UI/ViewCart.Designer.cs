@@ -282,6 +282,7 @@
             this.Name = "ViewCart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ViewCart";
+            this.Load += new System.EventHandler(this.ViewCart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -73,6 +73,7 @@
     <Compile Include="DLInterfaces\IChefDL.cs" />
     <Compile Include="DLInterfaces\IFeedbackDL.cs" />
     <Compile Include="DLInterfaces\INotificationDL.cs" />
+    <Compile Include="DLInterfaces\IOrderDL.cs" />
     <Compile Include="DLInterfaces\IProductDL.cs" />
     <Compile Include="DLInterfaces\IRegularDL.cs" />
     <Compile Include="DLInterfaces\IReservationDL.cs" />
@@ -206,7 +207,7 @@
     <Compile Include="UI\Navbar.Designer.cs">
       <DependentUpon>Navbar.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ObjectHandler.cs" />
+    <Compile Include="Utility\ObjectHandler.cs" />
     <Compile Include="UI\Prompt.cs" />
     <Compile Include="UI\SendNotifications.cs">
       <SubType>Form</SubType>

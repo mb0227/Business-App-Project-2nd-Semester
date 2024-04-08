@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 using RMS.BL;
 using SSC;
 
-
-
 namespace RMS.DL
 {
     public class ProductDBDL : IProductDL
@@ -41,7 +39,6 @@ namespace RMS.DL
             }
         }
 
-
         public void SaveVariant(ProductVariant PV, int productID)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -66,7 +63,6 @@ namespace RMS.DL
                 return count > 0;
             }
         }
-
 
         public void SaveProduct(Product product)
         {
@@ -114,6 +110,103 @@ namespace RMS.DL
                 command.Parameters.AddWithValue("@ProductName", productName);
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
+            }
+        }
+
+        public List<Product> GetProductsForCustomers()
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                List<Product> products = new List<Product>();
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT P.ProductName,P.Category , V.Price, V.Quantity FROM Products P JOIN ProductVariants V ON P.ID = V.ProductID;", connection);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string n = Convert.ToString(reader["ProductName"]);
+                        string c = Convert.ToString(reader["Category"]);
+                        string q = Convert.ToString(reader["Quantity"]);
+                        decimal priceDecimal = Convert.ToDecimal(reader["Price"]); 
+                        double p = Convert.ToDouble(priceDecimal);
+                        Product product = new Product(n, c, p, q);
+                        products.Add(product);
+                    }
+                }
+                return products;
+            }
+        }
+
+        public double GetPrice(int productId, string quantity)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                double price =0;
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT Price FROM ProductVariants Where Quantity = @Quantity AND ProductID = @ProductID;", connection);
+                command.Parameters.AddWithValue("@Quantity", quantity);
+                command.Parameters.AddWithValue("@ProductID", productId);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        decimal priceDecimal = Convert.ToDecimal(reader["Price"]);
+                        price = Convert.ToDouble(priceDecimal);
+                    }
+                }
+                return price;
+            }
+        }
+
+
+        public Product SearchProductByName(string productName)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Products WHERE ProductName=@ProductName", connection);
+                command.Parameters.AddWithValue("@ProductName", productName);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["ID"]);
+                        string n = Convert.ToString(reader["ProductName"]);
+                        string c = Convert.ToString(reader["Category"]);
+                        string d = Convert.ToString(reader["Description"]);
+                        int a = Convert.ToInt32(reader["IsAvailable"]);
+                        return new Product(id, n, d, c, a);
+                    }
+                    else
+                    {
+                        return null; 
+                    }
+                }
+            }
+
+        }
+
+        public List<string> GetQuantities(int productId)
+        {
+            List<string> quantities = new List<string>();
+
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT Quantity FROM ProductVariants V JOIN Products P ON P.ID = V.ProductID WHERE V.ProductID = @ProductId", connection);
+                command.Parameters.AddWithValue("@ProductId", productId);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string quantity = reader["Quantity"].ToString();
+                    quantities.Add(quantity);
+                }
+
+                reader.Close();
+                return quantities;
             }
         }
 
@@ -218,18 +311,6 @@ namespace RMS.DL
                 }
             }
             return -1;
-        }
-
-        public static Product SearchProductByName(string productName)
-        {
-            foreach (Product product in Products)
-            {
-                if (product.GetProductName() == productName)
-                {
-                    return product;
-                }
-            }
-            return null;
         }
     }
 }

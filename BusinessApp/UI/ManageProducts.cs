@@ -17,7 +17,6 @@ namespace SSC.UI
     public partial class ManageProducts : Form
     {
         DataTable dt = new DataTable();
-        int selectedRow;
         Chef chef;
 
         public ManageProducts()

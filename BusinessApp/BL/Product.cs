@@ -54,6 +54,26 @@ namespace RMS.BL
         private List<ProductVariant> ProductVariants = new List<ProductVariant>();
 
         private int ProductID;
+        private double Price;//for customers
+        private string Quantity;
+
+        public Product(string productName, string productCategory, double price, string quantity) 
+        {
+            ProductName = productName;
+            ProductCategory = productCategory;
+            Price = price;
+            Quantity = quantity;
+        }
+
+        public string GetQuantity()
+        {
+            return Quantity;
+        }
+
+        public double GetPrice()
+        {
+            return Price;
+        }
 
         public string GetProductName()
         {
