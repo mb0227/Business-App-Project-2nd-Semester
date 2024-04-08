@@ -15,5 +15,6 @@ namespace RMS.DL
         bool UsernameAlreadyExists(string username);
         List<Customer> GetCustomers();
         void DeleteCustomer(int id, string status,int userid);
+        void UpdateCredentials(string newCred, string credType, int userID);
     }
 }

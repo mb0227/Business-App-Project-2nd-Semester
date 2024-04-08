@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
+using SSC.UI;
 
 namespace SignInSignUp.UI
 {
@@ -19,6 +20,7 @@ namespace SignInSignUp.UI
             InitializeComponent();
         }
 
+
         public ChefDashboard(Size s, Point l, Chef c)
         {
             this.Size = s;
@@ -29,6 +31,13 @@ namespace SignInSignUp.UI
         private void ChefDashboard_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void manageBtns_Click(object sender, EventArgs e)
+        {
+            ManageProducts P = new ManageProducts(this.Size, this.Location, chef);
+            P.Show();
+            this.Hide();
         }
     }
 }

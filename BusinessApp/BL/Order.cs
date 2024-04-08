@@ -46,7 +46,7 @@ namespace RMS.BL
             TotalPrice = 0;
             for(int i=0;i< ProductsOrdered.Count;i++)
             {
-                TotalPrice += ProductsOrdered[i].GetQuantity() * ProductsOrdered[i].GetProduct().GetPrice();
+                //TotalPrice += ProductsOrdered[i].GetQuantity() * ProductsOrdered[i].GetProduct().GetPrice();
             }
         }
 

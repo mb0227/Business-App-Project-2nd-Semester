@@ -191,5 +191,150 @@ namespace SSC.UI
                 ObjectHandler.GetNotificationDL().MarkAsRead(customer.GetID());
             }
         }
+
+        private void ChangeUpdateControlsVisibility(bool b)
+        {
+            tb.Visible = b;
+            label.Visible = b;
+            updateButton.Visible = b;
+            backBtn.Visible = b;
+        }
+
+        private bool CheckValidations(string type)
+        {
+            if (type == "username")
+            {
+                if (string.IsNullOrWhiteSpace(tb.Text.Trim()))
+                {
+                    errorProvider2.SetError(tb, "Username cannot be empty.");
+                    return false;
+                }
+                else
+                {
+                    errorProvider2.SetError(tb, "");
+                }
+
+                if (ObjectHandler.GetEmployeeDL().UsernameAlreadyExists(tb.Text))
+                {
+                    errorProvider1.SetError(tb, "Username already exists.");
+                    return false;
+                }
+                else
+                {
+                    errorProvider1.SetError(tb, "");
+                }
+            }
+            else if (type == "password")
+            {
+                if (string.IsNullOrWhiteSpace(tb.Text.Trim()))
+                {
+                    errorProvider2.SetError(tb, "Password cannot be empty.");
+                    return false;
+                }
+                else
+                {
+                    errorProvider2.SetError(tb, "");
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void ChangeButtonsVisibility(bool x)
+        {
+            foreach (Guna2Button b in panel2.Controls.OfType<Guna2Button>())
+            {
+                b.Visible = x;
+            }
+        }
+        private void passwordButton_Click(object sender, EventArgs e)
+        {
+            ChangeButtonsVisibility(false);
+            ChangeUpdateControlsVisibility(true);
+            label.Text = "Password";
+        }
+
+        private void usernameButton_Click(object sender, EventArgs e)
+        {
+            ChangeButtonsVisibility(false);
+            ChangeUpdateControlsVisibility(true);
+            label.Text = "Username";
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            if (label.Text == "Username")
+            {
+                if (CheckValidations("username"))
+                {
+                    ObjectHandler.GetCustomerDL().UpdateCredentials(tb.Text, "username", customer.GetUserID());
+                    MessageBox.Show("Username changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BackToNormal();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to change username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (label.Text == "Password")
+            {
+                if (CheckValidations("password"))
+                {
+                    tb.UseSystemPasswordChar = true;
+                    tb.PasswordChar = '*';
+                    ObjectHandler.GetEmployeeDL().UpdateCredentials(tb.Text, "password", customer.GetUserID());
+                    MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BackToNormal();
+                    tb.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to change password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BackToNormal()
+        {
+            ChangeButtonsVisibility(true);
+            ChangeUpdateControlsVisibility(false);
+            tb.Text = "";
+        }
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            BackToNormal();
+        }
+
+        private void orderHistoryButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you delete account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                ObjectHandler.GetCustomerDL().DeleteCustomer(customer.GetID(), "regular", customer.GetUserID());
+                Homepage p = new Homepage(this.Size, this.Location);
+                p.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Good Job.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Homepage h = new Homepage(this.Size, this.Location);
+            h.Show();
+            this.Hide();
+        }
     }
 }

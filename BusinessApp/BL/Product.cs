@@ -11,47 +11,58 @@ namespace RMS.BL
         public Product()
         {            
         }
-        public Product(string productName, string productDescription, string productCategory, int price, int stock)
+        public Product(string productName, string productDescription, string productCategory, int isAvailable)
         {
             ProductName = productName;
             ProductDescription = productDescription;
             ProductCategory = productCategory;
-            Price = price;
-            Stock = stock;
-            AvailableQuantities = new List<string>();
+            IsAvailable = isAvailable;
+        }
+
+        public Product(int id,string productName, string productDescription, string productCategory, int isAvailable)
+        {
+            ProductID = id;
+            ProductName = productName;
+            ProductDescription = productDescription;
+            ProductCategory = productCategory;
+            IsAvailable = isAvailable;
+        }
+
+        public Product(string productName, string productDescription, string productCategory, int isAvailable, List<ProductVariant> pv)
+        {
+            ProductName = productName;
+            ProductDescription = productDescription;
+            ProductCategory = productCategory;
+            IsAvailable = isAvailable;
+            ProductVariants = pv;
+        }
+
+        public Product(int id,string productName, string productDescription, string productCategory, int isAvailable, List<ProductVariant> pv)
+        {
+            ProductID = id;
+            ProductName = productName;
+            ProductDescription = productDescription;
+            ProductCategory = productCategory;
+            IsAvailable = isAvailable;
+            ProductVariants = pv;
         }
 
         private string ProductName;
         private string ProductDescription;
         private string ProductCategory;
-        private int Price;
-        private int Stock;
-        private List<string> AvailableQuantities;
+        private int IsAvailable;
+        private List<ProductVariant> ProductVariants = new List<ProductVariant>();
 
-        public void UpdateStock(string operation, int quantity)
-        {
-            if (operation == "add")
-            {
-                Stock += quantity;
-            }
-            else if (operation == "remove")
-            {
-                Stock -= quantity;
-            }
-        }
-
-        public bool StockAvailable(int quantity)
-        {
-            if (quantity > Stock)
-            {
-                return false;
-            }
-            return true;
-        }
+        private int ProductID;
 
         public string GetProductName()
         {
             return ProductName;
+        }
+
+        public int GetProductID()
+        {
+            return ProductID;
         }
 
         public string GetProductDescription()
@@ -63,34 +74,19 @@ namespace RMS.BL
             return ProductCategory;
         }
 
-        public int GetPrice()
+        public int GetAvailable()
         {
-            return Price;
+            return IsAvailable;
         }
 
-        public int GetStock()
+        public List<ProductVariant> GetProductVariants()
         {
-            return Stock;
+            return ProductVariants;
         }
 
-        public List<string> GetAvailableQuantities()
+        public void SetAvailableQuantities(List<ProductVariant> aq)
         {
-            return AvailableQuantities;
-        }
-
-        public void SetAvailableQuantities(List<string> aq)
-        {
-            AvailableQuantities = aq;
-        }
-
-        public void SetPrice(int price)
-        {
-            Price = price;
-        }
-
-        public void SetStock(int stock)
-        {
-            Stock = stock;
+            ProductVariants = aq;
         }
 
         public void SetCategory(string category)
@@ -108,19 +104,19 @@ namespace RMS.BL
             ProductName = productName;
         }
 
-        public void AddQuantity(string quantity)
+        public void AddQuantity(ProductVariant pv)
         {
-            AvailableQuantities.Add(quantity);
+            ProductVariants.Add(pv);
         }
 
-        public string ReturnQuantityString()
+        public void RemoveQuantity(ProductVariant pv)
         {
-            string str = "";
-            foreach (string record in AvailableQuantities)
-            {
-                str += record + ",";
-            }
-            return str.TrimEnd(',');
+            ProductVariants.Remove(pv);
+        }
+
+        public void SetAvailable(int available)
+        {
+            IsAvailable = available;
         }
     }
 }

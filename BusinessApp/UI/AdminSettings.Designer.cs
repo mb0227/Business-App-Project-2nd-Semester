@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
             this.tb = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,7 +43,6 @@
             this.logOutButton = new Guna.UI2.WinForms.Guna2Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.backBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -91,6 +91,23 @@
             this.panel2.Size = new System.Drawing.Size(1121, 788);
             this.panel2.TabIndex = 12;
             // 
+            // backBtn
+            // 
+            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.backBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.backBtn.FlatAppearance.BorderSize = 0;
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.backBtn.Location = new System.Drawing.Point(359, 179);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(164, 69);
+            this.backBtn.TabIndex = 20;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Visible = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // updateButton
             // 
             this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -99,7 +116,7 @@
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateButton.Location = new System.Drawing.Point(880, 179);
+            this.updateButton.Location = new System.Drawing.Point(849, 179);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(164, 69);
             this.updateButton.TabIndex = 19;
@@ -135,7 +152,7 @@
             this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb.ForeColor = System.Drawing.Color.Black;
             this.tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Location = new System.Drawing.Point(586, 125);
+            this.tb.Location = new System.Drawing.Point(551, 125);
             this.tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb.Name = "tb";
             this.tb.PasswordChar = '\0';
@@ -234,9 +251,9 @@
             this.logOutButton.Image = ((System.Drawing.Image)(resources.GetObject("logOutButton.Image")));
             this.logOutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.logOutButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.logOutButton.Location = new System.Drawing.Point(683, 366);
+            this.logOutButton.Location = new System.Drawing.Point(675, 366);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(270, 72);
+            this.logOutButton.Size = new System.Drawing.Size(278, 72);
             this.logOutButton.TabIndex = 5;
             this.logOutButton.Text = "Log Out               ";
             this.logOutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -249,23 +266,6 @@
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
-            // 
-            // backBtn
-            // 
-            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backBtn.BackColor = System.Drawing.Color.RoyalBlue;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.backBtn.Location = new System.Drawing.Point(315, 179);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(164, 69);
-            this.backBtn.TabIndex = 20;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Visible = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // AdminSettings
             // 

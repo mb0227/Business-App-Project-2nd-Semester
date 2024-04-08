@@ -121,7 +121,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             menuComboBox.Items.Clear();
-            foreach (Product product in ProductDBDL.GetProducts())
+            foreach (Product product in ObjectHandler.GetProductDL().GetProducts())
             {
                 menuComboBox.Items.Add(product.GetProductName());
             }
@@ -140,15 +140,15 @@ namespace SSC.UI
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedProduct = menuComboBox.SelectedItem.ToString();
-            Product selectedProductObject = ProductDBDL.GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
+            Product selectedProductObject = ObjectHandler.GetProductDL().GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
 
             if (selectedProductObject != null)
             {
                 quantitiesComboBox.Items.Clear();
-                foreach (string quantity in selectedProductObject.GetAvailableQuantities())
-                {
-                    quantitiesComboBox.Items.Add(quantity.Trim());
-                }
+                //foreach (string quantity in selectedProductObject.GetAvailableQuantities())
+                //{
+                //    quantitiesComboBox.Items.Add(quantity.Trim());
+                //}
 
                 if (quantitiesComboBox.Items.Count > 0)
                 {
@@ -163,20 +163,6 @@ namespace SSC.UI
             dataTable.Columns.Add("Quantity", typeof(int));
 
             cartGridView.DataSource = dataTable;
-        }
-
-        private bool CheckValidations()
-        {
-            int value;
-            int totalItemStock = ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
-            int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
-            if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
-            {
-                errorProvider1.SetError(quantitiesComboBox, $"Please enter a positive quantity greater than 0 and less than {totalItemStock}");
-                return false;
-            }
-
-            return true;
         }
 
         private int ExtractFirstIntegerFromString(string input)
@@ -241,8 +227,8 @@ namespace SSC.UI
         {
             if (cartGridView.SelectedRows.Count > 0)
             {
-                if (CheckValidations())
-                {
+                //if (CheckValidations())
+                //{
                     OrderedProduct p = new OrderedProduct(ProductDBDL.SearchProductByName(menuComboBox.Text), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
                     selectedRow = cartGridView.SelectedRows[0].Index;
 
@@ -261,7 +247,7 @@ namespace SSC.UI
 
                     cartGridView.DataSource = dataTable;
                     CustomerDBDL.UpdateCustomerInDatabase(customer);
-                }
+              
             }
             else
             {

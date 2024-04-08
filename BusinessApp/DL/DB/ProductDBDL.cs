@@ -12,7 +12,7 @@ using SSC;
 
 namespace RMS.DL
 {
-    public class ProductDBDL
+    public class ProductDBDL : IProductDL
     {
         private static List<Product> Products = new List<Product>();
 
@@ -26,71 +26,171 @@ namespace RMS.DL
             Products.Remove(product);
         }
 
-        public static List<Product> GetProducts()
-        {
-            return Products;
-        }
-
-        public static void InsertProductsIntoDatabase(Product product)
+        public void UpdateProduct(Product product)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Products (ProductName, ProductDescription, ProductCategory, Price, Stock,QuantitiesAvailable) VALUES (@ProductName, @ProductDescription, @ProductCategory, @Price, @Stock,@QuantitiesAvailable)", connection);
+                SqlCommand command = new SqlCommand("UPDATE Products SET ProductName = @ProductName, Description = @Description, Category = @Category, IsAvailable = @IsAvailable WHERE ID = @ID", connection);
                 command.Parameters.AddWithValue("@ProductName", product.GetProductName());
-                command.Parameters.AddWithValue("@ProductDescription", product.GetProductDescription());
-                command.Parameters.AddWithValue("@ProductCategory", product.GetProductCategory());
-                command.Parameters.AddWithValue("@Price", product.GetPrice());
-                command.Parameters.AddWithValue("@Stock", product.GetStock());
-                command.Parameters.AddWithValue("@QuantitiesAvailable", product.ReturnQuantityString());
+                command.Parameters.AddWithValue("@Description", product.GetProductDescription());
+                command.Parameters.AddWithValue("@Category", product.GetProductCategory());
+                command.Parameters.AddWithValue("@IsAvailable", product.GetAvailable());
+                command.Parameters.AddWithValue("@ID", product.GetProductID()); 
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        public void SaveVariant(ProductVariant PV, int productID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO ProductVariants (Quantity,Price,ProductID) VALUES (@Quantity, @Price, @ProductID)", connection);
+                command.Parameters.AddWithValue("@Quantity", PV.GetQuantity());
+                command.Parameters.AddWithValue("@Price", PV.GetPrice());
+                command.Parameters.AddWithValue("@ProductID", productID);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public bool HasVariants(int productID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Products p JOIN ProductVariants v ON P.ID = v.ProductID WHERE V.ProductID = @id", connection);
+                command.Parameters.AddWithValue("@id", productID);
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+
+        public void SaveProduct(Product product)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Products (ProductName, Description,Category,IsAvailable) VALUES (@ProductName, @Description, @Category, @IsAvailable)", connection);
+                command.Parameters.AddWithValue("@ProductName", product.GetProductName());
+                command.Parameters.AddWithValue("@Description", product.GetProductDescription());
+                command.Parameters.AddWithValue("@Category", product.GetProductCategory());
+                command.Parameters.AddWithValue("@IsAvailable", product.GetAvailable());
                 command.ExecuteNonQuery();                
+            }
+        }
+
+        public List<Product> GetProducts()
+        {
+            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Products", sqlConnection);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                List<Product> list = new List<Product>();
+                while (sqlDataReader.Read())
+                {
+                    int id = Convert.ToInt32(sqlDataReader["ID"]);
+                    string n = Convert.ToString(sqlDataReader["ProductName"]);
+                    string c = Convert.ToString(sqlDataReader["Category"]);
+                    string d = Convert.ToString(sqlDataReader["Description"]);
+                    int a = Convert.ToInt32(sqlDataReader["IsAvailable"]);
+
+                    Product p = new Product(id, n,d,c, a);
+                    list.Add(p);
+                }
+                return list;
+            }
+        }
+
+        public bool ProductExists(string productName)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Products WHERE ProductName=@ProductName", connection);
+                command.Parameters.AddWithValue("@ProductName", productName);
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        public int GetProductID(string productName)
+        {
+            int id = -1;
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT ID FROM Products WHERE ProductName=@ProductName", connection);
+                command.Parameters.AddWithValue("@ProductName", productName);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if(reader.Read())
+                {
+                    id = Convert.ToInt32(reader["ID"]);
+                }
+            }
+            return id;
+        }
+
+        public void DeleteProduct(int productID)
+        {
+            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM Products WHERE ID=@ID", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@ID", productID);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
             }
         }
 
         public static void ReadProductsFromDatabase()
         {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM Products", connection);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    string productName = reader["ProductName"].ToString();
-                    string productDescription = reader["ProductDescription"].ToString();
-                    string productCategory = reader["ProductCategory"].ToString();
-                    int price = Convert.ToInt32(reader["Price"]);
-                    int stock = Convert.ToInt32(reader["Stock"]);
-                    string quantities = reader["QuantitiesAvailable"].ToString();
+            //using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            //{
+            //    connection.Open();
+            //    SqlCommand command = new SqlCommand("SELECT * FROM Products", connection);
+            //    SqlDataReader reader = command.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        string productName = reader["ProductName"].ToString();
+            //        string productDescription = reader["ProductDescription"].ToString();
+            //        string productCategory = reader["ProductCategory"].ToString();
+            //        int price = Convert.ToInt32(reader["Price"]);
+            //        int stock = Convert.ToInt32(reader["Stock"]);
+            //        string quantities = reader["QuantitiesAvailable"].ToString();
 
-                    string[] splittedRecord = quantities.Split(',');
-                    List<string> quantitiesList = new List<string>();
-                    foreach (string record in splittedRecord)
-                    {
-                        quantitiesList.Add(record);
-                    }
+            //        string[] splittedRecord = quantities.Split(',');
+            //        List<string> quantitiesList = new List<string>();
+            //        foreach (string record in splittedRecord)
+            //        {
+            //            quantitiesList.Add(record);
+            //        }
 
-                    Product product = new Product(productName, productDescription, productCategory, price, stock);
-                    product.SetAvailableQuantities(quantitiesList);
-                    Products.Add(product);
-                }
-            }
+            //        Product product = new Product(productName, productDescription, productCategory, price, stock);
+            //        product.SetAvailableQuantities(quantitiesList);
+            //        Products.Add(product);
+            //    }
+            //}
         }
 
         public static void UpdateProductInDatabase(Product product)
         {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE Products SET ProductName=@ProductName, ProductDescription=@ProductDescription, ProductCategory=@ProductCategory, Price=@Price, Stock=@Stock,QuantitiesAvailable=@QuantitiesAvailable WHERE ProductName=@ProductName", connection);
-                command.Parameters.AddWithValue("@ProductName", product.GetProductName());
-                command.Parameters.AddWithValue("@ProductDescription", product.GetProductDescription());
-                command.Parameters.AddWithValue("@ProductCategory", product.GetProductCategory());
-                command.Parameters.AddWithValue("@Price", product.GetPrice());
-                command.Parameters.AddWithValue("@Stock", product.GetStock());
-                command.Parameters.AddWithValue("@QuantitiesAvailable", product.ReturnQuantityString());
-                command.ExecuteNonQuery();
-            }
+            //using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            //{
+            //    connection.Open();
+            //    SqlCommand command = new SqlCommand("UPDATE Products SET ProductName=@ProductName, ProductDescription=@ProductDescription, ProductCategory=@ProductCategory, Price=@Price, Stock=@Stock,QuantitiesAvailable=@QuantitiesAvailable WHERE ProductName=@ProductName", connection);
+            //    command.Parameters.AddWithValue("@ProductName", product.GetProductName());
+            //    command.Parameters.AddWithValue("@ProductDescription", product.GetProductDescription());
+            //    command.Parameters.AddWithValue("@ProductCategory", product.GetProductCategory());
+            //    command.Parameters.AddWithValue("@Price", product.GetPrice());
+            //    command.Parameters.AddWithValue("@Stock", product.GetStock());
+            //    command.Parameters.AddWithValue("@QuantitiesAvailable", product.ReturnQuantityString());
+            //    command.ExecuteNonQuery();
+            //}
         }
 
         public static void DeleteProductFromDatabase(Product product)

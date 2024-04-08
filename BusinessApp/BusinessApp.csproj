@@ -61,6 +61,7 @@
     <Compile Include="BL\Order.cs" />
     <Compile Include="BL\OrderedProduct.cs" />
     <Compile Include="BL\Product.cs" />
+    <Compile Include="BL\ProductVariant.cs" />
     <Compile Include="BL\Regular.cs" />
     <Compile Include="BL\Reservation.cs" />
     <Compile Include="BL\Table.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="DLInterfaces\IChefDL.cs" />
     <Compile Include="DLInterfaces\IFeedbackDL.cs" />
     <Compile Include="DLInterfaces\INotificationDL.cs" />
+    <Compile Include="DLInterfaces\IProductDL.cs" />
     <Compile Include="DLInterfaces\IRegularDL.cs" />
     <Compile Include="DLInterfaces\IReservationDL.cs" />
     <Compile Include="DLInterfaces\ITableDL.cs" />
@@ -104,6 +106,12 @@
     </Compile>
     <Compile Include="UI\AddAdmin.Designer.cs">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddVariants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddVariants.Designer.cs">
+      <DependentUpon>AddVariants.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -153,12 +161,6 @@
     <Compile Include="UI\CustomerBookTable.Designer.cs">
       <DependentUpon>CustomerBookTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -204,12 +206,6 @@
     <Compile Include="UI\Navbar.Designer.cs">
       <DependentUpon>Navbar.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\NavigationBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\NavigationBar.Designer.cs">
-      <DependentUpon>NavigationBar.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\ObjectHandler.cs" />
     <Compile Include="UI\Prompt.cs" />
     <Compile Include="UI\SendNotifications.cs">
@@ -244,7 +240,7 @@
     <Compile Include="UI\CustomerHeader.Designer.cs">
       <DependentUpon>CustomerHeader.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UtilityFunctions.cs" />
+    <Compile Include="Utility\UtilityFunctions.cs" />
     <Compile Include="UI\ViewCart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,18 +259,15 @@
     <Compile Include="UI\WaiterDashboard.Designer.cs">
       <DependentUpon>WaiterDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\WaiterNavbar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\WaiterNavbar.Designer.cs">
-      <DependentUpon>WaiterNavbar.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AddAdmin.resx">
       <DependentUpon>AddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddVariants.resx">
+      <DependentUpon>AddVariants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
@@ -300,9 +293,6 @@
     <EmbeddedResource Include="UI\CustomerOrderFood.resx">
       <DependentUpon>CustomerOrderFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,9 +313,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Navbar.resx">
       <DependentUpon>Navbar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\NavigationBar.resx">
-      <DependentUpon>NavigationBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SendNotifications.resx">
       <DependentUpon>SendNotifications.cs</DependentUpon>

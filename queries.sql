@@ -99,18 +99,15 @@ CREATE TABLE Transactions(
 
 CREATE TABLE Products(
 	ID int PRIMARY KEY IDENTITY,
-	ProductName nvarchar(50) NOT NULL,
+	ProductName nvarchar(50) NOT NULL Unique,
 	Category nvarchar(50) NOT NULL,
 	"Description" nvarchar(255) NOT NULL,
-	Price decimal (10,2) NOT NULL,
-	IsAvailable int NOT NULL,
-	ProductVariants nvarchar(255)
-);
+	IsAvailable int NOT NULL
+	);
 
 CREATE TABLE ProductVariants(
 	ID int PRIMARY KEY IDENTITY,
-	QuantityInString nvarchar(50) NOT NULL,
-	Quantity decimal(10,2 ) NOT NULL,
+	Quantity nvarchar(50) NOT NULL,
 	Price decimal (10,2) NOT NULL,
 	ProductID int NOT NULL,
 	Foreign Key (ProductID) References Products(ID)
@@ -157,4 +154,4 @@ Create Table ViewNotification(
 	HasSeen int,
 	FOREIGN KEY (NotificationID) REFERENCES Notifications(ID),
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),
-)
+);

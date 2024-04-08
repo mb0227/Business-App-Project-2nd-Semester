@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.capacity = new Guna.UI2.WinForms.Guna2TextBox();
             this.deleteTableBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -42,8 +44,6 @@
             this.makeTableBtn = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -88,42 +88,69 @@
             this.panel3.Controls.Add(this.viewTableBtn);
             this.panel3.Controls.Add(this.makeTableBtn);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(227, 168);
+            this.panel3.Location = new System.Drawing.Point(56, 168);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(953, 774);
+            this.panel3.Size = new System.Drawing.Size(1124, 774);
             this.panel3.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
+            this.label2.ForeColor = System.Drawing.Color.MintCream;
+            this.label2.Location = new System.Drawing.Point(729, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 36);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Status";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Booked",
+            "Unbooked"});
+            this.comboBox1.Location = new System.Drawing.Point(831, 92);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(201, 37);
+            this.comboBox1.TabIndex = 15;
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(516, 172);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(639, 181);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 62;
             this.guna2DataGridView1.RowTemplate.Height = 28;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(420, 450);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(461, 450);
             this.guna2DataGridView1.TabIndex = 14;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -161,7 +188,7 @@
             this.capacity.Font = new System.Drawing.Font("Tahoma", 12F);
             this.capacity.ForeColor = System.Drawing.Color.Black;
             this.capacity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.capacity.Location = new System.Drawing.Point(305, 84);
+            this.capacity.Location = new System.Drawing.Point(469, 93);
             this.capacity.Margin = new System.Windows.Forms.Padding(4);
             this.capacity.Name = "capacity";
             this.capacity.PasswordChar = '\0';
@@ -183,7 +210,7 @@
             this.deleteTableBtn.FillColor = System.Drawing.Color.Red;
             this.deleteTableBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteTableBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteTableBtn.Location = new System.Drawing.Point(192, 436);
+            this.deleteTableBtn.Location = new System.Drawing.Point(356, 445);
             this.deleteTableBtn.Name = "deleteTableBtn";
             this.deleteTableBtn.Size = new System.Drawing.Size(245, 65);
             this.deleteTableBtn.TabIndex = 3;
@@ -203,7 +230,7 @@
             this.viewTableBtn.FillColor = System.Drawing.Color.Orange;
             this.viewTableBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewTableBtn.ForeColor = System.Drawing.Color.Black;
-            this.viewTableBtn.Location = new System.Drawing.Point(190, 338);
+            this.viewTableBtn.Location = new System.Drawing.Point(354, 347);
             this.viewTableBtn.Name = "viewTableBtn";
             this.viewTableBtn.Size = new System.Drawing.Size(248, 65);
             this.viewTableBtn.TabIndex = 2;
@@ -223,7 +250,7 @@
             this.makeTableBtn.FillColor = System.Drawing.Color.SpringGreen;
             this.makeTableBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.makeTableBtn.ForeColor = System.Drawing.Color.Black;
-            this.makeTableBtn.Location = new System.Drawing.Point(190, 239);
+            this.makeTableBtn.Location = new System.Drawing.Point(354, 248);
             this.makeTableBtn.Name = "makeTableBtn";
             this.makeTableBtn.Size = new System.Drawing.Size(248, 65);
             this.makeTableBtn.TabIndex = 1;
@@ -236,7 +263,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(93, 84);
+            this.label3.Location = new System.Drawing.Point(257, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(205, 36);
             this.label3.TabIndex = 12;
@@ -245,33 +272,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Booked",
-            "Unbooked"});
-            this.comboBox1.Location = new System.Drawing.Point(667, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 37);
-            this.comboBox1.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
-            this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(565, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 36);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Status";
             // 
             // ManageTables
             // 

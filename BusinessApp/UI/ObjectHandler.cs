@@ -76,11 +76,9 @@ namespace SSC.UI
         //    return new OrderDBDL();
         //}
 
-        //public static IProductDL GetProductDL()
-        //{
-        //    return new ProductDBDL();
-        //}
-
-       
+        public static IProductDL GetProductDL()
+        {
+            return new ProductDBDL();
+        }
     }
 }

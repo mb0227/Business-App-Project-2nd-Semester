@@ -125,7 +125,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             menuComboBox.Items.Clear(); 
-            foreach (Product product in ProductDBDL.GetProducts())
+            foreach (Product product in ObjectHandler.GetProductDL().GetProducts())
             {
                 menuComboBox.Items.Add(product.GetProductName()); 
             }
@@ -134,20 +134,20 @@ namespace SSC.UI
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedProduct = menuComboBox.SelectedItem.ToString();
-            Product selectedProductObject = ProductDBDL.GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
+            Product selectedProductObject = ObjectHandler.GetProductDL().GetProducts().FirstOrDefault(p => p.GetProductName() == selectedProduct);
 
             if (selectedProductObject != null)
             {
                 quantitiesComboBox.Items.Clear();
-                foreach (string quantity in selectedProductObject.GetAvailableQuantities())
-                {
-                    quantitiesComboBox.Items.Add(quantity.Trim());
-                }
+                //foreach (string quantity in selectedProductObject.GetAvailableQuantities())
+                //{
+                //    quantitiesComboBox.Items.Add(quantity.Trim());
+                //}
 
-                if (quantitiesComboBox.Items.Count > 0)
-                {
-                    quantitiesComboBox.SelectedIndex = 0; 
-                }
+                //if (quantitiesComboBox.Items.Count > 0)
+                //{
+                //    quantitiesComboBox.SelectedIndex = 0; 
+                //}
             }
         }
 
@@ -180,26 +180,19 @@ namespace SSC.UI
             comments.Text = "";
         }
 
-        private bool CheckValidations()
-        {
-            int value;
-            int totalItemStock = ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
-            int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
-            if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
-            {
-                errorProvider1.SetError(quantitiesComboBox, $"Please enter a positive quantity greater than 0 and less than {totalItemStock}");
-                return false;
-            }
+        //private bool CheckValidations()
+        //{
+        //    int value;
+        //    int totalItemStock = ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault().GetStock();
+        //    int selectedQuantity = ExtractFirstIntegerFromString(quantitiesComboBox.Text);
+        //    if (!int.TryParse(selectedQuantity.ToString(), out value) || value <= 0 || value >= totalItemStock)
+        //    {
+        //        errorProvider1.SetError(quantitiesComboBox, $"Please enter a positive quantity greater than 0 and less than {totalItemStock}");
+        //        return false;
+        //    }
 
-            return true;
-        }
-
-        private void DeductOrderedProductFromStock(string productName, int quantity)
-        {
-            Product product = ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(productName)).FirstOrDefault();
-            product.UpdateStock("remove", quantity);
-            ProductDBDL.UpdateProductInDatabase(product);
-        }
+        //    return true;
+        //}
 
         private void MakeColumns()
         {
@@ -212,15 +205,13 @@ namespace SSC.UI
 
         private void LoadData()
         {
-            dataTable.Rows.Clear();
-            foreach (Product product in ProductDBDL.GetProducts())
-            {
-                dataTable.Rows.Add(product.GetProductName(), product.GetPrice(),product.GetStock());
-                menuGridView.DataSource = dataTable;
-            }
+            //dataTable.Rows.Clear();
+            //foreach (Product product in ProductDBDL.GetProducts())
+            //{
+            //    dataTable.Rows.Add(product.GetProductName(), product.GetPrice(),product.GetStock());
+            //    menuGridView.DataSource = dataTable;
+            //}
         }
-
-
 
         private void name_TextChanged(object sender, EventArgs e)
         {
@@ -286,7 +277,6 @@ namespace SSC.UI
             {
                 foreach (OrderedProduct item in customer.GetCart())
                 {
-                    DeductOrderedProductFromStock(item.GetProduct().GetProductName(), item.GetQuantity());
                 }
 
                 Order order = new Order(OrderDBDL.GetTotalOrders(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, customer.GetUsername());
@@ -315,12 +305,12 @@ namespace SSC.UI
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (CheckValidations())
-            {
-                customer.AddToCart(ProductDBDL.GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
+            //if (CheckValidations())
+            //{
+                customer.AddToCart(ObjectHandler.GetProductDL().GetProducts().Where(p => p.GetProductName().Equals(menuComboBox.Text)).FirstOrDefault(), ExtractFirstIntegerFromString(quantitiesComboBox.Text));
                 CustomerDBDL.InsertOrderIntoCustomerDatabase(customer);
                 ClearTextBoxes();
-            }
+            //}
         }
     }
 }

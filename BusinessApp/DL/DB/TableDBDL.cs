@@ -13,8 +13,6 @@ namespace RMS.DL
     {
         private List<Table> Tables = new List<Table>(); 
 
-        public List<Table> GetTables() { return Tables; }
-
         public void SaveTable(Table table)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -46,44 +44,48 @@ namespace RMS.DL
             return null;
         }
 
-        public List<Table> ReadTablesData()
+        public List<Table> GetTables()
         {
-            SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection();
-            sqlConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Table]", sqlConnection);
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            List<Table> list = new List<Table>();
-            while (sqlDataReader.Read())
+            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
             {
-                int id = Convert.ToInt32(sqlDataReader["ID"]);
-                int c = Convert.ToInt32(sqlDataReader["Capacity"]);
-                string s = Convert.ToString(sqlDataReader["Status"]);
-                Table t = new Table(c,id,s);
-                list.Add(t);
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Table]", sqlConnection);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                List<Table> list = new List<Table>();
+                while (sqlDataReader.Read())
+                {
+                    int id = Convert.ToInt32(sqlDataReader["ID"]);
+                    int c = Convert.ToInt32(sqlDataReader["Capacity"]);
+                    string s = Convert.ToString(sqlDataReader["Status"]);
+                    Table t = new Table(c, id, s);
+                    list.Add(t);
+                }
+                return list;
             }
-
-            return list;
         }
 
         public void UpdateTable(Table t)
         {
-            SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection();
-            sqlConnection.Open();
-            string query = $"UPDATE [Table] SET Capacity=@Capacity, Status=@Status WHERE ID={t.GetID()} ";
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            sqlCommand.Parameters.AddWithValue("@Capacity", t.GetCapacity());
-            sqlCommand.Parameters.AddWithValue("@Status", t.GetStatus());
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
+            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                string query = $"UPDATE [Table] SET Capacity=@Capacity, Status=@Status WHERE ID={t.GetID()} ";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@Capacity", t.GetCapacity());
+                sqlCommand.Parameters.AddWithValue("@Status", t.GetStatus());
+                sqlCommand.ExecuteNonQuery();
+            }
         }
 
         public void DeleteTable(int id)
         {
-            SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection();
-            sqlConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand($"DELETE FROM [Table] WHERE ID={id}", sqlConnection);
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
+            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM [Table] WHERE ID={id}", sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
         }
 
         public int GetTableCapacity(int id)

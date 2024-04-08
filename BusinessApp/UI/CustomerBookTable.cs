@@ -109,7 +109,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             comboBox1.Items.Clear();
-            foreach (Table table in ObjectHandler.GetTableDL().ReadTablesData())
+            foreach (Table table in ObjectHandler.GetTableDL().GetTables())
             {
                 if (table.GetStatus() == "Unbooked")
                 {

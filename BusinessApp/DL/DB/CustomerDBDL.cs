@@ -56,6 +56,35 @@ namespace RMS.DL
             }    
         }
 
+        public void UpdateCredentials(string newCred, string credType, int userID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                string query = "";
+                if (credType == "username")
+                {
+                    query = "UPDATE Customers SET Username = @NewCredential WHERE UserID = @UserID";
+                }
+                else if (credType == "password")
+                {
+                    query = "UPDATE Users SET Password = @NewCredential WHERE ID = @ID";
+                }
+
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NewCredential", newCred);
+                if (credType == "username")
+                {
+                    command.Parameters.AddWithValue("@UserID", userID);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@ID", userID);
+                }
+                command.ExecuteNonQuery();
+            }
+        }
+
         public List<Customer> GetCustomers()
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())

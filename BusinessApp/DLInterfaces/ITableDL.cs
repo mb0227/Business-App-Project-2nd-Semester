@@ -15,7 +15,7 @@ namespace RMS.DL
         int GetTableCapacity(int id);
         void DeleteTable(int id);
         void UpdateTable(Table t);
-        List<Table> ReadTablesData();
+        List<Table> GetTables();
         Table GetTableById(int id);
         void SaveTable(Table table);
             

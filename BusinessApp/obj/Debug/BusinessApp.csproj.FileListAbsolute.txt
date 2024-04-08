@@ -125,14 +125,12 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.CustomerDashboar
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.CustomerFeedback.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.CustomerNavBar.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.CustomerOrderFood.resources
-C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Dashboard.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Help.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.Homepage.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.ManageCustomers.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.ManageEmployees.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.ManageProducts.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Navbar.resources
-C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.NavigationBar.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.UI.Settings.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.SignIn.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SSC.SignUp.resources
@@ -151,3 +149,4 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.Send
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ChefDashboard.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.Resource1.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ViewEmployees.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.AddVariants.resources

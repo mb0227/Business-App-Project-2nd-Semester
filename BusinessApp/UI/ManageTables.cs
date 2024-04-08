@@ -108,10 +108,12 @@ namespace SignInSignUp.UI
             if (collapsed)
             {
                 panel4.BringToFront();
+                panel3.BringToFront();
             }
             else
             {
                 panel4.SendToBack();
+                panel3.SendToBack();
                 aNavbar.BringToFront();
             }
         }
@@ -171,7 +173,7 @@ namespace SignInSignUp.UI
             dt.Columns.Add("Status", typeof(string));
             guna2DataGridView1.DataSource = dt;
 
-            foreach (Table t in ObjectHandler.GetTableDL().ReadTablesData())
+            foreach (Table t in ObjectHandler.GetTableDL().GetTables())
             {
                 dt.Rows.Add(t.GetID(),t.GetCapacity(),t.GetStatus());
             }
@@ -184,7 +186,7 @@ namespace SignInSignUp.UI
 
         private void LoadData()
         {
-            foreach (Table t in ObjectHandler.GetTableDL().ReadTablesData())
+            foreach (Table t in ObjectHandler.GetTableDL().GetTables())
             {
                 dt.Rows.Add(t.GetID(), t.GetCapacity(),t.GetStatus());
             }
