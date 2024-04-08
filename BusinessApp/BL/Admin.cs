@@ -11,28 +11,32 @@ namespace RMS.BL
     {
         private List <string> Permissions = new List<string>();
         private List<string> ToolsUsed = new List<string>();
+
         private int EmployeeID;
+        private int AdminID;
 
-        private int ID;
+        public Admin()
+        {            
+        }
 
-        public Admin(string username, string contact, double salary, DateTime joinDate, string gender, int userID,List<string> t, List<string> p, int employeeID) : base(username, contact, salary, joinDate, gender, userID)
+        public Admin(int empid,int adminid,string username, string contact, double salary, DateTime joinDate, string gender, int userID,List<string> t, List<string> p) : base(empid,username, contact, salary, joinDate, gender, userID)
         {
-            Username = username;
-            Contact = contact;
-            Salary = salary;
-            JoinDate = joinDate;
-            Gender = gender;
-            UserID = userID;
+            AdminID = adminid;
             Permissions=p ;
             ToolsUsed = t;
-            EmployeeID = employeeID;
+            EmployeeID = empid;
+        }
+
+        public Admin(string username, string contact, double salary, DateTime joinDate, string gender, int userID, List<string> t, List<string> p, int employeeID) : base(employeeID,username, contact, salary, joinDate, gender, userID)
+        {
+            UserID = userID;
+            Permissions = p;
+            ToolsUsed = t;
         }
 
         public Admin(int id, string username, double salary, List <string> tools, List <string> permissions, int employeeID) : base(username, salary)
         {
-            ID = id;
-            Username = username;
-            Salary = salary;
+            AdminID = id;
             Permissions = permissions;
             ToolsUsed = tools;
             EmployeeID = employeeID;
@@ -40,7 +44,7 @@ namespace RMS.BL
 
         public int GetAdminID()
         {
-            return ID;
+            return AdminID;
         }
 
         public void AddPermission(string permission)
@@ -104,5 +108,6 @@ namespace RMS.BL
             int index = ToolsUsed.IndexOf(oldTool);
             ToolsUsed[index] = newTool;
         }
+
     }
 }

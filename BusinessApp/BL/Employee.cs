@@ -8,6 +8,10 @@ namespace RMS.BL
 {
     public class Employee
     {
+        public Employee()
+        {            
+        }
+
         protected string Username;
         protected string Contact;
         protected double Salary;
@@ -15,13 +19,14 @@ namespace RMS.BL
         protected string Gender;
         protected int UserID;
 
-        private int ID;
+        private int EmployeeID;
 
         public Employee(string username, double salary)
         {
             Username = username;
             Salary = salary;
         }
+
         public Employee(string username, string contact, double salary, DateTime joinDate, string gender, int userID)
         {
             Username = username;
@@ -32,9 +37,9 @@ namespace RMS.BL
             UserID = userID;
         }
 
-        public Employee(int id, string username, string contact, double salary, DateTime joinDate, string gender, int userID)
+        public Employee(int empID, string username, string contact, double salary, DateTime joinDate, string gender, int userID)
         {
-            ID= id;
+            EmployeeID = empID;
             Username = username;
             Contact = contact;
             Salary = salary;
@@ -43,9 +48,9 @@ namespace RMS.BL
             UserID = userID;
         }
 
-        public int GetID()
+        public virtual int GetEmployeeID()
         {
-            return ID;
+            return EmployeeID;
         }
 
         public string GetUsername()
@@ -101,6 +106,11 @@ namespace RMS.BL
         public void SetGender(string gender)
         {
             Gender = gender;
+        }
+
+        public void SetEmployeeID(int empID)
+        {
+            EmployeeID = empID;
         }
 
         public void SetUserID(int userID)

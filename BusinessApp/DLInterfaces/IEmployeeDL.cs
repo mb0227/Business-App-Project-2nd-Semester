@@ -18,5 +18,6 @@ namespace RMS.DL
         List<Employee> GetEmployees();
         string GetEmployeeRole(int id);
         void DeleteEmployee(int id, string role, int userid);
+        void UpdateCredentials(string newCred, string credType, int id);
     }
 }

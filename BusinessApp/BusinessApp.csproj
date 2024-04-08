@@ -57,6 +57,7 @@
     <Compile Include="BL\Customer.cs" />
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Feedback.cs" />
+    <Compile Include="BL\Notification.cs" />
     <Compile Include="BL\Order.cs" />
     <Compile Include="BL\OrderedProduct.cs" />
     <Compile Include="BL\Product.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="DLInterfaces\IAdminDL.cs" />
     <Compile Include="DLInterfaces\IChefDL.cs" />
     <Compile Include="DLInterfaces\IFeedbackDL.cs" />
+    <Compile Include="DLInterfaces\INotificationDL.cs" />
     <Compile Include="DLInterfaces\IRegularDL.cs" />
     <Compile Include="DLInterfaces\IReservationDL.cs" />
     <Compile Include="DLInterfaces\ITableDL.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="DLInterfaces\IEmployeeDL.cs" />
     <Compile Include="DLInterfaces\IUserDL.cs" />
     <Compile Include="DL\DB\FeedbackDBDL.cs" />
+    <Compile Include="DL\DB\NotificationDBDL.cs" />
     <Compile Include="DL\DB\OrderDBDL.cs" />
     <Compile Include="DL\DB\ProductDBDL.cs" />
     <Compile Include="DL\DB\RegularDBDL.cs" />
@@ -119,12 +122,6 @@
     </Compile>
     <Compile Include="UI\ChefDashboard.Designer.cs">
       <DependentUpon>ChefDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\ChefNavbar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\ChefNavbar.Designer.cs">
-      <DependentUpon>ChefNavbar.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CustomerDashboard.cs">
       <SubType>Form</SubType>

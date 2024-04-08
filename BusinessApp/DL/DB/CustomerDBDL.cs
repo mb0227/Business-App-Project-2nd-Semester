@@ -22,10 +22,11 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand($"SELECT C.Username, C.Contact, C.Status, C.Gender, C.Cart FROM Customers AS C JOIN Users AS U ON C.UserID = {userID}", connection);
+                SqlCommand command = new SqlCommand($"SELECT C.ID,C.Username, C.Contact, C.Status, C.Gender, C.Cart FROM Customers AS C JOIN Users AS U ON C.UserID = {userID}", connection);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
+                    int id = Convert.ToInt32(reader["ID"]);
                     string username = reader["Username"].ToString();
                     string contact = reader["Contact"].ToString();
                     string status = reader["Status"].ToString();
@@ -48,7 +49,7 @@ namespace RMS.DL
                         }
                     }
 
-                    Customer customer = new Customer(username, contact, status, gender, cart, userID);
+                    Customer customer = new Customer(id,username, contact, status, gender, cart, userID);
                     return customer;
                 }
                 return null;
@@ -201,9 +202,14 @@ namespace RMS.DL
                 command5.Parameters.AddWithValue("@CustomerID", id);
                 command5.ExecuteNonQuery();
 
+                
                 SqlCommand command6 = new SqlCommand("DELETE FROM Customers WHERE ID = @ID", connection);
                 command6.Parameters.AddWithValue("@ID", id);
                 command6.ExecuteNonQuery();
+
+                SqlCommand command7 = new SqlCommand("DELETE FROM ViewNotification WHERE CustomerID = @CustomerID", connection);
+                command7.Parameters.AddWithValue("@CustomerID", id);
+                command7.ExecuteNonQuery();
 
                 SqlCommand command = new SqlCommand("DELETE FROM Users WHERE ID = @ID", connection);
                 command.Parameters.AddWithValue("@ID", userid);

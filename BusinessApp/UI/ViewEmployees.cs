@@ -125,7 +125,7 @@ namespace SignInSignUp.UI
             dataGridView1.DataSource = dt;
             foreach (Employee emp in ObjectHandler.GetEmployeeDL().GetEmployees())
             {
-                dt.Rows.Add(emp.GetID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
+                dt.Rows.Add(emp.GetEmployeeID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
             }
         }
 
@@ -133,7 +133,7 @@ namespace SignInSignUp.UI
         {
             foreach (Employee emp in ObjectHandler.GetEmployeeDL().GetEmployees())
             {
-                dt.Rows.Add(emp.GetID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
+                dt.Rows.Add(emp.GetEmployeeID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
             }
         }
 

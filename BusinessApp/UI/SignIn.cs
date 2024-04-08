@@ -78,37 +78,40 @@ namespace SSC
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            string role = ObjectHandler.GetUserDL().SearchCustomerForRole(username.Text, password.Text);
+            string role = ObjectHandler.GetUserDL().SearchUserForRole(username.Text);
             if (role!="")
             {
                 int userID = ObjectHandler.GetUserDL().GetUserID(username.Text);
-                if(role=="Customer") //Search customer by id
+                if (role=="Customer" && userID!=-1) //Search customer by id
                 {
                     Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);
-                    CustomerDashboard c= new CustomerDashboard(this.Size, this.Location, customer);
+                    CustomerDashboard c = new CustomerDashboard(this.Size, this.Location, customer);
                     c.Show();
                     this.Hide();
                 }
-                else if(role=="Chef")
+                else if(role=="Chef" && userID != -1)
                 {
                     Chef chef = ObjectHandler.GetEmployeeDL().SearchChefById(userID);
                     ChefDashboard c = new ChefDashboard(this.Size, this.Location, chef);
                     c.Show();
                     this.Hide();
                 }
-                else if(role=="Waiter")
+                else if(role=="Waiter" && userID != -1)
                 {
                     Waiter waiter = ObjectHandler.GetEmployeeDL().SearchWaiterById(userID);
                     WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
                     w.Show();
                     this.Hide();
                 }
-                else if(role=="Admin")
+                else if(role=="Admin" && userID != -1)
                 {
                     Admin admin = ObjectHandler.GetEmployeeDL().SearchAdminById(userID);
-                    AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
-                    a.Show();
-                    this.Hide();
+                    if (admin != null)
+                    {
+                        AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
+                        a.Show();
+                        this.Hide();
+                    }
                 }
             }
             else

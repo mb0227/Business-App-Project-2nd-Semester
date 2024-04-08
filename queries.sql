@@ -145,3 +145,16 @@ CREATE TABLE Waiters(
 	FOREIGN KEY (EmployeeID) REFERENCES Employees(ID)
 );
 
+CREATE TABLE Notifications(
+	ID int Primary Key Identity,
+	Notification Text
+);
+
+Create Table ViewNotification(
+	ID int primary key identity,
+	NotificationID int,
+	CustomerID int,
+	HasSeen int,
+	FOREIGN KEY (NotificationID) REFERENCES Notifications(ID),
+	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),
+)

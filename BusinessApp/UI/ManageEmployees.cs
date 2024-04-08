@@ -164,7 +164,7 @@ namespace SSC.UI
                 ObjectHandler.GetEmployeeDL().SaveEmployee(employee);
                 if (employeeType.Text == "Waiter")
                 {
-                    Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));
+                    Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));                    
                     ObjectHandler.GetWaiterDL().SaveWaiter(waiter);
                 }
                 else if (employeeType.Text == "Chef")

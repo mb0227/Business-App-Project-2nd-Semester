@@ -32,6 +32,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.reservationText = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -43,7 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.reservationText = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -95,6 +95,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1012, 707);
             this.panel3.TabIndex = 16;
+            // 
+            // reservationText
+            // 
+            this.reservationText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.reservationText.AutoSize = true;
+            this.reservationText.BackColor = System.Drawing.Color.Transparent;
+            this.reservationText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reservationText.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservationText.ForeColor = System.Drawing.Color.DarkRed;
+            this.reservationText.Location = new System.Drawing.Point(145, 298);
+            this.reservationText.Name = "reservationText";
+            this.reservationText.Size = new System.Drawing.Size(0, 39);
+            this.reservationText.TabIndex = 18;
+            this.reservationText.Visible = false;
             // 
             // label2
             // 
@@ -247,21 +261,6 @@
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
-            // 
-            // reservationText
-            // 
-            this.reservationText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reservationText.AutoSize = true;
-            this.reservationText.BackColor = System.Drawing.Color.Transparent;
-            this.reservationText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reservationText.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservationText.ForeColor = System.Drawing.Color.DarkRed;
-            this.reservationText.Location = new System.Drawing.Point(145, 298);
-            this.reservationText.Name = "reservationText";
-            this.reservationText.Size = new System.Drawing.Size(464, 39);
-            this.reservationText.TabIndex = 18;
-            this.reservationText.Text = "You have a Reservation at:  ";
-            this.reservationText.Visible = false;
             // 
             // CustomerBookTable
             // 

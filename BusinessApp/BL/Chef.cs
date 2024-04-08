@@ -13,16 +13,10 @@ namespace RMS.BL
         private string Experience;
         private int EmployeeID;
 
-        private int ID;
+        private int ChefID;
 
         public Chef(string username, string contact, double salary, DateTime joinDate, string gender, int userID,string shift, string specialization, string experience, int employeeID) : base(username, contact, salary, joinDate, gender, userID)
         {
-            Username = username;
-            Contact = contact;
-            Salary = salary;
-            JoinDate = joinDate;
-            Gender = gender;
-            UserID = userID;
             Shift = shift;
             Experience = experience;
             Specialization = specialization;
@@ -31,18 +25,16 @@ namespace RMS.BL
 
         public Chef(int id, string username,double salary, string shift, string specialization, string experience, int employeeID) : base(username, salary)
         {
-            ID = id;
-            Username = username;
+            ChefID = id;
             Shift = shift;
             Experience = experience;
             Specialization = specialization;
             EmployeeID = employeeID;
-            Salary = salary;
         }
 
         public int GetChefID()
         {
-            return ID;
+            return ChefID;
         }
 
         public string GetShift()
@@ -60,14 +52,14 @@ namespace RMS.BL
             return Experience;
         }
 
-        public int GetEmployeeID()
-        {
-            return EmployeeID;
-        }
-
         public void SetShift(string shift)
         {
             Shift = shift;
+        }
+
+        public override int GetEmployeeID()
+        {
+            return EmployeeID;
         }
 
         public void SetSpecialization(string specialization)
@@ -80,9 +72,9 @@ namespace RMS.BL
             Experience = experience;
         }
 
-        public void SetEmployeeID(int employeeID)
+        public void SetChefID(int id)
         {
-            EmployeeID = employeeID;
+            ChefID = id;
         }
     }
 }

@@ -13,6 +13,28 @@ namespace RMS.DL
 {
     public class EmployeeDBDL : IEmployeeDL
     {
+        public void UpdateCredentials(string newCred,string credType,int id)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                string query = "";
+                if (credType == "username")
+                {
+                    query = "UPDATE Employees SET Username = @NewCredential WHERE ID = @ID";
+                }
+                else if (credType == "password")
+                {
+                    query = "UPDATE Users SET Password = @NewCredential WHERE ID = @ID";
+                }
+
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NewCredential", newCred);
+                command.Parameters.AddWithValue("@ID", id);
+                command.ExecuteNonQuery();
+            }
+        }
+
         public List<Employee> GetEmployees()
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -111,30 +133,43 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand($"SELECT E.Username, E.Contact, E.Salary, E.JoinDate, E.Gender, A.ToolsUsed, A.Permissions, A.EmployeeID FROM Users AS U JOIN Employees AS E ON U.ID = E.UserID JOIN Admins as A ON A.EmployeeID = E.ID WHERE U.ID={userID}", connection);
+                string query = @"SELECT A.ID, E.Username, E.Contact, E.Salary, E.JoinDate, E.Gender, A.ToolsUsed, A.Permissions, A.EmployeeID 
+                        FROM Users AS U 
+                        JOIN Employees AS E ON U.ID = E.UserID 
+                        JOIN Admins AS A ON A.EmployeeID = E.ID 
+                        WHERE U.ID = @UserID";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@UserID", userID);
+
                 SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+
+                if (reader.HasRows)
                 {
-                    string username = reader["Username"].ToString();
-                    string contact = reader["Contact"].ToString();
-                    double salary = Convert.ToDouble(reader["Salary"]);
-                    DateTime joindate = reader.GetDateTime(reader.GetOrdinal("JoinDate"));
-                    string gender = reader["Gender"].ToString();
-                    string permissions = reader["Permissions"].ToString();
-                    string tools = reader["ToolsUsed"].ToString();
+                    if (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["ID"]);
+                        string username = reader["Username"].ToString();
+                        string contact = reader["Contact"].ToString();
+                        double salary = Convert.ToDouble(reader["Salary"]);
+                        DateTime joindate = reader.GetDateTime(reader.GetOrdinal("JoinDate"));
+                        string gender = reader["Gender"].ToString();
+                        string permissions = reader["Permissions"].ToString();
+                        string tools = reader["ToolsUsed"].ToString();
 
-                    List<string> permissionList = permissions.Split(',').ToList();
-                    List<string> toolsList = tools.Split(',').ToList();
+                        List<string> permissionList = permissions.Split(',').ToList();
+                        List<string> toolsList = tools.Split(',').ToList();
 
+                        int empID = Convert.ToInt32(reader["EmployeeID"]);
 
-                    int empID = Convert.ToInt32(reader["EmployeeID"]);
-
-                    Admin admin = new Admin(username, contact, salary, joindate, gender, userID, toolsList, permissionList, empID);
-                    return admin;
+                        Admin admin = new Admin(empID ,id, username, contact, salary, joindate, gender, userID, toolsList, permissionList);
+                        return admin;
+                    }
                 }
             }
             return null;
         }
+
 
         public int GetEmployeeID(string username)
         {
@@ -203,26 +238,22 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command2;
+                SqlCommand command2 = new SqlCommand();
                 if (role == "admin")
                 {
-                    command2 = new SqlCommand("DELETE FROM Admins WHERE EmployeeID = @EmployeeID", connection);
-                    command2.Parameters.AddWithValue("@EmployeeID", id);
-                    command2.ExecuteNonQuery();
-                    
+                    command2 = new SqlCommand("DELETE FROM Admins WHERE EmployeeID = @EmployeeID", connection);                    
                 }
                 else if (role == "chef")
                 {
                     command2 = new SqlCommand("DELETE FROM Chefs WHERE EmployeeID = @EmployeeID", connection);
-                    command2.Parameters.AddWithValue("@EmployeeID", id);
-                    command2.ExecuteNonQuery();
                 }
                 else if (role == "waiter")
                 {
                     command2 = new SqlCommand("DELETE FROM Waiters WHERE EmployeeID = @EmployeeID", connection);
-                    command2.Parameters.AddWithValue("@EmployeeID", id);
-                    command2.ExecuteNonQuery();
                 }
+
+                command2.Parameters.AddWithValue("@EmployeeID", id);
+                command2.ExecuteNonQuery();
 
                 SqlCommand command3 = new SqlCommand("DELETE FROM Employees WHERE ID = @ID", connection);
                 command3.Parameters.AddWithValue("@ID", id);

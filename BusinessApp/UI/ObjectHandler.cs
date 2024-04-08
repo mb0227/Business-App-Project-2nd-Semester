@@ -66,6 +66,11 @@ namespace SSC.UI
             return new WaiterDBDL();
         }
 
+        public static INotificationDL GetNotificationDL()
+        {
+            return new NotificationDBDL();
+        }
+
         //public static IOrderDL GetOrderDL()
         //{
         //    return new OrderDBDL();

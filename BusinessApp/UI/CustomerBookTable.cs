@@ -188,7 +188,8 @@ namespace SSC.UI
                 int customerID = ObjectHandler.GetCustomerDL().GetCustomerID(name);
                 if (ObjectHandler.GetReservationDL().GetCustomerReservationCount(customerID) == 1)
                 {
-                    reservationText.Text += ObjectHandler.GetReservationDL().GetReservationDate(customerID);
+                    reservationText.Text = "";
+                    reservationText.Text = "You have a Reservation at "+ ObjectHandler.GetReservationDL().GetReservationDate(customerID);
                     reservationText.Visible = true;
                 }
             }

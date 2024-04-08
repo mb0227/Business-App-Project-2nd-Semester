@@ -33,11 +33,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tb1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tb2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tb2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.tb1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.salary = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,7 +55,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.viewAdminsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addAdminBtn = new Guna.UI2.WinForms.Guna2Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -125,34 +124,34 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.viewAdminsBtn);
             this.panel3.Controls.Add(this.addAdminBtn);
             this.panel3.Location = new System.Drawing.Point(52, 160);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1126, 791);
             this.panel3.TabIndex = 25;
             // 
-            // pictureBox2
+            // tb1
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(687, 344);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(688, 310);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
+            this.tb1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb1.DefaultText = "";
+            this.tb1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb1.ForeColor = System.Drawing.Color.Black;
+            this.tb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb1.Location = new System.Drawing.Point(396, 386);
+            this.tb1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.tb1.Name = "tb1";
+            this.tb1.PasswordChar = '\0';
+            this.tb1.PlaceholderText = "";
+            this.tb1.SelectedText = "";
+            this.tb1.Size = new System.Drawing.Size(247, 53);
+            this.tb1.TabIndex = 82;
+            this.tb1.WordWrap = false;
             // 
             // tb2
             // 
@@ -177,6 +176,28 @@
             this.tb2.TabIndex = 84;
             this.tb2.WordWrap = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(687, 344);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(688, 310);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -188,29 +209,6 @@
             this.label10.Size = new System.Drawing.Size(161, 34);
             this.label10.TabIndex = 83;
             this.label10.Text = "Permissions";
-            // 
-            // tb1
-            // 
-            this.tb1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb1.DefaultText = "";
-            this.tb1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb1.ForeColor = System.Drawing.Color.Black;
-            this.tb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb1.Location = new System.Drawing.Point(396, 386);
-            this.tb1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.tb1.Name = "tb1";
-            this.tb1.PasswordChar = '\0';
-            this.tb1.PlaceholderText = "";
-            this.tb1.SelectedText = "";
-            this.tb1.Size = new System.Drawing.Size(247, 53);
-            this.tb1.TabIndex = 82;
-            this.tb1.WordWrap = false;
             // 
             // label9
             // 
@@ -488,26 +486,6 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Email";
             // 
-            // viewAdminsBtn
-            // 
-            this.viewAdminsBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewAdminsBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.viewAdminsBtn.BorderRadius = 18;
-            this.viewAdminsBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.viewAdminsBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.viewAdminsBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.viewAdminsBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.viewAdminsBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.viewAdminsBtn.FillColor = System.Drawing.Color.FloralWhite;
-            this.viewAdminsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewAdminsBtn.ForeColor = System.Drawing.Color.Black;
-            this.viewAdminsBtn.Location = new System.Drawing.Point(690, 489);
-            this.viewAdminsBtn.Name = "viewAdminsBtn";
-            this.viewAdminsBtn.Size = new System.Drawing.Size(235, 65);
-            this.viewAdminsBtn.TabIndex = 2;
-            this.viewAdminsBtn.Text = "View Admins";
-            this.viewAdminsBtn.Click += new System.EventHandler(this.viewAdminsBtn_Click);
-            // 
             // addAdminBtn
             // 
             this.addAdminBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -521,7 +499,7 @@
             this.addAdminBtn.FillColor = System.Drawing.Color.Lime;
             this.addAdminBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addAdminBtn.ForeColor = System.Drawing.Color.Black;
-            this.addAdminBtn.Location = new System.Drawing.Point(429, 489);
+            this.addAdminBtn.Location = new System.Drawing.Point(582, 461);
             this.addAdminBtn.Name = "addAdminBtn";
             this.addAdminBtn.Size = new System.Drawing.Size(239, 65);
             this.addAdminBtn.TabIndex = 1;
@@ -599,7 +577,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button viewAdminsBtn;
         private Guna.UI2.WinForms.Guna2Button addAdminBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;

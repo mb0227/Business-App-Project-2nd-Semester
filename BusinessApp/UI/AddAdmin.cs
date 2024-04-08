@@ -250,7 +250,10 @@ namespace SignInSignUp.UI
 
         private void viewAdminsBtn_Click(object sender, EventArgs e)
         {
-
+            foreach (Control control in panel3.Controls)
+            {
+                control.Visible = false;
+            }
         }
     }
 }

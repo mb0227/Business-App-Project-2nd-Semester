@@ -31,8 +31,9 @@ namespace RMS.BL
             Cart = new List <OrderedProduct>();
         }
 
-        public Customer(string username, string contact, string status, string gender,List<OrderedProduct> cart, int userId)
+        public Customer(int id, string username, string contact, string status, string gender, List<OrderedProduct> cart, int userId)
         {
+            CustomerID = id;
             Username = username;
             Contact = contact;
             Status = status;
@@ -42,9 +43,8 @@ namespace RMS.BL
             UserID = userId;
         }
 
-        public Customer(int customerid,string username, string contact, string status, string gender, List<OrderedProduct> cart, int userId)
+        public Customer(string username, string contact, string status, string gender,List<OrderedProduct> cart, int userId)
         {
-            CustomerID = customerid;
             Username = username;
             Contact = contact;
             Status = status;
