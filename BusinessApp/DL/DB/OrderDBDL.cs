@@ -55,6 +55,40 @@ namespace RMS.DL
             }
         }
 
+        public int HasOrder(int customerID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Orders WHERE CustomerID=@CustomerID AND Status=0", connection);
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    return Convert.ToInt32(reader[0]);
+                }
+            }
+            return -1;
+        }
+
+        public int GetOrderStatus(int customerID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT Status FROM Orders WHERE CustomerID=@ID", connection);
+                command.Parameters.AddWithValue("@ID", customerID);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    int ans = Convert.ToInt32(reader["ID"]);
+                    return ans;
+                }
+            }
+            return -1;
+        }
+
+
         public static int FindOrderByID()
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())

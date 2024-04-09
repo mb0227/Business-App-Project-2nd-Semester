@@ -52,6 +52,7 @@
             // menuComboBox
             // 
             this.menuComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.menuComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.menuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuComboBox.FormattingEnabled = true;
@@ -108,6 +109,7 @@
             // quantitiesComboBox
             // 
             this.quantitiesComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.quantitiesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.quantitiesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quantitiesComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantitiesComboBox.FormattingEnabled = true;

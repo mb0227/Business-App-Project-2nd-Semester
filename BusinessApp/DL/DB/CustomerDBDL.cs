@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using SSC;
+using SSC.UI;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -55,19 +56,21 @@ namespace RMS.DL
 
                     List<OrderedProduct> cart = new List<OrderedProduct>();
                     string[] productItems = productsOrdered.Split(',');
-                    //foreach (string productItem in productItems)
-                    //{
-                    //    string[] parts = productItem.Split(':');
-                    //    if (parts.Length == 2 && int.TryParse(parts[0], out int quantity))
-                    //    {
-                    //        string productName = parts[1];
-                    //        //Product product = ProductDBDL.SearchProductByName(productName);
-                    //        if (product != null)
-                    //        {
-                    //            cart.Add(new OrderedProduct(product, quantity));
-                    //        }
-                    //    }
-                    //}
+                    foreach (string productItem in productItems)
+                    {
+                        string[] parts = productItem.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
+                        if (parts.Length == 2)
+                        {
+                            string quantity = parts[0].Trim(); 
+                            string productName = parts[1].Trim(); 
+
+                             Product product = ObjectHandler.GetProductDL().SearchProductByName(productName);
+                            if (product != null)
+                            {
+                                cart.Add(new OrderedProduct(product, quantity));
+                            }
+                        }
+                    }
 
                     Customer customer = new Customer(id,username, contact, status, gender, cart, userID);
                     return customer;

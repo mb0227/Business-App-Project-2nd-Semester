@@ -55,6 +55,7 @@
     <Compile Include="BL\Admin.cs" />
     <Compile Include="BL\Chef.cs" />
     <Compile Include="BL\Customer.cs" />
+    <Compile Include="BL\Deal.cs" />
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Feedback.cs" />
     <Compile Include="BL\Notification.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="BL\Waiter.cs" />
     <Compile Include="DLInterfaces\IAdminDL.cs" />
     <Compile Include="DLInterfaces\IChefDL.cs" />
+    <Compile Include="DLInterfaces\IDealDL.cs" />
     <Compile Include="DLInterfaces\IFeedbackDL.cs" />
     <Compile Include="DLInterfaces\INotificationDL.cs" />
     <Compile Include="DLInterfaces\IOrderDL.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="DL\DB\AdminDBDL.cs" />
     <Compile Include="DL\DB\ChefDBDL.cs" />
     <Compile Include="DL\DB\CustomerDBDL.cs" />
+    <Compile Include="DL\DB\DealDBDL.cs" />
     <Compile Include="DL\DB\EmployeeDBDL.cs" />
     <Compile Include="DLInterfaces\ICustomerDL.cs" />
     <Compile Include="DLInterfaces\IEmployeeDL.cs" />
@@ -177,6 +180,12 @@
     <Compile Include="UI\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\MakeDeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MakeDeal.Designer.cs">
+      <DependentUpon>MakeDeal.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ManageCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +197,12 @@
     </Compile>
     <Compile Include="UI\ManageEmployees.Designer.cs">
       <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageOrders.Designer.cs">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ManageProducts.cs">
       <SubType>Form</SubType>
@@ -299,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MakeDeal.resx">
+      <DependentUpon>MakeDeal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ManageCustomers.resx">
       <DependentUpon>ManageCustomers.cs</DependentUpon>

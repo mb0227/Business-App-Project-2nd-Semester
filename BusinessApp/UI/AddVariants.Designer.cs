@@ -80,6 +80,7 @@
             this.manageOrders.Size = new System.Drawing.Size(260, 82);
             this.manageOrders.TabIndex = 46;
             this.manageOrders.Text = "Manage Orders";
+            this.manageOrders.Click += new System.EventHandler(this.manageOrders_Click);
             // 
             // manageBtns
             // 
@@ -99,6 +100,7 @@
             this.manageBtns.Size = new System.Drawing.Size(260, 88);
             this.manageBtns.TabIndex = 45;
             this.manageBtns.Text = "Manage Products";
+            this.manageBtns.Click += new System.EventHandler(this.manageBtns_Click);
             // 
             // label1
             // 

@@ -90,5 +90,19 @@ namespace SignInSignUp.UI
 
             return true;
         }
+
+        private void manageBtns_Click(object sender, EventArgs e)
+        {
+            ManageProducts p = new ManageProducts(this.Size, this.Location, chef);
+            p.Show();
+            this.Hide();
+        }
+
+        private void manageOrders_Click(object sender, EventArgs e)
+        {
+            ManageOrders o = new ManageOrders(this.Size, this.Location, chef);
+            o.Show();
+            this.Hide();
+        }
     }
 }

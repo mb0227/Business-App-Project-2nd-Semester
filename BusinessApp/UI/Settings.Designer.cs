@@ -39,16 +39,16 @@
             this.logOutButton = new Guna.UI2.WinForms.Guna2Button();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.label = new System.Windows.Forms.Label();
+            this.tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.msgCount = new System.Windows.Forms.Label();
             this.notiCount = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.notification = new System.Windows.Forms.PictureBox();
-            this.backBtn = new System.Windows.Forms.Button();
-            this.updateButton = new System.Windows.Forms.Button();
-            this.label = new System.Windows.Forms.Label();
-            this.tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
@@ -240,6 +240,78 @@
             this.panel2.Size = new System.Drawing.Size(673, 788);
             this.panel2.TabIndex = 10;
             // 
+            // backBtn
+            // 
+            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.backBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.backBtn.FlatAppearance.BorderSize = 0;
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.backBtn.Location = new System.Drawing.Point(151, 141);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(132, 69);
+            this.backBtn.TabIndex = 24;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Visible = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
+            // updateButton
+            // 
+            this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updateButton.BackColor = System.Drawing.Color.Lime;
+            this.updateButton.FlatAppearance.BorderSize = 0;
+            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateButton.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.updateButton.Location = new System.Drawing.Point(436, 141);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(144, 69);
+            this.updateButton.TabIndex = 23;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Visible = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // label
+            // 
+            this.label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label.AutoSize = true;
+            this.label.BackColor = System.Drawing.Color.Transparent;
+            this.label.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
+            this.label.ForeColor = System.Drawing.Color.MintCream;
+            this.label.Location = new System.Drawing.Point(87, 77);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(65, 36);
+            this.label.TabIndex = 22;
+            this.label.Text = "text";
+            this.label.Visible = false;
+            // 
+            // tb
+            // 
+            this.tb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb.DefaultText = "";
+            this.tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.tb.ForeColor = System.Drawing.Color.Black;
+            this.tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb.Location = new System.Drawing.Point(251, 77);
+            this.tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb.Name = "tb";
+            this.tb.PasswordChar = '\0';
+            this.tb.PlaceholderText = "";
+            this.tb.SelectedText = "";
+            this.tb.Size = new System.Drawing.Size(283, 46);
+            this.tb.TabIndex = 21;
+            this.tb.Visible = false;
+            this.tb.WordWrap = false;
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -316,78 +388,6 @@
             this.notification.TabIndex = 6;
             this.notification.TabStop = false;
             this.notification.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // backBtn
-            // 
-            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.backBtn.BackColor = System.Drawing.Color.RoyalBlue;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.backBtn.Location = new System.Drawing.Point(151, 141);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(132, 69);
-            this.backBtn.TabIndex = 24;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Visible = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
-            // 
-            // updateButton
-            // 
-            this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updateButton.BackColor = System.Drawing.Color.Lime;
-            this.updateButton.FlatAppearance.BorderSize = 0;
-            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateButton.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateButton.Location = new System.Drawing.Point(436, 141);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(144, 69);
-            this.updateButton.TabIndex = 23;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = false;
-            this.updateButton.Visible = false;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
-            // 
-            // label
-            // 
-            this.label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label.AutoSize = true;
-            this.label.BackColor = System.Drawing.Color.Transparent;
-            this.label.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
-            this.label.ForeColor = System.Drawing.Color.MintCream;
-            this.label.Location = new System.Drawing.Point(87, 77);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(65, 36);
-            this.label.TabIndex = 22;
-            this.label.Text = "text";
-            this.label.Visible = false;
-            // 
-            // tb
-            // 
-            this.tb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb.DefaultText = "";
-            this.tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.tb.ForeColor = System.Drawing.Color.Black;
-            this.tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Location = new System.Drawing.Point(251, 77);
-            this.tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tb.Name = "tb";
-            this.tb.PasswordChar = '\0';
-            this.tb.PlaceholderText = "";
-            this.tb.SelectedText = "";
-            this.tb.Size = new System.Drawing.Size(283, 46);
-            this.tb.TabIndex = 21;
-            this.tb.Visible = false;
-            this.tb.WordWrap = false;
             // 
             // errorProvider1
             // 

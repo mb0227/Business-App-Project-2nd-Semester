@@ -232,18 +232,32 @@ namespace SSC.UI
         {
             if (cartGridView.SelectedRows.Count > 0)
             {
-                selectedRow = cartGridView.SelectedRows[0].Index;
+                try
+                {
+                    selectedRow = cartGridView.SelectedRows[0].Index;
 
-                DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; 
-                string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
+                    if (cartGridView != null && selectedRow >= 0 && selectedRow < cartGridView.Rows.Count)
+                    {
+                        DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow];
 
-                Product product = new Product();
-                product.SetProductName(productName);
-                customer.RemoveFromCart(product);
+                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ProductName"].Value != null)
+                        {
+                            string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
 
-                ObjectHandler.GetCustomerDL().UpdateCart(customer);
-                cartGridView.Rows.RemoveAt(selectedRow);
-                selectedRow = -1;
+                            Product product = new Product();
+                            product.SetProductName(productName);
+                            customer.RemoveFromCart(product);
+
+                            ObjectHandler.GetCustomerDL().UpdateCart(customer);
+                            cartGridView.Rows.RemoveAt(selectedRow);
+                            selectedRow = -1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
             else
             {

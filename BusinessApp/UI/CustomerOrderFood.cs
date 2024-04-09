@@ -149,7 +149,7 @@ namespace SSC.UI
         private void MakeColumns()
         {
             dataTable.Columns.Add("ProductName", typeof(string));
-            dataTable.Columns.Add("Price", typeof(int));
+            dataTable.Columns.Add("Price", typeof(double));
             dataTable.Columns.Add("Variant", typeof(string));
             dataTable.Columns.Add("Category", typeof(string));
 
@@ -259,7 +259,7 @@ namespace SSC.UI
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (menuComboBox.Text !="" && quantitiesComboBox.Text!="")
+            if (menuComboBox.Text != "" && quantitiesComboBox.Text!="")
             {
                 customer.AddToCart(ObjectHandler.GetProductDL().SearchProductByName(menuComboBox.Text), quantitiesComboBox.Text);
                 ObjectHandler.GetCustomerDL().SaveCart(customer);
@@ -275,6 +275,22 @@ namespace SSC.UI
             sortGridView.SelectedIndex = 0;
             MakeColumns();
             LoadData();
+        }
+
+        private void trackOrderBtn_Click(object sender, EventArgs e)
+        {
+            if(ObjectHandler.GetOrderDL().HasOrder(customer.GetID())!=-1)
+            {
+                MessageBox.Show($"Your order is being prepared", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please place an order to track you order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

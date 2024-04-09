@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using RMS.BL;
 using RMS.DL;
+using SignInSignUp.UI;
 
 namespace SSC.UI
 {
@@ -192,6 +193,9 @@ namespace SSC.UI
 
         private void manageOrders_Click(object sender, EventArgs e)
         {
+            ManageOrders o = new ManageOrders(this.Size, this.Location, chef);
+            o.Show();
+            this.Hide();
         }
 
         private void ManageProducts_Load(object sender, EventArgs e)
@@ -224,6 +228,20 @@ namespace SSC.UI
                 dt.Rows.Add(p.GetProductID(), p.GetProductName(), p.GetProductCategory(), p.GetProductDescription(), p.GetAvailable());
             }
             dataGridView1.DataSource = dt;
+        }
+
+        private void makeDealBtn_Click(object sender, EventArgs e)
+        {
+            MakeDeal d = new MakeDeal(this.Size, this.Location, chef);
+            d.Show();
+            this.Hide();
+        }
+
+        private void manageBtns_Click(object sender, EventArgs e)
+        {
+            ManageProducts p = new ManageProducts(this.Size, this.Location, chef);
+            p.Show();
+            this.Hide();
         }
     }
 }

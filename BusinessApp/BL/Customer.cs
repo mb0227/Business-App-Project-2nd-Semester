@@ -123,7 +123,6 @@ namespace RMS.BL
         {
             Cart.Remove(Cart.Where(p => p.GetProduct().GetProductName().Equals(product.GetProductName())).FirstOrDefault());
         }
-
         public void RemoveFromCart(int index) //remove from index
         {
             Cart.RemoveAt(index);

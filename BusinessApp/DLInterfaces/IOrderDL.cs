@@ -10,6 +10,8 @@ namespace RMS.DL
     public interface IOrderDL
     {
         void SaveOrder(Order order);
+        int HasOrder(int customerID);
+        int GetOrderStatus(int customerID);
         //List<Order> GetOrders();
         //List<Order> GetOrdersByCustomer(int customerID);
         //void UpdateOrderStatus(int orderID, string status);

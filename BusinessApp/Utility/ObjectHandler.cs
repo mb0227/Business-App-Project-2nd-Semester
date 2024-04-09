@@ -80,5 +80,10 @@ namespace SSC.UI
         {
             return new ProductDBDL();
         }
+
+        public static IDealDL GetDealDL()
+        {
+            return new DealDBDL();
+        }
     }
 }
