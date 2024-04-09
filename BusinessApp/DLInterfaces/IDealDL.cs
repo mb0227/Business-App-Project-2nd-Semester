@@ -11,5 +11,8 @@ namespace RMS.DL
     {
         List <Deal> GetDeals ();
         void SaveDeal(Deal deal);
+        void RemoveDeal(int id);
+        Deal GetDeal(int id);
+
     }
 }

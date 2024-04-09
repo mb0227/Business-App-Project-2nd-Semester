@@ -151,3 +151,4 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.Resourc
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ViewEmployees.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.AddVariants.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.MakeDeal.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.OrderDeal.resources

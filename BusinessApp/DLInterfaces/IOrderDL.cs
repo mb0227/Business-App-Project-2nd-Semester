@@ -12,6 +12,8 @@ namespace RMS.DL
         void SaveOrder(Order order);
         int HasOrder(int customerID);
         int GetOrderStatus(int customerID);
+        void OrderDeal(Deal deal, int customerID);
+
         //List<Order> GetOrders();
         //List<Order> GetOrdersByCustomer(int customerID);
         //void UpdateOrderStatus(int orderID, string status);

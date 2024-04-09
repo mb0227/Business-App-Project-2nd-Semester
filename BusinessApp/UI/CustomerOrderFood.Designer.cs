@@ -34,6 +34,7 @@
             this.menuComboBox = new System.Windows.Forms.ComboBox();
             this.menuGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.orderDealBtn = new Guna.UI2.WinForms.Guna2Button();
             this.trackOrderBtn = new Guna.UI2.WinForms.Guna2Button();
             this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addButton = new Guna.UI2.WinForms.Guna2Button();
@@ -118,6 +119,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
+            this.panel1.Controls.Add(this.orderDealBtn);
             this.panel1.Controls.Add(this.trackOrderBtn);
             this.panel1.Controls.Add(this.searchBtn);
             this.panel1.Controls.Add(this.addButton);
@@ -139,6 +141,26 @@
             this.panel1.Size = new System.Drawing.Size(1014, 780);
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // orderDealBtn
+            // 
+            this.orderDealBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.orderDealBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.orderDealBtn.BorderRadius = 18;
+            this.orderDealBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.orderDealBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.orderDealBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.orderDealBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.orderDealBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.orderDealBtn.FillColor = System.Drawing.Color.MediumOrchid;
+            this.orderDealBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderDealBtn.ForeColor = System.Drawing.Color.Black;
+            this.orderDealBtn.Location = new System.Drawing.Point(780, 446);
+            this.orderDealBtn.Name = "orderDealBtn";
+            this.orderDealBtn.Size = new System.Drawing.Size(190, 68);
+            this.orderDealBtn.TabIndex = 45;
+            this.orderDealBtn.Text = "Order Deal";
+            this.orderDealBtn.Click += new System.EventHandler(this.orderDealBtn_Click);
             // 
             // trackOrderBtn
             // 
@@ -412,5 +434,6 @@
         private Guna.UI2.WinForms.Guna2Button searchBtn;
         private Guna.UI2.WinForms.Guna2Button addButton;
         private Guna.UI2.WinForms.Guna2Button trackOrderBtn;
+        private Guna.UI2.WinForms.Guna2Button orderDealBtn;
     }
 }

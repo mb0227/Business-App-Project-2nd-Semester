@@ -26,7 +26,7 @@ namespace SSC
             //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
 
-            Application.Run(new MakeDeal());
+            Application.Run(new OrderDeal());
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using RMS.BL;
 using SSC;
+using static RMS.BL.Order;
 
 
 namespace RMS.DL
@@ -189,6 +190,31 @@ namespace RMS.DL
                 connection.Open();
                 SqlCommand command = new SqlCommand("DELETE FROM Orders WHERE OrderID=@OrderID", connection);
                 command.Parameters.AddWithValue("@OrderID", order.GetOrderID());
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void OrderDeal(Deal deal,int customerID) 
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                StringBuilder cartString = new StringBuilder();
+
+                foreach (var orderedProduct in deal.GetMenu())
+                {
+                    cartString.Append($"{orderedProduct.Quantity} of {orderedProduct.Name},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("INSERT INTO Orders (CustomerID, Status, OrderDate, ProductsOrdered, TotalPrice, PaymentMethod) VALUES (@CustomerID, @Status, @OrderDate, @ProductsOrdered,@TotalPrice, @PaymentMethod)", connection);
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+                command.Parameters.AddWithValue("@Status", 0);
+                command.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+                command.Parameters.AddWithValue("@ProductsOrdered", cartAsString);
+                command.Parameters.AddWithValue("@TotalPrice", deal.GetPrice());
+                command.Parameters.AddWithValue("@PaymentMethod", "Cash on Delivery");
                 command.ExecuteNonQuery();
             }
         }

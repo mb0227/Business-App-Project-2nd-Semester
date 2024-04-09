@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 using RMS.BL;
 using RMS.DL;
+using SignInSignUp.UI;
 
 namespace SSC.UI
 {
@@ -291,6 +292,13 @@ namespace SSC.UI
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void orderDealBtn_Click(object sender, EventArgs e)
+        {
+            OrderDeal d = new OrderDeal(this.Size, this.Location, customer);
+            d.Show();
+            this.Hide();
         }
     }
 }

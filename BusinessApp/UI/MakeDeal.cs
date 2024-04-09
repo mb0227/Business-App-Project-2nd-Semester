@@ -18,6 +18,7 @@ namespace SignInSignUp.UI
         DataTable dt = new DataTable();
         Chef chef;
         List<(string name, string quantity)> items = new List<(string name, string quantity)>();
+        int selectedRow;
 
         public MakeDeal()
         {
@@ -197,6 +198,39 @@ namespace SignInSignUp.UI
             ManageOrders o = new ManageOrders(this.Size, this.Location, chef);
             o.Show();
             this.Hide();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    selectedRow = dataGridView1.SelectedRows[0].Index;
+
+                    if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
+                    {
+                        DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+
+                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["DealName"].Value != null)
+                        {
+                            int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
+
+                            ObjectHandler.GetDealDL().RemoveDeal(id);
+                            LoadData();
+                            selectedRow = -1;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete");
+            }
         }
     }
 }

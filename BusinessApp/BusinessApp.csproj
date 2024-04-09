@@ -222,6 +222,12 @@
     <Compile Include="UI\Navbar.Designer.cs">
       <DependentUpon>Navbar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\OrderDeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OrderDeal.Designer.cs">
+      <DependentUpon>OrderDeal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\ObjectHandler.cs" />
     <Compile Include="UI\Prompt.cs" />
     <Compile Include="UI\SendNotifications.cs">
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Navbar.resx">
       <DependentUpon>Navbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OrderDeal.resx">
+      <DependentUpon>OrderDeal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SendNotifications.resx">
       <DependentUpon>SendNotifications.cs</DependentUpon>
