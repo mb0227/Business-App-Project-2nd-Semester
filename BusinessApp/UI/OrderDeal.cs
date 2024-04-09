@@ -20,6 +20,7 @@ namespace SignInSignUp.UI
         private CustomerNavBar cNavBar;
         DataTable dt = new DataTable();
         int selectedRow;
+
         public OrderDeal()
         {
             InitializeComponent();
@@ -40,7 +41,6 @@ namespace SignInSignUp.UI
             this.Size = size;
             this.Location = location;
         }
-
 
         private void InitializeUserControls()
         {

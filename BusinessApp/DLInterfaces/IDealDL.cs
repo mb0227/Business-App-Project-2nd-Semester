@@ -13,6 +13,6 @@ namespace RMS.DL
         void SaveDeal(Deal deal);
         void RemoveDeal(int id);
         Deal GetDeal(int id);
-
+        Deal GetDeal(string name);
     }
 }

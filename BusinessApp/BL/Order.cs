@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static TheArtOfDevHtmlRenderer.Adapters.RGraphicsPath;
 
 namespace RMS.BL
 {
@@ -12,8 +13,8 @@ namespace RMS.BL
         public enum OrderStatus
         {
             Pending,
-            Processing,
-            Shipped,
+            Prepared,
+            PickedUp,
             Delivered,
             Cancelled,
             Refunded      
@@ -31,6 +32,15 @@ namespace RMS.BL
             CustomerComments = customerComments;
             CalculateTotalPrice();
             CustomerID = id;
+            PaymentMethod = paymentMethod;
+        }
+        public Order(List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod)
+        {
+            ProductsOrdered = products;
+            Status = orderStatus;
+            OrderDate = orderDate;
+            CustomerComments = customerComments;
+            CalculateTotalPrice();
             PaymentMethod = paymentMethod;
         }
 
@@ -55,6 +65,17 @@ namespace RMS.BL
         private int CustomerID;
         private string PaymentMethod;
 
+
+        public string GetProductsString()
+        {
+            StringBuilder cartString = new StringBuilder();
+
+            foreach (var orderedProduct in ProductsOrdered)
+            {
+                cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
+            }
+            return cartString.ToString().TrimEnd(',');
+        }
         private void CalculateTotalPrice()
         {
             TotalPrice = 0;

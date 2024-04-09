@@ -15,8 +15,8 @@ namespace RMS.BL
         protected List <OrderedProduct> Cart;
         protected int UserID;
 
-        protected int CustomerID;//for reading data
-
+        protected int CustomerID;
+        
         public Customer(string username)
         {
             Username = username;

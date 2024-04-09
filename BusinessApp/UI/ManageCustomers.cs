@@ -165,7 +165,6 @@ namespace SSC.UI
         {
             foreach (Customer c in ObjectHandler.GetCustomerDL().GetCustomers())
             {
-                string cartString = CustomerDBDL.ReturnCartString(c);
                 dt.Rows.Add(c.GetID(), c.GetUsername(), c.GetContact(), c.GetStatus(), c.GetGender(), CustomerDBDL.ReturnCartString(c), c.GetUserID());
             }
         }

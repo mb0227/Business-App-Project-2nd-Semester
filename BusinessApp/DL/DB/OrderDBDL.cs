@@ -8,6 +8,9 @@ using System.Drawing;
 using RMS.BL;
 using SSC;
 using static RMS.BL.Order;
+using System.Web.UI.WebControls.WebParts;
+using SSC.UI;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace RMS.DL
@@ -26,7 +29,63 @@ namespace RMS.DL
             Orders.Remove(order);
         }
 
-        public static List<Order> GetOrders()
+        public void UpdateOrderStatus(int id, int status)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE Orders Set Status = @Status Where ID=@ID", connection);
+                command.Parameters.AddWithValue("@ID", id);
+                command.Parameters.AddWithValue("@Status", status);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public List<Order> GetOrders(int status)
+        {
+            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Orders WHERE Status = @Status", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@Status", status);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                List<Order> Orders = new List<Order>();
+                while (reader.Read())
+                {
+                    int orderID = Convert.ToInt32(reader["ID"]);
+                    int customerID = Convert.IsDBNull(reader["CustomerID"]) ? -1 : Convert.ToInt32(reader["CustomerID"]);
+                    string customerComments = reader["CustomerComments"].ToString();
+                    Order.OrderStatus orderStatus = (Order.OrderStatus)Enum.Parse(typeof(Order.OrderStatus), reader["Status"].ToString());
+                    DateTime orderDate = Convert.ToDateTime(reader["OrderDate"]);
+                    string paymentMethod = reader["PaymentMethod"].ToString();            
+
+                    string productsOrdered = reader["ProductsOrdered"].ToString();
+                    List<OrderedProduct> cart = new List<OrderedProduct>();
+
+                    string[] productItems = productsOrdered.Split(',');
+                    foreach (string productItem in productItems)
+                    {
+                        string[] parts = productItem.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
+                        if (parts.Length == 2)
+                        {
+                            string quantity = parts[0].Trim();
+                            string productName = parts[1].Trim();
+
+                            Product product = ObjectHandler.GetProductDL().SearchProductByName(productName);
+                            if (product != null)
+                            {
+                                cart.Add(new OrderedProduct(product, quantity));
+                            }
+                        }
+                    }
+                    Order order = new Order(orderID, cart, orderStatus, orderDate, customerComments, customerID,paymentMethod);
+                    Orders.Add(order);
+                }
+                return Orders;
+            }
+        }
+
+        public List<Order> GetOrders()
         {
             return Orders;
         }
@@ -46,6 +105,30 @@ namespace RMS.DL
 
                 SqlCommand command = new SqlCommand("INSERT INTO Orders (CustomerID, CustomerComments, Status, OrderDate, ProductsOrdered, TotalPrice, PaymentMethod) VALUES (@CustomerID, @CustomerComments, @Status, @OrderDate, @ProductsOrdered,@TotalPrice, @PaymentMethod)", connection);
                 command.Parameters.AddWithValue("@CustomerID", order.GetCustomerID());
+                command.Parameters.AddWithValue("@CustomerComments", order.GetCustomerComments());
+                command.Parameters.AddWithValue("@Status", order.GetStatus());
+                command.Parameters.AddWithValue("@OrderDate", order.GetOrderDate());
+                command.Parameters.AddWithValue("@ProductsOrdered", cartAsString);
+                command.Parameters.AddWithValue("@TotalPrice", order.GetTotalPrice());
+                command.Parameters.AddWithValue("@PaymentMethod", order.GetPaymentMethod());
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void TakeOrder(Order order)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                StringBuilder cartString = new StringBuilder();
+
+                foreach (var orderedProduct in order.GetProducts())
+                {
+                    cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("INSERT INTO Orders (CustomerComments, Status, OrderDate, ProductsOrdered, TotalPrice, PaymentMethod) VALUES (@CustomerComments, @Status, @OrderDate, @ProductsOrdered,@TotalPrice, @PaymentMethod)", connection);
                 command.Parameters.AddWithValue("@CustomerComments", order.GetCustomerComments());
                 command.Parameters.AddWithValue("@Status", order.GetStatus());
                 command.Parameters.AddWithValue("@OrderDate", order.GetOrderDate());
@@ -77,18 +160,20 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT Status FROM Orders WHERE CustomerID=@ID", connection);
-                command.Parameters.AddWithValue("@ID", customerID);
+                SqlCommand command = new SqlCommand("SELECT Status FROM Orders WHERE CustomerID=@CustomerID", connection);
+                command.Parameters.AddWithValue("@CustomerID", customerID);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    int ans = Convert.ToInt32(reader["ID"]);
-                    return ans;
+                    int status = Convert.ToInt32(reader["Status"]);
+                    return status;
+                }
+                else
+                {
+                    return -1;
                 }
             }
-            return -1;
         }
-
 
         public static int FindOrderByID()
         {
@@ -190,6 +275,30 @@ namespace RMS.DL
                 connection.Open();
                 SqlCommand command = new SqlCommand("DELETE FROM Orders WHERE OrderID=@OrderID", connection);
                 command.Parameters.AddWithValue("@OrderID", order.GetOrderID());
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void OrderDeal(Deal deal)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                StringBuilder cartString = new StringBuilder();
+
+                foreach (var orderedProduct in deal.GetMenu())
+                {
+                    cartString.Append($"{orderedProduct.Quantity} of {orderedProduct.Name},");
+                }
+                string cartAsString = cartString.ToString().TrimEnd(',');
+
+                SqlCommand command = new SqlCommand("INSERT INTO Orders (Status, OrderDate, ProductsOrdered, TotalPrice, PaymentMethod) VALUES ( @Status, @OrderDate, @ProductsOrdered,@TotalPrice, @PaymentMethod)", connection);
+                command.Parameters.AddWithValue("@Status", 0);
+                command.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+                command.Parameters.AddWithValue("@ProductsOrdered", cartAsString);
+                command.Parameters.AddWithValue("@TotalPrice", deal.GetPrice());
+                command.Parameters.AddWithValue("@PaymentMethod", "Cash on Delivery");
                 command.ExecuteNonQuery();
             }
         }

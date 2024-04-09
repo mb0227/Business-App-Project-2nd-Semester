@@ -91,9 +91,9 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                string query = "SELECT U.ID FROM Users U JOIN Customers C on U.ID=C.UserID WHERE C.UserID = @UserID";
+                string query = "SELECT U.ID FROM Users U JOIN Customers C on U.ID = C.UserID WHERE C.ID = @ID";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserID", id);
+                command.Parameters.AddWithValue("@ID", id);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

@@ -235,7 +235,7 @@
             this.viewButton.FillColor = System.Drawing.Color.Teal;
             this.viewButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewButton.ForeColor = System.Drawing.Color.Black;
-            this.viewButton.Location = new System.Drawing.Point(360, 534);
+            this.viewButton.Location = new System.Drawing.Point(353, 536);
             this.viewButton.Name = "viewButton";
             this.viewButton.Size = new System.Drawing.Size(190, 65);
             this.viewButton.TabIndex = 6;
@@ -252,7 +252,7 @@
             this.orderButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.orderButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.orderButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.orderButton.FillColor = System.Drawing.Color.SpringGreen;
+            this.orderButton.FillColor = System.Drawing.Color.Lime;
             this.orderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderButton.ForeColor = System.Drawing.Color.Black;
             this.orderButton.Location = new System.Drawing.Point(581, 449);
@@ -275,7 +275,7 @@
             this.clearCartButton.FillColor = System.Drawing.Color.Red;
             this.clearCartButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearCartButton.ForeColor = System.Drawing.Color.Black;
-            this.clearCartButton.Location = new System.Drawing.Point(360, 449);
+            this.clearCartButton.Location = new System.Drawing.Point(353, 451);
             this.clearCartButton.Name = "clearCartButton";
             this.clearCartButton.Size = new System.Drawing.Size(190, 65);
             this.clearCartButton.TabIndex = 7;

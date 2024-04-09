@@ -229,7 +229,7 @@
       <DependentUpon>OrderDeal.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\ObjectHandler.cs" />
-    <Compile Include="UI\Prompt.cs" />
+    <Compile Include="Utility\Prompt.cs" />
     <Compile Include="UI\SendNotifications.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +330,9 @@
     <EmbeddedResource Include="UI\ManageEmployees.resx">
       <DependentUpon>ManageEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageOrders.resx">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ManageProducts.resx">
       <DependentUpon>ManageProducts.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaiterDashboard.resx">
+      <DependentUpon>WaiterDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -12,6 +12,44 @@ namespace RMS.DL
 {
     public class DealDBDL : IDealDL
     {
+
+        public Deal GetDeal(string name)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                List<Deal> deals = new List<Deal>();
+                SqlCommand command = new SqlCommand("SELECT * FROM Deals", connection);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    int dealId = Convert.ToInt32(reader["ID"]);
+                    string Name = reader["DealName"].ToString();
+                    string items = reader["Items"].ToString();
+                    decimal p = Convert.ToDecimal(reader["TotalPrice"]);
+                    double price = Convert.ToDouble(p);
+
+                    string[] parts = items.Split(',');
+
+                    List<(string name, string quantity)> menu = new List<(string name, string quantity)>();
+
+                    foreach (string part in parts)
+                    {
+                        string[] subParts = part.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
+                        if (subParts.Length == 2)
+                        {
+                            string quantity = subParts[0].Trim();
+                            string n = subParts[1].Trim();
+
+                            menu.Add((n, quantity));
+                        }
+                    }
+                    return new Deal(dealId, Name, price, menu);
+                }
+            }
+            return null;
+        }
+
         public List<Deal> GetDeals()
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -34,7 +72,7 @@ namespace RMS.DL
 
                     foreach (string part in parts)
                     {
-                         string[] subParts = part.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
+                        string[] subParts = part.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
                         if (subParts.Length == 2)
                         {
                             string quantity = subParts[0].Trim();
@@ -78,10 +116,10 @@ namespace RMS.DL
                             string quantity = subParts[0].Trim();
                             string n = subParts[1].Trim();
 
-                            menu.Add((name, quantity));
+                            menu.Add((n, quantity));
                         }
                     }
-                    return new Deal(id, name, price, menu);
+                    return new Deal(dealId, name, price, menu);
                 }
             }
             return null;

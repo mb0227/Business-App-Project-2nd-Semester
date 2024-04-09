@@ -237,6 +237,7 @@ namespace SSC.UI
                     ObjectHandler.GetOrderDL().SaveOrder(order);
                     customer.GetCart().Clear();
                     ObjectHandler.GetCustomerDL().SaveCart(customer);
+                    ClearTextBoxes();
                 }
             }
             else
@@ -262,9 +263,12 @@ namespace SSC.UI
         {
             if (menuComboBox.Text != "" && quantitiesComboBox.Text!="")
             {
-                customer.AddToCart(ObjectHandler.GetProductDL().SearchProductByName(menuComboBox.Text), quantitiesComboBox.Text);
-                ObjectHandler.GetCustomerDL().SaveCart(customer);
-                ClearTextBoxes();
+                Product product = ObjectHandler.GetProductDL().SearchProductByName(menuComboBox.Text);
+                if (product != null)
+                {
+                    customer.AddToCart(product, quantitiesComboBox.Text);
+                    ObjectHandler.GetCustomerDL().SaveCart(customer);
+                }
             }                     
         }
 
@@ -282,8 +286,19 @@ namespace SSC.UI
         {
             if(ObjectHandler.GetOrderDL().HasOrder(customer.GetID())!=-1)
             {
-                MessageBox.Show($"Your order is being prepared", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 0)
+                {
+                    MessageBox.Show($"Your order is being prepared", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if(ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 1)
+                {
+                    MessageBox.Show($"Your order has been prepared and ready to be delivered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 2)
+                {
+                    MessageBox.Show($"Your order has been picked up and ready to be delivered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }            
             else
             {
                 MessageBox.Show("Please place an order to track you order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

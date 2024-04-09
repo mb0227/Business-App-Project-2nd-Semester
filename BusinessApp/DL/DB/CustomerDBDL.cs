@@ -43,7 +43,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand($"SELECT C.ID,C.Username, C.Contact, C.Status, C.Gender, C.Cart FROM Customers AS C JOIN Users AS U ON C.UserID = {userID}", connection);
+                SqlCommand command = new SqlCommand($"SELECT C.ID,C.Username, C.Contact, C.Status, C.Gender, C.Cart,U.ID FROM Customers AS C JOIN Users AS U ON C.UserID = {userID}", connection);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {

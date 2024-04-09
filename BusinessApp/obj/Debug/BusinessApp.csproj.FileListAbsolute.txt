@@ -152,3 +152,5 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.View
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.AddVariants.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.MakeDeal.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.OrderDeal.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ManageOrders.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.WaiterDashboard.resources
