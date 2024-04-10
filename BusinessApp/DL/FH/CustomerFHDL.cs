@@ -19,14 +19,7 @@ namespace RMS.DL
 
             using (StreamWriter writer = new StreamWriter(path, append: true))
             {
-                StringBuilder cartString = new StringBuilder();
-                foreach (var orderedProduct in customer.GetCart())
-                {
-                    cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
-                }
-                string cartAsString = cartString.ToString().TrimEnd(',');
-
-                writer.WriteLine($"{id},{customer.GetUsername()}, {customer.GetContact()}, {customer.GetStatus()}, {customer.GetGender()}, {cartAsString},{customer.GetUserID()}");
+                writer.WriteLine($"{id},{customer.GetUsername()}, {customer.GetContact()}, {customer.GetStatus()}, {customer.GetGender()}, {UtilityFunctions.GetCartString(customer.GetCart())},{customer.GetUserID()}");
             }
         }
 
@@ -53,13 +46,7 @@ namespace RMS.DL
             string path = UtilityFunctions.GetPath("Customers.txt");
             using (StreamWriter writer = new StreamWriter(path, append: true))
             {
-                StringBuilder cartString = new StringBuilder();
-                foreach (var orderedProduct in customer.GetCart())
-                {
-                    cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
-                }
-                string cartAsString = cartString.ToString().TrimEnd(',');
-                writer.WriteLine($"{customer.GetUsername()}, {cartAsString}");
+                writer.WriteLine($"{customer.GetUsername()}, {UtilityFunctions.GetCartString(customer.GetCart())}");
             }
         }
 
@@ -167,21 +154,7 @@ namespace RMS.DL
 
                         List<OrderedProduct> cart = new List<OrderedProduct>();
                         string productsOrdered = parts[5].Trim();
-                        string[] productItems = productsOrdered.Split(',');
-                        foreach (string productItem in productItems)
-                        {
-                            string[] itemParts = productItem.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
-                            if (itemParts.Length == 2)
-                            {
-                                string quantity = itemParts[0].Trim();
-                                string productName = itemParts[1].Trim();
-                                Product product = ObjectHandler.GetProductDL().SearchProductByName(productName);
-                                if (product != null)
-                                {
-                                    cart.Add(new OrderedProduct(product, quantity));
-                                }
-                            }
-                        }
+                        UtilityFunctions.GetCartList(productsOrdered);
 
                         customers.Add(new Customer());
                     }
@@ -211,14 +184,7 @@ namespace RMS.DL
 
                     if (id == customer.GetUserID())
                     {
-                        StringBuilder cartString = new StringBuilder();
-                        foreach (var orderedProduct in customer.GetCart())
-                        {
-                            cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
-                        }
-                        string cartAsString = cartString.ToString().TrimEnd(',');
-
-                        writer.WriteLine($"{id}, {username}, {contact}, {status}, {gender}, {cartAsString}");
+                        writer.WriteLine($"{id}, {username}, {contact}, {status}, {gender}, {UtilityFunctions.GetCartString(customer.GetCart())}");
                     }
                     else
                     {

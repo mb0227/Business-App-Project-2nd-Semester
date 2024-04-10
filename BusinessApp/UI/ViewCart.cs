@@ -23,7 +23,7 @@ namespace SSC.UI
         DataTable dataTable = new DataTable();
         Customer customer;
         private CustomerHeader cHeader;
-        private CustomerNavBar cNavBar;
+        private CustomerNavbar cNavBar;
         int selectedRow;
 
         public ViewCart()
@@ -51,7 +51,7 @@ namespace SSC.UI
             cHeader.Width = this.Width;
             cHeader.BringToFront();
 
-            cNavBar = new CustomerNavBar();
+            cNavBar = new CustomerNavbar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 

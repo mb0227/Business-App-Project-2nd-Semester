@@ -21,16 +21,8 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-
-                StringBuilder cartString = new StringBuilder();
-                foreach (var orderedProduct in customer.GetCart())
-                {
-                    cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
-                }
-                string cartAsString = cartString.ToString().TrimEnd(',');
-
                 SqlCommand command = new SqlCommand("UPDATE Customers SET Cart=@Cart WHERE Username=@Username", connection);
-                command.Parameters.AddWithValue("@Cart", cartAsString);
+                command.Parameters.AddWithValue("@Cart", UtilityFunctions.GetCartString(customer.GetCart()));
                 command.Parameters.AddWithValue("@Username", customer.GetUsername());
                 command.ExecuteNonQuery();
             }
@@ -63,26 +55,7 @@ namespace RMS.DL
                     string status = reader["Status"].ToString();
                     string gender = reader["Gender"].ToString();
                     string productsOrdered = reader["Cart"].ToString();
-
-                    List<OrderedProduct> cart = new List<OrderedProduct>();
-                    string[] productItems = productsOrdered.Split(',');
-                    foreach (string productItem in productItems)
-                    {
-                        string[] parts = productItem.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
-                        if (parts.Length == 2)
-                        {
-                            string quantity = parts[0].Trim(); 
-                            string productName = parts[1].Trim(); 
-
-                            Product product = ObjectHandler.GetProductDL().SearchProductByName(productName);
-                            if (product != null)
-                            {
-                                cart.Add(new OrderedProduct(product, quantity));
-                            }
-                        }
-                    }
-
-                    Customer customer = new Customer(id,username, contact, status, gender, cart, userID);
+                    Customer customer = new Customer(id,username, contact, status, gender, UtilityFunctions.GetCartList(productsOrdered), userID);
                     return customer;
                 }
                 return null;
@@ -135,39 +108,11 @@ namespace RMS.DL
                     string gender = reader["Gender"].ToString();
                     string productsOrdered = reader["Cart"].ToString();
                     int userID = Convert.ToInt32(reader["UserID"]);
-
-                    List<OrderedProduct> cart = new List<OrderedProduct>();
-                    string[] productItems = productsOrdered.Split(',');
-                    foreach (string productItem in productItems)
-                    {
-                        string[] parts = productItem.Split(':');
-                        if (parts.Length == 2)
-                        {
-                            string productName = parts[1];
-                            string quantity = parts[0];
-                            Product product = ObjectHandler.GetProductDL().SearchProductByName(productName);
-                            if (product != null)
-                            {
-                                cart.Add(new OrderedProduct(product, quantity));
-                            }
-                        }
-                    }
-                    Customer customer = new Customer(id,username, contact, status, gender, cart, userID);
+                    Customer customer = new Customer(id,username, contact, status, gender, UtilityFunctions.GetCartList(productsOrdered), userID);
                     customers.Add(customer);
                 }
                 return customers;
             }
-        }
-
-        public static string ReturnCartString(Customer c)
-        {
-            StringBuilder cartString = new StringBuilder();
-            foreach (var orderedProduct in c.GetCart())
-            {
-                cartString.Append($"{orderedProduct.GetQuantity()}:{orderedProduct.GetProduct().GetProductName()},");
-            }
-            string cartAsString = cartString.ToString().TrimEnd(',');
-            return cartAsString;
         }
 
         public void UpdateCart(Customer customer)
@@ -175,16 +120,8 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-
-                StringBuilder cartString = new StringBuilder();
-                foreach (var orderedProduct in customer.GetCart())
-                {
-                    cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
-                }
-                string cartAsString = cartString.ToString().TrimEnd(',');
-
                 SqlCommand command = new SqlCommand("UPDATE Customers SET Cart=@Cart WHERE Username=@Username", connection);
-                command.Parameters.AddWithValue("@Cart", cartAsString);
+                command.Parameters.AddWithValue("@Cart", UtilityFunctions.GetCartString(customer.GetCart()));
                 command.Parameters.AddWithValue("@Username", customer.GetUsername());
                 command.ExecuteNonQuery();
             }

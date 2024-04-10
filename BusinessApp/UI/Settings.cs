@@ -16,7 +16,7 @@ namespace SSC.UI
     public partial class Settings : Form
     {
         private CustomerHeader cHeader;
-        private CustomerNavBar cNavBar;
+        private CustomerNavbar cNavBar;
         private Customer customer;
         private bool nVisible = false;
         Button markRead = new Button();
@@ -46,7 +46,7 @@ namespace SSC.UI
             cHeader.Width = this.Width;
             cHeader.BringToFront();
 
-            cNavBar = new CustomerNavBar();
+            cNavBar = new CustomerNavbar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 

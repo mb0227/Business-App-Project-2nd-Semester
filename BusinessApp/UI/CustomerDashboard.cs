@@ -16,7 +16,7 @@ namespace SSC
     public partial class CustomerDashboard : Form
     {
         private CustomerHeader cHeader;
-        private CustomerNavBar cNavBar;
+        private CustomerNavbar cNavBar;
         private Customer customer;
 
         public CustomerDashboard()
@@ -44,7 +44,7 @@ namespace SSC
             cHeader.Width = this.Width;
             cHeader.BringToFront(); 
 
-            cNavBar = new CustomerNavBar();
+            cNavBar = new CustomerNavbar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 

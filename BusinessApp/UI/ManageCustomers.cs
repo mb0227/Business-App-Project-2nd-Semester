@@ -156,8 +156,7 @@ namespace SSC.UI
             dataGridView1.DataSource = dt;
             foreach (Customer c in ObjectHandler.GetCustomerDL().GetCustomers())
             {
-                string cartString = CustomerDBDL.ReturnCartString(c);
-                dt.Rows.Add(c.GetID(), c.GetUsername(), c.GetContact(), c.GetStatus(), c.GetGender(), CustomerDBDL.ReturnCartString(c), c.GetUserID());
+                dt.Rows.Add(c.GetID(), c.GetUsername(), c.GetContact(), c.GetStatus(), c.GetGender(), UtilityFunctions.GetCartString(c.GetCart()), c.GetUserID());
             }
         }
 
@@ -165,7 +164,7 @@ namespace SSC.UI
         {
             foreach (Customer c in ObjectHandler.GetCustomerDL().GetCustomers())
             {
-                dt.Rows.Add(c.GetID(), c.GetUsername(), c.GetContact(), c.GetStatus(), c.GetGender(), CustomerDBDL.ReturnCartString(c), c.GetUserID());
+                dt.Rows.Add(c.GetID(), c.GetUsername(), c.GetContact(), c.GetStatus(), c.GetGender(), UtilityFunctions.GetCartString(c.GetCart()), c.GetUserID());
             }
         }
 

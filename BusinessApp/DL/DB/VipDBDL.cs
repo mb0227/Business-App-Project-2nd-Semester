@@ -61,10 +61,10 @@ namespace RMS.DL
                 {
                     if (reader.Read())
                     {
-                        int id = reader.GetInt32(0);
-                        string membershipLevel = reader.GetString(1);
-                        int customerId = reader.GetInt32(2);
-                        string vouchers = reader.GetString(3);
+                        int id = Convert.ToInt32(reader["ID"]);
+                        string membershipLevel = Convert.ToString(reader["MembershipLevel"]);
+                        int customerId = Convert.ToInt32(reader["CustomerID"]);
+                        string vouchers = Convert.ToString(reader["Vouchers"]);
                         List<string> Vouchers = new List<string>(vouchers.Split(','));
                         return new VIP(id, membershipLevel, customerId, Vouchers);
                     }

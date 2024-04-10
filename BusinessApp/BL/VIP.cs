@@ -78,11 +78,29 @@ namespace RMS.BL
         public int GetVoucherID()
         {
             string[] numbersArray = (string.Join(",", Vouchers)).Split(',');
-            int[] numbers = Array.ConvertAll(numbersArray, int.Parse);
+            List<int> numbers = new List<int>();
+
+            foreach (string numberString in numbersArray)
+            {
+                if (int.TryParse(numberString, out int number))
+                {
+                    numbers.Add(number);
+                }
+            }
+
             Random random = new Random();
-            int randomIndex = random.Next(0, numbers.Length);
-            Vouchers.RemoveAt(randomIndex);
-            return numbers[randomIndex];
+
+            if (numbers.Count > 0)
+            {
+                int randomIndex = random.Next(0, numbers.Count);
+                int selectedNumber = numbers[randomIndex];
+                Vouchers.RemoveAt(randomIndex);
+                return selectedNumber;
+            }
+            else
+            {
+                return 22;
+            }
         }
     }
 }

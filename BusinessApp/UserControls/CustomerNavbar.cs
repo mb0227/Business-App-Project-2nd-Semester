@@ -11,14 +11,14 @@ using SSC.UI;
 
 namespace SSC
 {
-    public partial class CustomerNavBar : UserControl
+    public partial class CustomerNavbar : UserControl
     {
         bool sidebarExpand;
         public bool IsNavBarCollapsed { get; private set; }
         public event EventHandler<string> NavigationRequested;
         public event EventHandler<bool> NavBarCollapsed;
 
-        public CustomerNavBar()
+        public CustomerNavbar()
         {
             InitializeComponent();
             IsNavBarCollapsed = true; 
@@ -92,6 +92,10 @@ namespace SSC
         private void settingButton_Click(object sender, EventArgs e)
         {
             OnNavigationRequested("settings");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

@@ -13,6 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 using RMS.BL;
 using RMS.DL;
 using SignInSignUp.UI;
+using static TheArtOfDevHtmlRenderer.Adapters.RGraphicsPath;
 
 namespace SSC.UI
 {
@@ -20,7 +21,7 @@ namespace SSC.UI
     {
         DataTable dataTable = new DataTable();
         private CustomerHeader cHeader;
-        private CustomerNavBar cNavBar;
+        private CustomerNavbar cNavBar;
         private Customer customer;
 
         public CustomerOrderFood()
@@ -48,7 +49,7 @@ namespace SSC.UI
             cHeader.Width = this.Width;
             cHeader.BringToFront();
 
-            cNavBar = new CustomerNavBar();
+            cNavBar = new CustomerNavbar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 
@@ -229,7 +230,7 @@ namespace SSC.UI
 
         private void orderButton_Click(object sender, EventArgs e)
         {
-            if (customer.GetCart().Count > 0)
+            if (customer.GetCart().Count > 0 )
             {
                 if (customer.GetStatus() == "Regular")
                 {
@@ -244,16 +245,17 @@ namespace SSC.UI
                 }
                 else if (customer.GetStatus() == "VIP")
                 {
-                    VIP vip = ObjectHandler.GetVipDL().GetVIP(customer.GetID());                    
-                    Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
-                    Order order;
-                    if (v.GetExpirationDate() < DateTime.Today)
+                    Order order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                    VIP vip = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
+                    ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), UtilityFunctions.AwardVouchers(10));
+                    if (vip.GetVouchers().Count > 0)
                     {
-                        order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
-                    }
-                    else
-                    {
-                        order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                        Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
+                        if (v.GetExpirationDate() > DateTime.Today)
+                        {
+                            order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                            MessageBox.Show("You got "+ v.GetDiscount().ToString()+" discount");
+                        }
                     }
                     ObjectHandler.GetOrderDL().SaveOrder(order);
                     customer.GetCart().Clear();

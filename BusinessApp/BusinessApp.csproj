@@ -156,11 +156,11 @@
     <Compile Include="UI\CustomerFeedback.Designer.cs">
       <DependentUpon>CustomerFeedback.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\CustomerNavBar.cs">
+    <Compile Include="UserControls\CustomerNavbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\CustomerNavBar.Designer.cs">
-      <DependentUpon>CustomerNavBar.cs</DependentUpon>
+    <Compile Include="UserControls\CustomerNavbar.Designer.cs">
+      <DependentUpon>CustomerNavbar.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\CustomerOrderFood.cs">
       <SubType>Form</SubType>
@@ -174,7 +174,7 @@
     <Compile Include="UI\CustomerBookTable.Designer.cs">
       <DependentUpon>CustomerBookTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\GradientPanel.cs">
+    <Compile Include="Utility\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Help.cs">
@@ -231,10 +231,10 @@
     <Compile Include="UI\ManageTables.Designer.cs">
       <DependentUpon>ManageTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Navbar.cs">
+    <Compile Include="UserControls\Navbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Navbar.Designer.cs">
+    <Compile Include="UserControls\Navbar.Designer.cs">
       <DependentUpon>Navbar.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\OrderDeal.cs">
@@ -271,10 +271,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\CustomerHeader.cs">
+    <Compile Include="UserControls\CustomerHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\CustomerHeader.Designer.cs">
+    <Compile Include="UserControls\CustomerHeader.Designer.cs">
       <DependentUpon>CustomerHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\UtilityFunctions.cs" />
@@ -327,8 +327,8 @@
     <EmbeddedResource Include="UI\CustomerFeedback.resx">
       <DependentUpon>CustomerFeedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\CustomerNavBar.resx">
-      <DependentUpon>CustomerNavBar.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\CustomerNavbar.resx">
+      <DependentUpon>CustomerNavbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerOrderFood.resx">
       <DependentUpon>CustomerOrderFood.cs</DependentUpon>
@@ -360,7 +360,7 @@
     <EmbeddedResource Include="UI\ManageTables.resx">
       <DependentUpon>ManageTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Navbar.resx">
+    <EmbeddedResource Include="UserControls\Navbar.resx">
       <DependentUpon>Navbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\OrderDeal.resx">
@@ -388,7 +388,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\CustomerHeader.resx">
+    <EmbeddedResource Include="UserControls\CustomerHeader.resx">
       <DependentUpon>CustomerHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ViewCart.resx">

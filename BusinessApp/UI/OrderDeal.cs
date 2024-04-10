@@ -17,7 +17,7 @@ namespace SignInSignUp.UI
     {
         private Customer customer;
         private CustomerHeader cHeader;
-        private CustomerNavBar cNavBar;
+        private CustomerNavbar cNavBar;
         DataTable dt = new DataTable();
         int selectedRow;
 
@@ -52,7 +52,7 @@ namespace SignInSignUp.UI
             cHeader.Width = this.Width;
             cHeader.BringToFront();
 
-            cNavBar = new CustomerNavBar();
+            cNavBar = new CustomerNavbar();
             Controls.Add(cNavBar);
             cNavBar.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Bottom;
 
@@ -146,10 +146,16 @@ namespace SignInSignUp.UI
 
                         if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["DealName"].Value != null)
                         {
-                            int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
-                            Deal deal = ObjectHandler.GetDealDL().GetDeal(id);
-                            ObjectHandler.GetOrderDL().OrderDeal(deal, customer.GetID());
-                            selectedRow = -1;
+                            if (customer.GetStatus() == "Regular")
+                            {
+                                int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
+                                Regular regular = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
+                                regular.AddLoyaltyPoints(5);
+                                ObjectHandler.GetRegularDL().UpdateRegular(regular);
+                                Deal deal = ObjectHandler.GetDealDL().GetDeal(id);
+                                ObjectHandler.GetOrderDL().OrderDeal(deal, customer.GetID());
+                                selectedRow = -1;
+                            }
                         }
                     }
                 }

@@ -1,4 +1,5 @@
 ﻿using RMS.BL;
+using SSC.UI;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -67,10 +68,10 @@ namespace SSC
 
         public static Voucher GetVoucher(int ID)
         {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            using (SqlConnection connection = GetSqlConnection())
             {
                 connection.Open();
-                string selectQuery = $"SELECT * FROM Vouchers ID=@ID";
+                string selectQuery = "SELECT * FROM Vouchers WHERE ID=@ID";
                 using (SqlCommand command = new SqlCommand(selectQuery, connection))
                 {
                     command.Parameters.AddWithValue("@ID", ID);
@@ -85,8 +86,70 @@ namespace SSC
                     }
                     reader.Close();
                 }
+
             }
             return null;
+        }
+
+        public static string GetCartString(List <OrderedProduct> cart)
+        {
+            StringBuilder cartString = new StringBuilder();
+            foreach (var orderedProduct in cart)
+            {
+                cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()};");
+            }
+            return cartString.ToString().TrimEnd(';');
+        }
+
+        public static List<OrderedProduct> GetCartList(string productsOrdered)
+        {
+            List<OrderedProduct> cart = new List<OrderedProduct>();
+            string[] productItems = productsOrdered.Split(';');
+            foreach (string productItem in productItems)
+            {
+                string[] parts = productItem.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
+                if (parts.Length == 2)
+                {
+                    string quantity = parts[0].Trim();
+                    string productName = parts[1].Trim();
+
+                    Product product = ObjectHandler.GetProductDL().SearchProductByName(productName);
+                    if (product != null)
+                    {
+                        cart.Add(new OrderedProduct(product, quantity));
+                    }
+                }
+            }
+            return cart;
+        }
+
+        public static string GetDealString(Deal deal)
+        {
+            StringBuilder cartString = new StringBuilder();
+
+            foreach (var orderedProduct in deal.GetMenu())
+            {
+                cartString.Append($"{orderedProduct.Quantity} of {orderedProduct.Name};");
+            }
+            return cartString.ToString().TrimEnd(';');
+        }
+
+        public static List<(string , string )> GetDealList(string items)
+        {
+            string[] parts = items.Split(';');
+            List<(string name, string quantity)> menu = new List<(string name, string quantity)>();
+            foreach (string part in parts)
+            {
+                string[] subParts = part.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
+                if (subParts.Length == 2)
+                {
+                    string quantity = subParts[0].Trim();
+                    string n = subParts[1].Trim();
+
+                    menu.Add((n, quantity));
+                }
+            }
+            return menu;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SSC
 {
-    partial class CustomerNavBar
+    partial class CustomerNavbar
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerNavBar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerNavbar));
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.settingButton = new Guna.UI2.WinForms.Guna2Button();
             this.helpButton = new Guna.UI2.WinForms.Guna2Button();
@@ -173,6 +173,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 50);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bars
             // 
@@ -202,14 +203,14 @@
             this.sidebar.Size = new System.Drawing.Size(219, 1080);
             this.sidebar.TabIndex = 0;
             // 
-            // CustomerNavBar
+            // CustomerNavbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.sidebar);
             this.ForeColor = System.Drawing.Color.MintCream;
-            this.Name = "CustomerNavBar";
+            this.Name = "CustomerNavbar";
             this.Size = new System.Drawing.Size(219, 451);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bars)).EndInit();

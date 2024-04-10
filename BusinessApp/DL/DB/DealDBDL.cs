@@ -27,23 +27,7 @@ namespace RMS.DL
                     string items = reader["Items"].ToString();
                     decimal p = Convert.ToDecimal(reader["TotalPrice"]);
                     double price = Convert.ToDouble(p);
-
-                    string[] parts = items.Split(',');
-
-                    List<(string name, string quantity)> menu = new List<(string name, string quantity)>();
-
-                    foreach (string part in parts)
-                    {
-                        string[] subParts = part.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
-                        if (subParts.Length == 2)
-                        {
-                            string quantity = subParts[0].Trim();
-                            string n = subParts[1].Trim();
-
-                            menu.Add((n, quantity));
-                        }
-                    }
-                    return new Deal(dealId, Name, price, menu);
+                    return new Deal(dealId, Name, price, UtilityFunctions.GetDealList(items));
                 }
             }
             return null;
@@ -64,23 +48,7 @@ namespace RMS.DL
                     string items = reader["Items"].ToString();
                     decimal p = Convert.ToDecimal(reader["TotalPrice"]);
                     double price = Convert.ToDouble(p);
-
-                    string[] parts = items.Split(',');
-
-                    List<(string itemName, string quantity)> menu = new List<(string itemName, string quantity)>();
-
-                    foreach (string part in parts)
-                    {
-                        string[] subParts = part.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
-                        if (subParts.Length == 2)
-                        {
-                            string quantity = subParts[0].Trim();
-                            string n = subParts[1].Trim();
-
-                            menu.Add((n, quantity));
-                        }
-                    }
-                    Deal deal = new Deal(id, name, price, menu);
+                    Deal deal = new Deal(id, name, price, UtilityFunctions.GetDealList(items));
                     deals.Add(deal);
                 }
                 return deals;
@@ -102,23 +70,7 @@ namespace RMS.DL
                     string items = reader["Items"].ToString();
                     decimal p = Convert.ToDecimal(reader["TotalPrice"]);
                     double price = Convert.ToDouble(p);
-
-                    string[] parts = items.Split(',');
-
-                    List<(string name, string quantity)> menu = new List<(string name, string quantity)>();
-
-                    foreach (string part in parts)
-                    {
-                        string[] subParts = part.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
-                        if (subParts.Length == 2)
-                        {
-                            string quantity = subParts[0].Trim();
-                            string n = subParts[1].Trim();
-
-                            menu.Add((n, quantity));
-                        }
-                    }
-                    return new Deal(dealId, name, price, menu);
+                    return new Deal(dealId, name, price, UtilityFunctions.GetDealList(items));
                 }
             }
             return null;

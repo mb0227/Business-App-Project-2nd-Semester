@@ -29,6 +29,15 @@ namespace SSC
 
         }
 
+        private void ReplaceCommas()
+        {
+            username.Text = username.Text.Replace(",", "");
+            email.Text = email.Text.Replace(",", "");
+            phoneNo.Text = phoneNo.Text.Replace(",", "");
+            password.Text = password.Text.Replace(",", "");
+            password2.Text = password2.Text.Replace(",", "");
+        }               
+
         private bool CheckValidations()
         {
             if (string.IsNullOrWhiteSpace(username.Text.Trim()))
@@ -133,6 +142,7 @@ namespace SSC
         {
             if(CheckValidations())
             {
+                ReplaceCommas();
                 User user = new User(email.Text, password.Text, "Customer");
                 ObjectHandler.GetUserDL().SaveUser(user);
                 Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
