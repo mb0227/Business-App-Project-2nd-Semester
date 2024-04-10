@@ -9,19 +9,14 @@ namespace RMS.BL
     public class VIP : Customer
     {
         private string MembershipLevel;
-        private List<Voucher> Vouchers = new List<Voucher>();
+        private List<string> Vouchers = new List<string>();
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         private int CustomerID;
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
         private int ID;
-        public VIP(string username, string contact, string status, string gender, string membershipLevel, int customerID, List<Voucher> vouchers) : base(username, contact, status, gender)
+        public VIP(string username, string contact, string status, string gender, string membershipLevel, int customerID, List<string> vouchers) : base(username, contact, status, gender)
         {
-            Username = username;
-            Contact = contact;
-            Status = status;
-            Gender = gender;
-            Cart = new List<OrderedProduct>();
             MembershipLevel = membershipLevel;
             CustomerID = customerID;
             Vouchers = vouchers;
@@ -35,14 +30,19 @@ namespace RMS.BL
             CustomerID = customerID;
         }
 
-        public void AddVoucher(Voucher voucher)
+        public VIP(int id, string membershipLevel, int customerID) 
         {
-            Vouchers.Add(voucher);
+            ID = id;
+            MembershipLevel = membershipLevel;
+            CustomerID = customerID;
         }
 
-        public List<Voucher> GetVouchers()
+        public VIP(int id, string membershipLevel, int customerID, List<string> vouchers)
         {
-            return Vouchers;
+            ID = id;
+            MembershipLevel = membershipLevel;
+            CustomerID = customerID;
+            Vouchers = vouchers;
         }
 
         public int GetVipID()
@@ -50,9 +50,9 @@ namespace RMS.BL
             return ID;
         }
 
-        public void SetVouchers(List<Voucher> vouchers)
+        public List<string> GetVouchers()
         {
-            Vouchers = vouchers;
+            return Vouchers;
         }
 
         public string GetMembershipLevel()
@@ -75,9 +75,14 @@ namespace RMS.BL
             CustomerID = id;
         }
 
-        public void RedeemVoucher(Voucher voucher)
+        public int GetVoucherID()
         {
-            Vouchers.Remove(voucher);
+            string[] numbersArray = (string.Join(",", Vouchers)).Split(',');
+            int[] numbers = Array.ConvertAll(numbersArray, int.Parse);
+            Random random = new Random();
+            int randomIndex = random.Next(0, numbers.Length);
+            Vouchers.RemoveAt(randomIndex);
+            return numbers[randomIndex];
         }
     }
 }

@@ -142,12 +142,12 @@ namespace SSC.UI
 
             if (dateTimePicker1.Value < currentDate)
             {
-                errorProvider1.SetError(guna2TextBox1, $"Please enter a valid date for reservation.");
+                errorProvider2.SetError(dateTimePicker1, $"Please enter a valid date for reservation.");
                 return false;
             }
             else
             {
-                errorProvider1.SetError(guna2TextBox1, "");
+                errorProvider2.SetError(dateTimePicker1, "");
             }
 
             int customerID = ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername());
@@ -167,6 +167,7 @@ namespace SSC.UI
             {
                 ObjectHandler.GetReservationDL().SaveReservation(new Reservation(dateTimePicker1.Value,Convert.ToInt32(guna2TextBox1.Text), ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()), int.Parse(comboBox1.Text)));
                 ObjectHandler.GetTableDL().UpdateTable(new Table(ObjectHandler.GetTableDL().GetTableCapacity(int.Parse(comboBox1.Text)), int.Parse(comboBox1.Text), "Booked"));
+                FillComboBox();
             }
         }
 
@@ -220,6 +221,10 @@ namespace SSC.UI
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void CustomerBookTable_Load(object sender, EventArgs e)
+        {
         }
     }
 }

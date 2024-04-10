@@ -11,7 +11,7 @@ namespace RMS.DL
 {
     public class RegularDBDL : IRegularDL
     {
-        public void StoreRegularInDB(Regular regular)
+        public void SaveRegular(Regular regular)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -20,6 +20,39 @@ namespace RMS.DL
                 command.Parameters.AddWithValue("@LoyaltyPoints", regular.GetLoyaltyPoints());
                 command.Parameters.AddWithValue("@CustomerID", regular.GetCustomerID());
                 command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateRegular(Regular regular)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE Regular SET LoyaltyPoints = @LoyaltyPoints WHERE CustomerID=@CustomerID", connection);
+                command.Parameters.AddWithValue("@LoyaltyPoints", regular.GetLoyaltyPoints());
+                command.Parameters.AddWithValue("@CustomerID", regular.GetCustomerID());
+                command.ExecuteNonQuery();
+            }
+        }
+        
+        public Regular GetRegular(int customerID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Regular WHERE CustomerID=@CustomerID", connection);
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        int loyaltyPoints = reader.GetInt32(1);
+
+                        return new Regular(id, loyaltyPoints, customerID);
+                    }
+                }
+                return null;
             }
         }
 
@@ -60,6 +93,5 @@ namespace RMS.DL
                 command.ExecuteNonQuery();
             }
         }
-
     }
 }

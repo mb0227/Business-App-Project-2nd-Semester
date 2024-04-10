@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,29 +20,73 @@ namespace SSC
             return connection;
         }
 
-        public static string ConvertProductVariantToString(ProductVariant variant)
+        public static string GetPath(string filename)
         {
-            string result = $"{variant.GetQuantity()} for {variant.GetPrice()}";
-            return result;
+            string directory = "..//..//Files";
+            return Path.Combine(directory, filename);
         }
 
-        public static ProductVariant ConvertStringToProductVariant(string variantString)
+        public static int AssignID(string path)
         {
-            string[] parts = variantString.Split(new string[] { " for " }, StringSplitOptions.None);
+            int userID = 1;
 
-            if (parts.Length == 2)
+            if (File.Exists(path))
             {
-                string quantityString = parts[0].Trim();
-                double price = double.Parse(parts[1]);
-
-                ProductVariant variant = new ProductVariant(quantityString, price);
-                return variant;
+                string lastLine = File.ReadAllLines(path).LastOrDefault();
+                if (!string.IsNullOrEmpty(lastLine))
+                {
+                    string[] parts = lastLine.Split(',');
+                    if (parts.Length > 0 && int.TryParse(parts[0], out int lastID))
+                    {
+                        userID = lastID + 1;
+                    }
+                }
             }
-            else
-            {
-                return null;
-            }
+            return userID;
         }
 
+        public static List <string> AwardVouchers(int number)
+        {
+            List<string> vouchers = new List<string>();
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                string selectQuery = $"SELECT TOP {number} ID FROM Vouchers ORDER BY NEWID()";
+                using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        vouchers.Add(reader["ID"].ToString());
+                    }
+                    reader.Close();
+                }
+            }
+            return vouchers;
+        }
+
+        public static Voucher GetVoucher(int ID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string selectQuery = $"SELECT * FROM Vouchers ID=@ID";
+                using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", ID);
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["ID"]);
+                        DateTime e = Convert.ToDateTime(reader["ExpirationDate"]);
+                        Decimal d = Convert.ToDecimal(reader["Value"]);
+                        double v = Convert.ToDouble(d);
+                        return new Voucher(id, e, v);
+                    }
+                    reader.Close();
+                }
+            }
+            return null;
+        }
     }
 }

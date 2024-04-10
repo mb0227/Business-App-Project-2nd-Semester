@@ -18,5 +18,6 @@ namespace RMS.DL
         void UpdateCredentials(string newCred, string credType, int userID);
         void SaveCart(Customer customer);
         void UpdateCart(Customer customer);
+        void UpdateStatus(string status, int id);
     }
 }

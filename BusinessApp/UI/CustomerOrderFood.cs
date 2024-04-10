@@ -237,6 +237,28 @@ namespace SSC.UI
                     ObjectHandler.GetOrderDL().SaveOrder(order);
                     customer.GetCart().Clear();
                     ObjectHandler.GetCustomerDL().SaveCart(customer);
+                    Regular regular = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
+                    regular.AddLoyaltyPoints(5);
+                    ObjectHandler.GetRegularDL().UpdateRegular(regular);
+                    ClearTextBoxes();
+                }
+                else if (customer.GetStatus() == "VIP")
+                {
+                    VIP vip = ObjectHandler.GetVipDL().GetVIP(customer.GetID());                    
+                    Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
+                    Order order;
+                    if (v.GetExpirationDate() < DateTime.Today)
+                    {
+                        order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                    }
+                    else
+                    {
+                        order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                    }
+                    ObjectHandler.GetOrderDL().SaveOrder(order);
+                    customer.GetCart().Clear();
+                    ObjectHandler.GetCustomerDL().SaveCart(customer);
+                    ObjectHandler.GetVipDL().UpdateVIP(vip.GetMembershipLevel(), customer.GetID(), vip.GetVouchers());
                     ClearTextBoxes();
                 }
             }

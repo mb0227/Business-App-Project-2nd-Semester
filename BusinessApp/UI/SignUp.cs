@@ -26,6 +26,7 @@ namespace SSC
             InitializeComponent();
             this.Size = size;
             this.Location = location;
+
         }
 
         private bool CheckValidations()
@@ -138,7 +139,7 @@ namespace SSC
                 customer.SetUserID(ObjectHandler.GetUserDL().GetUserID(email.Text));
                 ObjectHandler.GetCustomerDL().SaveCustomer(customer);
                 Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
-                ObjectHandler.GetRegularDL().StoreRegularInDB(regular);
+                ObjectHandler.GetRegularDL().SaveRegular(regular);
                 MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //else

@@ -24,15 +24,13 @@ namespace RMS.BL
             Status = status;
         }
 
-
-        //getter setter
-
         public int GetCapacity()
         {
             return Capacity;
         }
 
-        public string GetStatus() {
+        public string GetStatus() 
+        {
             return Status;
         }
 

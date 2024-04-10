@@ -100,6 +100,9 @@
     <Compile Include="DL\DB\UserDBDL.cs" />
     <Compile Include="DL\DB\VipDBDL.cs" />
     <Compile Include="DL\DB\WaiterDBDL.cs" />
+    <Compile Include="DL\FH\CustomerFHDL.cs" />
+    <Compile Include="DL\FH\RegularFHDL.cs" />
+    <Compile Include="DL\FH\UserFHDL.cs" />
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,6 +131,12 @@
     </Compile>
     <Compile Include="UI\AdminSettings.Designer.cs">
       <DependentUpon>AdminSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ChefDashboard.cs">
       <SubType>Form</SubType>
@@ -209,6 +218,12 @@
     </Compile>
     <Compile Include="UI\ManageProducts.Designer.cs">
       <DependentUpon>ManageProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageReservations.Designer.cs">
+      <DependentUpon>ManageReservations.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ManageTables.cs">
       <SubType>Form</SubType>
@@ -297,6 +312,9 @@
     <EmbeddedResource Include="UI\AdminSettings.resx">
       <DependentUpon>AdminSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ChefDashboard.resx">
       <DependentUpon>ChefDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ManageProducts.resx">
       <DependentUpon>ManageProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageReservations.resx">
+      <DependentUpon>ManageReservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ManageTables.resx">
       <DependentUpon>ManageTables.cs</DependentUpon>
@@ -478,7 +499,9 @@
     <None Include="images\icons8-employees-50 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DL\FH\" />
+    <Content Include="Files\Regular.txt" />
+    <Content Include="Files\Customers.txt" />
+    <Content Include="Files\Users.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

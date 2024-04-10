@@ -9,9 +9,10 @@ namespace RMS.DL
 {
     public interface IRegularDL
     {
-        void StoreRegularInDB(Regular regular);
+        void SaveRegular(Regular regular);
         List<Regular> GetRegulars();
-
-        void DeleteRegular(int id); 
+        void DeleteRegular(int id);
+        void UpdateRegular(Regular regular);
+        Regular GetRegular(int customerID);
     }
 }

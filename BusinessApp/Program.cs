@@ -21,12 +21,11 @@ namespace SSC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            ProductDBDL.ReadProductsFromDatabase();
             //OrderDBDL.ReadOrdersFromDatabase();
             //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
 
-            Application.Run(new WaiterDashboard());
+            Application.Run(new SignUp());
         }
     }
 }

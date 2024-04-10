@@ -12,7 +12,6 @@ namespace RMS.DL
 {
     public class DealDBDL : IDealDL
     {
-
         public Deal GetDeal(string name)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -138,15 +137,15 @@ namespace RMS.DL
 
         public void SaveDeal(Deal deal)
         {
-                using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("INSERT INTO Deals (DealName, TotalPrice,Items) VALUES (@DealName, @TotalPrice, @Items)", connection);
-                    command.Parameters.AddWithValue("@DealName", deal.GetDealName());
-                    command.Parameters.AddWithValue("@TotalPrice", deal.GetPrice());
-                    command.Parameters.AddWithValue("@Items", deal.GetDealString());
-                    command.ExecuteNonQuery();
-                }
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Deals (DealName, TotalPrice,Items) VALUES (@DealName, @TotalPrice, @Items)", connection);
+                command.Parameters.AddWithValue("@DealName", deal.GetDealName());
+                command.Parameters.AddWithValue("@TotalPrice", deal.GetPrice());
+                command.Parameters.AddWithValue("@Items", deal.GetDealString());
+                command.ExecuteNonQuery();
+            }
             
         }
     }

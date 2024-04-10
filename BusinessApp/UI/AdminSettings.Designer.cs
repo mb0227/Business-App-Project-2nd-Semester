@@ -43,6 +43,7 @@
             this.logOutButton = new Guna.UI2.WinForms.Guna2Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.generateVouchers = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -78,6 +79,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.generateVouchers);
             this.panel2.Controls.Add(this.backBtn);
             this.panel2.Controls.Add(this.updateButton);
             this.panel2.Controls.Add(this.label);
@@ -97,7 +99,7 @@
             this.backBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.backBtn.FlatAppearance.BorderSize = 0;
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.backBtn.Location = new System.Drawing.Point(359, 179);
             this.backBtn.Name = "backBtn";
@@ -114,9 +116,9 @@
             this.updateButton.BackColor = System.Drawing.Color.Lime;
             this.updateButton.FlatAppearance.BorderSize = 0;
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateButton.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.updateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateButton.Location = new System.Drawing.Point(849, 179);
+            this.updateButton.Location = new System.Drawing.Point(777, 179);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(164, 69);
             this.updateButton.TabIndex = 19;
@@ -132,7 +134,7 @@
             this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label.ForeColor = System.Drawing.Color.MintCream;
-            this.label.Location = new System.Drawing.Point(436, 125);
+            this.label.Location = new System.Drawing.Point(432, 125);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(65, 36);
             this.label.TabIndex = 18;
@@ -179,9 +181,9 @@
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.deleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.deleteButton.Location = new System.Drawing.Point(359, 366);
+            this.deleteButton.Location = new System.Drawing.Point(346, 366);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(277, 72);
+            this.deleteButton.Size = new System.Drawing.Size(300, 72);
             this.deleteButton.TabIndex = 6;
             this.deleteButton.Text = "Delete Account    ";
             this.deleteButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -205,7 +207,7 @@
             this.passwordButton.ImageSize = new System.Drawing.Size(30, 30);
             this.passwordButton.Location = new System.Drawing.Point(675, 271);
             this.passwordButton.Name = "passwordButton";
-            this.passwordButton.Size = new System.Drawing.Size(282, 72);
+            this.passwordButton.Size = new System.Drawing.Size(295, 72);
             this.passwordButton.TabIndex = 4;
             this.passwordButton.Text = "Change Password";
             this.passwordButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -227,9 +229,9 @@
             this.usernameButton.Image = ((System.Drawing.Image)(resources.GetObject("usernameButton.Image")));
             this.usernameButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.usernameButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.usernameButton.Location = new System.Drawing.Point(357, 271);
+            this.usernameButton.Location = new System.Drawing.Point(346, 271);
             this.usernameButton.Name = "usernameButton";
-            this.usernameButton.Size = new System.Drawing.Size(289, 72);
+            this.usernameButton.Size = new System.Drawing.Size(300, 72);
             this.usernameButton.TabIndex = 2;
             this.usernameButton.Text = "Change Username";
             this.usernameButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -253,7 +255,7 @@
             this.logOutButton.ImageSize = new System.Drawing.Size(30, 30);
             this.logOutButton.Location = new System.Drawing.Point(675, 366);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(278, 72);
+            this.logOutButton.Size = new System.Drawing.Size(295, 72);
             this.logOutButton.TabIndex = 5;
             this.logOutButton.Text = "Log Out               ";
             this.logOutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -266,6 +268,30 @@
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
+            // 
+            // generateVouchers
+            // 
+            this.generateVouchers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.generateVouchers.BorderColor = System.Drawing.Color.Transparent;
+            this.generateVouchers.BorderRadius = 18;
+            this.generateVouchers.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.generateVouchers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.generateVouchers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.generateVouchers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.generateVouchers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.generateVouchers.FillColor = System.Drawing.Color.Lime;
+            this.generateVouchers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateVouchers.ForeColor = System.Drawing.Color.Black;
+            this.generateVouchers.Image = ((System.Drawing.Image)(resources.GetObject("generateVouchers.Image")));
+            this.generateVouchers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.generateVouchers.ImageSize = new System.Drawing.Size(30, 30);
+            this.generateVouchers.Location = new System.Drawing.Point(503, 460);
+            this.generateVouchers.Name = "generateVouchers";
+            this.generateVouchers.Size = new System.Drawing.Size(331, 72);
+            this.generateVouchers.TabIndex = 21;
+            this.generateVouchers.Text = "Generate Vouchers    ";
+            this.generateVouchers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.generateVouchers.Click += new System.EventHandler(this.generateVouchers_Click);
             // 
             // AdminSettings
             // 
@@ -304,5 +330,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button backBtn;
+        private Guna.UI2.WinForms.Guna2Button generateVouchers;
     }
 }

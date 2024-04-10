@@ -14,17 +14,6 @@ namespace RMS.DL
 {
     public class UserDBDL : IUserDL
     {
-        private static List<User> Users = new List<User>();
-        public static List<User> GetUsers()
-        {
-            return Users;
-        }
-
-        public static void AddUser(User user)
-        {
-            Users.Add(user);
-        }
-
         public bool EmailAlreadyExists(string email)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -42,10 +31,6 @@ namespace RMS.DL
                 }
             }
             return false;
-        }
-
-        public static void ReadDataIntoList()
-        {            
         }
 
         public void SaveUser(User user)

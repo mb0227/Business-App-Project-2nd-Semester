@@ -39,7 +39,7 @@ namespace SignInSignUp.UI
                 menuComboBox.SelectedIndex = 0;
             MakeColumns();
             LoadData();
-            deliver.Visible = false;
+            pickupBtn.Visible = false;
         }
 
         private void FillComboBox()
@@ -184,22 +184,13 @@ namespace SignInSignUp.UI
             }
         }
 
-        private void manageBtns_Click(object sender, EventArgs e)
+        private void manageBtns_Click(object sender, EventArgs e) //pickupOrder
         {
-            deliver.Visible = false;
+            pickupBtn.Visible = false;
             ChangeControlsVisibility(true);
             dt.Columns.Clear();
             MakeColumns();
             LoadData();
-        }
-
-        private void deliverOrder_Click(object sender, EventArgs e)
-        {
-            ChangeControlsVisibility(false);
-            deliver.Visible = true;
-            dt.Columns.Clear();
-            ChangeColumns();
-            ChangeGridViewData();
         }
 
         private void ChangeColumns()
@@ -220,11 +211,11 @@ namespace SignInSignUp.UI
             }
         }
 
-        private void ChangeGridViewData()
+        private void ChangeGridViewData(int status)
         {
             dt.Rows.Clear();
             dataGridView1.DataSource = dt;
-            List<Order> pendingOrders = ObjectHandler.GetOrderDL().GetOrders(1);
+            List<Order> pendingOrders = ObjectHandler.GetOrderDL().GetOrders(status);
 
             foreach (Order o in pendingOrders)
             {
@@ -232,35 +223,83 @@ namespace SignInSignUp.UI
             }
         }
 
-        private void deliver_Click(object sender, EventArgs e)
+        private void deliver_Click(object sender, EventArgs e) //pickup order
         {
-                if (dataGridView1.SelectedRows.Count > 0)
+           if (dataGridView1.SelectedRows.Count > 0)
+           {
+                selectedRow = dataGridView1.SelectedRows[0].Index;
+
+                if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
                 {
-                        selectedRow = dataGridView1.SelectedRows[0].Index;
+                    DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
 
-                        if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
-                        {
-                            DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+                    if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                    {
+                        int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
 
-                            if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
-                            {
-                                int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
-
-                                ObjectHandler.GetOrderDL().UpdateOrderStatus(id, 2);
-                                ChangeGridViewData();
-                            }
-                        }
-                    
+                        ObjectHandler.GetOrderDL().UpdateOrderStatus(id, 2);
+                        ChangeGridViewData(1);
+                    }
                 }
-                else
+               
+           }
+           else
+           {
+               MessageBox.Show("Please select the row of you have prepared.");
+                }
+        }
+
+        private void deliverBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                selectedRow = dataGridView1.SelectedRows[0].Index;
+
+                if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
                 {
-                    MessageBox.Show("Please select the row of you have prepared.");
+                    DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+
+                    if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                    {
+                        int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
+
+                        ObjectHandler.GetOrderDL().UpdateOrderStatus(id, 3);
+                        ChangeGridViewData(2);
+                    }
                 }
+
             }
+            else
+            {
+                MessageBox.Show("Please select the row of you have prepared.");
+            }
+        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void pickupOrder_Click(object sender, EventArgs e)
         {
+            ChangeControlsVisibility(false);
+            pickupBtn.Visible = true;
+            deliverBtn.Visible = false;
+            dt.Columns.Clear();
+            ChangeColumns();
+            ChangeGridViewData(1);
+        }
 
+        private void deliverOrder_Click(object sender, EventArgs e)
+        {
+            ChangeControlsVisibility(false);
+            pickupBtn.Visible = false;
+            deliverBtn.Visible = true;
+            dt.Columns.Clear();
+            ChangeColumns();
+            ChangeGridViewData(2);
+        }
+
+        private void reservationBtn_Click(object sender, EventArgs e)
+        {
+            ManageReservations m = new ManageReservations(this.Size, this.Location, waiter);
+            m.Show();
+            this.Hide();
         }
     }
 }

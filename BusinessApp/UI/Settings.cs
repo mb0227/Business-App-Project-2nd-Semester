@@ -117,6 +117,10 @@ namespace SSC.UI
                 notiCount.Text = n.ToString();
                 notiCount.Visible = true;
             }
+            if(customer.GetStatus()=="VIP")
+            {
+                ChangeButtonsText();
+            }
         }
 
         private void MakeBtnVisible(int x,int y)
@@ -335,6 +339,74 @@ namespace SSC.UI
             Homepage h = new Homepage(this.Size, this.Location);
             h.Show();
             this.Hide();
+        }
+
+        private void ChangeButtonsText()
+        {
+            updateToVipBtn.Text = "Upgrade Membership";
+            guna2Button1.Text = "View Membership Level";
+        }
+
+        private void updateToVipBtn_Click(object sender, EventArgs e)
+        {
+            if (customer.GetStatus() == "Regular")
+            {
+                Regular r = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
+                if (r.GetLoyaltyPoints() >= 100)
+                {
+                    MessageBox.Show("Congrats! You are now a Silver VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    r.PromoteToVip(UtilityFunctions.AwardVouchers(3));
+                    customer.SetStatus("VIP");
+                    ChangeButtonsText();
+                    ShowAwardMessage(3);
+                }
+                else
+                {
+                    MessageBox.Show("You need at least 100 loyalty points to become a VIP.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if(customer.GetStatus() == "VIP")
+            {
+                if (ObjectHandler.GetOrderDL().CountOrders(customer.GetID()) > 30)
+                {
+                    VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
+                    v.SetMembershipLevel("Diamond");
+                    ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), UtilityFunctions.AwardVouchers(25));
+                    MessageBox.Show("Congrats! You are now a Diamond VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowAwardMessage(25);
+                }
+                else if (ObjectHandler.GetOrderDL().CountOrders(customer.GetID())> 50)
+                {
+                    VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
+                    v.SetMembershipLevel("Gold");
+                    ObjectHandler.GetVipDL().UpdateVIP("Gold", customer.GetID(), UtilityFunctions.AwardVouchers(10));
+                    MessageBox.Show("Congrats! You are now a Gold VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowAwardMessage(10);
+                }
+                else
+                {
+                    MessageBox.Show($"You need at least 30 orders for Gold and 50 for Diamond. Current Orders :{ObjectHandler.GetOrderDL().CountOrders(customer.GetID())}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        private void ShowAwardMessage(int vCount)
+        {
+            MessageBox.Show($"You have been awarded {vCount} vouchers", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (customer.GetStatus() == "Regular")
+            {
+                Regular r = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
+                MessageBox.Show($"You have {r.GetLoyaltyPoints()} loyalty points.", "Loyalty Points", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(customer.GetStatus() == "VIP")
+            {
+                VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
+                MessageBox.Show($"You are a {v.GetMembershipLevel()} VIP.", "VIP Level", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

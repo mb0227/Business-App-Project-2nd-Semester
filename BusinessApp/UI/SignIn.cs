@@ -9,7 +9,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net.Http;
 using Microsoft.VisualBasic;
 using SSC.UI;
@@ -78,45 +77,52 @@ namespace SSC
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            string role = ObjectHandler.GetUserDL().SearchUserForRole(username.Text);
-            if (role!="")
+            if (CheckValidations())
             {
-                int userID = ObjectHandler.GetUserDL().GetUserID(username.Text);
-                if (role=="Customer" && userID!=-1) //Search customer by id
+                string role = ObjectHandler.GetUserDL().SearchUserForRole(username.Text);
+                if (role != "")
                 {
-                    Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);
-                    CustomerDashboard c = new CustomerDashboard(this.Size, this.Location, customer);
-                    c.Show();
-                    this.Hide();
-                }
-                else if(role=="Chef" && userID != -1)
-                {
-                    Chef chef = ObjectHandler.GetEmployeeDL().SearchChefById(userID);
-                    ChefDashboard c = new ChefDashboard(this.Size, this.Location, chef);
-                    c.Show();
-                    this.Hide();
-                }
-                else if(role=="Waiter" && userID != -1)
-                {
-                    Waiter waiter = ObjectHandler.GetEmployeeDL().SearchWaiterById(userID);
-                    WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
-                    w.Show();
-                    this.Hide();
-                }
-                else if(role=="Admin" && userID != -1)
-                {
-                    Admin admin = ObjectHandler.GetEmployeeDL().SearchAdminById(userID);
-                    if (admin != null)
+                    int userID = ObjectHandler.GetUserDL().GetUserID(username.Text);
+                    if (role == "Customer" && userID != -1) //Search customer by id
                     {
-                        AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
-                        a.Show();
+                        Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);
+                        CustomerDashboard c = new CustomerDashboard(this.Size, this.Location, customer);
+                        c.Show();
                         this.Hide();
                     }
+                    else if (role == "Chef" && userID != -1)
+                    {
+                        Chef chef = ObjectHandler.GetEmployeeDL().SearchChefById(userID);
+                        ChefDashboard c = new ChefDashboard(this.Size, this.Location, chef);
+                        c.Show();
+                        this.Hide();
+                    }
+                    else if (role == "Waiter" && userID != -1)
+                    {
+                        Waiter waiter = ObjectHandler.GetEmployeeDL().SearchWaiterById(userID);
+                        WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
+                        w.Show();
+                        this.Hide();
+                    }
+                    else if (role == "Admin" && userID != -1)
+                    {
+                        Admin admin = ObjectHandler.GetEmployeeDL().SearchAdminById(userID);
+                        if (admin != null)
+                        {
+                            AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
+                            a.Show();
+                            this.Hide();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -181,10 +187,10 @@ namespace SSC
                     MessageBox.Show("Done!");
                     string newPassword = Prompt.ShowDialog("Enter new Password: ", "Change Password");
 
-                    //customer.SetPassword(newPassword);
-                    CustomerDBDL.UpdateCustomer(customer);
+                    ////customer.SetPassword(newPassword);
+                    //CustomerDBDL.UpdateCustomer(customer);
 
-                    CustomerDBDL.UpdateCustomerInDatabase(customer);
+                    //CustomerDBDL.UpdateCustomerInDatabase(customer);
                 }
                 else
                 {

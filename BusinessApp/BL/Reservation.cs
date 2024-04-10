@@ -13,6 +13,15 @@ namespace RMS.BL
         private int CustomerID;
         private int TableID;
 
+        private int ID;
+
+        public Reservation(DateTime reservationDate, int totalPersons, int tableID)
+        {
+            ReservationDate = reservationDate;
+            TotalPersons = totalPersons;
+            TableID = tableID;
+        }
+
         public Reservation(DateTime reservationDate, int totalPersons, int customerID, int tableID)
         {
             ReservationDate = reservationDate;
@@ -20,12 +29,24 @@ namespace RMS.BL
             CustomerID = customerID;
             TableID = tableID;
         }
+        public Reservation(int id, DateTime reservationDate, int totalPersons, int customerID, int tableID)
+        {
+            ID = id;
+            ReservationDate = reservationDate;
+            TotalPersons = totalPersons;
+            CustomerID = customerID;
+            TableID = tableID;
+        }
+
+        public int GetID()
+        {
+            return ID;
+        }
 
         public DateTime GetReservationDate()
         {
             return ReservationDate;
         }
-
 
         public int GetTotalPersons()
         {

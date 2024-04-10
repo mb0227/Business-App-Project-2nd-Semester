@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SSC.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,13 @@ namespace RMS.BL
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
         private int ID;
+
+        public Regular(int id, int loyaltyPoints, int customerID) 
+        {
+            ID = id;
+            LoyaltyPoints = loyaltyPoints;
+            CustomerID = customerID;
+        }
 
         public Regular(string username, int id, int loyaltyPoints, int customerID): base(username)
         {
@@ -34,10 +42,12 @@ namespace RMS.BL
             CustomerID = customerID;
         }
 
-        public void PromoteToVip()
+        public void PromoteToVip(List<string> vouchers)
         {
-            VIP vip = new VIP(Username, Contact, "VIP", Gender, "Silver", CustomerID, new List<Voucher>());
-            //RegularDL.RemoveFromDatabase(CustomerID);
+            VIP vip = new VIP(Username, Contact, "VIP", Gender, "Silver", CustomerID, vouchers);
+            ObjectHandler.GetCustomerDL().UpdateStatus("VIP", CustomerID);
+            ObjectHandler.GetVipDL().SaveVIP(vip);
+            ObjectHandler.GetRegularDL().DeleteRegular(ID);
         }
 
         public int GetRegularID()

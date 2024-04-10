@@ -264,6 +264,5 @@ namespace RMS.DL
                 command.ExecuteNonQuery();
             }
         }
-
     }
 }

@@ -11,8 +11,6 @@ namespace RMS.DL
 {
     public class TableDBDL : ITableDL
     {
-        private List<Table> Tables = new List<Table>(); 
-
         public void SaveTable(Table table)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -114,10 +112,13 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-
                 string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID IN (SELECT T.ID FROM [Table] T JOIN Reservation R ON T.ID = R.TableID WHERE GETDATE() > R.ReservationDate);";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.ExecuteNonQuery();                
+                command.ExecuteNonQuery();
+
+                string query2 = "DELETE R FROM Reservation R JOIN [Table] T ON T.ID = R.TableID WHERE GETDATE() > R.ReservationDate;";
+                SqlCommand command2 = new SqlCommand(query2, connection);
+                command2.ExecuteNonQuery();
             }
         }
 

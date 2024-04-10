@@ -16,7 +16,10 @@ namespace RMS.BL
         protected int UserID;
 
         protected int CustomerID;
-        
+
+        public Customer()
+        {            
+        }
         public Customer(string username)
         {
             Username = username;

@@ -8,24 +8,22 @@ namespace RMS.BL
 {
     public class Voucher
     {
-        private DateTime ExpirationDate;
-        private double Value;
         private int ID;
+        private DateTime ExpirationDate;
+        private double Discount;
 
-        public Voucher(DateTime expirationDate, double value)
+        public Voucher()
         {
+            ID = 0;
+            ExpirationDate = DateTime.MinValue;
+            Discount = 0.0;
+        }
+
+        public Voucher(int id, DateTime expirationDate, double discount)
+        {
+            ID = id;
             ExpirationDate = expirationDate;
-            Value = value;
-        }
-
-        public DateTime GetExpirationDate()
-        {
-            return ExpirationDate;
-        }
-
-        public double GetValue()
-        {
-            return Value;
+            Discount = discount;
         }
 
         public int GetID()
@@ -33,28 +31,28 @@ namespace RMS.BL
             return ID;
         }
 
-        public void SetExpirationDate(DateTime expirationDate)
-        {
-            ExpirationDate = expirationDate;
-        }
-
-        public void SetValue(double value)
-        {
-            Value = value;
-        }
-
         public void SetID(int id)
         {
             ID = id;
         }
 
-        public bool IsValidVoucher()
+        public DateTime GetExpirationDate()
         {
-            if (ExpirationDate > DateTime.Now)
-            {
-                return true;
-            }
-            return false;
+            return ExpirationDate;
+        }
+
+        public void SetExpirationDate(DateTime expirationDate)
+        {
+            ExpirationDate = expirationDate;
+        }
+
+        public double GetDiscount()
+        {
+            return Discount;
+        }
+        public void SetDiscount(double discount)
+        {
+            Discount = discount;
         }
     }
 }

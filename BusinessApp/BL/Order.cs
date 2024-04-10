@@ -16,8 +16,7 @@ namespace RMS.BL
             Prepared,
             PickedUp,
             Delivered,
-            Cancelled,
-            Refunded      
+            Cancelled
         }
 
         public Order()
@@ -34,6 +33,18 @@ namespace RMS.BL
             CustomerID = id;
             PaymentMethod = paymentMethod;
         }
+
+        public Order(double discount,List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod, int id)
+        {
+            ProductsOrdered = products;
+            Status = orderStatus;
+            OrderDate = orderDate;
+            CustomerComments = customerComments;
+            CalculateTotalPrice(discount);
+            CustomerID = id;
+            PaymentMethod = paymentMethod;
+        }
+
         public Order(List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod)
         {
             ProductsOrdered = products;
@@ -83,6 +94,20 @@ namespace RMS.BL
             {
                 string productName = ProductsOrdered[i].GetProduct().GetProductName();
                 TotalPrice += ObjectHandler.GetProductDL().GetPrice(ObjectHandler.GetProductDL().GetProductID(productName), ProductsOrdered[i].GetQuantity());
+            }
+        }
+
+        private void CalculateTotalPrice(double discount)
+        {
+            TotalPrice = 0;
+            for (int i = 0; i < ProductsOrdered.Count; i++)
+            {
+                string productName = ProductsOrdered[i].GetProduct().GetProductName();
+                TotalPrice += ObjectHandler.GetProductDL().GetPrice(ObjectHandler.GetProductDL().GetProductID(productName), ProductsOrdered[i].GetQuantity());
+            }
+            if(discount<TotalPrice)
+            {
+                TotalPrice -= discount;
             }
         }
 

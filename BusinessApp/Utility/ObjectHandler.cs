@@ -21,6 +21,11 @@ namespace SSC.UI
             return new CustomerDBDL();
         }
 
+        public static IRegularDL GetRegularDL()
+        {
+            return new RegularDBDL();
+        }
+
         public static IEmployeeDL GetEmployeeDL()
         {
             return new EmployeeDBDL();
@@ -34,11 +39,6 @@ namespace SSC.UI
         public static IChefDL GetChefDL()
         {
             return new ChefDBDL();
-        }
-
-        public static IRegularDL GetRegularDL()
-        {
-            return new RegularDBDL();
         }
         
         public static IVipDL GetVipDL()
