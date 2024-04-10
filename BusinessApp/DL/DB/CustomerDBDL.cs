@@ -164,7 +164,7 @@ namespace RMS.DL
             return customerID; // Return -1 if user is not found 
         }
 
-        public void DeleteCustomer(int id, string status, int userid)
+        public void DeleteCustomer(int id, string status, int userId)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -205,7 +205,7 @@ namespace RMS.DL
                 command7.ExecuteNonQuery();
 
                 SqlCommand command = new SqlCommand("DELETE FROM Users WHERE ID = @ID", connection);
-                command.Parameters.AddWithValue("@ID", userid);
+                command.Parameters.AddWithValue("@ID", userId);
                 command.ExecuteNonQuery();
             }
         }

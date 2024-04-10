@@ -77,9 +77,6 @@ namespace SSC.UI
                 case "settings":
                     OpenForm(new Settings(this.Size, this.Location, customer));
                     break;
-                case "help":
-                    OpenForm(new UI.Help(this.Size, this.Location, customer));
-                    break;
                 default:
                     break;
             }

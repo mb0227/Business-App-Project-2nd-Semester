@@ -53,7 +53,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(15, 225);
+            this.label2.Location = new System.Drawing.Point(20, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(257, 34);
             this.label2.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.panel2.Controls.Add(this.angry);
             this.panel2.Controls.Add(this.sad);
             this.panel2.Controls.Add(this.expressionless);
-            this.panel2.Location = new System.Drawing.Point(301, 171);
+            this.panel2.Location = new System.Drawing.Point(301, 167);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(881, 689);
             this.panel2.TabIndex = 9;
@@ -81,9 +81,9 @@
             this.lovedit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lovedit.BackColor = System.Drawing.Color.Transparent;
             this.lovedit.Image = ((System.Drawing.Image)(resources.GetObject("lovedit.Image")));
-            this.lovedit.Location = new System.Drawing.Point(589, 308);
+            this.lovedit.Location = new System.Drawing.Point(691, 221);
             this.lovedit.Name = "lovedit";
-            this.lovedit.Size = new System.Drawing.Size(80, 75);
+            this.lovedit.Size = new System.Drawing.Size(102, 107);
             this.lovedit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.lovedit.TabIndex = 7;
             this.lovedit.TabStop = false;
@@ -94,9 +94,9 @@
             this.happy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.happy.BackColor = System.Drawing.Color.Transparent;
             this.happy.Image = ((System.Drawing.Image)(resources.GetObject("happy.Image")));
-            this.happy.Location = new System.Drawing.Point(477, 308);
+            this.happy.Location = new System.Drawing.Point(558, 221);
             this.happy.Name = "happy";
-            this.happy.Size = new System.Drawing.Size(80, 75);
+            this.happy.Size = new System.Drawing.Size(102, 107);
             this.happy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.happy.TabIndex = 8;
             this.happy.TabStop = false;
@@ -107,9 +107,9 @@
             this.angry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.angry.BackColor = System.Drawing.Color.Transparent;
             this.angry.Image = ((System.Drawing.Image)(resources.GetObject("angry.Image")));
-            this.angry.Location = new System.Drawing.Point(161, 308);
+            this.angry.Location = new System.Drawing.Point(161, 221);
             this.angry.Name = "angry";
-            this.angry.Size = new System.Drawing.Size(80, 75);
+            this.angry.Size = new System.Drawing.Size(102, 107);
             this.angry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.angry.TabIndex = 6;
             this.angry.TabStop = false;
@@ -120,9 +120,9 @@
             this.sad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sad.BackColor = System.Drawing.Color.Transparent;
             this.sad.Image = ((System.Drawing.Image)(resources.GetObject("sad.Image")));
-            this.sad.Location = new System.Drawing.Point(267, 308);
+            this.sad.Location = new System.Drawing.Point(285, 221);
             this.sad.Name = "sad";
-            this.sad.Size = new System.Drawing.Size(80, 75);
+            this.sad.Size = new System.Drawing.Size(102, 107);
             this.sad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sad.TabIndex = 5;
             this.sad.TabStop = false;
@@ -133,9 +133,9 @@
             this.expressionless.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.expressionless.BackColor = System.Drawing.Color.Transparent;
             this.expressionless.Image = ((System.Drawing.Image)(resources.GetObject("expressionless.Image")));
-            this.expressionless.Location = new System.Drawing.Point(373, 308);
+            this.expressionless.Location = new System.Drawing.Point(420, 221);
             this.expressionless.Name = "expressionless";
-            this.expressionless.Size = new System.Drawing.Size(80, 75);
+            this.expressionless.Size = new System.Drawing.Size(102, 107);
             this.expressionless.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.expressionless.TabIndex = 4;
             this.expressionless.TabStop = false;

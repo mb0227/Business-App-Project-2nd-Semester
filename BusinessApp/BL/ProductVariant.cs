@@ -14,11 +14,9 @@ namespace RMS.BL
         private int VariantID;
         public int ProductID;
 
-        public ProductVariant(int productID, string quantity, double price)
+        public ProductVariant(int productID, string quantity, double price) : this(quantity, price)
         {
             ProductID = productID;
-            Quantity = quantity;
-            Price = price;
         }
 
         public ProductVariant(string quantity, double price)

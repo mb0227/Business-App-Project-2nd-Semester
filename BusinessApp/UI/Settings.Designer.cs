@@ -33,11 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.userDetailsButton = new Guna.UI2.WinForms.Guna2Button();
-            this.usernameButton = new Guna.UI2.WinForms.Guna2Button();
-            this.passwordButton = new Guna.UI2.WinForms.Guna2Button();
             this.orderHistoryButton = new Guna.UI2.WinForms.Guna2Button();
-            this.logOutButton = new Guna.UI2.WinForms.Guna2Button();
-            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.updateToVipBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -49,18 +45,22 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.msgCount = new System.Windows.Forms.Label();
             this.notiCount = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.notification = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.notification = new System.Windows.Forms.PictureBox();
+            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.passwordButton = new Guna.UI2.WinForms.Guna2Button();
+            this.usernameButton = new Guna.UI2.WinForms.Guna2Button();
+            this.logOutButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notification)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,59 +100,12 @@
             this.userDetailsButton.FillColor = System.Drawing.Color.SeaGreen;
             this.userDetailsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userDetailsButton.ForeColor = System.Drawing.Color.Black;
-            this.userDetailsButton.Location = new System.Drawing.Point(43, 197);
+            this.userDetailsButton.Location = new System.Drawing.Point(49, 197);
             this.userDetailsButton.Name = "userDetailsButton";
-            this.userDetailsButton.Size = new System.Drawing.Size(286, 69);
+            this.userDetailsButton.Size = new System.Drawing.Size(295, 69);
             this.userDetailsButton.TabIndex = 0;
             this.userDetailsButton.Text = "User Details";
-            // 
-            // usernameButton
-            // 
-            this.usernameButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.usernameButton.BorderColor = System.Drawing.Color.Transparent;
-            this.usernameButton.BorderRadius = 18;
-            this.usernameButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.usernameButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.usernameButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.usernameButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.usernameButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.usernameButton.FillColor = System.Drawing.Color.Orange;
-            this.usernameButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameButton.ForeColor = System.Drawing.Color.Black;
-            this.usernameButton.Image = ((System.Drawing.Image)(resources.GetObject("usernameButton.Image")));
-            this.usernameButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.usernameButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.usernameButton.Location = new System.Drawing.Point(43, 281);
-            this.usernameButton.Name = "usernameButton";
-            this.usernameButton.Size = new System.Drawing.Size(286, 72);
-            this.usernameButton.TabIndex = 2;
-            this.usernameButton.Text = "Change Username";
-            this.usernameButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.usernameButton.Click += new System.EventHandler(this.usernameButton_Click);
-            // 
-            // passwordButton
-            // 
-            this.passwordButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordButton.BorderColor = System.Drawing.Color.Transparent;
-            this.passwordButton.BorderRadius = 18;
-            this.passwordButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.passwordButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.passwordButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.passwordButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.passwordButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.passwordButton.FillColor = System.Drawing.Color.Orange;
-            this.passwordButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordButton.ForeColor = System.Drawing.Color.Black;
-            this.passwordButton.Image = ((System.Drawing.Image)(resources.GetObject("passwordButton.Image")));
-            this.passwordButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.passwordButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.passwordButton.Location = new System.Drawing.Point(337, 281);
-            this.passwordButton.Name = "passwordButton";
-            this.passwordButton.Size = new System.Drawing.Size(287, 72);
-            this.passwordButton.TabIndex = 4;
-            this.passwordButton.Text = "Change Password";
-            this.passwordButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.passwordButton.Click += new System.EventHandler(this.passwordButton_Click);
+            this.userDetailsButton.Click += new System.EventHandler(this.userDetailsButton_Click);
             // 
             // orderHistoryButton
             // 
@@ -167,60 +120,12 @@
             this.orderHistoryButton.FillColor = System.Drawing.Color.SeaGreen;
             this.orderHistoryButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderHistoryButton.ForeColor = System.Drawing.Color.Black;
-            this.orderHistoryButton.Location = new System.Drawing.Point(337, 194);
+            this.orderHistoryButton.Location = new System.Drawing.Point(378, 197);
             this.orderHistoryButton.Name = "orderHistoryButton";
-            this.orderHistoryButton.Size = new System.Drawing.Size(287, 72);
+            this.orderHistoryButton.Size = new System.Drawing.Size(295, 69);
             this.orderHistoryButton.TabIndex = 3;
             this.orderHistoryButton.Text = "Order History";
             this.orderHistoryButton.Click += new System.EventHandler(this.orderHistoryButton_Click);
-            // 
-            // logOutButton
-            // 
-            this.logOutButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.logOutButton.BorderColor = System.Drawing.Color.Transparent;
-            this.logOutButton.BorderRadius = 18;
-            this.logOutButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.logOutButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.logOutButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.logOutButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.logOutButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.logOutButton.FillColor = System.Drawing.Color.Red;
-            this.logOutButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutButton.ForeColor = System.Drawing.Color.Black;
-            this.logOutButton.Image = ((System.Drawing.Image)(resources.GetObject("logOutButton.Image")));
-            this.logOutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.logOutButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.logOutButton.Location = new System.Drawing.Point(337, 372);
-            this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(287, 72);
-            this.logOutButton.TabIndex = 5;
-            this.logOutButton.Text = "Log Out             ";
-            this.logOutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deleteButton.BorderColor = System.Drawing.Color.Transparent;
-            this.deleteButton.BorderRadius = 18;
-            this.deleteButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.deleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.deleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.deleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.deleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.deleteButton.FillColor = System.Drawing.Color.Red;
-            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.ForeColor = System.Drawing.Color.Black;
-            this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
-            this.deleteButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.deleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.deleteButton.Location = new System.Drawing.Point(43, 372);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(286, 72);
-            this.deleteButton.TabIndex = 6;
-            this.deleteButton.Text = "Delete               ";
-            this.deleteButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // panel2
             // 
@@ -239,9 +144,9 @@
             this.panel2.Controls.Add(this.usernameButton);
             this.panel2.Controls.Add(this.logOutButton);
             this.panel2.Controls.Add(this.orderHistoryButton);
-            this.panel2.Location = new System.Drawing.Point(212, 165);
+            this.panel2.Location = new System.Drawing.Point(221, 166);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(673, 788);
+            this.panel2.Size = new System.Drawing.Size(684, 788);
             this.panel2.TabIndex = 10;
             // 
             // guna2Button1
@@ -257,9 +162,9 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Lime;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(43, 462);
+            this.guna2Button1.Location = new System.Drawing.Point(49, 462);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(286, 88);
+            this.guna2Button1.Size = new System.Drawing.Size(295, 80);
             this.guna2Button1.TabIndex = 26;
             this.guna2Button1.Text = "View Loyalty Points";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -277,9 +182,9 @@
             this.updateToVipBtn.FillColor = System.Drawing.Color.Lime;
             this.updateToVipBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateToVipBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateToVipBtn.Location = new System.Drawing.Point(338, 462);
+            this.updateToVipBtn.Location = new System.Drawing.Point(379, 462);
             this.updateToVipBtn.Name = "updateToVipBtn";
-            this.updateToVipBtn.Size = new System.Drawing.Size(286, 88);
+            this.updateToVipBtn.Size = new System.Drawing.Size(295, 80);
             this.updateToVipBtn.TabIndex = 25;
             this.updateToVipBtn.Text = "Update To Vip";
             this.updateToVipBtn.Click += new System.EventHandler(this.updateToVipBtn_Click);
@@ -292,9 +197,9 @@
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.backBtn.Location = new System.Drawing.Point(151, 113);
+            this.backBtn.Location = new System.Drawing.Point(172, 113);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(132, 69);
+            this.backBtn.Size = new System.Drawing.Size(139, 54);
             this.backBtn.TabIndex = 24;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = false;
@@ -309,9 +214,9 @@
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.updateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateButton.Location = new System.Drawing.Point(436, 113);
+            this.updateButton.Location = new System.Drawing.Point(418, 113);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(144, 69);
+            this.updateButton.Size = new System.Drawing.Size(139, 54);
             this.updateButton.TabIndex = 23;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = false;
@@ -325,7 +230,7 @@
             this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label.ForeColor = System.Drawing.Color.MintCream;
-            this.label.Location = new System.Drawing.Point(51, 43);
+            this.label.Location = new System.Drawing.Point(57, 43);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(65, 36);
             this.label.TabIndex = 22;
@@ -345,7 +250,7 @@
             this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb.ForeColor = System.Drawing.Color.Black;
             this.tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Location = new System.Drawing.Point(216, 41);
+            this.tb.Location = new System.Drawing.Point(222, 41);
             this.tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb.Name = "tb";
             this.tb.PasswordChar = '\0';
@@ -361,7 +266,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.guna2GroupBox1);
-            this.panel3.Location = new System.Drawing.Point(902, 183);
+            this.panel3.Location = new System.Drawing.Point(910, 166);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(264, 749);
             this.panel3.TabIndex = 11;
@@ -410,6 +315,14 @@
             this.notiCount.Text = "n";
             this.notiCount.Visible = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -433,13 +346,101 @@
             this.notification.TabStop = false;
             this.notification.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // errorProvider1
+            // deleteButton
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.deleteButton.BorderColor = System.Drawing.Color.Transparent;
+            this.deleteButton.BorderRadius = 18;
+            this.deleteButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.deleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteButton.FillColor = System.Drawing.Color.Red;
+            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.ForeColor = System.Drawing.Color.Black;
+            this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
+            this.deleteButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.deleteButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.deleteButton.Location = new System.Drawing.Point(49, 372);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(295, 69);
+            this.deleteButton.TabIndex = 6;
+            this.deleteButton.Text = "Delete                   ";
+            this.deleteButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // errorProvider2
+            // passwordButton
             // 
-            this.errorProvider2.ContainerControl = this;
+            this.passwordButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passwordButton.BorderColor = System.Drawing.Color.Transparent;
+            this.passwordButton.BorderRadius = 18;
+            this.passwordButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.passwordButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.passwordButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.passwordButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.passwordButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.passwordButton.FillColor = System.Drawing.Color.Orange;
+            this.passwordButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordButton.ForeColor = System.Drawing.Color.Black;
+            this.passwordButton.Image = ((System.Drawing.Image)(resources.GetObject("passwordButton.Image")));
+            this.passwordButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.passwordButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.passwordButton.Location = new System.Drawing.Point(378, 281);
+            this.passwordButton.Name = "passwordButton";
+            this.passwordButton.Size = new System.Drawing.Size(295, 69);
+            this.passwordButton.TabIndex = 4;
+            this.passwordButton.Text = "Change Password";
+            this.passwordButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.passwordButton.Click += new System.EventHandler(this.passwordButton_Click);
+            // 
+            // usernameButton
+            // 
+            this.usernameButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.usernameButton.BorderColor = System.Drawing.Color.Transparent;
+            this.usernameButton.BorderRadius = 18;
+            this.usernameButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.usernameButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.usernameButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.usernameButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.usernameButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.usernameButton.FillColor = System.Drawing.Color.Orange;
+            this.usernameButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameButton.ForeColor = System.Drawing.Color.Black;
+            this.usernameButton.Image = ((System.Drawing.Image)(resources.GetObject("usernameButton.Image")));
+            this.usernameButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.usernameButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.usernameButton.Location = new System.Drawing.Point(49, 281);
+            this.usernameButton.Name = "usernameButton";
+            this.usernameButton.Size = new System.Drawing.Size(295, 69);
+            this.usernameButton.TabIndex = 2;
+            this.usernameButton.Text = "Change Username";
+            this.usernameButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.usernameButton.Click += new System.EventHandler(this.usernameButton_Click);
+            // 
+            // logOutButton
+            // 
+            this.logOutButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logOutButton.BorderColor = System.Drawing.Color.Transparent;
+            this.logOutButton.BorderRadius = 18;
+            this.logOutButton.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.logOutButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.logOutButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.logOutButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.logOutButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.logOutButton.FillColor = System.Drawing.Color.Red;
+            this.logOutButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutButton.ForeColor = System.Drawing.Color.Black;
+            this.logOutButton.Image = ((System.Drawing.Image)(resources.GetObject("logOutButton.Image")));
+            this.logOutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.logOutButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.logOutButton.Location = new System.Drawing.Point(378, 372);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(295, 69);
+            this.logOutButton.TabIndex = 5;
+            this.logOutButton.Text = "Log Out               ";
+            this.logOutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // Settings
             // 
@@ -462,10 +463,10 @@
             this.panel3.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notification)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -24,34 +24,17 @@ namespace RMS.BL
         {
             Username = username;
         }
-
-        public Customer(string username,string contact,string status, string gender)
+        public Customer(string username,string contact,string status, string gender) : this (username)
         {
-            Username = username;
             Contact = contact;
             Status = status;
             Gender = gender;
             Cart = new List <OrderedProduct>();
         }
 
-        public Customer(int id, string username, string contact, string status, string gender, List<OrderedProduct> cart, int userId)
+        public Customer(int id, string username, string contact, string status, string gender, List<OrderedProduct> cart, int userId) : this(username, contact, status, status)
         {
             CustomerID = id;
-            Username = username;
-            Contact = contact;
-            Status = status;
-            Gender = gender;
-            Cart = new List<OrderedProduct>();
-            Cart = cart;
-            UserID = userId;
-        }
-
-        public Customer(string username, string contact, string status, string gender,List<OrderedProduct> cart, int userId)
-        {
-            Username = username;
-            Contact = contact;
-            Status = status;
-            Gender = gender;
             Cart = new List<OrderedProduct>();
             Cart = cart;
             UserID = userId;
@@ -142,10 +125,5 @@ namespace RMS.BL
             }
             return -1;
         }
-
-        //public void placeOrder()
-        //{
-            
-        //}
     }
 }

@@ -15,6 +15,14 @@ namespace RMS.BL
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
         private int ID;
+        public VIP(int id, string membershipLevel, int customerID, List<string> vouchers)
+        {
+            ID = id;
+            MembershipLevel = membershipLevel;
+            CustomerID = customerID;
+            Vouchers = vouchers;
+        }
+
         public VIP(string username, string contact, string status, string gender, string membershipLevel, int customerID, List<string> vouchers) : base(username, contact, status, gender)
         {
             MembershipLevel = membershipLevel;
@@ -28,21 +36,6 @@ namespace RMS.BL
             ID = id;
             MembershipLevel = membershipLevel;
             CustomerID = customerID;
-        }
-
-        public VIP(int id, string membershipLevel, int customerID) 
-        {
-            ID = id;
-            MembershipLevel = membershipLevel;
-            CustomerID = customerID;
-        }
-
-        public VIP(int id, string membershipLevel, int customerID, List<string> vouchers)
-        {
-            ID = id;
-            MembershipLevel = membershipLevel;
-            CustomerID = customerID;
-            Vouchers = vouchers;
         }
 
         public int GetVipID()

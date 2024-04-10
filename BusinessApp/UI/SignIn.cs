@@ -34,14 +34,14 @@ namespace SSC
 
         private bool CheckValidations()
         {
-            if (string.IsNullOrWhiteSpace(username.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(email.Text.Trim()))
             {
-                errorProvider1.SetError(username, "Username cannot be empty.");
+                errorProvider1.SetError(email, "Username cannot be empty.");
                 return false;
             }
             else
             {
-                errorProvider1.SetError(username, "");
+                errorProvider1.SetError(email, "");
             }
 
             if (string.IsNullOrWhiteSpace(password.Text.Trim()))
@@ -79,10 +79,10 @@ namespace SSC
         {
             if (CheckValidations())
             {
-                string role = ObjectHandler.GetUserDL().SearchUserForRole(username.Text);
+                string role = ObjectHandler.GetUserDL().SearchUserForRole(email.Text,password.Text);
                 if (role != "")
                 {
-                    int userID = ObjectHandler.GetUserDL().GetUserID(username.Text);
+                    int userID = ObjectHandler.GetUserDL().GetUserID(email.Text);
                     if (role == "Customer" && userID != -1) //Search customer by id
                     {
                         Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);

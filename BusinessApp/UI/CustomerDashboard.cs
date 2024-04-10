@@ -62,9 +62,6 @@ namespace SSC
         {
             switch (formName)
             {
-                case "dashboard":
-                    OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
-                    break;
                 case "orderFood":
                     OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
                     break;
@@ -106,6 +103,11 @@ namespace SSC
                 panel1.SendToBack();
                 cNavBar.BringToFront();
             }
+        }
+
+        private void CustomerDashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cartGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.quantitiesComboBox = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -44,9 +46,10 @@
             this.updateButton = new Guna.UI2.WinForms.Guna2Button();
             this.backButton = new Guna.UI2.WinForms.Guna2Button();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).BeginInit();
+            this.cartGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuComboBox
@@ -56,7 +59,7 @@
             this.menuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuComboBox.FormattingEnabled = true;
-            this.menuComboBox.Location = new System.Drawing.Point(472, 338);
+            this.menuComboBox.Location = new System.Drawing.Point(514, 303);
             this.menuComboBox.Name = "menuComboBox";
             this.menuComboBox.Size = new System.Drawing.Size(182, 37);
             this.menuComboBox.TabIndex = 1;
@@ -68,30 +71,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(246, 341);
+            this.label2.Location = new System.Drawing.Point(288, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 34);
             this.label2.TabIndex = 32;
             this.label2.Text = "Select Item";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cartGridView
-            // 
-            this.cartGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cartGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cartGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.cartGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.cartGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cartGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cartGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cartGridView.Location = new System.Drawing.Point(700, 269);
-            this.cartGridView.Name = "cartGridView";
-            this.cartGridView.ReadOnly = true;
-            this.cartGridView.RowHeadersWidth = 62;
-            this.cartGridView.RowTemplate.Height = 28;
-            this.cartGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cartGridView.Size = new System.Drawing.Size(455, 388);
-            this.cartGridView.TabIndex = 33;
             // 
             // label1
             // 
@@ -99,7 +84,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(247, 409);
+            this.label1.Location = new System.Drawing.Point(289, 374);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 34);
             this.label1.TabIndex = 34;
@@ -113,7 +98,7 @@
             this.quantitiesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quantitiesComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantitiesComboBox.FormattingEnabled = true;
-            this.quantitiesComboBox.Location = new System.Drawing.Point(472, 406);
+            this.quantitiesComboBox.Location = new System.Drawing.Point(514, 371);
             this.quantitiesComboBox.Name = "quantitiesComboBox";
             this.quantitiesComboBox.Size = new System.Drawing.Size(182, 37);
             this.quantitiesComboBox.TabIndex = 2;
@@ -127,7 +112,7 @@
             this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.name.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.name.Location = new System.Drawing.Point(472, 269);
+            this.name.Location = new System.Drawing.Point(514, 234);
             this.name.Multiline = true;
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(182, 41);
@@ -140,7 +125,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(246, 276);
+            this.label3.Location = new System.Drawing.Point(288, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 34);
             this.label3.TabIndex = 39;
@@ -156,7 +141,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(54, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1124, 91);
+            this.panel1.Size = new System.Drawing.Size(1274, 91);
             this.panel1.TabIndex = 40;
             // 
             // panel2
@@ -166,7 +151,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Location = new System.Drawing.Point(118, 88);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1003, 625);
+            this.panel2.Size = new System.Drawing.Size(1153, 625);
             this.panel2.TabIndex = 41;
             // 
             // label4
@@ -175,7 +160,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MintCream;
-            this.label4.Location = new System.Drawing.Point(497, 20);
+            this.label4.Location = new System.Drawing.Point(572, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(217, 52);
             this.label4.TabIndex = 6;
@@ -192,10 +177,10 @@
             this.searchButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.searchButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.searchButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.searchButton.FillColor = System.Drawing.Color.Teal;
+            this.searchButton.FillColor = System.Drawing.Color.SteelBlue;
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.Black;
-            this.searchButton.Location = new System.Drawing.Point(252, 520);
+            this.searchButton.Location = new System.Drawing.Point(294, 474);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(180, 58);
             this.searchButton.TabIndex = 3;
@@ -215,7 +200,7 @@
             this.updateButton.FillColor = System.Drawing.Color.Orange;
             this.updateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.ForeColor = System.Drawing.Color.Black;
-            this.updateButton.Location = new System.Drawing.Point(472, 520);
+            this.updateButton.Location = new System.Drawing.Point(514, 474);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(180, 58);
             this.updateButton.TabIndex = 4;
@@ -235,7 +220,7 @@
             this.backButton.FillColor = System.Drawing.Color.DarkTurquoise;
             this.backButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.ForeColor = System.Drawing.Color.Black;
-            this.backButton.Location = new System.Drawing.Point(252, 599);
+            this.backButton.Location = new System.Drawing.Point(294, 553);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(180, 58);
             this.backButton.TabIndex = 5;
@@ -255,19 +240,77 @@
             this.deleteButton.FillColor = System.Drawing.Color.Red;
             this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.Black;
-            this.deleteButton.Location = new System.Drawing.Point(472, 599);
+            this.deleteButton.Location = new System.Drawing.Point(514, 553);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(180, 58);
             this.deleteButton.TabIndex = 6;
             this.deleteButton.Text = "Delete";
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // cartGridView
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.cartGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.cartGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cartGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cartGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.cartGridView.ColumnHeadersHeight = 20;
+            this.cartGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cartGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            this.cartGridView.EnableHeadersVisualStyles = true;
+            this.cartGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
+            this.cartGridView.Location = new System.Drawing.Point(721, 224);
+            this.cartGridView.Name = "cartGridView";
+            this.cartGridView.ReadOnly = true;
+            this.cartGridView.RowHeadersVisible = false;
+            this.cartGridView.RowHeadersWidth = 62;
+            this.cartGridView.RowTemplate.Height = 28;
+            this.cartGridView.Size = new System.Drawing.Size(562, 511);
+            this.cartGridView.TabIndex = 47;
+            this.cartGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
+            this.cartGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.cartGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.cartGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.cartGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.cartGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.cartGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.cartGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
+            this.cartGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.cartGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.cartGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cartGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.cartGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.cartGridView.ThemeStyle.HeaderStyle.Height = 20;
+            this.cartGridView.ThemeStyle.ReadOnly = true;
+            this.cartGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cartGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.cartGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cartGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.cartGridView.ThemeStyle.RowsStyle.Height = 28;
+            this.cartGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            this.cartGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
             // ViewCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
+            this.Controls.Add(this.cartGridView);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.updateButton);
@@ -277,18 +320,17 @@
             this.Controls.Add(this.name);
             this.Controls.Add(this.quantitiesComboBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cartGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuComboBox);
-            this.MinimumSize = new System.Drawing.Size(1130, 900);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "ViewCart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ViewCart";
             this.Load += new System.EventHandler(this.ViewCart_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +339,6 @@
         #endregion
         private System.Windows.Forms.ComboBox menuComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView cartGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox quantitiesComboBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
@@ -310,5 +351,6 @@
         private Guna.UI2.WinForms.Guna2Button backButton;
         private Guna.UI2.WinForms.Guna2Button updateButton;
         private Guna.UI2.WinForms.Guna2Button deleteButton;
+        private Guna.UI2.WinForms.Guna2DataGridView cartGridView;
     }
 }

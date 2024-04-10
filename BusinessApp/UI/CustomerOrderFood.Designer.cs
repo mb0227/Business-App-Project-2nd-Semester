@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.menuComboBox = new System.Windows.Forms.ComboBox();
-            this.menuGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderDealBtn = new Guna.UI2.WinForms.Guna2Button();
             this.trackOrderBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -50,10 +52,12 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
+            this.deleteOrderBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.menuGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(79, 65);
+            this.label1.Location = new System.Drawing.Point(102, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 36);
             this.label1.TabIndex = 8;
@@ -75,7 +79,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(81, 127);
+            this.label3.Location = new System.Drawing.Point(104, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 36);
             this.label3.TabIndex = 9;
@@ -89,29 +93,11 @@
             this.menuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuComboBox.FormattingEnabled = true;
-            this.menuComboBox.Location = new System.Drawing.Point(282, 64);
+            this.menuComboBox.Location = new System.Drawing.Point(305, 76);
             this.menuComboBox.Name = "menuComboBox";
             this.menuComboBox.Size = new System.Drawing.Size(247, 37);
             this.menuComboBox.TabIndex = 0;
             this.menuComboBox.SelectedIndexChanged += new System.EventHandler(this.menuComboBox_SelectedIndexChanged);
-            // 
-            // menuGridView
-            // 
-            this.menuGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.menuGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.menuGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.menuGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.menuGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.menuGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.menuGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuGridView.Location = new System.Drawing.Point(557, 64);
-            this.menuGridView.Name = "menuGridView";
-            this.menuGridView.ReadOnly = true;
-            this.menuGridView.RowHeadersWidth = 62;
-            this.menuGridView.RowTemplate.Height = 28;
-            this.menuGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.menuGridView.Size = new System.Drawing.Size(417, 367);
-            this.menuGridView.TabIndex = 12;
             // 
             // panel1
             // 
@@ -119,6 +105,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
+            this.panel1.Controls.Add(this.menuGridView);
+            this.panel1.Controls.Add(this.deleteOrderBtn);
             this.panel1.Controls.Add(this.orderDealBtn);
             this.panel1.Controls.Add(this.trackOrderBtn);
             this.panel1.Controls.Add(this.searchBtn);
@@ -132,13 +120,12 @@
             this.panel1.Controls.Add(this.quantitiesComboBox);
             this.panel1.Controls.Add(this.comments);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.menuGridView);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.menuComboBox);
             this.panel1.Location = new System.Drawing.Point(163, 166);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1014, 780);
+            this.panel1.Size = new System.Drawing.Size(1164, 886);
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -155,10 +142,10 @@
             this.orderDealBtn.FillColor = System.Drawing.Color.MediumOrchid;
             this.orderDealBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderDealBtn.ForeColor = System.Drawing.Color.Black;
-            this.orderDealBtn.Location = new System.Drawing.Point(780, 446);
+            this.orderDealBtn.Location = new System.Drawing.Point(832, 484);
             this.orderDealBtn.Name = "orderDealBtn";
             this.orderDealBtn.Size = new System.Drawing.Size(190, 68);
-            this.orderDealBtn.TabIndex = 45;
+            this.orderDealBtn.TabIndex = 7;
             this.orderDealBtn.Text = "Order Deal";
             this.orderDealBtn.Click += new System.EventHandler(this.orderDealBtn_Click);
             // 
@@ -175,10 +162,11 @@
             this.trackOrderBtn.FillColor = System.Drawing.Color.SlateBlue;
             this.trackOrderBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trackOrderBtn.ForeColor = System.Drawing.Color.Black;
-            this.trackOrderBtn.Location = new System.Drawing.Point(581, 534);
+            this.trackOrderBtn.Location = new System.Drawing.Point(623, 569);
             this.trackOrderBtn.Name = "trackOrderBtn";
             this.trackOrderBtn.Size = new System.Drawing.Size(190, 65);
-            this.trackOrderBtn.TabIndex = 44;
+            this.trackOrderBtn.TabIndex = 10;
+            this.trackOrderBtn.TabStop = false;
             this.trackOrderBtn.Text = "Track Order";
             this.trackOrderBtn.Click += new System.EventHandler(this.trackOrderBtn_Click);
             // 
@@ -195,7 +183,7 @@
             this.searchBtn.FillColor = System.Drawing.Color.Orange;
             this.searchBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.searchBtn.ForeColor = System.Drawing.Color.Black;
-            this.searchBtn.Location = new System.Drawing.Point(125, 449);
+            this.searchBtn.Location = new System.Drawing.Point(167, 484);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(190, 65);
             this.searchBtn.TabIndex = 4;
@@ -215,10 +203,10 @@
             this.addButton.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.addButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.Black;
-            this.addButton.Location = new System.Drawing.Point(125, 534);
+            this.addButton.Location = new System.Drawing.Point(167, 569);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(190, 65);
-            this.addButton.TabIndex = 5;
+            this.addButton.TabIndex = 8;
             this.addButton.Text = "Add to Cart";
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -235,10 +223,10 @@
             this.viewButton.FillColor = System.Drawing.Color.Teal;
             this.viewButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewButton.ForeColor = System.Drawing.Color.Black;
-            this.viewButton.Location = new System.Drawing.Point(353, 536);
+            this.viewButton.Location = new System.Drawing.Point(395, 569);
             this.viewButton.Name = "viewButton";
             this.viewButton.Size = new System.Drawing.Size(190, 65);
-            this.viewButton.TabIndex = 6;
+            this.viewButton.TabIndex = 9;
             this.viewButton.Text = "View Cart";
             this.viewButton.Click += new System.EventHandler(this.viewButton_Click);
             // 
@@ -255,10 +243,10 @@
             this.orderButton.FillColor = System.Drawing.Color.Lime;
             this.orderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderButton.ForeColor = System.Drawing.Color.Black;
-            this.orderButton.Location = new System.Drawing.Point(581, 449);
+            this.orderButton.Location = new System.Drawing.Point(623, 484);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(190, 65);
-            this.orderButton.TabIndex = 8;
+            this.orderButton.TabIndex = 6;
             this.orderButton.Text = "Place Order";
             this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
             // 
@@ -275,10 +263,10 @@
             this.clearCartButton.FillColor = System.Drawing.Color.Red;
             this.clearCartButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearCartButton.ForeColor = System.Drawing.Color.Black;
-            this.clearCartButton.Location = new System.Drawing.Point(353, 451);
+            this.clearCartButton.Location = new System.Drawing.Point(395, 484);
             this.clearCartButton.Name = "clearCartButton";
             this.clearCartButton.Size = new System.Drawing.Size(190, 65);
-            this.clearCartButton.TabIndex = 7;
+            this.clearCartButton.TabIndex = 5;
             this.clearCartButton.Text = "Clear Cart";
             this.clearCartButton.Click += new System.EventHandler(this.clearCartButton_Click);
             // 
@@ -294,7 +282,7 @@
             "Price",
             "Variant",
             "Category"});
-            this.sortGridView.Location = new System.Drawing.Point(843, 24);
+            this.sortGridView.Location = new System.Drawing.Point(957, 28);
             this.sortGridView.Name = "sortGridView";
             this.sortGridView.Size = new System.Drawing.Size(131, 27);
             this.sortGridView.TabIndex = 43;
@@ -306,7 +294,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MintCream;
-            this.label6.Location = new System.Drawing.Point(81, 322);
+            this.label6.Location = new System.Drawing.Point(104, 334);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(172, 36);
             this.label6.TabIndex = 42;
@@ -317,8 +305,8 @@
             // 
             this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(282, 317);
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.name.Location = new System.Drawing.Point(305, 329);
             this.name.Multiline = true;
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(247, 41);
@@ -333,7 +321,7 @@
             this.quantitiesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quantitiesComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantitiesComboBox.FormattingEnabled = true;
-            this.quantitiesComboBox.Location = new System.Drawing.Point(282, 126);
+            this.quantitiesComboBox.Location = new System.Drawing.Point(305, 138);
             this.quantitiesComboBox.Name = "quantitiesComboBox";
             this.quantitiesComboBox.Size = new System.Drawing.Size(247, 37);
             this.quantitiesComboBox.TabIndex = 1;
@@ -342,8 +330,8 @@
             // 
             this.comments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comments.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comments.Location = new System.Drawing.Point(282, 189);
+            this.comments.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.comments.Location = new System.Drawing.Point(305, 201);
             this.comments.Multiline = true;
             this.comments.Name = "comments";
             this.comments.Size = new System.Drawing.Size(247, 89);
@@ -356,7 +344,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MintCream;
-            this.label4.Location = new System.Drawing.Point(81, 189);
+            this.label4.Location = new System.Drawing.Point(104, 201);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 36);
             this.label4.TabIndex = 13;
@@ -375,7 +363,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(51, 76);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1126, 91);
+            this.panel3.Size = new System.Drawing.Size(1276, 91);
             this.panel3.TabIndex = 19;
             // 
             // label2
@@ -384,31 +372,109 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(481, 23);
+            this.label2.Location = new System.Drawing.Point(556, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 52);
             this.label2.TabIndex = 7;
             this.label2.Text = "Order Food";
+            // 
+            // deleteOrderBtn
+            // 
+            this.deleteOrderBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.deleteOrderBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.deleteOrderBtn.BorderRadius = 18;
+            this.deleteOrderBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.deleteOrderBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteOrderBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteOrderBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteOrderBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteOrderBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteOrderBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteOrderBtn.ForeColor = System.Drawing.Color.Black;
+            this.deleteOrderBtn.Location = new System.Drawing.Point(832, 569);
+            this.deleteOrderBtn.Name = "deleteOrderBtn";
+            this.deleteOrderBtn.Size = new System.Drawing.Size(190, 65);
+            this.deleteOrderBtn.TabIndex = 12;
+            this.deleteOrderBtn.Text = "Delete Order";
+            this.deleteOrderBtn.Visible = false;
+            this.deleteOrderBtn.Click += new System.EventHandler(this.deleteOrderBtn_Click);
+            // 
+            // menuGridView
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.menuGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.menuGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.menuGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.menuGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.menuGridView.ColumnHeadersHeight = 20;
+            this.menuGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.menuGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.menuGridView.EnableHeadersVisualStyles = true;
+            this.menuGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
+            this.menuGridView.Location = new System.Drawing.Point(568, 69);
+            this.menuGridView.Name = "menuGridView";
+            this.menuGridView.ReadOnly = true;
+            this.menuGridView.RowHeadersVisible = false;
+            this.menuGridView.RowHeadersWidth = 62;
+            this.menuGridView.RowTemplate.Height = 28;
+            this.menuGridView.Size = new System.Drawing.Size(520, 384);
+            this.menuGridView.TabIndex = 46;
+            this.menuGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.menuGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.menuGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
+            this.menuGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.menuGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.menuGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.menuGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.menuGridView.ThemeStyle.HeaderStyle.Height = 20;
+            this.menuGridView.ThemeStyle.ReadOnly = true;
+            this.menuGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.menuGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.menuGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.menuGridView.ThemeStyle.RowsStyle.Height = 28;
+            this.menuGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            this.menuGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // CustomerOrderFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(1070, 889);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "CustomerOrderFood";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CustomerOrderFood";
             this.Load += new System.EventHandler(this.CustomerOrderFood_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,7 +483,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox menuComboBox;
-        private System.Windows.Forms.DataGridView menuGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label4;
@@ -435,5 +500,7 @@
         private Guna.UI2.WinForms.Guna2Button addButton;
         private Guna.UI2.WinForms.Guna2Button trackOrderBtn;
         private Guna.UI2.WinForms.Guna2Button orderDealBtn;
+        private Guna.UI2.WinForms.Guna2Button deleteOrderBtn;
+        private Guna.UI2.WinForms.Guna2DataGridView menuGridView;
     }
 }

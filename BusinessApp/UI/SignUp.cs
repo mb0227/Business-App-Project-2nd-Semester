@@ -38,8 +38,17 @@ namespace SSC
             password2.Text = password2.Text.Replace(",", "");
         }               
 
+        private void ClearTextBoxes()
+        {
+            username.Text = "";
+            email.Text = "";
+            phoneNo.Text = "";
+            password.Text = "";
+            password2.Text = "";
+        }
         private bool CheckValidations()
         {
+            ReplaceCommas();
             if (string.IsNullOrWhiteSpace(username.Text.Trim()))
             {
                 errorProvider1.SetError(username, "Username cannot be empty.");
@@ -142,7 +151,6 @@ namespace SSC
         {
             if(CheckValidations())
             {
-                ReplaceCommas();
                 User user = new User(email.Text, password.Text, "Customer");
                 ObjectHandler.GetUserDL().SaveUser(user);
                 Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
@@ -151,6 +159,7 @@ namespace SSC
                 Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
                 ObjectHandler.GetRegularDL().SaveRegular(regular);
                 MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearTextBoxes();
             }
             //else
             //{

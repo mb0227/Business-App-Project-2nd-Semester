@@ -10,7 +10,7 @@ namespace RMS.DL
     public interface IUserDL
     {
         void SaveUser(User user);
-        string SearchUserForRole(string email);
+        string SearchUserForRole(string email, string password);
         int GetUserID(string email);
         bool EmailAlreadyExists(string email);
         int GetUserID(int id);

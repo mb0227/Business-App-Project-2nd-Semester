@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -41,6 +46,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,6 +109,24 @@
     <Compile Include="DL\FH\CustomerFHDL.cs" />
     <Compile Include="DL\FH\RegularFHDL.cs" />
     <Compile Include="DL\FH\UserFHDL.cs" />
+    <Compile Include="Reports\OrderHistory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ShowReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ShowReport.Designer.cs">
+      <DependentUpon>ShowReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UserDetails1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -296,6 +320,17 @@
     <Compile Include="UI\WaiterDashboard.Designer.cs">
       <DependentUpon>WaiterDashboard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\OrderHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderHistory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShowReport.resx">
+      <DependentUpon>ShowReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserDetails1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
@@ -502,6 +537,9 @@
     <Content Include="Files\Regular.txt" />
     <Content Include="Files\Customers.txt" />
     <Content Include="Files\Users.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

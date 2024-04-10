@@ -11,14 +11,13 @@ namespace RMS.BL
         private int ID;
         private string Message;
 
-        public Notification( string message)
+        public Notification(string message)
         {
             Message = message;
         }
-        public Notification(int id, string message)
+        public Notification(int id, string message) : this(message)
         {
             ID = id;
-            Message = message;
         }
 
         public int GetID()

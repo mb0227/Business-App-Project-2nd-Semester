@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
             this.signIn = new System.Windows.Forms.Button();
             this.signUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.signIn.FlatAppearance.BorderSize = 0;
             this.signIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signIn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signIn.Location = new System.Drawing.Point(487, 462);
+            this.signIn.Location = new System.Drawing.Point(606, 550);
             this.signIn.Name = "signIn";
             this.signIn.Size = new System.Drawing.Size(132, 60);
             this.signIn.TabIndex = 1;
@@ -61,7 +62,7 @@
             this.signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUp.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUp.ForeColor = System.Drawing.Color.Black;
-            this.signUp.Location = new System.Drawing.Point(487, 330);
+            this.signUp.Location = new System.Drawing.Point(606, 418);
             this.signUp.Name = "signUp";
             this.signUp.Size = new System.Drawing.Size(127, 60);
             this.signUp.TabIndex = 0;
@@ -74,7 +75,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(14, 63);
+            this.label2.Location = new System.Drawing.Point(24, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 28);
             this.label2.TabIndex = 2;
@@ -90,7 +91,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1109, 100);
+            this.panel1.Size = new System.Drawing.Size(1339, 100);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -99,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(350, 33);
+            this.label1.Location = new System.Drawing.Point(465, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(434, 47);
             this.label1.TabIndex = 3;
@@ -108,10 +109,11 @@
             // 
             // logo
             // 
-            //this.logo.Image = global::SSC.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(17, 12);
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Location = new System.Drawing.Point(17, 6);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(46, 50);
+            this.logo.Size = new System.Drawing.Size(69, 68);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
@@ -120,11 +122,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1098, 874);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.signUp);
             this.Controls.Add(this.signIn);
-            this.MinimumSize = new System.Drawing.Size(1070, 889);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Homepage";

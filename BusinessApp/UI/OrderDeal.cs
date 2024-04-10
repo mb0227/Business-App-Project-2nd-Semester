@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SignInSignUp.UI
 {
@@ -137,36 +138,63 @@ namespace SignInSignUp.UI
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                try
+                if (ObjectHandler.GetOrderDL().HasOrder(customer.GetID()) == 0)
                 {
-                    selectedRow = dataGridView1.SelectedRows[0].Index;
-                    if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
+                    try
                     {
-                        DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
-
-                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["DealName"].Value != null)
+                        selectedRow = dataGridView1.SelectedRows[0].Index;
+                        if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
                         {
-                            if (customer.GetStatus() == "Regular")
+                            DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+
+                            if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["DealName"].Value != null)
                             {
-                                int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
-                                Regular regular = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
-                                regular.AddLoyaltyPoints(5);
-                                ObjectHandler.GetRegularDL().UpdateRegular(regular);
-                                Deal deal = ObjectHandler.GetDealDL().GetDeal(id);
-                                ObjectHandler.GetOrderDL().OrderDeal(deal, customer.GetID());
-                                selectedRow = -1;
+                                if (customer.GetStatus() == "Regular")
+                                {
+                                    int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
+                                    Regular regular = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
+                                    regular.AddLoyaltyPoints(5);
+                                    ObjectHandler.GetRegularDL().UpdateRegular(regular);
+                                    Deal deal = ObjectHandler.GetDealDL().GetDeal(id);
+                                    ObjectHandler.GetOrderDL().OrderDeal(deal, customer.GetID());
+                                    selectedRow = -1;
+                                    MessageBox.Show("Order Placed Successfully", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else if (customer.GetStatus() == "VIP")
+                                {
+                                    int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
+                                    VIP vip = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
+                                    Deal deal = ObjectHandler.GetDealDL().GetDeal(id);
+                                    if (vip.GetVouchers().Count > 0)
+                                    {
+                                        Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
+                                        if (v.GetExpirationDate() > DateTime.Today)
+                                        {
+                                            deal.ApplyDiscount(v.GetDiscount());
+                                            MessageBox.Show("You got " + v.GetDiscount().ToString() + " discount");
+                                        }
+                                    }
+                                    ObjectHandler.GetOrderDL().OrderDeal(deal, customer.GetID());
+                                    ObjectHandler.GetVipDL().UpdateVIP(vip.GetMembershipLevel(), customer.GetID(), vip.GetVouchers());
+                                    selectedRow = -1;
+                                    MessageBox.Show("Order Placed Successfully", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
                             }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Your previous order is already under process.","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Please select a row to order");
+                MessageBox.Show("Please select a row to order","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

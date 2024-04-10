@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
             this.label1 = new System.Windows.Forms.Label();
             this.signInButton = new System.Windows.Forms.Button();
-            this.username = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +64,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(170, 302);
+            this.label1.Location = new System.Drawing.Point(170, 205);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 27);
             this.label1.TabIndex = 0;
@@ -77,7 +78,7 @@
             this.signInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signInButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signInButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.signInButton.Location = new System.Drawing.Point(356, 547);
+            this.signInButton.Location = new System.Drawing.Point(356, 450);
             this.signInButton.Name = "signInButton";
             this.signInButton.Size = new System.Drawing.Size(140, 51);
             this.signInButton.TabIndex = 3;
@@ -85,18 +86,18 @@
             this.signInButton.UseVisualStyleBackColor = false;
             this.signInButton.Click += new System.EventHandler(this.signInButton_Click);
             // 
-            // username
+            // email
             // 
-            this.username.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.username.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(176, 334);
-            this.username.Multiline = true;
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(214, 39);
-            this.username.TabIndex = 0;
-            this.username.WordWrap = false;
+            this.email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.email.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.Location = new System.Drawing.Point(176, 237);
+            this.email.Multiline = true;
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(214, 39);
+            this.email.TabIndex = 0;
+            this.email.WordWrap = false;
             // 
             // password
             // 
@@ -104,7 +105,7 @@
             this.password.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(176, 433);
+            this.password.Location = new System.Drawing.Point(176, 336);
             this.password.Multiline = true;
             this.password.Name = "password";
             this.password.PasswordChar = '*';
@@ -117,7 +118,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(169, 400);
+            this.label2.Location = new System.Drawing.Point(169, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 27);
             this.label2.TabIndex = 5;
@@ -130,7 +131,7 @@
             this.label4.BackColor = System.Drawing.Color.MediumOrchid;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(451, 22);
+            this.label4.Location = new System.Drawing.Point(510, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(273, 52);
             this.label4.TabIndex = 7;
@@ -152,7 +153,7 @@
             this.homepageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homepageButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homepageButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.homepageButton.Location = new System.Drawing.Point(74, 547);
+            this.homepageButton.Location = new System.Drawing.Point(74, 450);
             this.homepageButton.Name = "homepageButton";
             this.homepageButton.Size = new System.Drawing.Size(137, 51);
             this.homepageButton.TabIndex = 2;
@@ -164,7 +165,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(217, 138);
+            this.pictureBox2.Location = new System.Drawing.Point(217, 41);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(131, 125);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,14 +180,14 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(0, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1097, 83);
+            this.panel2.Size = new System.Drawing.Size(1327, 83);
             this.panel2.TabIndex = 12;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(135, 334);
+            this.pictureBox3.Location = new System.Drawing.Point(135, 237);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,7 +198,7 @@
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(133, 431);
+            this.pictureBox4.Location = new System.Drawing.Point(133, 334);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +209,7 @@
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(402, 433);
+            this.pictureBox5.Location = new System.Drawing.Point(402, 336);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 31);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -228,12 +229,12 @@
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.signInButton);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.username);
+            this.panel3.Controls.Add(this.email);
             this.panel3.Controls.Add(this.password);
             this.panel3.Controls.Add(this.homepageButton);
-            this.panel3.Location = new System.Drawing.Point(293, 100);
+            this.panel3.Location = new System.Drawing.Point(370, 33);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(555, 676);
+            this.panel3.Size = new System.Drawing.Size(555, 557);
             this.panel3.TabIndex = 16;
             // 
             // button1
@@ -244,9 +245,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(217, 480);
+            this.button1.Location = new System.Drawing.Point(217, 383);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 33);
+            this.button1.Size = new System.Drawing.Size(191, 40);
             this.button1.TabIndex = 16;
             this.button1.Text = "Forgot Password?";
             this.button1.UseVisualStyleBackColor = false;
@@ -260,9 +261,10 @@
             this.gradientPanel1.Angle = 90F;
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gradientPanel1.BottomColor = System.Drawing.Color.DarkBlue;
+            this.gradientPanel1.Controls.Add(this.panel3);
             this.gradientPanel1.Location = new System.Drawing.Point(0, 76);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1097, 805);
+            this.gradientPanel1.Size = new System.Drawing.Size(1327, 981);
             this.gradientPanel1.TabIndex = 17;
             this.gradientPanel1.TopColor = System.Drawing.Color.MediumOrchid;
             // 
@@ -271,12 +273,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1098, 874);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.gradientPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.MinimumSize = new System.Drawing.Size(1070, 889);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sign In Page";
@@ -291,6 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -299,7 +301,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button signInButton;
-        private System.Windows.Forms.TextBox username;
+        private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;

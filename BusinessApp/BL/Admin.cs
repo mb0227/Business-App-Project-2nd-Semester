@@ -103,6 +103,5 @@ namespace RMS.BL
             int index = ToolsUsed.IndexOf(oldTool);
             ToolsUsed[index] = newTool;
         }
-
     }
 }

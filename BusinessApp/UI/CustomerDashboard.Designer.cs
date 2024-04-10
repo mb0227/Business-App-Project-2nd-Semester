@@ -45,7 +45,7 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(62, 171);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1118, 651);
+            this.panel2.Size = new System.Drawing.Size(1268, 757);
             this.panel2.TabIndex = 6;
             // 
             // panel1
@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(55, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1124, 91);
+            this.panel1.Size = new System.Drawing.Size(1274, 91);
             this.panel1.TabIndex = 7;
             // 
             // label1
@@ -65,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(415, 27);
+            this.label1.Location = new System.Drawing.Point(490, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(422, 52);
             this.label1.TabIndex = 6;
@@ -81,7 +81,8 @@
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(55, 166);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1122, 783);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1272, 889);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
@@ -90,14 +91,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(1070, 889);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "CustomerDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CustomerDashboard";
+            this.Load += new System.EventHandler(this.CustomerDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

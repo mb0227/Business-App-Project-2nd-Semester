@@ -66,14 +66,11 @@ namespace SSC.UI
         {
             switch (formName)
             {
-                case "dashboard":
-                    OpenForm(new AdminDashboard(this.Size, this.Location, Admin));
-                    break;
                 case "manageEmployees":
                     OpenForm(new ManageEmployees(this.Size, this.Location, Admin));
                     break;
                 case "manageCustomers":
-                    OpenForm(new ManageEmployees(this.Size, this.Location, Admin));
+                    OpenForm(new ManageCustomers(this.Size, this.Location, Admin));
                     break;
                 case "sendNotifications":
                     OpenForm(new SendNotifications(this.Size, this.Location, Admin));

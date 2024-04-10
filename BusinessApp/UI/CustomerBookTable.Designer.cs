@@ -122,7 +122,6 @@
             this.label2.Size = new System.Drawing.Size(241, 36);
             this.label2.TabIndex = 17;
             this.label2.Text = "Reservation Date";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -131,7 +130,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(558, 123);
+            this.label1.Location = new System.Drawing.Point(555, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 36);
             this.label1.TabIndex = 16;
@@ -158,6 +157,7 @@
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(204, 46);
             this.guna2TextBox1.TabIndex = 14;
+            this.guna2TextBox1.WordWrap = false;
             // 
             // dateTimePicker1
             // 
@@ -208,7 +208,7 @@
             this.viewReservationButton.Name = "viewReservationButton";
             this.viewReservationButton.Size = new System.Drawing.Size(262, 65);
             this.viewReservationButton.TabIndex = 2;
-            this.viewReservationButton.Text = "View Reservations";
+            this.viewReservationButton.Text = "View Reservation";
             this.viewReservationButton.Click += new System.EventHandler(this.viewReservationButton_Click);
             // 
             // makeReservation

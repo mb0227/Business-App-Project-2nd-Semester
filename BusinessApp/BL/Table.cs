@@ -17,9 +17,8 @@ namespace RMS.BL
             Capacity = capacity;
         }
 
-        public Table(int capacity, int id, string status)
+        public Table(int capacity, int id, string status) : this(capacity)
         {
-            Capacity = capacity;
             ID = id;
             Status = status;
         }

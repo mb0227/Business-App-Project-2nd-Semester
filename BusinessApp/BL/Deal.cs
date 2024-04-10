@@ -11,9 +11,6 @@ namespace RMS.BL
         private List<(string Name, string Quantity)> Menu = new List<(string Name, string Quantity)>();
         private int ID;
 
-        public Deal()
-        {            
-        }
         public Deal(string n, double p, List<(string Name, string Quantity)> m)
         {
             DealName = n;
@@ -21,12 +18,9 @@ namespace RMS.BL
             Menu = m;
         }
 
-        public Deal(int id, string n, double p, List<(string Name, string Quantity)> m)
+        public Deal(int id, string n, double p, List<(string Name, string Quantity)> m) : this(n,p, m)
         {
             ID = id;
-            DealName = n;
-            Price = p;
-            Menu = m;
         }
 
         public string GetDealName()
@@ -89,9 +83,9 @@ namespace RMS.BL
             StringBuilder itemString = new StringBuilder();
             foreach (var product in Menu)
             {
-                itemString.Append($"{product.Quantity} of {product.Name},");
+                itemString.Append($"{product.Quantity} of {product.Name};");
             }
-            return itemString.ToString().TrimEnd(',');
+            return itemString.ToString().TrimEnd(';');
         }
 
         public (string Name, string Quantity) GetMenuItemAtIndex(int index)
@@ -103,6 +97,14 @@ namespace RMS.BL
             else
             {
                 throw null;
+            }
+        }
+
+        public void ApplyDiscount(double discount)
+        {
+            if(discount<Price)
+            {
+                Price -= discount;
             }
         }
     }

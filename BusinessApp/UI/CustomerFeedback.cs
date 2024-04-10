@@ -139,9 +139,6 @@ namespace SSC.UI
                 case "bookTable":
                     OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
                     break;
-                case "feedback":
-                    OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
-                    break;
                 case "settings":
                     OpenForm(new Settings(this.Size, this.Location, customer));
                     break;

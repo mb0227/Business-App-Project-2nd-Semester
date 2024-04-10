@@ -18,8 +18,8 @@ namespace RMS.DL
         void UpdateOrderStatus(int id, int status);
         void TakeOrder(Order order);
         int CountOrders(int customerID);
+        void DeleteOrder(int customerID);
         //List<Order> GetOrdersByCustomer(int customerID);
         //void UpdateOrderStatus(int orderID, string status);
-        //void DeleteOrder(int orderID);
     }
 }

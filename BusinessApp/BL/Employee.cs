@@ -27,9 +27,8 @@ namespace RMS.BL
             Salary = salary;
         }
 
-        public Employee(string username, string contact, double salary, DateTime joinDate, string gender, int userID)
+        public Employee(string username, string contact, double salary, DateTime joinDate, string gender, int userID) : this(username, salary)
         {
-            Username = username;
             Contact = contact;
             Salary = salary;
             JoinDate = joinDate;
@@ -37,15 +36,9 @@ namespace RMS.BL
             UserID = userID;
         }
 
-        public Employee(int empID, string username, string contact, double salary, DateTime joinDate, string gender, int userID)
+        public Employee(int empID, string username, string contact, double salary, DateTime joinDate, string gender, int userID) : this(username,contact, salary, joinDate, gender,userID)
         {
             EmployeeID = empID;
-            Username = username;
-            Contact = contact;
-            Salary = salary;
-            JoinDate = joinDate;
-            Gender = gender;
-            UserID = userID;
         }
 
         public virtual int GetEmployeeID()

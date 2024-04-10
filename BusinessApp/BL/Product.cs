@@ -19,32 +19,18 @@ namespace RMS.BL
             IsAvailable = isAvailable;
         }
 
-        public Product(int id,string productName, string productDescription, string productCategory, int isAvailable)
+        public Product(int id,string productName, string productDescription, string productCategory, int isAvailable) : this(productName, productDescription, productCategory, isAvailable)
+        {
+            ProductID = id;
+        }
+
+        public Product(int id,string productName, string productCategory, double price, string quantity)
         {
             ProductID = id;
             ProductName = productName;
-            ProductDescription = productDescription;
             ProductCategory = productCategory;
-            IsAvailable = isAvailable;
-        }
-
-        public Product(string productName, string productDescription, string productCategory, int isAvailable, List<ProductVariant> pv)
-        {
-            ProductName = productName;
-            ProductDescription = productDescription;
-            ProductCategory = productCategory;
-            IsAvailable = isAvailable;
-            ProductVariants = pv;
-        }
-
-        public Product(int id,string productName, string productDescription, string productCategory, int isAvailable, List<ProductVariant> pv)
-        {
-            ProductID = id;
-            ProductName = productName;
-            ProductDescription = productDescription;
-            ProductCategory = productCategory;
-            IsAvailable = isAvailable;
-            ProductVariants = pv;
+            Price = price;
+            Quantity = quantity;
         }
 
         private string ProductName;
@@ -56,14 +42,6 @@ namespace RMS.BL
         private int ProductID;
         private double Price;//for customers
         private string Quantity;
-
-        public Product(string productName, string productCategory, double price, string quantity) 
-        {
-            ProductName = productName;
-            ProductCategory = productCategory;
-            Price = price;
-            Quantity = quantity;
-        }
 
         public string GetQuantity()
         {

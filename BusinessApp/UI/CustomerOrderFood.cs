@@ -70,9 +70,6 @@ namespace SSC.UI
                 case "dashboard":
                     OpenForm(new CustomerDashboard(this.Size, this.Location, customer));
                     break;
-                case "orderFood":
-                    OpenForm(new CustomerOrderFood(this.Size, this.Location, customer));
-                    break;
                 case "bookTable":
                     OpenForm(new CustomerBookTable(this.Size, this.Location, customer));
                     break;
@@ -114,7 +111,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             menuComboBox.Items.Clear(); 
-            foreach (Product product in ObjectHandler.GetProductDL().GetProducts())
+            foreach (Product product in ObjectHandler.GetProductDL().GetProductsForCustomers())
             {
                 if (ObjectHandler.GetProductDL().HasVariants(product.GetProductID()))
                 {
@@ -230,50 +227,64 @@ namespace SSC.UI
 
         private void orderButton_Click(object sender, EventArgs e)
         {
-            if (customer.GetCart().Count > 0 )
+            if(ObjectHandler.GetOrderDL().HasOrder(customer.GetID()) == 0)
             {
-                if (customer.GetStatus() == "Regular")
+                if (customer.GetCart().Count > 0)
                 {
-                    Order order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
-                    ObjectHandler.GetOrderDL().SaveOrder(order);
-                    customer.GetCart().Clear();
-                    ObjectHandler.GetCustomerDL().SaveCart(customer);
-                    Regular regular = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
-                    regular.AddLoyaltyPoints(5);
-                    ObjectHandler.GetRegularDL().UpdateRegular(regular);
-                    ClearTextBoxes();
-                }
-                else if (customer.GetStatus() == "VIP")
-                {
-                    Order order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
-                    VIP vip = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
-                    ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), UtilityFunctions.AwardVouchers(10));
-                    if (vip.GetVouchers().Count > 0)
+                    if (customer.GetStatus() == "Regular")
                     {
-                        Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
-                        if (v.GetExpirationDate() > DateTime.Today)
-                        {
-                            order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
-                            MessageBox.Show("You got "+ v.GetDiscount().ToString()+" discount");
-                        }
+                        Order order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                        ObjectHandler.GetOrderDL().SaveOrder(order);
+                        customer.GetCart().Clear();
+                        ObjectHandler.GetCustomerDL().SaveCart(customer);
+                        Regular regular = ObjectHandler.GetRegularDL().GetRegular(customer.GetID());
+                        regular.AddLoyaltyPoints(5);
+                        ObjectHandler.GetRegularDL().UpdateRegular(regular);
+                        deleteOrderBtn.Visible = true;
+                        ClearTextBoxes();
+                        MessageBox.Show("Order Placed Successfully", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    ObjectHandler.GetOrderDL().SaveOrder(order);
-                    customer.GetCart().Clear();
-                    ObjectHandler.GetCustomerDL().SaveCart(customer);
-                    ObjectHandler.GetVipDL().UpdateVIP(vip.GetMembershipLevel(), customer.GetID(), vip.GetVouchers());
-                    ClearTextBoxes();
+                    else if (customer.GetStatus() == "VIP")
+                    {
+                        Order order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                        VIP vip = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
+                        if (vip.GetVouchers().Count > 0)
+                        {
+                            Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
+                            if (v.GetExpirationDate() > DateTime.Today)
+                            {
+                                order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                                MessageBox.Show("You got " + v.GetDiscount().ToString() + " discount");
+                            }
+                        }
+                        ObjectHandler.GetOrderDL().SaveOrder(order);
+                        customer.GetCart().Clear();
+                        ObjectHandler.GetCustomerDL().SaveCart(customer);
+                        ObjectHandler.GetVipDL().UpdateVIP(vip.GetMembershipLevel(), customer.GetID(), vip.GetVouchers());
+                        deleteOrderBtn.Visible = true;
+                        ClearTextBoxes();
+                        MessageBox.Show("Order Placed Successfully", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select an item to place order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Please select an item to place order.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sorry, you already have one order under processing", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void clearCartButton_Click(object sender, EventArgs e)
         {
-            customer.GetCart().Clear();
-            ObjectHandler.GetCustomerDL().SaveCart(customer);
+            DialogResult result = MessageBox.Show("Are you sure you want to clear cart?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                customer.GetCart().Clear();
+                ObjectHandler.GetCustomerDL().SaveCart(customer);
+            }
         }
 
         private void viewButton_Click(object sender, EventArgs e)
@@ -304,11 +315,15 @@ namespace SSC.UI
             sortGridView.SelectedIndex = 0;
             MakeColumns();
             LoadData();
+            if (ObjectHandler.GetOrderDL().HasOrder(customer.GetID()) != 0)
+            {
+                deleteOrderBtn.Visible = true;
+            }
         }
 
         private void trackOrderBtn_Click(object sender, EventArgs e)
         {
-            if(ObjectHandler.GetOrderDL().HasOrder(customer.GetID())!=-1)
+            if(ObjectHandler.GetOrderDL().HasOrder(customer.GetID())!=0)
             {
                 if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 0)
                 {
@@ -321,6 +336,10 @@ namespace SSC.UI
                 else if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 2)
                 {
                     MessageBox.Show($"Your order has been picked up and ready to be delivered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 3)
+                {
+                    MessageBox.Show($"Your previous order was delivered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }            
             else
@@ -338,6 +357,17 @@ namespace SSC.UI
             OrderDeal d = new OrderDeal(this.Size, this.Location, customer);
             d.Show();
             this.Hide();
+        }
+
+        private void deleteOrderBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete your order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                ObjectHandler.GetOrderDL().DeleteOrder(customer.GetID());
+                deleteOrderBtn.Visible = false;
+                MessageBox.Show("Order Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

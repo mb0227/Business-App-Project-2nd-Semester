@@ -12,13 +12,6 @@ namespace RMS.BL
         private DateTime ExpirationDate;
         private double Discount;
 
-        public Voucher()
-        {
-            ID = 0;
-            ExpirationDate = DateTime.MinValue;
-            Discount = 0.0;
-        }
-
         public Voucher(int id, DateTime expirationDate, double discount)
         {
             ID = id;

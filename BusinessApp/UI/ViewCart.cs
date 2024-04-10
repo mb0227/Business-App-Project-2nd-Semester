@@ -116,7 +116,7 @@ namespace SSC.UI
         private void FillComboBox()
         {
             menuComboBox.Items.Clear();
-            foreach (Product product in ObjectHandler.GetProductDL().GetProducts())
+            foreach (Product product in ObjectHandler.GetProductDL().GetProductsForCustomers())
             {
                 if (ObjectHandler.GetProductDL().HasVariants(product.GetProductID()))
                 {
@@ -131,8 +131,8 @@ namespace SSC.UI
             foreach (OrderedProduct product in customer.GetCart())
             {
                 dataTable.Rows.Add(product.GetProduct().GetProductName(), product.GetQuantity());
-                cartGridView.DataSource = dataTable;
             }
+            cartGridView.DataSource = dataTable;
         }
 
         private void menuComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,25 +206,31 @@ namespace SSC.UI
                     OrderedProduct p = new OrderedProduct(ObjectHandler.GetProductDL().SearchProductByName(menuComboBox.Text), quantitiesComboBox.Text);
                     selectedRow = cartGridView.SelectedRows[0].Index;
 
-                    DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow]; //Select current row
-                    string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
-                    string quantity = selectedDataGridViewRow.Cells["Quantity"].Value.ToString();
+                    if (cartGridView != null && selectedRow >= 0 && selectedRow < cartGridView.Rows.Count)
+                    {
+                        DataGridViewRow selectedDataGridViewRow = cartGridView.Rows[selectedRow];
 
-                    Product product = new Product();
-                    product.SetProductName(productName);
-                    customer.RemoveFromCart(product);
+                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ProductName"].Value != null)
+                        {
+                            string productName = selectedDataGridViewRow.Cells["ProductName"].Value.ToString();
 
-                    dataTable.Rows[selectedRow].SetField("ProductName", p.GetProduct().GetProductName());
-                    dataTable.Rows[selectedRow].SetField("Quantity", p.GetQuantity());
+                            Product product = new Product();
+                            product.SetProductName(productName);
+                            customer.RemoveFromCart(product);
 
-                    customer.AddToCart(p.GetProduct(), p.GetQuantity());
-                    cartGridView.DataSource = dataTable;
-                    ObjectHandler.GetCustomerDL().UpdateCart(customer);
+                            dataTable.Rows[selectedRow].SetField("ProductName", p.GetProduct().GetProductName());
+                            dataTable.Rows[selectedRow].SetField("Quantity", p.GetQuantity());
+
+                            customer.AddToCart(p.GetProduct(), p.GetQuantity());
+                            cartGridView.DataSource = dataTable;
+                            ObjectHandler.GetCustomerDL().UpdateCart(customer);
+                        }
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Please select a row to update");
+                MessageBox.Show("Please select a row to update","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -261,7 +267,7 @@ namespace SSC.UI
             }
             else
             {
-                MessageBox.Show("Please select a row to delete");
+                MessageBox.Show("Please select a row to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

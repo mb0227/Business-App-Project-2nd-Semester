@@ -15,12 +15,6 @@ namespace RMS.BL
 
         private int ID;
 
-        public Reservation(DateTime reservationDate, int totalPersons, int tableID)
-        {
-            ReservationDate = reservationDate;
-            TotalPersons = totalPersons;
-            TableID = tableID;
-        }
 
         public Reservation(DateTime reservationDate, int totalPersons, int customerID, int tableID)
         {
@@ -29,13 +23,9 @@ namespace RMS.BL
             CustomerID = customerID;
             TableID = tableID;
         }
-        public Reservation(int id, DateTime reservationDate, int totalPersons, int customerID, int tableID)
+        public Reservation(int id, DateTime reservationDate, int totalPersons, int customerID, int tableID) : this(reservationDate, totalPersons, customerID, tableID)
         {
             ID = id;
-            ReservationDate = reservationDate;
-            TotalPersons = totalPersons;
-            CustomerID = customerID;
-            TableID = tableID;
         }
 
         public int GetID()

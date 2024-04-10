@@ -73,10 +73,7 @@ namespace SignInSignUp.UI
                     OpenForm(new ManageEmployees(this.Size, this.Location, Admin));
                     break;
                 case "manageCustomers":
-                    OpenForm(new ManageEmployees(this.Size, this.Location, Admin));
-                    break;
-                case "sendNotifications":
-                    OpenForm(new SendNotifications(this.Size, this.Location, Admin));
+                    OpenForm(new ManageCustomers(this.Size, this.Location, Admin));
                     break;
                 case "settings":
                     OpenForm(new AdminSettings(this.Size, this.Location, Admin));

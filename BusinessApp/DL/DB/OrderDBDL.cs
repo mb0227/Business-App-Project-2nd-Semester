@@ -100,7 +100,7 @@ namespace RMS.DL
                     return Convert.ToInt32(reader[0]);
                 }
             }
-            return -1;
+            return 0;
         }
 
         public int CountOrders(int customerID)
@@ -182,6 +182,17 @@ namespace RMS.DL
                 command.Parameters.AddWithValue("@ProductsOrdered", UtilityFunctions.GetDealString(deal));
                 command.Parameters.AddWithValue("@TotalPrice", deal.GetPrice());
                 command.Parameters.AddWithValue("@PaymentMethod", "Cash on Delivery");
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteOrder(int customerID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("DELETE FROM Orders WHERE CustomerID=@CustomerID", connection);
+                command.Parameters.AddWithValue("@CustomerID", customerID);
                 command.ExecuteNonQuery();
             }
         }

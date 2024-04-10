@@ -23,28 +23,6 @@ namespace RMS.BL
         {            
         }
 
-        public Order(List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod, int id)
-        {
-            ProductsOrdered = products;
-            Status = orderStatus;
-            OrderDate = orderDate;
-            CustomerComments = customerComments;
-            CalculateTotalPrice();
-            CustomerID = id;
-            PaymentMethod = paymentMethod;
-        }
-
-        public Order(double discount,List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod, int id)
-        {
-            ProductsOrdered = products;
-            Status = orderStatus;
-            OrderDate = orderDate;
-            CustomerComments = customerComments;
-            CalculateTotalPrice(discount);
-            CustomerID = id;
-            PaymentMethod = paymentMethod;
-        }
-
         public Order(List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod)
         {
             ProductsOrdered = products;
@@ -55,16 +33,21 @@ namespace RMS.BL
             PaymentMethod = paymentMethod;
         }
 
-        public Order(int orderID,List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, int id, string paymentMethod)
+        public Order(List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod, int id) :this(products, orderStatus, orderDate, customerComments, paymentMethod)
         {
-            OrderID = orderID;
-            ProductsOrdered = products;
-            Status = orderStatus;
-            OrderDate = orderDate;
-            CustomerComments = customerComments;
             CalculateTotalPrice();
             CustomerID = id;
-            PaymentMethod = paymentMethod;
+        }
+
+        public Order(int orderID, List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, int id, string paymentMethod) : this(products, orderStatus, orderDate, customerComments, paymentMethod,id)
+        {
+            OrderID = orderID;
+            CalculateTotalPrice();
+        }
+
+        public Order(double discount,List<OrderedProduct> products, OrderStatus orderStatus, DateTime orderDate, string customerComments, string paymentMethod, int id) : this(products, orderStatus, orderDate, customerComments, paymentMethod, id)
+        {
+            CalculateTotalPrice(discount);
         }
 
         private int OrderID;

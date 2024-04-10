@@ -45,7 +45,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Products p JOIN ProductVariants v ON P.ID = v.ProductID WHERE V.ProductID = @id", connection);
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM ProductVariants V JOIN Products P ON P.ID = V.ProductID WHERE P.ID = @id", connection);
                 command.Parameters.AddWithValue("@id", productID);
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
@@ -107,17 +107,18 @@ namespace RMS.DL
             {
                 List<Product> products = new List<Product>();
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT P.ProductName,P.Category , V.Price, V.Quantity FROM Products P JOIN ProductVariants V ON P.ID = V.ProductID;", connection);
+                SqlCommand command = new SqlCommand("SELECT P.ID,P.ProductName,P.Category , V.Price, V.Quantity FROM Products P JOIN ProductVariants V ON P.ID = V.ProductID AND P.IsAvailable = 1;", connection);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
+                        int id = Convert.ToInt32(reader["ID"]);
                         string n = Convert.ToString(reader["ProductName"]);
                         string c = Convert.ToString(reader["Category"]);
                         string q = Convert.ToString(reader["Quantity"]);
                         decimal priceDecimal = Convert.ToDecimal(reader["Price"]); 
                         double p = Convert.ToDouble(priceDecimal);
-                        Product product = new Product(n, c, p, q);
+                        Product product = new Product(id,n, c, p, q);
                         products.Add(product);
                     }
                 }

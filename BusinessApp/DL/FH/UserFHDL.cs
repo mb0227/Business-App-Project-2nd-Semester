@@ -10,7 +10,6 @@ namespace RMS.DL
 {
     public class UserFHDL : IUserDL
     {
-        private List<User> Users = new List<User>();
         public void SaveUser(User user)
         {
             string path = UtilityFunctions.GetPath("Users.txt");
@@ -72,7 +71,7 @@ namespace RMS.DL
             return -1; // Return -1 if user is not found
         }
 
-        public string SearchUserForRole(string email)
+        public string SearchUserForRole(string email, string password)
         {
             string path = UtilityFunctions.GetPath("Users.txt");
             if (!File.Exists(path))
@@ -81,7 +80,7 @@ namespace RMS.DL
             foreach (string line in File.ReadLines(path))
             {
                 string[] parts = line.Split(',');
-                if (parts.Length == 4 && parts[1].Trim() == email)
+                if (parts.Length == 4 && parts[1].Trim() == email && parts[2]==password)
                     return parts[3].Trim(); 
             }
             return ""; 

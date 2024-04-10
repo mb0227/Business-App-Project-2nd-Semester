@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
+using SignInSignUp.Reports;
+using CrystalDecisions.CrystalReports.Engine;
+using System.IO;
 
 namespace SSC.UI
 {
@@ -75,9 +78,6 @@ namespace SSC.UI
                     break;
                 case "feedback":
                     OpenForm(new CustomerFeedback(this.Size, this.Location, customer));
-                    break;
-                case "settings":
-                    OpenForm(new Settings(this.Size, this.Location, customer));
                     break;
                 case "help":
                     OpenForm(new UI.Help(this.Size, this.Location, customer));
@@ -218,7 +218,7 @@ namespace SSC.UI
                     errorProvider2.SetError(tb, "");
                 }
 
-                if (ObjectHandler.GetEmployeeDL().UsernameAlreadyExists(tb.Text))
+                if (ObjectHandler.GetCustomerDL().UsernameAlreadyExists(tb.Text))
                 {
                     errorProvider1.SetError(tb, "Username already exists.");
                     return false;
@@ -259,6 +259,8 @@ namespace SSC.UI
             ChangeButtonsVisibility(false);
             ChangeUpdateControlsVisibility(true);
             label.Text = "Password";
+            tb.UseSystemPasswordChar = true;
+            tb.PasswordChar = '*';
         }
 
         private void usernameButton_Click(object sender, EventArgs e)
@@ -287,8 +289,6 @@ namespace SSC.UI
             {
                 if (CheckValidations("password"))
                 {
-                    tb.UseSystemPasswordChar = true;
-                    tb.PasswordChar = '*';
                     ObjectHandler.GetEmployeeDL().UpdateCredentials(tb.Text, "password", customer.GetUserID());
                     MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     BackToNormal();
@@ -314,7 +314,8 @@ namespace SSC.UI
 
         private void orderHistoryButton_Click(object sender, EventArgs e)
         {
-
+            ShowReport r = new ShowReport(customer.GetID());
+            r.Show();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -407,6 +408,10 @@ namespace SSC.UI
                 VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
                 MessageBox.Show($"You are a {v.GetMembershipLevel()} VIP.", "VIP Level", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void userDetailsButton_Click(object sender, EventArgs e)
+        {
         }
     }
 }

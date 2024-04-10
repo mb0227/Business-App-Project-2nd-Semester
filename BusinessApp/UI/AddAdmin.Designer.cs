@@ -542,6 +542,7 @@
             this.Name = "AddAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddAdmin";
+            this.Load += new System.EventHandler(this.AddAdmin_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
