@@ -155,3 +155,18 @@ Create Table ViewNotification(
 	FOREIGN KEY (NotificationID) REFERENCES Notifications(ID),
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),
 );
+
+create table UserPictures(
+	ID int primary key identity,
+	Image image,
+	UserID int NOT NULL,
+	FOREIGN KEY(UserID) REFERENCES USERS(ID)
+);
+
+CREATE TABLE Messages (
+    MessageID INT PRIMARY KEY,
+    SenderID INT,
+    ReceiverID INT,
+    MessageText VARCHAR(MAX),
+    Timestamp DATETIME
+);

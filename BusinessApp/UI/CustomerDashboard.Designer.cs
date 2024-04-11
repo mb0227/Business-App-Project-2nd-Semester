@@ -33,8 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -53,6 +55,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.pictureBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(55, 74);
             this.panel1.Name = "panel1";
@@ -86,6 +89,20 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(1157, 8);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox.Size = new System.Drawing.Size(77, 76);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 8;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -103,6 +120,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -112,5 +130,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBox;
     }
 }

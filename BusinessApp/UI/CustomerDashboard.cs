@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using RMS.BL;
 using RMS.DL;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
+using System.Drawing.Imaging;
 
 namespace SSC
 {
@@ -107,7 +110,60 @@ namespace SSC
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
+            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+        }
 
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (FileStream stream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        if (stream.Length > 0) // Check if the file has content
+                        {
+                            try
+                            {
+                                Image image = Image.FromStream(stream);
+                                pictureBox.Image = ResizeImage(image, pictureBox.Width, pictureBox.Height);
+                                UserDBDL.UpdateImage(customer.GetUserID(), GetPhoto());
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error loading image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Selected file is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error opening file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private byte[] GetPhoto()
+        {
+            MemoryStream m = new MemoryStream();
+            pictureBox.Image.Save(m, ImageFormat.Jpeg);
+            return m.GetBuffer();
+        }
+
+        private Image ResizeImage(Image imgToResize, int width, int height)
+        {
+            Bitmap bmp = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage((Image)bmp))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(imgToResize, 0, 0, width, height);
+            }
+            return (Image)bmp;
         }
     }
 }

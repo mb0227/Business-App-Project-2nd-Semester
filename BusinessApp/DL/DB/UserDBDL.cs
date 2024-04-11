@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using RMS.BL;
 using SSC;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Drawing;
 
 
 namespace RMS.DL
@@ -112,6 +114,60 @@ namespace RMS.DL
                 }
             }
             return role; 
+        }
+        public static void SaveImage(int userID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "INSERT INTO UserPictures(UserID) VALUES(@UserID)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserID", userID);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void UpdateImage(int userID, byte[] photo)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "UPDATE UserPictures SET Image=@Image WHERE UserID=@ID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Image", photo);
+                    command.Parameters.AddWithValue("@ID", userID);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static Image LoadImage(int userID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "SELECT Image FROM UserPictures WHERE UserID = @ID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", userID);
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value && result is byte[])
+                    {
+                        byte[] imageData = (byte[])result;
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            return Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
         }
     }
 }

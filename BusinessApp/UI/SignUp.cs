@@ -155,16 +155,15 @@ namespace SSC
                 ObjectHandler.GetUserDL().SaveUser(user);
                 Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
                 customer.SetUserID(ObjectHandler.GetUserDL().GetUserID(email.Text));
+                UserDBDL.SaveImage(customer.GetUserID());
                 ObjectHandler.GetCustomerDL().SaveCustomer(customer);
                 Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
                 ObjectHandler.GetRegularDL().SaveRegular(regular);
                 MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearTextBoxes();
+                SignIn signIn = new SignIn(this.Size, this.Location);
+                signIn.Show();
+                this.Hide();
             }
-            //else
-            //{
-            //    MessageBox.Show("Invalid User.", "Failure", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
-            //}
         }
 
         private RadioButton GetSelectedRadioButton()
