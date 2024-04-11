@@ -109,5 +109,68 @@ namespace SSC.UI
             string Contact = "+923344207165";
             Process.Start("tel:" + Contact);
         }
+
+        private void send_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(msgTB.Text))
+            {
+                msgTB.Text = msgTB.Text.Replace(",", "");
+                RMS.BL.Message message = new RMS.BL.Message(customer.GetID(), ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, msgTB.Text);
+                ObjectHandler.GetMessageDL().SendMessage(message);
+                msgTB.Text = "";
+                RefreshPanel();
+                DisplayMessages();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a message to send.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Help_Load(object sender, EventArgs e)
+        {
+            DisplayMessages();
+        }
+
+        private void DisplayMessages()
+        {
+            List<RMS.BL.Message> Messages = ObjectHandler.GetMessageDL().ReceiveMessages(customer.GetID(), $"SELECT * FROM Messages WHERE ReceiverID = @ID OR SenderID={customer.GetID()} ORDER BY Timestamp ASC");
+            {
+                foreach (var msg in Messages)
+                {
+                    Label label = new Label();
+                    Label label2 = new Label();
+                    label.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                    label.TextAlign = ContentAlignment.MiddleLeft;
+                    label.AutoSize = true;
+                    string time = msg.GetTime().ToString("HH:mm");
+                    label.Margin = new Padding(0, 5, 0, 0);
+                    if (msg.GetSenderID() != customer.GetID())
+                    {
+                        label.Text = "Admin: " + msg.GetMessageText() + " " + time;
+                        label.ForeColor = Color.GreenYellow;
+                    }
+                    else
+                    {
+                        label.Text = "You: " + msg.GetMessageText() + " " + time;
+                        label.ForeColor = Color.Teal;
+                    }
+                    msgPanel.Controls.Add(label);
+                }
+            }
+            msgPanel.VerticalScroll.Value = msgPanel.VerticalScroll.Maximum;
+        }
+
+        private void RefreshPanel()
+        {
+            foreach (Control control in msgPanel.Controls)
+            {
+                if (control is Label label)
+                {
+                    label.Text = "";
+                }
+            }
+        }
+
     }
 }

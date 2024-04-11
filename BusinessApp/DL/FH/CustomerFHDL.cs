@@ -134,6 +134,12 @@ namespace RMS.DL
             File.Move(tempFile, path);
         }
 
+        public Customer ForgotPassword(int userID)
+        {
+            return new Customer();
+        }
+
+        
         public List<Customer> GetCustomers()
         {
             string path = UtilityFunctions.GetPath("Customers.txt");

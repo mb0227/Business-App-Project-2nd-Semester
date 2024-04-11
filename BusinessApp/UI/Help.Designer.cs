@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.msgTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.msgPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.send = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.send)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -44,7 +49,7 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(54, 75);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1126, 91);
+            this.panel4.Size = new System.Drawing.Size(1276, 91);
             this.panel4.TabIndex = 22;
             // 
             // label1
@@ -53,81 +58,115 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(516, 23);
+            this.label1.Location = new System.Drawing.Point(591, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 52);
             this.label1.TabIndex = 11;
             this.label1.Text = "Help";
             // 
-            // guna2TextBox1
+            // msgTB
             // 
-            this.guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox1.BorderThickness = 0;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(637, 296);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(461, 93);
-            this.guna2TextBox1.TabIndex = 24;
+            this.msgTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.msgTB.BorderRadius = 18;
+            this.msgTB.BorderThickness = 0;
+            this.msgTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.msgTB.DefaultText = "";
+            this.msgTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.msgTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.msgTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.msgTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.msgTB.FillColor = System.Drawing.Color.Gainsboro;
+            this.msgTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.msgTB.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msgTB.ForeColor = System.Drawing.Color.Black;
+            this.msgTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.msgTB.Location = new System.Drawing.Point(-2, 6);
+            this.msgTB.Margin = new System.Windows.Forms.Padding(4);
+            this.msgTB.Multiline = true;
+            this.msgTB.Name = "msgTB";
+            this.msgTB.Padding = new System.Windows.Forms.Padding(4);
+            this.msgTB.PasswordChar = '\0';
+            this.msgTB.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.msgTB.PlaceholderText = "Message";
+            this.msgTB.SelectedText = "";
+            this.msgTB.Size = new System.Drawing.Size(973, 67);
+            this.msgTB.TabIndex = 0;
+            this.msgTB.WordWrap = false;
             // 
-            // label2
+            // panel2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(323, 296);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(307, 34);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Write your query here: ";
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.send);
+            this.panel2.Controls.Add(this.msgTB);
+            this.panel2.Location = new System.Drawing.Point(249, 627);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1068, 307);
+            this.panel2.TabIndex = 28;
             // 
-            // guna2Button1
+            // msgPanel
             // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 35;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.GreenYellow;
-            this.guna2Button1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(568, 512);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(289, 73);
-            this.guna2Button1.TabIndex = 26;
-            this.guna2Button1.Text = "Make a Call";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.msgPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.msgPanel.AutoScroll = true;
+            this.msgPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.msgPanel.Location = new System.Drawing.Point(249, 164);
+            this.msgPanel.Name = "msgPanel";
+            this.msgPanel.Size = new System.Drawing.Size(1067, 457);
+            this.msgPanel.TabIndex = 29;
+            this.msgPanel.WrapContents = false;
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2VScrollBar1.AutoRoundedCorners = true;
+            this.guna2VScrollBar1.AutoSize = true;
+            this.guna2VScrollBar1.BindingContainer = this.msgPanel;
+            this.guna2VScrollBar1.BorderRadius = 12;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 516;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(1290, 164);
+            this.guna2VScrollBar1.Maximum = 519;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 26;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(26, 457);
+            this.guna2VScrollBar1.SmallChange = 5;
+            this.guna2VScrollBar1.TabIndex = 0;
+            // 
+            // send
+            // 
+            this.send.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.send.Image = ((System.Drawing.Image)(resources.GetObject("send.Image")));
+            this.send.Location = new System.Drawing.Point(981, 7);
+            this.send.Name = "send";
+            this.send.Size = new System.Drawing.Size(52, 50);
+            this.send.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.send.TabIndex = 0;
+            this.send.TabStop = false;
+            this.send.Click += new System.EventHandler(this.send_Click);
             // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(1178, 944);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.guna2TextBox1);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
+            this.Controls.Add(this.guna2VScrollBar1);
+            this.Controls.Add(this.msgPanel);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
+            this.MinimumSize = new System.Drawing.Size(1350, 1030);
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Help";
+            this.Load += new System.EventHandler(this.Help_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.send)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,8 +176,10 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox msgTB;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox send;
+        private System.Windows.Forms.FlowLayoutPanel msgPanel;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }

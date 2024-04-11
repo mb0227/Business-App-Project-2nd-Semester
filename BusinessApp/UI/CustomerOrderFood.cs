@@ -231,6 +231,7 @@ namespace SSC.UI
             {
                 if (customer.GetCart().Count > 0)
                 {
+                    comments.Text = comments.Text.Replace(",", "");
                     if (customer.GetStatus() == "Regular")
                     {
                         Order order = new Order(customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
@@ -250,11 +251,15 @@ namespace SSC.UI
                         VIP vip = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
                         if (vip.GetVouchers().Count > 0)
                         {
-                            Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
-                            if (v.GetExpirationDate() > DateTime.Today)
+                            int vId = vip.GetVoucherID();
+                            if (vId != -1)
                             {
-                                order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
-                                MessageBox.Show("You got " + v.GetDiscount().ToString() + " discount");
+                                Voucher v = UtilityFunctions.GetVoucher(vId);
+                                if (v.GetExpirationDate() > DateTime.Today)
+                                {
+                                    order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
+                                    MessageBox.Show("You got " + v.GetDiscount().ToString() + " discount");
+                                }
                             }
                         }
                         ObjectHandler.GetOrderDL().SaveOrder(order);
@@ -327,19 +332,23 @@ namespace SSC.UI
             {
                 if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 0)
                 {
-                    MessageBox.Show($"Your order is being prepared", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Your order is being prepared", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if(ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 1)
                 {
-                    MessageBox.Show($"Your order has been prepared and ready to be delivered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Your order has been prepared and ready to be delivered", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 2)
                 {
-                    MessageBox.Show($"Your order has been picked up and ready to be delivered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Your order has been picked up and ready to be delivered", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 3)
                 {
-                    MessageBox.Show($"Your previous order was delivered", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Your previous order was delivered", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (ObjectHandler.GetOrderDL().GetOrderStatus(customer.GetID()) == 4)
+                {
+                    MessageBox.Show($"Your previous order was cancelled", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }            
             else
@@ -364,7 +373,7 @@ namespace SSC.UI
             DialogResult result = MessageBox.Show("Are you sure you want to delete your order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                ObjectHandler.GetOrderDL().DeleteOrder(customer.GetID());
+                ObjectHandler.GetOrderDL().UpdateOrderStatus(ObjectHandler.GetOrderDL().FindOrderByID(customer.GetID()), 4);
                 deleteOrderBtn.Visible = false;
                 MessageBox.Show("Order Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

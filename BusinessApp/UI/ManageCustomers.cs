@@ -81,6 +81,9 @@ namespace SSC.UI
                 case "manageTables":
                     OpenForm(new ManageTables(this.Size, this.Location, Admin));
                     break;
+                case "feedback":
+                    OpenForm(new ManageFeedback(this.Size, this.Location, Admin));
+                    break;
                 default:
                     break;
             }

@@ -129,11 +129,6 @@ namespace SSC.UI
             markRead.Visible = true;
         }
 
-        private void notification_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (!nVisible)
@@ -169,7 +164,6 @@ namespace SSC.UI
                 markRead.ForeColor = Color.White; 
                 markRead.Font = new Font("Tahoma", 12, FontStyle.Regular); 
                                                                              
-
                 markRead.Click += MarkRead_Click;
 
                 panel3.Controls.Add(markRead);
@@ -320,7 +314,7 @@ namespace SSC.UI
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you delete account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -337,9 +331,14 @@ namespace SSC.UI
 
         private void logOutButton_Click(object sender, EventArgs e)
         {
-            Homepage h = new Homepage(this.Size, this.Location);
-            h.Show();
-            this.Hide();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
+            }
         }
 
         private void ChangeButtonsText()

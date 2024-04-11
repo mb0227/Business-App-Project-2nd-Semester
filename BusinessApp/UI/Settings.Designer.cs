@@ -41,26 +41,23 @@
             this.updateButton = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
             this.tb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.msgCount = new System.Windows.Forms.Label();
-            this.notiCount = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.notification = new System.Windows.Forms.PictureBox();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.passwordButton = new Guna.UI2.WinForms.Guna2Button();
             this.usernameButton = new Guna.UI2.WinForms.Guna2Button();
             this.logOutButton = new Guna.UI2.WinForms.Guna2Button();
+            this.panel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.notiCount = new System.Windows.Forms.Label();
+            this.notification = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -240,12 +237,14 @@
             // tb
             // 
             this.tb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb.BorderRadius = 18;
             this.tb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb.DefaultText = "";
             this.tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb.FillColor = System.Drawing.Color.Silver;
             this.tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb.ForeColor = System.Drawing.Color.Black;
@@ -260,91 +259,6 @@
             this.tb.TabIndex = 21;
             this.tb.Visible = false;
             this.tb.WordWrap = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.guna2GroupBox1);
-            this.panel3.Location = new System.Drawing.Point(910, 166);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(264, 749);
-            this.panel3.TabIndex = 11;
-            // 
-            // guna2GroupBox1
-            // 
-            this.guna2GroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2GroupBox1.BorderThickness = 0;
-            this.guna2GroupBox1.Controls.Add(this.msgCount);
-            this.guna2GroupBox1.Controls.Add(this.notiCount);
-            this.guna2GroupBox1.Controls.Add(this.pictureBox1);
-            this.guna2GroupBox1.Controls.Add(this.notification);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 3);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(214, 118);
-            this.guna2GroupBox1.TabIndex = 16;
-            this.guna2GroupBox1.Text = "groupbox";
-            // 
-            // msgCount
-            // 
-            this.msgCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.msgCount.AutoSize = true;
-            this.msgCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msgCount.ForeColor = System.Drawing.Color.Red;
-            this.msgCount.Location = new System.Drawing.Point(51, 1);
-            this.msgCount.Name = "msgCount";
-            this.msgCount.Size = new System.Drawing.Size(26, 29);
-            this.msgCount.TabIndex = 13;
-            this.msgCount.Text = "n";
-            this.msgCount.Visible = false;
-            // 
-            // notiCount
-            // 
-            this.notiCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.notiCount.AutoSize = true;
-            this.notiCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notiCount.ForeColor = System.Drawing.Color.Red;
-            this.notiCount.Location = new System.Drawing.Point(127, 0);
-            this.notiCount.Name = "notiCount";
-            this.notiCount.Size = new System.Drawing.Size(26, 29);
-            this.notiCount.TabIndex = 11;
-            this.notiCount.Text = "n";
-            this.notiCount.Visible = false;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(57, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // notification
-            // 
-            this.notification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.notification.Image = ((System.Drawing.Image)(resources.GetObject("notification.Image")));
-            this.notification.Location = new System.Drawing.Point(132, 14);
-            this.notification.Name = "notification";
-            this.notification.Size = new System.Drawing.Size(72, 73);
-            this.notification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.notification.TabIndex = 6;
-            this.notification.TabStop = false;
-            this.notification.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // deleteButton
             // 
@@ -442,6 +356,65 @@
             this.logOutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.guna2GroupBox1);
+            this.panel3.Location = new System.Drawing.Point(910, 166);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(264, 749);
+            this.panel3.TabIndex = 11;
+            // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GroupBox1.BorderThickness = 0;
+            this.guna2GroupBox1.Controls.Add(this.notiCount);
+            this.guna2GroupBox1.Controls.Add(this.notification);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(214, 118);
+            this.guna2GroupBox1.TabIndex = 16;
+            this.guna2GroupBox1.Text = "groupbox";
+            // 
+            // notiCount
+            // 
+            this.notiCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.notiCount.AutoSize = true;
+            this.notiCount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notiCount.ForeColor = System.Drawing.Color.Red;
+            this.notiCount.Location = new System.Drawing.Point(127, 0);
+            this.notiCount.Name = "notiCount";
+            this.notiCount.Size = new System.Drawing.Size(26, 29);
+            this.notiCount.TabIndex = 11;
+            this.notiCount.Text = "n";
+            this.notiCount.Visible = false;
+            // 
+            // notification
+            // 
+            this.notification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.notification.Image = ((System.Drawing.Image)(resources.GetObject("notification.Image")));
+            this.notification.Location = new System.Drawing.Point(132, 14);
+            this.notification.Name = "notification";
+            this.notification.Size = new System.Drawing.Size(72, 73);
+            this.notification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.notification.TabIndex = 6;
+            this.notification.TabStop = false;
+            this.notification.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -463,10 +436,9 @@
             this.panel3.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notification)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,9 +455,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel panel3;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private System.Windows.Forms.Label msgCount;
         private System.Windows.Forms.Label notiCount;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox notification;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Button updateButton;

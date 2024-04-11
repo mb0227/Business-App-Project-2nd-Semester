@@ -82,6 +82,9 @@ namespace SignInSignUp.UI
                 case "manageTables":
                     OpenForm(new ManageTables(this.Size, this.Location, Admin));
                     break;
+                case "feedback":
+                    OpenForm(new ManageFeedback(this.Size, this.Location, Admin));
+                    break;
                 default:
                     break;
             }
@@ -230,9 +233,14 @@ namespace SignInSignUp.UI
 
         private void logOutButton_Click(object sender, EventArgs e)
         {
-            Homepage h = new Homepage(this.Size, this.Location);
-            h.Show();
-            this.Hide();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
+            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -248,7 +256,7 @@ namespace SignInSignUp.UI
             }
             else
             {
-                MessageBox.Show("Good Job.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Good Job.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

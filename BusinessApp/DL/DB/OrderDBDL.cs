@@ -108,7 +108,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Orders WHERE CustomerID=@CustomerID", connection);
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Orders WHERE CustomerID=@CustomerID AND Status = 3", connection);
                 command.Parameters.AddWithValue("@CustomerID", customerID);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
@@ -124,7 +124,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT Status FROM Orders WHERE CustomerID=@CustomerID", connection);
+                SqlCommand command = new SqlCommand("SELECT TOP 1 Status FROM Orders WHERE CustomerID=@CustomerID ORDER BY OrderDate DESC", connection);
                 command.Parameters.AddWithValue("@CustomerID", customerID);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
@@ -139,12 +139,13 @@ namespace RMS.DL
             }
         }
 
-        public static int FindOrderByID()
+        public int FindOrderByID(int CustomerId)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM Orders WHERE ID=@ID", connection);
+                SqlCommand command = new SqlCommand("SELECT ID FROM Orders WHERE CustomerID=@ID AND Status=0", connection);
+                command.Parameters.AddWithValue("@ID", CustomerId);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {

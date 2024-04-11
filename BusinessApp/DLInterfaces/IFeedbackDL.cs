@@ -10,6 +10,7 @@ namespace RMS.DL
     public interface IFeedbackDL
     {
         void SaveReview(Feedback feedback);
+        List<Feedback> GetReviews();
 
     }
 }

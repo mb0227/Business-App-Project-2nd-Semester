@@ -45,7 +45,7 @@ namespace RMS.DL
                 SqlCommand command = new SqlCommand("INSERT INTO VIP(MembershipLevel, CustomerID, Vouchers) VALUES (@MembershipLevel, @CustomerID,@Vouchers)", connection);
                 command.Parameters.AddWithValue("@MembershipLevel", vip.GetMembershipLevel());
                 command.Parameters.AddWithValue("@CustomerID", vip.GetCustomerID());
-                command.Parameters.AddWithValue("@Vouchers", string.Join(",", vip.GetVouchers()));
+                command.Parameters.AddWithValue("@Vouchers", string.Join(";", vip.GetVouchers()));
                 command.ExecuteNonQuery();
             }
         }
@@ -65,7 +65,15 @@ namespace RMS.DL
                         string membershipLevel = Convert.ToString(reader["MembershipLevel"]);
                         int customerId = Convert.ToInt32(reader["CustomerID"]);
                         string vouchers = Convert.ToString(reader["Vouchers"]);
-                        List<string> Vouchers = new List<string>(vouchers.Split(','));
+                        List<string> Vouchers;
+                        if (!string.IsNullOrEmpty(vouchers))
+                        {
+                            Vouchers = new List<string>(vouchers.Split(';'));
+                        }
+                        else
+                        {
+                            Vouchers = new List<string>();
+                        }
                         return new VIP(id, membershipLevel, customerId, Vouchers);
                     }
                 }
@@ -81,7 +89,7 @@ namespace RMS.DL
                 SqlCommand command = new SqlCommand("UPDATE VIP SET MembershipLevel = @MembershipLevel, Vouchers = @Vouchers WHERE CustomerID=@CustomerID", connection);
                 command.Parameters.AddWithValue("@MembershipLevel", membershipLevel);
                 command.Parameters.AddWithValue("@CustomerID", customerID);
-                command.Parameters.AddWithValue("@Vouchers", string.Join(",", Vouchers));
+                command.Parameters.AddWithValue("@Vouchers", string.Join(";", Vouchers));
                 command.ExecuteNonQuery();
             }
         }

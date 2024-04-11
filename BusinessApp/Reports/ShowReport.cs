@@ -25,8 +25,9 @@ namespace SignInSignUp.Reports
             report.Load("..//..//Reports//OrderHistory.rpt");
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
-                SqlCommand command = new SqlCommand("SELECT ProductsOrdered, TotalPrice, OrderDate FROM Orders WHERE CustomerID = @CustomerId", connection);
+                SqlCommand command = new SqlCommand("SELECT ProductsOrdered, TotalPrice, OrderDate FROM Orders WHERE CustomerID = @CustomerId AND Status=@Status", connection);
                 command.Parameters.AddWithValue("@CustomerId", id);
+                command.Parameters.AddWithValue("@Status", 3);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                 DataSet dataSet = new DataSet();
                 dataAdapter.Fill(dataSet, "Orders");

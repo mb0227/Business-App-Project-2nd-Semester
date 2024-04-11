@@ -40,6 +40,7 @@
             this.notificationBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addAdminButton = new Guna.UI2.WinForms.Guna2Button();
             this.tablesCRUDBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.feedbackBtn = new Guna.UI2.WinForms.Guna2Button();
             this.settingsBtn = new Guna.UI2.WinForms.Guna2Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
@@ -58,10 +59,11 @@
             this.sidebar.Controls.Add(this.notificationBtn);
             this.sidebar.Controls.Add(this.addAdminButton);
             this.sidebar.Controls.Add(this.tablesCRUDBtn);
+            this.sidebar.Controls.Add(this.feedbackBtn);
             this.sidebar.Controls.Add(this.settingsBtn);
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(270, 1080);
-            this.sidebar.MinimumSize = new System.Drawing.Size(59, 1080);
+            this.sidebar.MinimumSize = new System.Drawing.Size(59, 200);
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(267, 1080);
             this.sidebar.TabIndex = 0;
@@ -108,7 +110,7 @@
             this.dashboardButton.Name = "dashboardButton";
             this.dashboardButton.Size = new System.Drawing.Size(264, 54);
             this.dashboardButton.TabIndex = 0;
-            this.dashboardButton.Text = "Dashboard         ";
+            this.dashboardButton.Text = "Dashboard            ";
             this.dashboardButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dashboardButton.Click += new System.EventHandler(this.dashboardButton_Click);
             // 
@@ -127,7 +129,7 @@
             this.employeesButton.Name = "employeesButton";
             this.employeesButton.Size = new System.Drawing.Size(263, 54);
             this.employeesButton.TabIndex = 1;
-            this.employeesButton.Text = "Employees CRUD";
+            this.employeesButton.Text = "Employees CRUD  ";
             this.employeesButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.employeesButton.Click += new System.EventHandler(this.employeesButton_Click);
             // 
@@ -146,7 +148,7 @@
             this.customerCRUD.Name = "customerCRUD";
             this.customerCRUD.Size = new System.Drawing.Size(263, 54);
             this.customerCRUD.TabIndex = 2;
-            this.customerCRUD.Text = "Customers CRUD";
+            this.customerCRUD.Text = "Customers CRUD  ";
             this.customerCRUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.customerCRUD.Click += new System.EventHandler(this.customerCRUD_Click);
             // 
@@ -165,7 +167,7 @@
             this.notificationBtn.Name = "notificationBtn";
             this.notificationBtn.Size = new System.Drawing.Size(263, 54);
             this.notificationBtn.TabIndex = 3;
-            this.notificationBtn.Text = "Send Notification";
+            this.notificationBtn.Text = "Send Notification   ";
             this.notificationBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.notificationBtn.Click += new System.EventHandler(this.notificationBtn_Click);
             // 
@@ -184,7 +186,7 @@
             this.addAdminButton.Name = "addAdminButton";
             this.addAdminButton.Size = new System.Drawing.Size(263, 54);
             this.addAdminButton.TabIndex = 4;
-            this.addAdminButton.Text = "Add admin         ";
+            this.addAdminButton.Text = "Add admin            ";
             this.addAdminButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.addAdminButton.Click += new System.EventHandler(this.addAdminButton_Click);
             // 
@@ -203,9 +205,28 @@
             this.tablesCRUDBtn.Name = "tablesCRUDBtn";
             this.tablesCRUDBtn.Size = new System.Drawing.Size(263, 54);
             this.tablesCRUDBtn.TabIndex = 5;
-            this.tablesCRUDBtn.Text = "Tables CRUD      ";
+            this.tablesCRUDBtn.Text = "Tables CRUD         ";
             this.tablesCRUDBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tablesCRUDBtn.Click += new System.EventHandler(this.productsCRUDBtn_Click);
+            // 
+            // feedbackBtn
+            // 
+            this.feedbackBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.feedbackBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.feedbackBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.feedbackBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.feedbackBtn.FillColor = System.Drawing.Color.Transparent;
+            this.feedbackBtn.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackBtn.ForeColor = System.Drawing.Color.White;
+            this.feedbackBtn.Image = ((System.Drawing.Image)(resources.GetObject("feedbackBtn.Image")));
+            this.feedbackBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.feedbackBtn.Location = new System.Drawing.Point(3, 423);
+            this.feedbackBtn.Name = "feedbackBtn";
+            this.feedbackBtn.Size = new System.Drawing.Size(263, 54);
+            this.feedbackBtn.TabIndex = 6;
+            this.feedbackBtn.Text = "Manage Feedback  ";
+            this.feedbackBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.feedbackBtn.Click += new System.EventHandler(this.settingsBtn_Click);
             // 
             // settingsBtn
             // 
@@ -218,13 +239,13 @@
             this.settingsBtn.ForeColor = System.Drawing.Color.White;
             this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
             this.settingsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.settingsBtn.Location = new System.Drawing.Point(3, 423);
+            this.settingsBtn.Location = new System.Drawing.Point(3, 483);
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.Size = new System.Drawing.Size(263, 54);
-            this.settingsBtn.TabIndex = 6;
-            this.settingsBtn.Text = "Settings             ";
+            this.settingsBtn.TabIndex = 7;
+            this.settingsBtn.Text = "Settings                 ";
             this.settingsBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            this.settingsBtn.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // sidebarTimer
             // 
@@ -238,7 +259,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.sidebar);
             this.Name = "Navbar";
-            this.Size = new System.Drawing.Size(267, 504);
+            this.Size = new System.Drawing.Size(267, 537);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -259,7 +280,8 @@
         private Guna.UI2.WinForms.Guna2Button notificationBtn;
         private Guna.UI2.WinForms.Guna2Button addAdminButton;
         private Guna.UI2.WinForms.Guna2Button tablesCRUDBtn;
-        private Guna.UI2.WinForms.Guna2Button settingsBtn;
+        private Guna.UI2.WinForms.Guna2Button feedbackBtn;
         private System.Windows.Forms.Timer sidebarTimer;
+        private Guna.UI2.WinForms.Guna2Button settingsBtn;
     }
 }

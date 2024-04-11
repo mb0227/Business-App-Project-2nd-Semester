@@ -85,5 +85,10 @@ namespace SSC.UI
         {
             return new DealDBDL();
         }
+
+        public static IMessageDL GetMessageDL()
+        {
+            return new MessageDBDL();
+        }
     }
 }

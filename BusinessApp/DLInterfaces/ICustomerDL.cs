@@ -19,5 +19,6 @@ namespace RMS.DL
         void SaveCart(Customer customer);
         void UpdateCart(Customer customer);
         void UpdateStatus(string status, int id);
+        Customer ForgotPassword(int userID);
     }
 }

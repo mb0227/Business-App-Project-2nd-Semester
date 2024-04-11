@@ -70,7 +70,7 @@ namespace RMS.BL
 
         public int GetVoucherID()
         {
-            string[] numbersArray = (string.Join(",", Vouchers)).Split(',');
+            string[] numbersArray = (string.Join(";", Vouchers)).Split(';');
             List<int> numbers = new List<int>();
 
             foreach (string numberString in numbersArray)
@@ -92,7 +92,7 @@ namespace RMS.BL
             }
             else
             {
-                return 22;
+                return -1;
             }
         }
     }

@@ -217,6 +217,9 @@ namespace SignInSignUp.UI
                 case "manageTables":
                     OpenForm(new ManageTables(this.Size, this.Location, Admin));
                     break;
+                case "feedback":
+                    OpenForm(new ManageFeedback(this.Size, this.Location, Admin));
+                    break;
                 default:
                     break;
             }
@@ -254,6 +257,11 @@ namespace SignInSignUp.UI
         }
 
         private void AddAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

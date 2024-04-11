@@ -228,5 +228,27 @@ namespace RMS.DL
             }
             return false;
         }
+
+        public Customer ForgotPassword(int userID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Customers C JOIN Users U on C.UserID=U.ID WHERE C.UserID=@ID", connection);
+                command.Parameters.AddWithValue("@ID", userID);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["ID"]);
+                    string username = reader["Username"].ToString();
+                    string contact = reader["Contact"].ToString();
+                    string status = reader["Status"].ToString();
+                    string gender = reader["Gender"].ToString();
+                    string productsOrdered = reader["Cart"].ToString();
+                    return new Customer(id, username, contact, status, gender, UtilityFunctions.GetCartList(productsOrdered), userID);
+                }
+            }
+            return null;
+        }
     }
 }

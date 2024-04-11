@@ -22,5 +22,21 @@ namespace RMS.DL
                 command.ExecuteNonQuery();
             }
         }
+
+        public List<Feedback> GetReviews()
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Feedback", connection);
+                SqlDataReader reader = command.ExecuteReader();
+                List<Feedback> feedbacks = new List<Feedback>();
+                while (reader.Read())
+                {
+                    feedbacks.Add(new Feedback(reader.GetString(1), reader.GetInt32(2)));
+                }
+                return feedbacks;
+            }
+        }
     }
 }

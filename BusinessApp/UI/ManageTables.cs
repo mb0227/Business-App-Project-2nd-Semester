@@ -87,6 +87,9 @@ namespace SignInSignUp.UI
                 case "addAdmin":
                     OpenForm(new AddAdmin(this.Size, this.Location, Admin));
                     break;
+                case "feedback":
+                    OpenForm(new ManageFeedback(this.Size, this.Location, Admin));
+                    break;
                 default:
                     break;
             }

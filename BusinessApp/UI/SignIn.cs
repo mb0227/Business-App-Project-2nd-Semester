@@ -15,6 +15,9 @@ using SSC.UI;
 using RMS.BL;
 using RMS.DL;
 using SignInSignUp.UI;
+using System.Configuration;
+
+
 
 namespace SSC
 {
@@ -143,15 +146,15 @@ namespace SSC
 
             if (result == DialogResult.Yes)
             {
-                //Customer customer = CustomerDL.SearchCustomer(username.Text, "username");
-                //if (customer != null)
-                //{
-                //    SendEmail(customer,customer.GetEmail());
-                //}
-                //else
-                //{
-                //    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                if (ObjectHandler.GetUserDL().EmailAlreadyExists(email.Text))
+                {
+                    Customer customer = ObjectHandler.GetCustomerDL().ForgotPassword(ObjectHandler.GetUserDL().GetUserID(email.Text));
+                    SendEmail(customer, email.Text);
+                }
+                else
+                {
+                    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -163,7 +166,7 @@ namespace SSC
         {
             string from, pass, messageBody,randomCode;
             Random rand = new Random();
-            randomCode = (rand.Next(999999)).ToString();
+            randomCode = rand.Next(100000, 999999).ToString();
             MailMessage message = new MailMessage();
             from = "omerakram913@gmail.com";
             pass = "qbqi lbmi tftk nytm";
@@ -181,16 +184,12 @@ namespace SSC
             {
                 smtp.Send(message);
                 MessageBox.Show("Email sent successfully!");
-                string promptValue = Prompt.ShowDialog("Enter Prompt: ", "OTP");
+                string promptValue = Prompt.ShowDialog("Enter OTP: ", "OTP");
                 if (promptValue == randomCode)
                 {
                     MessageBox.Show("Done!");
                     string newPassword = Prompt.ShowDialog("Enter new Password: ", "Change Password");
-
-                    ////customer.SetPassword(newPassword);
-                    //CustomerDBDL.UpdateCustomer(customer);
-
-                    //CustomerDBDL.UpdateCustomerInDatabase(customer);
+                    ObjectHandler.GetCustomerDL().UpdateCredentials(newPassword,"password",customer.GetUserID());
                 }
                 else
                 {

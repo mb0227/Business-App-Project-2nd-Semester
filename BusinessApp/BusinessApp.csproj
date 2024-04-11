@@ -42,6 +42,10 @@
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
@@ -64,6 +68,7 @@
     <Compile Include="BL\Deal.cs" />
     <Compile Include="BL\Employee.cs" />
     <Compile Include="BL\Feedback.cs" />
+    <Compile Include="BL\Message.cs" />
     <Compile Include="BL\Notification.cs" />
     <Compile Include="BL\Order.cs" />
     <Compile Include="BL\OrderedProduct.cs" />
@@ -80,6 +85,7 @@
     <Compile Include="DLInterfaces\IChefDL.cs" />
     <Compile Include="DLInterfaces\IDealDL.cs" />
     <Compile Include="DLInterfaces\IFeedbackDL.cs" />
+    <Compile Include="DLInterfaces\IMessageDL.cs" />
     <Compile Include="DLInterfaces\INotificationDL.cs" />
     <Compile Include="DLInterfaces\IOrderDL.cs" />
     <Compile Include="DLInterfaces\IProductDL.cs" />
@@ -97,6 +103,7 @@
     <Compile Include="DLInterfaces\IEmployeeDL.cs" />
     <Compile Include="DLInterfaces\IUserDL.cs" />
     <Compile Include="DL\DB\FeedbackDBDL.cs" />
+    <Compile Include="DL\DB\MessagesDBDL.cs" />
     <Compile Include="DL\DB\NotificationDBDL.cs" />
     <Compile Include="DL\DB\OrderDBDL.cs" />
     <Compile Include="DL\DB\ProductDBDL.cs" />
@@ -179,6 +186,12 @@
     </Compile>
     <Compile Include="UI\CustomerFeedback.Designer.cs">
       <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageFeedback.Designer.cs">
+      <DependentUpon>ManageFeedback.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CustomerNavbar.cs">
       <SubType>UserControl</SubType>
@@ -362,6 +375,9 @@
     <EmbeddedResource Include="UI\CustomerFeedback.resx">
       <DependentUpon>CustomerFeedback.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageFeedback.resx">
+      <DependentUpon>ManageFeedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomerNavbar.resx">
       <DependentUpon>CustomerNavbar.cs</DependentUpon>
     </EmbeddedResource>
@@ -435,6 +451,7 @@
     <EmbeddedResource Include="UI\WaiterDashboard.resx">
       <DependentUpon>WaiterDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

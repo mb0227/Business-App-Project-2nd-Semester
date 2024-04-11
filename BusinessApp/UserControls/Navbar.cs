@@ -92,7 +92,12 @@ namespace SSC.UI
             OnNavigationRequested("manageTables");
         }
 
-        private void settingsBtn_Click(object sender, EventArgs e)
+        private void settingsBtn_Click(object sender, EventArgs e) //Feedback
+        {
+            OnNavigationRequested("feedback");
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e) //settings
         {
             OnNavigationRequested("settings");
         }
