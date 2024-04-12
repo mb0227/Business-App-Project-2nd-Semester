@@ -6,12 +6,12 @@ using System.Text;
 using RMS.BL;
 using SSC;
 using SSC.UI;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RMS.DL
 {
     public class CustomerFHDL : ICustomerDL
     {
-        private List<Customer> Customers = new List<Customer>();
         public void SaveCustomer(Customer customer)
         {
             string path = UtilityFunctions.GetPath("Customers.txt");
@@ -21,6 +21,23 @@ namespace RMS.DL
             {
                 writer.WriteLine($"{id},{customer.GetUsername()}, {customer.GetContact()}, {customer.GetStatus()}, {customer.GetGender()}, {UtilityFunctions.GetCartString(customer.GetCart())},{customer.GetUserID()}");
             }
+        }
+
+        public void SaveCart(Customer customer)
+        {
+            string path = UtilityFunctions.GetPath("Customers.txt");
+            string[] lines = File.ReadAllLines(path);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split(',');
+                if (parts.Length == 7 && parts[1].Trim() == customer.GetUsername())
+                {
+                    parts[5] = UtilityFunctions.GetCartString(customer.GetCart());
+                    lines[i] = string.Join(",", parts);
+                    break; 
+                }
+            }
+            File.WriteAllLines(path, lines);
         }
 
         public int GetCustomerID(string username)
@@ -41,13 +58,21 @@ namespace RMS.DL
             return -1;
         }
 
-        public void SaveCart(Customer customer)
+        public void UpdateStatus(string status, int id)
         {
             string path = UtilityFunctions.GetPath("Customers.txt");
-            using (StreamWriter writer = new StreamWriter(path, append: true))
+            string[] lines = File.ReadAllLines(path);
+            for (int i = 0; i < lines.Length; i++)
             {
-                writer.WriteLine($"{customer.GetUsername()}, {UtilityFunctions.GetCartString(customer.GetCart())}");
+                string[] parts = lines[i].Split(',');
+                if (parts.Length == 7 && parts[0].Trim() == id.ToString())
+                {
+                    parts[3] = status;
+                    lines[i] = string.Join(",", parts);
+                    break; 
+                }
             }
+            File.WriteAllLines(path, lines);
         }
 
         public Customer SearchCustomerById(int userID)
@@ -61,82 +86,58 @@ namespace RMS.DL
                     if (parts.Length == 7)
                     {
                         string username = parts[1].Trim();
-                        if (parts[0].Equals(userID.ToString()))
+                        if (parts[0].ToString()==(userID.ToString()))
                         {
                             string contact = parts[2].Trim();
                             string status = parts[3].Trim();
                             string gender = parts[4].Trim();
-                            List<OrderedProduct> cart = new List<OrderedProduct>();
                             string productsOrdered = parts[5].Trim();
-                            string[] productItems = productsOrdered.Split(',');
-                            foreach (string productItem in productItems)
-                            {
-                                string[] itemParts = productItem.Trim().Split(new string[] { " of " }, StringSplitOptions.None);
-                                if (itemParts.Length == 2)
-                                {
-                                    string quantity = itemParts[0].Trim();
-                                    string productName = itemParts[1].Trim();
-                                    Product product = ObjectHandler.GetProductDL().SearchProductByName(productName);
-                                    if (product != null)
-                                    {
-                                        cart.Add(new OrderedProduct(product, quantity));
-                                    }
-                                }
-                            }
-                            Customer customer = new Customer(Convert.ToInt32(parts[0]), username, contact, status, gender, cart, userID);
+                            return new Customer(Convert.ToInt32(parts[0]), username, contact, status, gender, UtilityFunctions.GetCartList(productsOrdered), userID);
                         }
                     }
                 }
             }
             return null;
         }
-        public void UpdateStatus(string status, int id)
-        {
 
-        }
         public void UpdateCredentials(string newCred, string credType, int userID)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
-            string tempFile = Path.GetTempFileName();
-
-            using (StreamReader reader = new StreamReader(path))
-            using (StreamWriter writer = new StreamWriter(tempFile))
+            string path = "";
+            if (credType == "username")            
+                path = UtilityFunctions.GetPath("Customers.txt");           
+            else if(credType=="password")
+                path = UtilityFunctions.GetPath("Users.txt");
+            if (File.Exists(path))
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                string[] lines = File.ReadAllLines(path);
+                if (credType == "username")
                 {
-                    string[] parts = line.Split(',');
-                    int id = int.Parse(parts[0].Trim());
-                    string username = parts[1].Trim();
-                    string contact = parts[2].Trim();
-                    string status = parts[3].Trim();
-                    string gender = parts[4].Trim();
-                    string productsOrdered = parts[5].Trim();
-
-                    if (id == userID)
+                    for (int i = 0; i < lines.Length; i++)
                     {
-                        if (credType == "username")
+                        string[] parts = lines[i].Split(',');
+                        if (parts.Length == 7 && parts[6].Trim() == userID.ToString())
                         {
-                            username = newCred;
-                        }
-                        else if (credType == "password")
-                        {
-                            // Assuming password is not stored in this file
+                            parts[1] = newCred;
+                            lines[i] = string.Join(",", parts);
+                            break;
                         }
                     }
-
-                    string updatedLine = $"{id}, {username}, {contact}, {status}, {gender}, {productsOrdered}";
-                    writer.WriteLine(updatedLine);
                 }
+                else if(credType=="password")
+                {
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        string[] parts = lines[i].Split(',');
+                        if (parts.Length == 4 && parts[0].Trim() == userID.ToString())
+                        {
+                            parts[2] = newCred;
+                            lines[i] = string.Join(",", parts);
+                            break;
+                        }
+                    }
+                }
+                File.WriteAllLines(path, lines);
             }
-
-            File.Delete(path);
-            File.Move(tempFile, path);
-        }
-
-        public Customer ForgotPassword(int userID)
-        {
-            return new Customer();
         }
 
         
@@ -150,19 +151,16 @@ namespace RMS.DL
                 foreach (string line in File.ReadLines(path))
                 {
                     string[] parts = line.Split(',');
-                    if (parts.Length >= 6)
+                    if (parts.Length == 6)
                     {
                         int id = int.Parse(parts[0].Trim());
                         string username = parts[1].Trim();
                         string contact = parts[2].Trim();
                         string status = parts[3].Trim();
                         string gender = parts[4].Trim();
-
-                        List<OrderedProduct> cart = new List<OrderedProduct>();
                         string productsOrdered = parts[5].Trim();
-                        UtilityFunctions.GetCartList(productsOrdered);
-
-                        customers.Add(new Customer());
+                        int userId = int.Parse(parts[6].Trim());
+                        customers.Add(new Customer(id, username, contact, status, gender, UtilityFunctions.GetCartList(productsOrdered), userId));
                     }
                 }
             }
@@ -170,42 +168,22 @@ namespace RMS.DL
             return customers;
         }
 
+
         public void UpdateCart(Customer customer)
         {
             string path = UtilityFunctions.GetPath("Customers.txt");
-            string tempFile = Path.GetTempFileName();
-
-            using (StreamReader reader = new StreamReader(path))
-            using (StreamWriter writer = new StreamWriter(tempFile))
+            string[] lines = File.ReadAllLines(path);
+            for (int i = 0; i < lines.Length; i++)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                string[] parts = lines[i].Split(',');
+                if (parts.Length == 7 && parts[1].Trim() == customer.GetUsername())
                 {
-                    string[] parts = line.Split(',');
-                    int id = int.Parse(parts[0].Trim());
-                    string username = parts[1].Trim();
-                    string contact = parts[2].Trim();
-                    string status = parts[3].Trim();
-                    string gender = parts[4].Trim();
-
-                    if (id == customer.GetUserID())
-                    {
-                        writer.WriteLine($"{id}, {username}, {contact}, {status}, {gender}, {UtilityFunctions.GetCartString(customer.GetCart())}");
-                    }
-                    else
-                    {
-                        writer.WriteLine(line);
-                    }
+                    parts[5] = UtilityFunctions.GetCartString(customer.GetCart());
+                    lines[i] = string.Join(",", parts);
+                    break;
                 }
             }
-
-            File.Delete(path);
-            File.Move(tempFile, path);
-        }
-
-        public void DeleteCustomer(int id, string status, int userid)
-        {
-            // Implementation to delete a customer
+            File.WriteAllLines(path, lines);
         }
 
         public bool UsernameAlreadyExists(string username)
@@ -224,6 +202,35 @@ namespace RMS.DL
                 }
             }
             return false;
+        }
+
+        public Customer ForgotPassword(int userID)
+        {
+            string path = UtilityFunctions.GetPath("Customers.txt");
+            if (File.Exists(path))
+            {
+                string[] lines = File.ReadAllLines(path);
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length >= 7 && parts[6].Trim() == userID.ToString())
+                    {
+                        int id = int.Parse(parts[0]);
+                        string username = parts[1];
+                        string contact = parts[2];
+                        string status = parts[3];
+                        string gender = parts[4];
+                        string productsOrdered = parts[5];
+                        return new Customer(id, username, contact, status, gender, UtilityFunctions.GetCartList(productsOrdered), userID);
+                    }
+                }
+            }
+            return null;
+        }
+
+        public void DeleteCustomer(int id, string status, int userid)
+        {
+            // Implementation to delete a customer
         }
     }
 }

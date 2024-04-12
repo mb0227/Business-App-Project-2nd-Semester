@@ -16,25 +16,6 @@ namespace RMS.DL
 {
     public class UserDBDL : IUserDL
     {
-        public bool EmailAlreadyExists(string email)
-        {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                string query = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Email", email);
-
-                int count = (int)command.ExecuteScalar();
-
-                if (count > 0)
-                {
-                    return  true;
-                }
-            }
-            return false;
-        }
-
         public void SaveUser(User user)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -49,10 +30,26 @@ namespace RMS.DL
             }
         }
 
+        public bool EmailAlreadyExists(string email)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Email", email);
+                int count = (int)command.ExecuteScalar();
+                if (count > 0)
+                {
+                    return  true;
+                }
+            }
+            return false;
+        }
+
         public int GetUserID(string email)
         {
-            int userID = -1; // Default value if user is not found
-
+            int userID = -1; 
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
@@ -68,13 +65,12 @@ namespace RMS.DL
                     }
                 }
             }
-            return userID; // Return -1 if user is not found 
+            return userID; 
         }
 
         public int GetUserID(int id)
         {
             int userID = -1; 
-
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
@@ -90,7 +86,7 @@ namespace RMS.DL
                     }
                 }
             }
-            return userID; // Return -1 if user is not found 
+            return userID; 
         }
 
         public int GetUserIDEmp(int id)
@@ -112,13 +108,12 @@ namespace RMS.DL
                     }
                 }
             }
-            return userID; // Return -1 if user is not found 
+            return userID; 
         }
 
         public string SearchUserForRole(string email, string password)
         {
-            string role = ""; // Default value if user is not found
-
+            string role = ""; 
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
@@ -137,6 +132,7 @@ namespace RMS.DL
             }
             return role; 
         }
+
         public static void SaveImage(int userID)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())

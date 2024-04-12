@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -16,6 +17,21 @@ namespace RMS.DL
 {
     public class CustomerDBDL : ICustomerDL
     {
+        public void SaveCustomer(Customer customer)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Customers(Username, Contact, Status, Gender, UserID) VALUES (@Username, @Contact, @Status, @Gender,@UserID)", connection);
+                command.Parameters.AddWithValue("@Username", customer.GetUsername());
+                command.Parameters.AddWithValue("@Status", customer.GetStatus());
+                command.Parameters.AddWithValue("@Gender", customer.GetGender());
+                command.Parameters.AddWithValue("@Contact", customer.GetContact());
+                command.Parameters.AddWithValue("@UserID", customer.GetUserID());
+                command.ExecuteNonQuery();
+            }
+        }
+
         public void SaveCart(Customer customer)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -127,24 +143,9 @@ namespace RMS.DL
             }
         }
 
-        public void SaveCustomer(Customer customer)
-        {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Customers(Username, Contact, Status, Gender, UserID) VALUES (@Username, @Contact, @Status, @Gender,@UserID)", connection);
-                command.Parameters.AddWithValue("@Username", customer.GetUsername());
-                command.Parameters.AddWithValue("@Status", customer.GetStatus());
-                command.Parameters.AddWithValue("@Gender", customer.GetGender());
-                command.Parameters.AddWithValue("@Contact", customer.GetContact());
-                command.Parameters.AddWithValue("@UserID", customer.GetUserID());
-                command.ExecuteNonQuery();
-            }
-        }
-
         public int GetCustomerID(string username)
         {
-            int customerID = -1; // Default value if customer is not found
+            int customerID = -1; 
 
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -161,7 +162,7 @@ namespace RMS.DL
                     }
                 }
             }
-            return customerID; // Return -1 if user is not found 
+            return customerID; 
         }
 
         public void DeleteCustomer(int id, string status, int userId)
@@ -237,7 +238,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM Customers C JOIN Users U on C.UserID=U.ID WHERE C.UserID=@ID", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM Customers C JOIN Users U on C.UserID = U.ID WHERE C.UserID=@ID", connection);
                 command.Parameters.AddWithValue("@ID", userID);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())

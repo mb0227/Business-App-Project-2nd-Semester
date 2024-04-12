@@ -13,6 +13,22 @@ namespace RMS.DL
 {
     public class EmployeeDBDL : IEmployeeDL
     {
+        public void SaveEmployee(Employee employee)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Employees(Username, Contact, Salary, JoinDate,Gender, UserID) VALUES (@Username, @Contact, @Salary,@JoinDate, @Gender,@UserID)", connection);
+                command.Parameters.AddWithValue("@Username", employee.GetUsername());
+                command.Parameters.AddWithValue("@Contact", employee.GetContact());
+                command.Parameters.AddWithValue("@Salary", employee.GetSalary());
+                command.Parameters.AddWithValue("@JoinDate", employee.GetJoinDate());
+                command.Parameters.AddWithValue("@Gender", employee.GetGender());
+                command.Parameters.AddWithValue("@UserID", employee.GetUserID());
+                command.ExecuteNonQuery();
+            }
+        }
+
         public void UpdateCredentials(string newCred,string credType,int id)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -57,22 +73,6 @@ namespace RMS.DL
                     employees.Add(employee);
                 }
                 return employees;
-            }
-        }
-
-        public void SaveEmployee(Employee employee)
-        {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Employees(Username, Contact, Salary, JoinDate,Gender, UserID) VALUES (@Username, @Contact, @Salary,@JoinDate, @Gender,@UserID)", connection);
-                command.Parameters.AddWithValue("@Username", employee.GetUsername());
-                command.Parameters.AddWithValue("@Contact", employee.GetContact());
-                command.Parameters.AddWithValue("@Salary", employee.GetSalary());
-                command.Parameters.AddWithValue("@JoinDate", employee.GetJoinDate());
-                command.Parameters.AddWithValue("@Gender", employee.GetGender());
-                command.Parameters.AddWithValue("@UserID", employee.GetUserID());
-                command.ExecuteNonQuery();
             }
         }
 
@@ -169,7 +169,6 @@ namespace RMS.DL
             }
             return null;
         }
-
 
         public int GetEmployeeID(string username)
         {

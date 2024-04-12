@@ -20,11 +20,7 @@ namespace RMS.DL
             }
         }
 
-        public int GetUserIDEmp(int id)
-        {
-            return 0;
-        }
-        private bool EmailAlreadyExistsInFile(string email)
+        public bool EmailAlreadyExists(string email)
         {
             string path = UtilityFunctions.GetPath("Users.txt");
             if (!File.Exists(path))
@@ -38,12 +34,6 @@ namespace RMS.DL
             }
             return false;
         }
-
-        public bool EmailAlreadyExists(string email)
-        {
-            return EmailAlreadyExistsInFile(email);
-        }
-
 
         public int GetUserID(string email)
         {
@@ -69,10 +59,26 @@ namespace RMS.DL
             foreach (string line in File.ReadLines(path))
             {
                 string[] parts = line.Split(',');
-                if (parts.Length >= 3 && parts[2].Trim() == id.ToString())
-                    return Convert.ToInt32(parts[0].Trim()); // Assuming email is at index 0
+                if (parts.Length == 4 && parts[0].Trim() == id.ToString())
+                    return Convert.ToInt32(parts[0].Trim()); 
             }
-            return -1; // Return -1 if user is not found
+            return -1; 
+        }
+
+
+        public int GetUserIDEmp(int id)
+        {
+            string path = UtilityFunctions.GetPath("Users.txt");
+            if (!File.Exists(path))
+                return -1;
+
+            foreach (string line in File.ReadLines(path))
+            {
+                string[] parts = line.Split(',');
+                if (parts.Length == 4 && parts[0].Trim() == id.ToString())
+                    return Convert.ToInt32(parts[0].Trim());
+            }
+            return -1;
         }
 
         public string SearchUserForRole(string email, string password)
@@ -88,6 +94,27 @@ namespace RMS.DL
                     return parts[3].Trim(); 
             }
             return ""; 
+        }
+
+        public static void SaveImage(int userID, byte[] imageData)
+        {
+            string directoryPath = "UserImages";
+            string imagePath = Path.Combine(directoryPath, $"{userID}.jpg"); // Assuming JPEG format
+            Directory.CreateDirectory(directoryPath); // Create directory if it doesn't exist
+            File.WriteAllBytes(imagePath, imageData);
+        }
+
+        public static byte[] LoadImage(int userID)
+        {
+            string imagePath = Path.Combine("UserImages", $"{userID}.jpg"); // Assuming JPEG format
+            if (File.Exists(imagePath))
+            {
+                return File.ReadAllBytes(imagePath);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

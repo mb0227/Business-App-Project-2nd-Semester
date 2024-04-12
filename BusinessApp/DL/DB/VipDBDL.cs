@@ -92,8 +92,6 @@ namespace RMS.DL
                 command.Parameters.AddWithValue("@Vouchers", string.Join(";", Vouchers));
                 command.ExecuteNonQuery();
             }
-        }
-
-        
+        }       
     }
 }

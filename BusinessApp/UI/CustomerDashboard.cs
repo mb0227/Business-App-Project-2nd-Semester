@@ -122,7 +122,7 @@ namespace SSC
                 {
                     using (FileStream stream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                     {
-                        if (stream.Length > 0) // Check if the file has content
+                        if (stream.Length > 0) 
                         {
                             try
                             {

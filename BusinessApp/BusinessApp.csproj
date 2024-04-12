@@ -114,8 +114,10 @@
     <Compile Include="DL\DB\VipDBDL.cs" />
     <Compile Include="DL\DB\WaiterDBDL.cs" />
     <Compile Include="DL\FH\CustomerFHDL.cs" />
+    <Compile Include="DL\FH\EmployeeFHDL.cs" />
     <Compile Include="DL\FH\RegularFHDL.cs" />
     <Compile Include="DL\FH\UserFHDL.cs" />
+    <Compile Include="DL\FH\VipFHDL.cs" />
     <Compile Include="Reports\EmployeeDetails.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -561,8 +563,10 @@
     <None Include="images\icons8-employees-50 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Files\Employees.txt" />
     <Content Include="Files\Regular.txt" />
     <Content Include="Files\Customers.txt" />
+    <Content Include="Files\VIP.txt" />
     <Content Include="Files\Users.txt" />
   </ItemGroup>
   <ItemGroup>
