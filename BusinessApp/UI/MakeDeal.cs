@@ -125,6 +125,7 @@ namespace SignInSignUp.UI
         {
             if(CheckValidations())
             {
+                name.Text = name.Text.Replace(",", "");
                 Deal deal = new Deal(name.Text, Convert.ToDouble(price.Text), items);
                 ObjectHandler.GetDealDL().SaveDeal(deal);
                 ClearTextBoxes();

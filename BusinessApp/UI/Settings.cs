@@ -121,6 +121,7 @@ namespace SSC.UI
             {
                 ChangeButtonsText();
             }
+            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
         }
 
         private void MakeBtnVisible(int x,int y)
@@ -268,6 +269,7 @@ namespace SSC.UI
         {
             if (label.Text == "Username")
             {
+                label.Text = label.Text.Replace(",", "");
                 if (CheckValidations("username"))
                 {
                     ObjectHandler.GetCustomerDL().UpdateCredentials(tb.Text, "username", customer.GetUserID());
@@ -308,7 +310,7 @@ namespace SSC.UI
 
         private void orderHistoryButton_Click(object sender, EventArgs e)
         {
-            ShowReport r = new ShowReport(customer.GetID());
+            ShowReport r = new ShowReport("orderHistory", customer.GetID());
             r.Show();
         }
 
@@ -318,10 +320,20 @@ namespace SSC.UI
 
             if (result == DialogResult.Yes)
             {
-                ObjectHandler.GetCustomerDL().DeleteCustomer(customer.GetID(), "regular", customer.GetUserID());
-                Homepage p = new Homepage(this.Size, this.Location);
-                p.Show();
-                this.Hide();
+                if (customer.GetStatus().ToLower() == "regular")
+                {
+                    ObjectHandler.GetCustomerDL().DeleteCustomer(customer.GetID(), "regular", customer.GetUserID());
+                    Homepage p = new Homepage(this.Size, this.Location);
+                    p.Show();
+                    this.Hide();
+                }
+                else if(customer.GetStatus().ToLower() == "vip")
+                {
+                    ObjectHandler.GetCustomerDL().DeleteCustomer(customer.GetID(), "vip", customer.GetUserID());
+                    Homepage p = new Homepage(this.Size, this.Location);
+                    p.Show();
+                    this.Hide();
+                }
             }
             else
             {

@@ -51,6 +51,12 @@ namespace SignInSignUp.UI
 
         private bool CheckValidations()
         {
+            email.Text = email.Text.Replace(",", "");
+            username.Text = username.Text.Replace(",", "");
+            password.Text = password.Text.Replace(",", "");
+            tb1.Text = tb1.Text.Replace(",", "");
+            tb2.Text = tb2.Text.Replace(",", "");
+
             string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             if (!Regex.IsMatch(email.Text, pattern))
             {
@@ -136,7 +142,7 @@ namespace SignInSignUp.UI
 
         private List<string> splitText(string input)
         {
-            string[] parts = input.Split(',');
+            string[] parts = input.Split(';');
 
             List<string> resultList = new List<string>();
 

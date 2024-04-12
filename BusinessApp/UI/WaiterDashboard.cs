@@ -141,7 +141,9 @@ namespace SignInSignUp.UI
 
         private bool CheckValidations()
         {
-            if(payment.Text.ToLower()!="cash" && payment.Text.ToLower() != "card")
+            comments.Text = comments.Text.Replace(",","");
+            payment.Text = payment.Text.Replace(",","");
+            if (payment.Text.ToLower()!="cash" && payment.Text.ToLower() != "card")
             {
                 errorProvider1.SetError(payment,"Please select card or cash payment");
                 return false;

@@ -116,10 +116,22 @@
     <Compile Include="DL\FH\CustomerFHDL.cs" />
     <Compile Include="DL\FH\RegularFHDL.cs" />
     <Compile Include="DL\FH\UserFHDL.cs" />
+    <Compile Include="Reports\EmployeeDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\OrderHistory.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SalesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\ShowReport.cs">
@@ -128,10 +140,10 @@
     <Compile Include="Reports\ShowReport.Designer.cs">
       <DependentUpon>ShowReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\UserDetails1.cs">
+    <Compile Include="Reports\CustomerDetails.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserDetails.rpt</DependentUpon>
+      <DependentUpon>CustomerDetails.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Resource1.Designer.cs">
@@ -162,12 +174,6 @@
     </Compile>
     <Compile Include="UI\AdminSettings.Designer.cs">
       <DependentUpon>AdminSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Bill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Bill.Designer.cs">
-      <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ChefDashboard.cs">
       <SubType>Form</SubType>
@@ -333,16 +339,24 @@
     <Compile Include="UI\WaiterDashboard.Designer.cs">
       <DependentUpon>WaiterDashboard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\EmployeeDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeDetails.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\OrderHistory.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OrderHistory.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ShowReport.resx">
       <DependentUpon>ShowReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\UserDetails.rpt">
+    <EmbeddedResource Include="Reports\CustomerDetails.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>UserDetails1.cs</LastGenOutput>
+      <LastGenOutput>CustomerDetails.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -359,9 +373,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AdminSettings.resx">
       <DependentUpon>AdminSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Bill.resx">
-      <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ChefDashboard.resx">
       <DependentUpon>ChefDashboard.cs</DependentUpon>
@@ -451,7 +462,6 @@
     <EmbeddedResource Include="UI\WaiterDashboard.resx">
       <DependentUpon>WaiterDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="data.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

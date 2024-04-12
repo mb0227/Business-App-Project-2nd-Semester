@@ -117,6 +117,7 @@ namespace SignInSignUp.UI
 
         private void sendBtn_Click(object sender, EventArgs e)
         {
+            notification.Text = notification.Text.Replace(",", "");
             if(!string.IsNullOrEmpty(notification.Text.Trim()))
             {
                 Notification Notification = new Notification(notification.Text);

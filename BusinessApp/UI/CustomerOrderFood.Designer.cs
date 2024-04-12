@@ -32,10 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrderFood));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.menuComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.menuGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.deleteOrderBtn = new Guna.UI2.WinForms.Guna2Button();
             this.orderDealBtn = new Guna.UI2.WinForms.Guna2Button();
             this.trackOrderBtn = new Guna.UI2.WinForms.Guna2Button();
             this.searchBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -52,12 +55,12 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.deleteOrderBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.menuGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,6 +131,84 @@
             this.panel1.Size = new System.Drawing.Size(1164, 886);
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // menuGridView
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.menuGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.menuGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.menuGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.menuGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.menuGridView.ColumnHeadersHeight = 20;
+            this.menuGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.menuGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.menuGridView.EnableHeadersVisualStyles = true;
+            this.menuGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
+            this.menuGridView.Location = new System.Drawing.Point(568, 69);
+            this.menuGridView.Name = "menuGridView";
+            this.menuGridView.ReadOnly = true;
+            this.menuGridView.RowHeadersVisible = false;
+            this.menuGridView.RowHeadersWidth = 62;
+            this.menuGridView.RowTemplate.Height = 28;
+            this.menuGridView.Size = new System.Drawing.Size(520, 384);
+            this.menuGridView.TabIndex = 46;
+            this.menuGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.menuGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.menuGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.menuGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
+            this.menuGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.menuGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.menuGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.menuGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.menuGridView.ThemeStyle.HeaderStyle.Height = 20;
+            this.menuGridView.ThemeStyle.ReadOnly = true;
+            this.menuGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.menuGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.menuGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.menuGridView.ThemeStyle.RowsStyle.Height = 28;
+            this.menuGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            this.menuGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // deleteOrderBtn
+            // 
+            this.deleteOrderBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.deleteOrderBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.deleteOrderBtn.BorderRadius = 18;
+            this.deleteOrderBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.deleteOrderBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteOrderBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteOrderBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteOrderBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteOrderBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteOrderBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteOrderBtn.ForeColor = System.Drawing.Color.Black;
+            this.deleteOrderBtn.Location = new System.Drawing.Point(832, 569);
+            this.deleteOrderBtn.Name = "deleteOrderBtn";
+            this.deleteOrderBtn.Size = new System.Drawing.Size(190, 65);
+            this.deleteOrderBtn.TabIndex = 12;
+            this.deleteOrderBtn.Text = "Delete Order";
+            this.deleteOrderBtn.Visible = false;
+            this.deleteOrderBtn.Click += new System.EventHandler(this.deleteOrderBtn_Click);
             // 
             // orderDealBtn
             // 
@@ -360,6 +441,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel3.Controls.Add(this.pictureBox);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(51, 76);
             this.panel3.Name = "panel3";
@@ -378,83 +460,18 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Order Food";
             // 
-            // deleteOrderBtn
+            // pictureBox
             // 
-            this.deleteOrderBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deleteOrderBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.deleteOrderBtn.BorderRadius = 18;
-            this.deleteOrderBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.deleteOrderBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.deleteOrderBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.deleteOrderBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.deleteOrderBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.deleteOrderBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.deleteOrderBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteOrderBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteOrderBtn.Location = new System.Drawing.Point(832, 569);
-            this.deleteOrderBtn.Name = "deleteOrderBtn";
-            this.deleteOrderBtn.Size = new System.Drawing.Size(190, 65);
-            this.deleteOrderBtn.TabIndex = 12;
-            this.deleteOrderBtn.Text = "Delete Order";
-            this.deleteOrderBtn.Visible = false;
-            this.deleteOrderBtn.Click += new System.EventHandler(this.deleteOrderBtn_Click);
-            // 
-            // menuGridView
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.menuGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.menuGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.menuGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.menuGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.menuGridView.ColumnHeadersHeight = 20;
-            this.menuGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.menuGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.menuGridView.EnableHeadersVisualStyles = true;
-            this.menuGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.menuGridView.Location = new System.Drawing.Point(568, 69);
-            this.menuGridView.Name = "menuGridView";
-            this.menuGridView.ReadOnly = true;
-            this.menuGridView.RowHeadersVisible = false;
-            this.menuGridView.RowHeadersWidth = 62;
-            this.menuGridView.RowTemplate.Height = 28;
-            this.menuGridView.Size = new System.Drawing.Size(520, 384);
-            this.menuGridView.TabIndex = 46;
-            this.menuGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
-            this.menuGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.menuGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.menuGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.menuGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.menuGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.menuGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.menuGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.menuGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.menuGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.menuGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.menuGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.menuGridView.ThemeStyle.HeaderStyle.Height = 20;
-            this.menuGridView.ThemeStyle.ReadOnly = true;
-            this.menuGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.menuGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.menuGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.menuGridView.ThemeStyle.RowsStyle.Height = 28;
-            this.menuGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            this.menuGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(1150, 7);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox.Size = new System.Drawing.Size(77, 76);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 23;
+            this.pictureBox.TabStop = false;
             // 
             // CustomerOrderFood
             // 
@@ -471,10 +488,11 @@
             this.Load += new System.EventHandler(this.CustomerOrderFood_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,5 +520,6 @@
         private Guna.UI2.WinForms.Guna2Button orderDealBtn;
         private Guna.UI2.WinForms.Guna2Button deleteOrderBtn;
         private Guna.UI2.WinForms.Guna2DataGridView menuGridView;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBox;
     }
 }

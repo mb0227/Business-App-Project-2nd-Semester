@@ -104,12 +104,6 @@ namespace SSC.UI
             }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            string Contact = "+923344207165";
-            Process.Start("tel:" + Contact);
-        }
-
         private void send_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(msgTB.Text))
@@ -130,6 +124,7 @@ namespace SSC.UI
         private void Help_Load(object sender, EventArgs e)
         {
             DisplayMessages();
+            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
         }
 
         private void DisplayMessages()
@@ -153,7 +148,7 @@ namespace SSC.UI
                     else
                     {
                         label.Text = "You: " + msg.GetMessageText() + " " + time;
-                        label.ForeColor = Color.Teal;
+                        label.ForeColor = Color.AliceBlue;
                     }
                     msgPanel.Controls.Add(label);
                 }
@@ -172,5 +167,14 @@ namespace SSC.UI
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string Contact = "+923344207165";
+            Process.Start("tel:" + Contact);
+        }
+
+        private void msgTB_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -16,14 +16,14 @@ namespace SignInSignUp.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class UserDetails : ReportClass {
+    public class EmployeeDetails : ReportClass {
         
-        public UserDetails() {
+        public EmployeeDetails() {
         }
         
         public override string ResourceName {
             get {
-                return "UserDetails.rpt";
+                return "EmployeeDetails.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SignInSignUp.Reports {
         
         public override string FullResourceName {
             get {
-                return "SignInSignUp.Reports.UserDetails.rpt";
+                return "SignInSignUp.Reports.EmployeeDetails.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SignInSignUp.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedUserDetails : Component, ICachedReport {
+    public class CachedEmployeeDetails : Component, ICachedReport {
         
-        public CachedUserDetails() {
+        public CachedEmployeeDetails() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SignInSignUp.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            UserDetails rpt = new UserDetails();
+            EmployeeDetails rpt = new EmployeeDetails();
             rpt.Site = this.Site;
             return rpt;
         }

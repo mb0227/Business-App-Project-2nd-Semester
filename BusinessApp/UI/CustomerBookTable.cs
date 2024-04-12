@@ -222,6 +222,7 @@ namespace SSC.UI
         {
             ObjectHandler.GetTableDL().UpdateTablesStatus();
             FillComboBox();
+            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
         }
     }
 }

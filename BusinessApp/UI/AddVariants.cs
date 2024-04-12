@@ -67,6 +67,7 @@ namespace SignInSignUp.UI
         
         private bool CheckValidations()
         {
+            quantityText.Text = quantityText.Text.Replace(",", "");
             double price;
             if (!double.TryParse(priceTB.Text, out price))
             {

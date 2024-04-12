@@ -174,6 +174,13 @@ namespace SSC.UI
 
         private bool CheckValidations()
         {
+            email.Text = email.Text.Replace(",", "");
+            username.Text = username.Text.Replace(",", "");
+            password.Text = password.Text.Replace(",", "");
+            tb1.Text = tb1.Text.Replace(",", "");
+            tb2.Text = tb2.Text.Replace(",", "");
+            tb3.Text = tb3.Text.Replace(",", "");
+
             string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             if (!Regex.IsMatch(email.Text, pattern))
             {

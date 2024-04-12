@@ -17,8 +17,8 @@ namespace RMS.DL
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand("INSERT INTO Admins(ToolsUsed, Permissions, EmployeeID) VALUES (@ToolsUsed, @Permissions, @EmployeeID)", connection);
-                command.Parameters.AddWithValue("@ToolsUsed", string.Join(", ", admin.GetToolsUsed()));
-                command.Parameters.AddWithValue("@Permissions", string.Join(", ", admin.GetPermissions()));
+                command.Parameters.AddWithValue("@ToolsUsed", string.Join(";", admin.GetToolsUsed()));
+                command.Parameters.AddWithValue("@Permissions", string.Join(";", admin.GetPermissions()));
                 command.Parameters.AddWithValue("@EmployeeID", admin.GetEmployeeID());
                 command.ExecuteNonQuery();
             }
@@ -46,7 +46,7 @@ namespace RMS.DL
                         string permissions = reader.GetString(4);
                         int employeeID = reader.GetInt32(5);
 
-                        Admin admin = new Admin(id, username, salary, tools.Split(',').ToList(), permissions.Split(',').ToList(), employeeID);
+                        Admin admin = new Admin(id, username, salary, tools.Split(';').ToList(), permissions.Split(';').ToList(), employeeID);
                         admins.Add(admin);
                     }
                 }

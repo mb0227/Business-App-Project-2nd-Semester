@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using RMS.DL;
 
 namespace SignInSignUp.UI
 {
@@ -32,6 +33,7 @@ namespace SignInSignUp.UI
         {
             MakeColumns();
             LoadData();
+            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
         }
 
         public OrderDeal(Size size, Point location, Customer c)

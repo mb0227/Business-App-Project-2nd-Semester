@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pickupOrder = new Guna.UI2.WinForms.Guna2Button();
             this.reservationBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.billBtn = new Guna.UI2.WinForms.Guna2Button();
             this.deliverOrder = new Guna.UI2.WinForms.Guna2Button();
             this.manageBtns = new Guna.UI2.WinForms.Guna2Button();
             this.header = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -65,13 +65,12 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel3.Controls.Add(this.pickupOrder);
             this.panel3.Controls.Add(this.reservationBtn);
-            this.panel3.Controls.Add(this.billBtn);
             this.panel3.Controls.Add(this.deliverOrder);
             this.panel3.Controls.Add(this.manageBtns);
             this.panel3.Controls.Add(this.header);
             this.panel3.Location = new System.Drawing.Point(0, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1180, 91);
+            this.panel3.Size = new System.Drawing.Size(1330, 91);
             this.panel3.TabIndex = 23;
             // 
             // pickupOrder
@@ -87,9 +86,9 @@
             this.pickupOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.pickupOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickupOrder.ForeColor = System.Drawing.Color.Black;
-            this.pickupOrder.Location = new System.Drawing.Point(533, 4);
+            this.pickupOrder.Location = new System.Drawing.Point(773, 3);
             this.pickupOrder.Name = "pickupOrder";
-            this.pickupOrder.Size = new System.Drawing.Size(128, 88);
+            this.pickupOrder.Size = new System.Drawing.Size(144, 88);
             this.pickupOrder.TabIndex = 67;
             this.pickupOrder.Text = "Pickup";
             this.pickupOrder.Click += new System.EventHandler(this.pickupOrder_Click);
@@ -107,30 +106,11 @@
             this.reservationBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.reservationBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationBtn.ForeColor = System.Drawing.Color.Black;
-            this.reservationBtn.Location = new System.Drawing.Point(787, 2);
+            this.reservationBtn.Location = new System.Drawing.Point(1062, 0);
             this.reservationBtn.Name = "reservationBtn";
             this.reservationBtn.Size = new System.Drawing.Size(263, 88);
             this.reservationBtn.TabIndex = 48;
             this.reservationBtn.Text = "View Reservations";
-            // 
-            // billBtn
-            // 
-            this.billBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.billBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.billBtn.BorderRadius = 18;
-            this.billBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.billBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.billBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.billBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.billBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.billBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.billBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billBtn.ForeColor = System.Drawing.Color.Black;
-            this.billBtn.Location = new System.Drawing.Point(1048, 4);
-            this.billBtn.Name = "billBtn";
-            this.billBtn.Size = new System.Drawing.Size(126, 82);
-            this.billBtn.TabIndex = 46;
-            this.billBtn.Text = "Bill";
             // 
             // deliverOrder
             // 
@@ -145,9 +125,9 @@
             this.deliverOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.deliverOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deliverOrder.ForeColor = System.Drawing.Color.Black;
-            this.deliverOrder.Location = new System.Drawing.Point(657, 4);
+            this.deliverOrder.Location = new System.Drawing.Point(923, 0);
             this.deliverOrder.Name = "deliverOrder";
-            this.deliverOrder.Size = new System.Drawing.Size(130, 88);
+            this.deliverOrder.Size = new System.Drawing.Size(133, 88);
             this.deliverOrder.TabIndex = 47;
             this.deliverOrder.Text = "Deliver";
             this.deliverOrder.Click += new System.EventHandler(this.deliverOrder_Click);
@@ -165,7 +145,7 @@
             this.manageBtns.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.manageBtns.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageBtns.ForeColor = System.Drawing.Color.Black;
-            this.manageBtns.Location = new System.Drawing.Point(374, 3);
+            this.manageBtns.Location = new System.Drawing.Point(599, 0);
             this.manageBtns.Name = "manageBtns";
             this.manageBtns.Size = new System.Drawing.Size(168, 88);
             this.manageBtns.TabIndex = 45;
@@ -177,7 +157,7 @@
             this.header.AutoSize = true;
             this.header.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.header.ForeColor = System.Drawing.Color.MintCream;
-            this.header.Location = new System.Drawing.Point(-2, 22);
+            this.header.Location = new System.Drawing.Point(65, 28);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(387, 46);
             this.header.TabIndex = 7;
@@ -191,7 +171,7 @@
             this.reservationText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reservationText.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationText.ForeColor = System.Drawing.Color.DarkRed;
-            this.reservationText.Location = new System.Drawing.Point(146, 389);
+            this.reservationText.Location = new System.Drawing.Point(221, 442);
             this.reservationText.Name = "reservationText";
             this.reservationText.Size = new System.Drawing.Size(0, 39);
             this.reservationText.TabIndex = 33;
@@ -204,7 +184,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(24, 353);
+            this.label2.Location = new System.Drawing.Point(99, 406);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 36);
             this.label2.TabIndex = 32;
@@ -217,7 +197,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(24, 278);
+            this.label1.Location = new System.Drawing.Point(99, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 36);
             this.label1.TabIndex = 31;
@@ -236,7 +216,7 @@
             this.guna2TextBox1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(277, 275);
+            this.guna2TextBox1.Location = new System.Drawing.Point(352, 328);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
@@ -251,7 +231,7 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(277, 351);
+            this.dateTimePicker1.Location = new System.Drawing.Point(352, 404);
             this.dateTimePicker1.MinDate = new System.DateTime(2024, 4, 7, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 44);
@@ -270,9 +250,9 @@
             this.deleteReservation.FillColor = System.Drawing.Color.Red;
             this.deleteReservation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteReservation.ForeColor = System.Drawing.Color.Black;
-            this.deleteReservation.Location = new System.Drawing.Point(240, 539);
+            this.deleteReservation.Location = new System.Drawing.Point(315, 592);
             this.deleteReservation.Name = "deleteReservation";
-            this.deleteReservation.Size = new System.Drawing.Size(256, 79);
+            this.deleteReservation.Size = new System.Drawing.Size(256, 73);
             this.deleteReservation.TabIndex = 27;
             this.deleteReservation.Text = "Delete Reservation";
             this.deleteReservation.Click += new System.EventHandler(this.deleteReservation_Click);
@@ -290,7 +270,7 @@
             this.makeReservation.FillColor = System.Drawing.Color.Lime;
             this.makeReservation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.makeReservation.ForeColor = System.Drawing.Color.Black;
-            this.makeReservation.Location = new System.Drawing.Point(240, 442);
+            this.makeReservation.Location = new System.Drawing.Point(315, 495);
             this.makeReservation.Name = "makeReservation";
             this.makeReservation.Size = new System.Drawing.Size(256, 74);
             this.makeReservation.TabIndex = 25;
@@ -304,7 +284,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(24, 203);
+            this.label3.Location = new System.Drawing.Point(99, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(228, 36);
             this.label3.TabIndex = 28;
@@ -317,46 +297,46 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(277, 202);
+            this.comboBox1.Location = new System.Drawing.Point(352, 255);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(213, 37);
             this.comboBox1.TabIndex = 24;
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeight = 20;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.EnableHeadersVisualStyles = true;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.dataGridView1.Location = new System.Drawing.Point(517, 165);
+            this.dataGridView1.Location = new System.Drawing.Point(592, 218);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(625, 479);
             this.dataGridView1.TabIndex = 50;
@@ -391,12 +371,22 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(13, 114);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1303, 714);
+            this.panel1.TabIndex = 51;
+            // 
             // ManageReservations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.reservationText);
             this.Controls.Add(this.label2);
@@ -408,7 +398,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel3);
-            this.MinimumSize = new System.Drawing.Size(1070, 889);
+            this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "ManageReservations";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ManageReservations";
@@ -428,7 +419,6 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2Button pickupOrder;
         private Guna.UI2.WinForms.Guna2Button reservationBtn;
-        private Guna.UI2.WinForms.Guna2Button billBtn;
         private Guna.UI2.WinForms.Guna2Button deliverOrder;
         private Guna.UI2.WinForms.Guna2Button manageBtns;
         private System.Windows.Forms.Label header;
@@ -444,5 +434,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Data.SqlClient;
+using SignInSignUp.Reports;
 
 namespace SignInSignUp.UI
 {
@@ -190,6 +191,7 @@ namespace SignInSignUp.UI
         {
             if (label.Text=="Username")
             {
+                tb.Text = tb.Text.Replace(",", "");
                 if (CheckValidations("username"))
                 {
                     ObjectHandler.GetEmployeeDL().UpdateCredentials(tb.Text, "username", Admin.GetEmployeeID());
@@ -293,6 +295,24 @@ namespace SignInSignUp.UI
                     }
                 }
             }
+        }
+
+        private void userDetailsButton_Click(object sender, EventArgs e)
+        {
+            ShowReport r = new ShowReport("customerDetails", -1);
+            r.Show();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ShowReport r = new ShowReport("employeeDetails", -1);
+            r.Show();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            ShowReport r = new ShowReport("salesReport", -1);
+            r.Show();
         }
     }
 }

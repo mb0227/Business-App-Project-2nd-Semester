@@ -34,10 +34,10 @@
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gradientPanel1 = new SSC.GradientPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.gradientPanel1 = new SSC.GradientPanel();
             this.gradientPanel2 = new SSC.GradientPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -106,8 +106,18 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1093, 84);
+            this.panel2.Size = new System.Drawing.Size(1327, 84);
             this.panel2.TabIndex = 53;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Angle = 0F;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.Empty;
+            this.gradientPanel1.Location = new System.Drawing.Point(3, 84);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1090, 752);
+            this.gradientPanel1.TabIndex = 55;
+            this.gradientPanel1.TopColor = System.Drawing.Color.Empty;
             // 
             // label3
             // 
@@ -115,7 +125,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(496, 23);
+            this.label3.Location = new System.Drawing.Point(613, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 47);
             this.label3.TabIndex = 0;
@@ -130,16 +140,6 @@
             // 
             this.errorProvider5.ContainerControl = this;
             // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.Angle = 0F;
-            this.gradientPanel1.BottomColor = System.Drawing.Color.Empty;
-            this.gradientPanel1.Location = new System.Drawing.Point(3, 84);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1090, 752);
-            this.gradientPanel1.TabIndex = 55;
-            this.gradientPanel1.TopColor = System.Drawing.Color.Empty;
-            // 
             // gradientPanel2
             // 
             this.gradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -150,7 +150,7 @@
             this.gradientPanel2.Controls.Add(this.panel3);
             this.gradientPanel2.Location = new System.Drawing.Point(0, 84);
             this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.Size = new System.Drawing.Size(1093, 781);
+            this.gradientPanel2.Size = new System.Drawing.Size(1327, 998);
             this.gradientPanel2.TabIndex = 55;
             this.gradientPanel2.TopColor = System.Drawing.Color.MediumOrchid;
             // 
@@ -181,7 +181,7 @@
             this.panel3.Controls.Add(this.Gender);
             this.panel3.Controls.Add(this.Contact);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Location = new System.Drawing.Point(240, 22);
+            this.panel3.Location = new System.Drawing.Point(365, 45);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(644, 594);
             this.panel3.TabIndex = 54;
@@ -513,10 +513,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1094, 833);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.gradientPanel2);
-            this.MinimumSize = new System.Drawing.Size(1070, 835);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "SignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sign Up Page";

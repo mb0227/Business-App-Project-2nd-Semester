@@ -34,6 +34,8 @@ namespace SSC.UI
 
         private bool CheckValidations()
         {
+            name.Text = name.Text.Replace(",", "");   
+            description.Text = description.Text.Replace(",", "");   
             if (string.IsNullOrWhiteSpace(name.Text.Trim()))
             {
                 errorProvider1.SetError(name, "Product name cannot be empty.");

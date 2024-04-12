@@ -42,7 +42,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(55, 73);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1126, 91);
+            this.panel3.Size = new System.Drawing.Size(1276, 91);
             this.panel3.TabIndex = 20;
             // 
             // label2
@@ -51,7 +51,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(370, 22);
+            this.label2.Location = new System.Drawing.Point(445, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(359, 52);
             this.label2.TabIndex = 7;
@@ -64,7 +64,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Location = new System.Drawing.Point(57, 163);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 787);
+            this.panel1.Size = new System.Drawing.Size(1273, 893);
             this.panel1.TabIndex = 21;
             // 
             // AdminDashboard
@@ -72,10 +72,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.MinimumSize = new System.Drawing.Size(1070, 889);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Load += new System.EventHandler(this.AdminDashboard_Load);

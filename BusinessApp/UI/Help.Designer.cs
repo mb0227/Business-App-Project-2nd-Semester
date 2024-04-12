@@ -33,12 +33,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.msgTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.send = new System.Windows.Forms.PictureBox();
             this.msgPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.send = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.send)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -46,6 +50,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel4.Controls.Add(this.pictureBox);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(54, 75);
             this.panel4.Name = "panel4";
@@ -80,7 +85,7 @@
             this.msgTB.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msgTB.ForeColor = System.Drawing.Color.Black;
             this.msgTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.msgTB.Location = new System.Drawing.Point(-2, 6);
+            this.msgTB.Location = new System.Drawing.Point(24, 7);
             this.msgTB.Margin = new System.Windows.Forms.Padding(4);
             this.msgTB.Multiline = true;
             this.msgTB.Name = "msgTB";
@@ -89,9 +94,10 @@
             this.msgTB.PlaceholderForeColor = System.Drawing.Color.Black;
             this.msgTB.PlaceholderText = "Message";
             this.msgTB.SelectedText = "";
-            this.msgTB.Size = new System.Drawing.Size(973, 67);
+            this.msgTB.Size = new System.Drawing.Size(886, 67);
             this.msgTB.TabIndex = 0;
             this.msgTB.WordWrap = false;
+            this.msgTB.TextChanged += new System.EventHandler(this.msgTB_TextChanged);
             // 
             // panel2
             // 
@@ -99,12 +105,37 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.send);
             this.panel2.Controls.Add(this.msgTB);
             this.panel2.Location = new System.Drawing.Point(249, 627);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1068, 307);
             this.panel2.TabIndex = 28;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(975, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // send
+            // 
+            this.send.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.send.Image = ((System.Drawing.Image)(resources.GetObject("send.Image")));
+            this.send.Location = new System.Drawing.Point(917, 13);
+            this.send.Name = "send";
+            this.send.Size = new System.Drawing.Size(52, 50);
+            this.send.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.send.TabIndex = 0;
+            this.send.TabStop = false;
+            this.send.Click += new System.EventHandler(this.send_Click);
             // 
             // msgPanel
             // 
@@ -136,17 +167,18 @@
             this.guna2VScrollBar1.SmallChange = 5;
             this.guna2VScrollBar1.TabIndex = 0;
             // 
-            // send
+            // pictureBox
             // 
-            this.send.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.send.Image = ((System.Drawing.Image)(resources.GetObject("send.Image")));
-            this.send.Location = new System.Drawing.Point(981, 7);
-            this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(52, 50);
-            this.send.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.send.TabIndex = 0;
-            this.send.TabStop = false;
-            this.send.Click += new System.EventHandler(this.send_Click);
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(1145, 7);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox.Size = new System.Drawing.Size(77, 76);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 30;
+            this.pictureBox.TabStop = false;
             // 
             // Help
             // 
@@ -166,7 +198,9 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.send)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +215,7 @@
         private System.Windows.Forms.PictureBox send;
         private System.Windows.Forms.FlowLayoutPanel msgPanel;
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBox;
     }
 }

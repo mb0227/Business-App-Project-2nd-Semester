@@ -38,6 +38,7 @@
             this.expressionless = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lovedit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.happy)).BeginInit();
@@ -45,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expressionless)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -53,7 +55,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(20, 117);
+            this.label2.Location = new System.Drawing.Point(95, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(257, 34);
             this.label2.TabIndex = 1;
@@ -73,7 +75,7 @@
             this.panel2.Controls.Add(this.expressionless);
             this.panel2.Location = new System.Drawing.Point(301, 167);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(881, 689);
+            this.panel2.Size = new System.Drawing.Size(1031, 795);
             this.panel2.TabIndex = 9;
             // 
             // lovedit
@@ -81,7 +83,7 @@
             this.lovedit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lovedit.BackColor = System.Drawing.Color.Transparent;
             this.lovedit.Image = ((System.Drawing.Image)(resources.GetObject("lovedit.Image")));
-            this.lovedit.Location = new System.Drawing.Point(691, 221);
+            this.lovedit.Location = new System.Drawing.Point(766, 274);
             this.lovedit.Name = "lovedit";
             this.lovedit.Size = new System.Drawing.Size(102, 107);
             this.lovedit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,7 +96,7 @@
             this.happy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.happy.BackColor = System.Drawing.Color.Transparent;
             this.happy.Image = ((System.Drawing.Image)(resources.GetObject("happy.Image")));
-            this.happy.Location = new System.Drawing.Point(558, 221);
+            this.happy.Location = new System.Drawing.Point(633, 274);
             this.happy.Name = "happy";
             this.happy.Size = new System.Drawing.Size(102, 107);
             this.happy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +109,7 @@
             this.angry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.angry.BackColor = System.Drawing.Color.Transparent;
             this.angry.Image = ((System.Drawing.Image)(resources.GetObject("angry.Image")));
-            this.angry.Location = new System.Drawing.Point(161, 221);
+            this.angry.Location = new System.Drawing.Point(236, 274);
             this.angry.Name = "angry";
             this.angry.Size = new System.Drawing.Size(102, 107);
             this.angry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,7 +122,7 @@
             this.sad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sad.BackColor = System.Drawing.Color.Transparent;
             this.sad.Image = ((System.Drawing.Image)(resources.GetObject("sad.Image")));
-            this.sad.Location = new System.Drawing.Point(285, 221);
+            this.sad.Location = new System.Drawing.Point(360, 274);
             this.sad.Name = "sad";
             this.sad.Size = new System.Drawing.Size(102, 107);
             this.sad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -133,7 +135,7 @@
             this.expressionless.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.expressionless.BackColor = System.Drawing.Color.Transparent;
             this.expressionless.Image = ((System.Drawing.Image)(resources.GetObject("expressionless.Image")));
-            this.expressionless.Location = new System.Drawing.Point(420, 221);
+            this.expressionless.Location = new System.Drawing.Point(495, 274);
             this.expressionless.Name = "expressionless";
             this.expressionless.Size = new System.Drawing.Size(102, 107);
             this.expressionless.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -146,10 +148,11 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel4.Controls.Add(this.pictureBox);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(56, 74);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1126, 91);
+            this.panel4.Size = new System.Drawing.Size(1276, 91);
             this.panel4.TabIndex = 21;
             // 
             // label1
@@ -158,21 +161,34 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(397, 23);
+            this.label1.Location = new System.Drawing.Point(472, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(395, 52);
             this.label1.TabIndex = 11;
             this.label1.Text = "Customer Feedback";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(1149, 6);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox.Size = new System.Drawing.Size(77, 76);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 22;
+            this.pictureBox.TabStop = false;
             // 
             // CustomerFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.MinimumSize = new System.Drawing.Size(1070, 889);
+            this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "CustomerFeedback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CustomerFeedback";
@@ -186,6 +202,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.expressionless)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +217,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBox;
     }
 }

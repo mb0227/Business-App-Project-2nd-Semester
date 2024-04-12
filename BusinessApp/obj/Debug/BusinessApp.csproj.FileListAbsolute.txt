@@ -155,7 +155,6 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.Orde
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ManageOrders.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.WaiterDashboard.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ManageReservations.resources
-C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.Bill.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.Reports.ShowReport.resources
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\CrystalDecisions.ReportSource.dll
