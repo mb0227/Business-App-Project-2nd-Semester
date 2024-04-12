@@ -141,11 +141,6 @@ namespace SignInSignUp.UI
             }
             dgv.DataSource = dt;
             ChangeVisibility(false, true);
-            //viewReviews.Visible = false;
-            //viewMsgs.Visible = false;
-            //tb.Visible = true;
-            //reply.Visible = true;
-            //back.Visible =true;
         }
 
        private void ChangeVisibility(bool before, bool after)

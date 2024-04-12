@@ -23,6 +23,34 @@ namespace RMS.DL
             }
         }
 
+
+        public void UpdateTablesStatus(int tableID)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+
+                string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID =@ID;";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", tableID);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateTablesStatus()
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID IN (SELECT T.ID FROM [Table] T JOIN Reservation R ON T.ID = R.TableID WHERE GETDATE() > R.ReservationDate);";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+
+                string query2 = "DELETE R FROM Reservation R JOIN [Table] T ON T.ID = R.TableID WHERE GETDATE() > R.ReservationDate;";
+                SqlCommand command2 = new SqlCommand(query2, connection);
+                command2.ExecuteNonQuery();
+            }
+        }
+
         public Table GetTableById(int id)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -76,17 +104,6 @@ namespace RMS.DL
             }
         }
 
-        public void DeleteTable(int id)
-        {
-            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
-            {
-                sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM [Table] WHERE ID=@ID", sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@ID", id);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-            }
-        }
 
         public int GetTableCapacity(int id)
         {
@@ -106,36 +123,7 @@ namespace RMS.DL
                 }
             }
             return id; 
-        }
-        
-
-        public void UpdateTablesStatus()
-        {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID IN (SELECT T.ID FROM [Table] T JOIN Reservation R ON T.ID = R.TableID WHERE GETDATE() > R.ReservationDate);";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.ExecuteNonQuery();
-
-                string query2 = "DELETE R FROM Reservation R JOIN [Table] T ON T.ID = R.TableID WHERE GETDATE() > R.ReservationDate;";
-                SqlCommand command2 = new SqlCommand(query2, connection);
-                command2.ExecuteNonQuery();
-            }
-        }
-
-        public void UpdateTablesStatus(int tableID)
-        {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-
-                string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID =@ID;";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@ID", tableID);
-                command.ExecuteNonQuery();
-            }
-        }
+        }        
 
         public int GetReservedTableID(int customerid)
         {
@@ -153,6 +141,18 @@ namespace RMS.DL
                 }
             }
             return id;
+        }
+
+        public void DeleteTable(int id)
+        {
+            using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM [Table] WHERE ID=@ID", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@ID", id);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
         }
     }
 }

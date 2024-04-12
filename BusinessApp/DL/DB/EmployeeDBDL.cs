@@ -81,7 +81,8 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand($"SELECT E.Username, E.Contact, E.Salary, E.JoinDate, E.Gender, C.Shift, C.Experience, C.Specialization, C.EmployeeID FROM Users AS U JOIN Employees AS E ON U.ID = E.UserID JOIN Chefs as C ON C.EmployeeID = E.ID WHERE U.ID={userID}", connection);
+                SqlCommand command = new SqlCommand($"SELECT E.Username, E.Contact, E.Salary, E.JoinDate, E.Gender, C.Shift, C.Experience, C.Specialization, C.EmployeeID FROM Users AS U JOIN Employees AS E ON U.ID = E.UserID JOIN Chefs as C ON C.EmployeeID = E.ID WHERE U.ID=@ID", connection);
+                command.Parameters.AddWithValue("@ID", userID);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {

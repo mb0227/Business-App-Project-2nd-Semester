@@ -97,8 +97,7 @@ namespace RMS.DL
                 command.Parameters.AddWithValue("@TotalPrice", deal.GetPrice());
                 command.Parameters.AddWithValue("@Items", deal.GetDealString());
                 command.ExecuteNonQuery();
-            }
-            
+            }            
         }
     }
 }

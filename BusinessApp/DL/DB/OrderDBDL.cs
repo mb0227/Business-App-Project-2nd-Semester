@@ -17,6 +17,23 @@ namespace RMS.DL
 {
     public class OrderDBDL : IOrderDL
     {
+        public void SaveOrder(Order order)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Orders (CustomerID, CustomerComments, Status, OrderDate, ProductsOrdered, TotalPrice, PaymentMethod) VALUES (@CustomerID, @CustomerComments, @Status, @OrderDate, @ProductsOrdered,@TotalPrice, @PaymentMethod)", connection);
+                command.Parameters.AddWithValue("@CustomerID", order.GetCustomerID());
+                command.Parameters.AddWithValue("@CustomerComments", order.GetCustomerComments());
+                command.Parameters.AddWithValue("@Status", order.GetStatus());
+                command.Parameters.AddWithValue("@OrderDate", order.GetOrderDate());
+                command.Parameters.AddWithValue("@ProductsOrdered", UtilityFunctions.GetCartString(order.GetProducts()));
+                command.Parameters.AddWithValue("@TotalPrice", order.GetTotalPrice());
+                command.Parameters.AddWithValue("@PaymentMethod", order.GetPaymentMethod());
+                command.ExecuteNonQuery();
+            }
+        }
+
         public void UpdateOrderStatus(int id, int status)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -51,23 +68,6 @@ namespace RMS.DL
                     Orders.Add(order);
                 }
                 return Orders;
-            }
-        }
-
-        public void SaveOrder(Order order)
-        {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Orders (CustomerID, CustomerComments, Status, OrderDate, ProductsOrdered, TotalPrice, PaymentMethod) VALUES (@CustomerID, @CustomerComments, @Status, @OrderDate, @ProductsOrdered,@TotalPrice, @PaymentMethod)", connection);
-                command.Parameters.AddWithValue("@CustomerID", order.GetCustomerID());
-                command.Parameters.AddWithValue("@CustomerComments", order.GetCustomerComments()); 
-                command.Parameters.AddWithValue("@Status", order.GetStatus());
-                command.Parameters.AddWithValue("@OrderDate", order.GetOrderDate());
-                command.Parameters.AddWithValue("@ProductsOrdered", UtilityFunctions.GetCartString(order.GetProducts()));
-                command.Parameters.AddWithValue("@TotalPrice", order.GetTotalPrice());
-                command.Parameters.AddWithValue("@PaymentMethod", order.GetPaymentMethod());
-                command.ExecuteNonQuery();
             }
         }
 

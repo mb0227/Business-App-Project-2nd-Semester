@@ -15,33 +15,24 @@ namespace RMS.DL
         {
             List<int> customerIDs = new List<int>();
 
-            try
-            {
-                using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-                {
-                    connection.Open();
+             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+             {
+                 connection.Open();
 
-                    string sqlQuery = "SELECT ID FROM Customers"; // Adjust the table name if necessary
+                 string sqlQuery = "SELECT ID FROM Customers"; // Adjust the table name if necessary
 
-                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int customerId = reader.GetInt32(reader.GetOrdinal("ID"));
-                                customerIDs.Add(customerId);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error fetching customer IDs: " + ex.Message);
-                // Handle the exception according to your application's requirements
-            }
-
+                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                 {
+                     using (SqlDataReader reader = command.ExecuteReader())
+                     {
+                         while (reader.Read())
+                         {
+                             int customerId = reader.GetInt32(reader.GetOrdinal("ID"));
+                             customerIDs.Add(customerId);
+                         }
+                     }
+                 }
+             }           
             return customerIDs;
         }
 
@@ -51,13 +42,11 @@ namespace RMS.DL
             {
                 connection.Open();
 
-                // Insert into Notifications table
                 SqlCommand command = new SqlCommand("INSERT INTO Notifications(Notification) VALUES (@Notification); SELECT SCOPE_IDENTITY()", connection);
                 command.Parameters.AddWithValue("@Notification", n.GetMessage());
                 int notificationId = Convert.ToInt32(command.ExecuteScalar());
 
-                // Insert into ViewNotification table for each customer
-                foreach (int customerId in GetAllCustomerIDs()) // Assuming you have a method to get all customer IDs
+                foreach (int customerId in GetAllCustomerIDs()) 
                 {
                     command = new SqlCommand("INSERT INTO ViewNotification(CustomerID, NotificationID, HasSeen) VALUES (@CustomerID, @NotificationID, 0)", connection);
                     command.Parameters.AddWithValue("@CustomerID", customerId);

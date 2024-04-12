@@ -134,7 +134,7 @@ namespace SSC.UI
                 foreach (var msg in Messages)
                 {
                     Label label = new Label();
-                    Label label2 = new Label();
+                    Label label2 = new Label(); 
                     label.Font = new Font("Segoe UI", 12, FontStyle.Bold);
                     label.TextAlign = ContentAlignment.MiddleLeft;
                     label.AutoSize = true;

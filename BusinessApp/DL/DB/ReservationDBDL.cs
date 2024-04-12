@@ -11,6 +11,19 @@ namespace RMS.DL
 {
     public class ReservationDBDL : IReservationDL 
     {
+        public void SaveReservation(Reservation r, int x)
+        {
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Reservation(ReservationDate,TotalPersons, TableID) VALUES (@ReservationDate, @TotalPersons, @TableID)", connection);
+                command.Parameters.AddWithValue("@ReservationDate", r.GetReservationDate());
+                command.Parameters.AddWithValue("@TotalPersons", r.GetTotalPersons());
+                command.Parameters.AddWithValue("@TableID", r.GetTableID());
+                command.ExecuteNonQuery();
+            }
+        }
+
         public void DeleteReservationByID(int reservationID)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
@@ -56,20 +69,6 @@ namespace RMS.DL
                 command.Parameters.AddWithValue("@ReservationDate", r.GetReservationDate());
                 command.Parameters.AddWithValue("@TotalPersons", r.GetTotalPersons());
                 command.Parameters.AddWithValue("@CustomerID", r.GetCustomerID());
-                command.Parameters.AddWithValue("@TableID", r.GetTableID());
-                command.ExecuteNonQuery();
-            }
-        }
-
-        public void SaveReservation(Reservation r, int x)
-        {
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Reservation(ReservationDate,TotalPersons, TableID) VALUES (@ReservationDate, @TotalPersons, @TableID)", connection);
-
-                command.Parameters.AddWithValue("@ReservationDate",r.GetReservationDate());
-                command.Parameters.AddWithValue("@TotalPersons", r.GetTotalPersons());
                 command.Parameters.AddWithValue("@TableID", r.GetTableID());
                 command.ExecuteNonQuery();
             }

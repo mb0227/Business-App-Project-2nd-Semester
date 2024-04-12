@@ -66,9 +66,9 @@ namespace RMS.BL
 
             foreach (var orderedProduct in ProductsOrdered)
             {
-                cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()},");
+                cartString.Append($"{orderedProduct.GetQuantity()} of {orderedProduct.GetProduct().GetProductName()};");
             }
-            return cartString.ToString().TrimEnd(',');
+            return cartString.ToString().TrimEnd(';');
         }
         private void CalculateTotalPrice()
         {

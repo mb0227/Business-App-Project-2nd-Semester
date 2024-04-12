@@ -113,11 +113,22 @@
     <Compile Include="DL\DB\UserDBDL.cs" />
     <Compile Include="DL\DB\VipDBDL.cs" />
     <Compile Include="DL\DB\WaiterDBDL.cs" />
+    <Compile Include="DL\FH\ReservationFHDL.cs" />
+    <Compile Include="DL\FH\TableFHDL.cs" />
+    <Compile Include="DL\FH\ProductFHDL.cs" />
+    <Compile Include="DL\FH\OrderFHDL.cs" />
+    <Compile Include="DL\FH\NotificationFHDL.cs" />
+    <Compile Include="DL\FH\MessageFHDL.cs" />
+    <Compile Include="DL\FH\FeedbackFHDL.cs" />
+    <Compile Include="DL\FH\DealFHDL.cs" />
+    <Compile Include="DL\FH\AdminFHDL.cs" />
     <Compile Include="DL\FH\CustomerFHDL.cs" />
     <Compile Include="DL\FH\EmployeeFHDL.cs" />
     <Compile Include="DL\FH\RegularFHDL.cs" />
     <Compile Include="DL\FH\UserFHDL.cs" />
     <Compile Include="DL\FH\VipFHDL.cs" />
+    <Compile Include="DL\FH\ChefFHDL.cs" />
+    <Compile Include="DL\FH\WaiterFHDL.cs" />
     <Compile Include="Reports\EmployeeDetails.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -563,6 +574,19 @@
     <None Include="images\icons8-employees-50 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Files\Reservations.txt" />
+    <Content Include="Files\Tables.txt" />
+    <Content Include="Files\ProductVariants.txt" />
+    <Content Include="Files\Products.txt" />
+    <Content Include="Files\Orders.txt" />
+    <Content Include="Files\ViewNotifications.txt" />
+    <Content Include="Files\Notifications.txt" />
+    <Content Include="Files\Messages.txt" />
+    <Content Include="Files\Feedbacks.txt" />
+    <Content Include="Files\Deals.txt" />
+    <Content Include="Files\Admins.txt" />
+    <Content Include="Files\Chefs.txt" />
+    <Content Include="Files\Waiters.txt" />
     <Content Include="Files\Employees.txt" />
     <Content Include="Files\Regular.txt" />
     <Content Include="Files\Customers.txt" />
