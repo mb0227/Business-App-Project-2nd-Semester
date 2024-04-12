@@ -57,16 +57,23 @@ namespace RMS.DL
         {
             List<string> notifications = new List<string>();
             string path = UtilityFunctions.GetPath("Notifications.txt");
+            string path2 = UtilityFunctions.GetPath("ViewNotifications.txt");
 
-            if (File.Exists(path))
+            if (File.Exists(path) && File.Exists(path2))
             {
                 string[] lines = File.ReadAllLines(path);
+                string[] lines2 = File.ReadAllLines(path2);
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split(',');
-                    if (parts.Length == 2)
+                    int id = Convert.ToInt32(parts[0].Trim());
+                    foreach (string line2 in lines2)
                     {
-                        notifications.Add(parts[1].Trim());
+                        string[] parts2 = line2.Split(',');
+                        if (parts2.Length == 4 && parts2[1].Trim() == customerId.ToString() && parts2[2].Trim() == id.ToString() && parts2[3].Trim() == "0")
+                        {
+                            notifications.Add(parts[1].Trim());
+                        }
                     }
                 }
             }
@@ -82,7 +89,7 @@ namespace RMS.DL
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
-                    if (parts.Length == 4 && parts[3]=="0" && parts[1] == customerId.ToString())
+                    if (parts.Length == 4 && parts[3].Trim() =="0" && parts[1].Trim() == customerId.ToString())
                     {
                         lines[i] = $"{parts[0]},{parts[1]},{parts[2]},1";
                     }

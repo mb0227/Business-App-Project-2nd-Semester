@@ -1,3 +1,5 @@
-﻿1,bilal@mail.com, b, Customer
-2,b7@mail.com, b, Customer
-3,b77@mail.com, b, Customer
+5,b@mail.com,B, Admin
+2,b7@mail.com,B, Customer
+1,b7@Mail.com, b, Customer
+2,c@mail.com, b, Waiter
+3,e@mail.com, b, Chef

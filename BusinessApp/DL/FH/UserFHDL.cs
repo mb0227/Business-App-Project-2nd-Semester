@@ -65,18 +65,17 @@ namespace RMS.DL
             return -1; 
         }
 
-
         public int GetUserIDEmp(int id)
         {
-            string path = UtilityFunctions.GetPath("Users.txt");
+            string path = UtilityFunctions.GetPath("Employees.txt");
             if (!File.Exists(path))
                 return -1;
 
             foreach (string line in File.ReadLines(path))
             {
                 string[] parts = line.Split(',');
-                if (parts.Length == 4 && parts[0].Trim() == id.ToString())
-                    return Convert.ToInt32(parts[0].Trim());
+                if (parts.Length == 7 && parts[0].Trim() == id.ToString())
+                    return Convert.ToInt32(parts[6].Trim());
             }
             return -1;
         }
@@ -85,12 +84,11 @@ namespace RMS.DL
         {
             string path = UtilityFunctions.GetPath("Users.txt");
             if (!File.Exists(path))
-                return ""; 
-
+                return "";
             foreach (string line in File.ReadLines(path))
             {
                 string[] parts = line.Split(',');
-                if (parts.Length == 4 && parts[1].Trim() == email && parts[2]==password)
+                if (parts.Length == 4 && parts[1].Trim() == email && parts[2].Trim()==password)
                     return parts[3].Trim(); 
             }
             return ""; 

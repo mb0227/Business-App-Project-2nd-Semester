@@ -30,7 +30,7 @@ namespace RMS.DL
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
-                    if (parts.Length == 3 && parts[0] == tableID.ToString())
+                    if (parts.Length == 3 && parts[0].Trim() == tableID.ToString())
                     {
                         parts[2] = "Unbooked";
                         lines[i] = string.Join(",", parts);
@@ -43,8 +43,8 @@ namespace RMS.DL
 
         public void UpdateTablesStatus()
         {
-            string path = "Tables.txt";
-            string path2 = "Reservations.txt";
+            string path = UtilityFunctions.GetPath("Tables.txt");
+            string path2 = UtilityFunctions.GetPath("Reservations.txt");
             List<string> updatedLines = new List<string>(); 
 
             if (File.Exists(path))
@@ -90,7 +90,7 @@ namespace RMS.DL
 
         public Table GetTableById(int id)
         {
-            string path = "Tables.txt"; 
+            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -99,7 +99,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 3 && parts[0] == id.ToString())
+                        if (parts.Length >= 3 && parts[0].Trim() == id.ToString())
                         {
                             int capacity = int.Parse(parts[1]);
                             string status = parts[2];
@@ -113,7 +113,7 @@ namespace RMS.DL
 
         public List<Table> GetTables()
         {
-            string path = "Tables.txt"; 
+            string path = UtilityFunctions.GetPath("Tables.txt");
             List<Table> tables = new List<Table>();
 
             if (File.Exists(path))
@@ -134,13 +134,12 @@ namespace RMS.DL
                     }
                 }
             }
-
             return tables;
         }
 
         public void UpdateTable(Table t)
         {
-            string path = "Tables.txt";
+            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 List<string> lines = new List<string>();
@@ -165,7 +164,7 @@ namespace RMS.DL
 
         public int GetTableCapacity(int id)
         {
-            string path = "Tables.txt";
+            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -186,7 +185,7 @@ namespace RMS.DL
 
         public int GetReservedTableID(int customerid)
         {
-            string path = "Reservations.txt"; 
+            string path = UtilityFunctions.GetPath("Reservations.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -195,9 +194,9 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 3 && parts[1] == customerid.ToString())
+                        if (parts.Length >= 3 && parts[4].Trim() == customerid.ToString())
                         {
-                            return int.Parse(parts[2]);
+                            return int.Parse(parts[3]);
                         }
                     }
                 }

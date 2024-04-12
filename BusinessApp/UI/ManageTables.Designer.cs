@@ -121,7 +121,7 @@
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = true;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(337, 249);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(303, 180);
             this.guna2DataGridView1.MultiSelect = false;
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
@@ -161,7 +161,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(804, 92);
+            this.label2.Location = new System.Drawing.Point(777, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 36);
             this.label2.TabIndex = 16;
@@ -177,7 +177,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Booked",
             "Unbooked"});
-            this.comboBox1.Location = new System.Drawing.Point(908, 91);
+            this.comboBox1.Location = new System.Drawing.Point(881, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 37);
             this.comboBox1.TabIndex = 15;
@@ -196,7 +196,7 @@
             this.capacity.Font = new System.Drawing.Font("Tahoma", 12F);
             this.capacity.ForeColor = System.Drawing.Color.Black;
             this.capacity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.capacity.Location = new System.Drawing.Point(546, 92);
+            this.capacity.Location = new System.Drawing.Point(519, 23);
             this.capacity.Margin = new System.Windows.Forms.Padding(4);
             this.capacity.Name = "capacity";
             this.capacity.PasswordChar = '\0';
@@ -218,7 +218,7 @@
             this.deleteTableBtn.FillColor = System.Drawing.Color.Red;
             this.deleteTableBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteTableBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteTableBtn.Location = new System.Drawing.Point(917, 159);
+            this.deleteTableBtn.Location = new System.Drawing.Point(890, 90);
             this.deleteTableBtn.Name = "deleteTableBtn";
             this.deleteTableBtn.Size = new System.Drawing.Size(245, 65);
             this.deleteTableBtn.TabIndex = 3;
@@ -238,7 +238,7 @@
             this.viewTableBtn.FillColor = System.Drawing.Color.Orange;
             this.viewTableBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewTableBtn.ForeColor = System.Drawing.Color.Black;
-            this.viewTableBtn.Location = new System.Drawing.Point(632, 159);
+            this.viewTableBtn.Location = new System.Drawing.Point(605, 90);
             this.viewTableBtn.Name = "viewTableBtn";
             this.viewTableBtn.Size = new System.Drawing.Size(248, 65);
             this.viewTableBtn.TabIndex = 2;
@@ -258,7 +258,7 @@
             this.makeTableBtn.FillColor = System.Drawing.Color.SpringGreen;
             this.makeTableBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.makeTableBtn.ForeColor = System.Drawing.Color.Black;
-            this.makeTableBtn.Location = new System.Drawing.Point(337, 159);
+            this.makeTableBtn.Location = new System.Drawing.Point(310, 90);
             this.makeTableBtn.Name = "makeTableBtn";
             this.makeTableBtn.Size = new System.Drawing.Size(248, 65);
             this.makeTableBtn.TabIndex = 1;
@@ -271,7 +271,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(334, 92);
+            this.label3.Location = new System.Drawing.Point(307, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(205, 36);
             this.label3.TabIndex = 12;

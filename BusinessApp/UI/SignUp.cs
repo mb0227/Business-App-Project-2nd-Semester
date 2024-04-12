@@ -155,7 +155,7 @@ namespace SSC
                 ObjectHandler.GetUserDL().SaveUser(user);
                 Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
                 customer.SetUserID(ObjectHandler.GetUserDL().GetUserID(email.Text));
-                UserDBDL.SaveImage(customer.GetUserID());
+                //UserDBDL.SaveImage(customer.GetUserID());
                 ObjectHandler.GetCustomerDL().SaveCustomer(customer);
                 Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
                 ObjectHandler.GetRegularDL().SaveRegular(regular);

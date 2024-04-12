@@ -1,6 +1,7 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using RMS.BL;
 using SSC;
+using SSC.UI;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -38,7 +39,7 @@ namespace RMS.DL
                     for (int i = 0; i < lines.Length; i++)
                     {
                         string[] parts = lines[i].Split(',');
-                        if (parts.Length == 7 && parts[6].Trim() == userID.ToString())
+                        if (parts.Length == 7 && parts[0].Trim() == userID.ToString())
                         {
                             parts[1] = newCred;
                             lines[i] = string.Join(",", parts);
@@ -104,14 +105,14 @@ namespace RMS.DL
         public string GetEmployeeRole(int id)
         {
             string path = UtilityFunctions.GetPath("Users.txt");
-
+            int userID = ObjectHandler.GetUserDL().GetUserIDEmp(id);
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split(',');
-                    if (parts.Length == 4 && int.Parse(parts[0]) == id)
+                    if (parts.Length == 4 && int.Parse(parts[0]) == userID)
                     {
                         return parts[3].Trim();
                     }
@@ -298,10 +299,12 @@ namespace RMS.DL
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split(',');
-                    if (parts.Length >= 4 && int.Parse(parts[0]) == id)
+                    if (parts.Length == 4 && int.Parse(parts[3]) == id && role == "admin")
                     {
                         continue;
                     }
+                    else if (parts.Length == 5 && int.Parse(parts[4]) == id && (role == "chef"||role=="waiter"))
+                        continue;
                     newLines.Add(line);
                 }
                 File.WriteAllLines(path, newLines);
@@ -325,6 +328,7 @@ namespace RMS.DL
             }
 
             path = UtilityFunctions.GetPath("Users.txt");
+            Console.WriteLine(path);
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -332,6 +336,7 @@ namespace RMS.DL
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split(',');
+                    Console.WriteLine(path[0]+" "+userid.ToString());
                     if (parts.Length == 4 && int.Parse(parts[0]) == userid)
                     {
                         continue;

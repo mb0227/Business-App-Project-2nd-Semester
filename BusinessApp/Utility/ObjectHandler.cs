@@ -13,82 +13,98 @@ namespace SSC.UI
     {
         public static IUserDL GetUserDL()
         {
-            return new UserDBDL();
+            return new UserFHDL();
+            //return new UserDBDL();
         }
 
         public static ICustomerDL GetCustomerDL()
         {
-            return new CustomerDBDL();
+            return new CustomerFHDL();
+            //return new CustomerDBDL();
         }
 
         public static IRegularDL GetRegularDL()
         {
-            return new RegularDBDL();
+            return new RegularFHDL();
+            //return new RegularDBDL();
         }
 
         public static IEmployeeDL GetEmployeeDL()
         {
-            return new EmployeeDBDL();
+            return new EmployeeFHDL();
+            //return new EmployeeDBDL();
         }
 
         public static IAdminDL GetAdminDL()
         {
-            return new AdminDBDL();
+            return new AdminFHDL();
+            //return new AdminDBDL();
         }
 
         public static IChefDL GetChefDL()
         {
-            return new ChefDBDL();
+            return new ChefFHDL();
+            //return new ChefDBDL();
         }
         
         public static IVipDL GetVipDL()
         {
-            return new VipDBDL();
+            return new VipFHDL();
+            //return new VipDBDL();
         }
 
         public static IFeedbackDL GetFeedbackDL()
         {
-            return new FeedbackDBDL();
+            return new FeedbackFHDL();
+            //return new FeedbackDBDL();
         }
 
         public static IReservationDL GetReservationDL()
         {
-            return new ReservationDBDL();
+            return new ReservationFHDL();
+            //return new ReservationDBDL();
         }
 
         public static ITableDL GetTableDL()
         {
-            return new TableDBDL();
+            return new TableFHDL();
+            //return new TableDBDL();
         }
 
         public static IWaiterDL GetWaiterDL()
         {
-            return new WaiterDBDL();
+            return new WaiterFHDL();
+            //return new WaiterDBDL();
         }
 
         public static INotificationDL GetNotificationDL()
         {
-            return new NotificationDBDL();
+            return new NotificationFHDL();
+            //return new NotificationDBDL();
         }
 
         public static IOrderDL GetOrderDL()
         {
-            return new OrderDBDL();
+            return new OrderFHDL();
+            //return new OrderDBDL();
         }
 
         public static IProductDL GetProductDL()
         {
-            return new ProductDBDL();
+            return new ProductFHDL();
+            //return new ProductDBDL();
         }
 
         public static IDealDL GetDealDL()
         {
-            return new DealDBDL();
+            return new DealFHDL();
+            //return new DealDBDL();
         }
 
         public static IMessageDL GetMessageDL()
         {
-            return new MessageDBDL();
+            return new MessageFHDL();
+            //return new MessageDBDL();
         }
     }
 }

@@ -1,1 +1,5 @@
-﻿
+﻿1,Small, 1000, 2
+2,Medium, 1200, 2
+3,Large, 1400, 2
+4,Ande Wala, 120, 1
+5,ZINGER, 250, 1

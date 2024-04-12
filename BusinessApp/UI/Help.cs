@@ -124,7 +124,7 @@ namespace SSC.UI
         private void Help_Load(object sender, EventArgs e)
         {
             DisplayMessages();
-            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
         }
 
         private void DisplayMessages()

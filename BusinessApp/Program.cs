@@ -25,7 +25,7 @@ namespace SSC
             //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
 
-            Application.Run(new WaiterDashboard());
+            Application.Run(new SignIn());
         }
     }
 }

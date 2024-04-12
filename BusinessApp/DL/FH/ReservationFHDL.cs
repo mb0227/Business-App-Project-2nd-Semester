@@ -33,7 +33,7 @@ namespace RMS.DL
 
         public void DeleteReservationByID(int reservationID)
         {
-            string path = "Reservations.txt";
+            string path = UtilityFunctions.GetPath("Reservations.txt");
             List<string> lines = new List<string>();
 
             if (File.Exists(path))
@@ -56,7 +56,7 @@ namespace RMS.DL
 
         public List<Reservation> GetReservations()
         {
-            string path = "Reservations.txt";
+            string path = UtilityFunctions.GetPath("Reservations.txt");
             List<Reservation> reservations = new List<Reservation>();
 
             if (File.Exists(path))
@@ -87,7 +87,7 @@ namespace RMS.DL
         public int GetCustomerReservationCount(int customerId)
         {
             int reservationCount = 0;
-            string path = "Reservations.txt";
+            string path = UtilityFunctions.GetPath("Reservations.txt");
 
             if (File.Exists(path))
             {
@@ -108,14 +108,13 @@ namespace RMS.DL
                     }
                 }
             }
-
             return reservationCount;
         }
 
         public DateTime GetReservationDate(int customerid)
         {
             DateTime date = DateTime.MinValue;
-            string path = "Reservations.txt";
+            string path = UtilityFunctions.GetPath("Reservations.txt");
 
             if (File.Exists(path))
             {
@@ -125,7 +124,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 5 && parts[4] == customerid.ToString())
+                        if (parts.Length >= 5 && parts[4].Trim() == customerid.ToString())
                         {
                             date = DateTime.Parse(parts[2]);
                             break;
@@ -139,7 +138,7 @@ namespace RMS.DL
 
         public void DeleteReservation(int customerid)
         {
-            string path = "Reservations.txt";
+            string path = UtilityFunctions.GetPath("Reservations.txt");
             List<string> updatedLines = new List<string>();
 
             if (File.Exists(path))
@@ -150,7 +149,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 5 && parts[4] != customerid.ToString())
+                        if (parts.Length >= 5 && parts[4].Trim() != customerid.ToString())
                         {
                             updatedLines.Add(line);
                         }

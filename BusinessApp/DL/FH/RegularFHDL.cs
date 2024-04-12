@@ -31,7 +31,7 @@ namespace RMS.DL
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
-                    if (parts.Length == 3 && parts[0].Trim() == regular.GetID().ToString())
+                    if (parts.Length == 3 && parts[0].Trim() == regular.GetRegularID().ToString())
                     {
                         parts[1] = regular.GetLoyaltyPoints().ToString();
                         parts[2] = regular.GetCustomerID().ToString();
@@ -68,8 +68,9 @@ namespace RMS.DL
         {
             List<Regular> regulars = new List<Regular>();
             string path = UtilityFunctions.GetPath("Regular.txt");
+            string path2 = UtilityFunctions.GetPath("Customers.txt");
 
-            if (File.Exists(path))
+            if (File.Exists(path) && File.Exists(path2))
             {
                 string[] lines = File.ReadAllLines(path);
                 foreach (string line in lines)
@@ -80,7 +81,13 @@ namespace RMS.DL
                         int id = int.Parse(parts[0]);
                         int loyaltyPoints = int.Parse(parts[1]);
                         int customerID = int.Parse(parts[2]);
-                        regulars.Add(new Regular(id, loyaltyPoints, customerID));
+                        string[] parts2= File.ReadAllLines(path2);  
+
+                        if (parts2.Length == 7 && parts2[0].Trim() == customerID.ToString())
+                        {
+                            string username = parts2[1].Trim();
+                            regulars.Add(new Regular(username,id, loyaltyPoints, customerID));
+                        }
                     }
                 }
             }

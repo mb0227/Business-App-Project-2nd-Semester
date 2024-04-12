@@ -278,6 +278,9 @@ namespace SSC.UI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show((Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value)).ToString());
+            MessageBox.Show(ObjectHandler.GetProductDL().HasVariants(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value)).ToString());
+
             if (dataGridView1.SelectedRows.Count > 0 && ObjectHandler.GetProductDL().HasVariants(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value)))
             {
                 try

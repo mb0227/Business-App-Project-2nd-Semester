@@ -209,22 +209,25 @@ namespace SignInSignUp.UI
         private void deleteTableBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete reservation?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes && ObjectHandler.GetTableDL().GetTableById(Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value)).GetStatus() == "Unbooked")
+            if (result == DialogResult.Yes)
             {
-                    if (guna2DataGridView1.SelectedRows.Count > 0)
+               if (guna2DataGridView1.SelectedRows.Count > 0)
                     {
                     try
                     {
                         int id = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value);
                         selectedRow = guna2DataGridView1.SelectedRows[0].Index;
-                        if (guna2DataGridView1 != null && selectedRow >= 0 && selectedRow < guna2DataGridView1.Rows.Count)
+                        if (guna2DataGridView1 != null && selectedRow >= 0 && selectedRow < guna2DataGridView1.Rows.Count )
                         {
                             DataGridViewRow selectedDataGridViewRow = guna2DataGridView1.Rows[selectedRow];
                             if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
                             {
-                                ClearTable();
-                                ObjectHandler.GetTableDL().DeleteTable(Convert.ToInt32(id));
-                                LoadData();
+                                if (ObjectHandler.GetTableDL().GetTableById(Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value)).GetStatus() == "Unbooked")
+                                {
+                                    ClearTable();
+                                    ObjectHandler.GetTableDL().DeleteTable(Convert.ToInt32(id));
+                                    LoadData();
+                                }
                             }
                         }
                     }

@@ -1,1 +1,4 @@
-﻿
+1,Burger, Fast Food, burgerrr,1
+2,PIZZA,Fast Food,PITZA,1
+3,anda, Desi Food, andaaaaaaaa, 0
+

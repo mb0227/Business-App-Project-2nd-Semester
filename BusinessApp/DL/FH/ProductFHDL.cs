@@ -31,7 +31,7 @@ namespace RMS.DL
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
-                    if (parts.Length == 5 && parts[0] == product.GetProductID().ToString())
+                    if (parts.Length == 5 && parts[0].Trim() == product.GetProductID().ToString())
                     {
                         parts[1] = product.GetProductName();
                         parts[2] = product.GetProductCategory();
@@ -74,7 +74,7 @@ namespace RMS.DL
 
         public void SaveVariant(ProductVariant PV, int productID)
         {
-            string path = UtilityFunctions.GetPath("ProductVariantss.txt");
+            string path = UtilityFunctions.GetPath("ProductVariants.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -84,7 +84,7 @@ namespace RMS.DL
 
         public bool HasVariants(int productID)
         {
-            string path = "ProductVariants.txt"; 
+            string path = UtilityFunctions.GetPath("ProductVariants.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -93,7 +93,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 5 && parts[3] == productID.ToString())
+                        if (parts.Length == 4 && parts[3].Trim() == productID.ToString())
                         {
                             return true;
                         }
@@ -105,7 +105,7 @@ namespace RMS.DL
 
         public bool ProductExists(string productName)
         {
-            string path = "Products.txt"; 
+            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -114,7 +114,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 5 && parts[1] == productName)
+                        if (parts.Length == 5 && parts[1].Trim() == productName)
                         {
                             return true;
                         }
@@ -127,8 +127,8 @@ namespace RMS.DL
 
         public List<Product> GetProductsForCustomers()
         {
-            string path = "Products.txt";
-            string path2 = "ProductVariants.txt";
+            string path = UtilityFunctions.GetPath("Products.txt");
+            string path2 = UtilityFunctions.GetPath("ProductVariants.txt");
             List<Product> products = new List<Product>();
             if (File.Exists(path))
             {
@@ -138,7 +138,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 5 && parts[4] == "1") 
+                        if (parts.Length == 5 && parts[4].Trim() == "1") 
                         {
                             int id = int.Parse(parts[0]);
                             string name = parts[1];
@@ -149,7 +149,7 @@ namespace RMS.DL
                                 for (int i = 0; i < lines.Length; i++)
                                 {
                                     string[] parts2 = lines[i].Split(',');
-                                    if (parts2.Length == 5 && parts2[3] == id.ToString())
+                                    if (parts2.Length == 4 && parts2[3].Trim() == id.ToString())
                                     {
                                         string quantity = parts2[1];
                                         double price = double.Parse(parts2[2]);
@@ -168,7 +168,7 @@ namespace RMS.DL
 
         public double GetPrice(int productId, string quantity)
         {
-            string path = "ProductVariants.txt"; 
+            string path = UtilityFunctions.GetPath("ProductVariants.txt");
             double price = 0;
 
             if (File.Exists(path))
@@ -179,9 +179,9 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 5 && parts[3] == productId.ToString() && parts[1] == quantity)
+                        if (parts.Length == 4 && parts[3].Trim() == productId.ToString() && parts[1].Trim() == quantity)
                         {
-                            price = double.Parse(parts[1]);
+                            price = double.Parse(parts[2]);
                             break;
                         }
                     }
@@ -192,7 +192,7 @@ namespace RMS.DL
 
         public Product SearchProductByName(string productName)
         {
-            string path = "Products.txt"; // Assuming the file path where products are stored
+            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -201,7 +201,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 5 && parts[1] == productName)
+                        if (parts.Length >= 5 && parts[1].Trim() == productName)
                         {
                             int id = int.Parse(parts[0]);
                             string name = parts[1];
@@ -218,7 +218,7 @@ namespace RMS.DL
 
         public List<string> GetQuantities(int productId)
         {
-            string path = "ProductVariants.txt"; 
+            string path = UtilityFunctions.GetPath("ProductVariants.txt");
             List<string> quantities = new List<string>();
 
             if (File.Exists(path))
@@ -229,7 +229,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 4 && parts[3] == productId.ToString())
+                        if (parts.Length >= 4 && parts[3].Trim() == productId.ToString())
                         {
                             quantities.Add(parts[1]);
                         }
@@ -242,7 +242,7 @@ namespace RMS.DL
 
         public int GetProductID(string productName)
         {
-            string path = "Products.txt";
+            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -251,7 +251,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 5 && parts[1] == productName)
+                        if (parts.Length == 5 && parts[1].Trim() == productName)
                         {
                             return int.Parse(parts[0]);
                         }
@@ -270,7 +270,7 @@ namespace RMS.DL
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
-                    if (parts.Length == 5 && parts[0] == id.ToString())
+                    if (parts.Length == 5 && parts[0].Trim() == id.ToString())
                     {
                         lines[i] = "";
                         break;

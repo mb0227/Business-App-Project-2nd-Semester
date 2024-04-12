@@ -70,10 +70,10 @@ namespace SignInSignUp.UI
         private bool CheckValidations()
         {
             quantityText.Text = quantityText.Text.Replace(",", "");
-            double price;
-            if (!double.TryParse(priceTB.Text, out price))
+            double p;
+            if (!double.TryParse(priceTB.Text, out p) || p <= 0 || p > 9999999.99)
             {
-                errorProvider1.SetError(priceTB, "Price must be a numeric value.");
+                errorProvider1.SetError(priceTB, "Please enter a valid positive price.");
                 return false;
             }
             else
@@ -81,7 +81,7 @@ namespace SignInSignUp.UI
                 errorProvider1.SetError(priceTB, "");
             }
 
-            if(string.IsNullOrEmpty(quantityText.Text))
+            if (string.IsNullOrEmpty(quantityText.Text))
             {
                 errorProvider2.SetError(quantityText, "Quantity cannot be empty.");
                 return false;

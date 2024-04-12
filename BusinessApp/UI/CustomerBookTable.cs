@@ -107,7 +107,7 @@ namespace SSC.UI
             comboBox1.Items.Clear();
             foreach (Table table in ObjectHandler.GetTableDL().GetTables())
             {
-                if (table.GetStatus() == "Unbooked")
+                if (table.GetStatus().ToLower().Trim() == "unbooked")
                 {
                     comboBox1.Items.Add(table.GetID());
                 }

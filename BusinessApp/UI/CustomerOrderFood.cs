@@ -314,7 +314,7 @@ namespace SSC.UI
 
         private void CustomerOrderFood_Load(object sender, EventArgs e)
         {
-            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
             FillComboBox();
             if (menuComboBox.Items.Count > 0)
                 menuComboBox.SelectedIndex = 0;

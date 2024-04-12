@@ -52,17 +52,16 @@ namespace SignInSignUp.UI
         private void FillComboBox()
         {
             comboBox1.Items.Clear();
-            foreach (var table in ObjectHandler.GetTableDL().GetTables())
+            foreach (RMS.BL.Table table in ObjectHandler.GetTableDL().GetTables())
             {
-                string status = table.GetStatus().ToLower(); 
-                if (status == "unbooked")
+                if (table.GetStatus().ToLower().Trim() == "unbooked")
                 {
                     comboBox1.Items.Add(table.GetID());
                 }
-                else
-                {
-                    continue;
-                }
+            }
+            if (comboBox1.Items.Count > 0)
+            {
+                comboBox1.SelectedIndex = 0;
             }
         }
 

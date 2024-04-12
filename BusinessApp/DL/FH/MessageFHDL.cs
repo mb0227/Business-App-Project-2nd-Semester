@@ -19,7 +19,7 @@ namespace RMS.DL
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
-                writer.WriteLine($"{id},{message.GetSenderID()}, {message.GetReceiverID()}, {message.GetMessageText()}, {message.GetTime()}");
+                writer.WriteLine($"{id},{message.GetSenderID()}, {message.GetReceiverID()}, {message.GetMessageText()}, {DateTime.Now}");
             }
         }
 
@@ -37,7 +37,7 @@ namespace RMS.DL
                     foreach (string line in lines)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 4 && parts[2]==id.ToString())
+                        if (parts.Length == 5 && parts[2].Trim()==id.ToString())
                         {
                             int senderID = Convert.ToInt32(parts[1].Trim());
                             string messageText = parts[3].Trim();
@@ -54,13 +54,13 @@ namespace RMS.DL
                     foreach (string line in lines)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 4)
+                        if (parts.Length == 5)
                         {
                             int senderID = Convert.ToInt32(parts[1].Trim());
                             string messageText = parts[3].Trim();
                             string time = parts[4].Trim();
                             DateTime Time = Convert.ToDateTime(time);
-                            if (parts[1] == senderID.ToString() || parts[2] == id.ToString())
+                            if (parts[1].Trim() == senderID.ToString() || parts[2].Trim() == id.ToString())
                             {
                                 Message message = new Message(senderID, id, messageText, Time);
                                 messages.Add(message);
@@ -76,7 +76,6 @@ namespace RMS.DL
         public int GetAvailableEmployee()
         {
             string path = UtilityFunctions.GetPath("Users.txt");
-
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -85,7 +84,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 4 && parts[3] == "Admin")
+                        if (parts.Length == 4 && parts[3].Trim().ToLower() == "admin")
                         {
                             int id = int.Parse(parts[0]);
                             path = UtilityFunctions.GetPath("Employees.txt");
@@ -97,9 +96,9 @@ namespace RMS.DL
                                     while ((line2 = reader2.ReadLine()) != null)
                                     {
                                         string[] parts2 = line2.Split(',');
-                                        if (parts2.Length == 7 && parts2[6] == id.ToString())
+                                        if (parts2.Length == 7 && parts2[6].Trim() == id.ToString())
                                         {
-                                            return id;
+                                            return Convert.ToInt32(parts2[0]);
                                         }
                                     }
                                 }

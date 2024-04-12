@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class ChefDHDL : IChefDL
+    public class ChefFHDL : IChefDL
     {
         public void SaveChef(Chef chef)
         {
-            string path = UtilityFunctions.GetPath("Waiters.txt");
+            string path = UtilityFunctions.GetPath("Chefs.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {

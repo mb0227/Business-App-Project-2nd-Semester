@@ -110,7 +110,7 @@ namespace SSC
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
         }
 
         private void pictureBox_Click(object sender, EventArgs e)

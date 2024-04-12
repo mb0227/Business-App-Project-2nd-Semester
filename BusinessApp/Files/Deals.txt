@@ -1,1 +1,2 @@
-﻿
+1,Deal, 2500, Small of PIZZA;Medium of PIZZA;Large of PIZZA
+

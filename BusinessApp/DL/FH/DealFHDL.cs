@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class DealDHDL : IDealDL
+    public class DealFHDL : IDealDL
     {
         public void SaveDeal(Deal deal)
         {

@@ -17,7 +17,7 @@ namespace RMS.DL
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
-                writer.WriteLine($"{id},{order.GetCustomerID()}, {order.GetCustomerComments()}, {order.GetStatus()}, {order.GetOrderDate()}, {UtilityFunctions.GetCartString(order.GetProducts())}, {order.GetTotalPrice()}, {order.GetPaymentMethod()}");
+                writer.WriteLine($"{id},{order.GetCustomerID()}, {order.GetCustomerComments()},{"0"}, {order.GetOrderDate()}, {UtilityFunctions.GetCartString(order.GetProducts())}, {order.GetTotalPrice()}, {order.GetPaymentMethod()}");
             }
         }
 
@@ -30,15 +30,17 @@ namespace RMS.DL
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
-                    if (parts.Length == 8 && parts[0] == id.ToString())
+                    if (parts.Length == 8 && parts[0].Trim() == id.ToString())
                     {
                         parts[3] = status.ToString();
                         lines[i] = string.Join(",", parts);
-                        break;
+                        File.WriteAllLines(path, lines); 
+                        return; 
                     }
                 }
             }
         }
+
 
         public void TakeOrder(Order order)
         {
@@ -46,13 +48,13 @@ namespace RMS.DL
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
-                writer.WriteLine($"{id},{-1}, {order.GetCustomerComments()}, {order.GetStatus()}, {order.GetOrderDate()}, {UtilityFunctions.GetCartString(order.GetProducts())}, {order.GetTotalPrice()}, {order.GetPaymentMethod()}");
+                writer.WriteLine($"{id},{-1}, {order.GetCustomerComments()}, {""}, {order.GetOrderDate()}, {UtilityFunctions.GetCartString(order.GetProducts())}, {order.GetTotalPrice()}, {order.GetPaymentMethod()}");
             }
         }
 
         public int HasOrder(int customerID)
         {
-            string path = "Orders.txt";
+            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -62,7 +64,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 8 && parts[1] == customerID.ToString() && parts[5] == "0")
+                        if (parts.Length == 8 && parts[1].Trim() == customerID.ToString() && parts[3].Trim() == "0")
                         {
                             count++;
                         }
@@ -75,7 +77,7 @@ namespace RMS.DL
 
         public int CountOrders(int customerID)
         {
-            string path = "Orders.txt"; 
+            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -85,7 +87,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 8 && parts[1] == customerID.ToString() && parts[5] == "3")
+                        if (parts.Length == 8 && parts[1].Trim() == customerID.ToString() && parts[3].Trim() == "3")
                         {
                             count++;
                         }
@@ -98,7 +100,7 @@ namespace RMS.DL
 
         public int GetOrderStatus(int customerID)
         {
-            string path = "Orders.txt";
+            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -107,9 +109,9 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 8 && parts[1] == customerID.ToString())
+                        if (parts.Length == 8 && parts[1].Trim() == customerID.ToString())
                         {
-                            int status = int.Parse(parts[5]);
+                            int status = int.Parse(parts[3]);
                             return status;
                         }
                     }
@@ -120,7 +122,7 @@ namespace RMS.DL
 
         public int FindOrderByID(int CustomerId)
         {
-            string path = "Orders.txt";
+            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -129,7 +131,7 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 8 && parts[1] == CustomerId.ToString())
+                        if (parts.Length == 8 && parts[1].Trim() == CustomerId.ToString() && parts[3].Trim()=="0")
                         {
                             return int.Parse(parts[0]);
                         }
@@ -141,7 +143,7 @@ namespace RMS.DL
 
         public void OrderDeal(Deal deal)
         {
-            string path = "Orders.txt"; 
+            string path = UtilityFunctions.GetPath("Orders.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -151,7 +153,7 @@ namespace RMS.DL
 
         public void OrderDeal(Deal deal, int customerID)
         {
-            string path = "Orders.txt"; 
+            string path = UtilityFunctions.GetPath("Orders.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -161,7 +163,7 @@ namespace RMS.DL
 
         public void DeleteOrder(int customerID)
         {
-            string path = "Orders.txt";
+            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -189,7 +191,7 @@ namespace RMS.DL
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split(',');
-                    if (parts.Length == 8 && parts[3]==status.ToString())
+                    if (parts.Length == 8 && parts[3].Trim() == status.ToString())
                     {
                         int id = Convert.ToInt32(parts[0].Trim());
                         int customerID = Convert.ToInt32(parts[1].Trim());

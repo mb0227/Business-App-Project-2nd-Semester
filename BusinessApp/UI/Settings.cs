@@ -121,7 +121,7 @@ namespace SSC.UI
             {
                 ChangeButtonsText();
             }
-            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
         }
 
         private void MakeBtnVisible(int x,int y)
@@ -162,7 +162,7 @@ namespace SSC.UI
                 markRead.FlatAppearance.BorderSize = 0;
                 markRead.Width = 100;
                 markRead.Height = 25;
-                markRead.ForeColor = Color.White; 
+                markRead.ForeColor = Color.Black; 
                 markRead.Font = new Font("Tahoma", 12, FontStyle.Regular); 
                                                                              
                 markRead.Click += MarkRead_Click;
@@ -187,6 +187,7 @@ namespace SSC.UI
             List<string> notifications = ObjectHandler.GetNotificationDL().GetNotifications(customer.GetID());
             foreach (string notification in notifications)
             {
+                MessageBox.Show(notification);
                 ObjectHandler.GetNotificationDL().MarkAsRead(customer.GetID());
             }
         }
