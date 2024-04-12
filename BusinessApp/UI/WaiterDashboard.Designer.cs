@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaiterDashboard));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pickupOrder = new Guna.UI2.WinForms.Guna2Button();
             this.reservationBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -58,10 +59,12 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pickupBtn = new Guna.UI2.WinForms.Guna2Button();
             this.deliverBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.logOut = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logOut)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -92,7 +95,7 @@
             this.pickupOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.pickupOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickupOrder.ForeColor = System.Drawing.Color.Black;
-            this.pickupOrder.Location = new System.Drawing.Point(785, 4);
+            this.pickupOrder.Location = new System.Drawing.Point(778, 4);
             this.pickupOrder.Name = "pickupOrder";
             this.pickupOrder.Size = new System.Drawing.Size(128, 88);
             this.pickupOrder.TabIndex = 67;
@@ -112,9 +115,9 @@
             this.reservationBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.reservationBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationBtn.ForeColor = System.Drawing.Color.Black;
-            this.reservationBtn.Location = new System.Drawing.Point(1064, 4);
+            this.reservationBtn.Location = new System.Drawing.Point(1057, 4);
             this.reservationBtn.Name = "reservationBtn";
-            this.reservationBtn.Size = new System.Drawing.Size(263, 88);
+            this.reservationBtn.Size = new System.Drawing.Size(247, 88);
             this.reservationBtn.TabIndex = 48;
             this.reservationBtn.Text = "View Reservations";
             this.reservationBtn.Click += new System.EventHandler(this.reservationBtn_Click);
@@ -132,7 +135,7 @@
             this.deliverOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.deliverOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deliverOrder.ForeColor = System.Drawing.Color.Black;
-            this.deliverOrder.Location = new System.Drawing.Point(919, 4);
+            this.deliverOrder.Location = new System.Drawing.Point(912, 4);
             this.deliverOrder.Name = "deliverOrder";
             this.deliverOrder.Size = new System.Drawing.Size(139, 88);
             this.deliverOrder.TabIndex = 47;
@@ -152,7 +155,7 @@
             this.manageBtns.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.manageBtns.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageBtns.ForeColor = System.Drawing.Color.Black;
-            this.manageBtns.Location = new System.Drawing.Point(584, 4);
+            this.manageBtns.Location = new System.Drawing.Point(577, 4);
             this.manageBtns.Name = "manageBtns";
             this.manageBtns.Size = new System.Drawing.Size(168, 88);
             this.manageBtns.TabIndex = 45;
@@ -513,12 +516,25 @@
             this.deliverBtn.Visible = false;
             this.deliverBtn.Click += new System.EventHandler(this.deliverBtn_Click);
             // 
+            // logOut
+            // 
+            this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
+            this.logOut.Location = new System.Drawing.Point(1194, 97);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(68, 66);
+            this.logOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logOut.TabIndex = 67;
+            this.logOut.TabStop = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
             // WaiterDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
             this.ClientSize = new System.Drawing.Size(1328, 1050);
+            this.Controls.Add(this.logOut);
             this.Controls.Add(this.deliverBtn);
             this.Controls.Add(this.pickupBtn);
             this.Controls.Add(this.panel3);
@@ -534,6 +550,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,5 +582,6 @@
         private Guna.UI2.WinForms.Guna2Button pickupBtn;
         private Guna.UI2.WinForms.Guna2Button deliverBtn;
         private Guna.UI2.WinForms.Guna2Button pickupOrder;
+        private System.Windows.Forms.PictureBox logOut;
     }
 }

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChefDashboard));
             this.panel3 = new System.Windows.Forms.Panel();
             this.manageOrders = new Guna.UI2.WinForms.Guna2Button();
             this.manageBtns = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.logOut = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logOut)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -66,6 +69,7 @@
             this.manageOrders.Size = new System.Drawing.Size(260, 82);
             this.manageOrders.TabIndex = 46;
             this.manageOrders.Text = "Manage Orders";
+            this.manageOrders.Click += new System.EventHandler(this.manageOrders_Click);
             // 
             // manageBtns
             // 
@@ -98,12 +102,25 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Chef Dashboard";
             // 
+            // logOut
+            // 
+            this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
+            this.logOut.Location = new System.Drawing.Point(1098, 96);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(68, 66);
+            this.logOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logOut.TabIndex = 22;
+            this.logOut.TabStop = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
             // ChefDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
             this.ClientSize = new System.Drawing.Size(1178, 944);
+            this.Controls.Add(this.logOut);
             this.Controls.Add(this.panel3);
             this.MinimumSize = new System.Drawing.Size(1100, 889);
             this.Name = "ChefDashboard";
@@ -112,6 +129,7 @@
             this.Load += new System.EventHandler(this.ChefDashboard_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +140,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button manageOrders;
         private Guna.UI2.WinForms.Guna2Button manageBtns;
+        private System.Windows.Forms.PictureBox logOut;
     }
 }

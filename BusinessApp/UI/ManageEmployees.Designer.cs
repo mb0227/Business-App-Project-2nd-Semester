@@ -139,7 +139,7 @@
             this.panel3.Controls.Add(this.addEmployee);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.employeeType);
-            this.panel3.Location = new System.Drawing.Point(58, 166);
+            this.panel3.Location = new System.Drawing.Point(58, 163);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1281, 882);
             this.panel3.TabIndex = 24;
@@ -148,7 +148,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(444, 411);
+            this.pictureBox2.Location = new System.Drawing.Point(436, 339);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,11 +165,12 @@
             this.tb3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tb3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb3.FillColor = System.Drawing.Color.Silver;
             this.tb3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb3.ForeColor = System.Drawing.Color.Black;
             this.tb3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb3.Location = new System.Drawing.Point(665, 545);
+            this.tb3.Location = new System.Drawing.Point(657, 473);
             this.tb3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tb3.Name = "tb3";
             this.tb3.PasswordChar = '\0';
@@ -184,7 +185,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(445, 377);
+            this.pictureBox1.Location = new System.Drawing.Point(437, 305);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,7 +198,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(468, 554);
+            this.label11.Location = new System.Drawing.Point(460, 482);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 34);
             this.label11.TabIndex = 85;
@@ -213,11 +214,12 @@
             this.tb2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tb2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb2.FillColor = System.Drawing.Color.Silver;
             this.tb2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb2.ForeColor = System.Drawing.Color.Black;
             this.tb2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb2.Location = new System.Drawing.Point(888, 465);
+            this.tb2.Location = new System.Drawing.Point(880, 393);
             this.tb2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tb2.Name = "tb2";
             this.tb2.PasswordChar = '\0';
@@ -234,7 +236,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(747, 465);
+            this.label10.Location = new System.Drawing.Point(739, 393);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 34);
             this.label10.TabIndex = 83;
@@ -250,11 +252,12 @@
             this.tb1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tb1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb1.FillColor = System.Drawing.Color.Silver;
             this.tb1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb1.ForeColor = System.Drawing.Color.Black;
             this.tb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb1.Location = new System.Drawing.Point(451, 466);
+            this.tb1.Location = new System.Drawing.Point(443, 394);
             this.tb1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tb1.Name = "tb1";
             this.tb1.PasswordChar = '\0';
@@ -271,7 +274,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(306, 466);
+            this.label9.Location = new System.Drawing.Point(298, 394);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 34);
             this.label9.TabIndex = 81;
@@ -287,7 +290,7 @@
             this.dateTime.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTime.ForeColor = System.Drawing.Color.Black;
             this.dateTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateTime.Location = new System.Drawing.Point(888, 279);
+            this.dateTime.Location = new System.Drawing.Point(880, 207);
             this.dateTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTime.Name = "dateTime";
@@ -304,11 +307,12 @@
             this.salary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.salary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.salary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.salary.FillColor = System.Drawing.Color.Silver;
             this.salary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salary.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salary.ForeColor = System.Drawing.Color.Black;
             this.salary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.salary.Location = new System.Drawing.Point(451, 281);
+            this.salary.Location = new System.Drawing.Point(443, 209);
             this.salary.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.salary.Name = "salary";
             this.salary.PasswordChar = '\0';
@@ -327,11 +331,12 @@
             this.contact.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.contact.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.contact.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.contact.FillColor = System.Drawing.Color.Silver;
             this.contact.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.contact.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contact.ForeColor = System.Drawing.Color.Black;
             this.contact.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.contact.Location = new System.Drawing.Point(888, 195);
+            this.contact.Location = new System.Drawing.Point(880, 123);
             this.contact.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.contact.Name = "contact";
             this.contact.PasswordChar = '\0';
@@ -350,11 +355,12 @@
             this.username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.username.FillColor = System.Drawing.Color.Silver;
             this.username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.username.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.Black;
             this.username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.username.Location = new System.Drawing.Point(451, 195);
+            this.username.Location = new System.Drawing.Point(443, 123);
             this.username.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.username.Name = "username";
             this.username.PasswordChar = '\0';
@@ -375,11 +381,12 @@
             this.password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.password.FillColor = System.Drawing.Color.Silver;
             this.password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.password.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.Black;
             this.password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.password.Location = new System.Drawing.Point(888, 108);
+            this.password.Location = new System.Drawing.Point(880, 36);
             this.password.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.password.Name = "password";
             this.password.PasswordChar = '●';
@@ -399,11 +406,12 @@
             this.email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.email.FillColor = System.Drawing.Color.Silver;
             this.email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email.ForeColor = System.Drawing.Color.Black;
             this.email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email.Location = new System.Drawing.Point(451, 108);
+            this.email.Location = new System.Drawing.Point(443, 36);
             this.email.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
@@ -423,7 +431,7 @@
             this.groupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.groupBox1.Location = new System.Drawing.Point(475, 372);
+            this.groupBox1.Location = new System.Drawing.Point(467, 300);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(153, 73);
             this.groupBox1.TabIndex = 25;
@@ -464,7 +472,7 @@
             this.Gender.AutoSize = true;
             this.Gender.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Gender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Gender.Location = new System.Drawing.Point(306, 367);
+            this.Gender.Location = new System.Drawing.Point(298, 295);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(105, 34);
             this.Gender.TabIndex = 75;
@@ -476,7 +484,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.MintCream;
-            this.label8.Location = new System.Drawing.Point(748, 281);
+            this.label8.Location = new System.Drawing.Point(740, 209);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(131, 34);
             this.label8.TabIndex = 18;
@@ -488,7 +496,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MintCream;
-            this.label7.Location = new System.Drawing.Point(306, 290);
+            this.label7.Location = new System.Drawing.Point(298, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 34);
             this.label7.TabIndex = 17;
@@ -500,7 +508,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MintCream;
-            this.label6.Location = new System.Drawing.Point(747, 206);
+            this.label6.Location = new System.Drawing.Point(739, 134);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 34);
             this.label6.TabIndex = 16;
@@ -512,7 +520,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MintCream;
-            this.label5.Location = new System.Drawing.Point(306, 206);
+            this.label5.Location = new System.Drawing.Point(298, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 34);
             this.label5.TabIndex = 15;
@@ -524,7 +532,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MintCream;
-            this.label4.Location = new System.Drawing.Point(747, 120);
+            this.label4.Location = new System.Drawing.Point(739, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 34);
             this.label4.TabIndex = 14;
@@ -536,7 +544,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(306, 120);
+            this.label2.Location = new System.Drawing.Point(298, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 34);
             this.label2.TabIndex = 13;
@@ -555,7 +563,7 @@
             this.viewEmpBtn.FillColor = System.Drawing.Color.DarkOrange;
             this.viewEmpBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewEmpBtn.ForeColor = System.Drawing.Color.Black;
-            this.viewEmpBtn.Location = new System.Drawing.Point(841, 621);
+            this.viewEmpBtn.Location = new System.Drawing.Point(833, 549);
             this.viewEmpBtn.Name = "viewEmpBtn";
             this.viewEmpBtn.Size = new System.Drawing.Size(262, 65);
             this.viewEmpBtn.TabIndex = 14;
@@ -575,7 +583,7 @@
             this.addEmployee.FillColor = System.Drawing.Color.Lime;
             this.addEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEmployee.ForeColor = System.Drawing.Color.Black;
-            this.addEmployee.Location = new System.Drawing.Point(414, 621);
+            this.addEmployee.Location = new System.Drawing.Point(406, 549);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(256, 65);
             this.addEmployee.TabIndex = 13;
@@ -588,7 +596,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(748, 372);
+            this.label1.Location = new System.Drawing.Point(740, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 34);
             this.label1.TabIndex = 12;
@@ -597,6 +605,7 @@
             // employeeType
             // 
             this.employeeType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeType.BackColor = System.Drawing.Color.Silver;
             this.employeeType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeeType.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -604,7 +613,7 @@
             this.employeeType.Items.AddRange(new object[] {
             "Chef",
             "Waiter"});
-            this.employeeType.Location = new System.Drawing.Point(888, 367);
+            this.employeeType.Location = new System.Drawing.Point(880, 295);
             this.employeeType.Name = "employeeType";
             this.employeeType.Size = new System.Drawing.Size(247, 42);
             this.employeeType.TabIndex = 9;

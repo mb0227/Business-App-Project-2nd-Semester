@@ -93,6 +93,28 @@ namespace RMS.DL
             return userID; // Return -1 if user is not found 
         }
 
+        public int GetUserIDEmp(int id)
+        {
+            int userID = -1;
+
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "SELECT U.ID FROM Users U JOIN Employees E on U.ID = E.UserID WHERE E.ID = @ID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", id);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        userID = reader.GetInt32(0);
+                    }
+                }
+            }
+            return userID; // Return -1 if user is not found 
+        }
+
         public string SearchUserForRole(string email, string password)
         {
             string role = ""; // Default value if user is not found

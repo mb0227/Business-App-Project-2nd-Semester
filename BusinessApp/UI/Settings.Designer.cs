@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.orderHistoryButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,15 +51,14 @@
             this.notification = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +72,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1274, 91);
             this.panel1.TabIndex = 9;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(1149, 10);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox.Size = new System.Drawing.Size(77, 76);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 31;
+            this.pictureBox.TabStop = false;
             // 
             // label1
             // 
@@ -99,7 +112,7 @@
             this.orderHistoryButton.FillColor = System.Drawing.Color.SeaGreen;
             this.orderHistoryButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderHistoryButton.ForeColor = System.Drawing.Color.Black;
-            this.orderHistoryButton.Location = new System.Drawing.Point(311, 246);
+            this.orderHistoryButton.Location = new System.Drawing.Point(313, 181);
             this.orderHistoryButton.Name = "orderHistoryButton";
             this.orderHistoryButton.Size = new System.Drawing.Size(295, 69);
             this.orderHistoryButton.TabIndex = 3;
@@ -140,7 +153,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Lime;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(124, 515);
+            this.guna2Button1.Location = new System.Drawing.Point(126, 450);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(295, 80);
             this.guna2Button1.TabIndex = 26;
@@ -160,7 +173,7 @@
             this.updateToVipBtn.FillColor = System.Drawing.Color.Lime;
             this.updateToVipBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateToVipBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateToVipBtn.Location = new System.Drawing.Point(454, 515);
+            this.updateToVipBtn.Location = new System.Drawing.Point(456, 450);
             this.updateToVipBtn.Name = "updateToVipBtn";
             this.updateToVipBtn.Size = new System.Drawing.Size(295, 80);
             this.updateToVipBtn.TabIndex = 25;
@@ -175,7 +188,7 @@
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.backBtn.Location = new System.Drawing.Point(247, 166);
+            this.backBtn.Location = new System.Drawing.Point(202, 101);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(139, 54);
             this.backBtn.TabIndex = 24;
@@ -192,7 +205,7 @@
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.updateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateButton.Location = new System.Drawing.Point(493, 166);
+            this.updateButton.Location = new System.Drawing.Point(565, 101);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(139, 54);
             this.updateButton.TabIndex = 23;
@@ -208,7 +221,7 @@
             this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label.ForeColor = System.Drawing.Color.MintCream;
-            this.label.Location = new System.Drawing.Point(132, 96);
+            this.label.Location = new System.Drawing.Point(132, 54);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(65, 36);
             this.label.TabIndex = 22;
@@ -230,7 +243,7 @@
             this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb.ForeColor = System.Drawing.Color.Black;
             this.tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Location = new System.Drawing.Point(297, 94);
+            this.tb.Location = new System.Drawing.Point(307, 44);
             this.tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb.Name = "tb";
             this.tb.PasswordChar = '\0';
@@ -257,7 +270,7 @@
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.deleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.deleteButton.Location = new System.Drawing.Point(124, 425);
+            this.deleteButton.Location = new System.Drawing.Point(126, 360);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(295, 69);
             this.deleteButton.TabIndex = 6;
@@ -281,7 +294,7 @@
             this.passwordButton.Image = ((System.Drawing.Image)(resources.GetObject("passwordButton.Image")));
             this.passwordButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.passwordButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.passwordButton.Location = new System.Drawing.Point(453, 334);
+            this.passwordButton.Location = new System.Drawing.Point(455, 269);
             this.passwordButton.Name = "passwordButton";
             this.passwordButton.Size = new System.Drawing.Size(295, 69);
             this.passwordButton.TabIndex = 4;
@@ -305,7 +318,7 @@
             this.usernameButton.Image = ((System.Drawing.Image)(resources.GetObject("usernameButton.Image")));
             this.usernameButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.usernameButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.usernameButton.Location = new System.Drawing.Point(124, 334);
+            this.usernameButton.Location = new System.Drawing.Point(126, 269);
             this.usernameButton.Name = "usernameButton";
             this.usernameButton.Size = new System.Drawing.Size(295, 69);
             this.usernameButton.TabIndex = 2;
@@ -329,7 +342,7 @@
             this.logOutButton.Image = ((System.Drawing.Image)(resources.GetObject("logOutButton.Image")));
             this.logOutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.logOutButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.logOutButton.Location = new System.Drawing.Point(453, 425);
+            this.logOutButton.Location = new System.Drawing.Point(455, 360);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(295, 69);
             this.logOutButton.TabIndex = 5;
@@ -396,19 +409,6 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.ImageRotate = 0F;
-            this.pictureBox.Location = new System.Drawing.Point(1152, 10);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBox.Size = new System.Drawing.Size(77, 76);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 31;
-            this.pictureBox.TabStop = false;
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -425,6 +425,7 @@
             this.Load += new System.EventHandler(this.Settings_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -433,7 +434,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.notification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

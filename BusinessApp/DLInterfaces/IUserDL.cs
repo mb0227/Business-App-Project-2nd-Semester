@@ -14,5 +14,6 @@ namespace RMS.DL
         int GetUserID(string email);
         bool EmailAlreadyExists(string email);
         int GetUserID(int id);
+        int GetUserIDEmp(int id);
     }
 }

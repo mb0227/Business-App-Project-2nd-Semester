@@ -195,14 +195,17 @@ namespace RMS.DL
                 command5.Parameters.AddWithValue("@CustomerID", id);
                 command5.ExecuteNonQuery();
 
-                
+                SqlCommand command7 = new SqlCommand("DELETE FROM ViewNotification WHERE CustomerID = @CustomerID", connection);
+                command7.Parameters.AddWithValue("@CustomerID", id);
+                command7.ExecuteNonQuery();
+
                 SqlCommand command6 = new SqlCommand("DELETE FROM Customers WHERE ID = @ID", connection);
                 command6.Parameters.AddWithValue("@ID", id);
                 command6.ExecuteNonQuery();
 
-                SqlCommand command7 = new SqlCommand("DELETE FROM ViewNotification WHERE CustomerID = @CustomerID", connection);
-                command7.Parameters.AddWithValue("@CustomerID", id);
-                command7.ExecuteNonQuery();
+                SqlCommand command8 = new SqlCommand("DELETE FROM UserPictures WHERE UserID = @ID", connection);
+                command8.Parameters.AddWithValue("@ID", id);
+                command8.ExecuteNonQuery();
 
                 SqlCommand command = new SqlCommand("DELETE FROM Users WHERE ID = @ID", connection);
                 command.Parameters.AddWithValue("@ID", userId);

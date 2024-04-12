@@ -19,7 +19,7 @@ namespace SSC.UI
     {
         DataTable dt = new DataTable();
         Chef chef;
-
+        int selectedRow;
         public ManageProducts()
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace SSC.UI
 
         public ManageProducts(Size s, Point l, Chef c)
         {
+            InitializeComponent();
             this.Size = s;
             this.Location = l;
             chef = c;    
@@ -114,20 +115,32 @@ namespace SSC.UI
                     try
                     {
                         int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-                        DialogResult result = MessageBox.Show("Do you want to launch product?", "Confirmation", MessageBoxButtons.YesNo);
-                        if (result == DialogResult.Yes && ObjectHandler.GetProductDL().HasVariants(id))
+                        if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
                         {
-                            ObjectHandler.GetProductDL().UpdateProduct(new Product(id, name.Text, description.Text, comboBox1.Text, 1));
+                            DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+                            if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                            {
+                                DialogResult result = MessageBox.Show("Do you want to launch product?", "Confirmation", MessageBoxButtons.YesNo);
+                                if (result == DialogResult.Yes)
+                                {
+                                    if (ObjectHandler.GetProductDL().HasVariants(id))
+                                        ObjectHandler.GetProductDL().UpdateProduct(new Product(id, name.Text, description.Text, comboBox1.Text, 1));
+                                    else
+                                    {
+                                        MessageBox.Show("Sorry, but add some variants first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        ObjectHandler.GetProductDL().UpdateProduct(new Product(id, name.Text, description.Text, comboBox1.Text, 0));
+                                    }
+                                }
+                                else
+                                {
+                                    ObjectHandler.GetProductDL().UpdateProduct(new Product(id, name.Text, description.Text, comboBox1.Text, 0));
+                                }
+                                LoadData();
+                                ClearTextBoxes();
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Sorry, but add some variants first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            ObjectHandler.GetProductDL().UpdateProduct(new Product(id, name.Text, description.Text, comboBox1.Text, 0));
-                        }
-                        LoadData();
-                        ClearTextBoxes();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString());
                     }
@@ -146,8 +159,18 @@ namespace SSC.UI
                 try
                 {
                     int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-                    ObjectHandler.GetProductDL().DeleteProduct(Convert.ToInt32(id));
-                    LoadData();
+                    selectedRow = dataGridView1.SelectedRows[0].Index;
+
+                    if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
+                    {
+                        DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+
+                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                        {
+                            ObjectHandler.GetProductDL().DeleteProduct(Convert.ToInt32(id));
+                            LoadData();
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -244,6 +267,55 @@ namespace SSC.UI
             ManageProducts p = new ManageProducts(this.Size, this.Location, chef);
             p.Show();
             this.Hide();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            AddVariants add = new AddVariants(this.Size, this.Location, chef);
+            add.Show();
+            this.Hide();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0 && ObjectHandler.GetProductDL().HasVariants(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value)))
+            {
+                try
+                {
+                    int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+                    selectedRow = dataGridView1.SelectedRows[0].Index;
+
+                    if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
+                    {
+                        DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+
+                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                        {
+                            ObjectHandler.GetProductDL().UpdateProduct(new Product(id, Convert.ToString(dataGridView1.SelectedRows[0].Cells["Name"].Value), Convert.ToString(dataGridView1.SelectedRows[0].Cells["Description"].Value), Convert.ToString(dataGridView1.SelectedRows[0].Cells["Category"].Value),  1));
+                            LoadData();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a product to launch and add variants");
+            }
+        }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
+            }
         }
     }
 }

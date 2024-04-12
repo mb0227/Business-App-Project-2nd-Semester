@@ -157,8 +157,8 @@ namespace RMS.DL
                         string permissions = reader["Permissions"].ToString();
                         string tools = reader["ToolsUsed"].ToString();
 
-                        List<string> permissionList = permissions.Split(',').ToList();
-                        List<string> toolsList = tools.Split(',').ToList();
+                        List<string> permissionList = permissions.Split(';').ToList();
+                        List<string> toolsList = tools.Split(';').ToList();
 
                         int empID = Convert.ToInt32(reader["EmployeeID"]);
 
@@ -181,12 +181,11 @@ namespace RMS.DL
                 string query = "SELECT ID FROM Employees WHERE Username = @Username";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
-
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        empID = reader.GetInt32(0);
+                        empID = Convert.ToInt32(reader["ID"]);
                     }
                 }
             }

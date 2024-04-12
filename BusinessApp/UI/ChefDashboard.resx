@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="logOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADNSURBVEhL7ZZBCsJAEATzPMUf+QEVf6V/0Lv6D50lLDRh
+        ahoh4iEpKAhsbe81w8ri2IWv8D2zz3AbIi3ILs7hI0R69C36QCViA0DHKxEbADpeidgA0PFKxAaAjlci
+        NgB0vBKh4BTexs8UHa9EsuAYuov93IlMg32oF9Vr2MnOM5FpUD18CTvZeSaSBYfQXeznToSCc3gfP1N0
+        vBKxAaDjlYgNAB2vRGwA6HglYgNAxysRGwA6XonYANDxSuRvvz7th+wXj7dHN+HKYhiGD1qkSVhVAoSq
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

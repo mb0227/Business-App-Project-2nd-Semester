@@ -46,7 +46,20 @@ namespace SignInSignUp.UI
                 ObjectHandler.GetEmployeeDL().SaveEmployee(employee);
                 Admin admin = new Admin(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), splitText(tb1.Text), splitText(tb2.Text), ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));
                 ObjectHandler.GetAdminDL().SaveAdmin(admin);
+                ClearTextBoxes();
+                MessageBox.Show("Admin added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ClearTextBoxes()
+        {
+            email.Text = "";
+            username.Text = "";
+            contact.Text = "";
+            password.Text = "";
+            salary.Text = "";
+            tb1.Text = "";
+            tb2.Text = "";
         }
 
         private bool CheckValidations()
@@ -120,12 +133,11 @@ namespace SignInSignUp.UI
                 errorProvider4.SetError(contact, "");
             }
 
-            int number;
-            bool isValid = int.TryParse(salary.Text, out number);
-
-            if (!isValid)
+            double p;
+            if (!double.TryParse(salary.Text, out p) || p <= 0 || p > 9999999.99)
             {
-                errorProvider5.SetError(salary, "Please enter a valid salary.");
+                errorProvider5.SetError(salary, "Please enter a valid positive salary.");
+                return false;
             }
             else
             {

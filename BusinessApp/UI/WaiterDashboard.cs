@@ -1,4 +1,5 @@
 ﻿using RMS.BL;
+using SSC;
 using SSC.UI;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace SignInSignUp.UI
 
         public WaiterDashboard(Size s, Point l, Waiter w)
         {
+            InitializeComponent();
             this.Size = s;
             this.Location = l;
             waiter = w;
@@ -182,7 +184,8 @@ namespace SignInSignUp.UI
         {
             foreach(Control control in panel1.Controls)
             {
-                control.Visible = value;
+                if(control != dataGridView1)
+                    control.Visible = value;
             }
         }
 
@@ -302,6 +305,17 @@ namespace SignInSignUp.UI
             ManageReservations m = new ManageReservations(this.Size, this.Location, waiter);
             m.Show();
             this.Hide();
+        }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
+            }
         }
     }
 }

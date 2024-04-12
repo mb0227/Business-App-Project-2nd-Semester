@@ -26,6 +26,7 @@ namespace SignInSignUp.UI
 
         public ManageOrders(Size s, Point p, Chef c)
         {
+            InitializeComponent();
             this.Size = s;
             this.Location = p;
             chef = c;
@@ -104,6 +105,17 @@ namespace SignInSignUp.UI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
+            }
         }
     }
 }

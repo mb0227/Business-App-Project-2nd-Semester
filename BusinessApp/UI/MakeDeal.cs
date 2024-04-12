@@ -1,4 +1,5 @@
 ﻿using RMS.BL;
+using SSC;
 using SSC.UI;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace SignInSignUp.UI
         public MakeDeal(Size s, Point p, Chef c)
         {
             InitializeComponent();
-            this.Size=s;
+            this.Size= s;
             this.Location=p;
             chef = c;
         }
@@ -231,6 +232,17 @@ namespace SignInSignUp.UI
             else
             {
                 MessageBox.Show("Please select a row to delete");
+            }
+        }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
             }
         }
     }

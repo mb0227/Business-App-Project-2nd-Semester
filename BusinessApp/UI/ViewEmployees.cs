@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.DL;
+using Guna.UI2.WinForms;
 
 namespace SignInSignUp.UI
 {
@@ -20,6 +21,7 @@ namespace SignInSignUp.UI
         private Navbar aNavbar;
         private Admin Admin;
         DataTable dt = new DataTable();
+        int selectedRow;
         public ViewEmployees()
         {
             InitializeComponent();
@@ -248,7 +250,7 @@ namespace SignInSignUp.UI
             dataGridView1.DataSource = dt;
             foreach (Admin a in ObjectHandler.GetAdminDL().GetAdmins()) 
             {
-                dt.Rows.Add(a.GetAdminID(), a.GetUsername(), a.GetSalary(), string.Join(",",a.GetToolsUsed()), string.Join(",", a.GetPermissions()), a.GetEmployeeID());
+                dt.Rows.Add(a.GetAdminID(), a.GetUsername(), a.GetSalary(), string.Join(";",a.GetToolsUsed()), string.Join(";", a.GetPermissions()), a.GetEmployeeID());
             }
             backbtn.Visible = true;
             deleteBtn.Visible = false;
@@ -256,24 +258,36 @@ namespace SignInSignUp.UI
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this employee?", "Delete Employee", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                try
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-                    string role = ObjectHandler.GetEmployeeDL().GetEmployeeRole(id).ToLower();
-                    dt.Rows.Clear();
-                    ObjectHandler.GetEmployeeDL().DeleteEmployee(id, role, ObjectHandler.GetUserDL().GetUserID(id));
-                    LoadData();
+                    try
+                    {
+                        int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+                        selectedRow = dataGridView1.SelectedRows[0].Index;
+                        if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
+                        {
+                            DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+                            if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                            {
+                                string role = ObjectHandler.GetEmployeeDL().GetEmployeeRole(id).ToLower();
+                                dt.Rows.Clear();
+                                ObjectHandler.GetEmployeeDL().DeleteEmployee(id, role, ObjectHandler.GetUserDL().GetUserIDEmp(id));
+                                LoadData();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please select a row to delete");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please select a row to delete");
             }
         }
     }

@@ -222,7 +222,12 @@ namespace RMS.DL
             using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM Products WHERE ID=@ID", sqlConnection);
+
+                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM ProductVariants WHERE ProductID=@ID", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@ID", productID);
+                sqlCommand.ExecuteNonQuery();
+
+                sqlCommand = new SqlCommand($"DELETE FROM Products WHERE ID=@ID", sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@ID", productID);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();

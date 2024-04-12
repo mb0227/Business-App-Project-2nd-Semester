@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using SSC.UI;
+using SSC;
 
 namespace SignInSignUp.UI
 {
@@ -47,6 +48,7 @@ namespace SignInSignUp.UI
 
         public AddVariants(Size s, Point l, Chef c)
         {
+            InitializeComponent();
             this.Size = s;
             this.Location = l;
             chef = c;
@@ -104,6 +106,17 @@ namespace SignInSignUp.UI
             ManageOrders o = new ManageOrders(this.Size, this.Location, chef);
             o.Show();
             this.Hide();
+        }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
+            }
         }
     }
 }

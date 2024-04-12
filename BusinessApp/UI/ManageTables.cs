@@ -25,7 +25,7 @@ namespace SignInSignUp.UI
         private Navbar aNavbar;
         private Admin Admin;
         DataTable dt = new DataTable();
-
+        int selectedRow;
         public ManageTables()
         {
             InitializeComponent();
@@ -145,6 +145,12 @@ namespace SignInSignUp.UI
             {
                 errorProvider1.SetError(capacity, ""); 
             }
+
+            if (comboBox1.Text!="Booked" && comboBox1.Text!="Unbooked")
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -155,9 +161,17 @@ namespace SignInSignUp.UI
                 if (guna2DataGridView1.SelectedRows.Count > 0)
                 {
                     int id = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value);
-                    ClearTable();
-                    ObjectHandler.GetTableDL().UpdateTable(new Table(int.Parse(capacity.Text), id,comboBox1.Text));
-                    LoadData();
+                    selectedRow = guna2DataGridView1.SelectedRows[0].Index;
+                    if (guna2DataGridView1 != null && selectedRow >= 0 && selectedRow < guna2DataGridView1.Rows.Count)
+                    {
+                        DataGridViewRow selectedDataGridViewRow = guna2DataGridView1.Rows[selectedRow];
+                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                        {
+                            ClearTable();
+                            ObjectHandler.GetTableDL().UpdateTable(new Table(int.Parse(capacity.Text), id, comboBox1.Text));
+                            LoadData();
+                        }
+                    }
                 }
                 else
                 {
@@ -194,23 +208,35 @@ namespace SignInSignUp.UI
 
         private void deleteTableBtn_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete reservation?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes && ObjectHandler.GetTableDL().GetTableById(Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value)).GetStatus() == "Unbooked")
             {
-                try
-                {
-                    int id = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value);
-                    ClearTable();
-                    ObjectHandler.GetTableDL().DeleteTable(Convert.ToInt32(id));
-                    LoadData();
+                    if (guna2DataGridView1.SelectedRows.Count > 0)
+                    {
+                    try
+                    {
+                        int id = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value);
+                        selectedRow = guna2DataGridView1.SelectedRows[0].Index;
+                        if (guna2DataGridView1 != null && selectedRow >= 0 && selectedRow < guna2DataGridView1.Rows.Count)
+                        {
+                            DataGridViewRow selectedDataGridViewRow = guna2DataGridView1.Rows[selectedRow];
+                            if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                            {
+                                ClearTable();
+                                ObjectHandler.GetTableDL().DeleteTable(Convert.ToInt32(id));
+                                LoadData();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please select a row to delete");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please select a row to delete");
             }
         }
     }

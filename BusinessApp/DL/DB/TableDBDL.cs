@@ -28,7 +28,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM [TABLE] WHERE ID=@ID)", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM [TABLE] WHERE ID=@ID", connection);
                 command.Parameters.AddWithValue("@ID", id);
                 SqlDataReader reader = command.ExecuteReader();
                 if(reader.Read())
@@ -67,8 +67,9 @@ namespace RMS.DL
             using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
             {
                 sqlConnection.Open();
-                string query = $"UPDATE [Table] SET Capacity=@Capacity, Status=@Status WHERE ID={t.GetID()} ";
+                string query = $"UPDATE [Table] SET Capacity=@Capacity, Status=@Status WHERE ID=@ID ";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@ID", t.GetID());
                 sqlCommand.Parameters.AddWithValue("@Capacity", t.GetCapacity());
                 sqlCommand.Parameters.AddWithValue("@Status", t.GetStatus());
                 sqlCommand.ExecuteNonQuery();
@@ -80,7 +81,8 @@ namespace RMS.DL
             using (SqlConnection sqlConnection = UtilityFunctions.GetSqlConnection())
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM [Table] WHERE ID={id}", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand($"DELETE FROM [Table] WHERE ID=@ID", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@ID", id);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
             }
@@ -141,7 +143,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand($"SELECT R.TableID FROM Customers C JOIN Reservation R ON {customerid}= R.CustomerID", connection);
+                SqlCommand command = new SqlCommand($"SELECT R.TableID FROM Customers C JOIN Reservation R ON C.ID = R.CustomerID", connection);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())

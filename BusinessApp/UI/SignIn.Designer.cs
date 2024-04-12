@@ -81,7 +81,7 @@
             this.signInButton.Location = new System.Drawing.Point(356, 450);
             this.signInButton.Name = "signInButton";
             this.signInButton.Size = new System.Drawing.Size(140, 51);
-            this.signInButton.TabIndex = 3;
+            this.signInButton.TabIndex = 4;
             this.signInButton.Text = "Sign In";
             this.signInButton.UseVisualStyleBackColor = false;
             this.signInButton.Click += new System.EventHandler(this.signInButton_Click);
@@ -93,6 +93,7 @@
             this.email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email.Location = new System.Drawing.Point(176, 237);
+            this.email.Margin = new System.Windows.Forms.Padding(5);
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(214, 39);
@@ -156,7 +157,7 @@
             this.homepageButton.Location = new System.Drawing.Point(74, 450);
             this.homepageButton.Name = "homepageButton";
             this.homepageButton.Size = new System.Drawing.Size(137, 51);
-            this.homepageButton.TabIndex = 2;
+            this.homepageButton.TabIndex = 3;
             this.homepageButton.Text = "Back";
             this.homepageButton.UseVisualStyleBackColor = false;
             this.homepageButton.Click += new System.EventHandler(this.button2_Click);
@@ -248,7 +249,7 @@
             this.button1.Location = new System.Drawing.Point(217, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 40);
-            this.button1.TabIndex = 16;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Forgot Password?";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

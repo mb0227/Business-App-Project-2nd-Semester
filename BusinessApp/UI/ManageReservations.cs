@@ -1,4 +1,5 @@
 ﻿using RMS.BL;
+using SSC;
 using SSC.UI;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace SignInSignUp.UI
 
         public ManageReservations(Size s, Point l, Waiter w)
         {
+            InitializeComponent();
             this.Size = s;
             this.Location = l;
             waiter = w;
@@ -39,6 +41,7 @@ namespace SignInSignUp.UI
 
         private void ManageReservations_Load(object sender, EventArgs e)
         {
+            ObjectHandler.GetTableDL().UpdateTablesStatus();
             MakeColumns();
             LoadData();
             FillComboBox();
@@ -147,6 +150,7 @@ namespace SignInSignUp.UI
                             int ID = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
 
                             ObjectHandler.GetReservationDL().DeleteReservationByID(ID);
+                            ObjectHandler.GetTableDL().UpdateTable(new RMS.BL.Table(ObjectHandler.GetTableDL().GetTableCapacity(Convert.ToInt32(selectedDataGridViewRow.Cells["TableID"].Value)), Convert.ToInt32(selectedDataGridViewRow.Cells["TableID"].Value), "Unbooked"));
                             FillComboBox();
                             LoadData();
                             selectedRow = -1;
@@ -176,6 +180,22 @@ namespace SignInSignUp.UI
             WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
             w.Show();
             this.Hide();
+        }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Homepage h = new Homepage(this.Size, this.Location);
+                h.Show();
+                this.Hide();
+            }
+        }
+
+        private void reservationBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

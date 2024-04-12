@@ -163,13 +163,29 @@ namespace SSC.UI
                 {
                     Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));                    
                     ObjectHandler.GetWaiterDL().SaveWaiter(waiter);
+                    MessageBox.Show("Waiter added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearTextBoxes();
                 }
                 else if (employeeType.Text == "Chef")
                 {
                     Chef chef = new Chef(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));
                     ObjectHandler.GetChefDL().SaveChef(chef);
+                    MessageBox.Show("Chef added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearTextBoxes();
                 }
             }
+        }
+
+        private void ClearTextBoxes()
+        {
+            email.Text = "";
+            username.Text = "";
+            contact.Text = "";
+            password.Text = "";
+            salary.Text = "";
+            tb1.Text = "";
+            tb2.Text = "";
+            tb3.Text = "";
         }
 
         private bool CheckValidations()
@@ -244,12 +260,11 @@ namespace SSC.UI
                 errorProvider4.SetError(contact, "");
             }
 
-            int number;
-            bool isValid = int.TryParse(salary.Text, out number);
-
-            if (!isValid)
+            double p;
+            if (!double.TryParse(salary.Text, out p) || p <= 0 || p > 9999999.99)
             {
-                errorProvider5.SetError(salary, "Please enter a valid salary.");
+                errorProvider5.SetError(salary, "Please enter a valid positive salary.");
+                return false;
             }
             else
             {
@@ -273,17 +288,29 @@ namespace SSC.UI
                 errorProvider6.SetError(tb1, "Field cannot be empty.");
                 return false;
             }
+            else
+            {
+                errorProvider6.SetError(tb1, "");
+            }
 
             if (string.IsNullOrWhiteSpace(tb2.Text.Trim()))
             {
                 errorProvider7.SetError(tb2, "Field cannot be empty.");
                 return false;
             }
+            else
+            {
+                errorProvider7.SetError(tb2, "");
+            }
 
             if (string.IsNullOrWhiteSpace(tb3.Text.Trim()))
             {
                 errorProvider8.SetError(tb3, "Field cannot be empty.");
                 return false;
+            }
+            else
+            {
+                errorProvider8.SetError(tb3, "");
             }
 
             return true;

@@ -20,6 +20,10 @@ namespace RMS.DL
             }
         }
 
+        public int GetUserIDEmp(int id)
+        {
+            return 0;
+        }
         private bool EmailAlreadyExistsInFile(string email)
         {
             string path = UtilityFunctions.GetPath("Users.txt");
