@@ -124,7 +124,7 @@
             this.notifyBtn.FillColor = System.Drawing.Color.Lime;
             this.notifyBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notifyBtn.ForeColor = System.Drawing.Color.Black;
-            this.notifyBtn.Location = new System.Drawing.Point(942, 535);
+            this.notifyBtn.Location = new System.Drawing.Point(941, 296);
             this.notifyBtn.Name = "notifyBtn";
             this.notifyBtn.Size = new System.Drawing.Size(243, 65);
             this.notifyBtn.TabIndex = 48;
@@ -206,7 +206,7 @@
             // 
             // logOut
             // 
-            this.logOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
             this.logOut.Location = new System.Drawing.Point(1180, 3);
             this.logOut.Name = "logOut";

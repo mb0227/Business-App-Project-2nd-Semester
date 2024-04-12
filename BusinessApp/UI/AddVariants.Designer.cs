@@ -123,7 +123,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MintCream;
-            this.label5.Location = new System.Drawing.Point(478, 216);
+            this.label5.Location = new System.Drawing.Point(437, 217);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 34);
             this.label5.TabIndex = 28;
@@ -135,7 +135,7 @@
             this.priceTB.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTB.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.Location = new System.Drawing.Point(694, 206);
+            this.priceTB.Location = new System.Drawing.Point(653, 207);
             this.priceTB.Multiline = true;
             this.priceTB.Name = "priceTB";
             this.priceTB.Size = new System.Drawing.Size(259, 56);
@@ -148,7 +148,7 @@
             this.quantityText.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.quantityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.quantityText.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityText.Location = new System.Drawing.Point(694, 300);
+            this.quantityText.Location = new System.Drawing.Point(653, 301);
             this.quantityText.Multiline = true;
             this.quantityText.Name = "quantityText";
             this.quantityText.Size = new System.Drawing.Size(259, 52);
@@ -162,7 +162,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MintCream;
-            this.label7.Location = new System.Drawing.Point(478, 305);
+            this.label7.Location = new System.Drawing.Point(437, 306);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 34);
             this.label7.TabIndex = 25;
@@ -183,7 +183,7 @@
             "Drinks",
             "Snacks",
             "Dairy Food"});
-            this.comboBox1.Location = new System.Drawing.Point(694, 127);
+            this.comboBox1.Location = new System.Drawing.Point(653, 128);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(259, 51);
             this.comboBox1.TabIndex = 0;
@@ -195,7 +195,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(478, 127);
+            this.label2.Location = new System.Drawing.Point(437, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(190, 34);
             this.label2.TabIndex = 31;
@@ -214,7 +214,7 @@
             this.insertBtn.FillColor = System.Drawing.Color.Lime;
             this.insertBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insertBtn.ForeColor = System.Drawing.Color.Black;
-            this.insertBtn.Location = new System.Drawing.Point(841, 397);
+            this.insertBtn.Location = new System.Drawing.Point(912, 388);
             this.insertBtn.Name = "insertBtn";
             this.insertBtn.Size = new System.Drawing.Size(174, 65);
             this.insertBtn.TabIndex = 4;
@@ -249,7 +249,7 @@
             // 
             // logOut
             // 
-            this.logOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
             this.logOut.Location = new System.Drawing.Point(1201, 3);
             this.logOut.Name = "logOut";

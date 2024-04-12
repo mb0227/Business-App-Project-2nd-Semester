@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MakeDeal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MakeDeal));
             this.panel3 = new System.Windows.Forms.Panel();
             this.manageOrders = new Guna.UI2.WinForms.Guna2Button();
             this.manageBtns = new Guna.UI2.WinForms.Guna2Button();
@@ -53,23 +53,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.deleteBtn = new Guna.UI2.WinForms.Guna2Button();
             this.makeDealBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.logOut = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.logOut = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logOut)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -384,6 +384,70 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.deleteBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.BorderRadius = 18;
+            this.deleteBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.deleteBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteBtn.FillColor = System.Drawing.Color.Red;
+            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.ForeColor = System.Drawing.Color.Black;
+            this.deleteBtn.Location = new System.Drawing.Point(231, 540);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(174, 65);
+            this.deleteBtn.TabIndex = 9;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // makeDealBtn
+            // 
+            this.makeDealBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.makeDealBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.makeDealBtn.BorderRadius = 18;
+            this.makeDealBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.makeDealBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.makeDealBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.makeDealBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.makeDealBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.makeDealBtn.FillColor = System.Drawing.Color.Lime;
+            this.makeDealBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.makeDealBtn.ForeColor = System.Drawing.Color.Black;
+            this.makeDealBtn.Location = new System.Drawing.Point(369, 455);
+            this.makeDealBtn.Name = "makeDealBtn";
+            this.makeDealBtn.Size = new System.Drawing.Size(174, 65);
+            this.makeDealBtn.TabIndex = 8;
+            this.makeDealBtn.Text = "Insert";
+            this.makeDealBtn.Click += new System.EventHandler(this.makeDealBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.logOut);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(32, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1278, 632);
+            this.panel1.TabIndex = 26;
+            // 
+            // logOut
+            // 
+            this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
+            this.logOut.Location = new System.Drawing.Point(1186, 1);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(68, 66);
+            this.logOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logOut.TabIndex = 24;
+            this.logOut.TabStop = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
             // dataGridView1
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(183)))));
@@ -441,58 +505,6 @@
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(215)))), ((int)(((byte)(95)))));
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deleteBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.BorderRadius = 18;
-            this.deleteBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.deleteBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.deleteBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.deleteBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.deleteBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.deleteBtn.FillColor = System.Drawing.Color.Red;
-            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteBtn.Location = new System.Drawing.Point(231, 540);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(174, 65);
-            this.deleteBtn.TabIndex = 9;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // makeDealBtn
-            // 
-            this.makeDealBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.makeDealBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.makeDealBtn.BorderRadius = 18;
-            this.makeDealBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.makeDealBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.makeDealBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.makeDealBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.makeDealBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.makeDealBtn.FillColor = System.Drawing.Color.Lime;
-            this.makeDealBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.makeDealBtn.ForeColor = System.Drawing.Color.Black;
-            this.makeDealBtn.Location = new System.Drawing.Point(369, 455);
-            this.makeDealBtn.Name = "makeDealBtn";
-            this.makeDealBtn.Size = new System.Drawing.Size(174, 65);
-            this.makeDealBtn.TabIndex = 8;
-            this.makeDealBtn.Text = "Insert";
-            this.makeDealBtn.Click += new System.EventHandler(this.makeDealBtn_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.logOut);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(32, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1278, 632);
-            this.panel1.TabIndex = 26;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -504,18 +516,6 @@
             // errorProvider3
             // 
             this.errorProvider3.ContainerControl = this;
-            // 
-            // logOut
-            // 
-            this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
-            this.logOut.Location = new System.Drawing.Point(1186, 1);
-            this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(68, 66);
-            this.logOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logOut.TabIndex = 24;
-            this.logOut.TabStop = false;
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
             // MakeDeal
             // 
@@ -534,12 +534,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();
             this.ResumeLayout(false);
 
         }

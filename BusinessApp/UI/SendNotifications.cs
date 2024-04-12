@@ -122,6 +122,7 @@ namespace SignInSignUp.UI
             {
                 Notification Notification = new Notification(notification.Text);
                 ObjectHandler.GetNotificationDL().SaveNotification(Notification);
+                notification.Text = "";
                 MessageBox.Show("Notification sent successfully","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }

@@ -81,11 +81,13 @@ namespace RMS.DL
                         int id = int.Parse(parts[0]);
                         int loyaltyPoints = int.Parse(parts[1]);
                         int customerID = int.Parse(parts[2]);
-                        string[] parts2= File.ReadAllLines(path2);  
 
+                        string[] Lines= File.ReadAllLines(path2);
+                        string[] parts2 = Lines[0].Split(',');
                         if (parts2.Length == 7 && parts2[0].Trim() == customerID.ToString())
                         {
                             string username = parts2[1].Trim();
+                            Console.WriteLine(username);
                             regulars.Add(new Regular(username,id, loyaltyPoints, customerID));
                         }
                     }

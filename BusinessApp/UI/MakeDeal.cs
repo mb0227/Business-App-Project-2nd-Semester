@@ -139,34 +139,36 @@ namespace SignInSignUp.UI
 
         private bool CheckValidations()
         {
+
+            if (string.IsNullOrEmpty(name.Text))
+            {
+                errorProvider1.SetError(name, "There must be a name.");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(name, "");
+            }
+
+
             double Price;
             if (!double.TryParse(price.Text, out Price))
             {
-                errorProvider1.SetError(price, "Price must be a numeric value.");
+                errorProvider2.SetError(price, "Price must be a numeric value.");
                 return false;
             }
             else
             {
-                errorProvider1.SetError(price, "");
-            }
-
-            if(string.IsNullOrEmpty(name.Text))
-            {
-                errorProvider2.SetError(name, "There must be a name.");
-                return false;
-            }
-            else
-            {
-                errorProvider2.SetError(name, "");
+                errorProvider2.SetError(price, "");
             }
 
             if (items.Count>0)
             {
-                errorProvider2.SetError(name, "");
+                errorProvider2.SetError(menuComboBox, "");
             }
             else
             {
-                errorProvider2.SetError(name, "Please add some items first");
+                errorProvider2.SetError(menuComboBox, "Please add some items first");
                 return false;
             }
 

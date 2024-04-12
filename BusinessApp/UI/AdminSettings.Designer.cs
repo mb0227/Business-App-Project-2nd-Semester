@@ -112,7 +112,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.SeaGreen;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(590, 110);
+            this.guna2Button2.Location = new System.Drawing.Point(577, 90);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(279, 69);
             this.guna2Button2.TabIndex = 24;
@@ -132,7 +132,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.SeaGreen;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(726, 383);
+            this.guna2Button1.Location = new System.Drawing.Point(726, 363);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(295, 69);
             this.guna2Button1.TabIndex = 23;
@@ -152,7 +152,7 @@
             this.userDetailsButton.FillColor = System.Drawing.Color.SeaGreen;
             this.userDetailsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userDetailsButton.ForeColor = System.Drawing.Color.Black;
-            this.userDetailsButton.Location = new System.Drawing.Point(397, 383);
+            this.userDetailsButton.Location = new System.Drawing.Point(397, 363);
             this.userDetailsButton.Name = "userDetailsButton";
             this.userDetailsButton.Size = new System.Drawing.Size(295, 69);
             this.userDetailsButton.TabIndex = 22;
@@ -175,7 +175,7 @@
             this.generateVouchers.Image = ((System.Drawing.Image)(resources.GetObject("generateVouchers.Image")));
             this.generateVouchers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.generateVouchers.ImageSize = new System.Drawing.Size(30, 30);
-            this.generateVouchers.Location = new System.Drawing.Point(554, 467);
+            this.generateVouchers.Location = new System.Drawing.Point(554, 447);
             this.generateVouchers.Name = "generateVouchers";
             this.generateVouchers.Size = new System.Drawing.Size(331, 72);
             this.generateVouchers.TabIndex = 21;
@@ -191,7 +191,7 @@
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.backBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.backBtn.Location = new System.Drawing.Point(397, 110);
+            this.backBtn.Location = new System.Drawing.Point(397, 90);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(164, 69);
             this.backBtn.TabIndex = 20;
@@ -208,7 +208,7 @@
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.updateButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateButton.Location = new System.Drawing.Point(887, 110);
+            this.updateButton.Location = new System.Drawing.Point(887, 90);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(164, 69);
             this.updateButton.TabIndex = 19;
@@ -224,7 +224,7 @@
             this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label.ForeColor = System.Drawing.Color.MintCream;
-            this.label.Location = new System.Drawing.Point(468, 56);
+            this.label.Location = new System.Drawing.Point(441, 36);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(65, 36);
             this.label.TabIndex = 18;
@@ -244,7 +244,7 @@
             this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb.ForeColor = System.Drawing.Color.Black;
             this.tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Location = new System.Drawing.Point(602, 56);
+            this.tb.Location = new System.Drawing.Point(586, 36);
             this.tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb.Name = "tb";
             this.tb.PasswordChar = '\0';
@@ -271,7 +271,7 @@
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.deleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.deleteButton.Location = new System.Drawing.Point(397, 297);
+            this.deleteButton.Location = new System.Drawing.Point(397, 277);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(300, 72);
             this.deleteButton.TabIndex = 6;
@@ -295,7 +295,7 @@
             this.passwordButton.Image = ((System.Drawing.Image)(resources.GetObject("passwordButton.Image")));
             this.passwordButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.passwordButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.passwordButton.Location = new System.Drawing.Point(726, 202);
+            this.passwordButton.Location = new System.Drawing.Point(726, 182);
             this.passwordButton.Name = "passwordButton";
             this.passwordButton.Size = new System.Drawing.Size(295, 72);
             this.passwordButton.TabIndex = 4;
@@ -319,7 +319,7 @@
             this.usernameButton.Image = ((System.Drawing.Image)(resources.GetObject("usernameButton.Image")));
             this.usernameButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.usernameButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.usernameButton.Location = new System.Drawing.Point(397, 202);
+            this.usernameButton.Location = new System.Drawing.Point(397, 182);
             this.usernameButton.Name = "usernameButton";
             this.usernameButton.Size = new System.Drawing.Size(300, 72);
             this.usernameButton.TabIndex = 2;
@@ -343,7 +343,7 @@
             this.logOutButton.Image = ((System.Drawing.Image)(resources.GetObject("logOutButton.Image")));
             this.logOutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.logOutButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.logOutButton.Location = new System.Drawing.Point(726, 297);
+            this.logOutButton.Location = new System.Drawing.Point(726, 277);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(295, 72);
             this.logOutButton.TabIndex = 5;

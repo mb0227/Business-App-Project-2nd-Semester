@@ -108,6 +108,7 @@ namespace SignInSignUp.UI
                 ObjectHandler.GetTableDL().UpdateTable(new RMS.BL.Table(ObjectHandler.GetTableDL().GetTableCapacity(int.Parse(comboBox1.Text)), int.Parse(comboBox1.Text), "Booked"));
                 FillComboBox();
                 LoadData();
+                guna2TextBox1.Text = "";
             }
         }
 

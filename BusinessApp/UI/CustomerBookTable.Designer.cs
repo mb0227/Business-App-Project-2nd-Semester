@@ -61,7 +61,7 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(397, 175);
+            this.comboBox1.Location = new System.Drawing.Point(397, 119);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 37);
             this.comboBox1.TabIndex = 0;
@@ -73,7 +73,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(157, 176);
+            this.label3.Location = new System.Drawing.Point(157, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(228, 36);
             this.label3.TabIndex = 12;
@@ -81,9 +81,6 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
             this.panel3.Controls.Add(this.reservationText);
             this.panel3.Controls.Add(this.label2);
@@ -108,7 +105,7 @@
             this.reservationText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reservationText.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationText.ForeColor = System.Drawing.Color.DarkRed;
-            this.reservationText.Location = new System.Drawing.Point(220, 351);
+            this.reservationText.Location = new System.Drawing.Point(220, 295);
             this.reservationText.Name = "reservationText";
             this.reservationText.Size = new System.Drawing.Size(0, 39);
             this.reservationText.TabIndex = 18;
@@ -121,7 +118,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(338, 269);
+            this.label2.Location = new System.Drawing.Point(338, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 36);
             this.label2.TabIndex = 17;
@@ -134,7 +131,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14F);
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(630, 179);
+            this.label1.Location = new System.Drawing.Point(633, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 36);
             this.label1.TabIndex = 16;
@@ -154,7 +151,7 @@
             this.guna2TextBox1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(834, 176);
+            this.guna2TextBox1.Location = new System.Drawing.Point(834, 119);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
@@ -171,7 +168,7 @@
             this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Coral;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(599, 267);
+            this.dateTimePicker1.Location = new System.Drawing.Point(599, 211);
             this.dateTimePicker1.MinDate = new System.DateTime(2024, 4, 7, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(211, 44);
@@ -190,7 +187,7 @@
             this.deleteReservation.FillColor = System.Drawing.Color.Red;
             this.deleteReservation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteReservation.ForeColor = System.Drawing.Color.Black;
-            this.deleteReservation.Location = new System.Drawing.Point(753, 442);
+            this.deleteReservation.Location = new System.Drawing.Point(753, 386);
             this.deleteReservation.Name = "deleteReservation";
             this.deleteReservation.Size = new System.Drawing.Size(266, 65);
             this.deleteReservation.TabIndex = 3;
@@ -210,7 +207,7 @@
             this.viewReservationButton.FillColor = System.Drawing.Color.Orange;
             this.viewReservationButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewReservationButton.ForeColor = System.Drawing.Color.Black;
-            this.viewReservationButton.Location = new System.Drawing.Point(467, 442);
+            this.viewReservationButton.Location = new System.Drawing.Point(467, 386);
             this.viewReservationButton.Name = "viewReservationButton";
             this.viewReservationButton.Size = new System.Drawing.Size(262, 65);
             this.viewReservationButton.TabIndex = 2;
@@ -230,7 +227,7 @@
             this.makeReservation.FillColor = System.Drawing.Color.Lime;
             this.makeReservation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.makeReservation.ForeColor = System.Drawing.Color.Black;
-            this.makeReservation.Location = new System.Drawing.Point(186, 442);
+            this.makeReservation.Location = new System.Drawing.Point(186, 386);
             this.makeReservation.Name = "makeReservation";
             this.makeReservation.Size = new System.Drawing.Size(256, 65);
             this.makeReservation.TabIndex = 1;
@@ -254,7 +251,7 @@
             this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.ImageRotate = 0F;
-            this.pictureBox.Location = new System.Drawing.Point(1142, 3);
+            this.pictureBox.Location = new System.Drawing.Point(1142, 4);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.pictureBox.Size = new System.Drawing.Size(77, 76);

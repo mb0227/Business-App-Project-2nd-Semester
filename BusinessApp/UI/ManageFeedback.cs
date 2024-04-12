@@ -171,6 +171,7 @@ namespace SignInSignUp.UI
                             {
                                 RMS.BL.Message message = new RMS.BL.Message(ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, Convert.ToInt32(selectedDataGridViewRow.Cells["CustomerID"].Value),tb.Text);
                                 ObjectHandler.GetMessageDL().SendMessage(message);
+                                reply.Text = "";
                             }
                             else
                             {

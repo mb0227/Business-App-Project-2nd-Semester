@@ -64,7 +64,7 @@
             this.sendBtn.FillColor = System.Drawing.Color.Lime;
             this.sendBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendBtn.ForeColor = System.Drawing.Color.Black;
-            this.sendBtn.Location = new System.Drawing.Point(828, 422);
+            this.sendBtn.Location = new System.Drawing.Point(828, 414);
             this.sendBtn.Name = "sendBtn";
             this.sendBtn.Size = new System.Drawing.Size(256, 65);
             this.sendBtn.TabIndex = 2;

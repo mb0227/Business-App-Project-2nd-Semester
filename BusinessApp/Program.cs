@@ -24,7 +24,7 @@ namespace SSC
             //OrderDBDL.ReadOrdersFromDatabase();
             //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
-
+            ObjectHandler.GetRegularDL().GetRegulars();
             Application.Run(new SignIn());
         }
     }

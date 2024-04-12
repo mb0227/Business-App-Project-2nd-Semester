@@ -174,11 +174,12 @@ namespace SSC.UI
             dt.Columns.Add("LoyaltyPoints", typeof(int));
             dt.Columns.Add("CustomerID", typeof(int));
 
-            dataGridView1.DataSource = dt;
             foreach (Regular r in ObjectHandler.GetRegularDL().GetRegulars())
             {
                 dt.Rows.Add(r.GetRegularID(), r.GetUsername(), r.GetLoyaltyPoints(), r.GetCustomerID());
             }
+            dataGridView1.DataSource = dt;
+
             backbtn.Visible = true;
             deleteBtn.Visible = false;
         }
@@ -191,11 +192,11 @@ namespace SSC.UI
             dt.Columns.Add("Username", typeof(string));
             dt.Columns.Add("MembershipLevel", typeof(string));
             dt.Columns.Add("CustomerID", typeof(int));
-            dataGridView1.DataSource = dt;
             foreach (VIP v in ObjectHandler.GetVipDL().GetVIPs())
             {
                 dt.Rows.Add(v.GetVipID(), v.GetUsername(), v.GetMembershipLevel(), v.GetCustomerID());
             }
+            dataGridView1.DataSource = dt;
             backbtn.Visible = true;
             deleteBtn.Visible = false;
         }

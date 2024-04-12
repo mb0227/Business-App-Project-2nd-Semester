@@ -110,12 +110,18 @@ namespace SSC.UI
 
         private void FillComboBox()
         {
-            menuComboBox.Items.Clear(); 
+            menuComboBox.Items.Clear();
+            HashSet<string> addedProductNames = new HashSet<string>();
+
             foreach (Product product in ObjectHandler.GetProductDL().GetProductsForCustomers())
             {
                 if (ObjectHandler.GetProductDL().HasVariants(product.GetProductID()))
                 {
-                    menuComboBox.Items.Add(product.GetProductName());
+                    if (!addedProductNames.Contains(product.GetProductName()))
+                    {
+                        menuComboBox.Items.Add(product.GetProductName());
+                        addedProductNames.Add(product.GetProductName());
+                    }
                 }
             }
         }

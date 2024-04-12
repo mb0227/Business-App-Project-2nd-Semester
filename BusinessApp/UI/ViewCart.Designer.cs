@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,9 +59,9 @@
             this.menuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuComboBox.FormattingEnabled = true;
-            this.menuComboBox.Location = new System.Drawing.Point(514, 303);
+            this.menuComboBox.Location = new System.Drawing.Point(461, 361);
             this.menuComboBox.Name = "menuComboBox";
-            this.menuComboBox.Size = new System.Drawing.Size(182, 37);
+            this.menuComboBox.Size = new System.Drawing.Size(235, 37);
             this.menuComboBox.TabIndex = 1;
             this.menuComboBox.SelectedIndexChanged += new System.EventHandler(this.menuComboBox_SelectedIndexChanged);
             // 
@@ -71,11 +71,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(288, 306);
+            this.label2.Location = new System.Drawing.Point(316, 360);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 34);
+            this.label2.Size = new System.Drawing.Size(108, 34);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Select Item";
+            this.label2.Text = "Product";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -84,11 +84,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(289, 374);
+            this.label1.Location = new System.Drawing.Point(317, 428);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 34);
+            this.label1.Size = new System.Drawing.Size(103, 34);
             this.label1.TabIndex = 34;
-            this.label1.Text = "Select Quantity";
+            this.label1.Text = "Variant";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // quantitiesComboBox
@@ -98,9 +98,9 @@
             this.quantitiesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quantitiesComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantitiesComboBox.FormattingEnabled = true;
-            this.quantitiesComboBox.Location = new System.Drawing.Point(514, 371);
+            this.quantitiesComboBox.Location = new System.Drawing.Point(461, 429);
             this.quantitiesComboBox.Name = "quantitiesComboBox";
-            this.quantitiesComboBox.Size = new System.Drawing.Size(182, 37);
+            this.quantitiesComboBox.Size = new System.Drawing.Size(235, 37);
             this.quantitiesComboBox.TabIndex = 2;
             // 
             // errorProvider1
@@ -112,10 +112,10 @@
             this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.name.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.name.Location = new System.Drawing.Point(514, 234);
+            this.name.Location = new System.Drawing.Point(461, 237);
             this.name.Multiline = true;
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(182, 41);
+            this.name.Size = new System.Drawing.Size(235, 41);
             this.name.TabIndex = 0;
             this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
@@ -125,11 +125,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(288, 241);
+            this.label3.Location = new System.Drawing.Point(315, 240);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 34);
+            this.label3.Size = new System.Drawing.Size(109, 34);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Search Item";
+            this.label3.Text = "Search ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -180,7 +180,7 @@
             this.searchButton.FillColor = System.Drawing.Color.SteelBlue;
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.Black;
-            this.searchButton.Location = new System.Drawing.Point(294, 474);
+            this.searchButton.Location = new System.Drawing.Point(516, 288);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(180, 58);
             this.searchButton.TabIndex = 3;
@@ -200,7 +200,7 @@
             this.updateButton.FillColor = System.Drawing.Color.Orange;
             this.updateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.ForeColor = System.Drawing.Color.Black;
-            this.updateButton.Location = new System.Drawing.Point(514, 474);
+            this.updateButton.Location = new System.Drawing.Point(516, 502);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(180, 58);
             this.updateButton.TabIndex = 4;
@@ -220,7 +220,7 @@
             this.backButton.FillColor = System.Drawing.Color.DarkTurquoise;
             this.backButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.ForeColor = System.Drawing.Color.Black;
-            this.backButton.Location = new System.Drawing.Point(294, 553);
+            this.backButton.Location = new System.Drawing.Point(417, 585);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(180, 58);
             this.backButton.TabIndex = 5;
@@ -240,7 +240,7 @@
             this.deleteButton.FillColor = System.Drawing.Color.Red;
             this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.Black;
-            this.deleteButton.Location = new System.Drawing.Point(514, 553);
+            this.deleteButton.Location = new System.Drawing.Point(321, 502);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(180, 58);
             this.deleteButton.TabIndex = 6;
@@ -249,31 +249,31 @@
             // 
             // cartGridView
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.cartGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.cartGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.cartGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cartGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cartGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cartGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.cartGridView.ColumnHeadersHeight = 20;
             this.cartGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cartGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cartGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.cartGridView.EnableHeadersVisualStyles = true;
             this.cartGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.cartGridView.Location = new System.Drawing.Point(721, 224);
+            this.cartGridView.Location = new System.Drawing.Point(717, 224);
             this.cartGridView.Name = "cartGridView";
             this.cartGridView.ReadOnly = true;
             this.cartGridView.RowHeadersVisible = false;
