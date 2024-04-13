@@ -15,6 +15,7 @@ namespace RMS.DL
         {
             List<string> vouchers = new List<string>();
             string path = UtilityFunctions.GetPath("Vouchers.txt");
+
             if (!File.Exists(path))
             {
                 return vouchers;
@@ -23,11 +24,15 @@ namespace RMS.DL
             string[] lines = File.ReadAllLines(path);
             Random rng = new Random();
             lines = lines.OrderBy(line => rng.Next()).ToArray();
+
             for (int i = 0; i < Math.Min(number, lines.Length); i++)
             {
-                vouchers.Add(lines[i]);
+                string[] parts = lines[i].Split(',');
+                if (parts.Length > 0)
+                {
+                    vouchers.Add(parts[0].Trim());
+                }
             }
-
             return vouchers;
         }
 
@@ -81,6 +86,5 @@ namespace RMS.DL
             }
             Console.WriteLine("Vouchers generated.");
         }
-
     }
 }

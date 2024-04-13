@@ -230,7 +230,61 @@ namespace RMS.DL
 
         public void DeleteCustomer(int id, string status, int userid)
         {
-            // Implementation to delete a customer
+            string path = "";
+            if (status.ToLower() == "regular")
+                path = UtilityFunctions.GetPath("Regular.txt");
+            else if (status.ToLower() == "vip")
+                path = UtilityFunctions.GetPath("VIP.txt");
+
+            if (File.Exists(path))
+            {
+                string[] lines = File.ReadAllLines(path);
+                List<string> newLines = new List<string>();
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 3 && int.Parse(parts[2]) == id && status.ToLower() == "regular")                    
+                        continue;                    
+                    else if (parts.Length == 4 && int.Parse(parts[3].Trim()) == id && status.ToLower() == "vip")
+                        continue;
+                    newLines.Add(line);
+                }
+                File.WriteAllLines(path, newLines);
+            }
+
+            path = UtilityFunctions.GetPath("Customers.txt");
+            if (File.Exists(path))
+            {
+                string[] lines = File.ReadAllLines(path);
+                List<string> newLines = new List<string>();
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 7 && int.Parse(parts[0].Trim()) == id)
+                    {
+                        continue;
+                    }
+                    newLines.Add(line);
+                }
+                File.WriteAllLines(path, newLines);
+            }
+
+            path = UtilityFunctions.GetPath("Users.txt");
+            if (File.Exists(path))
+            {
+                string[] lines = File.ReadAllLines(path);
+                List<string> newLines = new List<string>();
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 4 && int.Parse(parts[0]) == userid)
+                    {
+                        continue;
+                    }
+                    newLines.Add(line);
+                }
+                File.WriteAllLines(path, newLines);
+            }
         }
     }
 }

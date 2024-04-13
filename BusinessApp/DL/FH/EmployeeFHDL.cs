@@ -150,8 +150,6 @@ namespace RMS.DL
             return employees;
         }
 
- 
-
         public Chef SearchChefById(int userID)
         {
             string path = UtilityFunctions.GetPath("Employees.txt");
@@ -263,15 +261,16 @@ namespace RMS.DL
                             foreach (string Line in Lines)
                             {
                                 string[] Parts = Line.Split(',');
-                                if (Parts.Length == 4 && int.Parse(Parts[3]) == empID)
+                                if (Parts.Length == 4 && int.Parse(Parts[3].Trim()) == empID)
                                 {
                                     int id = Convert.ToInt32(Parts[0]);
                                     string tools = Parts[1].Trim();
                                     string permissions = Parts[2].Trim();
+                                    int employeeID = Convert.ToInt32(Parts[3].Trim());
 
                                     List<string> permissionList = permissions.Split(';').ToList();
                                     List<string> toolsList = tools.Split(';').ToList();
-                                    Admin admin = new Admin(empID, id, username, contact, salary, joindate, gender, userID, toolsList, permissionList);
+                                    Admin admin = new Admin(employeeID, id, username, contact, salary, joindate, gender, userID, toolsList, permissionList);
                                     return admin;
                                 }
                             }
@@ -303,7 +302,7 @@ namespace RMS.DL
                     {
                         continue;
                     }
-                    else if (parts.Length == 5 && int.Parse(parts[4]) == id && (role == "chef"||role=="waiter"))
+                    else if (parts.Length == 5 && int.Parse(parts[4].Trim()) == id && (role == "chef"||role=="waiter"))
                         continue;
                     newLines.Add(line);
                 }
@@ -318,7 +317,7 @@ namespace RMS.DL
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split(',');
-                    if (parts.Length == 7 && int.Parse(parts[0]) == id)
+                    if (parts.Length == 7 && int.Parse(parts[0].Trim()) == id)
                     {
                         continue;
                     }

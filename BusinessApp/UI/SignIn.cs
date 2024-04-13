@@ -16,6 +16,7 @@ using RMS.BL;
 using RMS.DL;
 using SignInSignUp.UI;
 using System.Configuration;
+using Guna.UI2.WinForms;
 
 
 
@@ -59,13 +60,6 @@ namespace SSC
             return true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Homepage home = new Homepage(this.Size,this.Location);
-            home.Show();
-            this.Hide();
-        }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             if (!password.UseSystemPasswordChar)
@@ -77,68 +71,6 @@ namespace SSC
                 password.UseSystemPasswordChar = false;
             }
         }
-
-        private void signInButton_Click(object sender, EventArgs e)
-        {
-            if (CheckValidations())
-            {
-                string role = ObjectHandler.GetUserDL().SearchUserForRole(email.Text,password.Text);
-                if (role != "")
-                {
-                    int userID = ObjectHandler.GetUserDL().GetUserID(email.Text);
-                    if (role == "Customer" && userID != -1) //Search customer by id
-                    {
-                        Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);
-                        CustomerDashboard c = new CustomerDashboard(this.Size, this.Location, customer);
-                        c.Show();
-                        this.Hide();
-                    }
-                    else if (role == "Chef" && userID != -1)
-                    {
-                        Chef chef = ObjectHandler.GetEmployeeDL().SearchChefById(userID);
-                        ChefDashboard c = new ChefDashboard(this.Size, this.Location, chef);
-                        c.Show();
-                        this.Hide();
-                    }
-                    else if (role == "Waiter" && userID != -1)
-                    {
-                        Waiter waiter = ObjectHandler.GetEmployeeDL().SearchWaiterById(userID);
-                        WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
-                        w.Show();
-                        this.Hide();
-                    }
-                    else if (role == "Admin" && userID != -1)
-                    {
-                        Admin admin = ObjectHandler.GetEmployeeDL().SearchAdminById(userID);
-                        if (admin != null)
-                        {
-                            AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
-                            a.Show();
-                            this.Hide();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-
-        private void forgotPasswordButton_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SignIn_Load(object sender, EventArgs e)
-        {
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -200,6 +132,64 @@ namespace SSC
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void signInButton_Click(object sender, EventArgs e)
+        {
+            if (CheckValidations())
+            {
+                string role = ObjectHandler.GetUserDL().SearchUserForRole(email.Text, password.Text);
+                if (role != "")
+                {
+                    int userID = ObjectHandler.GetUserDL().GetUserID(email.Text);
+                    if (role == "Customer" && userID != -1) //Search customer by id
+                    {
+                        Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);
+                        CustomerDashboard c = new CustomerDashboard(this.Size, this.Location, customer);
+                        c.Show();
+                        this.Hide();
+                    }
+                    else if (role == "Chef" && userID != -1)
+                    {
+                        Chef chef = ObjectHandler.GetEmployeeDL().SearchChefById(userID);
+                        ChefDashboard c = new ChefDashboard(this.Size, this.Location, chef);
+                        c.Show();
+                        this.Hide();
+                    }
+                    else if (role == "Waiter" && userID != -1)
+                    {
+                        Waiter waiter = ObjectHandler.GetEmployeeDL().SearchWaiterById(userID);
+                        WaiterDashboard w = new WaiterDashboard(this.Size, this.Location, waiter);
+                        w.Show();
+                        this.Hide();
+                    }
+                    else if (role == "Admin" && userID != -1)
+                    {
+                        Admin admin = ObjectHandler.GetEmployeeDL().SearchAdminById(userID);
+                        if (admin != null)
+                        {
+                            AdminDashboard a = new AdminDashboard(this.Size, this.Location, admin);
+                            a.Show();
+                            this.Hide();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            Homepage home = new Homepage(this.Size, this.Location);
+            home.Show();
+            this.Hide();
         }
     }
 }

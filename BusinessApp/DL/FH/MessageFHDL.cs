@@ -37,7 +37,7 @@ namespace RMS.DL
                     foreach (string line in lines)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length == 5 && parts[2].Trim()==id.ToString() || parts[1].Trim()==id.ToString())
+                        if (parts.Length == 5 && parts[2].Trim()==id.ToString())
                         {
                             int senderID = Convert.ToInt32(parts[1].Trim());
                             string messageText = parts[3].Trim();

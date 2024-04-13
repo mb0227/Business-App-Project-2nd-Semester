@@ -187,7 +187,6 @@ namespace SSC.UI
             List<string> notifications = ObjectHandler.GetNotificationDL().GetNotifications(customer.GetID());
             foreach (string notification in notifications)
             {
-                MessageBox.Show(notification);
                 ObjectHandler.GetNotificationDL().MarkAsRead(customer.GetID());
             }
         }

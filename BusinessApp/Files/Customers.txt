@@ -1,3 +1,2 @@
-4,Bilal, 03344207161, Regular, Male,,2
+4,Bilal, 03344207161,VIP, Male,,2
 1,bilal, 03341234567, Regular, Male, ,1
-2,b, 03341234567, Regular, Male, ,4

@@ -150,7 +150,7 @@ namespace SignInSignUp.UI
                             int ID = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
 
                             ObjectHandler.GetReservationDL().DeleteReservationByID(ID);
-                            ObjectHandler.GetTableDL().UpdateTable(new RMS.BL.Table(ObjectHandler.GetTableDL().GetTableCapacity(Convert.ToInt32(selectedDataGridViewRow.Cells["TableID"].Value)), Convert.ToInt32(selectedDataGridViewRow.Cells["TableID"].Value), "Unbooked"));
+                            ObjectHandler.GetTableDL().UpdateTable(new RMS.BL.Table(Convert.ToInt32(selectedDataGridViewRow.Cells["TotalPersons"].Value),ObjectHandler.GetTableDL().GetTableCapacity(Convert.ToInt32(selectedDataGridViewRow.Cells["TableID"].Value)), "Unbooked"));
                             FillComboBox();
                             LoadData();
                             selectedRow = -1;

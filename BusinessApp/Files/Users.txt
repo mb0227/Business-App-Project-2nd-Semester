@@ -2,5 +2,6 @@
 2,b7@mail.com,B, Customer
 1,b7@Mail.com, b, Customer
 3,e@mail.com, b, Chef
-4,b1@mail.com, b, Customer
 6,c@mail.com, b, Chef
+7,d@mail.com, d, Waiter
+8,wee@mail.com, b, Waiter

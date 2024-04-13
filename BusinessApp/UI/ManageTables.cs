@@ -222,7 +222,7 @@ namespace SignInSignUp.UI
                             DataGridViewRow selectedDataGridViewRow = guna2DataGridView1.Rows[selectedRow];
                             if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
                             {
-                                if (ObjectHandler.GetTableDL().GetTableById(Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value)).GetStatus() == "Unbooked")
+                                if (ObjectHandler.GetTableDL().GetTableById(Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value)).GetStatus().Trim() == "Unbooked")
                                 {
                                     ClearTable();
                                     ObjectHandler.GetTableDL().DeleteTable(Convert.ToInt32(id));

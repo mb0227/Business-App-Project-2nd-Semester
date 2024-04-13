@@ -17,7 +17,6 @@ namespace RMS.DL
         void UpdateTable(Table t);
         List<Table> GetTables();
         Table GetTableById(int id);
-        void SaveTable(Table table);
-            
+        void SaveTable(Table table);            
     }
 }

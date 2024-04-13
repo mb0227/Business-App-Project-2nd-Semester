@@ -109,7 +109,7 @@ namespace SignInSignUp.UI
 
         private void clearCartButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete Order?", "Confirmation", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to Clear Cart?", "Confirmation", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {

@@ -129,6 +129,7 @@ namespace SignInSignUp.UI
             {
                 if (emp.GetEmployeeID() != Admin.GetEmployeeID())
                     dt.Rows.Add(emp.GetEmployeeID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
+
             }
         }
 
@@ -136,7 +137,7 @@ namespace SignInSignUp.UI
         {
             foreach (Employee emp in ObjectHandler.GetEmployeeDL().GetEmployees())
             {
-                if(emp.GetEmployeeID()!=Admin.GetEmployeeID())
+                if(emp.GetEmployeeID() != Admin.GetEmployeeID())
                     dt.Rows.Add(emp.GetEmployeeID(), emp.GetUsername(), emp.GetContact(), emp.GetSalary(), emp.GetGender(), emp.GetJoinDate(), emp.GetUserID());
             }
         }

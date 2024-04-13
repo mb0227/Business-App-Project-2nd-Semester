@@ -48,7 +48,7 @@ namespace RMS.DL
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
-                writer.WriteLine($"{id},{-1}, {order.GetCustomerComments()}, {""}, {order.GetOrderDate()}, {UtilityFunctions.GetCartString(order.GetProducts())}, {order.GetTotalPrice()}, {order.GetPaymentMethod()}");
+                writer.WriteLine($"{id},{-1}, {order.GetCustomerComments()}, {"0"}, {order.GetOrderDate()}, {UtilityFunctions.GetCartString(order.GetProducts())}, {order.GetTotalPrice()}, {order.GetPaymentMethod()}");
             }
         }
 

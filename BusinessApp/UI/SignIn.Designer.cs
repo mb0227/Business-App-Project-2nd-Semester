@@ -30,100 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
-            this.label1 = new System.Windows.Forms.Label();
-            this.signInButton = new System.Windows.Forms.Button();
-            this.email = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.homepageButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gradientPanel1 = new SSC.GradientPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.password = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.gradientPanel1 = new SSC.GradientPanel();
+            this.signInButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            this.gradientPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.gradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(170, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email";
-            // 
-            // signInButton
-            // 
-            this.signInButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.signInButton.BackColor = System.Drawing.Color.Aqua;
-            this.signInButton.FlatAppearance.BorderSize = 0;
-            this.signInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signInButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signInButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.signInButton.Location = new System.Drawing.Point(356, 450);
-            this.signInButton.Name = "signInButton";
-            this.signInButton.Size = new System.Drawing.Size(140, 51);
-            this.signInButton.TabIndex = 4;
-            this.signInButton.Text = "Sign In";
-            this.signInButton.UseVisualStyleBackColor = false;
-            this.signInButton.Click += new System.EventHandler(this.signInButton_Click);
-            // 
-            // email
-            // 
-            this.email.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.email.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.Location = new System.Drawing.Point(176, 237);
-            this.email.Margin = new System.Windows.Forms.Padding(5);
-            this.email.Multiline = true;
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(214, 39);
-            this.email.TabIndex = 0;
-            this.email.WordWrap = false;
-            // 
-            // password
-            // 
-            this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.password.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(176, 336);
-            this.password.Multiline = true;
-            this.password.Name = "password";
-            this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(214, 37);
-            this.password.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(169, 303);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 27);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Password";
             // 
             // label4
             // 
@@ -146,33 +79,6 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // homepageButton
-            // 
-            this.homepageButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.homepageButton.BackColor = System.Drawing.Color.Aqua;
-            this.homepageButton.FlatAppearance.BorderSize = 0;
-            this.homepageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homepageButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homepageButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.homepageButton.Location = new System.Drawing.Point(74, 450);
-            this.homepageButton.Name = "homepageButton";
-            this.homepageButton.Size = new System.Drawing.Size(137, 51);
-            this.homepageButton.TabIndex = 3;
-            this.homepageButton.Text = "Back";
-            this.homepageButton.UseVisualStyleBackColor = false;
-            this.homepageButton.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(217, 41);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 125);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -183,6 +89,69 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1327, 83);
             this.panel2.TabIndex = 12;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gradientPanel1.Angle = 90F;
+            this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gradientPanel1.BottomColor = System.Drawing.Color.DarkBlue;
+            this.gradientPanel1.Controls.Add(this.panel3);
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 76);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1327, 981);
+            this.gradientPanel1.TabIndex = 17;
+            this.gradientPanel1.TopColor = System.Drawing.Color.MediumOrchid;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.BackColor = System.Drawing.Color.Thistle;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel3.Controls.Add(this.guna2GradientButton1);
+            this.panel3.Controls.Add(this.signInButton);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pictureBox5);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.pictureBox4);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.email);
+            this.panel3.Controls.Add(this.password);
+            this.panel3.Location = new System.Drawing.Point(370, 33);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(555, 557);
+            this.panel3.TabIndex = 16;
+            // 
+            // password
+            // 
+            this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.password.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.Location = new System.Drawing.Point(176, 336);
+            this.password.Multiline = true;
+            this.password.Name = "password";
+            this.password.PasswordChar = '*';
+            this.password.Size = new System.Drawing.Size(214, 37);
+            this.password.TabIndex = 1;
+            // 
+            // email
+            // 
+            this.email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.email.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.Location = new System.Drawing.Point(176, 237);
+            this.email.Margin = new System.Windows.Forms.Padding(5);
+            this.email.Multiline = true;
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(214, 39);
+            this.email.TabIndex = 0;
+            this.email.WordWrap = false;
             // 
             // pictureBox3
             // 
@@ -206,11 +175,35 @@
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(169, 303);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 27);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Password";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(170, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 27);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Email";
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(402, 336);
+            this.pictureBox5.Location = new System.Drawing.Point(402, 337);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 31);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -218,30 +211,21 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // panel3
+            // pictureBox2
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.Honeydew;
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pictureBox5);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Controls.Add(this.signInButton);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.email);
-            this.panel3.Controls.Add(this.password);
-            this.panel3.Controls.Add(this.homepageButton);
-            this.panel3.Location = new System.Drawing.Point(370, 33);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(555, 557);
-            this.panel3.TabIndex = 16;
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(217, 41);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(131, 125);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.MintCream;
+            this.button1.BackColor = System.Drawing.Color.Thistle;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,20 +238,47 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // gradientPanel1
+            // signInButton
             // 
-            this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanel1.Angle = 90F;
-            this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gradientPanel1.BottomColor = System.Drawing.Color.DarkBlue;
-            this.gradientPanel1.Controls.Add(this.panel3);
-            this.gradientPanel1.Location = new System.Drawing.Point(0, 76);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1327, 981);
-            this.gradientPanel1.TabIndex = 17;
-            this.gradientPanel1.TopColor = System.Drawing.Color.MediumOrchid;
+            this.signInButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.signInButton.BorderRadius = 18;
+            this.signInButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.signInButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.signInButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.signInButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.signInButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.signInButton.FillColor = System.Drawing.Color.Purple;
+            this.signInButton.FillColor2 = System.Drawing.Color.MediumOrchid;
+            this.signInButton.Font = new System.Drawing.Font("Segoe UI Emoji", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signInButton.ForeColor = System.Drawing.Color.White;
+            this.signInButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.signInButton.Location = new System.Drawing.Point(357, 433);
+            this.signInButton.Name = "signInButton";
+            this.signInButton.Size = new System.Drawing.Size(180, 68);
+            this.signInButton.TabIndex = 4;
+            this.signInButton.Text = "Sign In";
+            this.signInButton.Click += new System.EventHandler(this.signInButton_Click);
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2GradientButton1.BorderRadius = 18;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.Purple;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.MediumOrchid;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Emoji", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(38, 433);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(180, 68);
+            this.guna2GradientButton1.TabIndex = 3;
+            this.guna2GradientButton1.Text = "Back";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // SignIn
             // 
@@ -282,40 +293,38 @@
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sign In Page";
-            this.Load += new System.EventHandler(this.SignIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.gradientPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.gradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button signInButton;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
-        private System.Windows.Forms.Button homepageButton;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
+        private GradientPanel gradientPanel1;
+        private System.Windows.Forms.Panel panel3;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton signInButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel3;
-        private GradientPanel gradientPanel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox password;
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SSC;
+using static System.Windows.Forms.LinkLabel;
 
 namespace RMS.DL
 {
@@ -78,16 +79,19 @@ namespace RMS.DL
                     string[] parts = line.Split(',');
                     if (parts.Length == 3)
                     {
-                        int id = int.Parse(parts[0]);
+                        int id = int.Parse(parts[0].Trim());
                         int loyaltyPoints = int.Parse(parts[1]);
-                        int customerID = int.Parse(parts[2]);
+                        int customerID = int.Parse(parts[2].Trim());
 
-                        string[] Lines= File.ReadAllLines(path2);
-                        string[] parts2 = Lines[0].Split(',');
-                        if (parts2.Length == 7 && parts2[0].Trim() == customerID.ToString())
+                        string[] Lines = File.ReadAllLines(path2);
+                        foreach (string Line in Lines)
                         {
-                            string username = parts2[1].Trim();
-                            regulars.Add(new Regular(username,id, loyaltyPoints, customerID));
+                            string[] parts2 = Line.Split(',');
+                            if (parts2.Length == 7 && parts2[0].Trim() == customerID.ToString())
+                            {
+                                string username = parts2[1].Trim();
+                                regulars.Add(new Regular(username, id, loyaltyPoints, customerID));
+                            }
                         }
                     }
                 }

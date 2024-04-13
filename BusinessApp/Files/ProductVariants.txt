@@ -3,3 +3,4 @@
 3,Large, 1400, 2
 4,Ande Wala, 120, 1
 5,ZINGER, 250, 1
+6,half liter, 100, 4

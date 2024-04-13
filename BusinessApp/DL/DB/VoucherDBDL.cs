@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RMS.DL
 {
-    public class VoucherDBDL
+    public class VoucherDBDL : IVoucherDL
     {
         public void GenerateVouchers()
         {

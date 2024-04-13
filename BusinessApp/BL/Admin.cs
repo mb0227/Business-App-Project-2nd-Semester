@@ -23,10 +23,11 @@ namespace RMS.BL
         {
             AdminID = adminid;
             Permissions=p ;
+            EmployeeID = empid;
             ToolsUsed = t;
         }
 
-        public Admin(string username, string contact, double salary, DateTime joinDate, string gender, int userID, List<string> t, List<string> p, int employeeID) : base(employeeID,username, contact, salary, joinDate, gender, userID)
+        public Admin(string username, string contact, double salary, DateTime joinDate, string gender, int userID, List<string> t, List<string> p, int employeeID) : base(username, contact, salary, joinDate, gender, userID)
         {
             Permissions = p;
             ToolsUsed = t;
@@ -44,6 +45,11 @@ namespace RMS.BL
         public int GetAdminID()
         {
             return AdminID;
+        }
+
+        public override int GetEmployeeID()
+        {
+            return EmployeeID;
         }
 
         public void AddPermission(string permission)

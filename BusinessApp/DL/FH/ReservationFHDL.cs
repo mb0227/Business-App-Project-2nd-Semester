@@ -27,7 +27,7 @@ namespace RMS.DL
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
-                writer.WriteLine($"{id},{r.GetTotalPersons()}, {r.GetReservationDate()},{r.GetTableID()}");
+                writer.WriteLine($"{id},{r.GetTotalPersons()}, {r.GetReservationDate()},{r.GetTableID()}, {"-1"}");
             }
         }
 
@@ -67,13 +67,13 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 5)
+                        if (parts.Length >= 4)
                         {
                             int id = int.Parse(parts[0]);
                             DateTime date = DateTime.Parse(parts[2]);
                             int persons = int.Parse(parts[1]);
-                            int customerID = int.Parse(parts[4]);
                             int tableId = int.Parse(parts[3]);
+                             int customerID = int.Parse(parts[4]);
                             Reservation reservation = new Reservation(id, date, persons, customerID, tableId);
                             reservations.Add(reservation);
                         }

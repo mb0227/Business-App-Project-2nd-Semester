@@ -99,11 +99,12 @@ namespace RMS.DL
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 3 && parts[0].Trim() == id.ToString())
+                        if (parts.Length == 3 && parts[0].Trim() == id.ToString())
                         {
-                            int capacity = int.Parse(parts[1]);
+                            int tableId = int.Parse(parts[0].Trim());
+                            int capacity = int.Parse(parts[1].Trim());
                             string status = parts[2];
-                            return new Table(capacity, id, status);
+                            return new Table(capacity, tableId, status);
                         }
                     }
                 }
@@ -213,7 +214,7 @@ namespace RMS.DL
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
-                    if (parts.Length == 3 && parts[0] == id.ToString())
+                    if (parts.Length == 3 && parts[0].Trim() == id.ToString())
                     {
                         lines[i] = "";
                         break;
