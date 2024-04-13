@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class ManageReservations : Form
     {

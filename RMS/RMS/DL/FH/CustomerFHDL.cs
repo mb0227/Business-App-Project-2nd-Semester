@@ -4,8 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using RMS.BL;
-using SSC;
-using SSC.UI;
+using RMS.UI;
 
 namespace RMS.DL
 {

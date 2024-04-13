@@ -14,13 +14,15 @@ using Microsoft.VisualBasic;
 using SSC.UI;
 using RMS.BL;
 using RMS.DL;
-using SignInSignUp.UI;
+
 using System.Configuration;
 using Guna.UI2.WinForms;
+using System.IO;
+using Utility.UI;
 
 
 
-namespace SSC
+namespace RMS.UI
 {
     public partial class SignIn : Form
     {
@@ -38,60 +40,26 @@ namespace SSC
 
         private bool CheckValidations()
         {
-            if (string.IsNullOrWhiteSpace(email.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(emailL.Text.Trim()))
             {
-                errorProvider1.SetError(email, "Username cannot be empty.");
+                errorProvider1.SetError(emailL, "Username cannot be empty.");
                 return false;
             }
             else
             {
-                errorProvider1.SetError(email, "");
+                errorProvider1.SetError(emailL, "");
             }
 
-            if (string.IsNullOrWhiteSpace(password.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(passwordL.Text.Trim()))
             {
-                errorProvider2.SetError(password, "Password cannot be empty.");
+                errorProvider2.SetError(passwordL, "Password cannot be empty.");
                 return false;
             }
             else
             {
-                errorProvider2.SetError(password, "");
+                errorProvider2.SetError(passwordL, "");
             }
             return true;
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            if (!password.UseSystemPasswordChar)
-            {
-                password.UseSystemPasswordChar = true;
-            }
-            else if (password.UseSystemPasswordChar)
-            {
-                password.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Do you want to send an email?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                if (ObjectHandler.GetUserDL().EmailAlreadyExists(email.Text))
-                {
-                    Customer customer = ObjectHandler.GetCustomerDL().ForgotPassword(ObjectHandler.GetUserDL().GetUserID(email.Text));
-                    SendEmail(customer, email.Text);
-                }
-                else
-                {
-                    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Email sending cancelled.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }             
         }
 
         private void SendEmail(Customer customer, string to)
@@ -100,8 +68,8 @@ namespace SSC
             Random rand = new Random();
             randomCode = rand.Next(100000, 999999).ToString();
             MailMessage message = new MailMessage();
-            from = "omerakram913@gmail.com";
-            pass = "qbqi lbmi tftk nytm";
+            from = GetCredentials.GetCreds("mail");
+            pass = GetCredentials.GetCreds("pass");
             messageBody = "Your reset code is " + randomCode;
             message.To.Add(to);
             message.From = new MailAddress(from);
@@ -134,14 +102,20 @@ namespace SSC
             }
         }
 
-        private void signInButton_Click(object sender, EventArgs e)
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
+            passwordL.UseSystemPasswordChar = true;
+        }
+
+        private void signInBtn_Click(object sender, EventArgs e)
         {
             if (CheckValidations())
             {
-                string role = ObjectHandler.GetUserDL().SearchUserForRole(email.Text, password.Text);
+                string role = ObjectHandler.GetUserDL().SearchUserForRole(emailL.Text, passwordL.Text);
                 if (role != "")
                 {
-                    int userID = ObjectHandler.GetUserDL().GetUserID(email.Text);
+                    int userID = ObjectHandler.GetUserDL().GetUserID(emailL.Text);
                     if (role == "Customer" && userID != -1) //Search customer by id
                     {
                         Customer customer = ObjectHandler.GetCustomerDL().SearchCustomerById(userID);
@@ -185,11 +159,45 @@ namespace SSC
             }
         }
 
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
         {
             Homepage home = new Homepage(this.Size, this.Location);
             home.Show();
             this.Hide();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            if (!passwordL.UseSystemPasswordChar)
+            {
+                passwordL.UseSystemPasswordChar = true;
+            }
+            else if (passwordL.UseSystemPasswordChar)
+            {
+                passwordL.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void forgotPassword_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to send an email?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (ObjectHandler.GetUserDL().EmailAlreadyExists(emailL.Text))
+                {
+                    Customer customer = ObjectHandler.GetCustomerDL().ForgotPassword(ObjectHandler.GetUserDL().GetUserID(emailL.Text));
+                    SendEmail(customer, emailL.Text);
+                }
+                else
+                {
+                    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Email sending cancelled.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

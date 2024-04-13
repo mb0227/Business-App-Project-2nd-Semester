@@ -1,6 +1,7 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Windows.Forms;
 using RMS.BL;
+using RMS.UI;
 using SSC;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SignInSignUp.Reports
+namespace RMS.Reports
 {
     public partial class ShowReport : Form
     {

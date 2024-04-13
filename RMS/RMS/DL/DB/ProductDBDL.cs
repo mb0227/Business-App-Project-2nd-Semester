@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RMS.BL;
-using SSC;
+using RMS.UI;
 
 namespace RMS.DL
 {

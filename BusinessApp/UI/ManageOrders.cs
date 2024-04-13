@@ -12,7 +12,7 @@ using SSC.UI;
 using SSC;
 using System.Data.SqlClient;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class ManageOrders : Form
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SSC.UI;
 
-namespace SSC
+namespace RMS.UI
 {
     public partial class CustomerNavbar : UserControl
     {

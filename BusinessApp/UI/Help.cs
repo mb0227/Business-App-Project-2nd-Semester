@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
+using Utility.UI;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class Help : Form
     {
@@ -109,7 +110,8 @@ namespace SSC.UI
             if (!string.IsNullOrEmpty(msgTB.Text))
             {
                 msgTB.Text = msgTB.Text.Replace(",", "");
-                RMS.BL.Message message = new RMS.BL.Message(customer.GetID(), ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, msgTB.Text);
+                string encryptedMessage = Encryption.Encrypt(msgTB.Text);
+                RMS.BL.Message message = new RMS.BL.Message(customer.GetID(), ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, encryptedMessage);
                 ObjectHandler.GetMessageDL().SendMessage(message);
                 msgTB.Text = "";
                 RefreshPanel();
@@ -133,8 +135,8 @@ namespace SSC.UI
             {
                 foreach (var msg in Messages)
                 {
+                    string decryptedMessage = Encryption.Decrypt(msg.GetMessageText());
                     Label label = new Label();
-                    Label label2 = new Label(); 
                     label.Font = new Font("Segoe UI", 12, FontStyle.Bold);
                     label.TextAlign = ContentAlignment.MiddleLeft;
                     label.AutoSize = true;
@@ -142,13 +144,13 @@ namespace SSC.UI
                     label.Margin = new Padding(0, 5, 0, 0);
                     if (msg.GetSenderID() != customer.GetID())
                     {
-                        label.Text = "Admin: " + msg.GetMessageText() + " " + time;
+                        label.Text = "Admin: " + decryptedMessage + " " + time;
                         label.ForeColor = Color.GreenYellow;
                     }
                     else
                     {
-                        label.Text = "You: " + msg.GetMessageText() + " " + time;
-                        label.ForeColor = Color.AliceBlue;
+                        label.Text = "You: " + decryptedMessage + " " + time;
+                        label.ForeColor = Color.BlanchedAlmond;
                     }
                     msgPanel.Controls.Add(label);
                 }

@@ -7,8 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using RMS.BL;
-using SSC;
-using SSC.UI;
+using RMS.UI;
 
 namespace RMS.DL
 {

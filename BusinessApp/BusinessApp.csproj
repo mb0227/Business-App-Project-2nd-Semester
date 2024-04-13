@@ -166,6 +166,8 @@
     <Compile Include="UI\CustomerBookTable.Designer.cs">
       <DependentUpon>CustomerBookTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\Encryption.cs" />
+    <Compile Include="Utility\GetCredentials.cs" />
     <Compile Include="Utility\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using SSC.UI;
 using SSC;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class AddVariants : Form
     {

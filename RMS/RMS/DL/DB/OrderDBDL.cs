@@ -6,8 +6,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Drawing;
 using RMS.BL;
-using SSC;
-using SSC.UI;
+using RMS.UI;
 using System.Data.SqlTypes;
 
 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class Navbar : UserControl
     {
@@ -100,6 +100,11 @@ namespace SSC.UI
         private void guna2Button1_Click(object sender, EventArgs e) //settings
         {
             OnNavigationRequested("settings");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

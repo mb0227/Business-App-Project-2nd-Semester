@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.UI
+﻿namespace RMS.UI
 {
     partial class SendNotifications
     {
@@ -147,6 +147,7 @@
             this.Name = "SendNotifications";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SendNotifications";
+            this.Load += new System.EventHandler(this.SendNotifications_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

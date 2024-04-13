@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.UI
+﻿namespace RMS.UI
 {
     partial class ManageFeedback
     {

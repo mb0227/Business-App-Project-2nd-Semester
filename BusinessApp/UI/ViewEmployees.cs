@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using RMS.DL;
 using Guna.UI2.WinForms;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class ViewEmployees : Form
     {

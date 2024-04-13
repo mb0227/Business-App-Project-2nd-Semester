@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class CustomerBookTable : Form
     {

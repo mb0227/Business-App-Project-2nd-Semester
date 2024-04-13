@@ -11,7 +11,7 @@ using RMS.BL;
 using SSC;
 using SSC.UI;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class ChefDashboard : Form
     {
@@ -28,10 +28,6 @@ namespace SignInSignUp.UI
             this.Size = s;
             this.Location = l;
             chef = c;
-        }
-
-        private void ChefDashboard_Load(object sender, EventArgs e)
-        {
         }
 
         private void manageBtns_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.UI
+﻿namespace RMS.UI
 {
     partial class ChefDashboard
     {
@@ -126,7 +126,6 @@
             this.Name = "ChefDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ChefDashboard";
-            this.Load += new System.EventHandler(this.ChefDashboard_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();

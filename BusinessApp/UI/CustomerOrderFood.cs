@@ -9,13 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 using RMS.BL;
 using RMS.DL;
-using SignInSignUp.UI;
-using static TheArtOfDevHtmlRenderer.Adapters.RGraphicsPath;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class CustomerOrderFood : Form
     {

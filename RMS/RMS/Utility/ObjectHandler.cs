@@ -7,115 +7,115 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public class ObjectHandler
     {
         public static IUserDL GetUserDL()
         {
-            return new UserFHDL();
             //return new UserDBDL();
+            return new UserDBDL();
         }
 
         public static ICustomerDL GetCustomerDL()
         {
-            return new CustomerFHDL();
+            return new CustomerDBDL();
             //return new CustomerDBDL();
         }
 
         public static IRegularDL GetRegularDL()
         {
-            return new RegularFHDL();
+            return new RegularDBDL();
             //return new RegularDBDL();
         }
 
         public static IEmployeeDL GetEmployeeDL()
         {
-            return new EmployeeFHDL();
+            return new EmployeeDBDL();
             //return new EmployeeDBDL();
         }
 
         public static IAdminDL GetAdminDL()
         {
-            return new AdminFHDL();
+            return new AdminDBDL();
             //return new AdminDBDL();
         }
 
         public static IChefDL GetChefDL()
         {
-            return new ChefFHDL();
+            return new ChefDBDL();
             //return new ChefDBDL();
         }
 
         public static IVipDL GetVipDL()
         {
-            return new VipFHDL();
+            return new VipDBDL();
             //return new VipDBDL();
         }
 
         public static IFeedbackDL GetFeedbackDL()
         {
-            return new FeedbackFHDL();
+            return new FeedbackDBDL();
             //return new FeedbackDBDL();
         }
 
         public static IReservationDL GetReservationDL()
         {
-            return new ReservationFHDL();
+            return new ReservationDBDL();
             //return new ReservationDBDL();
         }
 
         public static ITableDL GetTableDL()
         {
-            return new TableFHDL();
+            return new TableDBDL();
             //return new TableDBDL();
         }
 
         public static IWaiterDL GetWaiterDL()
         {
-            return new WaiterFHDL();
+            return new WaiterDBDL();
             //return new WaiterDBDL();
         }
 
         public static INotificationDL GetNotificationDL()
         {
-            return new NotificationFHDL();
+            return new NotificationDBDL();
             //return new NotificationDBDL();
         }
 
         public static IOrderDL GetOrderDL()
         {
-            return new OrderFHDL();
+            return new OrderDBDL();
             //return new OrderDBDL();
         }
 
         public static IProductDL GetProductDL()
         {
-            return new ProductFHDL();
+            return new ProductDBDL();
             //return new ProductDBDL();
         }
 
         public static IDealDL GetDealDL()
         {
-            return new DealFHDL();
+            return new DealDBDL();
             //return new DealDBDL();
         }
 
         public static IMessageDL GetMessageDL()
         {
-            return new MessageFHDL();
+            return new MessageDBDL();
             //return new MessageDBDL();
         }
 
         public static IVoucherDL GetVoucherDL()
         {
-            return new VoucherFHDL();
+            return new VoucherDBDL();
             //return new VoucherDBDL;
         }
 
         public static IPhotoDL GetPhotoDL()
         {
-            return new UserFHDL();
+            return new UserDBDL();
             //return new VoucherDBDL;
         }
     }

@@ -1,5 +1,5 @@
 ﻿using RMS.BL;
-using SSC;
+using RMS.UI;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

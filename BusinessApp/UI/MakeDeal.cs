@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class MakeDeal : Form
     {

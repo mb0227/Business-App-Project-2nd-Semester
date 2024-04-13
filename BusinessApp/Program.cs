@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
-using SignInSignUp.UI;
 
-namespace SSC
+
+namespace RMS.UI
 {
     public static class Program
     {
@@ -25,7 +25,7 @@ namespace SSC
             //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
             ObjectHandler.GetRegularDL().GetRegulars();
-            Application.Run(new SignIn());
+            Application.Run(new Homepage());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.UI
+﻿namespace RMS.UI
 {
     partial class AddAdmin
     {
@@ -129,7 +129,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1276, 897);
             this.panel3.TabIndex = 25;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // tb1
             // 
@@ -564,7 +563,6 @@
             this.Name = "AddAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddAdmin";
-            this.Load += new System.EventHandler(this.AddAdmin_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);

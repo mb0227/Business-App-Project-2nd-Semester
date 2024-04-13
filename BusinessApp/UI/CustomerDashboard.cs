@@ -14,7 +14,7 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Drawing.Imaging;
 
-namespace SSC
+namespace RMS.UI
 {
     public partial class CustomerDashboard : Form
     {

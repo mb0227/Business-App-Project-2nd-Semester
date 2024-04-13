@@ -13,8 +13,9 @@ using RMS.DL;
 using SignInSignUp.Reports;
 using CrystalDecisions.CrystalReports.Engine;
 using System.IO;
+using RMS.Reports;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class Settings : Form
     {

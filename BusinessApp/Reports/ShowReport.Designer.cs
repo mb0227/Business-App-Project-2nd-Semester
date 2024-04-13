@@ -1,4 +1,4 @@
-﻿namespace SignInSignUp.Reports
+﻿namespace RMS.Reports
 {
     partial class ShowReport
     {

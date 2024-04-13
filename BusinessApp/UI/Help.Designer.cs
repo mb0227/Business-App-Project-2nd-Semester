@@ -1,4 +1,4 @@
-﻿namespace SSC.UI
+﻿namespace RMS.UI
 {
     partial class Help
     {

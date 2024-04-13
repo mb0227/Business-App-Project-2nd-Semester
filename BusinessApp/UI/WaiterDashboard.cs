@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class WaiterDashboard : Form
     {

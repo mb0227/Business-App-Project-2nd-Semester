@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class SendNotifications : Form
     {
@@ -125,6 +125,11 @@ namespace SignInSignUp.UI
                 notification.Text = "";
                 MessageBox.Show("Notification sent successfully","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+        }
+
+        private void SendNotifications_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,7 +12,7 @@ using RMS.BL;
 using RMS.DL;
 using SSC.UI;
 
-namespace SSC
+namespace RMS.UI
 {
     public partial class SignUp : Form
     {
@@ -33,7 +33,7 @@ namespace SSC
         {
             username.Text = username.Text.Replace(",", "");
             email.Text = email.Text.Replace(",", "");
-            phoneNo.Text = phoneNo.Text.Replace(",", "");
+            contact.Text = contact.Text.Replace(",", "");
             password.Text = password.Text.Replace(",", "");
             password2.Text = password2.Text.Replace(",", "");
         }               
@@ -42,23 +42,13 @@ namespace SSC
         {
             username.Text = "";
             email.Text = "";
-            phoneNo.Text = "";
+            contact.Text = "";
             password.Text = "";
             password2.Text = "";
         }
         private bool CheckValidations()
         {
             ReplaceCommas();
-            if (string.IsNullOrWhiteSpace(username.Text.Trim()))
-            {
-                errorProvider1.SetError(username, "Username cannot be empty.");
-                return false;
-            }
-            else
-            {
-                errorProvider1.SetError(username, "");
-            }
-
             string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             if (!Regex.IsMatch(email.Text, pattern))
             {
@@ -70,18 +60,49 @@ namespace SSC
                 errorProvider2.SetError(email, "");
             }
 
-            string contactPattern = @"^0\d{10}$";
-            if (!Regex.IsMatch(phoneNo.Text, contactPattern))
+            if (ObjectHandler.GetUserDL().EmailAlreadyExists(email.Text))
             {
-                errorProvider3.SetError(phoneNo, "Please enter a valid phone number.");
+                errorProvider2.SetError(email, "Email already exists.");
                 return false;
             }
             else
             {
-                errorProvider3.SetError(phoneNo, "");
+                errorProvider2.SetError(email, "");
             }
 
-            if (!IsRadioButtonSelected(groupBox1))
+            if (ObjectHandler.GetCustomerDL().UsernameAlreadyExists(username.Text))
+            {
+                errorProvider1.SetError(username, "Username already exists.");
+                return false;
+            }
+            else
+            {
+                errorProvider2.SetError(username, "");
+            }
+
+
+            if (string.IsNullOrWhiteSpace(username.Text.Trim()))
+            {
+                errorProvider1.SetError(username, "Username cannot be empty.");
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(username, "");
+            }
+
+            string contactPattern = @"^0\d{10}$";
+            if (!Regex.IsMatch(contact.Text, contactPattern))
+            {
+                errorProvider3.SetError(contact, "Please enter a valid phone number.");
+                return false;
+            }
+            else
+            {
+                errorProvider3.SetError(contact, "");
+            }
+
+            if (!IsRadioButtonSelected(groupBox2))
             {
                 MessageBox.Show("Please select a radio button.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -103,27 +124,6 @@ namespace SSC
                 return false;
             }
 
-            // Check if email already exists
-            if (ObjectHandler.GetUserDL().EmailAlreadyExists(email.Text))
-            {
-                errorProvider2.SetError(email, "Email already exists.");
-                return false;
-            }
-            else
-            {
-                errorProvider2.SetError(email, "");
-            }
-
-            if (ObjectHandler.GetCustomerDL().UsernameAlreadyExists(username.Text))
-            {
-                errorProvider1.SetError(username, "Username already exists.");
-                return false;
-            }
-            else
-            {
-                errorProvider2.SetError(username, "");
-            }
-
             return true;
         }
 
@@ -139,36 +139,9 @@ namespace SSC
             return false;
         }
 
-
-        private void Home_Click_1(object sender, EventArgs e)
-        {
-            Homepage home = new Homepage(this.Size, this.Location);
-            home.Show();
-            this.Hide();
-        }
-
-        private void signupbutton_Click(object sender, EventArgs e)
-        {
-            if(CheckValidations())
-            {
-                User user = new User(email.Text, password.Text, "Customer");
-                ObjectHandler.GetUserDL().SaveUser(user);
-                Customer customer = new Customer(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString());
-                customer.SetUserID(ObjectHandler.GetUserDL().GetUserID(email.Text));
-                //UserDBDL.SaveImage(customer.GetUserID());
-                ObjectHandler.GetCustomerDL().SaveCustomer(customer);
-                Regular regular = new Regular(username.Text, phoneNo.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
-                ObjectHandler.GetRegularDL().SaveRegular(regular);
-                MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SignIn signIn = new SignIn(this.Size, this.Location);
-                signIn.Show();
-                this.Hide();
-            }
-        }
-
         private RadioButton GetSelectedRadioButton()
         {
-            foreach (Control control in groupBox1.Controls)
+            foreach (Control control in groupBox2.Controls)
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
@@ -177,8 +150,32 @@ namespace SSC
             }
             return null;
         }
+        private void signUpBtn_Click(object sender, EventArgs e)
+        {
+            if (CheckValidations())
+            {
+                User user = new User(email.Text, password.Text, "Customer");
+                ObjectHandler.GetUserDL().SaveUser(user);
+                Customer customer = new Customer(username.Text, contact.Text, "Regular", GetSelectedRadioButton().Text.ToString());
+                customer.SetUserID(ObjectHandler.GetUserDL().GetUserID(email.Text));
+                ObjectHandler.GetCustomerDL().SaveCustomer(customer);
+                Regular regular = new Regular(username.Text, contact.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
+                ObjectHandler.GetRegularDL().SaveRegular(regular);
+                MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SignIn signIn = new SignIn(this.Size, this.Location);
+                signIn.Show();
+                this.Hide();
+            }
+        }
 
-        private void pictureBox9_Click_1(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
+        {            
+          Homepage home = new Homepage(this.Size, this.Location);
+          home.Show();
+          this.Hide();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
         {
             if (!password.UseSystemPasswordChar)
             {
@@ -190,7 +187,7 @@ namespace SSC
             }
         }
 
-        private void pictureBox10_Click_1(object sender, EventArgs e)
+        private void pictureBox11_Click(object sender, EventArgs e)
         {
             if (!password2.UseSystemPasswordChar)
             {
@@ -204,7 +201,8 @@ namespace SSC
 
         private void SignUp_Load(object sender, EventArgs e)
         {
-
+            password.UseSystemPasswordChar = true;
+            password2.UseSystemPasswordChar = true;
         }
     }
 }

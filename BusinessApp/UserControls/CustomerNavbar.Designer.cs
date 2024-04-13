@@ -1,4 +1,4 @@
-﻿namespace SSC
+﻿namespace RMS.UI
 {
     partial class CustomerNavbar
     {

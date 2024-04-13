@@ -10,9 +10,8 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using RMS.BL;
 using RMS.DL;
-using SignInSignUp.UI;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class ManageCustomers : Form
     {

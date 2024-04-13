@@ -14,7 +14,7 @@ using SSC.Properties;
 using SignInSignUp.Properties;
 using SignInSignUp;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class CustomerFeedback : Form
     {

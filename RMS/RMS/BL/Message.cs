@@ -8,52 +8,57 @@ namespace RMS.BL
 {
     public class Message
     {
-        private int messageID;
-        private int senderID;
-        private int receiverID;
-        private string messageText;
-        private DateTime timeStamp;
+        private int MessageID;
+        private int SenderID;
+        private int ReceiverID;
+        private string MessageText;
+        private DateTime TimeStamp;
 
         public Message(int senderID, int receiverID, string messageText)
         {
-            this.senderID = senderID;
-            this.receiverID = receiverID;
-            this.messageText = messageText;
+            this.SenderID = senderID;
+            this.ReceiverID = receiverID;
+            this.MessageText = messageText;
         }
 
         public Message(int senderID, int receiverID, string messageText, DateTime time) : this(senderID, receiverID, messageText)
         {
-            timeStamp = time;
+            TimeStamp = time;
         }
 
         public Message(int messageID, int senderID, int receiverID, string messageText) : this(senderID, receiverID, messageText)
         {
-            this.messageID = messageID;
+            this.MessageID = messageID;
         }
 
         public DateTime GetTime()
         {
-            return timeStamp;
+            return TimeStamp;
         }
 
         public int GetMessageID()
         {
-            return messageID;
+            return MessageID;
         }
 
         public int GetSenderID()
         {
-            return senderID;
+            return SenderID;
         }
 
         public int GetReceiverID()
         {
-            return receiverID;
+            return ReceiverID;
         }
 
         public string GetMessageText()
         {
-            return messageText;
+            return MessageText;
+        }
+
+        public void SetMessageText(string messageText)
+        {
+            MessageText = messageText;
         }
     }
 }

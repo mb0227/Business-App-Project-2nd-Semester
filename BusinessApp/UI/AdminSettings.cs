@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using System.Data.SqlClient;
-using SignInSignUp.Reports;
+using RMS.Reports;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class AdminSettings : Form
     {

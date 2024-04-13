@@ -10,8 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utility.UI;
 
-namespace SignInSignUp.UI
+
+namespace RMS.UI
 {
     public partial class ManageFeedback : Form
     {
@@ -137,7 +139,8 @@ namespace SignInSignUp.UI
 
             foreach (var item in ObjectHandler.GetMessageDL().ReceiveMessages(Admin.GetEmployeeID()*-1, "SELECT * FROM Messages WHERE ReceiverID = @ID ORDER BY Timestamp ASC"))
             {
-                dt.Rows.Add(item.GetSenderID(), item.GetMessageText());
+                string decryptedMessage = Encryption.Decrypt(item.GetMessageText());
+                dt.Rows.Add(item.GetSenderID(), decryptedMessage);
             }
             dgv.DataSource = dt;
             ChangeVisibility(false, true);
@@ -166,10 +169,10 @@ namespace SignInSignUp.UI
 
                         if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["CustomerID"].Value != null)
                         {
-                            reply.Text = reply.Text.Replace(",", "");
+                            tb.Text = tb.Text.Replace(",", "");
                             if (!string.IsNullOrEmpty(reply.Text))
                             {
-                                RMS.BL.Message message = new RMS.BL.Message(ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, Convert.ToInt32(selectedDataGridViewRow.Cells["CustomerID"].Value),tb.Text);
+                                RMS.BL.Message message = new RMS.BL.Message(ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, Convert.ToInt32(selectedDataGridViewRow.Cells["CustomerID"].Value), Encryption.Encrypt(tb.Text));
                                 ObjectHandler.GetMessageDL().SendMessage(message);
                                 tb.Text = "";
                             }

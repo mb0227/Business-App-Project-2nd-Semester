@@ -14,7 +14,7 @@ using RMS.DL;
 using Guna.UI2.WinForms;
 using System.Text.RegularExpressions;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class AddAdmin : Form
     {
@@ -272,16 +272,6 @@ namespace SignInSignUp.UI
             {
                 control.Visible = false;
             }
-        }
-
-        private void AddAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

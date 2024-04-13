@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SSC
+namespace RMS.UI
 {
     public partial class CustomerHeader : UserControl
     {
         public CustomerHeader()
         {
             InitializeComponent();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

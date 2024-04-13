@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using RMS.DL;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class OrderDeal : Form
     {
@@ -89,7 +89,7 @@ namespace SignInSignUp.UI
                     OpenForm(new Settings(this.Size, this.Location, customer));
                     break;
                 case "help":
-                    OpenForm(new SSC.UI.Help(this.Size, this.Location, customer));
+                    OpenForm(new Help(this.Size, this.Location, customer));
                     break;
                 default:
                     break;

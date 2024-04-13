@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
-using SignInSignUp.UI;
 
-namespace SSC.UI
+namespace RMS.UI
 {
     public partial class AdminDashboard : Form
     {

@@ -17,7 +17,7 @@ using System.Web.UI;
 using System.Drawing.Drawing2D;
 using System.Xml.Linq;
 
-namespace SignInSignUp.UI
+namespace RMS.UI
 {
     public partial class ManageTables : Form
     {
