@@ -121,7 +121,7 @@ namespace SSC.UI
             {
                 ChangeButtonsText();
             }
-            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            pictureBox.Image = ObjectHandler.GetPhotoDL().LoadImage(customer.GetUserID());
         }
 
         private void MakeBtnVisible(int x,int y)
@@ -368,7 +368,7 @@ namespace SSC.UI
                 if (r.GetLoyaltyPoints() >= 100)
                 {
                     MessageBox.Show("Congrats! You are now a Silver VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    r.PromoteToVip(UtilityFunctions.AwardVouchers(3));
+                    r.PromoteToVip(ObjectHandler.GetVoucherDL().AwardVouchers(3));
                     customer.SetStatus("VIP");
                     ChangeButtonsText();
                     ShowAwardMessage(3);
@@ -384,7 +384,7 @@ namespace SSC.UI
                 {
                     VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
                     v.SetMembershipLevel("Diamond");
-                    ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), UtilityFunctions.AwardVouchers(25));
+                    ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(25));
                     MessageBox.Show("Congrats! You are now a Diamond VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowAwardMessage(25);
                 }
@@ -392,7 +392,7 @@ namespace SSC.UI
                 {
                     VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
                     v.SetMembershipLevel("Gold");
-                    ObjectHandler.GetVipDL().UpdateVIP("Gold", customer.GetID(), UtilityFunctions.AwardVouchers(10));
+                    ObjectHandler.GetVipDL().UpdateVIP("Gold", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(10));
                     MessageBox.Show("Congrats! You are now a Gold VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowAwardMessage(10);
                 }

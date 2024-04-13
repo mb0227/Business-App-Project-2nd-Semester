@@ -88,11 +88,13 @@
     <Compile Include="DLInterfaces\IMessageDL.cs" />
     <Compile Include="DLInterfaces\INotificationDL.cs" />
     <Compile Include="DLInterfaces\IOrderDL.cs" />
+    <Compile Include="DLInterfaces\IPhotoDL.cs" />
     <Compile Include="DLInterfaces\IProductDL.cs" />
     <Compile Include="DLInterfaces\IRegularDL.cs" />
     <Compile Include="DLInterfaces\IReservationDL.cs" />
     <Compile Include="DLInterfaces\ITableDL.cs" />
     <Compile Include="DLInterfaces\IVipDL.cs" />
+    <Compile Include="DLInterfaces\IVoucherDL.cs" />
     <Compile Include="DLInterfaces\IWaiterDL.cs" />
     <Compile Include="DL\DB\AdminDBDL.cs" />
     <Compile Include="DL\DB\ChefDBDL.cs" />
@@ -112,7 +114,9 @@
     <Compile Include="DL\DB\TableDBDL.cs" />
     <Compile Include="DL\DB\UserDBDL.cs" />
     <Compile Include="DL\DB\VipDBDL.cs" />
+    <Compile Include="DL\DB\VoucherDBDL.cs" />
     <Compile Include="DL\DB\WaiterDBDL.cs" />
+    <Compile Include="DL\FH\VoucherFHDL.cs" />
     <Compile Include="DL\FH\ReservationFHDL.cs" />
     <Compile Include="DL\FH\TableFHDL.cs" />
     <Compile Include="DL\FH\ProductFHDL.cs" />
@@ -586,6 +590,7 @@
     <Content Include="Files\Deals.txt" />
     <Content Include="Files\Admins.txt" />
     <Content Include="Files\Chefs.txt" />
+    <Content Include="Files\Vouchers.txt" />
     <Content Include="Files\Waiters.txt" />
     <Content Include="Files\Employees.txt" />
     <Content Include="Files\Regular.txt" />
@@ -595,6 +600,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Profiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

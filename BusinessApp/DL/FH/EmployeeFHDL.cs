@@ -328,7 +328,6 @@ namespace RMS.DL
             }
 
             path = UtilityFunctions.GetPath("Users.txt");
-            Console.WriteLine(path);
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -336,7 +335,6 @@ namespace RMS.DL
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split(',');
-                    Console.WriteLine(path[0]+" "+userid.ToString());
                     if (parts.Length == 4 && int.Parse(parts[0]) == userid)
                     {
                         continue;

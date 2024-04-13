@@ -14,7 +14,7 @@ using System.Drawing;
 
 namespace RMS.DL
 {
-    public class UserDBDL : IUserDL
+    public class UserDBDL : IUserDL,IPhotoDL
     {
         public void SaveUser(User user)
         {
@@ -133,7 +133,7 @@ namespace RMS.DL
             return role; 
         }
 
-        public static void SaveImage(int userID)
+        public void SaveImage(int userID)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -147,7 +147,7 @@ namespace RMS.DL
             }
         }
 
-        public static void UpdateImage(int userID, byte[] photo)
+        public void UpdateImage(int userID, byte[] photo)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -162,7 +162,7 @@ namespace RMS.DL
             }
         }
 
-        public static Image LoadImage(int userID)
+        public Image LoadImage(int userID)
         {
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {

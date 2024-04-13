@@ -82,15 +82,12 @@ namespace RMS.DL
             {
                 foreach (string line in File.ReadLines(path))
                 {
-                    Console.WriteLine("inn");
                     string[] parts = line.Split(',');
                     if (parts.Length == 7)
                     {
                         string username = parts[1].Trim();
-                        Console.WriteLine("in");
                         if (parts[6].Trim().ToString()==(userID.ToString()))
                         {
-                            Console.WriteLine("i");
                             string contact = parts[2].Trim();
                             string status = parts[3].Trim();
                             string gender = parts[4].Trim();

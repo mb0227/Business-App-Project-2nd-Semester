@@ -11,7 +11,6 @@ namespace RMS.BL
         private string Quantity;
         private double Price; 
 
-        private int VariantID;
         public int ProductID;
 
         public ProductVariant(int productID, string quantity, double price) : this(quantity, price)
@@ -33,11 +32,6 @@ namespace RMS.BL
         public double GetPrice()
         {
             return Price;
-        }
-
-        public int GetVariantID()
-        {
-            return VariantID;
         }
     }
 }

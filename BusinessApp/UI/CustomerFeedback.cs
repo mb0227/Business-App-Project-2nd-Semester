@@ -39,7 +39,7 @@ namespace SSC.UI
 
         private void CustomerFeedback_Load(object sender, EventArgs e)
         {
-            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            pictureBox.Image = ObjectHandler.GetPhotoDL().LoadImage(customer.GetUserID());
             expressionless.MouseEnter += expressionless_MouseEnter;
             expressionless.MouseLeave += expressionless_MouseLeave;
             sad.MouseEnter += sad_MouseEnter;

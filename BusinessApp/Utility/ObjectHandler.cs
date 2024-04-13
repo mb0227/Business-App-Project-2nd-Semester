@@ -106,5 +106,17 @@ namespace SSC.UI
             return new MessageFHDL();
             //return new MessageDBDL();
         }
+
+        public static IVoucherDL GetVoucherDL()
+        {
+            return new VoucherFHDL();
+            //return new VoucherDBDL;
+        }
+
+        public static IPhotoDL GetPhotoDL()
+        {
+            return new UserFHDL();
+            //return new VoucherDBDL;
+        }
     }
 }

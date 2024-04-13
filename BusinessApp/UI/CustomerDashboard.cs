@@ -110,7 +110,7 @@ namespace SSC
 
         private void CustomerDashboard_Load(object sender, EventArgs e)
         {
-            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            pictureBox.Image = ObjectHandler.GetPhotoDL().LoadImage(customer.GetUserID());
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
@@ -128,7 +128,7 @@ namespace SSC
                             {
                                 Image image = Image.FromStream(stream);
                                 pictureBox.Image = ResizeImage(image, pictureBox.Width, pictureBox.Height);
-                                UserDBDL.UpdateImage(customer.GetUserID(), GetPhoto());
+                                ObjectHandler.GetPhotoDL().UpdateImage(customer.GetUserID(), GetPhoto());
                             }
                             catch (Exception ex)
                             {

@@ -260,7 +260,7 @@ namespace SSC.UI
                             int vId = vip.GetVoucherID();
                             if (vId != -1)
                             {
-                                Voucher v = UtilityFunctions.GetVoucher(vId);
+                                Voucher v = ObjectHandler.GetVoucherDL().GetVoucher(vId);
                                 if (v.GetExpirationDate() > DateTime.Today)
                                 {
                                     order = new Order(v.GetDiscount(), customer.GetCart(), Order.OrderStatus.Pending, DateTime.Now, comments.Text, "Cash on Delivery", customer.GetID());
@@ -320,7 +320,7 @@ namespace SSC.UI
 
         private void CustomerOrderFood_Load(object sender, EventArgs e)
         {
-            //pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            pictureBox.Image = ObjectHandler.GetPhotoDL().LoadImage(customer.GetUserID());
             FillComboBox();
             if (menuComboBox.Items.Count > 0)
                 menuComboBox.SelectedIndex = 0;

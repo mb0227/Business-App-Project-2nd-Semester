@@ -87,7 +87,6 @@ namespace RMS.DL
                         if (parts2.Length == 7 && parts2[0].Trim() == customerID.ToString())
                         {
                             string username = parts2[1].Trim();
-                            Console.WriteLine(username);
                             regulars.Add(new Regular(username,id, loyaltyPoints, customerID));
                         }
                     }

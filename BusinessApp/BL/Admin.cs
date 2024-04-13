@@ -24,13 +24,13 @@ namespace RMS.BL
             AdminID = adminid;
             Permissions=p ;
             ToolsUsed = t;
-            EmployeeID = empid;
         }
 
         public Admin(string username, string contact, double salary, DateTime joinDate, string gender, int userID, List<string> t, List<string> p, int employeeID) : base(employeeID,username, contact, salary, joinDate, gender, userID)
         {
             Permissions = p;
             ToolsUsed = t;
+            EmployeeID = employeeID;
         }
 
         public Admin(int id, string username, double salary, List <string> tools, List <string> permissions, int employeeID) : base(username, salary)

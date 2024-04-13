@@ -264,37 +264,7 @@ namespace SignInSignUp.UI
 
         private void generateVouchers_Click(object sender, EventArgs e)
         {
-            GenerateVouchers();
-        }
-
-        private void GenerateVouchers()
-        {
-            Random random = new Random();
-
-            for (int i = 0; i < 200; i++) // Create 200 vouchers
-            {
-                DateTime expirationDate = DateTime.Today.AddDays(random.Next(1, 365));
-                decimal value = (decimal)random.NextDouble() * 1000;
-
-                string insertQuery = $"INSERT INTO Vouchers (ExpirationDate, Value) VALUES ('{expirationDate}', {value})";
-
-                using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-                {
-                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
-                    {
-                        try
-                        {
-                            connection.Open();
-                            command.ExecuteNonQuery();
-                            Console.WriteLine("Voucher inserted successfully.");
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Error inserting voucher: {ex.Message}");
-                        }
-                    }
-                }
-            }
+            ObjectHandler.GetVoucherDL().GenerateVouchers();
         }
 
         private void userDetailsButton_Click(object sender, EventArgs e)

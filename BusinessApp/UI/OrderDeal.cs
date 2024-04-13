@@ -33,7 +33,7 @@ namespace SignInSignUp.UI
         {
             MakeColumns();
             LoadData();
-            pictureBox.Image = UserDBDL.LoadImage(customer.GetUserID());
+            pictureBox.Image = ObjectHandler.GetPhotoDL().LoadImage(customer.GetUserID());
         }
 
         public OrderDeal(Size size, Point location, Customer c)
@@ -169,7 +169,7 @@ namespace SignInSignUp.UI
                                     Deal deal = ObjectHandler.GetDealDL().GetDeal(id);
                                     if (vip.GetVouchers().Count > 0)
                                     {
-                                        Voucher v = UtilityFunctions.GetVoucher(vip.GetVoucherID());
+                                        Voucher v = ObjectHandler.GetVoucherDL().GetVoucher(vip.GetVoucherID());
                                         if (v.GetExpirationDate() > DateTime.Today)
                                         {
                                             deal.ApplyDiscount(v.GetDiscount());

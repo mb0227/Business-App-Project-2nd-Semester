@@ -5,10 +5,11 @@ using System.Text.RegularExpressions;
 using RMS.BL;
 using SSC;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace RMS.DL
 {
-    public class UserFHDL : IUserDL
+    public class UserFHDL : IUserDL, IPhotoDL
     {
         public void SaveUser(User user)
         {
@@ -94,23 +95,58 @@ namespace RMS.DL
             return ""; 
         }
 
-        public static void SaveImage(int userID, byte[] imageData)
+        public void SaveImage(int userID)
         {
-            string directoryPath = "UserImages";
-            string imagePath = Path.Combine(directoryPath, $"{userID}.jpg"); // Assuming JPEG format
-            Directory.CreateDirectory(directoryPath); // Create directory if it doesn't exist
-            File.WriteAllBytes(imagePath, imageData);
+            string defaultImagePath = "..//..//images//user-solid.png";
+            string userImagePath = UtilityFunctions.GetImagesPath($"User{userID}Image.jpg");
+
+            try
+            {
+                byte[] defaultPhoto = File.ReadAllBytes(defaultImagePath);
+                File.WriteAllBytes(userImagePath, defaultPhoto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving default image: {ex.Message}");
+            }
         }
 
-        public static byte[] LoadImage(int userID)
+        public void UpdateImage(int userID, byte[] photo)
         {
-            string imagePath = Path.Combine("UserImages", $"{userID}.jpg"); // Assuming JPEG format
-            if (File.Exists(imagePath))
+            string imagePath = UtilityFunctions.GetImagesPath($"User{userID}Image.jpg");
+            try
             {
-                return File.ReadAllBytes(imagePath);
+                File.WriteAllBytes(imagePath, photo);
+                Console.WriteLine("Image updated successfully.");
             }
-            else
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error updating image: {ex.Message}");
+            }
+        }
+
+        public Image LoadImage(int userID)
+        {
+            string imagePath = UtilityFunctions.GetImagesPath($"User{userID}Image.jpg");
+            try
+            {
+                if (File.Exists(imagePath))
+                {
+                    byte[] imageData = File.ReadAllBytes(imagePath);
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        return Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Image not found.");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading image: {ex.Message}");
                 return null;
             }
         }

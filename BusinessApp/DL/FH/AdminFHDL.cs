@@ -48,10 +48,11 @@ namespace RMS.DL
                                 string[] Parts = Line.Split(',');
                                 if (Parts.Length == 7 && Parts[0].Trim() == employeeID.ToString())
                                 {
+                                    int empID = Convert.ToInt32(Parts[0].Trim());
                                     string username = Parts[1].Trim();
                                     double salary = Convert.ToDouble(Parts[3].Trim());
 
-                                    Admin admin = new Admin(id, username, salary, tools.Split(';').ToList(), permissions.Split(';').ToList(), employeeID);
+                                    Admin admin = new Admin(id, username, salary, tools.Split(';').ToList(), permissions.Split(';').ToList(), empID);
                                     admins.Add(admin);
                                 }
                             }

@@ -27,69 +27,50 @@ namespace SSC
             return Path.Combine(directory, filename);
         }
 
+        public static string GetImagesPath(string filename)
+        {
+            string directory = "..//..//Profiles";
+            return Path.Combine(directory, filename);
+        }
+
         public static int AssignID(string path)
         {
             int userID = 1;
 
             if (File.Exists(path))
             {
-                string lastLine = File.ReadAllLines(path).LastOrDefault();
-                if (!string.IsNullOrEmpty(lastLine))
+                string[] lines = File.ReadAllLines(path);
+                if (lines.Length > 0)
                 {
-                    string[] parts = lastLine.Split(',');
-                    if (parts.Length > 0 && int.TryParse(parts[0], out int lastID))
+                    string lastLine = lines.LastOrDefault();
+                    if (!string.IsNullOrEmpty(lastLine))
                     {
-                        userID = lastID + 1;
+                        string[] parts = lastLine.Split(',');
+                        if (parts.Length > 0 && int.TryParse(parts[0], out int lastID))
+                        {
+                            userID = lastID + 1;
+                        }
+                    }
+                }
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length > 0 && int.TryParse(parts[0], out int existingID))
+                    {
+                        if (existingID == userID)
+                        { 
+                            userID++;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                 }
             }
             return userID;
         }
 
-        public static List <string> AwardVouchers(int number)
-        {
-            List<string> vouchers = new List<string>();
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                string selectQuery = $"SELECT TOP {number} ID FROM Vouchers ORDER BY NEWID()";
-                using (SqlCommand command = new SqlCommand(selectQuery, connection))
-                {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        vouchers.Add(reader["ID"].ToString());
-                    }
-                    reader.Close();
-                }
-            }
-            return vouchers;
-        }
-
-        public static Voucher GetVoucher(int ID)
-        {
-            using (SqlConnection connection = GetSqlConnection())
-            {
-                connection.Open();
-                string selectQuery = "SELECT * FROM Vouchers WHERE ID=@ID";
-                using (SqlCommand command = new SqlCommand(selectQuery, connection))
-                {
-                    command.Parameters.AddWithValue("@ID", ID);
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        int id = Convert.ToInt32(reader["ID"]);
-                        DateTime e = Convert.ToDateTime(reader["ExpirationDate"]);
-                        Decimal d = Convert.ToDecimal(reader["Value"]);
-                        double v = Convert.ToDouble(d);
-                        return new Voucher(id, e, v);
-                    }
-                    reader.Close();
-                }
-
-            }
-            return null;
-        }
 
         public static string GetCartString(List <OrderedProduct> cart)
         {
