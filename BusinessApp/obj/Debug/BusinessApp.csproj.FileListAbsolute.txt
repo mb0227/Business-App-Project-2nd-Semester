@@ -176,3 +176,5 @@ C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\stdole.dll
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\System.Configuration.ConfigurationManager.dll
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\obj\Debug\SignInSignUp.UI.ManageFeedback.resources
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\RMS.dll
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessApp\bin\Debug\RMS.pdb

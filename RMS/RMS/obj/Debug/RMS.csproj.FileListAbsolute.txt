@@ -1,0 +1,6 @@
+C:\Users\Bilal\OneDrive\Desktop\b-app\RMS\RMS\obj\Debug\RMS.csproj.AssemblyReference.cache
+C:\Users\Bilal\OneDrive\Desktop\b-app\RMS\RMS\obj\Debug\RMS.csproj.CoreCompileInputs.cache
+C:\Users\Bilal\OneDrive\Desktop\b-app\RMS\RMS\bin\Debug\RMS.dll
+C:\Users\Bilal\OneDrive\Desktop\b-app\RMS\RMS\bin\Debug\RMS.pdb
+C:\Users\Bilal\OneDrive\Desktop\b-app\RMS\RMS\obj\Debug\RMS.dll
+C:\Users\Bilal\OneDrive\Desktop\b-app\RMS\RMS\obj\Debug\RMS.pdb
