@@ -1,0 +1,10 @@
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\bin\Debug\BusinessAppConsole.exe.config
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\bin\Debug\BusinessAppConsole.exe
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\bin\Debug\BusinessAppConsole.pdb
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\bin\Debug\RMS.dll
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\bin\Debug\RMS.pdb
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.csproj.AssemblyReference.cache
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.csproj.CoreCompileInputs.cache
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\obj\Debug\Business.4CB9E74E.Up2Date
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.exe
+C:\Users\Bilal\OneDrive\Desktop\b-app\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.pdb
