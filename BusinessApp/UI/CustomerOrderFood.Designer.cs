@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.deleteOrderBtn = new Guna.UI2.WinForms.Guna2Button();
             this.orderDealBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -56,7 +57,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -135,6 +135,18 @@
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label5.Location = new System.Drawing.Point(801, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 52);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Menu";
+            // 
             // menuGridView
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(183)))));
@@ -162,6 +174,7 @@
             this.menuGridView.EnableHeadersVisualStyles = true;
             this.menuGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(233)))), ((int)(((byte)(170)))));
             this.menuGridView.Location = new System.Drawing.Point(584, 103);
+            this.menuGridView.MultiSelect = false;
             this.menuGridView.Name = "menuGridView";
             this.menuGridView.ReadOnly = true;
             this.menuGridView.RowHeadersVisible = false;
@@ -479,18 +492,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Order Food";
             // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label5.Location = new System.Drawing.Point(801, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 52);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Menu";
-            // 
             // CustomerOrderFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -499,6 +500,7 @@
             this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "CustomerOrderFood";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

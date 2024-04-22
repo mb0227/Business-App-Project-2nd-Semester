@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.msgTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,12 +38,11 @@
             this.send = new System.Windows.Forms.PictureBox();
             this.msgPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.send)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -56,6 +56,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1276, 91);
             this.panel4.TabIndex = 22;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(1145, 7);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox.Size = new System.Drawing.Size(77, 76);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 30;
+            this.pictureBox.TabStop = false;
             // 
             // label1
             // 
@@ -167,19 +180,6 @@
             this.guna2VScrollBar1.SmallChange = 5;
             this.guna2VScrollBar1.TabIndex = 0;
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.ImageRotate = 0F;
-            this.pictureBox.Location = new System.Drawing.Point(1145, 7);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBox.Size = new System.Drawing.Size(77, 76);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 30;
-            this.pictureBox.TabStop = false;
-            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -190,6 +190,7 @@
             this.Controls.Add(this.msgPanel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1350, 1030);
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -197,10 +198,10 @@
             this.Load += new System.EventHandler(this.Help_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.send)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,8 +37,8 @@
             this.sad = new System.Windows.Forms.PictureBox();
             this.expressionless = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lovedit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.happy)).BeginInit();
@@ -155,18 +155,6 @@
             this.panel4.Size = new System.Drawing.Size(1276, 91);
             this.panel4.TabIndex = 21;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(472, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(395, 52);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Customer Feedback";
-            // 
             // pictureBox
             // 
             this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -180,6 +168,18 @@
             this.pictureBox.TabIndex = 22;
             this.pictureBox.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.MintCream;
+            this.label1.Location = new System.Drawing.Point(472, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(395, 52);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Customer Feedback";
+            // 
             // CustomerFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -188,6 +188,7 @@
             this.ClientSize = new System.Drawing.Size(1328, 1050);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "CustomerFeedback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

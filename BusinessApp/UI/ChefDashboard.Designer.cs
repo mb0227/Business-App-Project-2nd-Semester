@@ -122,6 +122,7 @@
             this.ClientSize = new System.Drawing.Size(1178, 944);
             this.Controls.Add(this.logOut);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1100, 889);
             this.Name = "ChefDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

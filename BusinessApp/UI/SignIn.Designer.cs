@@ -467,6 +467,7 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
