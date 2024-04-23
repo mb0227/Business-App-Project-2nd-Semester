@@ -20,12 +20,8 @@ namespace RMS.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            //OrderDBDL.ReadOrdersFromDatabase();
-            //CustomerDBDL.GetCustomersFromDatabase();
             ObjectHandler.GetTableDL().UpdateTablesStatus();
-            ObjectHandler.GetRegularDL().GetRegulars();
-            Application.Run(new Homepage());
+            Application.Run(new SignIn());
         }
     }
 }

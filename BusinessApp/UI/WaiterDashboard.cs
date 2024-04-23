@@ -192,6 +192,7 @@ namespace RMS.UI
         private void manageBtns_Click(object sender, EventArgs e) //pickupOrder
         {
             pickupBtn.Visible = false;
+            header.Text = "Take Order";
             ChangeControlsVisibility(true);
             dt.Columns.Clear();
             MakeColumns();
@@ -283,6 +284,7 @@ namespace RMS.UI
         private void pickupOrder_Click(object sender, EventArgs e)
         {
             ChangeControlsVisibility(false);
+            header.Text = "Pickup Order";
             pickupBtn.Visible = true;
             deliverBtn.Visible = false;
             dt.Columns.Clear();
@@ -293,6 +295,7 @@ namespace RMS.UI
         private void deliverOrder_Click(object sender, EventArgs e)
         {
             ChangeControlsVisibility(false);
+            header.Text = "Deliver Order";
             pickupBtn.Visible = false;
             deliverBtn.Visible = true;
             dt.Columns.Clear();

@@ -157,11 +157,13 @@ namespace RMS.UI
                 User user = new User(email.Text, password.Text, "Customer");
                 ObjectHandler.GetUserDL().SaveUser(user);
                 Customer customer = new Customer(username.Text, contact.Text, "Regular", GetSelectedRadioButton().Text.ToString());
-                customer.SetUserID(ObjectHandler.GetUserDL().GetUserID(email.Text));
+                int userID = ObjectHandler.GetUserDL().GetUserID(email.Text);
+                customer.SetUserID(userID);
                 ObjectHandler.GetCustomerDL().SaveCustomer(customer);
                 Regular regular = new Regular(username.Text, contact.Text, "Regular", GetSelectedRadioButton().Text.ToString(), 0, ObjectHandler.GetCustomerDL().GetCustomerID(customer.GetUsername()));
                 ObjectHandler.GetRegularDL().SaveRegular(regular);
                 MessageBox.Show("Signed Up successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ObjectHandler.GetPhotoDL().SaveImage(userID);
                 SignIn signIn = new SignIn(this.Size, this.Location);
                 signIn.Show();
                 this.Hide();

@@ -120,7 +120,6 @@ namespace RMS.UI
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void makeTableBtn_Click(object sender, EventArgs e)
@@ -145,18 +144,26 @@ namespace RMS.UI
             {
                 errorProvider1.SetError(capacity, ""); 
             }
+            return true;
+        }
 
-            if (comboBox1.Text!="Booked" && comboBox1.Text!="Unbooked")
+        private bool IsBooked()
+        {
+            if (comboBox1.Text != "Booked" && comboBox1.Text != "Unbooked")
             {
+                errorProvider2.SetError(comboBox1, "Please select any status");
                 return false;
             }
-
+            else
+            {
+                errorProvider2.SetError(comboBox1, "");
+            }
             return true;
         }
 
         private void viewTableBtn_Click(object sender, EventArgs e) //update table
         {
-            if (CheckValidations())
+            if (CheckValidations() && IsBooked())
             {
                 if (guna2DataGridView1.SelectedRows.Count > 0)
                 {
@@ -208,11 +215,11 @@ namespace RMS.UI
 
         private void deleteTableBtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete reservation?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete table?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                if (guna2DataGridView1.SelectedRows.Count > 0)
-                    {
+               {
                     try
                     {
                         int id = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["ID"].Value);
@@ -227,6 +234,10 @@ namespace RMS.UI
                                     ClearTable();
                                     ObjectHandler.GetTableDL().DeleteTable(Convert.ToInt32(id));
                                     LoadData();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Sorry, the table is currently booked, it can't be deleted", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                         }

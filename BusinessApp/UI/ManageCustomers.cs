@@ -258,6 +258,7 @@ namespace RMS.UI
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString());
+                        LoadData();
                     }
                 }
                 else

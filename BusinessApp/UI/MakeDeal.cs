@@ -130,6 +130,7 @@ namespace RMS.UI
                 Deal deal = new Deal(name.Text, Convert.ToDouble(price.Text), items);
                 ObjectHandler.GetDealDL().SaveDeal(deal);
                 ClearTextBoxes();
+                addedItems.Items.Clear();
                 LoadData();
                 addedItems.Visible = false;
                 label6.Visible = false;
@@ -151,10 +152,10 @@ namespace RMS.UI
             }
 
 
-            double Price;
-            if (!double.TryParse(price.Text, out Price))
+            double p;
+            if (!double.TryParse(price.Text, out p) || p <= 0 || p > 9999999.99)
             {
-                errorProvider2.SetError(price, "Price must be a numeric value.");
+                errorProvider2.SetError(price, "Please enter a valid positive price.");
                 return false;
             }
             else
@@ -162,13 +163,13 @@ namespace RMS.UI
                 errorProvider2.SetError(price, "");
             }
 
-            if (items.Count>0)
+            if (addedItems.Items.Count>0)
             {
-                errorProvider2.SetError(menuComboBox, "");
+                errorProvider3.SetError(addedItems, "");
             }
             else
             {
-                errorProvider2.SetError(menuComboBox, "Please add some items first");
+                errorProvider3.SetError(addedItems, "Please add some items first");
                 return false;
             }
 

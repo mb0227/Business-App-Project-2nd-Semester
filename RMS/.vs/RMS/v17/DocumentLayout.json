@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\bl\\regular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\bl\\regular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\dl\\db\\userdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\userdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\rms\\rms\\utility\\objecthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\utility\\objecthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\utility\\objecthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\rms\\rms\\bl\\regular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\bl\\regular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\utility\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\voucherdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\dl\\db\\userdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\userdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\dl\\db\\vipdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\vipdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -151,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\orderdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\dl\\db\\customerdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\customerdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\rms\\bl\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\bl\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -174,35 +170,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TableFHDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\FH\\TableFHDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
-              "RelativeToolTip": "RMS\\DL\\FH\\TableFHDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T18:35:08.742Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "UserFHDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\UserFHDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\FH\\UserFHDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\UserFHDL.cs",
-              "RelativeToolTip": "RMS\\DL\\FH\\UserFHDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T09:18:52.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "WaiterFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\WaiterFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\WaiterFHDL.cs",
@@ -214,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\BL\\Order.cs",
               "RelativeDocumentMoniker": "RMS\\BL\\Order.cs",
@@ -226,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UtilityFunctions.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\Utility\\UtilityFunctions.cs",
               "RelativeDocumentMoniker": "RMS\\Utility\\UtilityFunctions.cs",
@@ -244,14 +216,14 @@
               "RelativeDocumentMoniker": "RMS\\Utility\\ObjectHandler.cs",
               "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\Utility\\ObjectHandler.cs",
               "RelativeToolTip": "RMS\\Utility\\ObjectHandler.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowAkAAAANAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-13T17:45:03.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Regular.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\BL\\Regular.cs",
               "RelativeDocumentMoniker": "RMS\\BL\\Regular.cs",
@@ -264,7 +236,44 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserDBDL.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\UserDBDL.cs",
+              "RelativeDocumentMoniker": "RMS\\DL\\DB\\UserDBDL.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\UserDBDL.cs",
+              "RelativeToolTip": "RMS\\DL\\DB\\UserDBDL.cs",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAmwJIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T09:19:05.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "UserFHDL.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\UserFHDL.cs",
+              "RelativeDocumentMoniker": "RMS\\DL\\FH\\UserFHDL.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\UserFHDL.cs",
+              "RelativeToolTip": "RMS\\DL\\FH\\UserFHDL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T09:18:52.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TableFHDL.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
+              "RelativeDocumentMoniker": "RMS\\DL\\FH\\TableFHDL.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
+              "RelativeToolTip": "RMS\\DL\\FH\\TableFHDL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T18:35:08.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "VoucherFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\VoucherFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\VoucherFHDL.cs",
@@ -276,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ReservationFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\ReservationFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\ReservationFHDL.cs",
@@ -288,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "OrderFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\OrderFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\OrderFHDL.cs",
@@ -300,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ProductFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\ProductFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\ProductFHDL.cs",
@@ -312,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "NotificationFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\NotificationFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\NotificationFHDL.cs",
@@ -324,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "MessageFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\MessageFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\MessageFHDL.cs",
@@ -336,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "DealFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\DealFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\DealFHDL.cs",
@@ -348,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "RegularFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\RegularFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\RegularFHDL.cs",
@@ -360,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "FeedbackFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\FeedbackFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\FeedbackFHDL.cs",
@@ -372,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ChefFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\ChefFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\ChefFHDL.cs",
@@ -384,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "WaiterDBDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\WaiterDBDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\DB\\WaiterDBDL.cs",
@@ -396,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "AdminFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\AdminFHDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\FH\\AdminFHDL.cs",
@@ -408,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "VoucherDBDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\VoucherDBDL.cs",
               "RelativeDocumentMoniker": "RMS\\DL\\DB\\VoucherDBDL.cs",
@@ -489,18 +498,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-13T18:33:54.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UserDBDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\UserDBDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\DB\\UserDBDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\UserDBDL.cs",
-              "RelativeToolTip": "RMS\\DL\\DB\\UserDBDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T09:19:05.002Z"
             },
             {
               "$type": "Document",
@@ -600,18 +597,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "CustomerDBDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\CustomerDBDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\DB\\CustomerDBDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\CustomerDBDL.cs",
-              "RelativeToolTip": "RMS\\DL\\DB\\CustomerDBDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T09:22:10.647Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 34,
               "Title": "CustomerFHDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\CustomerFHDL.cs",
@@ -636,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "Message.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\BL\\Message.cs",
               "RelativeDocumentMoniker": "RMS\\BL\\Message.cs",
@@ -648,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "Admin.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\BL\\Admin.cs",
               "RelativeDocumentMoniker": "RMS\\BL\\Admin.cs",
@@ -660,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "IPhotoDL.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DLInterfaces\\IPhotoDL.cs",
               "RelativeDocumentMoniker": "RMS\\DLInterfaces\\IPhotoDL.cs",

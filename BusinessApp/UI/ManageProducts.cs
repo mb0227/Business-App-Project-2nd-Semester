@@ -278,35 +278,43 @@ namespace RMS.UI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            DialogResult result = MessageBox.Show("Are you sure you want to Launch Product?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result==DialogResult.Yes)
             {
-                try
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-                    selectedRow = dataGridView1.SelectedRows[0].Index;
-
-                    if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
+                    try
                     {
-                        DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+                        int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+                        selectedRow = dataGridView1.SelectedRows[0].Index;
 
-                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
+                        if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
                         {
-                            if (ObjectHandler.GetProductDL().HasVariants(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value)))
+                            DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+
+                            if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
                             {
-                                ObjectHandler.GetProductDL().UpdateProduct(new Product(id, Convert.ToString(dataGridView1.SelectedRows[0].Cells["Name"].Value), Convert.ToString(dataGridView1.SelectedRows[0].Cells["Description"].Value), Convert.ToString(dataGridView1.SelectedRows[0].Cells["Category"].Value), 1));
-                                LoadData();
+                                if (ObjectHandler.GetProductDL().HasVariants(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value)))
+                                {
+                                    ObjectHandler.GetProductDL().UpdateProduct(new Product(id, Convert.ToString(dataGridView1.SelectedRows[0].Cells["Name"].Value), Convert.ToString(dataGridView1.SelectedRows[0].Cells["Description"].Value), Convert.ToString(dataGridView1.SelectedRows[0].Cells["Category"].Value), 1));
+                                    LoadData();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Sorry, but add some variants first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
                             }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please select a product to launch");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please select a product to launch and add variants");
             }
         }
 

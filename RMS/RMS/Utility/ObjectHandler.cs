@@ -11,112 +11,132 @@ namespace RMS.UI
 {
     public class ObjectHandler
     {
+        private static IUserDL UserDL = new UserDBDL();
+        private static ICustomerDL CustomerDL = new CustomerDBDL();
+        private static IRegularDL RegularDL= new RegularDBDL();
+        private static IEmployeeDL EmployeeDL = new EmployeeDBDL();
+        private static IAdminDL AdminDL = new AdminDBDL();
+        private static IChefDL ChefDL = new ChefDBDL();            
+        private static IVipDL VipDL = new VipDBDL();
+        private static IFeedbackDL FeedbackDL = new FeedbackDBDL();
+        private static IReservationDL ReservationDL = new ReservationDBDL();
+        private static ITableDL TableDL = new TableDBDL();            
+        private static IWaiterDL WaiterDL = new WaiterDBDL();
+        private static INotificationDL NotificationDL = new NotificationDBDL();
+        private static IOrderDL OrderDL = new OrderDBDL();            
+        private static IProductDL ProductDL = new ProductDBDL();
+        private static IDealDL DealDL = new DealDBDL();
+        private static IMessageDL MessageDL = new MessageDBDL();
+        private static IVoucherDL VoucherDL = new VoucherDBDL();
+        private static IPhotoDL PhotoDL = new UserDBDL();
+
+        //private static IUserDL UserDL = new UserFHDL();
+        //private static ICustomerDL CustomerDL = new CustomerFHDL();
+        //private static IRegularDL RegularDL = new RegularFHDL();            
+        //private static IEmployeeDL EmployeeDL = new EmployeeFHDL();
+        //private static IAdminDL AdminDL = new AdminFHDL();
+        //private static IChefDL ChefDL = new ChefFHDL();       
+        //private static IVipDL VipDL = new VipFHDL();
+        //private static IFeedbackDL FeedbackDL = new FeedbackFHDL();
+        //private static IReservationDL ReservationDL = new ReservationFHDL();
+        //private static ITableDL TableDL = new TableFHDL();            
+        //private static IWaiterDL WaiterDL = new WaiterFHDL();
+        //private static INotificationDL NotificationDL = new NotificationFHDL();
+        //private static IOrderDL OrderDL = new OrderFHDL();
+        //private static IProductDL ProductDL = new ProductFHDL();
+        //private static IDealDL DealDL = new DealFHDL();
+        //private static IMessageDL MessageDL = new MessageFHDL();
+        //private static IVoucherDL VoucherDL = new VoucherFHDL();
+        //private static IPhotoDL PhotoDL = new UserFHDL();
+
         public static IUserDL GetUserDL()
         {
-            //return new UserDBDL();
-            return new UserDBDL();
+            return UserDL;
         }
 
         public static ICustomerDL GetCustomerDL()
         {
-            return new CustomerDBDL();
-            //return new CustomerDBDL();
+            return CustomerDL;
         }
 
         public static IRegularDL GetRegularDL()
         {
-            return new RegularDBDL();
-            //return new RegularDBDL();
+            return RegularDL;
         }
 
         public static IEmployeeDL GetEmployeeDL()
         {
-            return new EmployeeDBDL();
-            //return new EmployeeDBDL();
+           return EmployeeDL;
         }
 
         public static IAdminDL GetAdminDL()
         {
-            return new AdminDBDL();
-            //return new AdminDBDL();
+            return AdminDL;
         }
 
         public static IChefDL GetChefDL()
         {
-            return new ChefDBDL();
-            //return new ChefDBDL();
+            return ChefDL;
         }
 
         public static IVipDL GetVipDL()
         {
-            return new VipDBDL();
-            //return new VipDBDL();
+            return VipDL;
         }
 
         public static IFeedbackDL GetFeedbackDL()
         {
-            return new FeedbackDBDL();
-            //return new FeedbackDBDL();
+            return FeedbackDL;
         }
 
         public static IReservationDL GetReservationDL()
         {
-            return new ReservationDBDL();
-            //return new ReservationDBDL();
+            return ReservationDL;
         }
 
         public static ITableDL GetTableDL()
         {
-            return new TableDBDL();
-            //return new TableDBDL();
+            return TableDL;
         }
 
         public static IWaiterDL GetWaiterDL()
         {
-            return new WaiterDBDL();
-            //return new WaiterDBDL();
+            return WaiterDL;
         }
 
         public static INotificationDL GetNotificationDL()
         {
-            return new NotificationDBDL();
-            //return new NotificationDBDL();
+            return NotificationDL;
         }
 
         public static IOrderDL GetOrderDL()
         {
-            return new OrderDBDL();
-            //return new OrderDBDL();
+            return OrderDL;
         }
 
         public static IProductDL GetProductDL()
         {
-            return new ProductDBDL();
-            //return new ProductDBDL();
+            return ProductDL;
         }
 
         public static IDealDL GetDealDL()
         {
-            return new DealDBDL();
-            //return new DealDBDL();
+            return DealDL;
         }
 
         public static IMessageDL GetMessageDL()
         {
-            return new MessageDBDL();
-            //return new MessageDBDL();
+            return MessageDL;
         }
 
         public static IVoucherDL GetVoucherDL()
         {
-            return new VoucherDBDL();
-            //return new VoucherDBDL;
+            return VoucherDL;
         }
 
         public static IPhotoDL GetPhotoDL()
         {
-            return new UserDBDL();
-            //return new VoucherDBDL;
+            return PhotoDL;
         }
     }
 }

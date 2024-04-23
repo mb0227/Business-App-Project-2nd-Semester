@@ -201,7 +201,7 @@ namespace RMS.DL
                 command6.ExecuteNonQuery();
 
                 SqlCommand command8 = new SqlCommand("DELETE FROM UserPictures WHERE UserID = @ID", connection);
-                command8.Parameters.AddWithValue("@ID", id);
+                command8.Parameters.AddWithValue("@ID", userId);
                 command8.ExecuteNonQuery();
 
                 SqlCommand command = new SqlCommand("DELETE FROM Users WHERE ID = @ID", connection);

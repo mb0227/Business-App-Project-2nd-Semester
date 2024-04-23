@@ -60,11 +60,13 @@
             this.pickupBtn = new Guna.UI2.WinForms.Guna2Button();
             this.deliverBtn = new Guna.UI2.WinForms.Guna2Button();
             this.logOut = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -200,7 +202,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = true;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.dataGridView1.Location = new System.Drawing.Point(570, 80);
+            this.dataGridView1.Location = new System.Drawing.Point(566, 16);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -242,7 +244,7 @@
             this.quantitiesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quantitiesComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantitiesComboBox.FormattingEnabled = true;
-            this.quantitiesComboBox.Location = new System.Drawing.Point(286, 204);
+            this.quantitiesComboBox.Location = new System.Drawing.Point(282, 140);
             this.quantitiesComboBox.Name = "quantitiesComboBox";
             this.quantitiesComboBox.Size = new System.Drawing.Size(247, 37);
             this.quantitiesComboBox.TabIndex = 51;
@@ -253,7 +255,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(97, 202);
+            this.label3.Location = new System.Drawing.Point(93, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 36);
             this.label3.TabIndex = 53;
@@ -266,7 +268,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(97, 139);
+            this.label1.Location = new System.Drawing.Point(93, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 36);
             this.label1.TabIndex = 52;
@@ -281,7 +283,7 @@
             this.menuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuComboBox.FormattingEnabled = true;
-            this.menuComboBox.Location = new System.Drawing.Point(286, 141);
+            this.menuComboBox.Location = new System.Drawing.Point(282, 77);
             this.menuComboBox.Name = "menuComboBox";
             this.menuComboBox.Size = new System.Drawing.Size(247, 37);
             this.menuComboBox.TabIndex = 50;
@@ -293,7 +295,7 @@
             this.comments.BackColor = System.Drawing.Color.Silver;
             this.comments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.comments.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comments.Location = new System.Drawing.Point(286, 263);
+            this.comments.Location = new System.Drawing.Point(282, 199);
             this.comments.Multiline = true;
             this.comments.Name = "comments";
             this.comments.Size = new System.Drawing.Size(245, 92);
@@ -306,7 +308,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MintCream;
-            this.label4.Location = new System.Drawing.Point(97, 261);
+            this.label4.Location = new System.Drawing.Point(93, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 36);
             this.label4.TabIndex = 55;
@@ -326,7 +328,7 @@
             this.orderDealBtn.FillColor = System.Drawing.Color.MediumOrchid;
             this.orderDealBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderDealBtn.ForeColor = System.Drawing.Color.Black;
-            this.orderDealBtn.Location = new System.Drawing.Point(334, 536);
+            this.orderDealBtn.Location = new System.Drawing.Point(330, 472);
             this.orderDealBtn.Name = "orderDealBtn";
             this.orderDealBtn.Size = new System.Drawing.Size(190, 66);
             this.orderDealBtn.TabIndex = 59;
@@ -346,7 +348,7 @@
             this.addButton.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.addButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.Black;
-            this.addButton.Location = new System.Drawing.Point(103, 459);
+            this.addButton.Location = new System.Drawing.Point(99, 395);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(190, 65);
             this.addButton.TabIndex = 56;
@@ -366,7 +368,7 @@
             this.orderButton.FillColor = System.Drawing.Color.Lime;
             this.orderButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderButton.ForeColor = System.Drawing.Color.Black;
-            this.orderButton.Location = new System.Drawing.Point(334, 459);
+            this.orderButton.Location = new System.Drawing.Point(330, 395);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(190, 65);
             this.orderButton.TabIndex = 58;
@@ -386,7 +388,7 @@
             this.clearCartButton.FillColor = System.Drawing.Color.Red;
             this.clearCartButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearCartButton.ForeColor = System.Drawing.Color.Black;
-            this.clearCartButton.Location = new System.Drawing.Point(103, 537);
+            this.clearCartButton.Location = new System.Drawing.Point(99, 473);
             this.clearCartButton.Name = "clearCartButton";
             this.clearCartButton.Size = new System.Drawing.Size(190, 65);
             this.clearCartButton.TabIndex = 57;
@@ -424,7 +426,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MintCream;
-            this.label5.Location = new System.Drawing.Point(97, 81);
+            this.label5.Location = new System.Drawing.Point(93, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 36);
             this.label5.TabIndex = 64;
@@ -439,7 +441,7 @@
             this.deals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deals.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deals.FormattingEnabled = true;
-            this.deals.Location = new System.Drawing.Point(288, 80);
+            this.deals.Location = new System.Drawing.Point(284, 16);
             this.deals.Name = "deals";
             this.deals.Size = new System.Drawing.Size(247, 37);
             this.deals.TabIndex = 63;
@@ -450,7 +452,7 @@
             this.payment.BackColor = System.Drawing.Color.Silver;
             this.payment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.payment.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payment.Location = new System.Drawing.Point(288, 390);
+            this.payment.Location = new System.Drawing.Point(284, 326);
             this.payment.Multiline = true;
             this.payment.Name = "payment";
             this.payment.Size = new System.Drawing.Size(247, 49);
@@ -463,7 +465,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(97, 396);
+            this.label2.Location = new System.Drawing.Point(93, 332);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 36);
             this.label2.TabIndex = 62;
@@ -528,6 +530,16 @@
             this.logOut.TabStop = false;
             this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Location = new System.Drawing.Point(1262, 97);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabStop = false;
+            // 
             // WaiterDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -539,6 +551,7 @@
             this.Controls.Add(this.pickupBtn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 1000);
             this.Name = "WaiterDashboard";
@@ -552,6 +565,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,5 +598,6 @@
         private Guna.UI2.WinForms.Guna2Button deliverBtn;
         private Guna.UI2.WinForms.Guna2Button pickupOrder;
         private System.Windows.Forms.PictureBox logOut;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -15,7 +15,6 @@ namespace RMS.BL
 
         private int ID;
 
-
         public Reservation(DateTime reservationDate, int totalPersons, int customerID, int tableID)
         {
             ReservationDate = reservationDate;
