@@ -11,9 +11,9 @@ namespace RMS.DL
 {
     public class ReservationFHDL : IReservationDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Reservations.txt");
         public void SaveReservation(Reservation r)
         {
-            string path = UtilityFunctions.GetPath("Reservations.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -23,7 +23,6 @@ namespace RMS.DL
 
         public void SaveReservation(Reservation r, int x)
         {
-            string path = UtilityFunctions.GetPath("Reservations.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -33,7 +32,6 @@ namespace RMS.DL
 
         public void DeleteReservationByID(int reservationID)
         {
-            string path = UtilityFunctions.GetPath("Reservations.txt");
             List<string> lines = new List<string>();
 
             if (File.Exists(path))
@@ -56,7 +54,6 @@ namespace RMS.DL
 
         public List<Reservation> GetReservations()
         {
-            string path = UtilityFunctions.GetPath("Reservations.txt");
             List<Reservation> reservations = new List<Reservation>();
 
             if (File.Exists(path))
@@ -87,7 +84,6 @@ namespace RMS.DL
         public int GetCustomerReservationCount(int customerId)
         {
             int reservationCount = 0;
-            string path = UtilityFunctions.GetPath("Reservations.txt");
 
             if (File.Exists(path))
             {
@@ -114,7 +110,6 @@ namespace RMS.DL
         public DateTime GetReservationDate(int customerid)
         {
             DateTime date = DateTime.MinValue;
-            string path = UtilityFunctions.GetPath("Reservations.txt");
 
             if (File.Exists(path))
             {
@@ -138,9 +133,7 @@ namespace RMS.DL
 
         public void DeleteReservation(int customerid)
         {
-            string path = UtilityFunctions.GetPath("Reservations.txt");
             List<string> updatedLines = new List<string>();
-
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))

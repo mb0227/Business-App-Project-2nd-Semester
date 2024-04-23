@@ -11,9 +11,9 @@ namespace RMS.DL
 {
     public class FeedbackFHDL : IFeedbackDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Feedbacks.txt");
         public void SaveReview(Feedback feedback)
         {
-            string path = UtilityFunctions.GetPath("Feedbacks.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -24,7 +24,6 @@ namespace RMS.DL
         public List<Feedback> GetReviews()
         {
             List<Feedback> feedbacks = new List<Feedback>();
-            string path = UtilityFunctions.GetPath("Feedbacks.txt");
 
             if (File.Exists(path))
             {

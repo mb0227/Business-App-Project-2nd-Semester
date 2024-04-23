@@ -14,9 +14,9 @@ namespace RMS.DL
 {
     public class MessageFHDL : IMessageDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Messages.txt");
         public void SendMessage(Message message)
         {
-            string path = UtilityFunctions.GetPath("Messages.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -27,7 +27,6 @@ namespace RMS.DL
         public List<Message> ReceiveMessages(int id, string query)
         {
             List<Message> messages = new List<Message>();
-            string path = UtilityFunctions.GetPath("Messages.txt");
 
             if (File.Exists(path))
             {
@@ -115,7 +114,6 @@ namespace RMS.DL
 
         public void ReplyToMessage(string replyText, int employeeID, int customerID)
         {
-            string path = UtilityFunctions.GetPath("Messages.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {

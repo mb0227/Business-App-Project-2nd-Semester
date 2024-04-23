@@ -11,9 +11,10 @@ namespace RMS.DL
 {
     public class AdminFHDL : IAdminDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Admins.txt");
+        private readonly string path2 = UtilityFunctions.GetPath("Employees.txt");
         public void SaveAdmin(Admin admin)
         {
-            string path = UtilityFunctions.GetPath("Admins.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -24,8 +25,6 @@ namespace RMS.DL
         public List<Admin> GetAdmins()
         {
             List<Admin> admins = new List<Admin>();
-            string path = UtilityFunctions.GetPath("Admins.txt");
-            string path2 = UtilityFunctions.GetPath("Employees.txt");
 
             if (File.Exists(path))
             {

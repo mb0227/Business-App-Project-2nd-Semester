@@ -11,9 +11,10 @@ namespace RMS.DL
 {
     public class ChefFHDL : IChefDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Chefs.txt");
+        private readonly string path2 = UtilityFunctions.GetPath("Employees.txt");
         public void SaveChef(Chef chef)
         {
-            string path = UtilityFunctions.GetPath("Chefs.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -24,9 +25,6 @@ namespace RMS.DL
         public List<Chef> GetChefs()
         {
             List<Chef> chefs = new List<Chef>();
-            string path = UtilityFunctions.GetPath("Chefs.txt");
-            string path2 = UtilityFunctions.GetPath("Employees.txt");
-
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);

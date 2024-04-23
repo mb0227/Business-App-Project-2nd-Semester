@@ -11,9 +11,9 @@ namespace RMS.DL
 {
     public class RegularFHDL : IRegularDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Regular.txt");
         public void SaveRegular(Regular regular)
         {
-            string path = UtilityFunctions.GetPath("Regular.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = new StreamWriter(path, append: true))
             {
@@ -23,7 +23,6 @@ namespace RMS.DL
 
         public void UpdateRegular(Regular regular)
         {
-            string path = UtilityFunctions.GetPath("Regular.txt");
 
             if (File.Exists(path))
             {
@@ -45,8 +44,6 @@ namespace RMS.DL
 
         public Regular GetRegular(int customerID)
         {
-            string path = UtilityFunctions.GetPath("Regular.txt");
-
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -67,7 +64,6 @@ namespace RMS.DL
         public List<Regular> GetRegulars()
         {
             List<Regular> regulars = new List<Regular>();
-            string path = UtilityFunctions.GetPath("Regular.txt");
             string path2 = UtilityFunctions.GetPath("Customers.txt");
 
             if (File.Exists(path) && File.Exists(path2))
@@ -100,8 +96,6 @@ namespace RMS.DL
 
         public void DeleteRegular(int id)
         {
-            string path = UtilityFunctions.GetPath("Regular.txt");
-
             if (File.Exists(path))
             {
                 List<string> lines = File.ReadAllLines(path).ToList();

@@ -11,9 +11,9 @@ namespace RMS.DL
 {
     public class OrderFHDL : IOrderDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Orders.txt");
         public void SaveOrder(Order order)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -23,7 +23,6 @@ namespace RMS.DL
 
         public void UpdateOrderStatus(int id, int status)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -44,7 +43,6 @@ namespace RMS.DL
 
         public void TakeOrder(Order order)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -54,7 +52,6 @@ namespace RMS.DL
 
         public int HasOrder(int customerID)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -77,7 +74,6 @@ namespace RMS.DL
 
         public int CountOrders(int customerID)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -100,7 +96,6 @@ namespace RMS.DL
 
         public int GetOrderStatus(int customerID)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -122,7 +117,6 @@ namespace RMS.DL
 
         public int FindOrderByID(int CustomerId)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -143,7 +137,6 @@ namespace RMS.DL
 
         public void OrderDeal(Deal deal)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -153,7 +146,6 @@ namespace RMS.DL
 
         public void OrderDeal(Deal deal, int customerID)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -163,7 +155,6 @@ namespace RMS.DL
 
         public void DeleteOrder(int customerID)
         {
-            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -184,7 +175,6 @@ namespace RMS.DL
         public List<Order> GetOrders(int status)
         {
             List<Order> orders = new List<Order>();
-            string path = UtilityFunctions.GetPath("Orders.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);

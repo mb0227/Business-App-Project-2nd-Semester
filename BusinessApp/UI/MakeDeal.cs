@@ -207,34 +207,38 @@ namespace RMS.UI
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete deal?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                try
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    selectedRow = dataGridView1.SelectedRows[0].Index;
-
-                    if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
+                    try
                     {
-                        DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
+                        selectedRow = dataGridView1.SelectedRows[0].Index;
 
-                        if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["DealName"].Value != null)
+                        if (dataGridView1 != null && selectedRow >= 0 && selectedRow < dataGridView1.Rows.Count)
                         {
-                            int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
+                            DataGridViewRow selectedDataGridViewRow = dataGridView1.Rows[selectedRow];
 
-                            ObjectHandler.GetDealDL().RemoveDeal(id);
-                            LoadData();
-                            selectedRow = -1;
+                            if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["DealName"].Value != null)
+                            {
+                                int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
+
+                                ObjectHandler.GetDealDL().RemoveDeal(id);
+                                LoadData();
+                                selectedRow = -1;
+                            }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please select a row to delete");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please select a row to delete");
             }
         }
 

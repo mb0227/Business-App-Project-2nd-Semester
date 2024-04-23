@@ -1,2 +1,1 @@
-1,Deal, 2500, Small of PIZZA;Medium of PIZZA;Large of PIZZA
-
+1,New Deal, 800, Tin of Pepsii;Zinger of Burger;Zinger of Burger;Zinger of Burger

@@ -12,9 +12,9 @@ namespace RMS.DL
 {
     public class ProductFHDL : IProductDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Products.txt");
         public void SaveProduct(Product product)
         {
-            string path = UtilityFunctions.GetPath("Products.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -24,7 +24,6 @@ namespace RMS.DL
 
         public void UpdateProduct(Product product)
         {
-            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -48,7 +47,6 @@ namespace RMS.DL
         public List<Product> GetProducts()
         {
             List<Product> products = new List<Product>();
-            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -105,7 +103,6 @@ namespace RMS.DL
 
         public bool ProductExists(string productName)
         {
-            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -127,7 +124,6 @@ namespace RMS.DL
 
         public List<Product> GetProductsForCustomers()
         {
-            string path = UtilityFunctions.GetPath("Products.txt");
             string path2 = UtilityFunctions.GetPath("ProductVariants.txt");
             List<Product> products = new List<Product>();
             if (File.Exists(path))
@@ -192,7 +188,6 @@ namespace RMS.DL
 
         public Product SearchProductByName(string productName)
         {
-            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -242,7 +237,6 @@ namespace RMS.DL
 
         public int GetProductID(string productName)
         {
-            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -263,7 +257,6 @@ namespace RMS.DL
 
         public void DeleteProduct(int id)
         {
-            string path = UtilityFunctions.GetPath("Products.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);

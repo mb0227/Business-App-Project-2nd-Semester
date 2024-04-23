@@ -10,9 +10,9 @@ namespace RMS.DL
 {
     public class UserFHDL : IUserDL, IPhotoDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Users.txt");
         public void SaveUser(User user)
         {
-            string path = UtilityFunctions.GetPath("Users.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -22,7 +22,6 @@ namespace RMS.DL
 
         public bool EmailAlreadyExists(string email)
         {
-            string path = UtilityFunctions.GetPath("Users.txt");
             if (!File.Exists(path))
                 return false;
 
@@ -37,7 +36,6 @@ namespace RMS.DL
 
         public int GetUserID(string email)
         {
-            string path = UtilityFunctions.GetPath("Users.txt");
             if (!File.Exists(path))
                 return -1;
 
@@ -52,7 +50,6 @@ namespace RMS.DL
 
         public int GetUserID(int id)
         {
-            string path = UtilityFunctions.GetPath("Users.txt");
             if (!File.Exists(path))
                 return -1;
 
@@ -82,7 +79,6 @@ namespace RMS.DL
 
         public string SearchUserForRole(string email, string password)
         {
-            string path = UtilityFunctions.GetPath("Users.txt");
             if (!File.Exists(path))
                 return "";
             foreach (string line in File.ReadLines(path))

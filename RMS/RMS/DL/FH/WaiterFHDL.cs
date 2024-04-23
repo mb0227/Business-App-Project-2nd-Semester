@@ -12,9 +12,9 @@ namespace RMS.DL
 {
     public class WaiterFHDL : IWaiterDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Waiters.txt");
         public void SaveWaiter(Waiter waiter)
         {
-            string path = UtilityFunctions.GetPath("Waiters.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -25,7 +25,6 @@ namespace RMS.DL
         public List<Waiter> GetWaiters()
         {
             List<Waiter> waiters = new List<Waiter>();
-            string path = UtilityFunctions.GetPath("Waiters.txt");
             string path2 = UtilityFunctions.GetPath("Employees.txt");
 
             if (File.Exists(path))

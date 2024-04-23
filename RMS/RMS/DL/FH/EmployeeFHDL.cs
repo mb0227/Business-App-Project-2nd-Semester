@@ -12,9 +12,9 @@ namespace RMS.DL
 {
     public class EmployeeFHDL : IEmployeeDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Employees.txt");
         public void SaveEmployee(Employee employee)
         {
-            string path = UtilityFunctions.GetPath("Employees.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -64,7 +64,6 @@ namespace RMS.DL
 
         public int GetEmployeeID(string username)
         {
-            string path = UtilityFunctions.GetPath("Employees.txt");
 
             if (File.Exists(path))
             {
@@ -83,7 +82,6 @@ namespace RMS.DL
 
         public bool UsernameAlreadyExists(string username)
         {
-            string path = UtilityFunctions.GetPath("Employees.txt");
 
             if (File.Exists(path))
             {
@@ -102,7 +100,6 @@ namespace RMS.DL
 
         public string GetEmployeeRole(int id)
         {
-            string path = UtilityFunctions.GetPath("Users.txt");
             int userID = ObjectHandler.GetUserDL().GetUserIDEmp(id);
             if (File.Exists(path))
             {
@@ -122,7 +119,6 @@ namespace RMS.DL
         public List<Employee> GetEmployees()
         {
             List<Employee> employees = new List<Employee>();
-            string path = UtilityFunctions.GetPath("Employees.txt");
 
             if (File.Exists(path))
             {
@@ -150,7 +146,6 @@ namespace RMS.DL
 
         public Chef SearchChefById(int userID)
         {
-            string path = UtilityFunctions.GetPath("Employees.txt");
             string path2 = UtilityFunctions.GetPath("Chefs.txt");
 
             if (File.Exists(path))
@@ -192,7 +187,6 @@ namespace RMS.DL
 
         public Waiter SearchWaiterById(int userID)
         {
-            string path = UtilityFunctions.GetPath("Employees.txt");
             string path2 = UtilityFunctions.GetPath("Waiters.txt");
 
             if (File.Exists(path))
@@ -235,7 +229,6 @@ namespace RMS.DL
 
         public Admin SearchAdminById(int userID)
         {
-            string path = UtilityFunctions.GetPath("Employees.txt");
             string path2 = UtilityFunctions.GetPath("Admins.txt");
 
             if (File.Exists(path))

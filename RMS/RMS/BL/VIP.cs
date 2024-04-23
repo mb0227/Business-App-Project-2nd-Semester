@@ -10,10 +10,10 @@ namespace RMS.BL
     {
         private string MembershipLevel;
         private List<string> Vouchers = new List<string>();
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
-        private int CustomerID;
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
+#pragma warning disable CS0108 
+        private int CustomerID;
+#pragma warning restore CS0108 
         private int ID;
         public VIP(int id, string membershipLevel, int customerID, List<string> vouchers)
         {

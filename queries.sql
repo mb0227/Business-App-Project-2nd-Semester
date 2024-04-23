@@ -10,7 +10,7 @@ CREATE TABLE Customers (
     Username nvarchar(50) UNIQUE NOT NULL,
     Contact nvarchar(50),
     Cart nvarchar(255),
-    Status nvarchar(50) NOT NULL,
+    "Status" nvarchar(50) NOT NULL,
 	Gender nvarchar(50) NOT NULL,
     UserID int NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(ID)
@@ -25,7 +25,6 @@ CREATE TABLE Regular(
 
 CREATE TABLE Admins(
 	ID int PRIMARY KEY IDENTITY,
-	Username nvarchar(50) UNIQUE NOT NULL,
 	ToolsUsed nvarchar(255),
 	Permisssions nvarchar(255),
 	EmployeeID int,
@@ -39,10 +38,10 @@ CREATE TABLE VIP(
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) 
 );
 
-CREATE TABLE Voucher(
+CREATE TABLE Vouchers(
 	ID int PRIMARY KEY IDENTITY,
-	VipID int NOT NULL,
-	FOREIGN KEY (VipID) REFERENCES VIP(ID)
+	ExpirationDate datetime NOT NULL,
+	"Value" decimal(10,2) NOT NULL
 );
 
 CREATE TABLE "Table"(
@@ -55,9 +54,9 @@ CREATE TABLE Reservation(
 	ID int PRIMARY KEY IDENTITY,
 	ReservationDate Datetime NOT NULL,
 	TotalPersons int NOT NULL,
-	CustomerID int NOT NULL,
+	CustomerID int,
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),
-	TableID int,
+	TableID int NOT NULL,
 	FOREIGN KEY (TableID) REFERENCES "Table"(ID),
 );
 
@@ -73,10 +72,10 @@ CREATE TABLE Orders(
 	ProductsOrdered nvarchar(255) NOT NULL,
 	TotalPrice decimal(10,2) NOT NULL,
 	OrderDate DateTime,
-	Status nvarchar(50) NOT NULL,
+	"Status" nvarchar(50) NOT NULL,
 	CustomerComments nvarchar(255),
 	PaymentMethod nvarchar(50) NOT NULL,
-	CustomerID int NOT NULL,
+	CustomerID int,
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID)
 );
 
@@ -85,16 +84,6 @@ CREATE TABLE Deals(
 	DealName nvarchar(50) NOT NULL,
 	TotalPrice decimal(10,2) NOT NULL,
 	Items TEXT NOT NULL
-);
-
-CREATE TABLE Transactions(
-	ID int PRIMARY KEY IDENTITY,
-	TotalAmount decimal(10,2) NOT NULL,
-	AmountPaid decimal(10,2) NOT NULL,
-	AmountLeft decimal (10,2) NOT NULL,
-	Tax decimal (10,2),
-	OrderID int NOT NULL,
-	FOREIGN KEY (OrderID) REFERENCES Orders(ID)
 );
 
 CREATE TABLE Products(
@@ -134,7 +123,7 @@ CREATE TABLE Chefs(
 );
 
 CREATE TABLE Waiters(
-	ID INT Primary KEY IDENTITY,
+	ID INT PRIMARY KEY IDENTITY,
 	"Shift" nvarchar(50),
 	Area nvarchar(50) NOT NULL,
 	"Language" nvarchar(50),
@@ -143,12 +132,12 @@ CREATE TABLE Waiters(
 );
 
 CREATE TABLE Notifications(
-	ID int Primary Key Identity,
-	Notification Text
+	ID INT PRIMARY KEY IDENTITY,
+	"Notification" Text
 );
 
-Create Table ViewNotification(
-	ID int primary key identity,
+CREATE TABLE ViewNotification(
+	ID INT PRIMARY KEY IDENTITY,
 	NotificationID int,
 	CustomerID int,
 	HasSeen int,
@@ -156,17 +145,17 @@ Create Table ViewNotification(
 	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),
 );
 
-create table UserPictures(
-	ID int primary key identity,
-	Image image,
+CREATE TABLE UserPictures(
+	ID INT PRIMARY KEY IDENTITY,
+	"Image" image,
 	UserID int NOT NULL,
-	FOREIGN KEY(UserID) REFERENCES USERS(ID)
+	FOREIGN KEY(UserID) REFERENCES Users(ID)
 );
 
-CREATE TABLE Messages (
-    MessageID INT PRIMARY KEY,
+CREATE TABLE "Messages" (
+    MessageID INT PRIMARY KEY IDENTITY,
     SenderID INT,
     ReceiverID INT,
     MessageText VARCHAR(MAX),
-    Timestamp DATETIME
+    "Timestamp" DATETIME
 );

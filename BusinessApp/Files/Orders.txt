@@ -1,12 +1,4 @@
-2,4, ,4, 4/12/2024 9:15:38 PM, Ande Wala of Burger, 120, Cash on Delivery
-3,4,,4,4/12/2024 9:26:33 PM,Small of PIZZA;Medium of PIZZA;Large of PIZZA,2500,Cash on Delivery
-4,4, ,4, 4/13/2024 12:59:31 AM, Ande Wala of Burger;Ande Wala of Burger, 240, Cash on Delivery
-5,4, ,4, 4/13/2024 12:59:59 AM, Ande Wala of Burger, 120, Cash on Delivery
-6,4, ,3, 4/13/2024 1:02:50 AM, Ande Wala of Burger, 120, Cash on Delivery
-7,-1,,3,4/13/2024 1:23:27 AM,Small of PIZZA;Medium of PIZZA;Large of PIZZA,2500,Cash on Delivery
-8,-1, ,3, 4/13/2024 1:24:23 AM, Small of PIZZA;Small of PIZZA;Small of PIZZA, 3000, cash
-9,4, ,1, 4/13/2024 10:34:30 AM, Ande Wala of Burger;ZINGER of Burger, 370, Cash on Delivery
-10,-1, ,1, 4/13/2024 10:53:32 AM, Ande Wala of Burger, 120, cash
-11,-1, ,3, 4/13/2024 10:53:43 AM, ZINGER of Burger;ZINGER of Burger;ZINGER of Burger;ZINGER of Burger;ZINGER of Burger;ZINGER of Burger;ZINGER of Burger;ZINGER of Burger;ZINGER of Burger, 2250, card
-12,-1,,1,4/13/2024 10:54:11 AM,Small of PIZZA;Medium of PIZZA;Large of PIZZA,2500,Cash on Delivery
-13,4, ,0, 4/13/2024 11:48:56 AM, Ande Wala of Burger;Ande Wala of Burger, 240, Cash on Delivery
+1,1, ,3, 4/24/2024 1:20:34 AM, Zinger of Burger;Tin of Pepsii, 400, Cash on Delivery
+2,2,,3,4/24/2024 1:24:02 AM,Tin of Pepsii;Zinger of Burger;Zinger of Burger;Zinger of Burger,800,Cash on Delivery
+3,-1, spicy,3, 4/24/2024 1:40:58 AM, Zinger of Burger, 200, cash
+4,-1,,3,4/24/2024 1:41:06 AM,Tin of Pepsii;Zinger of Burger;Zinger of Burger;Zinger of Burger,800,Cash on Delivery

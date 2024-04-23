@@ -1,5 +1,4 @@
-1,Burger, Fast Food, burgerrr,1
-2,PIZZA,Fast Food,PITZA,1
-
-
-4,Pepsi, Drinks, Pepsiii,1
+1,Burger, Fast Food, BURGERRR!!!!!!!!!!!!,1
+2,Pizza, Fast Food, Pizaaaaaaaaa!!!!!!!, 0
+3,Karahi, Desi Food, special,1
+4,Pepsii,Drinks,pepsiiiiiiiiiiiiiiiii!!!!!!!!!!!!!!!!!!!!!!,1

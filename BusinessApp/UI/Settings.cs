@@ -10,8 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
-using SignInSignUp.Reports;
-using CrystalDecisions.CrystalReports.Engine;
 using System.IO;
 using RMS.Reports;
 
@@ -95,7 +93,6 @@ namespace RMS.UI
             form.Show();
             this.Hide();
         }
-
 
         private void CNavBar_NavBarCollapsed(object sender, bool collapsed)
         {
@@ -183,6 +180,7 @@ namespace RMS.UI
                 }
             }
         }
+        
         private void MarkRead_Click(object sender, EventArgs e)
         {
             List<string> notifications = ObjectHandler.GetNotificationDL().GetNotifications(customer.GetID());
@@ -190,6 +188,7 @@ namespace RMS.UI
             {
                 ObjectHandler.GetNotificationDL().MarkAsRead(customer.GetID());
             }
+            notiCount.Text = "";
         }
 
         private void ChangeUpdateControlsVisibility(bool b)
@@ -422,8 +421,5 @@ namespace RMS.UI
             }
         }
 
-        private void userDetailsButton_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

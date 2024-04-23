@@ -11,10 +11,10 @@ namespace RMS.DL
 {
     public class VoucherFHDL : IVoucherDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Vouchers.txt");
         public List<string> AwardVouchers(int number)
         {
             List<string> vouchers = new List<string>();
-            string path = UtilityFunctions.GetPath("Vouchers.txt");
 
             if (!File.Exists(path))
             {
@@ -38,7 +38,6 @@ namespace RMS.DL
 
         public Voucher GetVoucher(int ID)
         {
-            string path = UtilityFunctions.GetPath("Vouchers.txt");
             if (!File.Exists(path))
             {
                 return null;
@@ -72,7 +71,6 @@ namespace RMS.DL
         public void GenerateVouchers()
         {
             Random random = new Random();
-            string path = UtilityFunctions.GetPath("Vouchers.txt");
 
             using (StreamWriter writer = new StreamWriter(path))
             {
@@ -84,7 +82,6 @@ namespace RMS.DL
                     writer.WriteLine(voucherData);
                 }
             }
-            Console.WriteLine("Vouchers generated.");
         }
     }
 }

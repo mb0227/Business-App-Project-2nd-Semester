@@ -54,12 +54,14 @@
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.logOut = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -110,7 +112,7 @@
             this.reservationBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.reservationBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationBtn.ForeColor = System.Drawing.Color.Black;
-            this.reservationBtn.Location = new System.Drawing.Point(1062, 0);
+            this.reservationBtn.Location = new System.Drawing.Point(1050, 0);
             this.reservationBtn.Name = "reservationBtn";
             this.reservationBtn.Size = new System.Drawing.Size(263, 88);
             this.reservationBtn.TabIndex = 48;
@@ -334,7 +336,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = true;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.dataGridView1.Location = new System.Drawing.Point(592, 218);
+            this.dataGridView1.Location = new System.Drawing.Point(586, 152);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -381,7 +383,9 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.logOut);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(13, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1317, 732);
@@ -391,7 +395,7 @@
             // 
             this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
-            this.logOut.Location = new System.Drawing.Point(1213, 3);
+            this.logOut.Location = new System.Drawing.Point(1184, 3);
             this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(68, 66);
             this.logOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -399,13 +403,22 @@
             this.logOut.TabStop = false;
             this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Location = new System.Drawing.Point(1258, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
             // ManageReservations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
             this.ClientSize = new System.Drawing.Size(1328, 1050);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.reservationText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -430,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,5 +471,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logOut;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

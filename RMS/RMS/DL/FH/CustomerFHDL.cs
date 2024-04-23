@@ -10,9 +10,9 @@ namespace RMS.DL
 {
     public class CustomerFHDL : ICustomerDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Customers.txt");
         public void SaveCustomer(Customer customer)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
             int id = UtilityFunctions.AssignID(path);
 
             using (StreamWriter writer = new StreamWriter(path, append: true))
@@ -23,7 +23,6 @@ namespace RMS.DL
 
         public void SaveCart(Customer customer)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
             {
@@ -40,8 +39,6 @@ namespace RMS.DL
 
         public int GetCustomerID(string username)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
-
             if (File.Exists(path))
             {
                 foreach (string line in File.ReadLines(path))
@@ -58,7 +55,6 @@ namespace RMS.DL
 
         public void UpdateStatus(string status, int id)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
             {
@@ -75,7 +71,6 @@ namespace RMS.DL
 
         public Customer SearchCustomerById(int userID)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
             if (File.Exists(path))
             {
                 foreach (string line in File.ReadLines(path))
@@ -141,7 +136,6 @@ namespace RMS.DL
 
         public List<Customer> GetCustomers()
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
             List<Customer> customers = new List<Customer>();
 
             if (File.Exists(path))
@@ -169,7 +163,6 @@ namespace RMS.DL
 
         public void UpdateCart(Customer customer)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
             {
@@ -186,8 +179,6 @@ namespace RMS.DL
 
         public bool UsernameAlreadyExists(string username)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
-
             if (File.Exists(path))
             {
                 foreach (string line in File.ReadLines(path))
@@ -204,7 +195,6 @@ namespace RMS.DL
 
         public Customer ForgotPassword(int userID)
         {
-            string path = UtilityFunctions.GetPath("Customers.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);

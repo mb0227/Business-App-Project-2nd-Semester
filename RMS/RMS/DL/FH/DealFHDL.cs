@@ -11,9 +11,9 @@ namespace RMS.DL
 {
     public class DealFHDL : IDealDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Deals.txt");
         public void SaveDeal(Deal deal)
         {
-            string path = UtilityFunctions.GetPath("Deals.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -24,7 +24,6 @@ namespace RMS.DL
         public List<Deal> GetDeals()
         {
             List<Deal> deals = new List<Deal>();
-            string path = UtilityFunctions.GetPath("Deals.txt");
 
             if (File.Exists(path))
             {
@@ -71,7 +70,6 @@ namespace RMS.DL
 
         public void RemoveDeal(int id)
         {
-            string path = UtilityFunctions.GetPath("Deals.txt");
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
             {

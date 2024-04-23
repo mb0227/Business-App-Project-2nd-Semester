@@ -49,11 +49,11 @@ namespace RMS.DL
                 {
                     int id = Convert.ToInt32(reader["ID"]);
                     DateTime date = Convert.ToDateTime(reader["ReservationDate"].ToString());
-                    int perosns = Convert.ToInt32(reader["TotalPersons"]);
+                    int persons = Convert.ToInt32(reader["TotalPersons"]);
                     int customerID = Convert.IsDBNull(reader["CustomerID"]) ? -1 : Convert.ToInt32(reader["CustomerID"]);
                     int tableId = Convert.ToInt32(reader["TableID"]);
-                    Reservation reservation = new Reservation(id, date, perosns, customerID, tableId);
-                    Reservations.Add(reservation);
+                    Reservation reservation = new Reservation(id, date, persons, customerID, tableId);
+                    Reservations.Add(reservation);  
                 }
                 return Reservations;
             }

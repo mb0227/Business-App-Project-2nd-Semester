@@ -572,7 +572,7 @@
             this.viewEmpBtn.FillColor = System.Drawing.Color.DarkOrange;
             this.viewEmpBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewEmpBtn.ForeColor = System.Drawing.Color.Black;
-            this.viewEmpBtn.Location = new System.Drawing.Point(937, 563);
+            this.viewEmpBtn.Location = new System.Drawing.Point(401, 483);
             this.viewEmpBtn.Name = "viewEmpBtn";
             this.viewEmpBtn.Size = new System.Drawing.Size(262, 65);
             this.viewEmpBtn.TabIndex = 14;
@@ -592,7 +592,7 @@
             this.addEmployee.FillColor = System.Drawing.Color.Lime;
             this.addEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEmployee.ForeColor = System.Drawing.Color.Black;
-            this.addEmployee.Location = new System.Drawing.Point(937, 483);
+            this.addEmployee.Location = new System.Drawing.Point(903, 483);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(256, 65);
             this.addEmployee.TabIndex = 13;

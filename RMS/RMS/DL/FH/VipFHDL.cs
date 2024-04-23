@@ -11,9 +11,9 @@ namespace RMS.DL
 {
     public class VipFHDL : IVipDL
     {
+        private readonly string path = UtilityFunctions.GetPath("VIP.txt");
         public void SaveVIP(VIP vip)
         {
-            string path = UtilityFunctions.GetPath("VIP.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = new StreamWriter(path, append: true))
             {
@@ -24,7 +24,6 @@ namespace RMS.DL
         public List<VIP> GetVIPs()
         {
             List<VIP> vips = new List<VIP>();
-            string path = UtilityFunctions.GetPath("VIP.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -46,7 +45,6 @@ namespace RMS.DL
 
         public VIP GetVIP(int customerID)
         {
-            string path = UtilityFunctions.GetPath("VIP.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -76,7 +74,6 @@ namespace RMS.DL
 
         public void UpdateVIP(string membershipLevel, int customerID, List<string> Vouchers)
         {
-            string path = UtilityFunctions.GetPath("VIP.txt");
 
             if (File.Exists(path))
             {

@@ -11,9 +11,9 @@ namespace RMS.DL
 {
     public class TableFHDL : ITableDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Tables.txt");
         public void SaveTable(Table table)
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -23,7 +23,6 @@ namespace RMS.DL
 
         public void UpdateTablesStatus(int tableID)
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
@@ -43,7 +42,6 @@ namespace RMS.DL
 
         public void UpdateTablesStatus()
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             string path2 = UtilityFunctions.GetPath("Reservations.txt");
             List<string> updatedLines = new List<string>();
 
@@ -62,6 +60,7 @@ namespace RMS.DL
                             string status = parts[2];
                             if (File.Exists(path2))
                             {
+                                List<string> updatedLines2 = new List<string>();
                                 using (StreamReader reader2 = new StreamReader(path2))
                                 {
                                     string line2;
@@ -75,10 +74,13 @@ namespace RMS.DL
                                             {
                                                 status = "Unbooked";
                                                 line = $"{id},{capacity},{status}";
+                                                continue;
                                             }
                                         }
+                                        updatedLines2.Add(line2);
                                     }
                                 }
+                                File.WriteAllLines(path2, updatedLines2);
                             }
                         }
                         updatedLines.Add(line);
@@ -90,7 +92,6 @@ namespace RMS.DL
 
         public Table GetTableById(int id)
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -114,7 +115,6 @@ namespace RMS.DL
 
         public List<Table> GetTables()
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             List<Table> tables = new List<Table>();
 
             if (File.Exists(path))
@@ -140,7 +140,6 @@ namespace RMS.DL
 
         public void UpdateTable(Table t)
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 List<string> lines = new List<string>();
@@ -165,7 +164,6 @@ namespace RMS.DL
 
         public int GetTableCapacity(int id)
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -207,7 +205,6 @@ namespace RMS.DL
 
         public void DeleteTable(int id)
         {
-            string path = UtilityFunctions.GetPath("Tables.txt");
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);

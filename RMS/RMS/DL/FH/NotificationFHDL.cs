@@ -11,6 +11,8 @@ namespace RMS.DL
 {
     public class NotificationFHDL : INotificationDL
     {
+        private readonly string path = UtilityFunctions.GetPath("Notifications.txt");
+        private readonly string path2 = UtilityFunctions.GetPath("ViewNotifications.txt");
         public List<int> GetAllCustomerIDs()
         {
             List<int> customerIDs = new List<int>();
@@ -34,7 +36,6 @@ namespace RMS.DL
 
         public void SaveNotification(Notification n)
         {
-            string path = UtilityFunctions.GetPath("Notifications.txt");
             int id = UtilityFunctions.AssignID(path);
             using (StreamWriter writer = File.AppendText(path))
             {
@@ -42,7 +43,6 @@ namespace RMS.DL
             }
 
             List<int> customerIDs = GetAllCustomerIDs();
-            string path2 = UtilityFunctions.GetPath("ViewNotifications.txt");
             int id2 = UtilityFunctions.AssignID(path2);
             using (StreamWriter writer = File.AppendText(path2))
             {
@@ -56,8 +56,6 @@ namespace RMS.DL
         public List<string> GetNotifications(int customerId)
         {
             List<string> notifications = new List<string>();
-            string path = UtilityFunctions.GetPath("Notifications.txt");
-            string path2 = UtilityFunctions.GetPath("ViewNotifications.txt");
 
             if (File.Exists(path) && File.Exists(path2))
             {
@@ -82,10 +80,9 @@ namespace RMS.DL
 
         public void MarkAsRead(int customerId)
         {
-            string path = UtilityFunctions.GetPath("ViewNotifications.txt");
-            if (File.Exists(path))
+            if (File.Exists(path2))
             {
-                string[] lines = File.ReadAllLines(path);
+                string[] lines = File.ReadAllLines(path2);
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string[] parts = lines[i].Split(',');
@@ -94,7 +91,7 @@ namespace RMS.DL
                         lines[i] = $"{parts[0]},{parts[1]},{parts[2]},1";
                     }
                 }
-                File.WriteAllLines(path, lines);
+                File.WriteAllLines(path2, lines);
             }
         }
     }

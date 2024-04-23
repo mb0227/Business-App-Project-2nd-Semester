@@ -3,91 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\makedeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\makedeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\managereservations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\managereservations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\addvariants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\addvariants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\managereservations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\managereservations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\addvariants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\addvariants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\manageproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\manageproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\manageproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\manageproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\makedeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\makedeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\chefdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\chefdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\managetables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\managetables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\TableFHDL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\managetables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\managetables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\usercontrols\\navbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:usercontrols\\navbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\usercontrols\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:usercontrols\\customernavbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\manageemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\manageemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\manageemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\manageemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\managecustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\managecustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|c:\\users\\bilal\\onedrive\\desktop\\b-app\\businessapp\\ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\TableDBDL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\ui\\manageorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\manageorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\ui\\waiterdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\waiterdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\ui\\waiterdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:ui\\waiterdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\usercontrols\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DBD870E-311B-429C-8B1E-18289E78244D}|BusinessApp.csproj|solutionrelative:usercontrols\\customerheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -97,279 +41,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddVariants.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\AddVariants.cs",
-              "RelativeDocumentMoniker": "UI\\AddVariants.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\AddVariants.cs",
-              "RelativeToolTip": "UI\\AddVariants.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAASwEgAAAAMAAAA",
+              "DocumentIndex": 0,
+              "Title": "ManageReservations.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageReservations.cs",
+              "RelativeDocumentMoniker": "UI\\ManageReservations.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageReservations.cs",
+              "RelativeToolTip": "UI\\ManageReservations.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAwwGgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:28:56.277Z",
+              "WhenOpened": "2024-04-23T22:05:31.29Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MakeDeal.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\MakeDeal.cs",
-              "RelativeDocumentMoniker": "UI\\MakeDeal.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\MakeDeal.cs",
-              "RelativeToolTip": "UI\\MakeDeal.cs",
-              "ViewState": "AQIAAIkAAAAAAAAAAAAjwKAAAAAQAAAA",
+              "DocumentIndex": 1,
+              "Title": "ManageReservations.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageReservations.cs",
+              "RelativeDocumentMoniker": "UI\\ManageReservations.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageReservations.cs [Design]",
+              "RelativeToolTip": "UI\\ManageReservations.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:25:12.976Z",
+              "WhenOpened": "2024-04-23T22:04:48.748Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TableFHDL.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
+              "RelativeDocumentMoniker": "..\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
+              "RelativeToolTip": "..\\RMS\\RMS\\DL\\FH\\TableFHDL.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAUwFgAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T22:02:40.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MakeDeal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\MakeDeal.cs",
-              "RelativeDocumentMoniker": "UI\\MakeDeal.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\MakeDeal.cs [Design]",
-              "RelativeToolTip": "UI\\MakeDeal.cs [Design]",
+              "Title": "Navbar.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UserControls\\Navbar.cs",
+              "RelativeDocumentMoniker": "UserControls\\Navbar.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UserControls\\Navbar.cs [Design]",
+              "RelativeToolTip": "UserControls\\Navbar.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:19:34.054Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddVariants.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\AddVariants.cs",
-              "RelativeDocumentMoniker": "UI\\AddVariants.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\AddVariants.cs [Design]",
-              "RelativeToolTip": "UI\\AddVariants.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:18:56.352Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ManageProducts.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageProducts.cs",
-              "RelativeDocumentMoniker": "UI\\ManageProducts.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageProducts.cs",
-              "RelativeToolTip": "UI\\ManageProducts.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAewCMAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:18:50.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ManageTables.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageTables.cs",
-              "RelativeDocumentMoniker": "UI\\ManageTables.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageTables.cs",
-              "RelativeToolTip": "UI\\ManageTables.cs",
-              "ViewState": "AQIAAN4AAAAAAAAAAAAjwOEAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:58:06.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ManageProducts.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageProducts.cs",
-              "RelativeDocumentMoniker": "UI\\ManageProducts.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageProducts.cs [Design]",
-              "RelativeToolTip": "UI\\ManageProducts.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T07:30:02.261Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-23T20:59:43.515Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AdminDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\AdminDashboard.cs",
-              "RelativeDocumentMoniker": "UI\\AdminDashboard.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\AdminDashboard.cs [Design]",
-              "RelativeToolTip": "UI\\AdminDashboard.cs [Design]",
+              "Title": "CustomerNavbar.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UserControls\\CustomerNavbar.cs",
+              "RelativeDocumentMoniker": "UserControls\\CustomerNavbar.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UserControls\\CustomerNavbar.cs [Design]",
+              "RelativeToolTip": "UserControls\\CustomerNavbar.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:08:49.814Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ManageTables.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageTables.cs",
-              "RelativeDocumentMoniker": "UI\\ManageTables.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageTables.cs [Design]",
-              "RelativeToolTip": "UI\\ManageTables.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:58:05.091Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ViewEmployees.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ViewEmployees.cs",
-              "RelativeDocumentMoniker": "UI\\ViewEmployees.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ViewEmployees.cs",
-              "RelativeToolTip": "UI\\ViewEmployees.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAgwEoAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:31:04.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T20:59:41.344Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ChefDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ChefDashboard.cs",
-              "RelativeDocumentMoniker": "UI\\ChefDashboard.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ChefDashboard.cs [Design]",
-              "RelativeToolTip": "UI\\ChefDashboard.cs [Design]",
+              "Title": "CustomerHeader.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UserControls\\CustomerHeader.cs",
+              "RelativeDocumentMoniker": "UserControls\\CustomerHeader.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UserControls\\CustomerHeader.cs [Design]",
+              "RelativeToolTip": "UserControls\\CustomerHeader.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:08:45.926Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-23T20:59:38.751Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ViewEmployees.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ViewEmployees.cs",
-              "RelativeDocumentMoniker": "UI\\ViewEmployees.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ViewEmployees.cs [Design]",
-              "RelativeToolTip": "UI\\ViewEmployees.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "Homepage.cs",
+              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeDocumentMoniker": "UI\\Homepage.cs",
+              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\Homepage.cs",
+              "RelativeToolTip": "UI\\Homepage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:56:15.952Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ManageEmployees.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageEmployees.cs",
-              "RelativeDocumentMoniker": "UI\\ManageEmployees.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageEmployees.cs",
-              "RelativeToolTip": "UI\\ManageEmployees.cs",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAnwK0AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:51:47.443Z",
+              "WhenOpened": "2024-04-23T20:59:10.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAA+wBcAAAAmAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:12:59.529Z",
+              "WhenOpened": "2024-04-23T20:46:32.894Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ManageEmployees.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageEmployees.cs",
-              "RelativeDocumentMoniker": "UI\\ManageEmployees.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageEmployees.cs [Design]",
-              "RelativeToolTip": "UI\\ManageEmployees.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:51:43.14Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ManageCustomers.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageCustomers.cs",
-              "RelativeDocumentMoniker": "UI\\ManageCustomers.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageCustomers.cs",
-              "RelativeToolTip": "UI\\ManageCustomers.cs",
-              "ViewState": "AQIAAPEAAAAAAAAAAAAAAAQBAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:30:12.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SignUp.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\SignUp.cs",
-              "RelativeDocumentMoniker": "UI\\SignUp.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\SignUp.cs",
-              "RelativeToolTip": "UI\\SignUp.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAYwKUAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:26:26.796Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SignUp.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\SignUp.cs",
-              "RelativeDocumentMoniker": "UI\\SignUp.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\SignUp.cs [Design]",
-              "RelativeToolTip": "UI\\SignUp.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:26:23.781Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "TableDBDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\TableDBDL.cs",
-              "RelativeDocumentMoniker": "..\\RMS\\RMS\\DL\\DB\\TableDBDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\RMS\\RMS\\DL\\DB\\TableDBDL.cs",
-              "RelativeToolTip": "..\\RMS\\RMS\\DL\\DB\\TableDBDL.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAawCwAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T11:13:46.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ManageOrders.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageOrders.cs",
-              "RelativeDocumentMoniker": "UI\\ManageOrders.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\ManageOrders.cs [Design]",
-              "RelativeToolTip": "UI\\ManageOrders.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T07:25:02.719Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "WaiterDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\WaiterDashboard.cs",
-              "RelativeDocumentMoniker": "UI\\WaiterDashboard.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\WaiterDashboard.cs",
-              "RelativeToolTip": "UI\\WaiterDashboard.cs",
-              "ViewState": "AQIAALEAAAAAAAAAAAAEwLsAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T07:23:44.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "WaiterDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\WaiterDashboard.cs",
-              "RelativeDocumentMoniker": "UI\\WaiterDashboard.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\b-app\\BusinessApp\\UI\\WaiterDashboard.cs [Design]",
-              "RelativeToolTip": "UI\\WaiterDashboard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T00:50:22.257Z"
             }
           ]
         }

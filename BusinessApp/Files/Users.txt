@@ -1,7 +1,8 @@
-5,b@mail.com,B, Admin
-2,b7@mail.com,b, Customer
-1,b7@Mail.com, b, Customer
-3,e@mail.com, b, Chef
+1,b7@mail.com, b, Customer
+2,b6@mail.com, b, Customer
+4,b@mail.com, b, Admin
+5,a@mail.com, b, Admin
 6,c@mail.com, b, Chef
-7,d@mail.com, d, Waiter
-8,wee@mail.com, b, Waiter
+7,c1@mail.com, b, Chef
+9,e@mail.com, b, Waiter
+10,e1@mail.com, b, Waiter

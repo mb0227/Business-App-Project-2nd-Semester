@@ -1,1 +1,2 @@
-1,adobevs, everything, 1
+1,adobe;vs;cs, none, 1
+2,none, none, 2
