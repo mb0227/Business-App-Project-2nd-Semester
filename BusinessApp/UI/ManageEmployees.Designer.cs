@@ -90,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(42, 73);
+            this.panel4.Location = new System.Drawing.Point(57, 73);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1285, 91);
             this.panel4.TabIndex = 23;
@@ -171,7 +171,7 @@
             this.tb3.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb3.ForeColor = System.Drawing.Color.Black;
             this.tb3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb3.Location = new System.Drawing.Point(703, 421);
+            this.tb3.Location = new System.Drawing.Point(703, 392);
             this.tb3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tb3.Name = "tb3";
             this.tb3.PasswordChar = '\0';
@@ -199,7 +199,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(535, 430);
+            this.label11.Location = new System.Drawing.Point(535, 401);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 34);
             this.label11.TabIndex = 85;
@@ -221,7 +221,7 @@
             this.tb2.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb2.ForeColor = System.Drawing.Color.Black;
             this.tb2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb2.Location = new System.Drawing.Point(882, 344);
+            this.tb2.Location = new System.Drawing.Point(882, 331);
             this.tb2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tb2.Name = "tb2";
             this.tb2.PasswordChar = '\0';
@@ -238,7 +238,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(741, 345);
+            this.label10.Location = new System.Drawing.Point(741, 332);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 34);
             this.label10.TabIndex = 83;
@@ -260,7 +260,7 @@
             this.tb1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.tb1.ForeColor = System.Drawing.Color.Black;
             this.tb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb1.Location = new System.Drawing.Point(445, 343);
+            this.tb1.Location = new System.Drawing.Point(445, 330);
             this.tb1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tb1.Name = "tb1";
             this.tb1.PasswordChar = '\0';
@@ -277,7 +277,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(300, 343);
+            this.label9.Location = new System.Drawing.Point(300, 330);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 34);
             this.label9.TabIndex = 81;
@@ -572,7 +572,7 @@
             this.viewEmpBtn.FillColor = System.Drawing.Color.DarkOrange;
             this.viewEmpBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewEmpBtn.ForeColor = System.Drawing.Color.Black;
-            this.viewEmpBtn.Location = new System.Drawing.Point(401, 483);
+            this.viewEmpBtn.Location = new System.Drawing.Point(419, 448);
             this.viewEmpBtn.Name = "viewEmpBtn";
             this.viewEmpBtn.Size = new System.Drawing.Size(262, 65);
             this.viewEmpBtn.TabIndex = 14;
@@ -592,7 +592,7 @@
             this.addEmployee.FillColor = System.Drawing.Color.Lime;
             this.addEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEmployee.ForeColor = System.Drawing.Color.Black;
-            this.addEmployee.Location = new System.Drawing.Point(903, 483);
+            this.addEmployee.Location = new System.Drawing.Point(939, 448);
             this.addEmployee.Name = "addEmployee";
             this.addEmployee.Size = new System.Drawing.Size(256, 65);
             this.addEmployee.TabIndex = 13;

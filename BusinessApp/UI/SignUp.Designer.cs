@@ -483,7 +483,7 @@
             this.backBtn.Name = "backBtn";
             this.backBtn.ShadowDecoration.BorderRadius = 10;
             this.backBtn.Size = new System.Drawing.Size(192, 67);
-            this.backBtn.TabIndex = 80;
+            this.backBtn.TabIndex = 7;
             this.backBtn.Text = "Back";
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
@@ -507,7 +507,7 @@
             this.signUpBtn.Name = "signUpBtn";
             this.signUpBtn.ShadowDecoration.BorderRadius = 10;
             this.signUpBtn.Size = new System.Drawing.Size(192, 67);
-            this.signUpBtn.TabIndex = 79;
+            this.signUpBtn.TabIndex = 8;
             this.signUpBtn.Text = "Sign Up";
             this.signUpBtn.Click += new System.EventHandler(this.signUpBtn_Click);
             // 
@@ -859,7 +859,7 @@
             this.radioButton3.Location = new System.Drawing.Point(19, 10);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(80, 29);
-            this.radioButton3.TabIndex = 1;
+            this.radioButton3.TabIndex = 5;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Male";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -873,7 +873,7 @@
             this.radioButton4.Location = new System.Drawing.Point(19, 40);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(102, 29);
-            this.radioButton4.TabIndex = 2;
+            this.radioButton4.TabIndex = 6;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Female";
             this.radioButton4.UseVisualStyleBackColor = true;

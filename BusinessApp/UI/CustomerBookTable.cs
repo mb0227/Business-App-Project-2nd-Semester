@@ -178,8 +178,10 @@ namespace RMS.UI
             {
                 string name = customer.GetUsername();
                 int customerID = ObjectHandler.GetCustomerDL().GetCustomerID(name);
+                MessageBox.Show(customerID.ToString());
                 if (ObjectHandler.GetReservationDL().GetCustomerReservationCount(customerID) == 1)
                 {
+                    MessageBox.Show(customerID.ToString());
                     reservationText.Text = "";
                     reservationText.Text = "You have a Reservation at "+ ObjectHandler.GetReservationDL().GetReservationDate(customerID);
                     reservationText.Visible = true;

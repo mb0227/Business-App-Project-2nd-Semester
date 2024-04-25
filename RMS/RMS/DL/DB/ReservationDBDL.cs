@@ -83,8 +83,8 @@ namespace RMS.DL
 
                 string query = @"
                 SELECT COUNT(*)
-                FROM [RMS].[dbo].[Reservation] R
-                INNER JOIN [RMS].[dbo].[Customers] C ON R.CustomerID = C.ID
+                FROM Reservation R
+                INNER JOIN Customers C ON R.CustomerID = C.ID
                 WHERE C.ID = @CustomerId
                 AND R.ReservationDate >= CAST(GETDATE() AS DATETIME);
             ";

@@ -13,29 +13,41 @@ CREATE TABLE Customers (
     "Status" nvarchar(50) NOT NULL,
 	Gender nvarchar(50) NOT NULL,
     UserID int NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES Users(ID)
+    FOREIGN KEY (UserID) REFERENCES Users(ID) ON DELETE CASCADE
 );
+
+CREATE TABLE Employees(
+	ID INT Primary KEY IDENTITY,
+	Username nvarchar(50) UNIQUE NOT NULL, 
+	Contact nvarchar(50),
+	Salary decimal(10, 2) NOT NULL,
+	JoinDate datetime,
+	Gender nvarchar(50) NOT NULL,
+	UserID int NOT NULL,
+	FOREIGN KEY (UserID) REFERENCES Users(ID) ON DELETE CASCADE
+);
+
 
 CREATE TABLE Regular(
 	ID int PRIMARY KEY IDENTITY,
 	LoyaltyPoints int,
 	CustomerID int NOT NULL,
-	FOREIGN KEY (CustomerID) REFERENCES Customers(ID)
+	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Admins(
 	ID int PRIMARY KEY IDENTITY,
 	ToolsUsed nvarchar(255),
-	Permisssions nvarchar(255),
+	Permissions nvarchar(255),
 	EmployeeID int,
-	FOREIGN KEY (EmployeeID) References Employees(ID) 
+	FOREIGN KEY (EmployeeID) References Employees(ID) ON DELETE CASCADE
 )
 
 CREATE TABLE VIP(
 	ID int PRIMARY KEY IDENTITY,
 	MembershipLevel nvarchar(50) NOT NULL,
 	CustomerID int,
-	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) 
+	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Vouchers(
@@ -55,16 +67,16 @@ CREATE TABLE Reservation(
 	ReservationDate Datetime NOT NULL,
 	TotalPersons int NOT NULL,
 	CustomerID int,
-	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),
+	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE CASCADE,
 	TableID int NOT NULL,
-	FOREIGN KEY (TableID) REFERENCES "Table"(ID),
+	FOREIGN KEY (TableID) REFERENCES "Table"(ID) ON DELETE CASCADE,
 );
 
 CREATE TABLE Feedback(
 	ID int PRIMARY KEY IDENTITY,
 	Reviews nvarchar(50),
 	CustomerID int,
-	FOREIGN KEY (CustomerID) REFERENCES Customers(ID)
+	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Orders(
@@ -76,7 +88,7 @@ CREATE TABLE Orders(
 	CustomerComments nvarchar(255),
 	PaymentMethod nvarchar(50) NOT NULL,
 	CustomerID int,
-	FOREIGN KEY (CustomerID) REFERENCES Customers(ID)
+	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Deals(
@@ -99,19 +111,9 @@ CREATE TABLE ProductVariants(
 	Quantity nvarchar(50) NOT NULL,
 	Price decimal (10,2) NOT NULL,
 	ProductID int NOT NULL,
-	Foreign Key (ProductID) References Products(ID)
+	Foreign Key (ProductID) References Products(ID) ON DELETE CASCADE
 );
 
-CREATE TABLE Employees(
-	ID INT Primary KEY IDENTITY,
-	Username nvarchar(50) UNIQUE NOT NULL, 
-	Contact nvarchar(50),
-	Salary decimal(10, 2) NOT NULL,
-	JoinDate datetime,
-	Gender nvarchar(50) NOT NULL,
-	UserID int NOT NULL,
-	FOREIGN KEY (UserID) REFERENCES Users(ID)
-);
 
 CREATE TABLE Chefs(
 	ID INT Primary KEY IDENTITY,
@@ -119,7 +121,7 @@ CREATE TABLE Chefs(
 	Specialization nvarchar(50),
 	Experience nvarchar(50),
 	EmployeeID int NOT NULL,
-	FOREIGN KEY (EmployeeID) REFERENCES Employees(ID)
+	FOREIGN KEY (EmployeeID) REFERENCES Employees(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Waiters(
@@ -128,7 +130,7 @@ CREATE TABLE Waiters(
 	Area nvarchar(50) NOT NULL,
 	"Language" nvarchar(50),
 	EmployeeID int NOT NULL,
-	FOREIGN KEY (EmployeeID) REFERENCES Employees(ID)
+	FOREIGN KEY (EmployeeID) REFERENCES Employees(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Notifications(
@@ -141,15 +143,15 @@ CREATE TABLE ViewNotification(
 	NotificationID int,
 	CustomerID int,
 	HasSeen int,
-	FOREIGN KEY (NotificationID) REFERENCES Notifications(ID),
-	FOREIGN KEY (CustomerID) REFERENCES Customers(ID),
+	FOREIGN KEY (NotificationID) REFERENCES Notifications(ID) ON DELETE CASCADE,
+	FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE UserPictures(
 	ID INT PRIMARY KEY IDENTITY,
 	"Image" image,
 	UserID int NOT NULL,
-	FOREIGN KEY(UserID) REFERENCES Users(ID)
+	FOREIGN KEY(UserID) REFERENCES Users(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE "Messages" (

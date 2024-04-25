@@ -19,7 +19,7 @@ namespace RMS.DL
             {
                 connection.Open();
 
-                string sqlQuery = "SELECT ID FROM Customers"; // Adjust the table name if necessary
+                string sqlQuery = "SELECT ID FROM Customers"; 
 
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {

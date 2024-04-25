@@ -166,43 +166,43 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command2;
-                if (status == "regular")
-                {
-                    command2 = new SqlCommand("DELETE FROM Regular WHERE CustomerID = @CustomerID", connection);
-                    command2.Parameters.AddWithValue("@CustomerID", id);
-                    command2.ExecuteNonQuery();
-                }
-                else if (status == "vip")
-                {
-                    command2 = new SqlCommand("DELETE FROM VIP WHERE CustomerID = @CustomerID", connection);
-                    command2.Parameters.AddWithValue("@CustomerID", id);
-                    command2.ExecuteNonQuery();
-                }
+                //SqlCommand command2;
+                //if (status == "regular")
+                //{
+                //    command2 = new SqlCommand("DELETE FROM Regular WHERE CustomerID = @CustomerID", connection);
+                //    command2.Parameters.AddWithValue("@CustomerID", id);
+                //    command2.ExecuteNonQuery();
+                //}
+                //else if (status == "vip")
+                //{
+                //    command2 = new SqlCommand("DELETE FROM VIP WHERE CustomerID = @CustomerID", connection);
+                //    command2.Parameters.AddWithValue("@CustomerID", id);
+                //    command2.ExecuteNonQuery();
+                //}
 
-                SqlCommand command3 = new SqlCommand("DELETE FROM Feedback WHERE CustomerID = @CustomerID", connection);
-                command3.Parameters.AddWithValue("@CustomerID", id);
-                command3.ExecuteNonQuery();
+                //SqlCommand command3 = new SqlCommand("DELETE FROM Feedback WHERE CustomerID = @CustomerID", connection);
+                //command3.Parameters.AddWithValue("@CustomerID", id);
+                //command3.ExecuteNonQuery();
 
-                SqlCommand command4 = new SqlCommand("DELETE FROM Reservation WHERE CustomerID = @CustomerID", connection);
-                command4.Parameters.AddWithValue("@CustomerID", id);
-                command4.ExecuteNonQuery();
+                //SqlCommand command4 = new SqlCommand("DELETE FROM Reservation WHERE CustomerID = @CustomerID", connection);
+                //command4.Parameters.AddWithValue("@CustomerID", id);
+                //command4.ExecuteNonQuery();
 
-                SqlCommand command5 = new SqlCommand("DELETE FROM Orders WHERE CustomerID = @CustomerID", connection);
-                command5.Parameters.AddWithValue("@CustomerID", id);
-                command5.ExecuteNonQuery();
+                //SqlCommand command5 = new SqlCommand("DELETE FROM Orders WHERE CustomerID = @CustomerID", connection);
+                //command5.Parameters.AddWithValue("@CustomerID", id);
+                //command5.ExecuteNonQuery();
 
-                SqlCommand command7 = new SqlCommand("DELETE FROM ViewNotification WHERE CustomerID = @CustomerID", connection);
-                command7.Parameters.AddWithValue("@CustomerID", id);
-                command7.ExecuteNonQuery();
+                //SqlCommand command7 = new SqlCommand("DELETE FROM ViewNotification WHERE CustomerID = @CustomerID", connection);
+                //command7.Parameters.AddWithValue("@CustomerID", id);
+                //command7.ExecuteNonQuery();
 
                 SqlCommand command6 = new SqlCommand("DELETE FROM Customers WHERE ID = @ID", connection);
                 command6.Parameters.AddWithValue("@ID", id);
                 command6.ExecuteNonQuery();
 
-                SqlCommand command8 = new SqlCommand("DELETE FROM UserPictures WHERE UserID = @ID", connection);
-                command8.Parameters.AddWithValue("@ID", userId);
-                command8.ExecuteNonQuery();
+                //SqlCommand command8 = new SqlCommand("DELETE FROM UserPictures WHERE UserID = @ID", connection);
+                //command8.Parameters.AddWithValue("@ID", userId);
+                //command8.ExecuteNonQuery();
 
                 SqlCommand command = new SqlCommand("DELETE FROM Users WHERE ID = @ID", connection);
                 command.Parameters.AddWithValue("@ID", userId);

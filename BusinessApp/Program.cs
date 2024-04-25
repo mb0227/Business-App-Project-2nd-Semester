@@ -11,7 +11,7 @@ namespace RMS.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ObjectHandler.GetTableDL().UpdateTablesStatus();
-            Application.Run(new Homepage());
+            Application.Run(new SignIn());
         }
     }
 }

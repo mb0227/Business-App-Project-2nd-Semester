@@ -171,7 +171,7 @@ namespace RMS.DL
 
         public int GetEmployeeID(string username)
         {
-            int empID = -1; // Default value if emp is not found
+            int empID = -1;
 
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
@@ -187,7 +187,7 @@ namespace RMS.DL
                     }
                 }
             }
-            return empID; // Return -1 if user is not found 
+            return empID; 
         }
 
         public bool UsernameAlreadyExists(string username)
@@ -227,7 +227,7 @@ namespace RMS.DL
                     }
                 }
             }
-            return role; // Return -1 if user is not found 
+            return role; 
         }
 
         public void DeleteEmployee(int id, string role, int userid)
@@ -235,22 +235,22 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                SqlCommand command2 = new SqlCommand();
-                if (role == "admin")
-                {
-                    command2 = new SqlCommand("DELETE FROM Admins WHERE EmployeeID = @EmployeeID", connection);
-                }
-                else if (role == "chef")
-                {
-                    command2 = new SqlCommand("DELETE FROM Chefs WHERE EmployeeID = @EmployeeID", connection);
-                }
-                else if (role == "waiter")
-                {
-                    command2 = new SqlCommand("DELETE FROM Waiters WHERE EmployeeID = @EmployeeID", connection);
-                }
+                //SqlCommand command2 = new SqlCommand();
+                //if (role == "admin")
+                //{
+                //    command2 = new SqlCommand("DELETE FROM Admins WHERE EmployeeID = @EmployeeID", connection);
+                //}
+                //else if (role == "chef")
+                //{
+                //    command2 = new SqlCommand("DELETE FROM Chefs WHERE EmployeeID = @EmployeeID", connection);
+                //}
+                //else if (role == "waiter")
+                //{
+                //    command2 = new SqlCommand("DELETE FROM Waiters WHERE EmployeeID = @EmployeeID", connection);
+                //}
 
-                command2.Parameters.AddWithValue("@EmployeeID", id);
-                command2.ExecuteNonQuery();
+                //command2.Parameters.AddWithValue("@EmployeeID", id);
+                //command2.ExecuteNonQuery();
 
                 SqlCommand command3 = new SqlCommand("DELETE FROM Employees WHERE ID = @ID", connection);
                 command3.Parameters.AddWithValue("@ID", id);
