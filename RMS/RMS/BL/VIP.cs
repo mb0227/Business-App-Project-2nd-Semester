@@ -11,10 +11,7 @@ namespace RMS.BL
         private string MembershipLevel;
         private List<string> Vouchers = new List<string>();
 
-#pragma warning disable CS0108 
-        private int CustomerID;
-#pragma warning restore CS0108 
-        private int ID;
+
         public VIP(int id, string membershipLevel, int customerID, List<string> vouchers)
         {
             ID = id;
@@ -68,6 +65,10 @@ namespace RMS.BL
             CustomerID = id;
         }
 
+#pragma warning disable CS0108
+        private int CustomerID;
+#pragma warning restore CS0108 
+        private int ID;
         public int GetVoucherID()
         {
             string[] numbersArray = (string.Join(";", Vouchers)).Split(';');
@@ -95,5 +96,6 @@ namespace RMS.BL
                 return -1;
             }
         }
+
     }
 }

@@ -1,6 +1,5 @@
 ﻿using RMS.BL;
-using SSC.UI;
-using SSC;
+using RMS.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -132,7 +131,7 @@ namespace RMS.UI
             dt.Rows.Clear();
             foreach (Deal deal in ObjectHandler.GetDealDL().GetDeals())
             {
-                dt.Rows.Add(deal.GetID(),deal.GetDealName(), deal.GetPrice(), deal.GetDealString());
+                dt.Rows.Add(deal.GetID(),deal.GetDealName(), deal.GetPrice(), UtilityFunctions.GetDealString(deal.GetDealString()));
             }
         }
 

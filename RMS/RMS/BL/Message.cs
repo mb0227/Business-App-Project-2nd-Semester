@@ -31,6 +31,11 @@ namespace RMS.BL
             this.MessageID = messageID;
         }
 
+        public Message(int messageID, int senderID, int receiverID, string messageText, DateTime time) : this(messageID, senderID, receiverID, messageText)
+        {
+            TimeStamp = time;
+        }
+
         public DateTime GetTime()
         {
             return TimeStamp;

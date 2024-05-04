@@ -7,47 +7,47 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RMS.UI
+namespace RMS.Utility
 {
     public class ObjectHandler
     {
-        private static readonly INotificationDL NotificationDL = new NotificationDBDL();
-        private static readonly IReservationDL ReservationDL = new ReservationDBDL();
-        private static readonly IEmployeeDL EmployeeDL = new EmployeeDBDL();
-        private static readonly ICustomerDL CustomerDL = new CustomerDBDL();
-        private static readonly IFeedbackDL FeedbackDL = new FeedbackDBDL();
-        private static readonly IProductDL ProductDL = new ProductDBDL();
-        private static readonly IMessageDL MessageDL = new MessageDBDL();
-        private static readonly IVoucherDL VoucherDL = new VoucherDBDL();
-        private static readonly IRegularDL RegularDL = new RegularDBDL();
-        private static readonly IWaiterDL WaiterDL = new WaiterDBDL();
-        private static readonly IAdminDL AdminDL = new AdminDBDL();
-        private static readonly ITableDL TableDL = new TableDBDL();
-        private static readonly IOrderDL OrderDL = new OrderDBDL();
-        private static readonly IPhotoDL PhotoDL = new UserDBDL();
-        private static readonly IUserDL UserDL = new UserDBDL();
-        private static readonly IChefDL ChefDL = new ChefDBDL();
-        private static readonly IDealDL DealDL = new DealDBDL();
-        private static readonly IVipDL VipDL = new VipDBDL();
+        //private static readonly INotificationDL NotificationDL = new NotificationDBDL();
+        //private static readonly IReservationDL ReservationDL = new ReservationDBDL();
+        //private static readonly IEmployeeDL EmployeeDL = new EmployeeDBDL();
+        //private static readonly ICustomerDL CustomerDL = new CustomerDBDL();
+        //private static readonly IFeedbackDL FeedbackDL = new FeedbackDBDL();
+        //private static readonly IProductDL ProductDL = new ProductDBDL();
+        //private static readonly IMessageDL MessageDL = new MessageDBDL();
+        //private static readonly IVoucherDL VoucherDL = new VoucherDBDL();
+        //private static readonly IRegularDL RegularDL = new RegularDBDL();
+        //private static readonly IWaiterDL WaiterDL = new WaiterDBDL();
+        //private static readonly IAdminDL AdminDL = new AdminDBDL();
+        //private static readonly ITableDL TableDL = new TableDBDL();
+        //private static readonly IOrderDL OrderDL = new OrderDBDL();
+        //private static readonly IPhotoDL PhotoDL = new UserDBDL();
+        //private static readonly IUserDL UserDL = new UserDBDL();
+        //private static readonly IChefDL ChefDL = new ChefDBDL();
+        //private static readonly IDealDL DealDL = new DealDBDL();
+        //private static readonly IVipDL VipDL = new VipDBDL();
 
-        //private static readonly INotificationDL NotificationDL = new NotificationFHDL();
-        //private static readonly IReservationDL ReservationDL = new ReservationFHDL();
-        //private static readonly IFeedbackDL FeedbackDL = new FeedbackFHDL();
-        //private static readonly ICustomerDL CustomerDL = new CustomerFHDL();
-        //private static readonly IEmployeeDL EmployeeDL = new EmployeeFHDL();
-        //private static readonly IRegularDL RegularDL = new RegularFHDL();
-        //private static readonly IProductDL ProductDL = new ProductFHDL();
-        //private static readonly IMessageDL MessageDL = new MessageFHDL();
-        //private static readonly IVoucherDL VoucherDL = new VoucherFHDL();
-        //private static readonly IWaiterDL WaiterDL = new WaiterFHDL();
-        //private static readonly ITableDL TableDL = new TableFHDL();
-        //private static readonly IOrderDL OrderDL = new OrderFHDL();
-        //private static readonly IAdminDL AdminDL = new AdminFHDL();
-        //private static readonly IPhotoDL PhotoDL = new UserFHDL();
-        //private static readonly IDealDL DealDL = new DealFHDL();
-        //private static readonly IUserDL UserDL = new UserFHDL();
-        //private static readonly IChefDL ChefDL = new ChefFHDL();
-        //private static readonly IVipDL VipDL = new VipFHDL();
+        private static readonly INotificationDL NotificationDL = new NotificationFHDL();
+        private static readonly IReservationDL ReservationDL = new ReservationFHDL();
+        private static readonly IFeedbackDL FeedbackDL = new FeedbackFHDL();
+        private static readonly ICustomerDL CustomerDL = new CustomerFHDL();
+        private static readonly IEmployeeDL EmployeeDL = new EmployeeFHDL();
+        private static readonly IRegularDL RegularDL = new RegularFHDL();
+        private static readonly IProductDL ProductDL = new ProductFHDL();
+        private static readonly IMessageDL MessageDL = new MessageFHDL();
+        private static readonly IVoucherDL VoucherDL = new VoucherFHDL();
+        private static readonly IWaiterDL WaiterDL = new WaiterFHDL();
+        private static readonly ITableDL TableDL = new TableFHDL();
+        private static readonly IOrderDL OrderDL = new OrderFHDL();
+        private static readonly IAdminDL AdminDL = new AdminFHDL();
+        private static readonly IPhotoDL PhotoDL = new UserFHDL();
+        private static readonly IDealDL DealDL = new DealFHDL();
+        private static readonly IUserDL UserDL = new UserFHDL();
+        private static readonly IChefDL ChefDL = new ChefFHDL();
+        private static readonly IVipDL VipDL = new VipFHDL();
 
         public static IUserDL GetUserDL()
         {

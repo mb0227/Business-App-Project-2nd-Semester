@@ -1,7 +1,6 @@
 ﻿using RMS.BL;
 using RMS.DL;
-using SSC.UI;
-using SSC;
+using RMS.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Drawing.Drawing2D;

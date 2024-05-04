@@ -1,6 +1,4 @@
 ﻿using RMS.BL;
-using SSC.UI;
-using SSC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.DL;
+using RMS.Utility;
 using Guna.UI2.WinForms;
 
 namespace RMS.UI

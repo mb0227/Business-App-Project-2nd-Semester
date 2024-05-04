@@ -12,16 +12,13 @@ namespace RMS.DL
         void SaveOrder(Order order);
         int HasOrder(int customerID);
         int GetOrderStatus(int customerID);
-        void OrderDeal(Deal deal, int customerID);
         void OrderDeal(Deal deal);
+        void OrderDeal(Deal deal, int customerID);
         List<Order> GetOrders(int status);
         void UpdateOrderStatus(int id, int status);
         void TakeOrder(Order order);
         int CountOrders(int customerID);
         void DeleteOrder(int customerID);
         int FindOrderByID(int CustomerId);
-
-        //List<Order> GetOrdersByCustomer(int customerID);
-        //void UpdateOrderStatus(int orderID, string status);
     }
 }

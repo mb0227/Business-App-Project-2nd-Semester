@@ -125,7 +125,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MintCream;
-            this.label5.Location = new System.Drawing.Point(437, 217);
+            this.label5.Location = new System.Drawing.Point(437, 282);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 34);
             this.label5.TabIndex = 28;
@@ -137,7 +137,7 @@
             this.priceTB.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTB.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.Location = new System.Drawing.Point(653, 207);
+            this.priceTB.Location = new System.Drawing.Point(653, 272);
             this.priceTB.Multiline = true;
             this.priceTB.Name = "priceTB";
             this.priceTB.Size = new System.Drawing.Size(259, 56);
@@ -150,7 +150,7 @@
             this.quantityText.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.quantityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.quantityText.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityText.Location = new System.Drawing.Point(653, 301);
+            this.quantityText.Location = new System.Drawing.Point(653, 202);
             this.quantityText.Multiline = true;
             this.quantityText.Name = "quantityText";
             this.quantityText.Size = new System.Drawing.Size(259, 52);
@@ -164,7 +164,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MintCream;
-            this.label7.Location = new System.Drawing.Point(437, 306);
+            this.label7.Location = new System.Drawing.Point(437, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 34);
             this.label7.TabIndex = 25;

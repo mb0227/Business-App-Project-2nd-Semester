@@ -13,5 +13,10 @@ namespace RMS.DL
         List<Message> ReceiveMessages(int id, string query);
         int GetAvailableEmployee();
         void SendMessage(Message msg);
+        bool HasChat(int receiverID);
+        int GetReceiverID(int senderID);
+        Message GetNewMessage(int receiverID);
+        List<Customer> GetCustomersNames(int empID);
+        void DeleteEmptyMessages();
     }
 }

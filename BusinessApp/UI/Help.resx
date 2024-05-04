@@ -387,13 +387,16 @@
   <data name="send.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAPlJREFUSEvt1jEOAUEUxvFNaJQkCk4hUbiDRKkjUTmEyhWUepXWBQgKJxASSoVE
+        DAAACwwBP0AiyAAAAPlJREFUSEvt1jEOAUEUxvFNaJQkCk4hUbiDRKkjUTmEyhWUepXWBQgKJxASSoVE
         p1Pwf4lNhEd2x86+Zl/yazaZed/OTmYnyMqy1tiii5w8SKsuuD/tkFqADcLGoSP6yMNbTfDeOOQ1wBBa
         01deAnSgNdMkGqABrckviQQoQZs8CucAZUyhTRpHrABtnKFN5CpSgAKqqKMFGSA7fARZhRUOuEFr8ksi
         e0BOsQpqaKKHAcKAS+xxxXuABZzrn8ZzfNS3pR5jBm9LLc1O0Aa6ivxti5A31CaJw2kzmRwgUmZHptlP
         wuy3aHYRMLv6mF325Mgzud5m5aGC4AE9PhRV7x7K6gAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABC0AAAZgAAAICAAAABACAAKAgBAKjQAABAQAAAAQAgAChCAADQ2AEAMDAAAAEA

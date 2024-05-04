@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using RMS.BL;
 using RMS.DL;
+using RMS.Utility;
+
 
 namespace RMS.UI
 {
@@ -80,6 +82,9 @@ namespace RMS.UI
                     break;
                 case "manageTables":
                     OpenForm(new ManageTables(this.Size, this.Location, Admin));
+                    break;
+                case "feedback":
+                    OpenForm(new ManageFeedback(this.Size, this.Location, Admin));
                     break;
                 default:
                     break;

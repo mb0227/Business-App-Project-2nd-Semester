@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
-using SSC.UI;
+using RMS.Utility;
+
 
 namespace RMS.UI
 {

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using RMS.Reports;
+using System;
 using System.Windows.Forms;
+using RMS.Utility;
+
 
 namespace RMS.UI
 {
@@ -11,7 +14,8 @@ namespace RMS.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ObjectHandler.GetTableDL().UpdateTablesStatus();
-            Application.Run(new SignIn());
+            ObjectHandler.GetMessageDL().DeleteEmptyMessages();
+            Application.Run(new Homepage());
         }
     }
 }

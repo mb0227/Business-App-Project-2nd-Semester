@@ -1,7 +1,7 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Windows.Forms;
 using RMS.BL;
-using RMS.UI;
+using RMS.Utility;
 using SSC;
 using System;
 using System.Collections.Generic;
@@ -47,16 +47,12 @@ namespace RMS.Reports
         private void SalesReport()
         {
             ReportDocument report = new ReportDocument();
-            report.Load("..//..//Reports//SalesReport.rpt");
-            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
-            {
-                SqlCommand command = new SqlCommand("SELECT MONTH(OrderDate) AS OrderMonth, COUNT(*) AS TotalOrders,  SUM(TotalPrice) AS Revenue FROM  Orders WHERE Status = 3  AND YEAR(OrderDate) = YEAR(GETDATE()) GROUP BY MONTH(OrderDate)", connection);
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                DataSet dataSet = new DataSet();
-                dataAdapter.Fill(dataSet, "Orders");
-                report.SetDataSource(dataSet);
-                crystalReportViewer1.ReportSource = report;
-            }
+            ReportDocument r = new ReportDocument();
+            string path = Application.StartupPath;
+            string reportpath = "..//..//Reports//Sales.rpt";
+            string fpath = Path.Combine(path, reportpath);
+            r.Load(fpath);
+            crystalReportViewer1.ReportSource = r;
         }
 
         private void CustomerDetailsReport()
@@ -85,15 +81,18 @@ namespace RMS.Reports
             report.Load("..//..//Reports//OrderHistory.rpt");
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
-                SqlCommand command = new SqlCommand("SELECT ProductsOrdered, TotalPrice, OrderDate FROM Orders WHERE CustomerID = @CustomerId AND Status=@Status", connection);
+                SqlCommand command = new SqlCommand("SELECT ProductsOrdered, TotalPrice, OrderDate FROM Orders WHERE CustomerID = 1 AND Status=3 OR Status=5", connection);
                 command.Parameters.AddWithValue("@CustomerId", id);
-                command.Parameters.AddWithValue("@Status", 3);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                 DataSet dataSet = new DataSet();
                 dataAdapter.Fill(dataSet, "Orders");
                 report.SetDataSource(dataSet);
                 crystalReportViewer1.ReportSource = report;
             }
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
         }
     }
 }

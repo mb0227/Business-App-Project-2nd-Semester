@@ -1,5 +1,4 @@
-﻿using SSC.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,8 +10,9 @@ using RMS.BL;
 using RMS.DL;
 using System.Windows.Forms;
 using System.IO;
-using System.Data.SqlClient;
 using System.Drawing.Imaging;
+using RMS.Utility;
+
 
 namespace RMS.UI
 {
@@ -21,7 +21,6 @@ namespace RMS.UI
         private CustomerHeader cHeader;
         private CustomerNavbar cNavBar;
         private Customer customer;
-
         public CustomerDashboard()
         {
             InitializeComponent();

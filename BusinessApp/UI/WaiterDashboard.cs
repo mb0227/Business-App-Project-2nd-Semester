@@ -1,6 +1,4 @@
 ﻿using RMS.BL;
-using SSC;
-using SSC.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RMS.Utility;
 
 namespace RMS.UI
 {
@@ -252,7 +251,7 @@ namespace RMS.UI
            else
            {
                MessageBox.Show("Please select the row of you have prepared.");
-                }
+           }
         }
 
         private void deliverBtn_Click(object sender, EventArgs e)
@@ -319,6 +318,13 @@ namespace RMS.UI
                 h.Show();
                 this.Hide();
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Receipt r = new Receipt(this.Size, this.Location, waiter);
+            r.Show();
+            this.Hide();
         }
     }
 }

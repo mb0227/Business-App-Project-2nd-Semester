@@ -41,7 +41,6 @@
             this.manageBtns = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.addedItems = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.addItemBtn = new Guna.UI2.WinForms.Guna2Button();
             this.quantitiesComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -58,20 +57,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.logOut = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.addedItems = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -144,7 +144,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
-            this.panel2.Controls.Add(this.addedItems);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.addItemBtn);
             this.panel2.Controls.Add(this.quantitiesComboBox);
@@ -164,25 +163,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1328, 957);
             this.panel2.TabIndex = 24;
-            // 
-            // addedItems
-            // 
-            this.addedItems.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addedItems.BackColor = System.Drawing.Color.Transparent;
-            this.addedItems.BorderThickness = 0;
-            this.addedItems.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.addedItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.addedItems.FillColor = System.Drawing.SystemColors.ButtonShadow;
-            this.addedItems.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.addedItems.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.addedItems.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.addedItems.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addedItems.ItemHeight = 30;
-            this.addedItems.Location = new System.Drawing.Point(298, 376);
-            this.addedItems.Name = "addedItems";
-            this.addedItems.Size = new System.Drawing.Size(251, 36);
-            this.addedItems.TabIndex = 25;
-            this.addedItems.Visible = false;
             // 
             // label6
             // 
@@ -431,6 +411,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.addedItems);
             this.panel1.Controls.Add(this.logOut);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -509,6 +490,16 @@
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(215)))), ((int)(((byte)(95)))));
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Location = new System.Drawing.Point(1233, -5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -521,15 +512,17 @@
             // 
             this.errorProvider3.ContainerControl = this;
             // 
-            // pictureBox1
+            // addedItems
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Location = new System.Drawing.Point(1233, -5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.addedItems.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addedItems.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.addedItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.addedItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addedItems.FormattingEnabled = true;
+            this.addedItems.Location = new System.Drawing.Point(266, 345);
+            this.addedItems.Name = "addedItems";
+            this.addedItems.Size = new System.Drawing.Size(250, 40);
+            this.addedItems.TabIndex = 26;
             // 
             // MakeDeal
             // 
@@ -552,10 +545,10 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,10 +576,10 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
-        private Guna.UI2.WinForms.Guna2ComboBox addedItems;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logOut;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox addedItems;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -38,6 +39,7 @@
             this.send = new System.Windows.Forms.PictureBox();
             this.msgPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel2.SuspendLayout();
@@ -180,6 +182,12 @@
             this.guna2VScrollBar1.SmallChange = 5;
             this.guna2VScrollBar1.TabIndex = 0;
             // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 10000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick_1);
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -218,5 +226,6 @@
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBox;
+        private System.Windows.Forms.Timer Timer;
     }
 }

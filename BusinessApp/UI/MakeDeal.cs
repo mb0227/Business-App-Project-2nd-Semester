@@ -1,6 +1,5 @@
 ﻿using RMS.BL;
-using SSC;
-using SSC.UI;
+using RMS.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,7 +87,7 @@ namespace RMS.UI
             dt.Rows.Clear();
             foreach (Deal deal in ObjectHandler.GetDealDL().GetDeals())
             {
-                dt.Rows.Add(deal.GetID(),deal.GetDealName(), deal.GetPrice(), deal.GetDealString());
+                dt.Rows.Add(deal.GetID(),deal.GetDealName(), deal.GetPrice(), UtilityFunctions.GetDealString(deal.GetDealString()));
             }
         }
 
@@ -126,15 +125,17 @@ namespace RMS.UI
         {
             if(CheckValidations())
             {
+                addedItems.Items.Clear();
+                items.Clear();
                 name.Text = name.Text.Replace(",", "");
                 Deal deal = new Deal(name.Text, Convert.ToDouble(price.Text), items);
                 ObjectHandler.GetDealDL().SaveDeal(deal);
                 ClearTextBoxes();
-                addedItems.Items.Clear();
                 LoadData();
                 addedItems.Visible = false;
                 label6.Visible = false;
                 MessageBox.Show("Deal saved", "Success", MessageBoxButtons.OK);
+                addedItems.Items.Clear();
             }
         }
 

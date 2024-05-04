@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using RMS.BL;
-using RMS.UI;
+using RMS.Utility;
 using System.Drawing;
 
 namespace RMS.DL

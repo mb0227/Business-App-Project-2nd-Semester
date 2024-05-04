@@ -12,6 +12,8 @@ using RMS.BL;
 using RMS.DL;
 using System.IO;
 using RMS.Reports;
+using RMS.Utility;
+
 
 namespace RMS.UI
 {

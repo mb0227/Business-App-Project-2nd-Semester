@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using RMS.BL;
 using RMS.DL;
+using RMS.Utility;
 
 
 namespace RMS.UI
@@ -164,14 +165,14 @@ namespace RMS.UI
                     Waiter waiter = new Waiter(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));                    
                     ObjectHandler.GetWaiterDL().SaveWaiter(waiter);
                     MessageBox.Show("Waiter added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //ClearTextBoxes();
+                    ClearTextBoxes();
                 }
                 else if (employeeType.Text == "Chef")
                 {
                     Chef chef = new Chef(username.Text, contact.Text, Convert.ToDouble(salary.Text), dateTime.Value, GetSelectedRadioButton().Text.ToString(), ObjectHandler.GetUserDL().GetUserID(email.Text), tb1.Text, tb2.Text, tb3.Text, ObjectHandler.GetEmployeeDL().GetEmployeeID(username.Text));
                     ObjectHandler.GetChefDL().SaveChef(chef);
                     MessageBox.Show("Chef added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    /*ClearTextBoxes()*/;
+                    ClearTextBoxes();
                 }
             }
         }

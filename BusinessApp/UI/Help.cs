@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
-using Utility.UI;
+using RMS.Utility;
 
 namespace RMS.UI
 {
@@ -111,7 +111,16 @@ namespace RMS.UI
             {
                 msgTB.Text = msgTB.Text.Replace(",", "");
                 string encryptedMessage = Encryption.Encrypt(msgTB.Text);
-                RMS.BL.Message message = new RMS.BL.Message(customer.GetID(), ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, encryptedMessage);
+                int receiverID;
+                if(ObjectHandler.GetMessageDL().HasChat(customer.GetID()))
+                {
+                    receiverID = ObjectHandler.GetMessageDL().GetReceiverID(customer.GetID());
+                }
+                else
+                {
+                    receiverID = ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1;
+                }
+                RMS.BL.Message message = new RMS.BL.Message(customer.GetID(), receiverID , encryptedMessage);
                 ObjectHandler.GetMessageDL().SendMessage(message);
                 msgTB.Text = "";
                 RefreshPanel();
@@ -135,6 +144,8 @@ namespace RMS.UI
             {
                 foreach (var msg in Messages)
                 {
+                    if (msg.GetMessageText() == "")
+                        continue;
                     string decryptedMessage = Encryption.Decrypt(msg.GetMessageText());
                     Label label = new Label();
                     label.Font = new Font("Segoe UI", 12, FontStyle.Bold);
@@ -177,6 +188,56 @@ namespace RMS.UI
 
         private void msgTB_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool IsMessageTextDisplayed(string messageText)
+        {
+            foreach (Control control in msgPanel.Controls)
+            {
+                if (control is Label label && label.Text.Contains(messageText))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void DisplayNewMessage(RMS.BL.Message msg)
+        {
+            string decryptedMessage = Encryption.Decrypt(msg.GetMessageText());
+            Label label = new Label();
+            label.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label.TextAlign = ContentAlignment.MiddleLeft;
+            label.AutoSize = true;
+            string time = msg.GetTime().ToString("HH:mm");
+            label.Margin = new Padding(0, 5, 0, 0);
+            if (msg.GetSenderID() != customer.GetID())
+            {
+                label.Text = "Admin: " + decryptedMessage + " " + time;
+                label.ForeColor = Color.GreenYellow;
+            }
+            else
+            {
+                label.Text = "You: " + decryptedMessage + " " + time;
+                label.ForeColor = Color.BlanchedAlmond;
+            }
+            msgPanel.Controls.Add(label);
+            msgPanel.VerticalScroll.Value = msgPanel.VerticalScroll.Maximum;
+        }
+
+        private void Timer_Tick_1(object sender, EventArgs e)
+        {
+            RMS.BL.Message message = ObjectHandler.GetMessageDL().GetNewMessage(customer.GetID());
+            if (message != null && !IsMessageTextDisplayed(message.GetMessageText()))
+            {
+                DisplayNewMessage(message);
+            }
+            msgPanel.VerticalScroll.Value = msgPanel.VerticalScroll.Maximum;
         }
     }
 }

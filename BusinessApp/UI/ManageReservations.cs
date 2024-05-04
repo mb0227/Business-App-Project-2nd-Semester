@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RMS.Utility;
+
 
 namespace RMS.UI
 {
@@ -193,6 +195,13 @@ namespace RMS.UI
         private void reservationBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Receipt r = new Receipt(this.Size, this.Location, waiter);
+            r.Show();
+            this.Hide();
         }
     }
 }

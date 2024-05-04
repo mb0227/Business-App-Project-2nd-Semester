@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,9 +39,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.back = new Guna.UI2.WinForms.Guna2Button();
             this.reply = new Guna.UI2.WinForms.Guna2Button();
-            this.tb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.viewMsgs = new Guna.UI2.WinForms.Guna2Button();
+            this.viewCustomers = new Guna.UI2.WinForms.Guna2Button();
             this.viewReviews = new Guna.UI2.WinForms.Guna2Button();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel1.SuspendLayout();
@@ -96,14 +97,14 @@
             this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.EnableHeadersVisualStyles = true;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.dgv.Location = new System.Drawing.Point(551, 58);
+            this.dgv.Location = new System.Drawing.Point(561, 31);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowHeadersWidth = 62;
             this.dgv.RowTemplate.Height = 28;
-            this.dgv.Size = new System.Drawing.Size(664, 588);
+            this.dgv.Size = new System.Drawing.Size(664, 447);
             this.dgv.TabIndex = 47;
             this.dgv.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -136,8 +137,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(90)))), ((int)(((byte)(120)))));
             this.panel1.Controls.Add(this.back);
             this.panel1.Controls.Add(this.reply);
-            this.panel1.Controls.Add(this.tb);
-            this.panel1.Controls.Add(this.viewMsgs);
+            this.panel1.Controls.Add(this.viewCustomers);
             this.panel1.Controls.Add(this.viewReviews);
             this.panel1.Controls.Add(this.dgv);
             this.panel1.Location = new System.Drawing.Point(55, 161);
@@ -158,9 +158,9 @@
             this.back.FillColor = System.Drawing.Color.Red;
             this.back.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.back.ForeColor = System.Drawing.Color.Black;
-            this.back.Location = new System.Drawing.Point(234, 489);
+            this.back.Location = new System.Drawing.Point(344, 319);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(164, 72);
+            this.back.Size = new System.Drawing.Size(190, 72);
             this.back.TabIndex = 52;
             this.back.Text = "Go Back";
             this.back.Visible = false;
@@ -179,64 +179,33 @@
             this.reply.FillColor = System.Drawing.Color.Lime;
             this.reply.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.reply.ForeColor = System.Drawing.Color.Black;
-            this.reply.Location = new System.Drawing.Point(332, 234);
+            this.reply.Location = new System.Drawing.Point(344, 96);
             this.reply.Name = "reply";
             this.reply.Size = new System.Drawing.Size(202, 72);
             this.reply.TabIndex = 51;
-            this.reply.Text = "Reply";
+            this.reply.Text = "Reply To";
             this.reply.Visible = false;
             this.reply.Click += new System.EventHandler(this.reply_Click);
             // 
-            // tb
+            // viewCustomers
             // 
-            this.tb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tb.BorderRadius = 18;
-            this.tb.BorderThickness = 0;
-            this.tb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb.DefaultText = "";
-            this.tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb.FillColor = System.Drawing.Color.Silver;
-            this.tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.tb.ForeColor = System.Drawing.Color.Black;
-            this.tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb.Location = new System.Drawing.Point(234, 95);
-            this.tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tb.Multiline = true;
-            this.tb.Name = "tb";
-            this.tb.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
-            this.tb.PasswordChar = '\0';
-            this.tb.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tb.PlaceholderText = "Write your reply here";
-            this.tb.SelectedText = "";
-            this.tb.Size = new System.Drawing.Size(300, 131);
-            this.tb.TabIndex = 50;
-            this.tb.Visible = false;
-            this.tb.WordWrap = false;
-            this.tb.TextChanged += new System.EventHandler(this.tb_TextChanged);
-            // 
-            // viewMsgs
-            // 
-            this.viewMsgs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewMsgs.BorderColor = System.Drawing.Color.Transparent;
-            this.viewMsgs.BorderRadius = 18;
-            this.viewMsgs.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.viewMsgs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.viewMsgs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.viewMsgs.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.viewMsgs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.viewMsgs.FillColor = System.Drawing.Color.Turquoise;
-            this.viewMsgs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewMsgs.ForeColor = System.Drawing.Color.Black;
-            this.viewMsgs.Location = new System.Drawing.Point(247, 408);
-            this.viewMsgs.Name = "viewMsgs";
-            this.viewMsgs.Size = new System.Drawing.Size(287, 69);
-            this.viewMsgs.TabIndex = 49;
-            this.viewMsgs.Text = "View Messages";
-            this.viewMsgs.Click += new System.EventHandler(this.viewMsgs_Click);
+            this.viewCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewCustomers.BorderColor = System.Drawing.Color.Transparent;
+            this.viewCustomers.BorderRadius = 18;
+            this.viewCustomers.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.viewCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.viewCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.viewCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.viewCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.viewCustomers.FillColor = System.Drawing.Color.Turquoise;
+            this.viewCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewCustomers.ForeColor = System.Drawing.Color.Black;
+            this.viewCustomers.Location = new System.Drawing.Point(247, 246);
+            this.viewCustomers.Name = "viewCustomers";
+            this.viewCustomers.Size = new System.Drawing.Size(287, 67);
+            this.viewCustomers.TabIndex = 49;
+            this.viewCustomers.Text = "View Customers";
+            this.viewCustomers.Click += new System.EventHandler(this.viewCustomers_Click);
             // 
             // viewReviews
             // 
@@ -251,12 +220,18 @@
             this.viewReviews.FillColor = System.Drawing.Color.Turquoise;
             this.viewReviews.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewReviews.ForeColor = System.Drawing.Color.Black;
-            this.viewReviews.Location = new System.Drawing.Point(247, 322);
+            this.viewReviews.Location = new System.Drawing.Point(247, 173);
             this.viewReviews.Name = "viewReviews";
-            this.viewReviews.Size = new System.Drawing.Size(287, 72);
+            this.viewReviews.Size = new System.Drawing.Size(287, 66);
             this.viewReviews.TabIndex = 48;
             this.viewReviews.Text = "View Reviews";
             this.viewReviews.Click += new System.EventHandler(this.viewReviews_Click);
+            // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 55000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // ManageFeedback
             // 
@@ -286,10 +261,10 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgv;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button viewMsgs;
+        private Guna.UI2.WinForms.Guna2Button viewCustomers;
         private Guna.UI2.WinForms.Guna2Button viewReviews;
-        private Guna.UI2.WinForms.Guna2TextBox tb;
         private Guna.UI2.WinForms.Guna2Button reply;
         private Guna.UI2.WinForms.Guna2Button back;
+        private System.Windows.Forms.Timer Timer;
     }
 }

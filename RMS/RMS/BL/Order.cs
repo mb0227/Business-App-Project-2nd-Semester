@@ -1,4 +1,4 @@
-﻿using RMS.UI;
+﻿using RMS.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,8 @@ namespace RMS.BL
             Prepared,
             PickedUp,
             Delivered,
-            Cancelled
+            Cancelled,
+            Paid
         }
 
         public Order()

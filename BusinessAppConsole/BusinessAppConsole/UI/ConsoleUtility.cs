@@ -91,11 +91,11 @@ namespace BusinessAppConsole.UI
             char box = '\u2588';
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.SetCursorPosition(x + 22, y + 18);
+            Console.SetCursorPosition(x + 35, y + 18);
             Console.Write( "Loading...");
             Console.ResetColor();
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(x+1, y + 20);
             Console.Write(box);
 

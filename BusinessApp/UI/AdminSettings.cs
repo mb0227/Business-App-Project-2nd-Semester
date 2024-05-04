@@ -1,6 +1,4 @@
 ﻿using RMS.BL;
-using SSC.UI;
-using SSC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +11,7 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using System.Data.SqlClient;
 using RMS.Reports;
+using RMS.Utility;
 
 namespace RMS.UI
 {
@@ -282,6 +281,11 @@ namespace RMS.UI
         {
             ShowReport r = new ShowReport("salesReport", -1);
             r.Show();
+        }
+
+        private void AdminSettings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

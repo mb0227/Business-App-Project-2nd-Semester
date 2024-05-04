@@ -424,7 +424,7 @@
             this.email.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
-            this.email.PlaceholderText = "";
+            this.email.PlaceholderText = "Email";
             this.email.SelectedText = "";
             this.email.Size = new System.Drawing.Size(247, 53);
             this.email.TabIndex = 0;

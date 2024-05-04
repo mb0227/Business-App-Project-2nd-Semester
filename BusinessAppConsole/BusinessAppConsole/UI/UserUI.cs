@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using RMS.BL;
 using RMS.DL;
-using RMS.UI;
+using RMS.Utility;
 
 namespace BusinessAppConsole.UI
 {
@@ -155,9 +155,10 @@ namespace BusinessAppConsole.UI
         {
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("\n\t\t\t\t\t\t\tView Feedback");
+            Console.WriteLine("\t\t\t\t\t\t\tView Messages");
             Console.WriteLine("\t\t\t\t\t\t\tLog Out");
             Console.ResetColor();
-            return ConsoleUtility.MovementOfArrow(53, 7, 1, 2);
+            return ConsoleUtility.MovementOfArrow(53, 7, 1, 3);
         }
     }
 }

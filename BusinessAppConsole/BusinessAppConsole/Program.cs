@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using BusinessAppConsole.UI;
 using RMS.BL;
 using RMS.DL;
-using RMS.UI;
+using RMS.Utility;
 
 namespace BusinessAppConsole
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace BusinessAppConsole
             {
                 ConsoleUtility.ClearScreen();
                 int option = ConsoleUtility.Homepage();
-                if(option==1) //Sign In
+                if (option==1) //Sign In
                 {
                     while(true)
                     {
@@ -80,6 +80,7 @@ namespace BusinessAppConsole
                             }
                             else if (role.ToLower() == "admin" && userID != -1)
                             {
+                                Admin admin = ObjectHandler.GetEmployeeDL().SearchAdminById(userID);
                                 Console.WriteLine("\t\t\t\t\t\t\tAdmin Login Successful");
                                 Console.ReadKey();
                                 while (true)
@@ -93,7 +94,21 @@ namespace BusinessAppConsole
                                         FeedbackUI.PrintReviews();
                                         Console.ReadKey();
                                     }
-                                    else if(opt == 2)
+                                    else if (opt == 2)
+                                    {
+                                        ConsoleUtility.ClearScreen();
+                                        (int input, int id) Input = MessageUI.PrintCustomersNames(admin.GetEmployeeID());
+                                        int input = Input.input;
+                                        int id = Input.id;
+                                        if (input == -1)
+                                            continue;
+                                        Message:
+                                        ConsoleUtility.ClearScreen();
+                                        MessageUI.PrintCustomerMessages(admin.GetEmployeeID() * -1, id, "SELECT * FROM Messages WHERE ReceiverID = @ID OR SenderID=@ID ORDER BY Timestamp ASC");
+                                        MessageUI.SendMessage(admin.GetEmployeeID() * -1, id);
+                                        goto Message;
+                                    }
+                                    else if(opt == 3)
                                     {
                                         ConsoleUtility.LoadingFunction();
                                         flag = true;

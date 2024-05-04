@@ -1,5 +1,5 @@
 ﻿using RMS.BL;
-using RMS.UI;
+using RMS.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RMS.UI
+namespace RMS.Utility
 {
     public class UtilityFunctions
     {
@@ -101,6 +101,33 @@ namespace RMS.UI
                 }
             }
             return cart;
+        }
+
+        public static string GetDealString(string input)
+        {
+            string[] items = input.Split(';');
+            Dictionary<string, int> itemCounts = new Dictionary<string, int>();
+            foreach (string item in items)
+            {
+                string trimmedItem = item.Trim();
+                if (itemCounts.ContainsKey(trimmedItem))
+                {
+                    itemCounts[trimmedItem]++;
+                }
+                else
+                {
+                    itemCounts[trimmedItem] = 1;
+                }
+            }
+            List<string> modifiedItems = new List<string>();
+            foreach (var pair in itemCounts)
+            {
+                string itemString = $"{pair.Value} {pair.Key}";
+                modifiedItems.Add(itemString);
+            }
+            string result = string.Join("; ", modifiedItems);
+
+            return result;
         }
 
         public static string GetDealString(Deal deal)

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SignInSignUp.Reports {
+namespace RMS.UI.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace SignInSignUp.Reports {
         
         public override string FullResourceName {
             get {
-                return "SignInSignUp.Reports.CustomerDetails.rpt";
+                return "RMS.UI.Reports.CustomerDetails.rpt";
             }
             set {
                 // Do nothing

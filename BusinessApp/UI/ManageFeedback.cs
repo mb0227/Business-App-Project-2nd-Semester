@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Utility.UI;
+using RMS.Utility;
 
 
 namespace RMS.UI
@@ -129,28 +129,11 @@ namespace RMS.UI
             dgv.DataSource=dt;
         }
 
-        private void viewMsgs_Click(object sender, EventArgs e)
-        {
-            dt.Columns.Clear();
-            dt.Rows.Clear();
-
-            dt.Columns.Add("CustomerID", typeof(int));
-            dt.Columns.Add("Message", typeof(string));
-
-            foreach (var item in ObjectHandler.GetMessageDL().ReceiveMessages(Admin.GetEmployeeID()*-1, "SELECT * FROM Messages WHERE ReceiverID = @ID ORDER BY Timestamp ASC"))
-            {
-                string decryptedMessage = Encryption.Decrypt(item.GetMessageText());
-                dt.Rows.Add(item.GetSenderID(), decryptedMessage);
-            }
-            dgv.DataSource = dt;
-            ChangeVisibility(false, true);
-        }
 
        private void ChangeVisibility(bool before, bool after)
         {
             viewReviews.Visible = before;
-            viewMsgs.Visible = before;
-            tb.Visible = after;
+            viewCustomers.Visible = before;
             reply.Visible = after;
             back.Visible = after;
         }
@@ -169,17 +152,10 @@ namespace RMS.UI
 
                         if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["CustomerID"].Value != null)
                         {
-                            tb.Text = tb.Text.Replace(",", "");
-                            if (!string.IsNullOrEmpty(reply.Text))
-                            {
-                                RMS.BL.Message message = new RMS.BL.Message(ObjectHandler.GetMessageDL().GetAvailableEmployee() * -1, Convert.ToInt32(selectedDataGridViewRow.Cells["CustomerID"].Value), Encryption.Encrypt(tb.Text));
-                                ObjectHandler.GetMessageDL().SendMessage(message);
-                                tb.Text = "";
-                            }
-                            else
-                            {
-                                MessageBox.Show("Please enter a message to send.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            int customerID = Convert.ToInt32(selectedDataGridViewRow.Cells["CustomerID"].Value);    
+                            Reply reply = new Reply(this.Size, this.Location, Admin, customerID);
+                            reply.Show();
+                            this.Hide();
                         }
                     }
                 }
@@ -199,8 +175,48 @@ namespace RMS.UI
             ChangeVisibility(true, false);
         }
 
-        private void tb_TextChanged(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
+            RMS.BL.Message message = ObjectHandler.GetMessageDL().GetNewMessage(Admin.GetAdminID());
+            if (message != null && !IsMessageTextDisplayed(message.GetMessageText()))
+            {
+                DisplayNewMessage(message);
+            }
+        }
+
+        private bool IsMessageTextDisplayed(string messageText)
+        {
+            foreach (Control control in dgv.Controls)
+            {
+                if (control is Label label && label.Text.Contains(messageText))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void DisplayNewMessage(RMS.BL.Message msg)
+        {
+            string decryptedMessage = Encryption.Decrypt(msg.GetMessageText());
+            dt.Rows.Add(msg.GetSenderID(), decryptedMessage);
+        }
+
+        private void viewCustomers_Click(object sender, EventArgs e)
+        {
+            dt.Columns.Clear();
+            dt.Rows.Clear();
+
+            dt.Columns.Add("CustomerID", typeof(int));
+            dt.Columns.Add("Message", typeof(string));
+
+            foreach (var item in ObjectHandler.GetMessageDL().GetCustomersNames(Admin.GetEmployeeID()))
+            {
+                dt.Rows.Add(item.GetID(), item.GetUsername());
+            }
+
+            dgv.DataSource = dt;
+            ChangeVisibility(false, true);
         }
     }
 }

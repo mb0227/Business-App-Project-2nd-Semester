@@ -1,5 +1,5 @@
 ﻿using RMS.BL;
-using RMS.UI;
+using RMS.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -235,23 +235,6 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                //SqlCommand command2 = new SqlCommand();
-                //if (role == "admin")
-                //{
-                //    command2 = new SqlCommand("DELETE FROM Admins WHERE EmployeeID = @EmployeeID", connection);
-                //}
-                //else if (role == "chef")
-                //{
-                //    command2 = new SqlCommand("DELETE FROM Chefs WHERE EmployeeID = @EmployeeID", connection);
-                //}
-                //else if (role == "waiter")
-                //{
-                //    command2 = new SqlCommand("DELETE FROM Waiters WHERE EmployeeID = @EmployeeID", connection);
-                //}
-
-                //command2.Parameters.AddWithValue("@EmployeeID", id);
-                //command2.ExecuteNonQuery();
-
                 SqlCommand command3 = new SqlCommand("DELETE FROM Employees WHERE ID = @ID", connection);
                 command3.Parameters.AddWithValue("@ID", id);
                 command3.ExecuteNonQuery();

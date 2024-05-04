@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
-using SSC.UI;
-using SSC;
+using RMS.Utility;
 using System.Data.SqlClient;
 
 namespace RMS.UI

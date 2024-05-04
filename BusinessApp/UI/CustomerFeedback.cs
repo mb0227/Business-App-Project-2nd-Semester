@@ -10,9 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RMS.BL;
 using RMS.DL;
-using SSC.Properties;
-using SignInSignUp.Properties;
-using SignInSignUp;
+using RMS.Utility;
 
 namespace RMS.UI
 {

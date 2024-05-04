@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RMS.BL;
-using RMS.UI;
+using RMS.Utility;
 
 namespace RMS.DL
 {
@@ -29,7 +29,6 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-
                 string query = "UPDATE [Table] SET Status = 'Unbooked' WHERE ID =@ID;";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ID", tableID);

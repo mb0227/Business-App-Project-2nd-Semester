@@ -1,4 +1,4 @@
-﻿using RMS.UI;
+﻿using RMS.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +29,7 @@ namespace BusinessAppConsole.UI
             {
                 Console.WriteLine("\t\t\t\t\t\t\tFeedback: " + feedback.GetReview() + " Customer ID: "+ feedback.GetCustomerID());
             }
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.ResetColor();
         }
     }
 }

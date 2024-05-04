@@ -24,6 +24,12 @@ namespace RMS.BL
         {
             Username = username;
         }
+        
+        public Customer(int id,string username) : this(username)
+        {
+            CustomerID = id;
+        }
+
         public Customer(string username, string contact, string status, string gender) : this(username)
         {
             Contact = contact;
@@ -32,7 +38,7 @@ namespace RMS.BL
             Cart = new List<OrderedProduct>();
         }
 
-        public Customer(int id, string username, string contact, string status, string gender, List<OrderedProduct> cart, int userId) : this(username, contact, status, status)
+        public Customer(int id, string username, string contact, string status, string gender, List<OrderedProduct> cart, int userId) : this(username, contact, status, gender)
         {
             CustomerID = id;
             Cart = new List<OrderedProduct>();

@@ -59,6 +59,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pickupBtn = new Guna.UI2.WinForms.Guna2Button();
             this.deliverBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.logOut = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
@@ -74,6 +75,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel3.Controls.Add(this.guna2Button1);
             this.panel3.Controls.Add(this.pickupOrder);
             this.panel3.Controls.Add(this.reservationBtn);
             this.panel3.Controls.Add(this.deliverOrder);
@@ -97,7 +99,7 @@
             this.pickupOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.pickupOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickupOrder.ForeColor = System.Drawing.Color.Black;
-            this.pickupOrder.Location = new System.Drawing.Point(778, 4);
+            this.pickupOrder.Location = new System.Drawing.Point(643, 4);
             this.pickupOrder.Name = "pickupOrder";
             this.pickupOrder.Size = new System.Drawing.Size(128, 88);
             this.pickupOrder.TabIndex = 67;
@@ -117,7 +119,7 @@
             this.reservationBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.reservationBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationBtn.ForeColor = System.Drawing.Color.Black;
-            this.reservationBtn.Location = new System.Drawing.Point(1057, 4);
+            this.reservationBtn.Location = new System.Drawing.Point(1079, 4);
             this.reservationBtn.Name = "reservationBtn";
             this.reservationBtn.Size = new System.Drawing.Size(247, 88);
             this.reservationBtn.TabIndex = 48;
@@ -137,7 +139,7 @@
             this.deliverOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.deliverOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deliverOrder.ForeColor = System.Drawing.Color.Black;
-            this.deliverOrder.Location = new System.Drawing.Point(912, 4);
+            this.deliverOrder.Location = new System.Drawing.Point(789, 3);
             this.deliverOrder.Name = "deliverOrder";
             this.deliverOrder.Size = new System.Drawing.Size(139, 88);
             this.deliverOrder.TabIndex = 47;
@@ -157,7 +159,7 @@
             this.manageBtns.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.manageBtns.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageBtns.ForeColor = System.Drawing.Color.Black;
-            this.manageBtns.Location = new System.Drawing.Point(577, 4);
+            this.manageBtns.Location = new System.Drawing.Point(464, 4);
             this.manageBtns.Name = "manageBtns";
             this.manageBtns.Size = new System.Drawing.Size(168, 88);
             this.manageBtns.TabIndex = 45;
@@ -518,6 +520,26 @@
             this.deliverBtn.Visible = false;
             this.deliverBtn.Click += new System.EventHandler(this.deliverBtn_Click);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 18;
+            this.guna2Button1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Location = new System.Drawing.Point(931, 3);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(139, 88);
+            this.guna2Button1.TabIndex = 68;
+            this.guna2Button1.Text = "Receipt";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // logOut
             // 
             this.logOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -599,5 +621,6 @@
         private Guna.UI2.WinForms.Guna2Button pickupOrder;
         private System.Windows.Forms.PictureBox logOut;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
