@@ -1,62 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\",
+  "WorkspaceRootPath": "A:\\University Related\\UET Lahore\\Projects\\Business-App-Project-2nd-Semester\\RMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|c:\\users\\bilal\\onedrive\\desktop\\project\\rms\\rms\\dl\\fh\\messagefhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\fh\\messagefhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\utility\\objecthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\utility\\objecthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\dlinterfaces\\imessagedl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dlinterfaces\\imessagedl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\dl\\db\\messagedbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\messagedbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|c:\\users\\bilal\\onedrive\\desktop\\project\\rms\\rms\\dl\\fh\\regularfhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\fh\\regularfhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|c:\\users\\bilal\\onedrive\\desktop\\project\\rms\\rms\\dl\\fh\\customerfhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\fh\\customerfhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\bl\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\bl\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|c:\\users\\bilal\\onedrive\\desktop\\project\\rms\\rms\\dl\\db\\employeedbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\employeedbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|c:\\users\\bilal\\onedrive\\desktop\\project\\rms\\rms\\dl\\db\\dealdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\db\\dealdbdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\utility\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|a:\\university related\\uet lahore\\projects\\business-app-project-2nd-semester\\rms\\rms\\utility\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\utility\\utilityfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\utility\\encryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|a:\\university related\\uet lahore\\projects\\business-app-project-2nd-semester\\rms\\rms\\utility\\encryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\utility\\encryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\bl\\regular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\bl\\regular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\bl\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\bl\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\rms\\dl\\fh\\waiterfhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\dl\\fh\\waiterfhdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|a:\\university related\\uet lahore\\projects\\business-app-project-2nd-semester\\rms\\rms\\utility\\objecthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91DA54-9109-44F1-B9CD-E2F3927C5C81}|RMS\\RMS.csproj|solutionrelative:rms\\utility\\objecthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,184 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RegularFHDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\RegularFHDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\FH\\RegularFHDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\RegularFHDL.cs",
-              "RelativeToolTip": "RMS\\DL\\FH\\RegularFHDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:08:39.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CustomerFHDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\CustomerFHDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\FH\\CustomerFHDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\CustomerFHDL.cs",
-              "RelativeToolTip": "RMS\\DL\\FH\\CustomerFHDL.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:07:30.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EmployeeDBDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\DB\\EmployeeDBDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\DB\\EmployeeDBDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\DB\\EmployeeDBDL.cs",
-              "RelativeToolTip": "RMS\\DL\\DB\\EmployeeDBDL.cs",
-              "ViewState": "AQIAAH4AAAAAAAAAAAAowJYAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T12:20:44.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DealDBDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\DB\\DealDBDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\DB\\DealDBDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\DB\\DealDBDL.cs",
-              "RelativeToolTip": "RMS\\DL\\DB\\DealDBDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T12:20:43.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Message.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\BL\\Message.cs",
-              "RelativeDocumentMoniker": "RMS\\BL\\Message.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\BL\\Message.cs",
-              "RelativeToolTip": "RMS\\BL\\Message.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAApwBcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:53:14.819Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "UtilityFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\Utility\\UtilityFunctions.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\Projects\\Business-App-Project-2nd-Semester\\RMS\\RMS\\Utility\\UtilityFunctions.cs",
               "RelativeDocumentMoniker": "RMS\\Utility\\UtilityFunctions.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\Utility\\UtilityFunctions.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\Projects\\Business-App-Project-2nd-Semester\\RMS\\RMS\\Utility\\UtilityFunctions.cs",
               "RelativeToolTip": "RMS\\Utility\\UtilityFunctions.cs",
-              "ViewState": "AQIAAH8AAAAAAAAAAAAwwA4AAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:42:05.279Z"
+              "WhenOpened": "2024-06-04T21:43:43.845Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ObjectHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\Utility\\ObjectHandler.cs",
-              "RelativeDocumentMoniker": "RMS\\Utility\\ObjectHandler.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\Utility\\ObjectHandler.cs",
-              "RelativeToolTip": "RMS\\Utility\\ObjectHandler.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAAwCcAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:41:50.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "Encryption.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\Utility\\Encryption.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\Projects\\Business-App-Project-2nd-Semester\\RMS\\RMS\\Utility\\Encryption.cs",
               "RelativeDocumentMoniker": "RMS\\Utility\\Encryption.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\Utility\\Encryption.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\Projects\\Business-App-Project-2nd-Semester\\RMS\\RMS\\Utility\\Encryption.cs",
               "RelativeToolTip": "RMS\\Utility\\Encryption.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA1AAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:40:03.061Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Regular.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\BL\\Regular.cs",
-              "RelativeDocumentMoniker": "RMS\\BL\\Regular.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\BL\\Regular.cs",
-              "RelativeToolTip": "RMS\\BL\\Regular.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCwAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:26:08.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\BL\\Customer.cs",
-              "RelativeDocumentMoniker": "RMS\\BL\\Customer.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\BL\\Customer.cs",
-              "RelativeToolTip": "RMS\\BL\\Customer.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAMwC0AAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:21:43.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MessageDBDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\DB\\MessageDBDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\DB\\MessageDBDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\DB\\MessageDBDL.cs",
-              "RelativeToolTip": "RMS\\DL\\DB\\MessageDBDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:15:57.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MessageFHDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\MessageFHDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\FH\\MessageFHDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\MessageFHDL.cs",
-              "RelativeToolTip": "RMS\\DL\\FH\\MessageFHDL.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAYwDIAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:14:20.128Z",
+              "WhenOpened": "2024-06-04T21:43:39.602Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IMessageDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DLInterfaces\\IMessageDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DLInterfaces\\IMessageDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DLInterfaces\\IMessageDL.cs",
-              "RelativeToolTip": "RMS\\DLInterfaces\\IMessageDL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAjAAAA",
+              "Title": "ObjectHandler.cs",
+              "DocumentMoniker": "A:\\University Related\\UET Lahore\\Projects\\Business-App-Project-2nd-Semester\\RMS\\RMS\\Utility\\ObjectHandler.cs",
+              "RelativeDocumentMoniker": "RMS\\Utility\\ObjectHandler.cs",
+              "ToolTip": "A:\\University Related\\UET Lahore\\Projects\\Business-App-Project-2nd-Semester\\RMS\\RMS\\Utility\\ObjectHandler.cs",
+              "RelativeToolTip": "RMS\\Utility\\ObjectHandler.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAuwC0AAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T11:14:06.978Z",
+              "WhenOpened": "2024-05-04T11:41:50.137Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "WaiterFHDL.cs",
-              "DocumentMoniker": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\WaiterFHDL.cs",
-              "RelativeDocumentMoniker": "RMS\\DL\\FH\\WaiterFHDL.cs",
-              "ToolTip": "C:\\Users\\Bilal\\OneDrive\\Desktop\\Project\\RMS\\RMS\\DL\\FH\\WaiterFHDL.cs",
-              "RelativeToolTip": "RMS\\DL\\FH\\WaiterFHDL.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAuwBsAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T09:01:37.754Z"
             }
           ]
         }

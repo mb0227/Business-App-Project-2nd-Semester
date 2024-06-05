@@ -17,7 +17,9 @@ namespace BusinessAppConsole.UI
 
             if (customers == null || customers.Count == 0)
             {
-                Console.WriteLine("No customers found.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n\t\t\t\t\t\t\tNo customers found.");
+                Console.ResetColor();
                 Console.ReadKey();
                 return (-1, -1); 
             }
@@ -27,7 +29,7 @@ namespace BusinessAppConsole.UI
             Console.ResetColor();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            foreach (var item in customers)
+            foreach (var item in customers) 
             {
                 Console.WriteLine("\t\t\t\t\t\t\t" + item.GetUsername());
             }
@@ -48,7 +50,7 @@ namespace BusinessAppConsole.UI
             Console.WriteLine();
             foreach (var item in messages)
             {
-                if (item.GetMessageText() == "")
+                if (item.GetMessageText().Trim() == "")
                     continue;
                 string decryptedMessage = Encryption.Decrypt(item.GetMessageText());
                 string time = item.GetTime().ToString("HH:mm");

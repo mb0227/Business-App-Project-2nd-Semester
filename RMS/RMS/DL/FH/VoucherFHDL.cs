@@ -12,6 +12,21 @@ namespace RMS.DL
     public class VoucherFHDL : IVoucherDL
     {
         private readonly string path = UtilityFunctions.GetPath("Vouchers.txt");
+
+        public int CountVouchers()
+        {
+            int rowCount = 0;
+            using (StreamReader reader = new StreamReader(path))
+            {
+                while (!reader.EndOfStream)
+                {
+                    reader.ReadLine();
+                    rowCount++;
+                }
+            }
+            return rowCount;
+        }
+
         public List<string> AwardVouchers(int number)
         {
             List<string> vouchers = new List<string>();

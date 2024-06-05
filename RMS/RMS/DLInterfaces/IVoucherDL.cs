@@ -12,5 +12,6 @@ namespace RMS.DL
         Voucher GetVoucher(int ID);
         void GenerateVouchers();
         List<string> AwardVouchers(int number);
+        int CountVouchers();
     }
 }

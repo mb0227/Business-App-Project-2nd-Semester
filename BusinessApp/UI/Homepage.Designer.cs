@@ -49,7 +49,6 @@
             this.label2.Location = new System.Drawing.Point(24, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 28);
-            this.label2.TabIndex = 2;
             this.label2.Text = "SSC";
             // 
             // panel1
@@ -63,7 +62,6 @@
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1339, 100);
-            this.panel1.TabIndex = 3;
             // 
             // label1
             // 
@@ -74,7 +72,6 @@
             this.label1.Location = new System.Drawing.Point(465, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(482, 52);
-            this.label1.TabIndex = 3;
             this.label1.Text = "Student Service Center";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -85,7 +82,6 @@
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(69, 68);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
             // panel2
@@ -102,7 +98,6 @@
             this.panel2.Location = new System.Drawing.Point(-1, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1336, 959);
-            this.panel2.TabIndex = 4;
             // 
             // guna2GradientButton2
             // 
@@ -120,11 +115,11 @@
             this.guna2GradientButton2.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2GradientButton2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(550, 321);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(550, 199);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
             this.guna2GradientButton2.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientButton2.Size = new System.Drawing.Size(289, 83);
-            this.guna2GradientButton2.TabIndex = 3;
+            this.guna2GradientButton2.TabIndex = 0;
             this.guna2GradientButton2.Text = "Sign In";
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
@@ -144,11 +139,11 @@
             this.guna2GradientButton1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2GradientButton1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(550, 204);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(550, 316);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientButton1.Size = new System.Drawing.Size(289, 83);
-            this.guna2GradientButton1.TabIndex = 2;
+            this.guna2GradientButton1.TabIndex = 1;
             this.guna2GradientButton1.Text = "Sign Up";
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 

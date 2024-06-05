@@ -54,12 +54,10 @@ namespace RMS.UI
         private void LoadData()
         {
             List<Order> pendingOrders = ObjectHandler.GetOrderDL().GetOrders(0);
-
             foreach (Order o in pendingOrders)
             {
-                dt.Rows.Add(o.GetOrderID(), o.GetProductsString(), o.GetCustomerComments());
+                dt.Rows.Add(o.GetOrderID(), UtilityFunctions.GetDealString(o.GetProductsString()), o.GetCustomerComments());
             }
-
         }
 
         private void notifyBtn_Click(object sender, EventArgs e)

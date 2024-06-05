@@ -16,3 +16,9 @@ C:\Users\Bilal\OneDrive\Desktop\Project\RMS\RMS\obj\Debug\RMS.csproj.AssemblyRef
 C:\Users\Bilal\OneDrive\Desktop\Project\RMS\RMS\obj\Debug\RMS.csproj.CoreCompileInputs.cache
 C:\Users\Bilal\OneDrive\Desktop\Project\RMS\RMS\obj\Debug\RMS.dll
 C:\Users\Bilal\OneDrive\Desktop\Project\RMS\RMS\obj\Debug\RMS.pdb
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\RMS\RMS\bin\Debug\RMS.dll
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\RMS\RMS\bin\Debug\RMS.pdb
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\RMS\RMS\obj\Debug\RMS.csproj.AssemblyReference.cache
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\RMS\RMS\obj\Debug\RMS.csproj.CoreCompileInputs.cache
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\RMS\RMS\obj\Debug\RMS.dll
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\RMS\RMS\obj\Debug\RMS.pdb

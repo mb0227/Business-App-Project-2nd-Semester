@@ -48,7 +48,7 @@ namespace RMS.UI
             {
                 if (order.GetStatus() != Order.OrderStatus.Paid)
                 {
-                    dt.Rows.Add(order.GetOrderID(),order.GetProductsString(), order.GetTotalPrice(), order.GetPaymentMethod());
+                    dt.Rows.Add(order.GetOrderID(), UtilityFunctions.GetDealString(order.GetProductsString()), order.GetTotalPrice(), order.GetPaymentMethod());
                 }
             }
         }

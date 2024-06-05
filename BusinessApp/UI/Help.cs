@@ -19,7 +19,7 @@ namespace RMS.UI
         private Customer customer;
         private CustomerHeader cHeader;
         private CustomerNavbar cNavBar;
-
+        private List<RMS.BL.Message> NewMessages;
         public Help()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace RMS.UI
             this.Size = size;
             this.Location = location;
             InitializeUserControls();
+            NewMessages = new List<RMS.BL.Message>();
         }
 
         private void InitializeUserControls()
@@ -144,7 +145,7 @@ namespace RMS.UI
             {
                 foreach (var msg in Messages)
                 {
-                    if (msg.GetMessageText() == "")
+                    if (msg.GetMessageText().Trim() == "")
                         continue;
                     string decryptedMessage = Encryption.Decrypt(msg.GetMessageText());
                     Label label = new Label();
@@ -182,29 +183,8 @@ namespace RMS.UI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            string Contact = "+923344207165";
-            Process.Start("tel:" + Contact);
-        }
-
-        private void msgTB_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool IsMessageTextDisplayed(string messageText)
-        {
-            foreach (Control control in msgPanel.Controls)
-            {
-                if (control is Label label && label.Text.Contains(messageText))
-                {
-                    return true;
-                }
-            }
-            return false;
+            //string Contact = "+";
+            //Process.Start("tel:" + Contact);
         }
 
         public void DisplayNewMessage(RMS.BL.Message msg)
@@ -233,11 +213,23 @@ namespace RMS.UI
         private void Timer_Tick_1(object sender, EventArgs e)
         {
             RMS.BL.Message message = ObjectHandler.GetMessageDL().GetNewMessage(customer.GetID());
-            if (message != null && !IsMessageTextDisplayed(message.GetMessageText()))
+            if (message != null && !AlreadyExists(message.GetMessageText()) && message.GetMessageText()!="")
             {
+                NewMessages.Add(message);
                 DisplayNewMessage(message);
             }
-            msgPanel.VerticalScroll.Value = msgPanel.VerticalScroll.Maximum;
+        }
+
+        private bool AlreadyExists(string messageText)
+        {
+            if (NewMessages.Count > 0)
+            {
+                if (NewMessages[NewMessages.Count - 1].GetMessageText() == messageText)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

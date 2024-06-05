@@ -1,13 +1,8 @@
 ﻿using RMS.BL;
 using RMS.Utility;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RMS.DL
 {
@@ -51,7 +46,7 @@ namespace RMS.DL
             using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
             {
                 connection.Open();
-                string query = "SELECT * FROM Messages WHERE Timestamp >= DATEADD(SECOND, -11, GETDATE()) AND ReceiverID = @ID";
+                string query = "SELECT * FROM Messages WHERE Timestamp >= DATEADD(SECOND, -6, GETDATE()) AND ReceiverID = @ID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ID", receiverID);
                 SqlDataReader reader = command.ExecuteReader();

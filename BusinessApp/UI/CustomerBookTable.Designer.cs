@@ -98,7 +98,6 @@
             this.panel3.Location = new System.Drawing.Point(169, 165);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1162, 813);
-            this.panel3.TabIndex = 16;
             // 
             // reservationText
             // 

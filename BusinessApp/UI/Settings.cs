@@ -369,7 +369,15 @@ namespace RMS.UI
                 if (r.GetLoyaltyPoints() >= 100)
                 {
                     MessageBox.Show("Congrats! You are now a Silver VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    r.PromoteToVip(ObjectHandler.GetVoucherDL().AwardVouchers(3));
+                    if(ObjectHandler.GetVoucherDL().CountVouchers()>0)
+                    {
+                        r.PromoteToVip(ObjectHandler.GetVoucherDL().AwardVouchers(3));
+                    }
+                    else
+                    {
+                        ObjectHandler.GetVoucherDL().GenerateVouchers();
+                        r.PromoteToVip(ObjectHandler.GetVoucherDL().AwardVouchers(3));
+                    }
                     customer.SetStatus("VIP");
                     ChangeButtonsText();
                     ShowAwardMessage(3);
@@ -381,19 +389,35 @@ namespace RMS.UI
             }
             else if(customer.GetStatus() == "VIP")
             {
-                if (ObjectHandler.GetOrderDL().CountOrders(customer.GetID()) > 30)
+                if (ObjectHandler.GetOrderDL().CountOrders(customer.GetID()) > 50)
                 {
                     VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
                     v.SetMembershipLevel("Diamond");
-                    ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(25));
+                    if (ObjectHandler.GetVoucherDL().CountVouchers() > 0)
+                    {
+                        ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(25));
+                    }
+                    else
+                    {
+                        ObjectHandler.GetVoucherDL().GenerateVouchers();
+                        ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(25));
+                    }
                     MessageBox.Show("Congrats! You are now a Diamond VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowAwardMessage(25);
                 }
-                else if (ObjectHandler.GetOrderDL().CountOrders(customer.GetID())> 50)
+                else if (ObjectHandler.GetOrderDL().CountOrders(customer.GetID())> 30)
                 {
                     VIP v = ObjectHandler.GetVipDL().GetVIP(customer.GetID());
                     v.SetMembershipLevel("Gold");
-                    ObjectHandler.GetVipDL().UpdateVIP("Gold", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(10));
+                    if (ObjectHandler.GetVoucherDL().CountVouchers() > 0)
+                    {
+                        ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(10));
+                    }
+                    else
+                    {
+                        ObjectHandler.GetVoucherDL().GenerateVouchers();
+                        ObjectHandler.GetVipDL().UpdateVIP("Diamond", customer.GetID(), ObjectHandler.GetVoucherDL().AwardVouchers(10));
+                    }
                     MessageBox.Show("Congrats! You are now a Gold VIP", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowAwardMessage(10);
                 }

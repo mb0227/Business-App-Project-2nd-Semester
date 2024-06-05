@@ -18,3 +18,13 @@ C:\Users\Bilal\OneDrive\Desktop\Project\BusinessAppConsole\BusinessAppConsole\ob
 C:\Users\Bilal\OneDrive\Desktop\Project\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.exe
 C:\Users\Bilal\OneDrive\Desktop\Project\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.pdb
 C:\Users\Bilal\OneDrive\Desktop\Project\BusinessAppConsole\BusinessAppConsole\bin\Debug\RMS.pdb
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\bin\Debug\BusinessAppConsole.exe.config
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\bin\Debug\BusinessAppConsole.exe
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\bin\Debug\BusinessAppConsole.pdb
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\bin\Debug\RMS.dll
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\bin\Debug\RMS.pdb
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.csproj.AssemblyReference.cache
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.csproj.CoreCompileInputs.cache
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\obj\Debug\Business.4CB9E74E.Up2Date
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.exe
+A:\University Related\UET Lahore\Projects\Business-App-Project-2nd-Semester\BusinessAppConsole\BusinessAppConsole\obj\Debug\BusinessAppConsole.pdb

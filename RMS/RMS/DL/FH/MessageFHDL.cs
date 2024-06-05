@@ -138,7 +138,7 @@ namespace RMS.DL
                 string messageText = parts[3];
                 DateTime timestamp = DateTime.Parse(parts[4]);
 
-                if (messageReceiverID == receiverID && DateTime.Now.Subtract(timestamp).TotalSeconds <= 11)
+                if (messageReceiverID == receiverID && DateTime.Now.Subtract(timestamp).TotalSeconds <= 6)
                 {
                     return new Message(senderID, receiverID, messageText, timestamp);
                 }

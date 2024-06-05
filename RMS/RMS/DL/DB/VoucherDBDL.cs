@@ -11,6 +11,22 @@ namespace RMS.DL
 {
     public class VoucherDBDL : IVoucherDL
     {
+        public int CountVouchers()
+        {
+            int rowCount = 0;
+            using (SqlConnection connection = UtilityFunctions.GetSqlConnection())
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Vouchers";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    rowCount = (int)command.ExecuteScalar();
+                }
+            }
+            return rowCount;
+        }
+
         public void GenerateVouchers()
         {
             Random random = new Random();

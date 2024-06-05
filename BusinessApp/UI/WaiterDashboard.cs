@@ -224,7 +224,7 @@ namespace RMS.UI
 
             foreach (Order o in pendingOrders)
             {
-                dt.Rows.Add(o.GetOrderID(), o.GetProductsString(), o.GetCustomerComments());
+                dt.Rows.Add(o.GetOrderID(), UtilityFunctions.GetDealString(o.GetProductsString()), o.GetCustomerComments());
             }
         }
 
@@ -241,7 +241,6 @@ namespace RMS.UI
                     if (selectedDataGridViewRow != null && selectedDataGridViewRow.Cells["ID"].Value != null)
                     {
                         int id = Convert.ToInt32(selectedDataGridViewRow.Cells["ID"].Value);
-
                         ObjectHandler.GetOrderDL().UpdateOrderStatus(id, 2);
                         ChangeGridViewData(1);
                     }

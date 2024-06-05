@@ -112,7 +112,6 @@
             this.msgTB.Size = new System.Drawing.Size(886, 67);
             this.msgTB.TabIndex = 0;
             this.msgTB.WordWrap = false;
-            this.msgTB.TextChanged += new System.EventHandler(this.msgTB_TextChanged);
             // 
             // panel2
             // 
@@ -185,7 +184,7 @@
             // Timer
             // 
             this.Timer.Enabled = true;
-            this.Timer.Interval = 10000;
+            this.Timer.Interval = 4000;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick_1);
             // 
             // Help

@@ -125,8 +125,6 @@ namespace RMS.UI
         {
             if(CheckValidations())
             {
-                addedItems.Items.Clear();
-                items.Clear();
                 name.Text = name.Text.Replace(",", "");
                 Deal deal = new Deal(name.Text, Convert.ToDouble(price.Text), items);
                 ObjectHandler.GetDealDL().SaveDeal(deal);
@@ -135,10 +133,10 @@ namespace RMS.UI
                 addedItems.Visible = false;
                 label6.Visible = false;
                 MessageBox.Show("Deal saved", "Success", MessageBoxButtons.OK);
+                items.Clear();
                 addedItems.Items.Clear();
             }
         }
-
         private bool CheckValidations()
         {
 
